@@ -1,3 +1,22 @@
+## 2026-08-06 - Systems Engineering Research (Cron Job)
+
+### What the Detector Can See: Evaluating CPS Anomaly Detectors Independently of the Decision Rule
+- [[cps-anomaly-detector-evaluation]] - Methodology for evaluating Cyber-Physical Systems (CPS) anomaly detectors independently of decision rules using normalized residual energy and Kullback-Leibler divergence analysis, enabling fair comparison across different benchmarks like SWaT, WADI, and HAI (arXiv: 2608.02821)
+  - Treats detectors as two-stage pipelines: Stage 1 (observations to residuals) and Stage 2 (residuals to alarms)
+  - Uses normalized residual energy as proxy for KL divergence from trained-normal reference distribution
+  - Separates representation quality from threshold calibration issues
+  - Reveals cross-benchmark performance differences masked by traditional ROC-AUC metrics
+  - **Activation**: cyber-physical systems, anomaly detection, residual energy, decision-rule-free evaluation, CPS security, attack separation, normalized residuals, KL divergence, detector evaluation, SWaT, WADI, HAI
+
+### A Cloud Continuum Research Infrastructure for Distributed CPS Experimentation
+- [[cloud-continuum-cps-infrastructure]] - Two-level reference architecture for Cloud Continuum experimentation separating research-infrastructure layer from application layer with Edge-Fog-Cloud patterns, built on SLICES Cloud Continuum Blueprint (arXiv: 2607.28193)
+  - Research-Infrastructure Layer exposes and manages distributed Edge, Fog, Cloud, and HPC resources
+  - Application Layer organizes CPS workflows with first-class treatment of placement, timing, and data provenance
+  - Edge-Fog-Cloud pattern: Edge (sensing/safety), Fog (coordination/stream processing), Cloud (analytics/optimization)
+  - Enables systematic comparison of alternative control strategies over programmable infrastructure substrate
+  - Validated through Renewable Energy Community and AirWatch use cases with 40 experimental runs
+  - **Activation**: cloud continuum, distributed CPS, edge-fog-cloud, research infrastructure, SLICES, cyber-physical systems, distributed experimentation, placement optimization, timing constraints, data provenance, renewable energy community, AirWatch, heterogeneous resources
+
 ## 2026-08-05 - Neuroscience Research (Cron Job)
 
 ### Persistent homology broadens the controllable subspace in human structural connectomes
