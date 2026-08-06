@@ -1,5 +1,12 @@
 ## 2026-08-06 - Neuroscience Research (Cron Job)
 
+### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
+- [[spikingnav-embodied-navigation-snn]] - SpikingNav methodology for robust embodied navigation using spiking neural policies with event-driven computation and intrinsic temporal dynamics (arXiv: 2608.05078)
+  - Improves ObjectNav success from 31.05% to 34.12% and robustness under visual corruptions from 8.45% to 13.71%
+  - Uses Spiking Sensing Encoder (SSE) and Spiking Policy Network (SPN) with membrane integration dynamics
+  - Demonstrates hardware deployability on Thruster-V2 neuromorphic chip for cyber-physical systems
+  - **Activation**: spikingnav, embodied navigation, spiking neural policies, neuromorphic navigation, spike-based sensing
+
 ### Time²: A framework for the neural dynamics of visual perception
 - [[time2-neural-dynamics-visual-perception]] - Time² framework methodology for analyzing neural dynamics by simultaneously considering both processing time and stimulus time dimensions in visual perception research using reverse correlation (arXiv: 2608.04218)
   - Introduces novel reverse correlation method that disentangles processing time from stimulus time
