@@ -35,6 +35,13 @@
   - Provides robust detection framework for brain disorder signals in high-frequency EEG ranges
   - **Activation**: DMD EEG high-frequency, dynamic mode decomposition brain disorder, high-frequency EEG biomarkers, alcohol dependence EEG classification
 
+### CORTIVA: Candidate-Score Fusion of Complementary Visual Teachers for EEG- and MEG-to-Image Retrieval
+- [[cortiva-eeg-meg-image-retrieval]] - CORTIVA framework for EEG- and MEG-to-image retrieval using candidate-score fusion of complementary visual teachers, achieving 73.5% Top-1 accuracy on THINGS-EEG2 benchmark by preserving complementary evidence from heterogeneous visual targets (arXiv: 2608.01355)
+  - Three decoding routes aligned to heterogeneous visual targets score candidates independently, then fuse temperature-scaled score vectors before ranking
+  - Achieves 73.5% Top-1 and 95.3% Top-5 accuracy on 200-way THINGS-EEG2 benchmark across ten participants
+  - Reaches 42.4% Top-1 accuracy on THINGS-MEG with modality-specific neural encoder
+  - **Activation**: cortiva, candidate-score fusion, EEG-to-image retrieval, MEG-to-image retrieval, neural decoding, complementary visual teachers
+
 ## 2026-08-06 - Quantum Reservoir Computing Thermodynamics (Cron Job)
 
 ### Thermodynamics of Quantum Reservoir Computing
