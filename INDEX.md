@@ -7,6 +7,13 @@
   - Enables Turing test-like validation without involving individuals with autism
   - **Activation**: autism entropy framework, insistence on sameness, D_H(R, M) metric, surprise uncertainty autism, information theory autism
 
+### IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers
+- [[iris-visual-cortex-framework-vit]] - Neuroscience-inspired framework introducing RSS, ORS, and orientation tuning bandwidth metrics to quantify how orientation selectivity emerges in Vision Transformers during training (arXiv: 2608.05122)
+  - Demonstrates that training paradigm is the strongest determinant of orientation selectivity, peaking at comparable relative depths regardless of scale
+  - Shows early-to-middle layers recruit orientation-selective units over time, while deeper layers lose selectivity and broaden tuning toward semantic encoding
+  - Provides mechanistic heuristics for optimal layer unfreezing strategies for downstream generalization
+  - **Activation**: IRIS framework, orientation selectivity, vision transformers neuroscience, representational similarity score, biological plausibility ViT
+
 ## 2026-08-06 - Neuroscience Research (Cron Job)
 
 ### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
