@@ -7,6 +7,13 @@
   - Demonstrates hardware deployability on Thruster-V2 neuromorphic chip for cyber-physical systems
   - **Activation**: spikingnav, embodied navigation, spiking neural policies, neuromorphic navigation, spike-based sensing
 
+### Predicting Brain Morphometry with MT-GNN: Mesh Evolution in Continuous Time with Graph-Based Metric Tensor Embeddings
+- [[mt-gnn-brain-morphometry-prediction]] - MT-GNN methodology for predicting brain morphometry evolution using graph-based metric tensor embeddings and continuous-time mesh evolution for subcortical structure shape prediction (arXiv: 2608.05132)
+  - Outperforms all evaluated methods at every prediction horizon, beating temporal mean on 14/14 subcortical structures
+  - Predicts surface intrinsic geometry via per-vertex first fundamental form (metric tensor) instead of direct vertex regression
+  - Uses differentiable As-Rigid-As-Possible solver for valid surface reconstruction with end-to-end training
+  - **Activation**: brain morphometry prediction, mesh evolution, metric tensor embeddings, continuous time modeling, subcortical structure prediction
+
 ### Time²: A framework for the neural dynamics of visual perception
 - [[time2-neural-dynamics-visual-perception]] - Time² framework methodology for analyzing neural dynamics by simultaneously considering both processing time and stimulus time dimensions in visual perception research using reverse correlation (arXiv: 2608.04218)
   - Introduces novel reverse correlation method that disentangles processing time from stimulus time
