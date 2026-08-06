@@ -1,5 +1,12 @@
 ## 2026-08-06 - Neuroscience Research (Cron Job)
 
+### Time²: A framework for the neural dynamics of visual perception
+- [[time2-neural-dynamics-visual-perception]] - Time² framework methodology for analyzing neural dynamics by simultaneously considering both processing time and stimulus time dimensions in visual perception research using reverse correlation (arXiv: 2608.04218)
+  - Introduces novel reverse correlation method that disentangles processing time from stimulus time
+  - Enables characterization of rhythmic perception, predictive processing, and coarse-to-fine sampling
+  - Uses "Spacetime Bubbles" for spatio-temporal noise in experimental design
+  - **Activation**: time2, time-squared, neural dynamics, visual perception, processing time, stimulus time, reverse correlation
+
 ### AS-FedBridge: Pseudo-Spike Bridge Distillation for Heterogeneous ANN-SNN Federated Learning
 - [[as-fedbridge-heterogeneous-ann-snn-federated-learning]] - Framework solving representational misalignment between continuous real-valued activations in ANNs and discrete spatio-temporal spikes in SNNs using lightweight Bridge with Pseudo-Spike Interface, enabling mixed ANN-SNN collaborative training with controllable performance-efficiency trade-offs (arXiv: 2608.03324)
   - Positive correlation between ANN-SNN alignment degree and federated learning performance across four datasets
