@@ -14,6 +14,14 @@
   - Provides mechanistic heuristics for optimal layer unfreezing strategies for downstream generalization
   - **Activation**: IRIS framework, orientation selectivity, vision transformers neuroscience, representational similarity score, biological plausibility ViT
 
+### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
+- [[cognisnn-random-graph-architecture]] - CogniSNN framework enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability in Spiking Neural Networks using Random Graph Architectures (RGA). Introduces improved spiking residual mechanisms, adaptive pooling, KP-LwF for multi-task transfer, and Dynamic Growth Learning (DGL) algorithm (arXiv: 2512.11743)
+  - Addresses network degradation and dimensional mismatch in deep pathways with improved pure spiking residual mechanism and adaptive pooling strategy
+  - Enables efficient multi-task transfer through Key Pathway-based Learning without Forgetting (KP-LwF) that selectively reuses critical neural pathways
+  - Improves robustness against interference and mitigates fixed-timestep constraints during neuromorphic chip deployment via Dynamic Growth Learning (DGL) algorithm
+  - Achieves state-of-the-art performance on neuromorphic datasets and Tiny-ImageNet with enhanced continuous learning capability
+  - **Activation**: CogniSNN, Random Graph Architecture, Neuron-Expandability, Pathway-Reusability, Dynamic-Configurability, KP-LwF, Dynamic Growth Learning, brain-inspired SNNs
+
 ## 2026-08-06 - Neuroscience Research (Cron Job)
 
 ### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
