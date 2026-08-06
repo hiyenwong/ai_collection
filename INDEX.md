@@ -1,3 +1,13 @@
+## 2026-08-06 - Quantum Reservoir Computing Thermodynamics (Cron Job)
+
+### Thermodynamics of Quantum Reservoir Computing
+- [[thermodynamics-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework linking quantum reservoir computing predictive performance to energetic costs, revealing fundamental trade-offs between computational capacity and thermodynamic dissipation (arXiv: 2607.02157)
+  - Establishes spectral resonance principle: computational peak in quantum critical region from alignment of reservoir transition frequencies with chaotic drive
+  - Introduces quantum informational dissipation to quantify non-predictive historical data retention
+  - Derives generalized Landauer bound for continuous temporal processing showing critical resonance maximizes both predictive capacity and irreversible work
+  - Demonstrates quantum coherences amplify predictive capacity without additional mechanical work
+  - **Activation**: quantum reservoir computing, thermodynamic framework, quantum critical region, informational dissipation, Landauer bound, quantum neuromorphic
+
 ## 2026-08-06 - Systems Engineering Research (Cron Job)
 
 ### What the Detector Can See: Evaluating CPS Anomaly Detectors Independently of the Decision Rule
