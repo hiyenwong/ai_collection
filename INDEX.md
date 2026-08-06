@@ -16,6 +16,13 @@
 
 ## 2026-08-06 - Neuroscience Research (Cron Job)
 
+### A Landau-Ginzburg Phenomenology of Sleep-Stage Transitions
+- [[landau-ginzburg-sleep-stage-transitions]] - Methodology for modeling sleep-stage transitions using Landau-Ginzburg phenomenology with spatially extended neural fields, treating different sleep boundaries as distinct phase transitions (fold, crossover, first-order-like switch) while providing spatial predictions absent from scalar models (arXiv: 2608.03000)
+  - Sleep onset as fold-like loss of wake stability; N1-N2/N2-N3 as continuous crossovers; NREM-REM as first-order desynchronizing switch
+  - Ginzburg term adds spatial predictions: correlation length growth and local-to-global recruitment dynamics
+  - Framework distinguishes bifurcation, coexistence, noise-driven escape, smooth crossover, and scoring-induced discontinuity
+  - **Activation**: landau-ginzburg, sleep-stage transitions, phase transitions, neural fields, EEG analysis, sleep staging
+
 ### Detecting high-frequency brain disorder signals using dynamic mode decomposition from EEG
 - [[dmd-high-frequency-eeg-brain-disorder-detection]] - Methodology for extracting consistent high-frequency dynamical patterns from EEG using Dynamic Mode Decomposition (DMD) to identify neurological signatures that distinguish clinical groups like alcohol-dependent patients from controls (arXiv: 2608.02804)
   - High-frequency DMD modes serve as robust features for brain disorder detection with ~70% consistency rate across samples
