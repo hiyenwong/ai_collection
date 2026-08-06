@@ -1,3 +1,12 @@
+## 2026-08-07 - Neuroscience Research (Cron Job)
+
+### An entropic explanation of insistence on sameness in autism
+- [[entropic-explanation-autism-sameness]] - Information theory-based framework explaining insistence on sameness in autism through entropy minimization using metric D_H(R, M) = H(R|M) + H(M|R) to quantify surprise and uncertainty reduction strategies (arXiv: 2608.04616)
+  - Provides formal definitions for surprise, uncertainty, sensory overload, anxiety, comfort zone, and aberrant precision
+  - Offers optimization algorithm guidelines for learning therapies and robotic live-in caregivers
+  - Enables Turing test-like validation without involving individuals with autism
+  - **Activation**: autism entropy framework, insistence on sameness, D_H(R, M) metric, surprise uncertainty autism, information theory autism
+
 ## 2026-08-06 - Neuroscience Research (Cron Job)
 
 ### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
