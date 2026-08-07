@@ -26,6 +26,13 @@
 
 ## 2026-08-07 - Neuroscience Research (Cron Job)
 
+### Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures
+- [[errorless-irrationality-inverse-base-rate-effect]] - Unified computational account of the inverse base-rate effect that persists across predictive, observational, and unsupervised learning procedures, proposing the OSCAR model based on self-generated feedback and pattern completion dynamics (arXiv: 2608.06149)
+  - Demonstrates that the inverse base-rate effect persists even when category labels are not presented (unsupervised procedure), showing independence from prediction error signals
+  - Proposes OSCAR (Optimal Self-Generated Category Assignment through Reconstruction) model that integrates core principles of established models with self-generated feedback akin to pattern completion
+  - First model to reproduce the pattern of individual differences seen in humans across all three learning procedures and explains previously unexplained eye-tracking data
+  - **Activation**: inverse base-rate effect, computational modeling, irrationality, OSCAR model, auto-associator network, pattern completion
+
 ### Convergent Evolution in Neural Representation Space: Emergent Order in Deep Belief Networks
 - [[convergent-evolution-neural-representation-space]] - Framework demonstrating how Deep Belief Networks spontaneously uncover and progressively amplify class-related structure in unlabeled data through layer-wise generative learning, without any supervision (arXiv: 2608.05996)
   - Shows class-specific clustering generally increases with depth across datasets (MNIST, Fashion-MNIST, KMNIST) despite no label information during training
