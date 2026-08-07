@@ -1,6 +1,14 @@
 ## 2026-08-07 - Neuroscience Research (Cron Job)
 
-### Convergent Evolution in Algorithmic Space
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades-predictive-coding]] - Biologically plausible framework for hierarchical predictive coding using local contrastive learning and activity cancellation, based on the Forward-Forward algorithm with inverted objective that increases activity for negative data (arXiv: 2608.05481)
+  - No error-coding neurons required: unlike classical predictive coding models that rely on dedicated error neurons
+  - Local synaptic learning: uses only local synaptic updates with a simple global signal, mathematically equivalent to three-factor Hebbian rule
+  - Bottom-up surprise cascade: despite top-down label delivery, learns bottom-up cancellation of predictable activity
+  - Captures cortical features: top-down modulation, surprise signaling, and hierarchical prediction
+  - **Activation**: layered surprise cascades, predictive coding neuroscience, forward-forward algorithm, biologically plausible learning, local contrastive learning
+
+### Convergent Evolution in Algorithmic Space### Convergent Evolution in Algorithmic Space
 - [[convergent-evolution-algorithmic-space]] - Framework for analyzing convergent evolution in neural network weight structures during training using matching-based comparison with permutation-invariant features and Hungarian matching to identify task-specific attractors in weight space (arXiv: 2608.05985)
   - Networks trained on same task remain closer to each other than to networks trained on different tasks
   - Task-specific training guides initially random networks toward distinct regions (attractors) in structural network space
