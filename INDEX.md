@@ -183,3 +183,23 @@
   - Derives generalized Landauer bound for continuous temporal processing showing critical resonance maximizes both predictive capacity and irreversible work
   - Demonstrates quantum coherences amplify predictive capacity without additional mechanical work
   - **Activation**: quantum reservoir computing, thermodynamic framework, quantum critical region, informational dissipation, Landauer bound, quantum neuromorphic
+## 2026-08-08 - Deep Learning Research (Cron Job)
+
+### Beyond Full-Model Rollback: AuroSFT for Adapter-State Multi-Task Fine-Tuning
+- [[aurosft-adapter-state-multi-task-finetuning]] - AuroSFT framework for parameter-efficient multi-task fine-tuning using adapter-state rollback instead of full-model checkpoints, enabling compact, mergeable adapter states for overfitting-aware multi-task SFT with frozen backbones and low-rank weight factors (arXiv: 2608.05250)
+  - Parameter-efficient architecture: freezes pretrained backbone and trains only injected adapters
+  - Adapter-state rollback: rolls back adapter checkpoints at task-wise peaks instead of full-model checkpoints
+  - AuroRA-inspired adaptive nonlinear layer: applies adaptive nonlinear layers to low-rank weight factors
+  - Exact mergeability: updates remain linear in input, rank-bounded, and exactly mergeable into frozen projection
+  - Performance gains: achieves 61.36% average accuracy vs 59.85% for msft reference across all five backbones
+  - **Activation**: aurosft, adapter-state finetuning, multi-task sft, parameter-efficient finetuning, task-wise rollback, efficient checkpointing, mergeable adapters, frozen backbone finetuning
+
+### Beyond Rotations: AuroOFT for Expressive Quantized Orthogonal Fine-Tuning
+- [[aurooft-quantized-orthogonal-finetuning]] - AuroOFT framework for expressive quantized orthogonal fine-tuning that extends QOFT with zero-start gated low-rank nonlinear residuals, enabling parameter-efficient adaptation of low-bit language models while maintaining quantization compatibility and orthogonality stability (arXiv: 2608.05253)
+  - Hybrid architecture: keeps QOFT as stable quantization-compatible branch while adding zero-start gated low-rank nonlinear residuals
+  - RMS-normalized latent space: maps activations into compact latent spaces with RMS normalization for stability
+  - Adaptive nonlinear bases: uses adaptive nonlinear bases with bounded or token-dependent gating for expressive power
+  - Zero initialization: functions identically to QOFT at initialization, ensuring stable starting point
+  - Branch-level stability: maintains orthogonality as branch-level stability property rather than combined layer property
+  - Significant performance gains: improves Macro-6 by 1.30-2.70% over QOFT and exceeds QLoRA by 6.52-10.62%
+  - **Activation**: aurooft, quantized orthogonal finetuning, qoft extension, nonlinear qoft, low-bit llm adaptation, parameter-efficient quantized finetuning, gated low-rank residuals, rms-normalized latent space, adaptive nonlinear bases, quantization-compatible finetuning
