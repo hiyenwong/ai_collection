@@ -1,3 +1,12 @@
+## 2026-08-07 - Neuroscience Research (Cron Job)
+
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation, building on Forward-Forward algorithm with inverted objective to increase activity for negative data, yielding predictive representations that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
+  - Uses recurrent variant of Forward-Forward algorithm with inverted objective for negative data
+  - Emergent predictive representations capture hallmark cortical computation features like top-down modulation and surprise signaling
+  - Demonstrates that key principles of predictive coding can emerge from simple, local learning rules
+  - Offers new bridge between neuroscience and machine learning for biologically plausible AI
+  - **Activation**: layered surprise cascades, hierarchical predictive coding, local contrastive learning, activity cancellation, surprise signaling
 ## 2026-08-07 - Quantum Reservoir Computing for Neurodynamical Forecasting (Cron Job)
 
 ### A Quantum Reservoir for Neurodynamical Forecasting
