@@ -1,11 +1,11 @@
 ---
 name: iris-visual-cortex-framework-vit
-description: "IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers. Introduces neuroscience-inspired metrics (RSS, ORS, orientation tuning bandwidth) to quantify how orientation selectivity emerges in ViTs during training. Use when analyzing low-level feature encoding in transformers, studying biological plausibility of AI vision models, or investigating how training paradigms affect representational geometry in deep learning."
+description: "IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers. Provides neuroscience-inspired metrics (RSS, ORS, orientation tuning bandwidth) to quantify how orientation selectivity emerges in ViTs and tracks biologically-grounded features during training. Use when analyzing low-level feature encoding in vision transformers, studying orientation selectivity, or probing representational geometry in transformer models."
 metadata:
   arxiv_id: "2608.05122"
   published: "2026-08-05"
   authors: "Vaishnavi B Mohan, Vijayakrishna Naganoor, Yashas Annadani, Shashank Hegde"
-  tags: [neuroscience, computer-vision, vision-transformers, orientation-selectivity, representational-similarity]
+  tags: [vision-transformers, orientation-selectivity, visual-cortex, representational-similarity, neuroscience, computer-vision]
 license: Complete terms in LICENSE.txt
 ---
 
@@ -13,89 +13,119 @@ license: Complete terms in LICENSE.txt
 
 ## Overview
 
-IRIS (Inspired by Retinotopic Information Structure) is a neuroscience-inspired framework for analyzing how orientation selectivity—a fundamental property of the primary visual cortex (V1)—emerges in Vision Transformers (ViTs). Unlike convolutional neural networks that build local features through inductive biases, ViTs process information globally, raising questions about how they encode low-level visual features.
+This skill implements the IRIS (Visual Cortex-Inspired Framework) methodology from the paper "IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers" (arXiv:2608.05122). The framework introduces a suite of neuroscience-inspired metrics to systematically study how orientation selectivity emerges in Vision Transformers (ViTs), despite their lack of local inductive biases.
 
-This framework introduces three key metrics to systematically study orientation selectivity in ViTs:
-1. **Representational Similarity Score (RSS)** - Measures similarity between ViT representations and biological V1 responses
-2. **Orientation Recruitment Score (ORS)** - Quantifies how many units become orientation-selective during training
-3. **Orientation Tuning Bandwidth** - Measures the specificity of orientation tuning in individual units
+## Key Contributions
 
-## Key Findings
+1. **Neuroscience-Inspired Metrics**: Introduces Representational Similarity Score (RSS), Orientation Recruitment Score (ORS), and orientation tuning bandwidth
+2. **Training Paradigm Analysis**: Shows that training paradigm is the strongest determinant of orientation selectivity
+3. **Layer-wise Dynamics**: Reveals that early-to-middle layers recruit orientation-selective units while deeper layers lose selectivity
+4. **Mechanistic Heuristic**: Provides guidance for downstream task fine-tuning based on layer selectivity patterns
 
-The paper demonstrates that:
-1. **Training paradigm is the strongest determinant** of orientation selectivity, with models sharing an objective peaking at comparable relative depths regardless of scale
-2. **Early-to-middle layers recruit orientation-selective units** over time, while deeper layers lose selectivity and broaden tuning toward semantic encoding
-3. **The metrics provide mechanistic heuristics** for determining optimal layer unfreezing strategies for downstream generalization
+## When to Use This Skill
 
-## Methodology
+- Analyzing low-level feature encoding in Vision Transformers
+- Studying orientation selectivity emergence in neural networks
+- Comparing biological vs artificial visual systems
+- Probing representational geometry in transformer models
+- Determining optimal layer unfreezing strategies for transfer learning
 
-### Step 1: Implement IRIS Metrics
+## Core Methodology
 
-```python
-# Pseudocode for RSS calculation
-def calculate_rss(vit_activations, v1_responses):
-    """Calculate Representational Similarity Score between ViT and V1"""
-    # Compute representational dissimilarity matrices
-    vit_rdm = compute_rdm(vit_activations)
-    v1_rdm = compute_rdm(v1_responses)
-    
-    # Calculate similarity (e.g., Spearman correlation)
-    rss = spearman_correlation(vit_rdm, v1_rdm)
-    return rss
+### Neuroscience-Inspired Metrics
 
-# Pseudocode for ORS calculation  
-def calculate_ors(layer_activations, orientation_stimuli):
-    """Calculate Orientation Recruitment Score for a layer"""
-    orientation_selective_units = []
-    for unit_idx in range(layer_activations.shape[-1]):
-        unit_responses = layer_activations[:, :, unit_idx]
-        tuning_curve = compute_tuning_curve(unit_responses, orientation_stimuli)
-        if is_orientation_selective(tuning_curve):
-            orientation_selective_units.append(unit_idx)
-    
-    ors = len(orientation_selective_units) / layer_activations.shape[-1]
-    return ors
-```
+#### Representational Similarity Score (RSS)
+- Quantifies similarity between model representations and biological orientation responses
+- Measures how well model units capture orientation information
+- Used to track orientation selectivity across model depth
 
-### Step 2: Analyze Training Dynamics
+#### Orientation Recruitment Score (ORS)  
+- Measures the proportion of orientation-selective units at each layer
+- Tracks how recruitment changes during training
+- Identifies layers with highest orientation encoding capacity
 
-Track RSS, ORS, and tuning bandwidth across:
-- Different model depths (relative depth: layer_idx / total_layers)
-- Training epochs/timepoints
-- Different training objectives (supervised vs self-supervised)
+#### Orientation Tuning Bandwidth
+- Quantifies the specificity of orientation tuning in individual units
+- Narrow bandwidth = highly selective, broad bandwidth = general semantic encoding
+- Shows progression from specific to general representations with depth
 
-### Step 3: Apply to Downstream Tasks
+### Key Findings
 
-Use IRIS metrics to guide transfer learning:
-- Identify optimal layers to unfreeze based on orientation selectivity profiles
-- Compare different pretraining paradigms using biological plausibility metrics
-- Evaluate architectural modifications for improved low-level feature learning
+1. **Training Paradigm Dominance**: Models sharing an objective show similar orientation selectivity patterns regardless of scale
+2. **Early Selectivity**: Many units are orientation-selective early in training
+3. **Layer Progression**: Early-to-middle layers recruit more selective units over time; deeper layers broaden tuning toward semantics
+4. **Fine-tuning Guidance**: Metrics provide heuristic for optimal layer unfreezing
+
+## Implementation Guidelines
+
+### Metric Calculation
+
+#### RSS Implementation
+1. **Stimulus Set**: Create oriented grating stimuli covering full orientation range
+2. **Model Responses**: Extract activations for each orientation at target layers
+3. **Similarity Computation**: Calculate representational similarity matrices (RSMs)
+4. **Biological Comparison**: Compare against idealized biological orientation response patterns
+
+#### ORS Implementation  
+1. **Unit Selection**: Identify units with significant orientation response modulation
+2. **Recruitment Tracking**: Count selective units per layer across training epochs
+3. **Statistical Thresholding**: Apply significance tests to determine selectivity
+
+#### Tuning Bandwidth
+1. **Response Curves**: Plot unit responses across orientation space
+2. **Bandwidth Fitting**: Fit tuning curves (e.g., von Mises distributions)
+3. **Width Measurement**: Extract full-width at half-maximum (FWHM) or equivalent
+
+### Analysis Workflow
+
+1. **Model Selection**: Choose ViT models with different architectures/scales but same training objective
+2. **Baseline Comparison**: Include CNNs and biological data for reference
+3. **Longitudinal Tracking**: Measure metrics across training epochs
+4. **Depth Analysis**: Compare metrics across all model layers
+5. **Downstream Validation**: Test fine-tuning performance correlation with metrics
 
 ## Applications
 
-- **Model Interpretability**: Understand how ViTs encode basic visual features without local inductive biases
-- **Architecture Design**: Guide development of more biologically plausible vision models
-- **Transfer Learning**: Optimize fine-tuning strategies based on representational geometry
-- **Neuroscience-AI Bridge**: Systematically compare artificial and biological vision systems
+- **Model Interpretability**: Understand what low-level features ViTs actually learn
+- **Architecture Design**: Inform design choices for better low-level feature extraction
+- **Transfer Learning**: Optimize fine-tuning strategies based on layer selectivity
+- **Neuroscience-AI Bridge**: Compare artificial and biological visual processing
+- **Representation Analysis**: Probe how desired properties emerge in transformer representations
 
 ## Pitfalls and Considerations
 
-- **Stimulus Set**: Ensure orientation stimuli cover full range (0-180°) with sufficient resolution
-- **Biological Baseline**: Use appropriate V1 data for comparison (species, recording method, etc.)
-- **Model Variants**: Account for differences between ViT variants (DeiT, Swin, etc.)
-- **Computational Cost**: Full analysis requires activations from all layers across training trajectory
+- **Stimulus Design**: Orientation stimuli must be carefully controlled for spatial frequency and contrast
+- **Biological Validity**: Idealized biological responses may not capture real neuron complexity
+- **Computational Cost**: Full orientation space sampling can be expensive for large models
+- **Metric Correlation**: Ensure metrics actually correlate with downstream performance
+- **Generalization**: Findings may not extend to other low-level features beyond orientation
+
+## Related Concepts
+
+- **Orientation Selectivity**: Fundamental property of primary visual cortex neurons
+- **Representational Similarity Analysis (RSA)**: General framework for comparing representations
+- **Vision Transformers**: Transformer architecture applied to computer vision
+- **Inductive Biases**: Built-in assumptions that guide learning (absent in standard ViTs)
+- **Transfer Learning**: Fine-tuning pre-trained models for downstream tasks
+
+## References
+
+- Original Paper: [arXiv:2608.05122](https://arxiv.org/abs/2608.05122)
+- Representational Similarity Analysis: Kriegeskorte et al. (2008)
+- Vision Transformers: Dosovitskiy et al. (2020)
+- Orientation Selectivity: Hubel & Wiesel (1962)
 
 ## Activation Keywords
 
 - IRIS framework
 - orientation selectivity
-- vision transformers neuroscience
-- representational similarity score
-- biological plausibility ViT
-- V1-inspired metrics
-- low-level feature encoding transformers
-
-## References
-
-- Original Paper: [arXiv:2608.05122](https://arxiv.org/abs/2608.05122)
-- Related Skills: `neuroscience-of-transformers`, `transformer-brain-topological-alignment`
+- vision transformers
+- visual cortex
+- representational similarity
+- RSS metric
+- ORS metric
+- tuning bandwidth
+- low-level features
+- transformer interpretability
+- biological inspiration
+- fine-tuning heuristic
