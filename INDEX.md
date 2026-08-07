@@ -1,5 +1,21 @@
 ## 2026-08-07 - Neuroscience Research (Cron Job)
 
+### Convergent Evolution in Algorithmic Space
+- [[convergent-evolution-algorithmic-space]] - Framework for analyzing convergent evolution in neural network weight structures during training using matching-based comparison with permutation-invariant features and Hungarian matching to identify task-specific attractors in weight space (arXiv: 2608.05985)
+  - Networks trained on same task remain closer to each other than to networks trained on different tasks
+  - Task-specific training guides initially random networks toward distinct regions (attractors) in structural network space
+  - Early learning shows rapid accuracy improvement before strong task-specific structural separation is visible
+  - Individual weight entries begin coordinated drift early, suggesting subtle distributed adjustments affect function while coarse morphology remains unchanged
+  - **Activation**: convergent evolution neural networks, structural weight space analysis, task-specific attractors, neural network morphogenesis, permutation-invariant neuron alignment
+
+### Curriculum Multiple Shooting for Robust Training of Neural and Universal Differential Equations
+- [[curriculum-multiple-shooting-neural-odes]] - General-purpose training strategy for fitting ordinary differential equation models to time-series data by integrating curriculum learning with multiple shooting, accelerating and stabilizing training convergence for Neural ODEs, Universal Differential Equations, and mechanistic ODEs (arXiv: 2608.05777)
+  - Combines multiple shooting framework with curriculum learning for progressive complexity
+  - Handles sparse, irregular, and noisy time-series data more robustly than standard approaches
+  - Accelerates convergence and improves generalization across twelve benchmarks
+  - Works across NODEs, UDEs, and mechanistic ODE models
+  - **Activation**: curriculum multiple shooting, neural ordinary differential equations, universal differential equations, ODE training strategy, time-series ODE fitting
+
 ### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
 - [[spikingnav-embodied-navigation-snn]] - SpikingNav methodology for robust embodied navigation using Spiking Neural Networks (SNNs) with Spiking Sensing Encoder (SSE) and Spiking Policy Network (SPN), achieving competitive clean performance and stronger robustness under visual corruptions with fewer parameters and lower per-step computation than ANN baseline, validated on Thruster-V2 neuromorphic chip (arXiv: 2608.05078)
   - Combines Spiking Sensing Encoder for task-conditioned visual features with Spiking Policy Network maintaining recurrent policy state through membrane integration, thresholding, and spike-triggered reset
