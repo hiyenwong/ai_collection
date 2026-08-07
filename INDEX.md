@@ -26,6 +26,13 @@
 
 ## 2026-08-07 - Neuroscience Research (Cron Job)
 
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades-predictive-coding]] - Biologically plausible predictive coding framework using local contrastive learning and activity cancellation to achieve hierarchical prediction through layered surprise cascades, demonstrating that key principles of predictive coding can emerge from simple local learning rules without biologically implausible mechanisms (arXiv: 2608.05481)
+  - Uses recurrent variant of Forward-Forward algorithm with inverted objective that increases activity for negative data
+  - Captures hallmark features of cortical computation such as top-down modulation and surprise signaling
+  - Offers new bridge between neuroscience and machine learning with local learning rules compatible with synaptic plasticity
+  - **Activation**: predictive coding, surprise cascades, local learning rules, hierarchical prediction, cortical computation, activity cancellation
+
 ### An entropic explanation of insistence on sameness in autism
 - [[entropic-explanation-autism-sameness]] - Information theory-based framework explaining insistence on sameness in autism through entropy minimization using metric D_H(R, M) = H(R|M) + H(M|R) to quantify surprise and uncertainty reduction strategies (arXiv: 2608.04616)
   - Provides formal definitions for surprise, uncertainty, sensory overload, anxiety, comfort zone, and aberrant precision
