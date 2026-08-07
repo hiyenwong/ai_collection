@@ -1,96 +1,95 @@
 ---
 name: layered-surprise-cascades-predictive-coding
-description: "Biologically plausible predictive coding framework using local contrastive learning and activity cancellation to achieve hierarchical prediction through layered surprise cascades. Activation: predictive coding, surprise cascades, local learning rules."
+title: Layered Surprise Cascades Predictive Coding
+version: 1.0.0
+description: Biologically plausible framework for hierarchical predictive coding using local contrastive learning and activity cancellation, based on the Forward-Forward algorithm with inverted objective.
+author: Andrew L. Smith, Linxing Preston Jiang, Jason K. Eshraghian, Matthew S. Bull, Stefano Recanatesi
+arxiv_id: 2608.05481
+date: 2026-08-07
+tags:
+  - predictive coding
+  - surprise cascades
+  - forward-forward algorithm
+  - contrastive learning
+  - neural dynamics
+  - cortical computation
+  - three-factor Hebbian learning
 ---
+
+# Layered Surprise Cascades Predictive Coding
 
 ## Overview
 
-This methodology presents a biologically plausible framework for hierarchical predictive coding that emerges from simple local learning rules rather than complex error-coding neurons or generative modeling. Building on the Forward-Forward (FF) algorithm with an inverted objective, this approach increases activity for negative data, yielding predictive representations across layers that capture hallmark features of cortical computation.
+This methodology presents a biologically plausible framework for hierarchical predictive coding that emerges from local contrastive learning and simple activity cancellation. Building on the Forward-Forward (FF) algorithm, it uses an inverted objective that increases activity for negative data, yielding predictive representations across layers that capture hallmark features of cortical computation.
 
-**Key Innovation**: Demonstrates that key principles of predictive coding can emerge from simple, local learning rules without requiring biologically implausible mechanisms like backpropagation or explicit error units.
+## Key Contributions
 
-## Core Principles
+### Biological Plausibility
+- **No error-coding neurons required**: Unlike classical predictive coding models that rely on dedicated error neurons
+- **No weight symmetry**: Eliminates the need for symmetric feed-forward and feedback weights
+- **Local synaptic learning**: Uses only local synaptic updates with a simple global signal
+- **Three-factor Hebbian rule**: Mathematically equivalent to established principles of synaptic plasticity where updates depend on pre-synaptic activity, post-synaptic activity, and global gating
 
-### 1. Local Contrastive Learning
-- Uses recurrent variant of Forward-Forward algorithm
-- Inverted objective: increases activity for negative (surprising) data
-- Simple activity cancellation mechanism for prediction error minimization
+### Emergent Properties
+- **Bottom-up surprise cascade**: Despite top-down label delivery, the model learns bottom-up cancellation of predictable activity
+- **Top-down modulation**: Captures cortical top-down modulation effects
+- **Surprise signaling**: Amplifies responses to unexpected inputs while suppressing expected ones
+- **Hierarchical prediction**: Builds layered predictions that minimize surprise across the hierarchy
 
-### 2. Layered Surprise Cascades
-- Hierarchical structure where each layer builds predictions for the layer below
-- Top-down modulation emerges naturally from the architecture
-- Surprise signaling propagates through the hierarchy
+### Mathematical Foundation
+The local contrastive objective is proven to be mathematically equivalent to a three-factor Hebbian learning rule:
+```
+Δw_ij ∝ x_i * y_j * g
+```
+Where:
+- `x_i` = pre-synaptic activity
+- `y_j` = post-synaptic activity  
+- `g` = global gating signal (positive for negative data, negative for positive data)
 
-### 3. Biological Plausibility
-- No explicit error-coding neurons required
-- Local learning rules compatible with synaptic plasticity mechanisms
-- Activity-based computation aligns with neural population dynamics
+## Implementation Guidelines
 
-## Implementation Framework
-
-### Architecture Components
-1. **Recurrent Forward-Forward Layers**: Each layer processes positive and negative data streams
-2. **Activity Cancellation**: Simple subtraction mechanism for prediction error
-3. **Hierarchical Connections**: Feedforward and feedback pathways between layers
-4. **Surprise Detection**: Enhanced activity for unexpected inputs
+### Architecture
+- Use recurrent Forward-Forward networks with inverted objective
+- Implement local contrastive learning at each layer
+- Apply activity cancellation mechanisms between layers
+- Ensure global signal can modulate learning based on data positivity/negativity
 
 ### Training Procedure
-1. **Positive Phase**: Present expected/correct data to increase layer activity
-2. **Negative Phase**: Present surprising/incorrect data to further increase activity (inverted FF objective)
-3. **Local Weight Updates**: Update weights based on local activity differences
-4. **Hierarchical Coordination**: Coordinate learning across layers through activity propagation
+1. **Positive phase**: Present real data, apply negative global signal to decrease activity
+2. **Negative phase**: Present corrupted/noisy data, apply positive global signal to increase activity  
+3. **Local updates**: Perform synaptic updates using three-factor Hebbian rule at each layer
+4. **Hierarchical propagation**: Allow cancellation signals to propagate bottom-up while predictions flow top-down
+
+### Validation Metrics
+- Measure surprise amplification across layers for unexpected inputs
+- Verify suppression of predictable features in early layers
+- Test top-down modulation effects on lower layer responses
+- Evaluate reconstruction quality and prediction accuracy
 
 ## Applications
 
 ### Neuroscience Research
-- Modeling cortical predictive coding without biologically implausible assumptions
-- Understanding top-down modulation in sensory processing
-- Explaining surprise signaling in neural populations
+- Model cortical predictive processing without biologically implausible assumptions
+- Generate testable hypotheses about neural surprise signaling
+- Bridge machine learning advances with neuroscientific observations
 
 ### Machine Learning
-- Building more biologically realistic neural network architectures
-- Developing robust prediction systems with local learning rules
-- Creating hierarchical models that don't require backpropagation
+- Develop more biologically plausible deep learning architectures
+- Create efficient predictive models for time-series forecasting
+- Build robust anomaly detection systems based on surprise cascades
 
-## Key Benefits
+## Experimental Predictions
 
-- **Biological Plausibility**: Compatible with known neural mechanisms
-- **Computational Efficiency**: Local learning reduces computational overhead
-- **Robustness**: Emergent predictive coding provides noise tolerance
-- **Scalability**: Hierarchical structure supports complex predictions
-
-## Validation Metrics
-
-- **Top-down Modulation**: Measure influence of higher layers on lower layer activity
-- **Surprise Signaling**: Quantify enhanced responses to unexpected inputs
-- **Prediction Accuracy**: Evaluate quality of hierarchical predictions
-- **Learning Efficiency**: Compare convergence rates with traditional methods
-
-## Integration Guidelines
-
-### For Neural Modeling
-- Implement with spiking neural networks for maximum biological fidelity
-- Use membrane potential dynamics to model activity accumulation
-- Incorporate synaptic plasticity rules for local weight updates
-
-### For AI Systems
-- Apply to vision and language tasks requiring hierarchical prediction
-- Combine with attention mechanisms for selective processing
-- Use for anomaly detection through surprise-based signaling
+1. **Neural recordings should show**: Bottom-up waves of activity suppression followed by surprise amplification
+2. **Synaptic plasticity experiments**: Should reveal three-factor learning rules with global neuromodulatory signals
+3. **Perturbation studies**: Disrupting global signals should impair hierarchical prediction without affecting local learning
 
 ## References
 
-- **Primary Source**: Smith, A.L., Jiang, L.P., Eshraghian, J.K., Bull, M.S., & Recanatesi, S. (2026). From Local Learning to Global Prediction Through Layered Surprise Cascades. arXiv:2608.05481 [q-bio.NC]
-- **Related Work**: Hinton, G.E. (2022). The Forward-Forward Algorithm: Some Preliminary Investigations
-- **Predictive Coding**: Rao, R.P.N., & Ballard, D.H. (1999). Predictive coding in the visual cortex
+- Smith, A. L., Jiang, L. P., Eshraghian, J. K., Bull, M. S., & Recanatesi, S. (2026). From Local Learning to Global Prediction Through Layered Surprise Cascades. arXiv:2608.05481 [q-bio.NC].
+- Hinton, G. E. (2022). The Forward-Forward Algorithm: Some Preliminary Investigations. arXiv:2212.13345.
+- Rao, R. P., & Ballard, D. H. (1999). Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects. Nature neuroscience, 2(1), 79-87.
 
 ## Activation Keywords
 
-- predictive coding
-- surprise cascades  
-- local learning rules
-- hierarchical prediction
-- cortical computation
-- activity cancellation
-- contrastive learning
-- top-down modulation
+Use when: implementing biologically plausible predictive coding, studying surprise cascades in neural networks, developing contrastive learning with hierarchical structure, modeling cortical top-down modulation, or exploring three-factor Hebbian learning rules.
