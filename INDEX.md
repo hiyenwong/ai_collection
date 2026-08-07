@@ -1,3 +1,21 @@
+## 2026-08-08 - Neuroscience Research (Cron Job)
+
+### Complexity and Stability of Neural Activity Across Aging and Neurodegenerative Disease
+- [[complexity-stability-neural-activity-aging-disease]] - Distribution-level framework for understanding neural stability across cognition, aging, and neurodegenerative disease using Wasserstein distance for temporal stability and intrinsic dimensionality for representational complexity, showing that neural representations exhibit constrained condition-specific stability rather than unconstrained drift, with healthy aging characterized by increased dimensionality and reduced stability while Alzheimer's disease shows joint collapse of both (arXiv: 2608.05882)
+  - Models EEG as distributions of windowed activity patterns rather than point estimates
+  - Reveals inverse relationship between intrinsic dimensionality and stability (richer representations are less reproducible)
+  - Shows reproducible spatial organization with posterior regions having higher dimensionality and lower stability than frontal regions
+  - Provides principled approach for quantifying neural representational stability with potential utility as sensitive biomarker for cognitive aging and neurodegeneration
+  - **Activation**: neural stability, EEG distribution analysis, Wasserstein distance EEG, intrinsic dimensionality, neural complexity, cognitive aging, Alzheimer's biomarkers
+
+### Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling
+- [[effective-pruning-task-trained-rnn-noisy-fluctuations]] - Biologically-plausible pruning methodology for task-trained recurrent neural networks using noisy fluctuations to determine connection importance and connection rescaling to preserve average synaptic strength, greatly outperforming magnitude-based pruning and performing on par with non-local second-order methods while using only local information (arXiv: 2608.05464)
+  - Uses noise-prune algorithm that samples connections to preserve based on importance rather than deterministic thresholding
+  - Strengthens retained connections with optimal empirical rescaling factor (~0.8) lower than theoretical prediction (1.0)
+  - Validates noise-prune as effective biologically-plausible pruning rule for functional recurrent network architectures
+  - Characterizes optimal parameter settings for practical implementation
+  - **Activation**: noise-prune, RNN pruning, recurrent network pruning, biologically plausible pruning, task-trained RNN, connection rescaling, noisy fluctuations
+
 ## 2026-08-07 - Neuroscience Research (Cron Job)
 
 ### From Local Learning to Global Prediction Through Layered Surprise Cascades
