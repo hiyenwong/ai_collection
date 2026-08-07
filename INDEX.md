@@ -1,5 +1,13 @@
 ## 2026-08-07 - Neuroscience Research (Cron Job)
 
+### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
+- [[spikingnav-embodied-navigation-snn]] - SpikingNav methodology for robust embodied navigation using Spiking Neural Networks (SNNs) with Spiking Sensing Encoder (SSE) and Spiking Policy Network (SPN), achieving competitive clean performance and stronger robustness under visual corruptions with fewer parameters and lower per-step computation than ANN baseline, validated on Thruster-V2 neuromorphic chip (arXiv: 2608.05078)
+  - Combines Spiking Sensing Encoder for task-conditioned visual features with Spiking Policy Network maintaining recurrent policy state through membrane integration, thresholding, and spike-triggered reset
+  - Improves ObjectNav success from 31.05% to 34.12% and raises average success under visual corruptions from 8.45% to 13.71%
+  - Demonstrates deployability on Thruster-V2 neuromorphic chip for real cyber-physical systems
+  - Offers energy-efficient, corruption-resistant navigation for resource-constrained platforms
+  - **Activation**: spikingnav, embodied navigation, spiking neural policies, neuromorphic navigation, SNN robotics
+
 ### From Local Learning to Global Prediction Through Layered Surprise Cascades
 - [[layered-surprise-cascades]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation, building on Forward-Forward algorithm with inverted objective to increase activity for negative data, yielding predictive representations that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
   - Uses recurrent variant of Forward-Forward algorithm with inverted objective for negative data
