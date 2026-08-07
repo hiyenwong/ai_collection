@@ -24,7 +24,14 @@
   - Characterizes optimal parameter settings for practical implementation
   - **Activation**: noise-prune, RNN pruning, recurrent network pruning, biologically plausible pruning, task-trained RNN, connection rescaling, noisy fluctuations
 
-## 2026-08-07 - Neuroscience Research (Cron Job)
+### MoDAl: Self-Supervised Neural Modality Discovery via Decorrelation for Speech Neuroprosthesis
+- [[modal-neural-modality-discovery]] - MoDAl (Modality Decorrelation and Alignment) framework for self-supervised neural modality discovery in speech neuroprosthesis using contrastive alignment with LLM text embeddings and decorrelation loss to discover complementary neurolinguistic modalities from multiple brain regions like Broca's area 44, reducing word error rate from 26.3% to 21.6% on Brain-to-Text Benchmark '24 (arXiv: 2605.00025)
+  - Uses productive tension between contrastive alignment (induces transitive modality coalescence) and decorrelation loss (prevents duplicative representations)
+  - Area 44 encoders capture structural/syntactic properties (sentence length, grammatical voice, wh-words) consistent with neurolinguistic understanding of Broca's area
+  - Entire performance gain from incorporating previously discarded area 44 signals arises from decorrelation mechanism
+  - Provides framework for multi-modal brain-computer interfaces that leverage complementary information from different brain areas
+  - **Activation**: MoDAl, modality decorrelation, neural modality discovery, speech neuroprosthesis, brain-to-text decoding, contrastive decorrelation, Broca area decoding, multi-region brain encoding, LLM alignment
+
 ## 2026-08-07 - Neuroscience Research (Cron Job)
 
 ### Convergent Evolution in Algorithmic Space
@@ -52,9 +59,9 @@
   - **Activation**: spikingnav, embodied navigation, spiking neural policies, neuromorphic navigation, SNN robotics
 
 ### From Local Learning to Global Prediction Through Layered Surprise Cascades
-- [[layered-surprise-cascades]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation, building on Forward-Forward algorithm with inverted objective to increase activity for negative data, yielding predictive representations that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
+- [[layered-surprise-cascades-predictive-coding]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation, building on Forward-Forward algorithm with inverted objective to increase activity for negative data, yielding predictive representations that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
   - Uses recurrent variant of Forward-Forward algorithm with inverted objective for negative data
   - Emergent predictive representations capture hallmark cortical computation features like top-down modulation and surprise signaling
   - Demonstrates that key principles of predictive coding can emerge from simple, local learning rules
   - Offers new bridge between neuroscience and machine learning for biologically plausible AI
-  - **Activation**: layered surprise cascades, hierarchical predictive coding, local contrastive learning, activity cancellation, surprise signaling
+  - **Activation**: layered surprise cascades, hierarchical predictive coding, local contrastive learning, activity cancellation, surprise signaling, top-down modulation, forward-forward algorithm, cortical computation
