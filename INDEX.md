@@ -8,6 +8,13 @@
   - Establishes practical baseline for future quantum clinical time-series forecasting applications
   - **Activation**: quantum reservoir computing, neurodynamical forecasting, neural time-series prediction, quantum EEG forecasting, transverse-field Ising model
 
+### SpikeRestormer: Towards Energy-Efficient All-in-One Image Restoration via Unified Event Reasoning
+- [[spikerestormer-unified-event-reasoning]] - SpikeRestormer methodology for energy-efficient all-in-one image restoration using Spiking Neural Networks with unified event reasoning, solving the challenge of applying SNNs to static images by generating internal spike events for degradation perception and restoration construction (arXiv: 2608.02290)
+  - Uses Subtractive Degradation Event Attention (SDEA), Hierarchical Bayesian Skip Masking (HBSM), and Additive Restoration Event Attention (AREA) for unified event reasoning
+  - Achieves competitive performance against ANN-based methods with significantly lower energy consumption
+  - Establishes new state-of-the-art results among SNN-based image restoration approaches
+  - **Activation**: spikerestormer, unified event reasoning, SNN image restoration, energy-efficient restoration, degradation event attention
+
 ## 2026-08-07 - Systems Engineering Research (Cron Job)
 
 ### ORACLE: A Multi-Objective Reinforcement Learning-Based Analog Circuit Design Optimizer with Large Language Models-Guided Exploration
