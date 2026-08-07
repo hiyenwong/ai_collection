@@ -1,3 +1,19 @@
+## 2026-08-07 - Systems Engineering Research (Cron Job)
+
+### ORACLE: A Multi-Objective Reinforcement Learning-Based Analog Circuit Design Optimizer with Large Language Models-Guided Exploration
+- [[oracle-multi-objective-rl-circuit-design]] - Multi-objective reinforcement learning framework for analog circuit design optimization using vector-valued learning, preference-aware conditioning, and LLM-guided action selection to achieve Pareto-optimal trade-offs without retraining (arXiv: 2608.04999)
+  - Replaces scalar reward optimization with vector-valued learning using preference vectors
+  - Enables single trained model to generate designs across diverse trade-off settings
+  - Incorporates LLM-guided action selection to filter suboptimal designs and reduce runtime
+  - **Activation**: analog circuit design, multi-objective optimization, reinforcement learning, LLM-guided design, preference conditioning
+
+### Transforming Remanufacturing Automation with Large Language Models: A Forward-Looking Analysis with Case Studies
+- [[remangpt-remanufacturing-automation-llm]] - Framework for transforming remanufacturing automation using LLMs to address variability and uncertainty in end-of-life products, featuring knowledge integration, inspection/diagnosis, decision support, human-machine collaboration, and robotic automation modules (arXiv: 2608.04854)
+  - Mitigates reliance on specialized human expertise in remanufacturing processes
+  - Leverages LLM capabilities for learning from unstructured data and generating expert-level output
+  - Includes application-specific solutions for electric vehicle batteries, electronic waste, and electric motors
+  - **Activation**: remanufacturing automation, circular economy, end-of-life products, LLM-assisted manufacturing, ReManGPT
+
 ## 2026-08-07 - Neuroscience Research (Cron Job)
 
 ### An entropic explanation of insistence on sameness in autism
@@ -8,6 +24,12 @@
   - **Activation**: autism entropy framework, insistence on sameness, D_H(R, M) metric, surprise uncertainty autism, information theory autism
 
 ### IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers
+- [[iris-visual-cortex-framework-vit]] - A visual cortex-inspired framework for analyzing orientation selectivity in Vision Transformers by comparing their feature representations with biological visual systems (arXiv: 2608.05122)
+  - Demonstrates that ViTs can develop orientation-selective features despite lacking local inductive biases
+  - Uses Gabor filters to analyze low-level feature encoding in ViTs
+  - Provides insights into how global attention mechanisms can implicitly learn local structure
+  - **Activation**: vision transformers, orientation selectivity, visual cortex, Gabor filters, low-level features
+
 - [[iris-visual-cortex-framework-vit]] - Neuroscience-inspired framework introducing RSS, ORS, and orientation tuning bandwidth metrics to quantify how orientation selectivity emerges in Vision Transformers during training (arXiv: 2608.05122)
   - Demonstrates that training paradigm is the strongest determinant of orientation selectivity, peaking at comparable relative depths regardless of scale
   - Shows early-to-middle layers recruit orientation-selective units over time, while deeper layers lose selectivity and broaden tuning toward semantic encoding
