@@ -1,3 +1,13 @@
+## 2026-08-07 - Quantum Reservoir Computing for Neurodynamical Forecasting (Cron Job)
+
+### A Quantum Reservoir for Neurodynamical Forecasting
+- [[quantum-reservoir-neurodynamical-forecasting]] - Quantum Reservoir Computing (QRC) methodology using transverse-field Ising model, heterogeneous quantum measurements, and polynomial ridge regression for neural time-series forecasting, demonstrating feasibility on near-term quantum hardware with stable convergence on EEG-like data (arXiv: 2608.00139)
+  - Uses transverse-field Ising model as quantum reservoir base architecture
+  - Combines heterogeneous quantum measurements with polynomial ridge regression readout
+  - Outperforms classical reservoirs on standard benchmarks but shows stable convergence (not superior performance) on complex EEG signals
+  - Establishes practical baseline for future quantum clinical time-series forecasting applications
+  - **Activation**: quantum reservoir computing, neurodynamical forecasting, neural time-series prediction, quantum EEG forecasting, transverse-field Ising model
+
 ## 2026-08-07 - Systems Engineering Research (Cron Job)
 
 ### ORACLE: A Multi-Objective Reinforcement Learning-Based Analog Circuit Design Optimizer with Large Language Models-Guided Exploration
@@ -7,7 +17,7 @@
   - Incorporates LLM-guided action selection to filter suboptimal designs and reduce runtime
   - **Activation**: analog circuit design, multi-objective optimization, reinforcement learning, LLM-guided design, preference conditioning
 
-### Transforming Remanufacturing Automation with Large Language Models: A Forward-Looking Analysis with Case Studies
+### Transforming Remanufacturing Automation with Large Language Models: A Forward-Looking Analysis with Case Studies### Transforming Remanufacturing Automation with Large Language Models: A Forward-Looking Analysis with Case Studies
 - [[remangpt-remanufacturing-automation-llm]] - Framework for transforming remanufacturing automation using LLMs to address variability and uncertainty in end-of-life products, featuring knowledge integration, inspection/diagnosis, decision support, human-machine collaboration, and robotic automation modules (arXiv: 2608.04854)
   - Mitigates reliance on specialized human expertise in remanufacturing processes
   - Leverages LLM capabilities for learning from unstructured data and generating expert-level output
