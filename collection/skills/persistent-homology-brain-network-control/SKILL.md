@@ -1,66 +1,99 @@
 ---
 name: persistent-homology-brain-network-control
-description: "Persistent homology broadens the controllable subspace in human structural connectomes - methodology for using topological cycles as driver node selection criterion in brain network control theory, revealing dissociation between control cost and control geometry. Use when analyzing brain network controllability, persistent homology applications in neuroscience, or network control theory with topological data analysis."
-metadata:
-  arxiv_id: "2608.03181"
-  published: "2026-08-04"
-  authors: "Carter Sale, Marco Coraggio, Mengsen Zhang, Michael J. Richardson"
-  tags: [persistent-homology, brain-networks, network-control-theory, structural-connectomes, topological-data-analysis]
+description: Persistent homology methodology for brain network control that broadens the controllable subspace in human structural connectomes. Uses topological cycles to identify driver nodes beyond traditional degree-based selection, revealing dissociation between control cost and control geometry. Use when analyzing brain network controllability, structural connectomes, or topological neuroscience applications.
 license: Complete terms in LICENSE.txt
 ---
 
-# Persistent Homology Brain Network Control
+# Persistent Homology Broadens the Controllable Subspace in Human Structural Connectomes
 
 ## Overview
 
-This skill implements the methodology from the paper "Persistent homology broadens the controllable subspace in human structural connectomes" (arXiv:2608.03181) which introduces an alternative criterion for selecting driver nodes in brain network control based on persistent topological cycles rather than traditional degree-based selection.
+This methodology challenges the conventional network control theory approach to structural connectomes, which typically ranks brain regions as candidate driver nodes based solely on their structural connectivity strength (degree). While this approach evaluates performance through scalar control energy, it misses crucial information about the geometry of the controllable subspace.
 
-The key insight is that while topology-informed and degree-informed driver sets achieve nearly identical scalar control energy (differing by only ~0.2%), they produce substantially different geometries of the controllable subspace. Topology-informed sets distribute controllability across more dimensions of state space and produce better-conditioned controllability matrices.
+The persistent homology approach introduces an alternative criterion based on the **persistent topological cycles** in which each node participates—a measure of mesoscale integration that captures features beyond local connectivity.
 
-## Core Methodology
+## Key Insights
 
-### 1. Driver Node Selection Criteria
+### Dissociation Between Control Cost and Control Geometry
+- **Scalar control energy**: Topology- and degree-informed driver sets achieve nearly identical scalar control energy (differing by only ~0.2%)
+- **Controllable subspace geometry**: Substantially different geometric properties
+  - Topology-informed sets distribute controllability across more dimensions of state space
+  - Produce better-conditioned controllability matrices
+  - Preserve geometric advantage even when high-degree hub nodes are removed
 
-**Traditional approach**: Rank brain regions as candidate driver nodes by their structural connectivity strength (degree).
+### Functional Signatures
+- Different node-ranking criteria place driver nodes in different cortical territories
+- Each criterion most efficiently reaches a different class of target state
+- Choice of ranking criterion shapes which brain-state transitions are energetically favored, even when average control cost remains unchanged
 
-**Topological approach**: Rank nodes based on the persistent topological cycles in which each node participates - a measure of mesoscale integration that captures features beyond local connectivity.
+## Methodology
 
-### 2. Key Findings
+### Persistent Topological Cycles
+- Compute persistent homology on structural connectomes at multiple parcellation scales
+- Identify mesoscale integration patterns captured by topological cycles
+- Rank nodes based on their participation in persistent topological features
+- Compare with traditional degree-based selection across multiple subjects (n=70)
 
-- **Control cost equivalence**: Both criteria achieve nearly identical scalar control energy (~0.2% difference)
-- **Geometric advantage**: Topology-informed sets distribute controllability across more state space dimensions
-- **Better conditioning**: Produce better-conditioned controllability matrices
-- **Robustness**: Geometric advantage preserved even when high-degree hub nodes are removed
-- **Functional signature**: Different cortical territories lead to different classes of efficiently reachable target states
+### Evaluation Framework
+- **Control Energy**: Standard scalar metric for comparison
+- **Controllability Matrix Conditioning**: Measure of geometric properties
+- **State Space Coverage**: Dimensions of state space effectively controlled
+- **Functional Target Efficiency**: Ability to reach specific brain states
 
-### 3. Implementation Steps
+## Implementation Guidelines
 
-1. **Compute persistent homology** on structural connectome to identify topological cycles
-2. **Rank nodes** by participation in persistent topological cycles
-3. **Compare controllability matrices** between topology-informed and degree-informed driver sets
-4. **Analyze geometric properties** of controllable subspaces (condition number, dimensionality)
-5. **Evaluate functional signatures** by testing reachability of different target state classes
+### Data Requirements
+- Human structural connectomes (diffusion MRI derived)
+- Multiple parcellation scales for robustness validation
+- Sufficient sample size (≥50 subjects recommended)
+
+### Computational Steps
+1. **Preprocessing**: Quality control and normalization of structural connectomes
+2. **Persistent Homology Computation**: Apply persistent homology algorithms to identify topological cycles
+3. **Node Ranking**: Rank nodes by topological participation vs. degree
+4. **Control Analysis**: Compute controllability metrics for both ranking methods
+5. **Statistical Validation**: Compare geometric and functional differences
+
+### Software Tools
+- Network control theory libraries (e.g., NCToolbox)
+- Persistent homology computation (e.g., GUDHI, Ripser)
+- Brain connectivity analysis frameworks (e.g., Brain Connectivity Toolbox)
+- Statistical analysis packages for neuroimaging data
 
 ## Applications
 
-- Brain network control analysis
-- Structural connectome analysis
-- Topological data analysis in neuroscience
-- Network control theory validation
-- Mesoscale integration studies
+- **Brain Network Control**: Improved understanding of how to control brain dynamics
+- **Neuromodulation Target Selection**: Better targets for TMS, DBS, or other interventions
+- **Individualized Treatment Planning**: Patient-specific driver node identification
+- **Cognitive Neuroscience**: Understanding individual differences in cognitive control
+- **Network Neuroscience**: Bridging microscopic connectivity with macroscopic function
 
-## Pitfalls and Considerations
+## Advantages Over Traditional Methods
 
-- **Parcellation scale dependency**: Results validated across three parcellation scales (70 human structural connectomes)
-- **Hub node removal**: Topological advantage persists even after removing high-degree hubs
-- **State space geometry**: Focus on geometric properties beyond scalar energy metrics
-- **Functional relevance**: Different driver criteria favor different brain-state transitions
+1. **Captures Mesoscale Integration**: Goes beyond local connectivity measures
+2. **Reveals Hidden Geometric Structure**: Identifies control properties missed by scalar metrics
+3. **Robust to Hub Removal**: Maintains advantages even when high-degree nodes are excluded
+4. **Functionally Relevant**: Maps to different classes of achievable brain states
+5. **Multi-scale Validation**: Consistent results across different parcellation schemes
+
+## Limitations and Considerations
+
+- **Computational Complexity**: Persistent homology computation can be resource-intensive
+- **Interpretability**: Topological features may be less intuitive than degree measures
+- **Data Quality Dependence**: Requires high-quality structural connectome data
+- **Validation Requirements**: Needs functional validation to confirm behavioral relevance
 
 ## Activation Keywords
+- persistent homology
+- brain network control
+- structural connectomes
+- controllable subspace
+- topological neuroscience
+- network control theory
+- driver nodes
 
-- persistent homology brain network
-- topological cycles controllability  
-- brain network control geometry
-- structural connectome topology
-- mesoscale integration neuroscience
-- network control theory topology
+## References
+- arXiv:2608.03181 - Original paper
+- Network control theory literature
+- Persistent homology in neuroscience applications
+- Structural connectome analysis methods
