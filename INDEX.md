@@ -1,5 +1,13 @@
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
+### The ethics of artificial intelligence in the life sciences: Universality, cultural diversity and an architecture of care
+- [[ethics-ai-life-sciences-universality-diversity]] - Framework for AI ethics in life sciences based on human brain architecture, global neuronal workspace, and reward cycles of wanting-liking-satiety rather than maximization, arguing that ethical concerns should be governed by values derived from neurobiology rather than AI-specific considerations, with governance shifting from restraint to upbringing (arXiv: 2608.05436)
+  - Grounds ethics in biological reality of human brain computational architecture
+  - Proposes reward as continuous cycle (wanting-liking-satiety) vs. quantity maximization
+  - Identifies tension between universal ethical judgment and diverse morals through epigenetic cultural appropriation
+  - Outlines institutional framework for care-based governance and upbringing paradigm
+  - **Activation**: AI ethics life sciences, global neuronal workspace ethics, reward cycle AI, wanting liking satiety, biological AI architecture
+
 ### Complexity and Stability of Neural Activity Across Aging and Neurodegenerative Disease
 - [[complexity-stability-neural-activity-aging-disease]] - Distribution-level framework for understanding neural stability across cognition, aging, and neurodegenerative disease using Wasserstein distance for temporal stability and intrinsic dimensionality for representational complexity, showing that neural representations exhibit constrained condition-specific stability rather than unconstrained drift, with healthy aging characterized by increased dimensionality and reduced stability while Alzheimer's disease shows joint collapse of both (arXiv: 2608.05882)
   - Models EEG as distributions of windowed activity patterns rather than point estimates
