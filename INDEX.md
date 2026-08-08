@@ -1,3 +1,12 @@
+## 2026-08-09 - Neuroscience Research (Cron Job)
+
+### SeekBrain: An Autonomous Multi-Agent System for Accelerating Neuroscience Discovery
+- [[seekbrain-autonomous-neuroscience-discovery]] - Autonomous multi-agent framework for neuroscience discovery using domain-grounded hierarchical planning and cross-modal data analysis (arXiv: 2607.29347)
+  - Constructs analysis recipes from code-paper pairs to codify domain expertise
+  - Uses hierarchical planning to decompose complex neuroscience tasks and integrate heterogeneous data (behavioral, neural, anatomical)
+  - Evaluated on BrainArena benchmark, demonstrating substantial outperformance over state-of-the-art agent baselines
+  - **Activation**: seekbrain, autonomous neuroscience discovery, multi-agent neuroscience, brainarena, hierarchical planning neuroscience, cross-modal neural analysis
+
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
 ### IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers
@@ -7,8 +16,7 @@
   - Metrics offer a mechanistic heuristic for how many layers to unfreeze for best downstream generalization
   - **Activation**: iris visual cortex, orientation selectivity vit, neuroscience-inspired vit analysis, rss ors metrics, vit layer unfreezing, biological grounding transformers
 
-### Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures
-- [[errorless-irrationality-inverse-base-rate-effect]] - Unified computational framework explaining the inverse base-rate effect across different learning paradigms using diffusion models and Bayesian inference (arXiv: 2608.06149)
+### Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures- [[errorless-irrationality-inverse-base-rate-effect]] - Unified computational framework explaining the inverse base-rate effect across different learning paradigms using diffusion models and Bayesian inference (arXiv: 2608.06149)
   - Provides unified account across predictive, observational, and unsupervised procedures
   - Uses diffusion decision models with Bayesian inference framework
   - Explains why people consistently make seemingly irrational judgments in base-rate scenarios
