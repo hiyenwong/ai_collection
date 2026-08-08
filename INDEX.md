@@ -20,6 +20,22 @@
 
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
+### Time²: A framework for the neural dynamics of visual perception
+- [[time2-neural-dynamics-visual-perception]] - Framework for analyzing neural dynamics of visual perception by simultaneously measuring processing time and stimulus time using reverse correlation methodology, enabling precise characterization of rhythmic perception, predictive processing, and coarse-to-fine sampling (arXiv: 2608.04218)
+  - Distinguishes between processing time (brain processing duration) and stimulus time (retinal input duration)
+  - Uses reverse correlation to reconstruct 2D spatiotemporal receptive fields across both temporal dimensions
+  - Reveals diagonal patterns (real-time processing), off-diagonal patterns (predictive/integrative processing), and temporal bandwidth
+  - Provides guidelines for experimental design, data analysis, and interpretation of temporal neural dynamics
+  - **Activation**: Time² framework, processing time and stimulus time, visual perception temporal dynamics, reverse correlation neuroscience, rhythmic perception analysis, predictive processing timing, coarse-to-fine visual sampling
+
+### An entropic explanation of insistence on sameness in autism
+- [[entropic-explanation-autism-sameness]] - Information theory-based framework explaining insistence on sameness in autism as entropy minimization behavior, using metric D_H(R, M) = H(R|M) + H(M|R) to quantify surprise and uncertainty, providing formal foundations for therapies and robotic caregivers (arXiv: 2608.04616)
+  - Defines autism as cognitive impairment restricted to discrimination, memorization and prediction of tangible environmental properties
+  - Shows insistence on sameness is strategy to minimize entropy by restricting R to known M rather than learning about R
+  - Quantifies concepts like surprise, uncertainty, sensory overload, anxiety, comfort zone, and aberrant precision
+  - Provides guidelines for learning therapies, daily care routines, and robotic live-in caregivers as optimization algorithms
+  - **Activation**: autism entropy framework, insistence on sameness, D_H(R, M) metric, surprise uncertainty autism, information theory autism, robotic autism caregivers
+
 ### Convergent Evolution in Neural Representation Space: Emergent Order in Deep Belief Networks
 - [[convergent-evolution-neural-representation-space]] - Framework demonstrating how Deep Belief Networks spontaneously uncover and progressively amplify class-related structure in unlabeled data through layer-wise generative learning, despite no label information during training, showing that class-specific clustering increases with depth across datasets (arXiv: 2608.05996)
   - Demonstrates spontaneous emergence of class structure in purely unsupervised hierarchical learning
