@@ -94,12 +94,26 @@ def parse_fetch_output(output):
 def load_index_json():
     if INDEX_JSON.exists():
         with open(INDEX_JSON, 'r') as f:
-            return json.load(f)
+            data = json.load(f)
+        # Convert list to dict for easy lookup by arxiv id
+        if isinstance(data, list):
+            return {item['id']: item for item in data}
+        return data
     return {}
 
 def save_index_json(data):
+    # data is expected to be a dict mapping arxiv_id to item
+    # Convert to list, preserving order? We'll just sort by id for consistency.
+    # But to maintain existing order, we need to load the original list and update.
+    # Simpler: save as a list sorted by arxiv id.
+    if isinstance(data, dict):
+        data_list = list(data.values())
+        # Sort by id for deterministic output
+        data_list.sort(key=lambda x: x['id'])
+    else:
+        data_list = data
     with open(INDEX_JSON, 'w') as f:
-        json.dump(data, f, indent=2)
+        json.dump(data_list, f, indent=2)
 
 def load_index_md():
     if INDEX_FILE.exists():
@@ -306,6 +320,7 @@ This skill can be used to reference the paper's concepts, methodologies, or find
         else:
             # Add new entry
             index_data[arxiv_id] = {
+                "id": arxiv_id,
                 "title": entry['title'],
                 "file": f"collection/skills/{category}/{skill_dir_name}/SKILL.md",
                 "keywords": [],
