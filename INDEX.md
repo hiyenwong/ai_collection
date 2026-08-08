@@ -43,6 +43,14 @@
   - Provides framework for multi-modal brain-computer interfaces that leverage complementary information from different brain areas
   - **Activation**: MoDAl, modality decorrelation, neural modality discovery, speech neuroprosthesis, brain-to-text decoding, contrastive decorrelation, Broca area decoding, multi-region brain encoding, LLM alignment
 
+### Explanations of Large Language Models Explain Language Representations in the Brain
+- [[llm-explanations-brain-alignment]] - Methodology for using explainable AI attribution methods to understand and predict LLM-brain alignment during language processing, using gradient-based attribution to quantify word contributions to LLM predictions and predict fMRI data from narrative listening tasks, demonstrating that attribution-based explanations outperform internal representations in early auditory regions and reveal layer-specific computational properties mapping to different brain regions (arXiv: 2502.14671)
+  - Uses gradient-based attribution methods (Integrated Gradients) to robustly align with brain activity and predict fMRI responses
+  - Extends attribution to individual layers using conductance analysis, showing early layers have greater word-type sensitivity aligning with auditory regions while final layer is dominated by positional information with broad cortical alignment
+  - Contributes unique variance beyond acoustic and word-rate confounds, providing interpretable insights into LLM-brain correspondence
+  - Validates across multiple attribution methods and narrative datasets with consistent results
+  - **Activation**: LLM-brain alignment, XAI attribution, fMRI prediction, gradient attribution, conductance analysis, language neuroscience
+
 ## 2026-08-07 - Neuroscience Research (Cron Job)
 
 ### Convergent Evolution in Algorithmic Space
