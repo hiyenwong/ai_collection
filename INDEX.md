@@ -20,6 +20,14 @@
 
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation, building on Forward-Forward algorithm with inverted objective to increase activity for negative data, yielding predictive representations across layers that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
+  - Implements biologically plausible framework where functional goals emerge from simple local learning rules without error-coding neurons
+  - Uses recurrent Forward-Forward variant with inverted objective that increases activity for negative data
+  - Captures hallmark features of cortical computation: top-down modulation and surprise signaling
+  - Avoids complex generative modeling of unclear biological plausibility
+  - **Activation**: layered surprise cascades, predictive coding framework, contrastive learning neuroscience, forward-forward algorithm inverted, cortical computation model, surprise minimization hierarchy, activity cancellation neural, biologically plausible ML
+
 ### The ethics of artificial intelligence in the life sciences: Universality, cultural diversity and an architecture of care
 - [[ethics-ai-life-sciences-universality-diversity]] - Framework for AI ethics in life sciences based on human brain architecture, global neuronal workspace, and reward cycles of wanting-liking-satiety rather than maximization, arguing that ethical concerns should be governed by values derived from neurobiology rather than AI-specific considerations, with governance shifting from restraint to upbringing (arXiv: 2608.05436)
   - Grounds ethics in biological reality of human brain computational architecture
