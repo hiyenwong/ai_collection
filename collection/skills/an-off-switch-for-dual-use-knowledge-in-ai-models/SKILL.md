@@ -10,15 +10,16 @@ metadata:
 license: Complete terms in LICENSE.txt
 ---
 
-# An Off Switch For Dual Use Knowledge In Ai Models
+# GRAM - Gradient-Routed Auxiliary Modules
 
 ## Overview
+GRAM (Gradient-Routed Auxiliary Modules) is a training methodology that creates dedicated, removable compartments for dual-use knowledge in AI models. Instead of training separate filtered models for different deployment scenarios, GRAM enables a single model to be configured in multiple ways by adding extra neurons organized into modules, one per dual-use category.
 
-[TODO: 1-2 sentences explaining what this skill enables]
-
-## Structuring This Skill
-
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+## Core Concept
+- **Modular Architecture**: Add extra neurons to every layer of a standard Transformer, divided into groups (modules) by dual-use category
+- **Gradient Routing**: During training on dual-use data, only the relevant module updates while general-purpose weights are frozen  
+- **Knowledge Isolation**: Dual-use knowledge accumulates in dedicated modules rather than diffusing across the whole network
+- **Surgical Removal**: Modules can be deleted post-training to remove specific capabilities without affecting general performance
 
 **1. Workflow-Based** (best for sequential processes)
 - Works well when there are clear step-by-step procedures

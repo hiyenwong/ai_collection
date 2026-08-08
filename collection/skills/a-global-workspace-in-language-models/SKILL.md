@@ -10,15 +10,21 @@ metadata:
 license: Complete terms in LICENSE.txt
 ---
 
-# A Global Workspace In Language Models
+# Jacobian Lens (J-lens) Interpretability Methodology
 
 ## Overview
+The Jacobian lens (J-lens) is a technique for identifying and analyzing the "J-space" - a collection of internal neural patterns in language models that function as a global workspace for consciously accessible thoughts. Unlike standard chain-of-thought reasoning, the J-space operates silently in the model's internal activations, allowing the model to think about concepts without writing them down.
 
-[TODO: 1-2 sentences explaining what this skill enables]
+## Key Properties
+- **Consciously accessible**: The J-space contains thoughts the model can report on, deliberately bring to mind, and reason with
+- **Broadcasting hub**: J-space patterns have especially strong connections to the rest of the neural network, allowing information to be shared across different systems  
+- **Limited capacity**: Holds only a few dozen concepts at a time, accounting for less than 10% of overall activity
+- **Emergent structure**: Not designed or programmed, but emerges during training as a useful way to organize computation
 
-## Structuring This Skill
-
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+## How It Works
+1. **Finding the J-space**: For every word in the model's vocabulary, the J-lens finds the internal activity pattern that makes the model more likely to say that word at some point in the future
+2. **Reading contents**: Apply the lens to internal activity to get a list of words representing the current J-space contents  
+3. **Layer evolution**: Apply the technique across different layers to watch how silent thoughts evolve during processing
 
 **1. Workflow-Based** (best for sequential processes)
 - Works well when there are clear step-by-step procedures

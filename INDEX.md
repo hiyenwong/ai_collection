@@ -48,56 +48,29 @@
 - [[modal-neural-modality-discovery]] - MoDAl (Modality Decorrelation and Alignment) framework for self-supervised neural modality discovery in speech neuroprosthesis using contrastive alignment with LLM text embeddings and decorrelation loss to discover complementary neurolinguistic modalities from multiple brain regions like Broca's area 44, reducing word error rate from 26.3% to 21.6% on Brain-to-Text Benchmark '24 (arXiv: 2605.00025)
   - Uses productive tension between contrastive alignment (induces transitive modality coalescence) and decorrelation loss (prevents duplicative representations)
   - Area 44 encoders capture structural/syntactic properties (sentence length, grammatical voice, wh-words) consistent with neurolinguistic understanding of Broca's area
-  - Entire performance gain from incorporating previously discarded area 44 signals arises from decorrelation mechanism
-  - Provides framework for multi-modal brain-computer interfaces that leverage complementary information from different brain areas
-  - **Activation**: MoDAl, modality decorrelation, neural modality discovery, speech neuroprosthesis, brain-to-text decoding, contrastive decorrelation, Broca area decoding, multi-region brain encoding, LLM alignment
 
-### Explanations of Large Language Models Explain Language Representations in the Brain
-- [[llm-explanations-brain-alignment]] - Methodology for using explainable AI attribution methods to understand and predict LLM-brain alignment during language processing, using gradient-based attribution to quantify word contributions to LLM predictions and predict fMRI data from narrative listening tasks, demonstrating that attribution-based explanations outperform internal representations in early auditory regions and reveal layer-specific computational properties mapping to different brain regions (arXiv: 2502.14671)
-  - Uses gradient-based attribution methods (Integrated Gradients) to robustly align with brain activity and predict fMRI responses
-  - Extends attribution to individual layers using conductance analysis, showing early layers have greater word-type sensitivity aligning with auditory regions while final layer is dominated by positional information with broad cortical alignment
-  - Contributes unique variance beyond acoustic and word-rate confounds, providing interpretable insights into LLM-brain correspondence
-  - Validates across multiple attribution methods and narrative datasets with consistent results
-  - **Activation**: LLM-brain alignment, XAI attribution, fMRI prediction, gradient attribution, conductance analysis, language neuroscience
+## 2026-08-08 - Anthropic Research (Cron Job)
 
-## 2026-08-07 - Neuroscience Research (Cron Job)
+### A global workspace in language models
+- [[a-global-workspace-in-language-models]] - Jacobian lens (J-lens) methodology for analyzing internal representations in language models that function as a global workspace for conscious access, enabling detection of hidden thoughts and monitoring for misalignment
+  - Identifies J-space patterns that represent consciously accessible thoughts operating silently in internal activations
+  - Enables pattern swapping interventions to verify causal role in reasoning
+  - Reveals broadcasting capability with dense wiring to rest of neural network
+  - Allows monitoring for misbehavior through detection of patterns like "fake", "manipulation", "secretly"
+  - **Activation**: jacobian lens, j-lens, global workspace, conscious access, internal representations, hidden thoughts, model interpretability
 
-### Convergent Evolution in Algorithmic Space
-- [[convergent-evolution-algorithmic-space]] - Framework for analyzing convergent evolution in neural network weight structures during training using matching-based comparison with permutation-invariant features and Hungarian matching to identify task-specific attractors in weight space (arXiv: 2608.05985)
-  - Networks trained on same task remain closer to each other than to networks trained on different tasks
-  - Task-specific training guides initially random networks toward distinct regions (attractors) in structural network space
-  - Early learning shows rapid accuracy improvement before strong task-specific structural separation is visible
-  - Individual weight entries begin coordinated drift early, suggesting subtle distributed adjustments affect function while coarse morphology remains unchanged
-  - **Activation**: convergent evolution neural networks, structural weight space analysis, task-specific attractors, neural network morphogenesis, permutation-invariant neuron alignment
+### An off switch for dual-use knowledge in AI models
+- [[an-off-switch-for-dual-use-knowledge-in-ai-models]] - Gradient-Routed Auxiliary Modules (GRAM) methodology for surgically removing or gating specific dual-use capabilities while preserving general performance and resisting restoration via fine-tuning
+  - Adds auxiliary neurons divided into modules per dual-use category (virology, cybersecurity, etc.)
+  - Routes learning from dual-use data only to corresponding modules while freezing general weights
+  - Enables surgical removal of capabilities by deleting modules without affecting other performance
+  - Resists knowledge recovery attempts better than standard unlearning techniques
+  - **Activation**: gram, gradient-routed auxiliary modules, dual-use knowledge, off switch, capability removal, surgical filtering
 
-### Curriculum Multiple Shooting for Robust Training of Neural and Universal Differential Equations
-- [[curriculum-multiple-shooting-neural-odes]] - General-purpose training strategy for fitting ordinary differential equation models to time-series data by integrating curriculum learning with multiple shooting, accelerating and stabilizing training convergence for Neural ODEs, Universal Differential Equations, and mechanistic ODEs (arXiv: 2608.05777)
-  - Combines multiple shooting framework with curriculum learning for progressive complexity
-  - Handles sparse, irregular, and noisy time-series data more robustly than standard approaches
-  - Accelerates convergence and improves generalization across twelve benchmarks
-  - Works across NODEs, UDEs, and mechanistic ODE models
-  - **Activation**: curriculum multiple shooting, neural ordinary differential equations, universal differential equations, ODE training strategy, time-series ODE fitting
-
-### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
-- [[spikingnav-embodied-navigation-snn]] - SpikingNav methodology for robust embodied navigation using Spiking Neural Networks (SNNs) with Spiking Sensing Encoder (SSE) and Spiking Policy Network (SPN), achieving competitive clean performance and stronger robustness under visual corruptions with fewer parameters and lower per-step computation than ANN baseline, validated on Thruster-V2 neuromorphic chip (arXiv: 2608.05078)
-  - Combines Spiking Sensing Encoder for task-conditioned visual features with Spiking Policy Network maintaining recurrent policy state through membrane integration, thresholding, and spike-triggered reset
-  - Improves ObjectNav success from 31.05% to 34.12% and raises average success under visual corruptions from 8.45% to 13.71%
-  - Demonstrates deployability on Thruster-V2 neuromorphic chip for real cyber-physical systems
-  - Offers energy-efficient, corruption-resistant navigation for resource-constrained platforms
-  - **Activation**: spikingnav, embodied navigation, spiking neural policies, neuromorphic navigation, SNN robotics
-
-### From Local Learning to Global Prediction Through Layered Surprise Cascades
-- [[layered-surprise-cascades-predictive-coding]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation, building on Forward-Forward algorithm with inverted objective to increase activity for negative data, yielding predictive representations that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
-  - Uses recurrent variant of Forward-Forward algorithm with inverted objective for negative data
-  - Emergent predictive representations capture hallmark cortical computation features like top-down modulation and surprise signaling
-  - Demonstrates that key principles of predictive coding can emerge from simple, local learning rules
-  - Offers new bridge between neuroscience and machine learning for biologically plausible AI
-  - **Activation**: layered surprise cascades, hierarchical predictive coding, local contrastive learning, activity cancellation, surprise signaling, top-down modulation, forward-forward algorithm, cortical computation
-
-### SpikeRestormer: Towards Energy-Efficient All-in-One Image Restoration via Unified Event Reasoning
-- [[spikerestormer-unified-event-reasoning]] - SpikeRestormer methodology for energy-efficient all-in-one image restoration using Spiking Neural Networks with unified event reasoning through degradation-event perception, reliability inference, and restoration-event construction (arXiv: 2608.02290)
-  - Introduces Subtractive Degradation Event Attention (SDEA) to extract spike-based degradation events from static images
-  - Implements Hierarchical Bayesian Skip Masking (HBSM) for reliability inference of degradation events
-  - Uses Additive Restoration Event Attention (AREA) to construct restoration-oriented spike events
-  - Achieves competitive performance against ANN-based methods with significantly lower energy consumption
-  - **Activation**: spikerestormer, all-in-one image restoration, unified event reasoning, degradation-event perception, hierarchical bayesian skip masking, subtractive degradation event attention, additive restoration event attention, energy-efficient SNN
+### Agentic coding and persistent returns to expertise
+- [[agentic-coding-and-persistent-returns-to-expertise]] - Framework for analyzing agentic coding sessions showing domain expertise creates persistent returns in performance, with clear division of labor where humans decide what to build and agents decide how to build it
+  - Classifies sessions into nine work modes (building, fixing, testing, orchestrating, operating, understanding, planning, analyzing, communicating)
+  - Shows humans make 70% of planning decisions but only 20% of execution decisions
+  - Demonstrates expert users achieve 2-3x higher success rates and more efficient tool usage
+  - Reveals modest gap between intermediate and expert users, suggesting domain proficiency is sufficient
+  - **Activation**: agentic coding, persistent returns, coding expertise, Claude Code, domain expertise, coding agents, human-AI collaboration
