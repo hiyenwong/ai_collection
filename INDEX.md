@@ -1,5 +1,12 @@
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
+### IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers
+- [[iris-visual-cortex-framework-vit]] - IRIS framework for analyzing orientation selectivity in Vision Transformers using neuroscience-inspired metrics (RSS, ORS, orientation tuning bandwidth) to quantify how orientation selectivity emerges in ViTs during training and across model depth (arXiv: 2608.05122)
+  - Training paradigm is the strongest determinant of orientation selectivity, with models sharing an objective peaking at comparable relative depths regardless of scale
+  - Many units are orientation-selective early in training, with early-to-middle layers recruiting more such units over time, while deeper layers lose selectivity and broaden their tuning toward semantic encoding
+  - Metrics offer a mechanistic heuristic for how many layers to unfreeze for best downstream generalization
+  - **Activation**: iris visual cortex, orientation selectivity vit, neuroscience-inspired vit analysis, rss ors metrics, vit layer unfreezing, biological grounding transformers
+
 ### Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures
 - [[errorless-irrationality-inverse-base-rate-effect]] - Unified computational framework explaining the inverse base-rate effect across different learning paradigms using diffusion models and Bayesian inference (arXiv: 2608.06149)
   - Provides unified account across predictive, observational, and unsupervised procedures
