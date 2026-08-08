@@ -14,14 +14,6 @@
   - Greatly outperforms magnitude-only pruning and matches non-local second-order strategies
   - Validates as effective biologically-plausible pruning rule for functional RNN architectures
   - **Activation**: noise-prune, recurrent network pruning, synaptic strength preservation, biological plausibility
-## 2026-08-08 - Neuroscience Research (Cron Job)
-
-### From Local Learning to Global Prediction Through Layered Surprise Cascades
-- [[layered-surprise-cascades-predictive-coding]] - Hierarchical predictive coding framework that emerges from local contrastive learning and activity cancellation, bridging neuroscience and machine learning (arXiv: 2608.05481)
-  - Biologically plausible implementation without error-coding neurons or complex generative modeling
-  - Captures hallmark features of cortical computation including top-down modulation and surprise signaling
-  - Uses recurrent Forward-Forward variant with inverted objective that increases activity for negative data
-  - **Activation**: layered surprise cascades, predictive coding, hierarchical processing, contrastive learning, surprise signaling
 ## 2026-08-08 - Quantum Computing (Cron Job)
 
 ### Towards fault-tolerance with universal phase-error-transparent gates for high-spin cat codes
