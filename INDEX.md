@@ -20,6 +20,15 @@
 
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
+### Convergent Evolution in Neural Representation Space: Emergent Order in Deep Belief Networks
+- [[convergent-evolution-neural-representation-space]] - Framework demonstrating how Deep Belief Networks spontaneously uncover and progressively amplify class-related structure in unlabeled data through layer-wise generative learning, despite no label information during training, showing that class-specific clustering increases with depth across datasets (arXiv: 2608.05996)
+  - Demonstrates spontaneous emergence of class structure in purely unsupervised hierarchical learning
+  - Shows progressive amplification of class clustering with network depth across MNIST, Fashion-MNIST, and KMNIST
+  - Uses Generalized Discrimination Value (GDV) and supervised probes to reveal complementary aspects of class structure
+  - Validates findings with control experiments ruling out random transformations, weight marginals, and dimensionality reduction
+  - Reveals deeper layers become increasingly compact and prototype-like with correlated feature directions
+  - **Activation**: convergent-evolution, neural-representation-space, deep-belief-networks, unsupervised-learning, class-structure-emergence, generalized-discrimination-value, hierarchical-abstraction, prototype-representations
+
 ### From Local Learning to Global Prediction Through Layered Surprise Cascades
 - [[layered-surprise-cascades-predictive-coding]] - Biologically plausible framework where predictive coding emerges from local contrastive learning and activity cancellation, using recurrent Forward-Forward algorithm with inverted objective that increases activity for negative data, yielding predictive representations across layers that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
   - Demonstrates key principles of predictive coding can emerge from simple, local learning rules without error-coding neurons
