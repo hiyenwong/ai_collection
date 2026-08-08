@@ -1,3 +1,12 @@
+## 2026-08-08 - Quantum Computing (Cron Job)
+
+### Towards fault-tolerance with universal phase-error-transparent gates for high-spin cat codes
+- [[high-spin-cat-codes-fault-tolerance]] - Methodology for implementing fault-tolerant quantum computation using high-dimensional nuclear spins with spin cat codes that offer intrinsic robustness against phase errors (arXiv: 2608.05992)
+  - Constructs universal logical gate set that is error-transparent to phase errors
+  - Implements logical X gate as primary challenge with specialized realization schemes
+  - Applies multi-tone microwave driving for logical Z gate operations
+  - **Activation**: high-spin cat codes, phase-error-transparent gates, fault-tolerance, quantum error correction, donor-in-silicon, nuclear spins
+
 ## 2026-08-08 - Systems Engineering Research (Cron Job)
 
 ### Certifying Collective Reasoning in Multi-Agent Systems via Koopman Spectral Analysis
