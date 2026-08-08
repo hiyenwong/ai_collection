@@ -20,6 +20,21 @@
 
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades-predictive-coding]] - Biologically plausible framework where predictive coding emerges from local contrastive learning and activity cancellation, using recurrent Forward-Forward algorithm with inverted objective that increases activity for negative data, yielding predictive representations across layers that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
+  - Demonstrates key principles of predictive coding can emerge from simple, local learning rules without error-coding neurons
+  - Builds on Forward-Forward algorithm with recurrent variant and inverted objective for negative data
+  - Captures hallmark features of cortical computation such as top-down modulation and surprise signaling
+  - **Activation**: layered-surprise-cascades, predictive-coding, forward-forward-algorithm, local-contrastive-learning, cortical-computation, surprise-minimization, hierarchical-prediction
+
+### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
+- [[spikingnav-embodied-navigation-snn]] - Spiking neural network framework for robust indoor embodied navigation with Spiking Sensing Encoder (SSE) and Spiking Policy Network (SPN), achieving competitive clean performance with stronger robustness under visual corruptions using fewer parameters and lower per-step computation (arXiv: 2608.05078)
+  - SSE extracts task-conditioned visual features with spike-based backbone for energy-efficient sensing
+  - SPN maintains recurrent policy state through membrane integration, thresholding, and spike-triggered reset
+  - Improves ObjectNav success from 31.05% to 34.12% and raises average success under visual corruptions from 8.45% to 13.71%
+  - Validated deployability on Thruster-V2 neuromorphic chip for real cyber-physical systems
+  - **Activation**: spikingnav, embodied-navigation, spiking-neural-networks, neuromorphic-computing, robust-navigation, spike-based-sensing, visual-corruption-robustness
+
 ### An open-source framework for predicting ultrasound neuromodulation: bridging tissue elastomechanics and neuron firing dynamics
 - [[ultrasound-neuromodulation-prediction-framework]] - Open-source computational framework that maps transcranial acoustic fields to per-voxel neural firing maps using coupled physics models including heterogeneous nonlinear acoustic propagation, viscoelastic shear-wave propagation, Pennes bioheat diffusion, bilayer-mechanics conversion, and multi-compartment Hodgkin-Huxley neurons with six interchangeable candidate mechanisms (arXiv: 2608.06321)
   - Implements six candidate mechanisms as interchangeable components: mechanosensitive, cavitation-coupled, calcium-coupled, thermosensitive, astrocytic-gliotransmitter, and mechanosensitive-synaptic pathways
