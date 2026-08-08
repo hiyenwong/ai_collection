@@ -1,5 +1,13 @@
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
+### Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures
+- [[errorless-irrationality-inverse-base-rate-effect]] - Unified computational framework explaining the inverse base-rate effect across different learning paradigms using diffusion models and Bayesian inference (arXiv: 2608.06149)
+  - Provides unified account across predictive, observational, and unsupervised procedures
+  - Uses diffusion decision models with Bayesian inference framework
+  - Explains why people consistently make seemingly irrational judgments in base-rate scenarios
+  - **Activation**: inverse base-rate effect, diffusion models, Bayesian inference, cognitive biases, decision making
+## 2026-08-08 - Neuroscience Research (Cron Job)
+
 ### Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling
 - [[effective-pruning-task-trained-rnn-noisy-fluctuations]] - Biologically-plausible pruning rule for functional recurrent networks that preserves task performance using local information and noisy fluctuations (arXiv: 2608.05464)
   - Uses noise-prune methodology with sampling and rescaling to preserve average synaptic strength
