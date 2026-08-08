@@ -408,7 +408,7 @@ This skill can be used to reference the paper's concepts, methodologies, or find
     print(f"  Total papers processed: {len(papers)}")
     print(f"  New skill directories created: {created_count}")
     # Count by category
-    cat_counts = Counter([category for _, (category, _) in paper_info.items()])
+    cat_counts = Counter([info[0] for _, info in paper_info.items()])
     for cat, cnt in cat_counts.most_common():
         print(f"  {cat}: {cnt}")
 
