@@ -93,3 +93,11 @@
   - Demonstrates that key principles of predictive coding can emerge from simple, local learning rules
   - Offers new bridge between neuroscience and machine learning for biologically plausible AI
   - **Activation**: layered surprise cascades, hierarchical predictive coding, local contrastive learning, activity cancellation, surprise signaling, top-down modulation, forward-forward algorithm, cortical computation
+
+### SpikeRestormer: Towards Energy-Efficient All-in-One Image Restoration via Unified Event Reasoning
+- [[spikerestormer-unified-event-reasoning]] - SpikeRestormer methodology for energy-efficient all-in-one image restoration using Spiking Neural Networks with unified event reasoning through degradation-event perception, reliability inference, and restoration-event construction (arXiv: 2608.02290)
+  - Introduces Subtractive Degradation Event Attention (SDEA) to extract spike-based degradation events from static images
+  - Implements Hierarchical Bayesian Skip Masking (HBSM) for reliability inference of degradation events
+  - Uses Additive Restoration Event Attention (AREA) to construct restoration-oriented spike events
+  - Achieves competitive performance against ANN-based methods with significantly lower energy consumption
+  - **Activation**: spikerestormer, all-in-one image restoration, unified event reasoning, degradation-event perception, hierarchical bayesian skip masking, subtractive degradation event attention, additive restoration event attention, energy-efficient SNN
