@@ -20,6 +20,13 @@
 
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
+### An open-source framework for predicting ultrasound neuromodulation: bridging tissue elastomechanics and neuron firing dynamics
+- [[ultrasound-neuromodulation-prediction-framework]] - Open-source computational framework that maps transcranial acoustic fields to per-voxel neural firing maps using coupled physics models including heterogeneous nonlinear acoustic propagation, viscoelastic shear-wave propagation, Pennes bioheat diffusion, bilayer-mechanics conversion, and multi-compartment Hodgkin-Huxley neurons with six interchangeable candidate mechanisms (arXiv: 2608.06321)
+  - Implements six candidate mechanisms as interchangeable components: mechanosensitive, cavitation-coupled, calcium-coupled, thermosensitive, astrocytic-gliotransmitter, and mechanosensitive-synaptic pathways
+  - Predicts focal firing zone of approximately 8,500 mm³ at focal thermal rise well within ITRUSST consensus safety envelopes
+  - Provides spatially resolved, falsifiable predictions testable against high-density extracellular recordings
+  - **Activation**: ultrasound neuromodulation, transcranial focused ultrasound, neural firing prediction, tissue elastomechanics, Hodgkin-Huxley neuron
+
 ### From Local Learning to Global Prediction Through Layered Surprise Cascades
 - [[layered-surprise-cascades]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation, building on Forward-Forward algorithm with inverted objective to increase activity for negative data, yielding predictive representations across layers that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
   - Implements biologically plausible framework where functional goals emerge from simple local learning rules without error-coding neurons
