@@ -7,6 +7,13 @@
   - Evaluated on BrainArena benchmark, demonstrating substantial outperformance over state-of-the-art agent baselines
   - **Activation**: seekbrain, autonomous neuroscience discovery, multi-agent neuroscience, brainarena, hierarchical planning neuroscience, cross-modal neural analysis
 
+### Convergent Evolution in Algorithmic Space
+- [[convergent-evolution-algorithmic-space]] - Framework for analyzing convergent evolution in neural network weight structures during training using matching-based comparison with permutation-invariant features and Hungarian matching to align hidden neurons, then applying structural distance metrics to identify task-specific attractors in weight space (arXiv: 2608.05985)
+  - Networks trained on same task remain closer than those trained on different tasks
+  - Task-specific training guides initially random networks toward distinct regions (attractors) in structural network space
+  - Early learning shows rapid accuracy improvement before strong task-specific structural separation
+  - **Activation**: convergent evolution neural networks, structural weight space analysis, task-specific attractors, neural network morphogenesis, permutation-invariant neuron alignment
+
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
 ### IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers
