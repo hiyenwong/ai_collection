@@ -1,3 +1,14 @@
+## 2026-08-08 - Systems Engineering Research (Cron Job)
+
+### Certifying Collective Reasoning in Multi-Agent Systems via Koopman Spectral Analysis
+- [[koopman-spectral-certification-multi-agent]] - Koopman spectral analysis methodology for certifying collective reasoning in multi-agent systems using machine-checkable certificates for convergence, coherent factions, and auditable message basis from interaction traces (arXiv: 2608.05956)
+  - Treats multi-agent collectives as nonlinear dynamical systems on communication graphs
+  - Uses Koopman operator theory to extract exact linear representation of nonlinear dynamics
+  - Provides convergence deadline computable before debate runs with 96% coverage
+  - Identifies coherent factions through sub-dominant eigenvector with exact attribution when metastable
+  - Compresses decision-relevant information into 8-32 spectral coordinates preserving 99.7% fidelity
+  - **Activation**: koopman spectral analysis, multi-agent certification, collective reasoning, convergence certificate, coherent factions, auditable message basis
+
 ## 2026-08-08 - Neuroscience Research (Cron Job)
 
 ### The ethics of artificial intelligence in the life sciences: Universality, cultural diversity and an architecture of care
