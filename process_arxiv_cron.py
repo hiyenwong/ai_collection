@@ -339,9 +339,9 @@ This skill can be used to reference the paper's concepts, methodologies, or find
 
     # Step 5: Update INDEX.md with a section for today
     today = date.today().isoformat()
-    # Let's rebuild the mapping from arxiv_id to (category, skill_dir_name) by scanning the created/updated papers
+    # Let's rebuild the mapping from arxiv_id to (category, skill_dir_name, entry, utility) by scanning the created/updated papers
     paper_info = {}
-    for _, entry, _ in papers:
+    for rank, entry, utility in papers:
         arxiv_id = entry['id']
         skill_dir_name = get_skill_dir_name(arxiv_id, entry['title'])
         # Find the directory under SKILLS_DIR
@@ -351,7 +351,7 @@ This skill can be used to reference the paper's concepts, methodologies, or find
                 continue
             candidate = category_dir / skill_dir_name
             if candidate.is_dir():
-                found = (category_dir.name, skill_dir_name)
+                found = (category_dir.name, skill_dir_name, entry, utility)
                 break
         if found:
             paper_info[arxiv_id] = found
@@ -359,22 +359,20 @@ This skill can be used to reference the paper's concepts, methodologies, or find
             print(f"Warning: Could not find {arxiv_id} for INDEX.md.")
 
     # Build the new section for INDEX.md
-    section_lines = [f"\\n## {today} - arXiv Paper Skills (Cron Job)\\n"]
+    section_lines = ["\\n## {today} - arXiv Paper Skills (Cron Job)\\n\\n"]
     # Group by category
     by_category = defaultdict(list)
-    for arxiv_id, (category, skill_dir_name) in paper_info.items():
-        # Find the entry for this arxiv_id
-        entry = next(e for _, e, _ in papers if e['id'] == arxiv_id)
-        by_category[category].append((entry, skill_dir_name))
+    for arxiv_id, (category, skill_dir_name, entry, utility) in paper_info.items():
+        by_category[category].append((entry, skill_dir_name, utility))
 
     # Sort categories for consistent output (optional)
     for category in sorted(by_category.keys()):
         # Make the category name more readable for the section header
         category_display = category.replace('-', ' ').title()
-        section_lines.append(f"### {category_display}\\n")
-        for entry, skill_dir_name in by_category[category]:
+        section_lines.append(f"### {category_display}\\n\\n")
+        for entry, skill_dir_name, utility in by_category[category]:
             # Format: - [[skill_dir_name]] - Title (arXiv: ID) (utility=X.XX)
-            section_lines.append(f"- [[{skill_dir_name}]] - {entry['title']} (arXiv: {entry['id']}) (utility={entry['utility']:.2f})\\n")
+            section_lines.append(f"- [[{skill_dir_name}]] - {entry['title']} (arXiv: {entry['id']}) (utility={utility:.2f})\\n\\n")
         section_lines.append("\\n")  # empty line after category
 
     # Read existing index.md
