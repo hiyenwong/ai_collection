@@ -1,5 +1,12 @@
 ## 2026-08-09 - Neuroscience Research (Cron Job)
 
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades-predictive-coding]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation, building on Forward-Forward algorithm with inverted objective for negative data (arXiv: 2608.05481)
+  - Demonstrates how predictive coding principles can emerge from simple, local learning rules without error-coding neurons
+  - Captures hallmark features of cortical computation: top-down modulation and surprise signaling
+  - Offers new bridge between neuroscience and machine learning through biologically plausible learning
+  - **Activation**: layered surprise cascades, predictive coding, forward-forward algorithm, hierarchical prediction, surprise minimization, local contrastive learning, biologically plausible learning, cortical computation
+
 ### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
 - [[spikingnav-robust-embodied-navigation]] - Spiking framework for robust indoor embodied navigation using Spiking Sensing Encoder (SSE) and Spiking Policy Network (SPN) with hardware validation on Thruster-V2 neuromorphic chip (arXiv: 2608.05078)
   - Achieves competitive clean performance and stronger robustness with fewer parameters and lower per-step computation than ANN baseline
