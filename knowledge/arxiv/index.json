@@ -892,12 +892,12 @@
   {
     "id": "2608.05464v1",
     "title": "Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling",
-    "file": "collection/skills/deployment-optimization/arxiv-2608-05464v1-effective-pruning-of-task-trained-recurrent-neural/SKILL.md",
+    "file": "collection/skills/neuroscience/arxiv-2608-05464v1-effective-pruning-of-task-trained-recurrent-neural/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05464v1-effective-pruning-of-task-trained-recurrent-neural",
     "lastAccessed": "2026-08-08",
-    "category": "deployment-optimization"
+    "category": "neuroscience"
   },
   {
     "id": "2608.05481v1",
@@ -942,12 +942,12 @@
   {
     "id": "2608.05595v1",
     "title": "How Much Reconstruction Does Quantum Machine Learning Need? Late Fusion of Independently Trained Quantum Subcircuits",
-    "file": "collection/skills/quantum/arxiv-2608-05595v1-how-much-reconstruction-does-quantum-machine-learn/SKILL.md",
+    "file": "collection/skills/neuroscience/arxiv-2608-05595v1-how-much-reconstruction-does-quantum-machine-learn/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05595v1-how-much-reconstruction-does-quantum-machine-learn",
     "lastAccessed": "2026-08-08",
-    "category": "quantum"
+    "category": "neuroscience"
   },
   {
     "id": "2608.05600v1",
@@ -962,12 +962,12 @@
   {
     "id": "2608.05605v1",
     "title": "Enhancing Anomaly Resilience in Research Networks: A Large-Scale Forecasting Benchmark for Dynamic Security Baselining",
-    "file": "collection/skills/data-retrieval/arxiv-2608-05605v1-enhancing-anomaly-resilience-in-research-networks/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-05605v1-enhancing-anomaly-resilience-in-research-networks/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05605v1-enhancing-anomaly-resilience-in-research-networks",
     "lastAccessed": "2026-08-08",
-    "category": "data-retrieval"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.05608v1",
@@ -1092,12 +1092,12 @@
   {
     "id": "2608.05684v1",
     "title": "Nonvisual Classification of Ground-Condition by Artificial Proprioception in an Amoeba-Inspired Autonomous Walking Robot",
-    "file": "collection/skills/vision-generative/arxiv-2608-05684v1-nonvisual-classification-of-ground-condition-by-ar/SKILL.md",
+    "file": "collection/skills/general-ml/arxiv-2608-05684v1-nonvisual-classification-of-ground-condition-by-ar/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05684v1-nonvisual-classification-of-ground-condition-by-ar",
     "lastAccessed": "2026-08-08",
-    "category": "vision-generative"
+    "category": "general-ml"
   },
   {
     "id": "2608.05686v1",
@@ -1152,12 +1152,12 @@
   {
     "id": "2608.05727v1",
     "title": "LILAC: An Idempotent Neural Speech Codec",
-    "file": "collection/skills/other/arxiv-2608-05727v1-lilac-an-idempotent-neural-speech-codec/SKILL.md",
+    "file": "collection/skills/neuroscience/arxiv-2608-05727v1-lilac-an-idempotent-neural-speech-codec/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05727v1-lilac-an-idempotent-neural-speech-codec",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "neuroscience"
   },
   {
     "id": "2608.05728v1",
@@ -1182,12 +1182,12 @@
   {
     "id": "2608.05737v1",
     "title": "ABC: Numerical Data Collection under Local Differential Privacy without Prior Knowledge",
-    "file": "collection/skills/other/arxiv-2608-05737v1-abc-numerical-data-collection-under-local-differen/SKILL.md",
+    "file": "collection/skills/security-privacy/arxiv-2608-05737v1-abc-numerical-data-collection-under-local-differen/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05737v1-abc-numerical-data-collection-under-local-differen",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "security-privacy"
   },
   {
     "id": "2608.05741v1",
@@ -1272,12 +1272,12 @@
   {
     "id": "2608.05778v1",
     "title": "When Do Prompt-Side Agent Playbooks Transfer? Accuracy, Cost, and Runtime Shift in Agent Deployment",
-    "file": "collection/skills/nlp-llm/arxiv-2608-05778v1-when-do-prompt-side-agent-playbooks-transfer-accur/SKILL.md",
+    "file": "collection/skills/multi-agent-rl/arxiv-2608-05778v1-when-do-prompt-side-agent-playbooks-transfer-accur/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05778v1-when-do-prompt-side-agent-playbooks-transfer-accur",
     "lastAccessed": "2026-08-08",
-    "category": "nlp-llm"
+    "category": "multi-agent-rl"
   },
   {
     "id": "2608.05782v1",
@@ -1292,12 +1292,12 @@
   {
     "id": "2608.05783v1",
     "title": "GROM: Gradient-Free Rapid One-Shot Machine Unlearning",
-    "file": "collection/skills/signal-control-systems/arxiv-2608-05783v1-grom-gradient-free-rapid-one-shot-machine-unlearni/SKILL.md",
+    "file": "collection/skills/general-ml/arxiv-2608-05783v1-grom-gradient-free-rapid-one-shot-machine-unlearni/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05783v1-grom-gradient-free-rapid-one-shot-machine-unlearni",
     "lastAccessed": "2026-08-08",
-    "category": "signal-control-systems"
+    "category": "general-ml"
   },
   {
     "id": "2608.05784v1",
@@ -1362,12 +1362,12 @@
   {
     "id": "2608.05798v1",
     "title": "KVAE: Family of Tokenizers for Multimodal Generative Models",
-    "file": "collection/skills/nlp-llm/arxiv-2608-05798v1-kvae-family-of-tokenizers-for-multimodal-generativ/SKILL.md",
+    "file": "collection/skills/other/arxiv-2608-05798v1-kvae-family-of-tokenizers-for-multimodal-generativ/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05798v1-kvae-family-of-tokenizers-for-multimodal-generativ",
     "lastAccessed": "2026-08-08",
-    "category": "nlp-llm"
+    "category": "other"
   },
   {
     "id": "2608.05802v1",
@@ -1382,12 +1382,12 @@
   {
     "id": "2608.05806v1",
     "title": "Hierarchical Latent Prediction for Language Models",
-    "file": "collection/skills/nlp-llm/arxiv-2608-05806v1-hierarchical-latent-prediction-for-language-models/SKILL.md",
+    "file": "collection/skills/other/arxiv-2608-05806v1-hierarchical-latent-prediction-for-language-models/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05806v1-hierarchical-latent-prediction-for-language-models",
     "lastAccessed": "2026-08-08",
-    "category": "nlp-llm"
+    "category": "other"
   },
   {
     "id": "2608.05810v1",
@@ -1402,12 +1402,12 @@
   {
     "id": "2608.05813v1",
     "title": "Cautious Context Steering for Language Model Personalization",
-    "file": "collection/skills/nlp-llm/arxiv-2608-05813v1-cautious-context-steering-for-language-model-perso/SKILL.md",
+    "file": "collection/skills/other/arxiv-2608-05813v1-cautious-context-steering-for-language-model-perso/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05813v1-cautious-context-steering-for-language-model-perso",
     "lastAccessed": "2026-08-08",
-    "category": "nlp-llm"
+    "category": "other"
   },
   {
     "id": "2608.05819v1",
@@ -1432,22 +1432,22 @@
   {
     "id": "2608.05839v1",
     "title": "A neural operator view on U-Nets for inverse imaging problems",
-    "file": "collection/skills/other/arxiv-2608-05839v1-a-neural-operator-view-on-u-nets-for-inverse-imagi/SKILL.md",
+    "file": "collection/skills/neuroscience/arxiv-2608-05839v1-a-neural-operator-view-on-u-nets-for-inverse-imagi/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05839v1-a-neural-operator-view-on-u-nets-for-inverse-imagi",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "neuroscience"
   },
   {
     "id": "2608.05850v1",
     "title": "MameLoshnLM: Yiddish Language Model and Evaluation Benchmark",
-    "file": "collection/skills/nlp-llm/arxiv-2608-05850v1-mameloshnlm-yiddish-language-model-and-evaluation/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-05850v1-mameloshnlm-yiddish-language-model-and-evaluation/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05850v1-mameloshnlm-yiddish-language-model-and-evaluation",
     "lastAccessed": "2026-08-08",
-    "category": "nlp-llm"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.05859v1",
@@ -1462,12 +1462,12 @@
   {
     "id": "2608.05863v1",
     "title": "Runtime Observability for Heterogeneous Attention Memory",
-    "file": "collection/skills/software-engineering/arxiv-2608-05863v1-runtime-observability-for-heterogeneous-attention/SKILL.md",
+    "file": "collection/skills/other/arxiv-2608-05863v1-runtime-observability-for-heterogeneous-attention/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05863v1-runtime-observability-for-heterogeneous-attention",
     "lastAccessed": "2026-08-08",
-    "category": "software-engineering"
+    "category": "other"
   },
   {
     "id": "2608.05864v1",
@@ -1482,12 +1482,12 @@
   {
     "id": "2608.05867v1",
     "title": "Improving Interoperability among Defence and National Security Ontologies: Analysis and Evaluation Tasks",
-    "file": "collection/skills/other/arxiv-2608-05867v1-improving-interoperability-among-defence-and-natio/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-05867v1-improving-interoperability-among-defence-and-natio/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05867v1-improving-interoperability-among-defence-and-natio",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.05872v1",
@@ -1542,12 +1542,12 @@
   {
     "id": "2608.05886v1",
     "title": "CodeGrep: An RL-Trained Retrieval Agent for LLM Coding Agents",
-    "file": "collection/skills/nlp-llm/arxiv-2608-05886v1-codegrep-an-rl-trained-retrieval-agent-for-llm-cod/SKILL.md",
+    "file": "collection/skills/multi-agent-rl/arxiv-2608-05886v1-codegrep-an-rl-trained-retrieval-agent-for-llm-cod/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05886v1-codegrep-an-rl-trained-retrieval-agent-for-llm-cod",
     "lastAccessed": "2026-08-08",
-    "category": "nlp-llm"
+    "category": "multi-agent-rl"
   },
   {
     "id": "2608.05889v1",
@@ -1572,22 +1572,22 @@
   {
     "id": "2608.05892v1",
     "title": "Alternating Levenberg-Marquardt Training of Physics-Informed Neural Networks with Fourier-Enhanced Features",
-    "file": "collection/skills/other/arxiv-2608-05892v1-alternating-levenberg-marquardt-training-of-physic/SKILL.md",
+    "file": "collection/skills/neuroscience/arxiv-2608-05892v1-alternating-levenberg-marquardt-training-of-physic/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05892v1-alternating-levenberg-marquardt-training-of-physic",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "neuroscience"
   },
   {
     "id": "2608.05893v1",
     "title": "ECG-LENS: Lead-Aware Clinical Context Enriched ECG Report Generation and Evaluation",
-    "file": "collection/skills/healthcare-bio/arxiv-2608-05893v1-ecg-lens-lead-aware-clinical-context-enriched-ecg/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-05893v1-ecg-lens-lead-aware-clinical-context-enriched-ecg/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05893v1-ecg-lens-lead-aware-clinical-context-enriched-ecg",
     "lastAccessed": "2026-08-08",
-    "category": "healthcare-bio"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.05896v1",
@@ -1642,12 +1642,12 @@
   {
     "id": "2608.05930v1",
     "title": "Deep Generalised Mixed Models: a Novel Neural Network Structure for Analysing Hierarchical Data",
-    "file": "collection/skills/other/arxiv-2608-05930v1-deep-generalised-mixed-models-a-novel-neural-netwo/SKILL.md",
+    "file": "collection/skills/neuroscience/arxiv-2608-05930v1-deep-generalised-mixed-models-a-novel-neural-netwo/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05930v1-deep-generalised-mixed-models-a-novel-neural-netwo",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "neuroscience"
   },
   {
     "id": "2608.05938v1",
@@ -1662,12 +1662,12 @@
   {
     "id": "2608.05944v1",
     "title": "Operating Multi-Node Full Fine-Tuning on NVIDIA B300: A Field Report on Telemetry-Based Triage, Negative Results, and Operational Hardening",
-    "file": "collection/skills/software-engineering/arxiv-2608-05944v1-operating-multi-node-full-fine-tuning-on-nvidia-b3/SKILL.md",
+    "file": "collection/skills/other/arxiv-2608-05944v1-operating-multi-node-full-fine-tuning-on-nvidia-b3/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05944v1-operating-multi-node-full-fine-tuning-on-nvidia-b3",
     "lastAccessed": "2026-08-08",
-    "category": "software-engineering"
+    "category": "other"
   },
   {
     "id": "2608.05948v1",
@@ -1752,12 +1752,12 @@
   {
     "id": "2608.05981v1",
     "title": "Temporal Bridges for Spatial Resolution: Enhancing Climate Data Super-Resolution with Bidirectional Alignment",
-    "file": "collection/skills/other/arxiv-2608-05981v1-temporal-bridges-for-spatial-resolution-enhancing/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-05981v1-temporal-bridges-for-spatial-resolution-enhancing/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-05981v1-temporal-bridges-for-spatial-resolution-enhancing",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.05982v1",
@@ -1852,12 +1852,12 @@
   {
     "id": "2608.06012v1",
     "title": "HERALD: Counterfactual Audits and Minimal Repairs for Proof-of-Retrieval Rewards",
-    "file": "collection/skills/reasoning-bayesian/arxiv-2608-06012v1-herald-counterfactual-audits-and-minimal-repairs-f/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-06012v1-herald-counterfactual-audits-and-minimal-repairs-f/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06012v1-herald-counterfactual-audits-and-minimal-repairs-f",
     "lastAccessed": "2026-08-08",
-    "category": "reasoning-bayesian"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.06015v1",
@@ -1882,12 +1882,12 @@
   {
     "id": "2608.06023v1",
     "title": "BioKD: Selective Physiology-to-Video Knowledge Distillation via Reliability Gate for Emotion Recognition",
-    "file": "collection/skills/vision-generative/arxiv-2608-06023v1-biokd-selective-physiology-to-video-knowledge-dist/SKILL.md",
+    "file": "collection/skills/general-ml/arxiv-2608-06023v1-biokd-selective-physiology-to-video-knowledge-dist/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06023v1-biokd-selective-physiology-to-video-knowledge-dist",
     "lastAccessed": "2026-08-08",
-    "category": "vision-generative"
+    "category": "general-ml"
   },
   {
     "id": "2608.06025v1",
@@ -1942,12 +1942,12 @@
   {
     "id": "2608.06057v1",
     "title": "When History Lies: Evaluating and Improving Tool Use under Misleading Multi-Turn Histories",
-    "file": "collection/skills/other/arxiv-2608-06057v1-when-history-lies-evaluating-and-improving-tool-us/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-06057v1-when-history-lies-evaluating-and-improving-tool-us/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06057v1-when-history-lies-evaluating-and-improving-tool-us",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.06075v1",
@@ -1992,22 +1992,22 @@
   {
     "id": "2608.06107v1",
     "title": "Kastor: An efficient fine-tuning strategy for generative emulation of PDE simulations",
-    "file": "collection/skills/other/arxiv-2608-06107v1-kastor-an-efficient-fine-tuning-strategy-for-gener/SKILL.md",
+    "file": "collection/skills/physics-math/arxiv-2608-06107v1-kastor-an-efficient-fine-tuning-strategy-for-gener/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06107v1-kastor-an-efficient-fine-tuning-strategy-for-gener",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "physics-math"
   },
   {
     "id": "2608.06108v1",
     "title": "Evaluating Investment Logic in Large Language Models: A Real-World Benchmark Towards Personalzied Financial Agents",
-    "file": "collection/skills/finance/arxiv-2608-06108v1-evaluating-investment-logic-in-large-language-mode/SKILL.md",
+    "file": "collection/skills/multi-agent-rl/arxiv-2608-06108v1-evaluating-investment-logic-in-large-language-mode/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06108v1-evaluating-investment-logic-in-large-language-mode",
     "lastAccessed": "2026-08-08",
-    "category": "finance"
+    "category": "multi-agent-rl"
   },
   {
     "id": "2608.06110v1",
@@ -2072,12 +2072,12 @@
   {
     "id": "2608.06128v1",
     "title": "Contextual Information Policy Optimization for Search Agents",
-    "file": "collection/skills/deployment-optimization/arxiv-2608-06128v1-contextual-information-policy-optimization-for-sea/SKILL.md",
+    "file": "collection/skills/multi-agent-rl/arxiv-2608-06128v1-contextual-information-policy-optimization-for-sea/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06128v1-contextual-information-policy-optimization-for-sea",
     "lastAccessed": "2026-08-08",
-    "category": "deployment-optimization"
+    "category": "multi-agent-rl"
   },
   {
     "id": "2608.06130v1",
@@ -2212,32 +2212,32 @@
   {
     "id": "2608.06167v1",
     "title": "Schema-Guided Hierarchical Information Extraction and Semantic Evaluation Using Generative AI",
-    "file": "collection/skills/nlp-llm/arxiv-2608-06167v1-schema-guided-hierarchical-information-extraction/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-06167v1-schema-guided-hierarchical-information-extraction/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06167v1-schema-guided-hierarchical-information-extraction",
     "lastAccessed": "2026-08-08",
-    "category": "nlp-llm"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.06177v1",
     "title": "Threshold-Based Early Stopping of Accumulations in Neural Networks with Binary Activation",
-    "file": "collection/skills/other/arxiv-2608-06177v1-threshold-based-early-stopping-of-accumulations-in/SKILL.md",
+    "file": "collection/skills/neuroscience/arxiv-2608-06177v1-threshold-based-early-stopping-of-accumulations-in/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06177v1-threshold-based-early-stopping-of-accumulations-in",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "neuroscience"
   },
   {
     "id": "2608.06179v1",
     "title": "SAGA: Score-Weighted Adaptive Generation Alignment for Low-Resource Nordic Language Models",
-    "file": "collection/skills/other/arxiv-2608-06179v1-saga-score-weighted-adaptive-generation-alignment/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-06179v1-saga-score-weighted-adaptive-generation-alignment/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06179v1-saga-score-weighted-adaptive-generation-alignment",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.06182v1",
@@ -2332,12 +2332,12 @@
   {
     "id": "2608.06221v1",
     "title": "Robot Learning from Human Demonstrations: Handwritten Alphabet Trajectories and Human-Likeness Evaluation",
-    "file": "collection/skills/other/arxiv-2608-06221v1-robot-learning-from-human-demonstrations-handwritt/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-06221v1-robot-learning-from-human-demonstrations-handwritt/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06221v1-robot-learning-from-human-demonstrations-handwritt",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.06223v1",
@@ -2392,12 +2392,12 @@
   {
     "id": "2608.06243v1",
     "title": "DASH: Divergence-Adaptive Supervision Horizons for On-Policy Self-Distillation of Reasoning Models",
-    "file": "collection/skills/vision-generative/arxiv-2608-06243v1-dash-divergence-adaptive-supervision-horizons-for/SKILL.md",
+    "file": "collection/skills/general-ml/arxiv-2608-06243v1-dash-divergence-adaptive-supervision-horizons-for/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06243v1-dash-divergence-adaptive-supervision-horizons-for",
     "lastAccessed": "2026-08-08",
-    "category": "vision-generative"
+    "category": "general-ml"
   },
   {
     "id": "2608.06246v1",
@@ -2452,12 +2452,12 @@
   {
     "id": "2608.06262v1",
     "title": "Hypothesis Testing with Conditional Queries: Learnability and the Value of Interaction",
-    "file": "collection/skills/software-engineering/arxiv-2608-06262v1-hypothesis-testing-with-conditional-queries-learna/SKILL.md",
+    "file": "collection/skills/other/arxiv-2608-06262v1-hypothesis-testing-with-conditional-queries-learna/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06262v1-hypothesis-testing-with-conditional-queries-learna",
     "lastAccessed": "2026-08-08",
-    "category": "software-engineering"
+    "category": "other"
   },
   {
     "id": "2608.06264v1",
@@ -2472,12 +2472,12 @@
   {
     "id": "2608.06265v1",
     "title": "Improving the Realism of Synthetic Clinical Benchmarks Under Utility Constraints",
-    "file": "collection/skills/healthcare-bio/arxiv-2608-06265v1-improving-the-realism-of-synthetic-clinical-benchm/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-06265v1-improving-the-realism-of-synthetic-clinical-benchm/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06265v1-improving-the-realism-of-synthetic-clinical-benchm",
     "lastAccessed": "2026-08-08",
-    "category": "healthcare-bio"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.06270v1",
@@ -2522,12 +2522,12 @@
   {
     "id": "2608.06291v1",
     "title": "BaKron: Efficient Quantization with Kronecker-Factored Hessians",
-    "file": "collection/skills/deployment-optimization/arxiv-2608-06291v1-bakron-efficient-quantization-with-kronecker-facto/SKILL.md",
+    "file": "collection/skills/other/arxiv-2608-06291v1-bakron-efficient-quantization-with-kronecker-facto/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06291v1-bakron-efficient-quantization-with-kronecker-facto",
     "lastAccessed": "2026-08-08",
-    "category": "deployment-optimization"
+    "category": "other"
   },
   {
     "id": "2608.06294v1",
@@ -2582,22 +2582,22 @@
   {
     "id": "2608.06310v1",
     "title": "RRC: Unlocking Generative Reward Models in LLM Reinforcement Learning via Ranking-Based Reward Construction",
-    "file": "collection/skills/nlp-llm/arxiv-2608-06310v1-rrc-unlocking-generative-reward-models-in-llm-rein/SKILL.md",
+    "file": "collection/skills/multi-agent-rl/arxiv-2608-06310v1-rrc-unlocking-generative-reward-models-in-llm-rein/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06310v1-rrc-unlocking-generative-reward-models-in-llm-rein",
     "lastAccessed": "2026-08-08",
-    "category": "nlp-llm"
+    "category": "multi-agent-rl"
   },
   {
     "id": "2608.06311v1",
     "title": "Does FLAIR super-resolution erase or hallucinate small white-matter lesions?",
-    "file": "collection/skills/vision-generative/arxiv-2608-06311v1-does-flair-super-resolution-erase-or-hallucinate-s/SKILL.md",
+    "file": "collection/skills/other/arxiv-2608-06311v1-does-flair-super-resolution-erase-or-hallucinate-s/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06311v1-does-flair-super-resolution-erase-or-hallucinate-s",
     "lastAccessed": "2026-08-08",
-    "category": "vision-generative"
+    "category": "other"
   },
   {
     "id": "2608.06329v1",
@@ -2612,12 +2612,12 @@
   {
     "id": "2608.06331v1",
     "title": "Tytan: Interactive Neurosymbolic Construction of Analytic Semantic Schemas from Relational Data",
-    "file": "collection/skills/other/arxiv-2608-06331v1-tytan-interactive-neurosymbolic-construction-of-an/SKILL.md",
+    "file": "collection/skills/neuroscience/arxiv-2608-06331v1-tytan-interactive-neurosymbolic-construction-of-an/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06331v1-tytan-interactive-neurosymbolic-construction-of-an",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "neuroscience"
   },
   {
     "id": "2608.06337v1",
@@ -2652,12 +2652,12 @@
   {
     "id": "2608.06351v1",
     "title": "Challenges in Evaluating Explanation Methods for Static and Evolving Data",
-    "file": "collection/skills/other/arxiv-2608-06351v1-challenges-in-evaluating-explanation-methods-for-s/SKILL.md",
+    "file": "collection/skills/ai-safety-eval/arxiv-2608-06351v1-challenges-in-evaluating-explanation-methods-for-s/SKILL.md",
     "keywords": [],
     "utility": 1.0,
     "skillCreated": "arxiv-2608-06351v1-challenges-in-evaluating-explanation-methods-for-s",
     "lastAccessed": "2026-08-08",
-    "category": "other"
+    "category": "ai-safety-eval"
   },
   {
     "id": "2608.06352v1",
