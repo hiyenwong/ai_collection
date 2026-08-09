@@ -144,6 +144,7 @@
   - Proposes Heterogeneous Topological Network (HTN): System of Systems with distinct modules maintaining inductive biases and communicating through standardized interfaces  
   - Argues CNNs succeeded by encoding structural priors directly, but this lesson was abandoned for scale over structure
   - **Activation**: giant hippocampus, structural monoculture, heterogeneous topological network, system of systems, architectural diversity
+
 ## 2026-08-10 - Deep Learning Research (Cron Job)
 
 ### BaKron: Efficient Quantization with Kronecker-Factored Hessians
@@ -182,3 +183,10 @@
   - Effect depends on learned feature structure, not explainable by random transformations or dimensionality reduction
   - First hidden layers make class identity more accessible to probes; deeper layers become prototype-like
   - **Activation**: convergent evolution neural representation, deep belief networks unsupervised, class structure emergence
+
+### Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling
+- [[effective-pruning-task-trained-rnn-noisy-fluctuations]] - Biologically-plausible RNN pruning using noise-prune algorithm with stochastic sampling and connection rescaling to preserve task performance (arXiv: 2608.05464)
+  - Uses only local information (no second-order gradients) making it biologically plausible
+  - Outperforms magnitude-based pruning while maintaining task performance in trained RNNs
+  - Implements optimal empirical rescaling factor (~0.8) rather than theoretical prediction (1.0)
+  - **Activation**: noise-prune, RNN pruning, recurrent network pruning, biologically plausible pruning, task-trained RNN
