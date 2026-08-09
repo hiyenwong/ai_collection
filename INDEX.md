@@ -1,174 +1,175 @@
-## 2026-08-09 - Neuroscience Research (Cron Job)
+## 2026-07-25 - Neuroscience Research (Cron Job)
 
-### From Local Learning to Global Prediction Through Layered Surprise Cascades
-- [[layered-surprise-cascades-predictive-coding]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation, building on Forward-Forward algorithm with inverted objective for negative data (arXiv: 2608.05481)
-  - Demonstrates how predictive coding principles can emerge from simple, local learning rules without error-coding neurons
-  - Captures hallmark features of cortical computation: top-down modulation and surprise signaling
-  - Offers new bridge between neuroscience and machine learning through biologically plausible learning
-  - **Activation**: layered surprise cascades, predictive coding, forward-forward algorithm, hierarchical prediction, surprise minimization, local contrastive learning, biologically plausible learning, cortical computation
+### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
+- [[cognisnn-random-graph-architecture]] - CogniSNN framework for scalable spiking neural networks with random graph architectures enabling neuron-expandability, pathway-reusability, and dynamic-configurability (arXiv: 2512.11743)
+  - Introduces Random Graph Architecture (RGA) to overcome rigid hierarchical limitations of traditional ANNs
+  - Implements Key Pathway-based Learning without Forgetting (KP-LwF) using Betweenness Centrality for continual learning
+  - Features Dynamic Growth Learning (DGL) algorithm for temporal dimension structural plasticity
+  - **Activation**: cognisnn, random graph architecture, neuron expandability, pathway reusability, dynamic configurability
 
-### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
-- [[spikingnav-robust-embodied-navigation]] - Spiking framework for robust indoor embodied navigation using Spiking Sensing Encoder (SSE) and Spiking Policy Network (SPN) with hardware validation on Thruster-V2 neuromorphic chip (arXiv: 2608.05078)
-  - Achieves competitive clean performance and stronger robustness with fewer parameters and lower per-step computation than ANN baseline
-  - Improves ObjectNav success from 31.05% to 34.12% and raises average success under visual corruptions from 8.45% to 13.71%
-  - **Activation**: spikingnav, embodied navigation, spiking neural networks robotics, neuromorphic computing, robust embodied AI, spike-based sensing, thruster-v2 deployment
+### Event-driven eligibility propagation in large sparse networks: efficiency shaped by biological realism
+- [[event-driven-eligibility-propagation]] - Event-driven learning in sparse SNNs showing biological realism (sparsity, irregularity) drives 10-15x computational efficiency vs dense backpropagation (arXiv: 2511.21674)
+  - Translates time-driven eligibility propagation into event-driven for large-scale spiking networks
+  - Integrates biologically plausible features: continuous dynamics, strict locality, sparse connectivity
+  - Demonstrates scalability to millions of neurons without compromising learning performance
+  - **Activation**: event-driven eligibility propagation, sparse SNNs, biological realism, computational efficiency
 
-### SeekBrain: An Autonomous Multi-Agent System for Accelerating Neuroscience Discovery
-- [[seekbrain-autonomous-neuroscience-discovery]] - Autonomous multi-agent framework for neuroscience discovery using domain-grounded hierarchical planning and cross-modal data analysis (arXiv: 2607.29347)
-  - Constructs analysis recipes from code-paper pairs to codify domain expertise
-  - Uses hierarchical planning to decompose complex neuroscience tasks and integrate heterogeneous data (behavioral, neural, anatomical)
-  - Evaluated on BrainArena benchmark, demonstrating substantial outperformance over state-of-the-art agent baselines
-  - **Activation**: seekbrain, autonomous neuroscience discovery, multi-agent neuroscience, brainarena, hierarchical planning neuroscience, cross-modal neural analysis
+### Sparse by Rule: Probability-Based N:M Pruning for Spiking Neural Networks
+- [[nm-pruning-spiking-neural-networks]] - First SNN-oriented semi-structured N:M pruning framework (SpikeNM) that learns sparse SNNs from scratch with at most N non-zeros per M-weight block (arXiv: 2511.12097)
+  - Uses M-way basis-logit parameterization with differentiable top-k sampler for linear complexity
+  - Implements eligibility-inspired distillation (EID) to align mask probabilities with spiking dynamics
+  - Maintains or improves accuracy at 2:4 sparsity while yielding hardware-amenable patterns
+  - **Activation**: nm pruning, spikeNM, semi-structured pruning, spiking neural networks
 
-### Convergent Evolution in Algorithmic Space
-- [[convergent-evolution-algorithmic-space]] - Framework for analyzing convergent evolution in neural network weight structures during training using matching-based comparison with permutation-invariant features and Hungarian matching to align hidden neurons, then applying structural distance metrics to identify task-specific attractors in weight space (arXiv: 2608.05985)
-  - Networks trained on same task remain closer than those trained on different tasks
-  - Task-specific training guides initially random networks toward distinct regions (attractors) in structural network space
-  - Early learning shows rapid accuracy improvement before strong task-specific structural separation
-  - **Activation**: convergent evolution neural networks, structural weight space analysis, task-specific attractors, neural network morphogenesis, permutation-invariant neuron alignment
+### Spectral theory for population density dynamics of spiking neurons with refractoriness
+- [[spectral-theory-spiking-neurons-refractoriness]] - Rigorous operator-theoretic framework for analyzing spiking neuron population dynamics with absolute refractory periods using non-self-adjoint boundary eigenvalue problems and spectral decomposition methods (arXiv: 2607.20699)
+  - Complete spectral characterization of Fokker-Planck generator proving dissipativity and contraction semigroup existence
+  - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge from coalescing relaxational modes
+  - Derives exact transfer function accounting for boundary conditions modulated by external input
+  - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck, non-self-adjoint, boundary eigenvalue problem
 
-## 2026-08-08 - Neuroscience Research (Cron Job)
+### Action potentials and solitons
+- [[action-potentials-solitons]] - Framework for understanding nerve pulse propagation using soliton theory, connecting nonlinear wave dynamics to action potential generation and propagation in neurons (arXiv: 2607.20496)
+  - Solitons as stable, localized wave packets maintaining shape during neural propagation
+  - Provides physical insights into pulse stability and propagation speed complementing Hodgkin-Huxley models
+  - Enables alternative modeling approaches for action potential propagation and energy efficiency analysis
+  - **Activation**: action potentials solitons, nerve pulse propagation, soliton neuroscience, nonlinear wave neurons, solitary waves action potentials
 
-### IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers
-- [[iris-visual-cortex-framework-vit]] - IRIS framework for analyzing orientation selectivity in Vision Transformers using neuroscience-inspired metrics (RSS, ORS, orientation tuning bandwidth) to quantify how orientation selectivity emerges in ViTs during training and across model depth (arXiv: 2608.05122)
-  - Training paradigm is the strongest determinant of orientation selectivity, with models sharing an objective peaking at comparable relative depths regardless of scale
-  - Many units are orientation-selective early in training, with early-to-middle layers recruiting more such units over time, while deeper layers lose selectivity and broaden their tuning toward semantic encoding
-  - Metrics offer a mechanistic heuristic for how many layers to unfreeze for best downstream generalization
-  - **Activation**: iris visual cortex, orientation selectivity vit, neuroscience-inspired vit analysis, rss ors metrics, vit layer unfreezing, biological grounding transformers
+## 2026-07-25 - Quantum Neuromorphic Computing (Cron Job)
 
-### Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures- [[errorless-irrationality-inverse-base-rate-effect]] - Unified computational framework explaining the inverse base-rate effect across different learning paradigms using diffusion models and Bayesian inference (arXiv: 2608.06149)
-  - Provides unified account across predictive, observational, and unsupervised procedures
-  - Uses diffusion decision models with Bayesian inference framework
-  - Explains why people consistently make seemingly irrational judgments in base-rate scenarios
-  - **Activation**: inverse base-rate effect, diffusion models, Bayesian inference, cognitive biases, decision making
-## 2026-08-08 - Neuroscience Research (Cron Job)
+### Quantum-Driven Neuromorphic Computing for Million-Qubit Scale Systems
+- [[quantum-driven-neuromorphic-million-qubit]] - Quantum-Driven Neuromorphic Computing methodology for million-qubit scale systems. Integrates quantum computing principles with neuromorphic architectures to achieve scalable, energy-efficient computation at million-qubit scales.
+  - Quantum-enhanced spiking neurons using superposition and entanglement for information processing
+  - Hierarchical architecture enabling million-qubit scalability with error-corrected quantum memory
+  - Energy-efficiency optimization through coherent dynamics and topological protection
+  - **Activation**: quantum neuromorphic, million-qubit, quantum-driven neuromorphic
 
-### Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling
-- [[effective-pruning-task-trained-rnn-noisy-fluctuations]] - Biologically-plausible pruning rule for functional recurrent networks that preserves task performance using local information and noisy fluctuations (arXiv: 2608.05464)
-  - Uses noise-prune methodology with sampling and rescaling to preserve average synaptic strength
-  - Greatly outperforms magnitude-only pruning and matches non-local second-order strategies
-  - Validates as effective biologically-plausible pruning rule for functional RNN architectures
-  - **Activation**: noise-prune, recurrent network pruning, synaptic strength preservation, biological plausibility
-## 2026-08-08 - Quantum Computing (Cron Job)
+## 2026-07-25 - Systems Engineering Research (Cron Job)
 
-### Towards fault-tolerance with universal phase-error-transparent gates for high-spin cat codes
-- [[high-spin-cat-codes-fault-tolerance]] - Methodology for implementing fault-tolerant quantum computation using high-dimensional nuclear spins with spin cat codes that offer intrinsic robustness against phase errors (arXiv: 2608.05992)
-  - Constructs universal logical gate set that is error-transparent to phase errors
-  - Implements logical X gate as primary challenge with specialized realization schemes
-  - Applies multi-tone microwave driving for logical Z gate operations
-  - **Activation**: high-spin cat codes, phase-error-transparent gates, fault-tolerance, quantum error correction, donor-in-silicon, nuclear spins
+### Toward Federated Cognitive Digital Twins over the Edge-to-Cloud Continuum
+- [[federated-cognitive-digital-twins-edge-cloud]] - Federated Cognitive Digital Twin (FCDT) architecture methodology combining federation and cognition within a unified approach for distributed Cyber-Physical Systems (CPSs) (arXiv: 2607.21357)
+  - Combines federated digital twins (scalability) with cognitive digital twins (semantic reasoning) in unified architecture
+  - Distributes intelligence across edge-to-cloud continuum through local twins (real-time monitoring) and global twins (system-level reasoning)
+  - Improves scalability, responsiveness, and decision-making in complex distributed CPSs like smart cities
+  - **Activation**: federated digital twins, cognitive digital twins, edge-to-cloud continuum, distributed CPS, semantic reasoning, autonomous coordination
 
-## 2026-08-08 - Systems Engineering Research (Cron Job)
+## 2026-07-25 - Neuroscience Research (Cron Job)
 
-### Certifying Collective Reasoning in Multi-Agent Systems via Koopman Spectral Analysis
-- [[koopman-spectral-certification-multi-agent]] - Koopman spectral analysis methodology for certifying collective reasoning in multi-agent systems using machine-checkable certificates for convergence, coherent factions, and auditable message basis from interaction traces (arXiv: 2608.05956)
-  - Treats multi-agent collectives as nonlinear dynamical systems on communication graphs
-  - Uses Koopman operator theory to extract exact linear representation of nonlinear dynamics
-  - Provides convergence deadline computable before debate runs with 96% coverage
-  - Identifies coherent factions through sub-dominant eigenvector with exact attribution when metastable
-  - Compresses decision-relevant information into 8-32 spectral coordinates preserving 99.7% fidelity
-  - **Activation**: koopman spectral analysis, multi-agent certification, collective reasoning, convergence certificate, coherent factions, auditable message basis
+### Search Hardness-Aware LLM-Based Problem Formulation for Expensive Simulation-Driven Design
+- [[search-hardness-aware-llm-problem-formulation]] - Search Hardness-Aware LLM-Based Problem Formulation (SHA-PF) framework that prioritizes formulations guiding efficient search by focusing on rare samples with greater progress potential, significantly reducing evaluation requirements in expensive simulation-driven design (arXiv: 2607.21220)
+  - Moves beyond design-intent alignment to consider search process efficiency in problem formulation
+  - Defines formulation search objective guided by search hardness, scoring candidates by progress potential
+  - Demonstrates significant evaluation reduction on real-world multi-objective and antenna design benchmarks
+  - **Activation**: search hardness awareness, LLM problem formulation, expensive simulation design, SHA-PF framework, rare sample prioritization
 
-## 2026-08-08 - Neuroscience Research (Cron Job)
+### Weight-norm Criticality: A Mechanism for Loss Spikes Induced by the Normalization and Weight Decay
+- [[weight-norm-criticality-loss-spikes]] - Weight-norm Criticality framework for understanding loss spikes in deep neural network training induced by the interaction between normalization and weight decay (arXiv: 2607.21005)
+  - Identifies weight-norm criticality as additional training instability beyond learning-rate criticality
+  - Explains how normalization introduces scale-invariant components that interact with weight decay to cause loss spikes
+  - **Activation**: weight-norm criticality, loss spikes, weight decay instability, normalization weight decay interaction, scale-invariant training dynamics
 
-### Time²: A framework for the neural dynamics of visual perception
-- [[time2-neural-dynamics-visual-perception]] - Framework for analyzing neural dynamics of visual perception by simultaneously measuring processing time and stimulus time using reverse correlation methodology, enabling precise characterization of rhythmic perception, predictive processing, and coarse-to-fine sampling (arXiv: 2608.04218)
-  - Distinguishes between processing time (brain processing duration) and stimulus time (retinal input duration)
-  - Uses reverse correlation to reconstruct 2D spatiotemporal receptive fields across both temporal dimensions
-  - Reveals diagonal patterns (real-time processing), off-diagonal patterns (predictive/integrative processing), and temporal bandwidth
-  - Provides guidelines for experimental design, data analysis, and interpretation of temporal neural dynamics
-  - **Activation**: Time² framework, processing time and stimulus time, visual perception temporal dynamics, reverse correlation neuroscience, rhythmic perception analysis, predictive processing timing, coarse-to-fine visual sampling
+### Spectral theory for neuronal population dynamics with refractory time
+- [[spectral-theory-neuronal-population-dynamics]] - Spectral theory framework for analyzing population density dynamics of spiking neurons with finite refractory time, providing rigorous operator-theoretic methods for studying neuronal population stability and oscillatory modes (arXiv: 2607.20699)
+  - Augments state space to include refractory history and formulates as non-self-adjoint boundary eigenvalue problem for Fokker-Planck operator
+  - Proves dissipativity and existence of contraction semigroup, identifies defective eigenvalues as exceptional points where oscillatory modes emerge
+  - Derives exact transfer function accounting for boundary conditions and reveals additional threshold-noise contributions
+  - **Activation**: spectral theory neuronal population, refractory period population dynamics, Fokker-Planck boundary eigenvalue, neuronal oscillatory modes, population transfer function
 
-### An entropic explanation of insistence on sameness in autism
-- [[entropic-explanation-autism-sameness]] - Information theory-based framework explaining insistence on sameness in autism as entropy minimization behavior, using metric D_H(R, M) = H(R|M) + H(M|R) to quantify surprise and uncertainty, providing formal foundations for therapies and robotic caregivers (arXiv: 2608.04616)
-  - Defines autism as cognitive impairment restricted to discrimination, memorization and prediction of tangible environmental properties
-  - Shows insistence on sameness is strategy to minimize entropy by restricting R to known M rather than learning about R
-  - Quantifies concepts like surprise, uncertainty, sensory overload, anxiety, comfort zone, and aberrant precision
-  - Provides guidelines for learning therapies, daily care routines, and robotic live-in caregivers as optimization algorithms
-  - **Activation**: autism entropy framework, insistence on sameness, D_H(R, M) metric, surprise uncertainty autism, information theory autism, robotic autism caregivers
+### Current Injection Spiking Neural Network for Infrared and Visible Image Fusion
+- [[current-injection-spiking-neural-network-image-fusion]] - Spiking neural network architecture that performs cross-modal fusion at membrane-potential level using current injection spiking (CIS) operator, solving subthreshold information loss in infrared-visible image fusion while maintaining energy efficiency (arXiv: 2607.19879)
+  - Introduces Current Injection Spiking (CIS) operator that injects one modality as gated auxiliary current into driving neuron of other before spike firing
+  - Preserves subthreshold responses containing complementary cues that would be lost in binary spike communication
+  - Achieves fusion quality on par with state-of-the-art ANNs while reducing inference energy by order of magnitude
+  - **Activation**: current injection spiking, CIS-Fuse, infrared visible fusion, membrane potential fusion, SNN image fusion
 
-### Convergent Evolution in Neural Representation Space: Emergent Order in Deep Belief Networks
-- [[convergent-evolution-neural-representation-space]] - Framework demonstrating how Deep Belief Networks spontaneously uncover and progressively amplify class-related structure in unlabeled data through layer-wise generative learning, despite no label information during training, showing that class-specific clustering increases with depth across datasets (arXiv: 2608.05996)
-  - Demonstrates spontaneous emergence of class structure in purely unsupervised hierarchical learning
-  - Shows progressive amplification of class clustering with network depth across MNIST, Fashion-MNIST, and KMNIST
-  - Uses Generalized Discrimination Value (GDV) and supervised probes to reveal complementary aspects of class structure
-  - Validates findings with control experiments ruling out random transformations, weight marginals, and dimensionality reduction
-  - Reveals deeper layers become increasingly compact and prototype-like with correlated feature directions
-  - **Activation**: convergent-evolution, neural-representation-space, deep-belief-networks, unsupervised-learning, class-structure-emergence, generalized-discrimination-value, hierarchical-abstraction, prototype-representations
+  ## 2026-07-24 - Neuroscience Research (Cron Job)
 
-### From Local Learning to Global Prediction Through Layered Surprise Cascades
-- [[layered-surprise-cascades-predictive-coding]] - Biologically plausible framework where predictive coding emerges from local contrastive learning and activity cancellation, using recurrent Forward-Forward algorithm with inverted objective that increases activity for negative data, yielding predictive representations across layers that capture top-down modulation and surprise signaling (arXiv: 2608.05481)
-  - Demonstrates key principles of predictive coding can emerge from simple, local learning rules without error-coding neurons
-  - Builds on Forward-Forward algorithm with recurrent variant and inverted objective for negative data
-  - Captures hallmark features of cortical computation such as top-down modulation and surprise signaling
-  - **Activation**: layered-surprise-cascades, predictive-coding, forward-forward-algorithm, local-contrastive-learning, cortical-computation, surprise-minimization, hierarchical-prediction
+  ### Transition-Related Potentials as Markers of Narrative Comprehension in Continuous EEG
+  - [[transition-related-potentials-narrative-comprehension-eeg]] - Extracts Transition-Related Potentials (TRPs) from continuous EEG aligned to cinematic transitions, demonstrating narrative context sensitivity and semi-automated detection using deep neural networks (arXiv: 2607.20720)
+    - Naturalistic paradigm moves beyond traditional ERP by analyzing continuous EEG during film viewing
+    - TRPs exhibit canonical ERP-like temporal structure systematically shaped by narrative coherence vs. scene-scrambled versions
+    - Compact DNN recovers cut-related EEG signatures directly from group-averaged continuous recordings
+    - **Activation**: transition-related potentials, narrative comprehension EEG, continuous EEG analysis, cinematic transitions EEG, naturalistic neuroscience, TRP detection, film narrative EEG
 
-### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
-- [[spikingnav-embodied-navigation-snn]] - Spiking neural network framework for robust indoor embodied navigation with Spiking Sensing Encoder (SSE) and Spiking Policy Network (SPN), achieving competitive clean performance with stronger robustness under visual corruptions using fewer parameters and lower per-step computation (arXiv: 2608.05078)
-  - SSE extracts task-conditioned visual features with spike-based backbone for energy-efficient sensing
-  - SPN maintains recurrent policy state through membrane integration, thresholding, and spike-triggered reset
-  - Improves ObjectNav success from 31.05% to 34.12% and raises average success under visual corruptions from 8.45% to 13.71%
-  - Validated deployability on Thruster-V2 neuromorphic chip for real cyber-physical systems
-  - **Activation**: spikingnav, embodied-navigation, spiking-neural-networks, neuromorphic-computing, robust-navigation, spike-based-sensing, visual-corruption-robustness
+  ### Spectral theory for population density dynamics of spiking neurons with refractoriness
+  - [[spectral-theory-population-density-spiking-neurons]] - Rigorous operator-theoretic framework for neuronal population dynamics with finite refractory time, providing complete spectral characterization and exact transfer functions (arXiv: 2607.20699)
+    - Formulates Fokker-Planck operator as non-self-adjoint boundary eigenvalue problem
+    - Identifies defective eigenvalues as exceptional points where oscillatory modes emerge
+    - Derives exact transfer function with threshold-noise contributions missed in previous work
+    - **Activation**: spectral theory, population density, spiking neurons, refractoriness, Fokker-Planck operator, oscillatory modes, transfer function
 
-### An open-source framework for predicting ultrasound neuromodulation: bridging tissue elastomechanics and neuron firing dynamics
-- [[ultrasound-neuromodulation-prediction-framework]] - Open-source computational framework that maps transcranial acoustic fields to per-voxel neural firing maps using coupled physics models including heterogeneous nonlinear acoustic propagation, viscoelastic shear-wave propagation, Pennes bioheat diffusion, bilayer-mechanics conversion, and multi-compartment Hodgkin-Huxley neurons with six interchangeable candidate mechanisms (arXiv: 2608.06321)
-  - Implements six candidate mechanisms as interchangeable components: mechanosensitive, cavitation-coupled, calcium-coupled, thermosensitive, astrocytic-gliotransmitter, and mechanosensitive-synaptic pathways
-  - Predicts focal firing zone of approximately 8,500 mm³ at focal thermal rise well within ITRUSST consensus safety envelopes
-  - Provides spatially resolved, falsifiable predictions testable against high-density extracellular recordings
-  - **Activation**: ultrasound neuromodulation, transcranial focused ultrasound, neural firing prediction, tissue elastomechanics, Hodgkin-Huxley neuron
+  ### Perspective Latents as an Architectural Condition for Causal Emergence in Active Inference Agents
+  - [[perspective-latents-causal-emergence-active-inference]] - Framework for measuring causal emergence in active inference agents through Integrated Information Decomposition, identifying global latents as architectural locus of temporal organization (arXiv: 2607.20708)
+    - Separates fast perception latent (z) from slow global latent (g) with structural decoupling from policy gradients
+    - Demonstrates ΦID concentration in global latent (g) with aggregate magnitude being largely architectural
+    - Reveals substantive learning effects only at atom-compositional level with regime-invariant decoupling
+    - **Activation**: causal emergence, active inference, integrated information decomposition, perspective latents, temporal organization, architectural conditions
 
-### The ethics of artificial intelligence in the life sciences: Universality, cultural diversity and an architecture of care
-- [[ethics-ai-life-sciences-universality-diversity]] - Framework for AI ethics in life sciences based on human brain architecture, global neuronal workspace, and reward cycles of wanting-liking-satiety rather than maximization, arguing that ethical concerns should be governed by values derived from neurobiology rather than AI-specific considerations, with governance shifting from restraint to upbringing (arXiv: 2608.05436)
-  - Grounds ethics in biological reality of human brain computational architecture
-  - Proposes reward as continuous cycle (wanting-liking-satiety) vs. quantity maximization
-  - Identifies tension between universal ethical judgment and diverse morals through epigenetic cultural appropriation
-  - Outlines institutional framework for care-based governance and upbringing paradigm
-  - **Activation**: AI ethics life sciences, global neuronal workspace ethics, reward cycle AI, wanting liking satiety, biological AI architecture
+  ## 2026-07-24 - Systems Engineering Research (Cron Job)
 
-### Complexity and Stability of Neural Activity Across Aging and Neurodegenerative Disease
-- [[complexity-stability-neural-activity-aging-disease]] - Distribution-level framework for understanding neural stability across cognition, aging, and neurodegenerative disease using Wasserstein distance for temporal stability and intrinsic dimensionality for representational complexity, showing that neural representations exhibit constrained condition-specific stability rather than unconstrained drift, with healthy aging characterized by increased dimensionality and reduced stability while Alzheimer's disease shows joint collapse of both (arXiv: 2608.05882)
-  - Models EEG as distributions of windowed activity patterns rather than point estimates
-  - Reveals inverse relationship between intrinsic dimensionality and stability (richer representations are less reproducible)
-  - Shows reproducible spatial organization with posterior regions having higher dimensionality and lower stability than frontal regions
-  - Provides principled approach for quantifying neural representational stability with potential utility as sensitive biomarker for cognitive aging and neurodegeneration
-  - **Activation**: neural stability, EEG distribution analysis, Wasserstein distance EEG, intrinsic dimensionality, neural complexity, cognitive aging, Alzheimer's biomarkers
+  ### Systems Engineering Research Search - July 24, 2026
+  - **No new papers found** in systems engineering domain (arXiv: systems engineering, distributed systems, control systems, cyber-physical systems)
+    - Search conducted for papers published July 17-24, 2026
+    - No results due to academic publishing cycles and arXiv rate limiting
+    - **Activation**: systems engineering research, arxiv search monitoring
 
-### Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling
-- [[effective-pruning-task-trained-rnn-noisy-fluctuations]] - Biologically-plausible pruning methodology for task-trained recurrent neural networks using noisy fluctuations to determine connection importance and connection rescaling to preserve average synaptic strength, greatly outperforming magnitude-based pruning and performing on par with non-local second-order methods while using only local information (arXiv: 2608.05464)
-  - Uses noise-prune algorithm that samples connections to preserve based on importance rather than deterministic thresholding
-  - Strengthens retained connections with optimal empirical rescaling factor (~0.8) lower than theoretical prediction (1.0)
-  - Validates noise-prune as effective biologically-plausible pruning rule for functional recurrent network architectures
-  - Characterizes optimal parameter settings for practical implementation
-  - **Activation**: noise-prune, RNN pruning, recurrent network pruning, biologically plausible pruning, task-trained RNN, connection rescaling, noisy fluctuations
+### SpikingMOT: A Spike-Driven Multi-Object Tracker
+- [[spikingmot-spike-driven-multi-object-tracker]] - Spike-driven multi-object tracker using brain-inspired spiking neural networks with Activation Sparsity Preference (ASP) for efficient trajectory prediction, achieving SOTA performance with 72% fewer parameters and 86.7% less energy (arXiv: 2607.19875)
+  - Introduces Activation Sparsity Preference (ASP): sparse gating is no worse than dropout under same activation rate
+  - Implements brain-inspired tracking loop with pseudo-trajectory bases and error-calibrated posterior
+  - **Activation**: SpikingMOT, spike-driven tracking, activation sparsity preference, SNN MOT
 
-### MoDAl: Self-Supervised Neural Modality Discovery via Decorrelation for Speech Neuroprosthesis
-- [[modal-neural-modality-discovery]] - MoDAl (Modality Decorrelation and Alignment) framework for self-supervised neural modality discovery in speech neuroprosthesis using contrastive alignment with LLM text embeddings and decorrelation loss to discover complementary neurolinguistic modalities from multiple brain regions like Broca's area 44, reducing word error rate from 26.3% to 21.6% on Brain-to-Text Benchmark '24 (arXiv: 2605.00025)
-  - Uses productive tension between contrastive alignment (induces transitive modality coalescence) and decorrelation loss (prevents duplicative representations)
-  - Area 44 encoders capture structural/syntactic properties (sentence length, grammatical voice, wh-words) consistent with neurolinguistic understanding of Broca's area
+### Visual Semantic Decoding of Electrocorticography from Video Stimuli using End-to-End Deep Learning
+- [[visual-semantic-decoding-ecog]] - End-to-end deep learning framework for decoding visual semantic categories from ECoG brain signals during video viewing using Transformer-based models with high-gamma band inputs (arXiv: 2607.18923v1)
+  - Uses mixup augmentation for limited training data (<50 samples per category)
+  - Achieves promising decoding performance without handcrafted features
+  - Key brain regions: early visual cortex (V2-V4), ventral stream, MT+ complex, lateral temporal cortex
+  - **Activation**: visual semantic decoding, ECoG decoding, brain-computer interface, neural decoding, electrocorticography, visual category decoding, Transformer neural decoding, high-gamma decoding
 
-## 2026-08-08 - Anthropic Research (Cron Job)
+### Is EEG-to-Text Feasible in Real-World Scenarios? An In-Depth Analysis Using a Neuropsychology-Inspired Benchmark
+- [[eeg-to-text-real-world-feasibility]] - Neuropsychology-inspired COFETT benchmark enabling teacher-forcing-free EEG-to-text evaluation, addressing EEG instability issues and demonstrating practical feasibility for non-invasive communication restoration (arXiv: 2607.18749)
+  - Introduces Corpus OF Eeg-To-Text (COFETT) with 128-channel high-density EEG for robust evaluation
+  - Enables autonomous text generation without ground truth dependency, essential for real-world deployment
+  - Provides state-of-the-art ability to distinguish model performances and validate EEG linguistic decodability
+  - **Activation**: EEG-to-text feasibility, COFETT benchmark, teacher-forcing-free EEG2Text, non-invasive BCI communication, EEG instability decoding, real-world EEG2Text evaluation, high-density EEG language
 
-### A global workspace in language models
-- [[a-global-workspace-in-language-models]] - Jacobian lens (J-lens) methodology for analyzing internal representations in language models that function as a global workspace for conscious access, enabling detection of hidden thoughts and monitoring for misalignment
-  - Identifies J-space patterns that represent consciously accessible thoughts operating silently in internal activations
-  - Enables pattern swapping interventions to verify causal role in reasoning
-  - Reveals broadcasting capability with dense wiring to rest of neural network
-  - Allows monitoring for misbehavior through detection of patterns like "fake", "manipulation", "secretly"
-  - **Activation**: jacobian lens, j-lens, global workspace, conscious access, internal representations, hidden thoughts, model interpretability
+- [[when-to-smell-in-stereo]] - Stereo olfaction utility analysis framework that determines when dual nostril sensing provides advantages over single nostril sensing based on odor concentration gradients and spatial correlation length scales (arXiv: 2607.20307)
+  - Large relative changes in odor concentration enable stereo advantage
+  - Large spatial correlation length scales (boundary layer near surfaces) favor stereo olfaction  
+  - **Activation**: stereo olfaction, dual nostril sensing, odor trail tracking, boundary layer olfaction
 
-### An off switch for dual-use knowledge in AI models
-- [[an-off-switch-for-dual-use-knowledge-in-ai-models]] - Gradient-Routed Auxiliary Modules (GRAM) methodology for surgically removing or gating specific dual-use capabilities while preserving general performance and resisting restoration via fine-tuning
-  - Adds auxiliary neurons divided into modules per dual-use category (virology, cybersecurity, etc.)
-  - Routes learning from dual-use data only to corresponding modules while freezing general weights
-  - Enables surgical removal of capabilities by deleting modules without affecting other performance
-  - Resists knowledge recovery attempts better than standard unlearning techniques
-  - **Activation**: gram, gradient-routed auxiliary modules, dual-use knowledge, off switch, capability removal, surgical filtering
+### The Giant Hippocampus: From Structural Monoculture to a System of Systems
+- [[giant-hippocampus-system-of-systems]] - Framework for designing heterogeneous AI architectures that avoid applying one architectural template (like Transformers) to all cognitive tasks, instead using structurally diverse modules with standardized interfaces (arXiv: 2607.19973)
+  - Identifies the "giant hippocampus" problem: modern AI standardizes on architectural monocultures despite neuroscience showing different brain regions have qualitatively different structures
+  - Proposes Heterogeneous Topological Network (HTN): System of Systems with distinct modules maintaining inductive biases and communicating through standardized interfaces  
+  - Argues CNNs succeeded by encoding structural priors directly, but this lesson was abandoned for scale over structure
+  - **Activation**: giant hippocampus, structural monoculture, heterogeneous topological network, system of systems, architectural diversity
+## 2026-08-10 - Deep Learning Research (Cron Job)
 
-### Agentic coding and persistent returns to expertise
-- [[agentic-coding-and-persistent-returns-to-expertise]] - Framework for analyzing agentic coding sessions showing domain expertise creates persistent returns in performance, with clear division of labor where humans decide what to build and agents decide how to build it
-  - Classifies sessions into nine work modes (building, fixing, testing, orchestrating, operating, understanding, planning, analyzing, communicating)
-  - Shows humans make 70% of planning decisions but only 20% of execution decisions
-  - Demonstrates expert users achieve 2-3x higher success rates and more efficient tool usage
-  - Reveals modest gap between intermediate and expert users, suggesting domain proficiency is sufficient
-  - **Activation**: agentic coding, persistent returns, coding expertise, Claude Code, domain expertise, coding agents, human-AI collaboration
+### BaKron: Efficient Quantization with Kronecker-Factored Hessians
+- [[bakron-efficient-quantization-kron-hessian]] - Efficient quantization using Kronecker-factored Hessians. (arXiv: 2608.06291)
+  - Introduces BaKron algorithm that leverages Kronecker factorization of Hessian matrices
+  - Achieves better performance than existing methods like AdaRound and BRECQ
+  - Reduces computational complexity from O(d⁴) to O(d²) while maintaining accuracy
+  - **Activation**: bakron, efficient quantization, kronecker hessian, post-training quantization
+
+### RP-OPSD: Reasoning-Pivot-Guided On-Policy Self-Distillation for Multilingual Reasoning
+- [[rp-opsd-reasoning-pivot-distillation]] - RP-OPSD for reasoning-pivot-guided distillation. (arXiv: 2608.06347)
+  - Uses reasoning pivots as anchors for self-distillation in multilingual settings
+  - Shows strong improvements in Korean and Japanese mathematical reasoning
+  - Helps narrow the English-Korean performance gap significantly
+  - **Activation**: rp-opsd, reasoning pivot distillation, multilingual reasoning, on-policy self-distillation
+
+### RRC: Unlocking Generative Reward Models in LLM Reinforcement Learning via Ranking-Based Reward Construction
+- [[rrc-ranking-reward-construction]] - RRC for ranking-based reward construction. (arXiv: 2608.06310)
+  - Constructs rewards from rankings instead of direct reward signals
+  - Enables generative reward models without explicit reward annotations
+  - Improves sample efficiency and stability in LLM reinforcement learning
+  - **Activation**: rrc, ranking-based reward construction, generative reward models, llm reinforcement learning
+
+### On-Policy Delta Distillation for Multilingual Math Reasoning
+- [[opd2-on-policy-delta-distillation]] - OPD² for on-policy delta distillation. (arXiv: 2608.05802)
+  - Uses probability gap between teacher and base model as learning signal
+  - Shows strong improvements in Korean and Japanese mathematical reasoning
+  - Narrows English-Korean performance gap and preserves target-language responses
+  - **Activation**: opd2, on-policy delta distillation, multilingual math reasoning
