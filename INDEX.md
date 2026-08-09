@@ -8,6 +8,14 @@
   - Eliminates need for dedicated error-detecting neurons or symmetric feed-forward/feedback weights
   - **Activation**: layered surprise cascades, predictive coding, forward-forward algorithm, cortical computation, local learning rules
 
+### IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers
+- [[iris-visual-cortex-framework-vit]] - IRIS framework providing neuroscience-inspired metrics (RSS, ORS, orientation tuning bandwidth) to quantify how orientation selectivity emerges in ViTs and tracks biologically-grounded features during training (arXiv: 2608.05122)
+  - Neuroscience-inspired metrics: RSS, ORS, and orientation tuning bandwidth for systematic analysis
+  - Training paradigm is strongest determinant of orientation selectivity regardless of model scale  
+  - Early-to-middle layers recruit orientation-selective units while deeper layers lose selectivity
+  - Provides mechanistic heuristic for downstream task fine-tuning based on layer selectivity patterns
+  - **Activation**: IRIS framework, orientation selectivity, vision transformers, visual cortex, representational similarity
+
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
