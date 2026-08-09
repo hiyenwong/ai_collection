@@ -173,3 +173,12 @@
   - Shows strong improvements in Korean and Japanese mathematical reasoning
   - Narrows English-Korean performance gap and preserves target-language responses
   - **Activation**: opd2, on-policy delta distillation, multilingual math reasoning
+
+## 2026-08-10 - Neuroscience Research (Cron Job)
+
+### Convergent Evolution in Neural Representation Space: Emergent Order in Deep Belief Networks
+- [[convergent-evolution-neural-representation-space]] - DBNs organize representations by unknown classes. (arXiv: 2608.05996)
+  - Class-specific clustering increases with depth despite no label information during training
+  - Effect depends on learned feature structure, not explainable by random transformations or dimensionality reduction
+  - First hidden layers make class identity more accessible to probes; deeper layers become prototype-like
+  - **Activation**: convergent evolution neural representation, deep belief networks unsupervised, class structure emergence
