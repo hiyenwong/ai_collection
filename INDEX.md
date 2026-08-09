@@ -1,5 +1,21 @@
 ## 2026-08-10 - Neuroscience Research (Cron Job)
 
+### Complexity and Stability of Neural Activity Across Aging and Neurodegenerative Disease
+- [[complexity-stability-neural-activity-aging-disease]] - Distribution-level framework for understanding neural stability across cognition, aging, and disease. Uses Wasserstein distance to quantify temporal stability and intrinsic dimensionality to capture representational complexity (arXiv: 2608.05882)
+  - Neural representations show constrained, condition-specific stability rather than unconstrained drift
+  - Higher intrinsic dimensionality consistently associated with lower stability across datasets
+  - Posterior regions show higher dimensionality and lower stability than frontal regions
+  - Healthy aging shows increased dimensionality and reduced stability; MCI/Alzheimer's show joint collapse
+  - **Activation**: neural stability, representational complexity, Wasserstein distance, intrinsic dimensionality, cognitive aging
+
+### Convergent Evolution in Algorithmic Space
+- [[convergent-evolution-algorithmic-space]] - Framework for analyzing convergent evolution in neural network weight structures during training. Uses matching-based comparison with permutation-invariant features and Hungarian matching to align hidden neurons, then applies structural distance metrics to identify task-specific attractors in weight space (arXiv: 2608.05985)
+  - Permutation-invariant alignment using coarse features followed by Hungarian matching refinement
+  - Task-specific attractors demonstrated across MNIST, Fashion-MNIST, and KMNIST datasets
+  - Early morphogenesis shows rapid accuracy improvement before structural separation is visible
+  - Coordinated weight drift begins early while coarse morphology remains unchanged
+  - **Activation**: convergent evolution, algorithmic space, structural weight space, neural network comparison
+
 ### From Local Learning to Global Prediction Through Layered Surprise Cascades
 - [[layered-surprise-cascades-predictive-coding]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation. Demonstrates how predictive representations emerge from simple local learning rules without explicit error neurons or weight symmetry (arXiv: 2608.05481)
   - Biologically plausible framework requiring only local synaptic learning and simple global signal
