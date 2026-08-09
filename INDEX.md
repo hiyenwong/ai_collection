@@ -1,5 +1,11 @@
 ## 2026-08-09 - Neuroscience Research (Cron Job)
 
+### SpikingNav: Robust Embodied Navigation with Spiking Neural Policies
+- [[spikingnav-robust-embodied-navigation]] - Spiking framework for robust indoor embodied navigation using Spiking Sensing Encoder (SSE) and Spiking Policy Network (SPN) with hardware validation on Thruster-V2 neuromorphic chip (arXiv: 2608.05078)
+  - Achieves competitive clean performance and stronger robustness with fewer parameters and lower per-step computation than ANN baseline
+  - Improves ObjectNav success from 31.05% to 34.12% and raises average success under visual corruptions from 8.45% to 13.71%
+  - **Activation**: spikingnav, embodied navigation, spiking neural networks robotics, neuromorphic computing, robust embodied AI, spike-based sensing, thruster-v2 deployment
+
 ### SeekBrain: An Autonomous Multi-Agent System for Accelerating Neuroscience Discovery
 - [[seekbrain-autonomous-neuroscience-discovery]] - Autonomous multi-agent framework for neuroscience discovery using domain-grounded hierarchical planning and cross-modal data analysis (arXiv: 2607.29347)
   - Constructs analysis recipes from code-paper pairs to codify domain expertise
