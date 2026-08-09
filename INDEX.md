@@ -1,3 +1,13 @@
+## 2026-08-10 - Neuroscience Research (Cron Job)
+
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades-predictive-coding]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation. Demonstrates how predictive representations emerge from simple local learning rules without explicit error neurons or weight symmetry (arXiv: 2608.05481)
+  - Biologically plausible framework requiring only local synaptic learning and simple global signal
+  - Mathematical foundation showing equivalence to three-factor Hebbian learning rule
+  - Emergent dynamics producing bottom-up cascade of cancellation and surprise mirroring visual cortex
+  - Eliminates need for dedicated error-detecting neurons or symmetric feed-forward/feedback weights
+  - **Activation**: layered surprise cascades, predictive coding, forward-forward algorithm, cortical computation, local learning rules
+
 ## 2026-07-25 - Neuroscience Research (Cron Job)
 
 ### CogniSNN: Enabling Neuron-Expandability, Pathway-Reusability, and Dynamic-Configurability with Random Graph Architectures in Spiking Neural Networks
