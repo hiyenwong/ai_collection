@@ -190,3 +190,10 @@
   - Outperforms magnitude-based pruning while maintaining task performance in trained RNNs
   - Implements optimal empirical rescaling factor (~0.8) rather than theoretical prediction (1.0)
   - **Activation**: noise-prune, RNN pruning, recurrent network pruning, biologically plausible pruning, task-trained RNN
+
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades-predictive-coding]] - Hierarchical predictive coding using local contrastive learning and activity cancellation that emerges predictive representations without explicit error neurons (arXiv: 2608.05481)
+  - Implements inverted Forward-Forward algorithm with local contrastive learning
+  - Produces bottom-up cascade of cancellation and surprise mirroring visual cortex dynamics
+  - Requires only local synaptic learning and simple global signal for biological plausibility
+  - **Activation**: layered surprise cascades, predictive coding, local contrastive learning, activity cancellation, forward-forward algorithm
