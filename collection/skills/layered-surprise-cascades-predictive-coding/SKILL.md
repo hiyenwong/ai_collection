@@ -1,11 +1,11 @@
 ---
 name: layered-surprise-cascades-predictive-coding
-description: "Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation. Builds on Forward-Forward algorithm with inverted objective for negative data to yield predictive representations across layers, capturing top-down modulation and surprise signaling. Use when implementing biologically plausible predictive coding models, hierarchical neural networks with surprise minimization, or bridging neuroscience and machine learning through local learning rules."
+description: "Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation. Builds on Forward-Forward algorithm with inverted objective to increase activity for negative data, yielding predictive representations that capture top-down modulation and surprise signaling. Use when implementing biologically plausible predictive coding models, analyzing cortical computation principles, or bridging neuroscience with machine learning."
 metadata:
   arxiv_id: "2608.05481"
   published: "2026-08-06"
-  authors: "Smith, Andrew L., Jiang, Linxing Preston, Eshraghian, Jason K., Bull, Matthew S., Recanatesi, Stefano"
-  tags: [predictive-coding, hierarchical-processing, surprise-minimization, forward-forward, contrastive-learning, biologically-plausible, neural-networks, brain-computation]
+  authors: "Andrew L. Smith, Linxing Preston Jiang, Jason K. Eshraghian, Matthew S. Bull, Stefano Recanatesi"
+  tags: [predictive-coding, hierarchical-processing, contrastive-learning, forward-forward, surprise-signaling, top-down-modulation, cortical-computation]
 license: Complete terms in LICENSE.txt
 ---
 
@@ -13,97 +13,93 @@ license: Complete terms in LICENSE.txt
 
 ## Overview
 
-This methodology presents a biologically plausible framework for hierarchical predictive coding where functional goals emerge from local contrastive learning and simple activity cancellation. The approach builds on recent machine learning advances by presenting a recurrent variant of the Forward-Forward (FF) algorithm with an inverted objective that increases activity for negative data.
+Hierarchical predictive coding proposes that the cortex builds layered predictions to minimize surprise. This methodology presents a biologically plausible framework where predictive coding emerges from local contrastive learning and simple activity cancellation, avoiding error-coding neurons or generative modeling of unclear biological plausibility.
 
-Key contributions:
-- Demonstrates how predictive coding principles can emerge from simple, local learning rules
-- Captures hallmark features of cortical computation: top-down modulation and surprise signaling  
-- Offers a new bridge between neuroscience and machine learning
-- Avoids reliance on error-coding neurons or generative modeling of unclear biological plausibility
+The core innovation is a recurrent variant of the Forward-Forward (FF) algorithm with an inverted objective that increases activity for negative data, yielding predictive representations across layers that capture hallmark features of cortical computation.
 
-## Core Methodology
+## Key Components
 
-### Recurrent Forward-Forward with Inverted Objective
+### 1. Local Contrastive Learning Framework
+- Uses local learning rules without backpropagation
+- Implements activity cancellation between positive and negative data streams
+- Generates predictive representations through layer-wise contrastive objectives
 
-The framework uses a recurrent variant of the Forward-Forward algorithm where:
-- **Positive data**: Standard FF objective - maximize activity in higher layers
-- **Negative data**: **Inverted objective** - **increase activity** for negative/unexpected inputs
-- This creates **surprise signaling** through elevated activity when predictions fail
+### 2. Inverted Forward-Forward Algorithm
+- Standard FF: increases activity for positive data, decreases for negative
+- **Inverted FF**: increases activity for negative data (surprise signals)
+- Creates surprise cascades that propagate upward through layers
+- Enables top-down modulation through recurrent connections
 
-### Local Contrastive Learning
-
-Learning occurs through local contrastive mechanisms:
-- Each layer learns to distinguish between expected (positive) and unexpected (negative) patterns
-- No explicit error signals are required - learning emerges from activity differences
-- Simple activity cancellation implements prediction error minimization
-
-### Layered Architecture
-
-The hierarchical structure enables:
-- **Bottom-up processing**: Feature extraction and pattern recognition
-- **Top-down modulation**: Contextual predictions flow downward to suppress expected inputs
-- **Surprise cascades**: Prediction failures propagate upward as elevated activity
+### 3. Biological Plausibility Features
+- No explicit error units required
+- Local synaptic updates only
+- Activity-based surprise signaling
+- Recurrent architecture mimics cortical feedback loops
 
 ## Implementation Guidelines
 
-### Network Architecture
-- Use recurrent connections between layers for bidirectional information flow
-- Implement separate pathways for positive and negative phase processing
-- Ensure local learning rules operate independently at each layer
+### Architecture Design
+1. **Layer Structure**: Design multiple processing layers with recurrent connections
+2. **Activity Cancellation**: Implement local subtraction between positive/negative pathway activities  
+3. **Thresholding**: Apply appropriate activation thresholds to generate sparse surprise signals
+4. **Recurrent Feedback**: Enable top-down modulation through feedback connections
 
-### Training Procedure
-1. **Positive phase**: Present expected/correct data, maximize layer activity
-2. **Negative phase**: Present unexpected/wrong data, **maximize activity** (inverted objective)
-3. **Update weights**: Apply local contrastive learning rules based on activity differences
-4. **Iterate**: Alternate between phases until convergence
+### Training Protocol
+1. **Positive Data Stream**: Present clean/expected input patterns
+2. **Negative Data Stream**: Present corrupted/unexpected input patterns  
+3. **Contrastive Objective**: Maximize activity difference between streams at each layer
+4. **Local Updates**: Update weights based on local activity correlations only
 
-### Key Parameters
-- **Activity thresholds**: Control surprise sensitivity
-- **Learning rates**: Balance stability and plasticity
-- **Recurrence strength**: Modulate top-down influence
+### Evaluation Metrics
+- **Surprise Signal Strength**: Measure activity increase for negative vs positive data
+- **Top-Down Modulation**: Test influence of higher-layer activity on lower-layer responses
+- **Prediction Accuracy**: Evaluate reconstruction quality of expected inputs
+- **Robustness**: Test performance under various corruption types
 
 ## Applications
 
-### Neuroscience Modeling
-- Simulate cortical predictive processing
-- Model surprise responses in hierarchical brain areas
-- Bridge computational neuroscience with machine learning
+### Neuroscience Research
+- Model cortical predictive processing hierarchies
+- Analyze fMRI/EEG data through predictive coding lens
+- Generate testable hypotheses about surprise signaling
+- Bridge computational models with biological constraints
 
 ### Machine Learning
-- Build robust hierarchical classifiers with uncertainty awareness
-- Implement anomaly detection through surprise signaling
-- Create more interpretable neural network architectures
-
-### Brain-Inspired AI
-- Develop systems that learn from prediction errors without explicit supervision
-- Implement attention mechanisms based on surprise minimization
-- Create adaptive agents that update beliefs based on unexpected outcomes
+- Develop biologically inspired neural architectures
+- Create robust prediction systems with uncertainty awareness
+- Implement energy-efficient inference with sparse surprise coding
+- Explore alternatives to backpropagation for deep learning
 
 ## Pitfalls and Considerations
 
-### Biological Plausibility vs. Performance
-- While biologically motivated, may require engineering trade-offs for practical applications
-- Balance local learning constraints with global optimization needs
+### Common Implementation Issues
+- **Overfitting to Negative Examples**: Ensure diverse negative data distribution
+- **Vanishing Surprise Signals**: Monitor signal strength across deep hierarchies
+- **Training Instability**: Balance positive/negative learning rates carefully
+- **Biological Fidelity**: Validate assumptions against neurophysiological data
 
-### Training Stability
-- Inverted objective for negative data requires careful parameter tuning
-- Monitor activity levels to prevent runaway excitation
+### When Not to Use
+- Tasks requiring precise error minimization (use backpropagation instead)
+- Shallow architectures without hierarchical structure
+- Applications needing explicit probability distributions
+- Scenarios with limited computational resources for dual-stream processing
 
-### Computational Complexity
-- Recurrent processing increases computational requirements
-- Consider approximations for real-time applications
+## References
+
+- Original Paper: Smith et al. (2026) - "From Local Learning to Global Prediction Through Layered Surprise Cascades" (arXiv:2608.05481)
+- Forward-Forward Algorithm: Hinton (2022) - Original FF proposal
+- Predictive Coding Theory: Rao & Ballard (1999), Friston (2005)
+- Cortical Hierarchical Processing: Bastos et al. (2012)
 
 ## Activation Keywords
+
 - layered surprise cascades
 - predictive coding
 - forward-forward algorithm
-- hierarchical prediction
-- surprise minimization
-- local contrastive learning
-- biologically plausible learning
+- contrastive learning
+- surprise signaling
+- top-down modulation
 - cortical computation
-
-## References
-- Original paper: arXiv:2608.05481
-- Forward-Forward algorithm: Hinton (2022)
-- Predictive coding theory: Rao & Ballard (1999), Friston (2005)
+- hierarchical processing
+- activity cancellation
+- local learning rules
