@@ -1,3 +1,21 @@
+## 2026-08-11 - Neuroscience Research (Cron Job)
+
+### FedDOSE: Federated Learning Framework Decomposing Site Effects for Modeling Brain Dynamic Functional Connectivity
+- [[feddose-federated-learning-dynamic-functional-connectivity]] - Novel federated learning framework that explicitly decomposes site effects for dynamic functional connectivity analysis using Modularity-Guided Tucker Decomposition and class-specific prototypes with Optimal Transport barycenter formulation. (arXiv: 2608.07393)
+  - Addresses statistical heterogeneity and site differences in multi-site fMRI datasets through explicit site effect decomposition
+  - Introduces Modularity-Guided Tucker Decomposition to encode high-dimensional dFC tensors and capture modular-level spatio-temporal patterns
+  - Uses class-specific prototypes aligned globally via Optimal Transport barycenter formulation and Procrustes analysis
+  - Outperforms state-of-the-art methods in ASD and ADHD detection on ABIDE-I, ABIDE-II, and ADHD-200 datasets
+  - **Activation**: FedDOSE federated learning, Dynamic functional connectivity dFC, Multi-site fMRI privacy, Modularity-Guided Tucker Decomposition, Optimal Transport barycenter fMRI
+
+### International Transfer of Stochastic Cortical Self-Reconstruction
+- [[international-transfer-stochastic-cortical-self-reconstruction]] - Stochastic Cortical Self-Reconstruction (SCSR) framework for personalized mapping of gray matter atrophy with cross-population transferability evaluation from UK Biobank to Chinese dataset. (arXiv: 2608.07092)
+  - Estimates individualized healthy reference directly from observed cortical thickness at vertex level for subtle subject-specific deviation detection
+  - Evaluates four training strategies: direct application, fine-tuning, training from scratch, and joint training across populations
+  - Compares MLP and Spherical UNet reconstruction backbones with fine-tuned SUNet achieving highest discriminative performance (AUC = 0.848)
+  - Demonstrates strong cross-population transferability with low reconstruction errors across lifespan despite narrow training age distribution
+  - **Activation**: Stochastic Cortical Self-Reconstruction, SCSR personalized mapping, Gray matter atrophy vertex-level, Cross-population transfer neuroimaging, UK Biobank Chinese dataset
+
 ## 2026-08-10 - Neuroscience Research (Cron Job)
 
 ### PTQ4SNN: Membrane-Aware Post-Training Quantization for Spiking Neural Networks
@@ -50,6 +68,24 @@
   - Integrated information theory quantifies collective intelligence evolution through coordinated learning
   - **Activation**: holonic digital twins, physical AI networks, HDT-Nets, active inference cyber-physical, causal Markov blankets
 
+## 2026-08-11 - Neuroscience Research (Cron Job)
+
+### FedDOSE: Federated Learning Framework Decomposing Site Effects for Modeling Brain Dynamic Functional Connectivity
+- [[feddose-federated-learning-dynamic-functional-connectivity]] - Novel federated learning framework that explicitly decomposes site effects for dynamic functional connectivity analysis using Modularity-Guided Tucker Decomposition and class-specific prototypes with Optimal Transport barycenter formulation. (arXiv: 2608.07393)
+  - Addresses statistical heterogeneity and site differences in multi-site fMRI datasets through explicit site effect decomposition
+  - Introduces Modularity-Guided Tucker Decomposition to encode high-dimensional dFC tensors and capture modular-level spatio-temporal patterns
+  - Uses class-specific prototypes aligned globally via Optimal Transport barycenter formulation and Procrustes analysis
+  - Outperforms state-of-the-art methods in ASD and ADHD detection on ABIDE-I, ABIDE-II, and ADHD-200 datasets
+  - **Activation**: FedDOSE federated learning, Dynamic functional connectivity dFC, Multi-site fMRI privacy, Modularity-Guided Tucker Decomposition, Optimal Transport barycenter fMRI
+
+### International Transfer of Stochastic Cortical Self-Reconstruction
+- [[international-transfer-stochastic-cortical-self-reconstruction]] - Stochastic Cortical Self-Reconstruction (SCSR) framework for personalized mapping of gray matter atrophy with cross-population transferability evaluation from UK Biobank to Chinese dataset. (arXiv: 2608.07092)
+  - Estimates individualized healthy reference directly from observed cortical thickness at vertex level for subtle subject-specific deviation detection
+  - Evaluates four training strategies: direct application, fine-tuning, training from scratch, and joint training across populations
+  - Compares MLP and Spherical UNet reconstruction backbones with fine-tuned SUNet achieving highest discriminative performance (AUC = 0.848)
+  - Demonstrates strong cross-population transferability with low reconstruction errors across lifespan despite narrow training age distribution
+  - **Activation**: Stochastic Cortical Self-Reconstruction, SCSR personalized mapping, Gray matter atrophy vertex-level, Cross-population transfer neuroimaging, UK Biobank Chinese dataset
+
 ## 2026-08-10 - Neuroscience Research (Cron Job)
 
 ### From Local Learning to Global Prediction Through Layered Surprise Cascades
@@ -97,3 +133,25 @@
   - Implements Key Pathway-based Learning without Forgetting (KP-LwF) using Betweenness Centrality for continual learning
   - Features Dynamic Growth Learning (DGL) algorithm for temporal dimension structural plasticity
   - **Activation**: cognisnn, random graph architecture, neuron expandability, pathway reusability, dynamic configurability
+## 2026-08-11 - Deep Learning Research (Cron Job)
+
+### Beyond Isolation: Unlocking Reinforcement Learning Component Synergy for Sample-Efficient Continuous Control
+- [[roser-rl-component-synergy]] - ROSER framework coordinating Model-based Representation, Optimization Stability, and Experience Replay for sample-efficient RL. (arXiv: 2608.07086v1)
+  - Efficacy of RL components exhibits significant task-dependency
+  - Naive stacking of SOTA techniques often triggers emergent challenges like compounded non-stationarity
+  - Achieves 17.60% gains over naive component stacking across continuous-control benchmarks
+  - **Activation**: roser, rl component synergy, sample-efficient, continuous control, model-based representation, optimization stability, experience replay
+
+### Simple-OPD: Demystifying Warm-up for On-policy Distillation
+- [[simple-opd-on-policy-distillation]] - Plug-and-play initialization method using teacher-compatible CoT with LoRA for OPD warm-up. (arXiv: 2608.06802v1)
+  - Effective warm-up relies on teacher-compatible chain-of-thought supervision rather than just correct answers
+  - Even incorrect teacher rollouts provide comparable benefits to correct ones
+  - LoRA with near-saturation training duration better balances in-domain adaptation and out-of-distribution generalization
+  - **Activation**: simple-opd, on-policy distillation, warm-up, teacher-compatible CoT, LoRA warm-up, chain-of-thought transfer
+
+### Beyond Foundation Models: Dimension-Aware Neural Architecture Search with Small-Data Representation Models for Cryocooler Lifetime Prediction
+- [[fsd-rm-small-data-representation]] - FSD-RM paradigm using established encoders with dimension-aware NAS for small-data representation learning. (arXiv: 2608.06993v1)
+  - Uses proven architectures (CNN1D, LSTM, GRU, Transformer) suitable for small-data regimes
+  - Employs dimension-aware neural architecture search to jointly optimize model capacity and input dimensionality
+  - Achieves competitive predictive performance while reducing training cost and model complexity
+  - **Activation**: fsd-rm, small-data, representation learning, dimension-aware nas, telemetry, cryocooler, time-series
