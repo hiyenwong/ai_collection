@@ -8,6 +8,13 @@
   - Healthy aging shows increased dimensionality and reduced stability; MCI/Alzheimer's show joint collapse
   - **Activation**: neural stability, representational complexity, Wasserstein distance, intrinsic dimensionality, cognitive aging
 
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades-predictive-coding]] - Biologically plausible predictive coding framework using local contrastive learning and activity cancellation. Builds on Forward-Forward algorithm with inverted objective for negative data (arXiv: 2608.05481)
+  - Key principles: local contrastive learning, activity cancellation, inverted Forward-Forward objective, recurrent architecture
+  - Captures hallmark cortical features: top-down modulation, surprise signaling, hierarchical prediction
+  - Offers new bridge between neuroscience and machine learning without error-coding neurons
+  - **Activation**: predictive coding, layered surprise cascades, forward-forward algorithm, hierarchical prediction, cortical computation
+
 ### Convergent Evolution in Algorithmic Space
 - [[convergent-evolution-algorithmic-space]] - Framework for analyzing convergent evolution in neural network weight structures during training. Uses matching-based comparison with permutation-invariant features and Hungarian matching to align hidden neurons, then applies structural distance metrics to identify task-specific attractors in weight space (arXiv: 2608.05985)
   - Permutation-invariant alignment using coarse features followed by Hungarian matching refinement
