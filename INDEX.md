@@ -35,6 +35,12 @@
 
 ## 2026-08-10 - Neuroscience Research (Cron Job)
 
+### From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades-predictive-coding]] - Biologically plausible predictive coding framework using local contrastive learning and activity cancellation. Builds on Forward-Forward algorithm with inverted objective for negative data (arXiv: 2608.05481)
+  - Predictive representations emerge from simple local learning rules without explicit error neurons
+  - Captures hallmark features of cortical computation like top-down modulation and surprise signaling
+  - **Activation**: predictive coding, layered surprise cascades, forward-forward algorithm, hierarchical prediction, cortical computation, surprise signaling
+
 ### Convergent Evolution in Neural Representation Space: Emergent Order in Deep Belief Networks
 - [[convergent-evolution-neural-representation-space]] - DBNs spontaneously organize representations by class without supervision. (arXiv: 2608.05996)
   - Class-specific clustering increases with network depth despite no label information during training
@@ -50,13 +56,6 @@
   - Healthy aging shows increased dimensionality and reduced stability; MCI/Alzheimer's show joint collapse
   - **Activation**: neural stability, representational complexity, Wasserstein distance, intrinsic dimensionality, cognitive aging
 
-### From Local Learning to Global Prediction Through Layered Surprise Cascades
-- [[layered-surprise-cascades-predictive-coding]] - Biologically plausible predictive coding framework using local contrastive learning and activity cancellation. Builds on Forward-Forward algorithm with inverted objective for negative data (arXiv: 2608.05481)
-  - Key principles: local contrastive learning, activity cancellation, inverted Forward-Forward objective, recurrent architecture
-  - Captures hallmark cortical features: top-down modulation, surprise signaling, hierarchical prediction
-  - Offers new bridge between neuroscience and machine learning without error-coding neurons
-  - **Activation**: predictive coding, layered surprise cascades, forward-forward algorithm, hierarchical prediction, cortical computation
-
 ### Convergent Evolution in Algorithmic Space
 - [[convergent-evolution-algorithmic-space]] - Framework for analyzing convergent evolution in neural network weight structures during training. Uses matching-based comparison with permutation-invariant features and Hungarian matching to align hidden neurons, then applies structural distance metrics to identify task-specific attractors in weight space (arXiv: 2608.05985)
   - Permutation-invariant alignment using coarse features followed by Hungarian matching refinement
@@ -64,14 +63,6 @@
   - Early morphogenesis shows rapid accuracy improvement before structural separation is visible
   - Coordinated weight drift begins early while coarse morphology remains unchanged
   - **Activation**: convergent evolution, algorithmic space, structural weight space, neural network comparison
-
-### From Local Learning to Global Prediction Through Layered Surprise Cascades
-- [[layered-surprise-cascades-predictive-coding]] - Layered Surprise Cascades methodology for hierarchical predictive coding using local contrastive learning and activity cancellation. Demonstrates how predictive representations emerge from simple local learning rules without explicit error neurons or weight symmetry (arXiv: 2608.05481)
-  - Biologically plausible framework requiring only local synaptic learning and simple global signal
-  - Mathematical foundation showing equivalence to three-factor Hebbian learning rule
-  - Emergent dynamics producing bottom-up cascade of cancellation and surprise mirroring visual cortex
-  - Eliminates need for dedicated error-detecting neurons or symmetric feed-forward/feedback weights
-  - **Activation**: layered surprise cascades, predictive coding, forward-forward algorithm, cortical computation, local learning rules
 
 ### IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers
 - [[iris-visual-cortex-framework-vit]] - IRIS framework providing neuroscience-inspired metrics (RSS, ORS, orientation tuning bandwidth) to quantify how orientation selectivity emerges in ViTs and tracks biologically-grounded features during training (arXiv: 2608.05122)
