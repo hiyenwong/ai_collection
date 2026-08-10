@@ -1,3 +1,19 @@
+## 2026-08-10 - Anthropic Research (Cron Job)
+
+### An off switch for dual-use knowledge in AI models
+- [[off-switch-dual-use-knowledge-control]] - GRAM methodology for controlling dual-use knowledge in AI models with an off switch.
+  - Gradient-Routed Auxiliary Modules (GRAM) provide selective control over harmful capabilities
+  - Auxiliary modules can be disabled at inference time without affecting other model functions
+  - Enables training with gradient routing to selectively enable/disable capabilities
+  - **Activation**: off switch dual use, GRAM methodology, gradient-routed auxiliary modules, dual-use knowledge control, harmful capability disable, selective model control, Anthropic off switch
+
+### Discovering cryptographic weaknesses with Claude
+- [[discovering-cryptographic-weaknesses-claude]] - Methodology for discovering cryptographic weaknesses using Claude AI.
+  - Systematic analysis of cryptographic code and protocols for potential weaknesses
+  - Leverages Claude's pattern recognition to identify known vulnerability patterns and novel attack vectors
+  - Constructs formal proofs or counterexamples to demonstrate identified weaknesses
+  - **Activation**: discovering cryptographic weaknesses, Claude cryptography analysis, AI red teaming cryptography, cryptographic vulnerability discovery, automated crypto analysis, Anthropic frontier red team, cryptographic weakness identification
+
 ## 2026-08-10 - Quantum Reservoir Computing Thermodynamics (Cron Job)
 
 ### Thermodynamics of Quantum Reservoir Computing
