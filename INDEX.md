@@ -1,5 +1,13 @@
 ## 2026-08-11 - Neuroscience Research (Cron Job)
 
+### PTQ4SNN: Membrane-Aware Post-Training Quantization for Spiking Neural Networks
+- [[ptq4snn-membrane-aware-post-training-quantization]] - PTQ4SNN membrane-aware SNN quantization framework for joint weight and membrane state quantization without retraining. (arXiv: 2608.07066)
+  - Addresses critical gap in SNN deployment by quantizing both weights and recurrent membrane states using only small calibration set
+  - Introduces Channel-wise Unified Scale Bridge constraining membrane scale as s_mem,c = s_w,c * 2^k_c for hardware efficiency
+  - Implements Mixed-Precision Bit Allocation assigning 2/4/8-bit precision based on firing activity and quantization sensitivity
+  - Supports both convolutional SNNs and spike-driven Transformers with reusable projection-LIF architecture
+  - **Activation**: PTQ4SNN, membrane quantization, SNN quantization, post-training quantization, spiking neural networks, neuromorphic deployment, low-bit SNN
+
 ### FedDOSE: Federated Learning Framework Decomposing Site Effects for Modeling Brain Dynamic Functional Connectivity
 - [[feddose-federated-learning-dynamic-functional-connectivity]] - Novel federated learning framework that explicitly decomposes site effects for dynamic functional connectivity analysis using Modularity-Guided Tucker Decomposition and class-specific prototypes with Optimal Transport barycenter formulation. (arXiv: 2608.07393)
   - Addresses statistical heterogeneity and site differences in multi-site fMRI datasets through explicit site effect decomposition
@@ -69,6 +77,14 @@
   - **Activation**: holonic digital twins, physical AI networks, HDT-Nets, active inference cyber-physical, causal Markov blankets
 
 ## 2026-08-11 - Neuroscience Research (Cron Job)
+
+### PTQ4SNN: Membrane-Aware Post-Training Quantization for Spiking Neural Networks
+- [[ptq4snn-membrane-aware-post-training-quantization]] - PTQ4SNN membrane-aware SNN quantization framework for joint weight and membrane state quantization without retraining. (arXiv: 2608.07066)
+  - Addresses critical gap in SNN deployment by quantizing both weights and recurrent membrane states using only small calibration set
+  - Introduces Channel-wise Unified Scale Bridge constraining membrane scale as s_mem,c = s_w,c * 2^k_c for hardware efficiency
+  - Implements Mixed-Precision Bit Allocation assigning 2/4/8-bit precision based on firing activity and quantization sensitivity
+  - Supports both convolutional SNNs and spike-driven Transformers with reusable projection-LIF architecture
+  - **Activation**: PTQ4SNN, membrane quantization, SNN quantization, post-training quantization, spiking neural networks, neuromorphic deployment, low-bit SNN
 
 ### FedDOSE: Federated Learning Framework Decomposing Site Effects for Modeling Brain Dynamic Functional Connectivity
 - [[feddose-federated-learning-dynamic-functional-connectivity]] - Novel federated learning framework that explicitly decomposes site effects for dynamic functional connectivity analysis using Modularity-Guided Tucker Decomposition and class-specific prototypes with Optimal Transport barycenter formulation. (arXiv: 2608.07393)
