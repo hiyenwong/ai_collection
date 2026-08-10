@@ -1,3 +1,13 @@
+## 2026-08-10 - Neuroscience Research (Cron Job)
+
+### Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling
+- [[effective-pruning-task-trained-rnn-noisy-fluctuations]] - Noise-prune preserves task performance in RNNs. (arXiv: 2608.05464)
+  - Biologically-plausible local pruning rule using noisy fluctuations to determine connection importance
+  - Samples connections to preserve based on importance and strengthens retained connections
+  - Outperforms magnitude-based pruning and matches/exceeds second-order methods
+  - Optimal empirical rescaling factor is lower than theoretical prediction
+  - **Activation**: noise-prune, RNN pruning, biologically plausible pruning, task-trained RNN, connection rescaling, noisy fluctuations
+
 ## 2026-08-10 - Anthropic Research (Cron Job)
 
 ### An off switch for dual-use knowledge in AI models
@@ -17,7 +27,7 @@
 ## 2026-08-10 - Quantum Reservoir Computing Thermodynamics (Cron Job)
 
 ### Thermodynamics of Quantum Reservoir Computing
-- [[thermodynamics-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework linking predictive performance to energetic costs in quantum reservoir computing. Establishes fundamental trade-offs between computational capacity and thermodynamic dissipation (arXiv: 2607.02157)
+- [[thermodynamics-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework linking predictive performance to energetic costs in quantum reservoir computing. Establishes fundamental trade-offs between computational capacity and thermodynamic dissipation (arXiv: 2608.02157)
   - Computational peak in quantum critical region originates from spectral resonance aligning internal transition frequencies with chaotic drive
   - Generalized Landauer bound reveals fundamental trade-off: critical resonance maximizes both predictive capacity and irreversible work
   - Quantum coherences amplify predictive capacity without demanding additional mechanical work
