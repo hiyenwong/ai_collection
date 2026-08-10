@@ -1,96 +1,107 @@
 ---
 name: layered-surprise-cascades-predictive-coding
-title: Layered Surprise Cascades methodology for hierarchical predictive coding
-version: 1.0.0
-created: 2026-08-10
-updated: 2026-08-10
-authors:
-  - Andrew L. Smith
-  - Linxing Preston Jiang
-  - Jason K. Eshraghian
-  - Matthew S. Bull
-  - Stefano Recanatesi
-tags:
-  - predictive-coding
-  - neuroscience
-  - machine-learning
-  - forward-forward-algorithm
-  - brain-inspired-ai
-  - hierarchical-processing
-arxiv_id: 2608.05481
+description: "Layered Surprise Cascades framework for biologically plausible predictive coding using local contrastive learning and activity cancellation. Implements recurrent Forward-Forward algorithm with inverted objective for negative data to yield predictive representations across layers. Use when modeling cortical computation, top-down modulation, surprise signaling, or building hierarchical predictive systems without error-coding neurons."
+metadata:
+  arxiv_id: "2608.05481"
+  published: "2026-08-10"
+  authors: "Andrew L. Smith, Linxing Preston Jiang, Jason K. Eshraghian, Matthew S. Bull, Stefano Recanatesi"
+  tags: [predictive-coding, hierarchical-processing, contrastive-learning, forward-forward-algorithm, cortical-computation, surprise-signaling, top-down-modulation]
+license: Complete terms in LICENSE.txt
 ---
 
-# Layered Surprise Cascades Predictive Coding
+# Layered Surprise Cascades: From Local Learning to Global Prediction
 
-Hierarchical predictive coding proposes that the cortex builds layered predictions to minimize surprise. This methodology presents a biologically plausible framework where predictive coding emerges from local contrastive learning and simple activity cancellation, using a recurrent variant of the Forward-Forward (FF) algorithm with an inverted objective that increases activity for negative data.
+## Overview
 
-## Use when
+Layered Surprise Cascades presents a biologically plausible framework for predictive coding that emerges from local contrastive learning and simple activity cancellation, rather than relying on error-coding neurons or generative modeling of unclear biological plausibility. Building on recent machine learning advances, this framework uses a recurrent variant of the Forward-Forward (FF) algorithm with an inverted objective that increases activity for negative data, yielding predictive representations across layers that capture hallmark features of cortical computation.
 
-You need to implement biologically plausible predictive coding models that capture cortical computation features like top-down modulation and surprise signaling without relying on error-coding neurons or generative modeling of unclear biological plausibility.
+## When to Use
 
-## Core methodology
+Use Layered Surprise Cascades when:
+- Modeling cortical computation and hierarchical predictive processing
+- Implementing biologically plausible predictive coding without error units
+- Building systems that require top-down modulation and surprise signaling
+- Working with local learning rules that don't require backpropagation
+- Developing recurrent neural networks with predictive capabilities
+- Researching the intersection of neuroscience and machine learning
 
-### Key principles
-- **Local contrastive learning**: Each layer learns to distinguish positive (real) from negative (synthetic/artificial) data through local learning rules
-- **Activity cancellation**: Simple mechanisms for canceling predictable activity, leaving only surprise signals to propagate upward
-- **Inverted Forward-Forward objective**: Unlike standard FF which maximizes activity for positive data, this variant increases activity for negative data to enhance surprise detection
-- **Recurrent architecture**: Enables feedback connections and dynamic processing across layers
+## Core Methodology
 
-### Implementation steps
+### 1. Biologically Plausible Predictive Coding
+- Traditional predictive coding relies on error-coding neurons which lack clear biological evidence
+- This framework eliminates the need for explicit error units by using local contrastive learning
+- Activity cancellation mechanisms replace traditional error propagation
 
-1. **Data preparation**:
-   - Prepare positive samples (real data from your domain)
-   - Generate negative samples (synthetic/artificial data that violates expected patterns)
+### 2. Recurrent Forward-Forward Algorithm
+- Standard Forward-Forward algorithm processes positive and negative data separately
+- This variant uses a recurrent architecture with an inverted objective for negative data
+- The inverted objective increases activity for negative (surprising) data rather than decreasing it
+- This creates a natural surprise signal that propagates through layers
 
-2. **Network architecture**:
-   - Design a recurrent neural network with multiple layers
-   - Ensure each layer can receive both feedforward input and feedback from higher layers
-   - Implement local learning rules at each layer
+### 3. Local Contrastive Learning
+- Each layer learns to distinguish between expected (positive) and surprising (negative) inputs
+- Learning occurs through local rules without global error signals
+- Contrastive objectives drive the formation of predictive representations
 
-3. **Training procedure**:
-   - For positive data: Train layers to maintain or reduce activity levels
-   - For negative data: Train layers to increase activity levels (inverted FF objective)
-   - Use local contrastive learning rules that don't require global error backpropagation
+### 4. Hierarchical Surprise Signaling
+- Surprise signals cascade through multiple layers of processing
+- Top-down modulation emerges naturally from the recurrent architecture
+- The system captures key features of cortical computation including prediction and surprise
 
-4. **Surprise cascade mechanism**:
-   - Implement activity cancellation between layers
-   - Allow residual surprise signals to propagate upward through the hierarchy
-   - Enable top-down modulation to influence lower-layer processing
+## Implementation Guidelines
 
-5. **Evaluation metrics**:
-   - Measure surprise signaling fidelity across layers
-   - Assess top-down modulation effectiveness
-   - Validate biological plausibility of learned representations
+### Architecture Design
+1. **Layer Structure**: Design multiple recurrent layers with local connectivity
+2. **Activity Cancellation**: Implement simple subtraction or inhibition mechanisms between layers
+3. **Contrastive Objective**: Define positive data as expected inputs, negative data as surprising inputs
+4. **Inverted Objective**: For negative data, maximize activity rather than minimize it
 
-## Pitfalls and considerations
+### Training Procedure
+1. **Positive Phase**: Present expected inputs and train layers to maintain appropriate activity levels
+2. **Negative Phase**: Present surprising inputs and train layers to increase activity (inverted objective)
+3. **Local Updates**: Apply weight updates based only on local pre- and post-synaptic activity
+4. **Recurrent Dynamics**: Allow information to flow both forward and backward through recurrent connections
 
-- **Negative sample quality**: Poor negative samples can lead to ineffective learning; ensure they represent meaningful violations of expected patterns
-- **Layer depth trade-offs**: Deeper hierarchies may require careful tuning of learning rates and activity thresholds
-- **Biological constraints**: Balance computational efficiency with biological realism based on your specific application needs
-- **Training stability**: The inverted objective may require different optimization strategies than standard FF
+### Evaluation Metrics
+- **Prediction Accuracy**: How well does the system predict expected inputs?
+- **Surprise Detection**: How effectively does it signal unexpected inputs?
+- **Top-Down Modulation**: Does higher-level activity influence lower-level processing?
+- **Biological Plausibility**: Are the learning rules and architecture consistent with known neuroscience?
 
-## Verification steps
+## Expected Results
 
-1. Confirm that class-specific clustering increases with network depth
-2. Verify that surprise signals propagate effectively through the hierarchy  
-3. Test top-down modulation capabilities with controlled perturbations
-4. Compare representation quality against baseline predictive coding models
-5. Validate that the model captures hallmark features of cortical computation
+- Emergent predictive representations across multiple layers
+- Natural surprise signaling without explicit error units
+- Top-down modulation effects similar to cortical processing
+- Biologically plausible learning dynamics
+- Competitive performance with traditional predictive coding models
 
-## Applications
+## Pitfalls and Considerations
 
-- Brain-inspired AI systems requiring hierarchical prediction
-- Neuromorphic computing implementations
-- Unsupervised representation learning with biological constraints
-- Predictive processing models for cognitive science research
-- Robust perception systems that explicitly handle surprise and uncertainty
+- **Training Stability**: The inverted objective for negative data may require careful hyperparameter tuning
+- **Architecture Design**: Recurrent connections must be designed to avoid instability or oscillations
+- **Data Preparation**: Clear distinction between positive (expected) and negative (surprising) data is crucial
+- **Computational Cost**: Recurrent processing may be more expensive than feedforward alternatives
+- **Scalability**: May require careful design to scale to very deep architectures
+
+## Activation Keywords
+
+- Layered Surprise Cascades
+- Predictive coding biologically plausible
+- Forward-Forward algorithm recurrent
+- Local contrastive learning cortex
+- Activity cancellation predictive
+- Surprise signaling neural
+- Top-down modulation emergent
+- Inverted objective negative data
+- Hierarchical prediction cortex
+- Cortical computation model
 
 ## References
 
-- Smith, A. L., Jiang, L. P., Eshraghian, J. K., Bull, M. S., & Recanatesi, S. (2026). From Local Learning to Global Prediction Through Layered Surprise Cascades. arXiv:2608.05481 [q-bio.NC].
-- Hinton, G. E. (2022). The Forward-Forward Algorithm: Some Preliminary Investigations. arXiv preprint arXiv:2212.13345.
-- Rao, R. P., & Ballard, D. H. (1999). Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects. Nature neuroscience, 2(1), 79-87.
-
-## Activation keywords
-
-predictive coding, layered surprise cascades, forward-forward algorithm, hierarchical prediction, cortical computation, surprise signaling, top-down modulation, local contrastive learning, activity cancellation, brain-inspired AI
+- Original Paper: arXiv:2608.05481 [q-bio.NC]
+- Related Skills:
+  - `predictive-coding-light`
+  - `extended-predictive-coding-exponential-family`
+  - `online-generalised-predictive-coding`
+  - `neocortex-error-driven-predictive-learning`
