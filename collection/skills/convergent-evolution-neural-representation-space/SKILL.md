@@ -1,14 +1,12 @@
 ---
 name: convergent-evolution-neural-representation-space
-title: Convergent Evolution in Neural Representation Space
-description: Framework demonstrating how Deep Belief Networks spontaneously uncover and progressively amplify class-related structure in unlabeled data through layer-wise generative learning, without any supervision.
-trigger_words:
-  - convergent evolution neural representation
-  - deep belief networks unsupervised
-  - class-specific clustering
-  - emergent order DBN
-  - generalized discrimination value
-  - prototype-like representations
+description: "DBNs spontaneously organize representations by class without supervision."
+metadata:
+  arxiv_id: "2608.05996"
+  published: "2026-08-06"
+  authors: "Krauss, Patrick; Schilling, Achim; Maier, Andreas; Kinfe, Thomas; Metzner, Claus"
+  tags: [neuroscience, computational-neuroscience, deep-belief-networks, representation-learning, unsupervised-learning]
+license: Complete terms in LICENSE.txt
 ---
 
 # Convergent Evolution in Neural Representation Space

@@ -35,6 +35,13 @@
 
 ## 2026-08-10 - Neuroscience Research (Cron Job)
 
+### Convergent Evolution in Neural Representation Space: Emergent Order in Deep Belief Networks
+- [[convergent-evolution-neural-representation-space]] - DBNs spontaneously organize representations by class without supervision. (arXiv: 2608.05996)
+  - Class-specific clustering increases with network depth despite no label information during training
+  - First hidden layers make class identity more accessible to linear and nonlinear probes
+  - Deeper representations become increasingly compact and prototype-like with correlated feature directions
+  - **Activation**: convergent evolution neural representation, deep belief networks unsupervised, class-specific clustering, emergent order DBN, generalized discrimination value, prototype-like representations
+
 ### Complexity and Stability of Neural Activity Across Aging and Neurodegenerative Disease
 - [[complexity-stability-neural-activity-aging-disease]] - Distribution-level framework for understanding neural stability across cognition, aging, and disease. Uses Wasserstein distance to quantify temporal stability and intrinsic dimensionality to capture representational complexity (arXiv: 2608.05882)
   - Neural representations show constrained, condition-specific stability rather than unconstrained drift
