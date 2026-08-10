@@ -1,3 +1,11 @@
+## 2026-08-10 - Quantum Reservoir Computing Thermodynamics (Cron Job)
+
+### Thermodynamics of Quantum Reservoir Computing
+- [[thermodynamics-quantum-reservoir-computing]] - Non-equilibrium thermodynamic framework linking predictive performance to energetic costs in quantum reservoir computing. Establishes fundamental trade-offs between computational capacity and thermodynamic dissipation (arXiv: 2607.02157)
+  - Computational peak in quantum critical region originates from spectral resonance aligning internal transition frequencies with chaotic drive
+  - Generalized Landauer bound reveals fundamental trade-off: critical resonance maximizes both predictive capacity and irreversible work
+  - Quantum coherences amplify predictive capacity without demanding additional mechanical work
+  - **Activation**: quantum reservoir computing thermodynamics, quantum critical region reservoir, informational dissipation quantum, Landauer bound temporal processing, quantum coherence predictive capacity
 ## 2026-08-10 - Systems Engineering Research (Cron Job)
 
 ### From Passive Mirrors to Active Agents: Holonic Digital Twins for Physical AI over Networks
