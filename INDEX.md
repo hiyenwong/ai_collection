@@ -1,5 +1,12 @@
 ## 2026-08-10 - Neuroscience Research (Cron Job)
 
+### PTQ4SNN: Membrane-Aware Post-Training Quantization for Spiking Neural Networks
+- [[ptq4snn-membrane-aware-quantization]] - Framework that jointly quantizes weights and recurrent membrane states using channel-wise Unified Scale Bridge and Mixed-Precision Bit Allocation. (arXiv: 2608.07066)
+  - Channel-wise Unified Scale Bridge constrains membrane scale as `s_mem,c = s_w,c * 2^k_c` for shift-compatible scale conversion
+  - Mixed-Precision Bit Allocation assigns 2/4/8-bit precision to membrane channels based on firing activity and quantization sensitivity
+  - Enables full low-bit SNN deployment while preserving accuracy under W4 weight quantization and ~4-bit membrane precision
+  - **Activation**: PTQ4SNN, membrane-aware quantization, SNN quantization, post-training quantization spiking, membrane state quantization, unified scale bridge, mixed-precision SNN
+
 ### Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling
 - [[effective-pruning-task-trained-rnn-noisy-fluctuations]] - Noise-prune preserves task performance in RNNs. (arXiv: 2608.05464)
   - Biologically-plausible local pruning rule using noisy fluctuations to determine connection importance
