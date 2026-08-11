@@ -1,80 +1,120 @@
 ---
 name: quantum-reservoir-neurodynamical-forecasting
-description: Quantum Reservoir Computing (QRC) methodology for neurodynamical forecasting using transverse-field Ising model, heterogeneous quantum measurements, and polynomial ridge regression. Demonstrates QRC feasibility on near-term quantum hardware for EEG-like neural data prediction.
+description: Quantum Reservoir Computing (QRC) methodology for neurodynamical forecasting using transverse-field Ising model, heterogeneous quantum measurements, and polynomial ridge regression. Applied to EEG-like data with parallel reservoir architecture.
+trigger_words:
+  - quantum reservoir computing
+  - neurodynamical forecasting
+  - QRC EEG
+  - quantum neural forecasting
+  - transverse-field Ising reservoir
 ---
 
 # Quantum Reservoir for Neurodynamical Forecasting
 
 ## Overview
-This skill implements the methodology from arXiv:2608.00139 "A Quantum Reservoir for Neurodynamical Forecasting" by Wolff et al. The approach uses Quantum Reservoir Computing (QRC) to forecast neural activity from short recordings, addressing the limitations of classical reservoirs in small-data regimes.
 
-## Core Components
+This skill implements the quantum reservoir computing methodology from the paper "A Quantum Reservoir for Neurodynamical Forecasting" (arXiv:2608.00139) by Wolff et al. The approach combines:
 
-### 1. Quantum Reservoir Architecture
-- **Base Model**: Transverse-field Ising model as the quantum reservoir
-- **Measurements**: Heterogeneous quantum measurements for enhanced feature extraction
-- **Readout**: Polynomial ridge regression for temporal prediction
+1. **Quantum Reservoir**: Based on a transverse-field Ising model
+2. **Heterogeneous Quantum Measurements**: Multiple measurement bases for rich feature extraction  
+3. **Polynomial Ridge Regression**: For readout layer training
+4. **Parallel Reservoir Architecture**: For handling biological signals like EEG
 
-### 2. Implementation Details
-- **Hardware Feasibility**: Demonstrated execution on actual quantum hardware
-- **Parallel Architecture**: Tested with parallel reservoir configuration for biological signals
-- **Data Types**: Applied to both standard benchmark tasks and simulated human EEG data
+The methodology is designed to overcome limitations of classical reservoir computing in small-data regimes for neural activity forecasting.
 
-### 3. Performance Characteristics
-- **Benchmark Results**: Quantum reservoir outperforms classical counterpart on standard tasks
-- **EEG Performance**: While not matching classical performance on complex EEG signals, produces stable and convergent predictions
-- **Parameter Sensitivity**: Prediction accuracy strongly dependent on reservoir parameters
+## Core Methodology
 
-## Use Cases
+### Quantum Reservoir Design
+- **Hamiltonian**: Transverse-field Ising model with tunable parameters
+- **Input Encoding**: Neural time-series data encoded into quantum system parameters
+- **Dynamics**: Time evolution under the Ising Hamiltonian generates high-dimensional representations
 
-### When to Apply This Skill
-- **Neural Time-Series Forecasting**: When you need to predict neural activity from limited recordings
-- **Quantum Hardware Benchmarking**: For testing QRC algorithms on near-term quantum devices
-- **Hybrid Classical-Quantum Systems**: When developing systems that combine classical and quantum processing for biomedical applications
-- **Clinical Time-Series Analysis**: As a baseline for future quantum-enhanced clinical forecasting
+### Measurement Strategy
+- **Heterogeneous Measurements**: Apply different measurement bases to extract diverse features
+- **Feature Vector Construction**: Concatenate measurement outcomes across time steps and bases
+- **Dimensionality**: Quantum reservoir naturally provides exponential feature space
 
-### Limitations
-- Current quantum hardware limitations may restrict performance on complex biological signals
-- Requires careful parameter tuning for optimal results
-- Parallel reservoir architectures need further optimization for EEG-like data
+### Readout Layer
+- **Polynomial Ridge Regression**: Non-linear readout with regularization to prevent overfitting
+- **Training**: Only the readout weights are trained; reservoir remains fixed
+- **Optimization**: Ridge parameter tuned via cross-validation
 
-## Implementation Workflow
+### Parallel Architecture for Biological Signals
+- **Multiple Reservoirs**: Run several quantum reservoirs in parallel with different parameters
+- **Ensemble Prediction**: Combine predictions from multiple reservoirs for robustness
+- **EEG Application**: Specifically tested on simulated human electroencephalography data
 
-### Step 1: Problem Assessment
-1. Evaluate if your neural forecasting task involves limited data (small-data regime)
-2. Determine if quantum hardware access is available
-3. Assess computational requirements vs. classical alternatives
+## Implementation Steps
 
-### Step 2: Reservoir Configuration
-1. Set up transverse-field Ising model parameters
-2. Configure heterogeneous measurement settings
-3. Optimize polynomial ridge regression hyperparameters
+### 1. Quantum Reservoir Setup
+```python
+# Define transverse-field Ising Hamiltonian
+H = -J * sum(sigma_x[i] @ sigma_x[i+1] for i in range(N-1)) - h * sum(sigma_z[i] for i in range(N))
+```
 
-### Step 3: Training and Validation
-1. Train on available neural time-series data
-2. Validate convergence properties on holdout data
-3. Compare against classical reservoir baselines
+### 2. Input Encoding
+- Map neural time-series values to time-dependent Hamiltonian parameters
+- Use amplitude or frequency encoding schemes based on signal characteristics
 
-### Step 4: Hardware Deployment
-1. Map reservoir to available quantum hardware
-2. Implement error mitigation strategies
-3. Monitor prediction stability and convergence
+### 3. Quantum Evolution
+- Simulate quantum dynamics using Trotter decomposition or exact methods
+- Generate reservoir states at each time step
 
-## Key Parameters to Tune
-- Transverse field strength in Ising model
-- Measurement basis selection for heterogeneity
-- Polynomial degree in ridge regression
-- Regularization strength for small-data stability
+### 4. Heterogeneous Measurements
+- Define multiple measurement operators (Pauli X, Y, Z, etc.)
+- Extract expectation values for each operator at each time step
 
-## Expected Outcomes
-- **Stable Predictions**: Even when not outperforming classical methods, QRC should produce convergent forecasts
-- **Hardware Feasibility**: Algorithm executable on current NISQ devices
-- **Baseline Establishment**: Practical foundation for future quantum clinical applications
+### 5. Feature Construction
+- Build feature matrix by concatenating measurement outcomes
+- Apply polynomial expansion for non-linear readout capability
+
+### 6. Ridge Regression Training
+- Solve regularized least squares problem: w = (X^T X + λI)^(-1) X^T y
+- Tune regularization parameter λ via validation
+
+### 7. Parallel Ensemble (for EEG)
+- Initialize multiple reservoirs with different J, h parameters
+- Train separate readouts for each reservoir
+- Average predictions for final output
+
+## Key Parameters
+
+- **N**: Number of qubits in reservoir (system size)
+- **J**: Coupling strength in Ising model
+- **h**: Transverse field strength  
+- **λ**: Ridge regression regularization parameter
+- **Measurement bases**: Set of Pauli operators for heterogeneous measurements
+- **Polynomial degree**: Degree of polynomial expansion in readout
+
+## Performance Characteristics
+
+### Strengths
+- **Small-data efficiency**: Outperforms classical reservoirs in limited data scenarios
+- **Hardware feasibility**: Demonstrated on actual quantum hardware
+- **Convergence**: Produces stable, convergent predictions even on complex neural signals
+- **Exponential feature space**: Quantum advantage in representation capacity
+
+### Limitations  
+- **Current hardware constraints**: NISQ devices limit reservoir size
+- **EEG performance**: Did not surpass classical methods on complex biological signals in initial tests
+- **Parameter sensitivity**: Performance strongly dependent on reservoir parameters
+
+## Applications
+
+- **Neural activity forecasting**: Predict future neural states from short recordings
+- **EEG analysis**: Time-series prediction for electroencephalography data  
+- **Clinical time-series**: Potential for medical forecasting applications
+- **Brain-computer interfaces**: Real-time neural signal processing
+
+## Verification Steps
+
+1. **Benchmark validation**: Test on standard reservoir computing benchmarks
+2. **Classical comparison**: Compare against classical echo state networks
+3. **Hardware execution**: Verify feasibility on actual quantum processors
+4. **EEG simulation**: Test on realistic simulated neural data
+5. **Parameter sweep**: Evaluate performance across reservoir parameter space
 
 ## References
-- **Primary Paper**: Wolff, A., Hamilton, K., Rhrissorrakrai, K., Parida, L., Utro, F., & Dumas, G. (2026). A Quantum Reservoir for Neurodynamical Forecasting. arXiv:2608.00139 [quant-ph]
-- **Conference**: Accepted at IEEE Quantum Week (QCE 2026) - Applications category
-- **DOI**: https://doi.org/10.48550/arXiv.2608.00139
 
-## Activation Keywords
-quantum reservoir computing, neurodynamical forecasting, neural time-series prediction, quantum EEG forecasting, transverse-field Ising model, heterogeneous quantum measurements, polynomial ridge regression, clinical time-series forecasting, quantum hardware feasibility, parallel reservoir architecture
+- Wolff, A., Hamilton, K., Rhrissorrakrai, K., Parida, L., Utro, F., & Dumas, G. (2026). A Quantum Reservoir for Neurodynamical Forecasting. arXiv:2608.00139 [quant-ph]
+- IEEE Quantum Week (QCE) 2026, Applications category
