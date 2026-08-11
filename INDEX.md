@@ -1,5 +1,13 @@
 ## 2026-08-11 - Neuroscience Research (Cron Job)
 
+### SuperNeuroMAT: An Efficient Matrix-based Simulator for Spiking Neural Networks
+- [[superneuromat-efficient-matrix-snn-simulator]] - SuperNeuroMAT: Matrix-based SNN simulator. (arXiv: 2608.08479)
+  - Novel matrix-based approach for LIF neuron dynamics with dense/sparse execution modes
+  - Simulates 10K neurons (dense) or 100K neurons (sparse) on standard hardware without specialized requirements
+  - Outperforms NEST, Brian2, BindsNET, and snnTorch in execution speed and memory efficiency
+  - Supports machine learning benchmarks, neuromorphic vision tasks, and general-purpose workloads including shortest path algorithms and arithmetic operations
+  - **Activation**: SuperNeuroMAT, matrix-based SNN simulator, efficient spiking neural network simulation, neuromorphic computing framework, LIF neuron dynamics matrix approach
+
 ### NeuroRefiner: Morphology-Aware Multi-Agent Refinement for 3D Fluorescence Microscopy Neuron Segmentation
 - [[neurorefiner-multi-agent-neuron-segmentation]] - NeuroRefiner multi-agent 3D neuron segmentation framework. (arXiv: 2608.09636)
   - Three collaborative agents: diagnosing topological errors, generating correction instructions, validating refinement quality
