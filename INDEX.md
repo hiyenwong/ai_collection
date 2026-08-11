@@ -7,6 +7,13 @@
   - Achieves 3.02% F1 improvement on ZBFWB dataset
   - **Activation**: neurorefiner, multi-agent neuron segmentation, 3d fluorescence microscopy, neuron morphology refinement, topological error correction, TopoRefineNet
 
+### Graph Analysis of Neuronal-Culture Connectivity Derived from a Reservoir-Computing Model
+- [[graph-analysis-neuronal-culture-connectivity-reservoir-computing]] - Neuronal culture graph analysis via reservoir computing. (arXiv: 2608.09773)
+  - Analytical pipeline for inferring network-level properties from multichannel electrophysiological recordings
+  - Extracts Intrinsic Connectivity Map (ICM) interpreted as effective adjacency matrix
+  - Applies graph-theoretic centrality measures and validates against ground-truth simulations
+  - **Activation**: neuronal culture connectivity, reservoir computing connectivity, graph analysis neural cultures, intrinsic connectivity map, ICM, electrophysiological graph analysis, in vitro network analysis
+
 ## 2026-08-11 - Quantum Computing Research (Cron Job)
 
 ### A Quantum Reservoir for Neurodynamical Forecasting
