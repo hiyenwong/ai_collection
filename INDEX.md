@@ -82,6 +82,13 @@
 
 ## 2026-08-10 - Neuroscience Research (Cron Job)
 
+### Layered Surprise Cascades: From Local Learning to Global Prediction Through Layered Surprise Cascades
+- [[layered-surprise-cascades-predictive-coding]] - Layered Surprise Cascades framework for biologically plausible predictive coding using local contrastive learning and activity cancellation. (arXiv: 2608.05481)
+  - Implements recurrent Forward-Forward algorithm with inverted objective for negative data to yield predictive representations across layers
+  - Eliminates need for error-coding neurons by using local contrastive learning and activity cancellation mechanisms
+  - Creates natural surprise signals that cascade through multiple layers with top-down modulation
+  - **Activation**: layered surprise cascades, predictive coding, hierarchical processing, contrastive learning, forward-forward algorithm, cortical computation, surprise signaling, top-down modulation
+
 ### PTQ4SNN: Membrane-Aware Post-Training Quantization for Spiking Neural Networks
 - [[ptq4snn-membrane-aware-quantization]] - Framework that jointly quantizes weights and recurrent membrane states using channel-wise Unified Scale Bridge and Mixed-Precision Bit Allocation. (arXiv: 2608.07066)
   - Channel-wise Unified Scale Bridge constrains membrane scale as `s_mem,c = s_w,c * 2^k_c` for shift-compatible scale conversion
