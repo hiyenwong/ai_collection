@@ -1,3 +1,12 @@
+## 2026-08-11 - Neuroscience Research (Cron Job)
+
+### NeuroRefiner: Morphology-Aware Multi-Agent Refinement for 3D Fluorescence Microscopy Neuron Segmentation
+- [[neurorefiner-multi-agent-neuron-segmentation]] - NeuroRefiner multi-agent 3D neuron segmentation framework. (arXiv: 2608.09636)
+  - Three collaborative agents: diagnosing topological errors, generating correction instructions, validating refinement quality
+  - Uses TopoRefineNet 3D U-Net-based tool with cross-modality feature fusion
+  - Achieves 3.02% F1 improvement on ZBFWB dataset
+  - **Activation**: neurorefiner, multi-agent neuron segmentation, 3d fluorescence microscopy, neuron morphology refinement, topological error correction, TopoRefineNet
+
 ## 2026-08-11 - Quantum Computing Research (Cron Job)
 
 ### A Quantum Reservoir for Neurodynamical Forecasting
