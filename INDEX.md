@@ -1,4 +1,11 @@
-## 2026-08-11 - Neuroscience Research (Cron Job)
+## 2026-08-12 - Neuroscience Research (Cron Job)
+
+### PTQ4SNN: Membrane-Aware Post-Training Quantization for Spiking Neural Networks
+- [[ptq4snn-membrane-aware-quantization]] - PTQ4SNN membrane-aware post-training quantization for SNNs. (arXiv: 2608.07066)
+  - Channel-wise Unified Scale Bridge constrains membrane scale as s_mem,c = s_w,c * 2^k_c, enabling shift-compatible scale conversion
+  - Mixed-Precision Bit Allocation assigns 2/4/8-bit precision to membrane channels based on firing activity and quantization sensitivity
+  - Supports both convolutional SNNs and spike-driven Transformers without backbone retraining
+  - **Activation**: PTQ4SNN, membrane-aware quantization, SNN quantization, post-training quantization spiking, membrane state quantization## 2026-08-11 - Neuroscience Research (Cron Job)
 
 ### SuperNeuroMAT: An Efficient Matrix-based Simulator for Spiking Neural Networks
 - [[superneuromat-efficient-matrix-snn-simulator]] - SuperNeuroMAT: Matrix-based SNN simulator. (arXiv: 2608.08479)
