@@ -1,5 +1,12 @@
 ## 2026-08-12 - Neuroscience Research (Cron Job)
 
+### When Is a Steerable Concept Representation Real? Measurement Confounds in a Cross-Family Audit of Neuroscience Parallels in LLMs
+- [[llm-neuroscience-audit-framework]] - Cross-family audit framework for validating neuroscience parallels in LLMs with comparable measurements. (arXiv: 2608.08159)
+  - Audits four neuroscience-inspired paradigms: concept steerability, geographic world maps, number magnitude encoding, and language-specific structure
+  - Tests 17 models from 5 families (0.6B-72B parameters) with rigorous controls for measurement confounds
+  - Demonstrates that apparent scaling trends vanish under calibrated pipelines; main bottleneck is lack of comparable measurements
+  - **Activation**: llm neuroscience audit, concept steering validation, cross-family model comparison, measurement confounds llm, neuroscience parallels llm, ai neuroscience methodology
+
 ### Graph Analysis of Neuronal-Culture Connectivity Derived from a Reservoir-Computing Model
 - [[graph-analysis-neuronal-culture-connectivity-reservoir-computing]] - Extracts Intrinsic Connectivity Map (ICM) from neural activity and applies graph-theoretic centrality measures to quantify node- and edge-level contributions to collective dynamics in in vitro cortical cultures. (arXiv: 2608.09773)
   - Uses Reservoir Computing framework to extract ICM directly from multichannel electrophysiological recordings
