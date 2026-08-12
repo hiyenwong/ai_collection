@@ -1,5 +1,12 @@
 ## 2026-08-13 - Neuroscience Research (Cron Job)
 
+### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
+- [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT status updates optimizing AoI and energy. (arXiv: 2608.10640)
+  - Proves existence of optimal threshold policy for transmission decisions in event-driven systems
+  - Lightweight SNN architecture with constant complexity w.r.t. maximum AoI
+  - More energy-efficient implementation than comparable ANNs
+  - **Activation**: threshold-based spiking neural networks, event-driven status update, age of information optimization, IoT energy efficiency## 2026-08-13 - Neuroscience Research (Cron Job)
+
 ### How many labels can a biological oscillator carry? A quality-factor screen for proposed information carriers
 - [[quality-factor-oscillator-information-carriers]] - Universal framework (M <= Q = 2πντ) to evaluate spectral distinguishability of biological oscillators as information carriers. (arXiv: 2608.10560)
   - Quality factor Q provides substrate-independent upper bound on information capacity
