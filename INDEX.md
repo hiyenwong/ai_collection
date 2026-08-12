@@ -1,5 +1,12 @@
 ## 2026-08-12 - Neuroscience Research (Cron Job)
 
+### Modeling and Interpreting Correlations, Null Distributions and Significance Levels in Neural Tracking of Natural Stimuli
+- [[neural-tracking-correlation-interpretation]] - Framework for interpreting neural tracking correlations using null distributions and significance levels for natural stimuli processing. (arXiv: 2608.10887)
+  - Addresses critical issue that raw correlation magnitudes depend on statistical properties of signals being correlated, not just neural tracking strength
+  - Introduces semi-parametric model using Fisher transform that yields accurate significance levels from only 3-5 minutes of data
+  - Proposes null-normalized tracking score that places features and models on common interpretable scale
+  - **Activation**: neural tracking correlation, null distribution neural, significance neural tracking, EEG speech processing, correlation interpretation neuroscience
+
 ### When Is a Steerable Concept Representation Real? Measurement Confounds in a Cross-Family Audit of Neuroscience Parallels in LLMs
 - [[llm-neuroscience-audit-framework]] - Cross-family audit framework for validating neuroscience parallels in LLMs with comparable measurements. (arXiv: 2608.08159)
   - Audits four neuroscience-inspired paradigms: concept steerability, geographic world maps, number magnitude encoding, and language-specific structure
