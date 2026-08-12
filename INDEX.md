@@ -6,7 +6,12 @@
   - Validates RC-derived connectivity against known ground-truth adjacency matrix through simulation
   - Demonstrates statistically robust associations between graph-theoretic measures and experimentally observed activity patterns
   - **Activation**: reservoir computing, neuronal cultures, graph analysis, connectivity inference, electrophysiology
-
+### A class of mean-field models to bridge molecular to brain scales
+- [[mean-field-molecular-brain-bridge]] - Biophysically-based mean-field models that integrate molecular details (synaptic receptors, ion channels) to predict large-scale brain activity. (arXiv: 2608.11185)
+  - Integrates detailed biophysical properties into mean-field frameworks for multi-scale modeling
+  - Enables prediction of macroscopic brain dynamics from microscopic molecular changes
+  - Applications include anesthesia modeling, brain disease origins, and drug effects analysis
+  - **Activation**: mean-field, multi-scale modeling, biophysical modeling, anesthesia modeling, molecular neuroscience, brain dynamics, scale bridging, Destexhe
 ## 2026-08-12 - Quantum Computing Research (Cron Job)
 
 ### Reservoir Computing with Heterogeneous Magnetic Metamaterials
