@@ -1,0 +1,31 @@
+---
+name: arxiv-2608-05359-cascade-an-agentic-regulatory-network-framework-fo
+description: 'CASCADE: An Agentic Regulatory Network Framework for Patient-Data-Validated Downstream Perturbation Prediction (arXiv: 2608.05359)'
+metadata:
+  {
+    "arxiv_id": "2608.05359",
+    "utility": 1.0,
+    "title": "CASCADE: An Agentic Regulatory Network Framework for Patient-Data-Validated Downstream Perturbation Prediction",
+    "authors": "Unknown",
+    "url": "https://arxiv.org/abs/2608.05359"
+  }
+---
+
+# CASCADE: An Agentic Regulatory Network Framework for Patient-Data-Validated Downstream Perturbation Prediction
+
+**arXiv ID:** 2608.05359
+**Authors:** Unknown
+**URL:** https://arxiv.org/abs/2608.05359
+**Utility Score:** 1.00
+
+## Summary
+
+This skill was automatically generated from the arXiv paper titled "CASCADE: An Agentic Regulatory Network Framework for Patient-Data-Validated Downstream Perturbation Prediction" (ID: 2608.05359).
+
+## Usage
+
+This skill can be used to reference the paper's concepts, methodologies, or findings in agent workflows.
+
+## References
+
+- arXiv: https://arxiv.org/abs/2608.05359
