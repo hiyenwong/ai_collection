@@ -1,3 +1,11 @@
+## 2026-08-13 - Neuroscience Research (Cron Job)
+
+### How many labels can a biological oscillator carry? A quality-factor screen for proposed information carriers
+- [[quality-factor-oscillator-information-carriers]] - Universal framework (M <= Q = 2πντ) to evaluate spectral distinguishability of biological oscillators as information carriers. (arXiv: 2608.10560)
+  - Quality factor Q provides substrate-independent upper bound on information capacity
+  - Only low-frequency neural rhythms pass comprehensive screening criteria; high-frequency carriers fail due to brevity not fragility
+  - Includes reference implementation and verification suite with metabolic power constraints
+  - **Activation**: quality factor biological oscillators, information carrier screening, spectral distinguishability neuroscience, coherence time neural rhythms
 ## 2026-08-12 - Neuroscience Research (Cron Job)
 
 ### Exact First-Passage Time Response Theory from Steady-State Response
