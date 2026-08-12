@@ -1,3 +1,13 @@
+## 2026-08-12 - Quantum Computing Research (Cron Job)
+
+### Reservoir Computing with Heterogeneous Magnetic Metamaterials
+- [[reservoir-computing-heterogeneous-magnetic-metamaterials]] - Nanomagnetic reservoir computer based on heterogeneous array of interconnected magnetic nanorings with multi-channel planar Hall effect readout for enhanced computational expressivity. (arXiv: 2608.08879)
+  - Physical reservoir computing utilizing intrinsic nonlinear and history-dependent dynamics of magnetic systems with minimal training overhead
+  - Geometric heterogeneity (track widths 300-500 nm) provides additional experimentally accessible degree of freedom and complementary computational features
+  - Multi-channel combination significantly reduces normalized root-mean-square error compared to single-channel readout
+  - Principal component analysis reveals reduced subset of correlated features captures most computationally relevant information while suppressing noise
+  - **Activation**: magnetic metamaterials, reservoir computing, heterogeneous magnetic, nanomagnetic reservoir, geometric heterogeneity
+
 ## 2026-08-12 - Systems Engineering Research (Cron Job)
 
 ### GENCO – A Unified Neural Solver Embedded in a Development Framework for Steady-State Grid Analysis
