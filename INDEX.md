@@ -8,7 +8,7 @@
   - **Activation**: llm neuroscience audit, concept steering validation, cross-family model comparison, measurement confounds llm, neuroscience parallels llm, ai neuroscience methodology
 
 ### Graph Analysis of Neuronal-Culture Connectivity Derived from a Reservoir-Computing Model
-- [[graph-analysis-neuronal-culture-connectivity-reservoir-computing]] - Extracts Intrinsic Connectivity Map (ICM) from neural activity and applies graph-theoretic centrality measures to quantify node- and edge-level contributions to collective dynamics in in vitro cortical cultures. (arXiv: 2608.09773)
+- [[graph-analysis-neuronal-culture-reservoir-computing]] - Extracts Intrinsic Connectivity Map (ICM) from neural activity and applies graph-theoretic centrality measures to quantify node- and edge-level contributions to collective dynamics in in vitro cortical cultures. (arXiv: 2608.09773)
   - Uses Reservoir Computing framework to extract ICM directly from multichannel electrophysiological recordings
   - Validates RC-derived connectivity against known ground-truth adjacency matrix through simulation
   - Demonstrates statistically robust associations between graph-theoretic measures and experimentally observed activity patterns
