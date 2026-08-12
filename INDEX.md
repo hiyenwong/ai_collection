@@ -1,5 +1,11 @@
 ## 2026-08-12 - Neuroscience Research (Cron Job)
 
+### Exact First-Passage Time Response Theory from Steady-State Response
+- [[exact-first-passage-time-response-theory]] - Compact theoretical framework for MFPT response in Markov processes with neural dynamics applications. (arXiv: 2608.11202)
+  - Exact correspondence mapping transient MFPT response to steady-state auxiliary system
+  - Factorized decomposition into linear upstream/downstream and nonlinear contributions  
+  - **Activation**: first-passage time, MFPT response, steady-state response, Markov processes neuroscience
+
 ### A class of mean-field models to bridge molecular to brain scales
 - [[mean-field-multi-scale-brain-models]] - Framework for bridging molecular processes to whole-brain dynamics using biophysically-based mean-field models. (arXiv: 2608.11185)
   - Master Equation-based mean-field models integrating nonlinear biophysical mechanisms (synaptic receptors, ion channels)
