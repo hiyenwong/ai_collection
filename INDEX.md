@@ -27,7 +27,7 @@
   - Validated against ground-truth networks with strong performance: ROC AUC up to 0.922, F1 scores up to 0.796, NMWA Pearson correlation up to 0.692
   - **Activation**: neuronal culture connectivity, reservoir computing connectivity, ICM graph analysis, MEA graph theory, neuronal network centrality, in vitro connectivity inference, graph analysis reservoir computing
 
-## 2026-08-11 - Quantum Computing Research (Cron Job)
+## 2026-08-11 - Neuroscience Research (Cron Job)
 
 ### SuperNeuroMAT: An Efficient Matrix-based Simulator for Spiking Neural Networks
 - [[superneuromat-efficient-matrix-snn-simulator]] - SuperNeuroMAT: Matrix-based SNN simulator. (arXiv: 2608.08479)
