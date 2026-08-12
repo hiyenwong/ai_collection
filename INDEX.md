@@ -1,3 +1,16 @@
+## 2026-08-12 - Systems Engineering Research (Cron Job)
+
+### GENCO – A Unified Neural Solver Embedded in a Development Framework for Steady-State Grid Analysis
+- [[genco-unified-neural-solver-grid-analysis]] - GENCO unified neural solver for power grid analysis. (arXiv: 2608.09921)
+  - Unified neural solver capable of solving Power Flow (PF), Optimal Power Flow (OPF), and State Estimation (SE) problems simultaneously
+  - Open-source GridFM Development Framework with large-scale datasets for training and validation
+  - **Activation**: genco neural solver, grid analysis framework, power flow neural network, unified grid solver, GridFM development framework
+
+### Model-Based Systems Engineering Framework for SysML-Driven Design of Autonomous UAVs
+- [[sysml-driven-uav-design-framework]] - SysML-driven MBSE framework for autonomous UAV design. (arXiv: 2608.09547)
+  - Four-layer SysML-driven approach mapping requirements to ROS 2 architecture
+  - Supports traceability and verification throughout the development lifecycle
+  - **Activation**: sysml uav design, mbse autonomous uav, sysml ros2 integration, uav systems engineering, model-based uav design
 ## 2026-08-12 - Neuroscience Research (Cron Job)
 
 ### PTQ4SNN: Membrane-Aware Post-Training Quantization for Spiking Neural Networks
@@ -5,7 +18,16 @@
   - Channel-wise Unified Scale Bridge constrains membrane scale as s_mem,c = s_w,c * 2^k_c, enabling shift-compatible scale conversion
   - Mixed-Precision Bit Allocation assigns 2/4/8-bit precision to membrane channels based on firing activity and quantization sensitivity
   - Supports both convolutional SNNs and spike-driven Transformers without backbone retraining
-  - **Activation**: PTQ4SNN, membrane-aware quantization, SNN quantization, post-training quantization spiking, membrane state quantization## 2026-08-11 - Neuroscience Research (Cron Job)
+  - **Activation**: PTQ4SNN, membrane-aware quantization, SNN quantization, post-training quantization spiking, membrane state quantization
+
+### Graph Analysis of Neuronal-Culture Connectivity Derived from a Reservoir-Computing Model
+- [[graph-analysis-neuronal-culture-reservoir-computing]] - Graph analysis of neuronal cultures using Reservoir Computing-derived connectivity maps. Extracts Intrinsic Connectivity Maps (ICM) from neural activity and applies graph centrality measures to quantify network dynamics. (arXiv: 2608.09773)
+  - Reservoir Computing framework reconstructs network connectivity from MEA recordings by training to extract Intrinsic Connectivity Matrix (ICM)
+  - Interprets ICM as effective adjacency matrix for graph-theoretical analysis including node centrality measures and global network metrics
+  - Validated against ground-truth networks with strong performance: ROC AUC up to 0.922, F1 scores up to 0.796, NMWA Pearson correlation up to 0.692
+  - **Activation**: neuronal culture connectivity, reservoir computing connectivity, ICM graph analysis, MEA graph theory, neuronal network centrality, in vitro connectivity inference, graph analysis reservoir computing
+
+## 2026-08-11 - Quantum Computing Research (Cron Job)
 
 ### SuperNeuroMAT: An Efficient Matrix-based Simulator for Spiking Neural Networks
 - [[superneuromat-efficient-matrix-snn-simulator]] - SuperNeuroMAT: Matrix-based SNN simulator. (arXiv: 2608.08479)
@@ -21,13 +43,6 @@
   - Uses TopoRefineNet 3D U-Net-based tool with cross-modality feature fusion
   - Achieves 3.02% F1 improvement on ZBFWB dataset
   - **Activation**: neurorefiner, multi-agent neuron segmentation, 3d fluorescence microscopy, neuron morphology refinement, topological error correction, TopoRefineNet
-
-### Graph Analysis of Neuronal-Culture Connectivity Derived from a Reservoir-Computing Model
-- [[graph-analysis-neuronal-culture-connectivity-reservoir-computing]] - Neuronal culture graph analysis via reservoir computing. (arXiv: 2608.09773)
-  - Analytical pipeline for inferring network-level properties from multichannel electrophysiological recordings
-  - Extracts Intrinsic Connectivity Map (ICM) interpreted as effective adjacency matrix
-  - Applies graph-theoretic centrality measures and validates against ground-truth simulations
-  - **Activation**: neuronal culture connectivity, reservoir computing connectivity, graph analysis neural cultures, intrinsic connectivity map, ICM, electrophysiological graph analysis, in vitro network analysis
 
 ## 2026-08-11 - Quantum Computing Research (Cron Job)
 
