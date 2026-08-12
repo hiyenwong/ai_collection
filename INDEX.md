@@ -1,5 +1,11 @@
 ## 2026-08-12 - Neuroscience Research (Cron Job)
 
+### A class of mean-field models to bridge molecular to brain scales
+- [[mean-field-models-bridge-molecular-brain-scales]] - Mean-field models for multi-scale brain dynamics. (arXiv: 2608.11185)
+  - Biophysically-based mean-field modeling framework integrating molecular/cellular details (synaptic receptors, ion channels) to predict large-scale brain activity changes
+  - Applications in anesthesia mechanisms, brain disease origins, and drug effects analysis
+  - **Activation**: mean-field models, multi-scale neuroscience, biophysical modeling, molecular to brain scales, synaptic receptors mean-field, ion channels population dynamics, anesthesia computational modeling, brain disease mechanisms
+
 ### Modeling and Interpreting Correlations, Null Distributions and Significance Levels in Neural Tracking of Natural Stimuli
 - [[neural-tracking-correlation-interpretation]] - Framework for interpreting neural tracking correlations using null distributions and significance levels for natural stimuli processing. (arXiv: 2608.10887)
   - Addresses critical issue that raw correlation magnitudes depend on statistical properties of signals being correlated, not just neural tracking strength
