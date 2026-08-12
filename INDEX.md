@@ -136,4 +136,11 @@
   - Gradient-Routed Auxiliary Modules (GRAM) provide selective control over harmful capabilities
   - Auxiliary modules can be disabled at inference time without affecting other model functions
   - Enables training with gradient routing to selectively enable/disable capabilities
-  - **Activation**: dual-use knowledge control, GRAM methodology, AI safety, harmful capability control, gradient routing
+  - **Activation**: dual-use knowledge control, GRAM methodology, AI safety, harmful capability control, gradient routing## 2026-08-12 - Anthropic Research (Cron Job)
+
+### Learning more about Claude's mathematical capabilities
+- [[claude-riemann-zeta-mathematical-capabilities]] - Use for AI-assisted Riemann hypothesis bound improvement.
+  - Improved fraction of zeros satisfying Riemann hypothesis from 41.6% to 67.2%
+  - Demonstrates AI capability in deep mathematical research
+  - Provides framework for AI-assisted mathematical theorem proving
+  **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
