@@ -1,113 +1,34 @@
 ---
 name: graph-analysis-neuronal-culture-reservoir-computing
-description: "Graph analysis of neuronal cultures using RC."
+description: "Graph analysis of neuronal cultures using Reservoir Computing-derived connectivity maps. Extracts Intrinsic Connectivity Maps (ICM) from neural activity and applies graph centrality measures to quantify network dynamics."
 metadata:
   arxiv_id: "2608.09773"
-  authors: "Ilya Auslender, Giorgio Letti, Yasaman Heydari, Lorenzo Pavesi"
+  authors: "Auslender, Ilya; Letti, Giorgio; Heydari, Yasaman; Pavesi, Lorenzo"
   published: "2026-08-10"
-  tags: [neuronal-networks, graph-theory, microelectrode-arrays, reservoir-computing, connectomics]
+  tags: [neuronal culture connectivity, reservoir computing connectivity, ICM graph analysis, MEA graph theory, neuronal network centrality, in vitro connectivity inference, graph analysis reservoir computing]
 license: Complete terms in LICENSE.txt
 ---
 
-# Graph Analysis of Neuronal-Culture Connectivity Derived from Reservoir Computing
+# Graph Analysis of Neuronal-Culture Connectivity Derived from a Reservoir-Computing Model
 
-This skill provides a framework for analyzing neuronal culture connectivity using Reservoir Computing (RC) models and graph-theoretical methods. The approach enables direct extraction of an Intrinsic Connectivity Map (ICM) from multichannel electrophysiological recordings and interprets it as an effective adjacency matrix for network-level analysis.
+## Overview
+This skill provides a framework for analyzing neuronal culture connectivity using Reservoir Computing (RC) to extract Intrinsic Connectivity Maps (ICM) from multichannel electrophysiological recordings, followed by graph-theoretical analysis to quantify network dynamics.
 
-## When to Use This Skill
+## Key Methodology
+1. **Reservoir Computing Framework**: Reconstructs network connectivity from MEA recordings by training to extract Intrinsic Connectivity Matrix (ICM)
+2. **Graph-Theoretical Analysis**: Interprets ICM as effective adjacency matrix for comprehensive graph analysis including node centrality measures and global network metrics
+3. **Validation**: Benchmarks RC-derived connectivity against known ground-truth adjacency matrix through simulation
 
-Use this skill when working with:
-- Multichannel electrophysiological recordings from in vitro cortical cultures
-- Microelectrode array (MEA) data analysis
-- Functional connectivity inference in neuronal networks
-- Graph-theoretical analysis of neural dynamics
-- Validation of connectivity inference methods against ground-truth networks
+## Performance Metrics
+- ROC AUC up to 0.922
+- F1 scores up to 0.796  
+- NMWA Pearson correlation up to 0.692
 
-## Core Methodology
-
-### 1. Reservoir Computing Framework
-The RC model reconstructs network connectivity by:
-- Leveraging spatio-temporal electrophysiological data recorded via MEAs
-- Training to reconstruct the Intrinsic Connectivity Matrix (ICM)
-- Predicting network spatio-temporal responses to input stimuli
-
-### 2. Graph-Theoretical Analysis
-Interpret the ICM as an adjacency matrix and apply:
-- **Node centrality measures**: Degree, betweenness, closeness, eigenvector centrality
-- **Global graph metrics**: Clustering coefficient, path length, modularity
-- **Edge-level analysis**: Connection strength and directionality
-
-### 3. Validation Pipeline
-- Simulate experimental environment with known ground-truth adjacency matrix
-- Benchmark RC-derived connectivity against ground truth
-- Assess model performance as function of graph structure
-- Evaluate statistical associations between graph metrics and observed activity
-
-## Implementation Steps
-
-### Step 1: Data Preparation
-1. Collect multichannel electrophysiological recordings from MEA
-2. Preprocess spike trains and burst detection
-3. Format data for RC model input
-
-### Step 2: RC Model Training
-1. Implement RC framework based on Auslender et al. (2025)
-2. Train model to extract ICM from neural activity
-3. Validate reconstruction accuracy using metrics:
-   - ROC AUC
-   - Precision-Recall AUC (excitatory/inhibitory)
-   - F1 scores with optimal thresholds
-   - Normalized Mean Weighted Accuracy (NMWA)
-
-### Step 3: Graph Analysis
-1. Convert ICM to adjacency matrix format
-2. Compute local centrality measures for each node
-3. Calculate global network metrics
-4. Correlate graph measures with experimental activity features:
-   - Firing rates
-   - Burst rates
-   - Network-level descriptors
-
-### Step 4: Statistical Validation
-1. Perform correlation analysis between graph metrics and activity patterns
-2. Use appropriate statistical tests (Pearson correlation, regression)
-3. Report effect sizes and significance levels
-4. Validate findings across multiple culture preparations
-
-## Key Metrics and Evaluation
-
-### Connectivity Reconstruction Accuracy
-- **ROC AUC**: Overall discrimination ability
-- **PRAUC**: Precision-recall for excitatory/inhibitory connections
-- **F1 Score**: Balance of precision and recall at optimal threshold
-- **NMWA**: Normalized Mean Weighted Accuracy for overall performance
-
-### Graph-Activity Relationships
-- **Centrality-Activity Correlation**: Strength of association between node centrality and firing/burst rates
-- **Network-Level Associations**: Global metrics vs. collective dynamics measures
-- **Statistical Robustness**: Consistency across different culture preparations
-
-## Pitfalls and Considerations
-
-### Technical Challenges
-- **Inhibitory Connection Detection**: Challenging due to marginal influence on network dynamics
-- **Threshold Selection**: Optimal thresholds vary by network type and inhibition level
-- **Ground Truth Limitations**: Simulated networks may not capture all biological complexity
-
-### Biological Interpretation
-- **Functional vs Structural Connectivity**: ICM represents functional effective connectivity, not necessarily structural
-- **Population Representation**: Each node represents neuronal assembly around MEA electrode
-- **Temporal Dynamics**: Static ICM may miss time-varying connectivity patterns
-
-### Validation Requirements
-- **Controlled Benchmarking**: Essential to validate against known ground truth
-- **Cross-Culture Consistency**: Results should generalize across different culture preparations
-- **Statistical Rigor**: Multiple comparison corrections for multiple graph metrics
-
-## References
-
-- Auslender, I., Letti, G., Heydari, Y., & Pavesi, L. (2026). Graph Analysis of Neuronal-Culture Connectivity Derived from a Reservoir-Computing Model. arXiv:2608.09773
-- Auslender, I., Letti, G., Heydari, Y., Zaccaria, C., & Pavesi, L. (2025). Decoding neuronal networks: A reservoir computing approach for predicting connectivity and functionality. Neural Networks, 184, 107058.
-- Poli, D., Pastore, V. P., & Massobrio, P. (2015). Functional connectivity in in vitro neuronal assemblies. Frontiers in Neural Circuits, 9, 57.
+## Applications
+- Functional network characterization in neuronal culture systems
+- Understanding emergent dynamics in in vitro cortical cultures
+- Bridging computational neuroscience with experimental electrophysiology
+- Potential applications in neurotoxicity screening and drug discovery
 
 ## Activation Keywords
 - neuronal culture connectivity
@@ -118,8 +39,6 @@ Interpret the ICM as an adjacency matrix and apply:
 - in vitro connectivity inference
 - graph analysis reservoir computing
 
-## Tools Used
-- Python (NumPy, SciPy, NetworkX)
-- NEST simulator (for ground truth generation)
-- Custom RC implementation
-- Statistical analysis libraries (scikit-learn, statsmodels)
+## References
+- Original paper: https://arxiv.org/abs/2608.09773
+- Related work: Auslender et al., 2025 (RC framework foundation)
