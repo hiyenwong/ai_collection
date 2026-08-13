@@ -1,3 +1,12 @@
+## 2026-08-13 - Quantum Computing Research (Cron Job)
+
+### A Single Atom in Front of a Mirror is a Universal Reservoir Computer
+- [[single-atom-reservoir-computing]] - Minimal quantum setup demonstrating universality in reservoir computing with explicit recipe for target accuracy. (arXiv: 2608.10382)
+  - Single atom-mirror system as universal approximator of fading-memory maps
+  - Explicit recipe specifying required physical resources and resonator modes for target accuracy
+  - Linear-transducer limit with measurable rate constants at operating point
+  - Atom saturation replaces high-order polynomial readouts beyond linear limit
+  - **Activation**: quantum reservoir computing, single atom mirror, universal reservoir computer, minimal quantum setup, fading-memory maps
 ## 2026-08-13 - Systems Engineering Research (Cron Job)
 
 ### Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems
