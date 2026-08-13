@@ -33,6 +33,13 @@
   - More energy-efficient implementation than comparable ANNs with reliable learning across operating regimes
   - **Activation**: threshold-based SNN, event-driven status update, Age of Information, optimal threshold policy, energy-efficient IoT
 
+### The Rosetta Stone and Levels of Principled Inference to the Experience of Another Mind
+- [[rosetta-stone-other-minds-inference]] - Framework for principled inference to other minds using structural approaches (Qstr and IIT) with Category Theory formalization. (arXiv: 2608.12030)
+  - Compares Qualia Structure Paradigm (inter-phenomenal, necessary conditions) vs Integrated Information Theory (intra-phenomenal, necessary+sufficient conditions)
+  - Uses Category Theory to formalize descending levels of structural correspondence: isomorphism → strong adjunction → weak adjunction → principled limit
+  - Shows structural approaches reduce but cannot eliminate the acquaintance gap; provide principled constraints rather than solving Other Minds problem
+  - **Activation**: rosetta stone consciousness, other minds inference, qualia structure paradigm, integrated information theory comparison, category theory consciousness
+
 ## 2026-08-13 - Neuroscience Research (Cron Job)
 
 ### How many labels can a biological oscillator carry? A quality-factor screen for proposed information carriers
