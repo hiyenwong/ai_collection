@@ -1,3 +1,11 @@
+## 2026-08-14 - Neuroscience Research (Cron Job)
+
+### A class of mean-field models to bridge molecular to brain scales
+- [[mean-field-molecular-brain-scales]] - Methodology for integrating biophysical details like synaptic receptors and ion channels into multi-scale modeling approaches that link microscopic changes to macroscopic brain activity. (arXiv: 2608.11185)
+  - Biophysically-based mean-field approach can evaluate how molecular changes impact large-scale brain activity
+  - Demonstrated for anesthesia: specific synaptic receptor changes lead to global brain disconnection
+  - Generalizable to study cellular/molecular origins of brain diseases and drug effects
+  - **Activation**: mean-field models, molecular to brain scales, biophysical mean-field, multi-scale neuroscience, anesthesia modeling
 ## 2026-08-13 - Quantum Computing Research (Cron Job)
 
 ### A Single Atom in Front of a Mirror is a Universal Reservoir Computer
