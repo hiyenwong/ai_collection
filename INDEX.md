@@ -1,3 +1,13 @@
+## 2026-08-13 - Systems Engineering Research (Cron Job)
+
+### Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems
+- [[agentic-configuration-management-acm]] - ACM framework for governed heterogeneous agentic systems with semantic projection and impact propagation. (arXiv: 2608.11166)
+  - Typed and independently versioned Agentic Configuration Items (ACIs) for heterogeneous components
+  - Immutable revisions and baselines with explicit configuration-runtime separation
+  - Dependency-aware impact propagation with monotone propagation over finite lattice
+  - Canonical Configuration Graph through semantic projection enabling cross-framework governance
+  - **Activation**: agentic configuration management, ACM framework, governed agentic systems, configuration governance, heterogeneous agents, semantic projection, impact propagation, configuration graph, LLMOps governance, AgentOps governance
+
 ## 2026-08-13 - Neuroscience Research (Cron Job)
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
@@ -204,4 +214,4 @@
   - Improved fraction of zeros satisfying Riemann hypothesis from 41.6% to 67.2%
   - Demonstrates AI capability in deep mathematical research
   - Provides framework for AI-assisted mathematical theorem proving
-  **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
+  - **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
