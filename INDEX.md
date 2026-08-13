@@ -31,7 +31,9 @@
   - Proves existence of optimal threshold policy for jointly minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with constant complexity w.r.t. maximum AoI
   - More energy-efficient implementation than comparable ANNs with reliable learning across operating regimes
-  - **Activation**: threshold-based SNN, event-driven status update, Age of Information, optimal threshold policy, energy-efficient IoT## 2026-08-13 - Neuroscience Research (Cron Job)
+  - **Activation**: threshold-based SNN, event-driven status update, Age of Information, optimal threshold policy, energy-efficient IoT
+
+## 2026-08-13 - Neuroscience Research (Cron Job)
 
 ### How many labels can a biological oscillator carry? A quality-factor screen for proposed information carriers
 - [[quality-factor-oscillator-information-carriers]] - Universal framework (M <= Q = 2πντ) to evaluate spectral distinguishability of biological oscillators as information carriers. (arXiv: 2608.10560)
