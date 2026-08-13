@@ -263,3 +263,36 @@
   - Framework for collecting user dreams, fears, and usage patterns
   - Analysis methodology for large-scale qualitative data
   - **Activation**: 81000 people, user research, qualitative study, ai user perspectives
+
+## 2026-08-14 - Deep Learning Research (Cron Job)
+
+### FLARE++: Low-rank attention with dynamic attention routing
+- [[flare-plus-plus-low-rank-attention-routing]] - FLARE++ for dynamic low-rank attention routing. (arXiv: 2608.11519)
+  - Dynamic, input-conditioned latent queries for efficient attention
+  - O(NM) complexity vs O(N²) of full self-attention while preserving expressivity
+  - Achieves competitive performance with significantly reduced computation
+  - **Activation**: FLARE++, low-rank attention, dynamic routing, efficient transformers
+
+### RT-SEMamba: Real-Time Speech Enhancement Mamba via Progressive Knowledge Distillation
+- [[rt-semamba-speech-enhancement-mamba]] - RT-SEMamba for real-time speech enhancement with Mamba. (arXiv: 2608.12099)
+  - Causal time-frequency Mamba blocks for real-time processing
+  - Fixed-size recurrent state vs growing KV cache for memory efficiency
+  - Progressive knowledge distillation from 8-layer teacher to 1-layer student
+  - Achieves 3.18 PESQ with 25ms latency constraint
+  - **Activation**: RT-SEMamba, speech enhancement, Mamba architecture, progressive knowledge distillation
+
+### Towards Understanding On-Policy Distillation through the Lens of Test-Time Scaling
+- [[on-policy-distillation-test-time-scaling]] - OPD analysis: efficiency vs capability via test-time scaling. (arXiv: 2608.11829)
+  - OPD primarily improves sampling efficiency rather than expanding capability boundaries
+  - pass@K advantage diminishes as K increases, while avg@K remains superior
+  - Problem solvability asymmetry: more previously solvable problems become unsolvable
+  - "Illusory distillation" framework for evaluating true capability expansion
+  - **Activation**: on-policy distillation, test-time scaling, pass@K analysis, sampling efficiency
+
+### Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation
+- [[curvature-aware-zeroth-order-optimization]] - CAZO for memory-efficient test-time adaptation. (arXiv: 2608.12279)
+  - Leverages diagonal Hessian estimation for anisotropic perturbation sampling
+  - Addresses high variance problem in traditional zeroth-order methods
+  - Forward-only computation eliminates backpropagation memory overhead
+  - State-of-the-art TTA performance with excellent accuracy-memory balance
+  - **Activation**: curvature-aware zeroth-order, CAZO, test-time adaptation, Hessian-aware optimization
