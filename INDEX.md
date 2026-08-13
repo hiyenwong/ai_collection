@@ -1,5 +1,12 @@
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 
+### Consciousness as Intrinsic Structure: Towards a Chemistry of Experience
+- [[consciousness-intrinsic-structure-chemistry-experience]] - IIT framework for consciousness as intrinsic structure using Φ-structures and phenomenal distinctions. (arXiv: 2608.11398)
+  - Maps experiential contents (spatial extendedness, temporal flow, objects) to causal structures via one-to-one correspondence
+  - Analyzes three pervasive contents through their structural composition and binding relations
+  - Provides testable predictions about structural alteration effects on conscious content
+  - **Activation**: consciousness as intrinsic structure, chemistry of experience, IIT content analysis, Φ-structure mapping, phenomenal distinctions
+
 ### A class of mean-field models to bridge molecular to brain scales
 - [[mean-field-molecular-brain-scales]] - Methodology for integrating biophysical details like synaptic receptors and ion channels into multi-scale modeling approaches that link microscopic changes to macroscopic brain activity. (arXiv: 2608.11185)
   - Biophysically-based mean-field approach can evaluate how molecular changes impact large-scale brain activity
