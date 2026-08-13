@@ -231,3 +231,18 @@
   - Demonstrates AI capability in deep mathematical research
   - Provides framework for AI-assisted mathematical theorem proving
   - **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
+## 2026-08-13 - Anthropic Research (Cron Job)
+
+### Project Deal
+- [[project-deal]] - Methodology for implementing AI agents in economic marketplaces and analyzing their behavior in real-world trading scenarios.
+  - Real-world marketplace experiment with Claude buying, selling, and negotiating on behalf of employees
+  - Analysis of AI agent behavior in economic contexts
+  - Framework for marketplace design with AI participants
+  - **Activation**: project deal, ai marketplace, economic experiment, claude negotiation
+
+### What 81,000 people want from AI
+- [[what-81000-people-want-from-ai]] - Methodology for conducting large-scale user research and analyzing qualitative feedback at scale.
+  - Largest multilingual qualitative study of AI user perspectives (81,000 participants)
+  - Framework for collecting user dreams, fears, and usage patterns
+  - Analysis methodology for large-scale qualitative data
+  - **Activation**: 81000 people, user research, qualitative study, ai user perspectives

@@ -14,11 +14,9 @@ license: Complete terms in LICENSE.txt
 
 ## Overview
 
-[TODO: 1-2 sentences explaining what this skill enables]
+Project Deal demonstrates a real-world marketplace experiment where Claude was tasked with buying, selling, and negotiating on behalf of Anthropic employees in their San Francisco office. This skill provides methodology for implementing AI agents in economic marketplaces and analyzing their behavior in real-world trading scenarios.
 
-## Structuring This Skill
-
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+## Core Methodology
 
 **1. Workflow-Based** (best for sequential processes)
 - Works well when there are clear step-by-step procedures
