@@ -1,3 +1,11 @@
+## 2026-08-15 - Deep Learning Research (Cron Job)
+
+### Latent On-Policy Self-Distillation
+- [[latent-on-policy-self-distillation]] - LOPD: learnable privileged context for agentic AI evolution. (arXiv: 2608.13040)
+  - Retrieves relevant experiences and composes them into continuous latent tokens that condition a self-teacher
+  - Student generates trajectories and receives dense token-level supervision at every visited prefix
+  - Privileged-margin objective stabilizes and regulates the learning of latent context
+  - **Activation**: latent on-policy self-distillation, LOPD, self-evolving agents, learnable privileged context
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 
 ### A class of mean-field models to bridge molecular to brain scales
