@@ -1,5 +1,12 @@
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 
+### A class of mean-field models to bridge molecular to brain scales
+- [[mean-field-molecular-brain-bridge]] - Mean-field models bridging molecular to brain activity - biophysically-detailed multi-scale modeling approach for linking microscopic changes (synaptic receptors, ion channels) to macroscopic brain dynamics. (arXiv: 2608.11185)
+  - Integrates biophysical details such as synaptic receptors or membrane ion channels into mean-field models
+  - Multi-scale modeling approach to evaluate how microscopic changes impact macroscopic brain activity
+  - Illustrated for anesthesia case where specific synaptic receptor changes lead to global brain disconnection
+  - **Activation**: mean-field models, multi-scale neuroscience, molecular to brain scales, biophysical mean-field, anesthesia modeling
+
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
 - [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT status updates. (arXiv: 2608.10640)
   - Proves existence of optimal threshold policy for MDP minimizing Age of Information (AoI) and transmission energy
