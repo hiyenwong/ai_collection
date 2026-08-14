@@ -13,7 +13,9 @@
   - Shared functional questions: representation, retrieval, updating, perturbation across domains
   - Asymmetry in experimental access: LLMs provide unprecedented manipulation capabilities
   - Transfer experimental logic from LLMs to generate sharper biological hypotheses
-  - **Activation**: brain-llm memory, functional memory comparison, memory representation, memory retrieval, memory updating, experimental access## 2026-08-14 - Neuroscience Research (Cron Job)
+  - **Activation**: brain-llm memory, functional memory comparison, memory representation, memory retrieval, memory updating, experimental access
+
+## 2026-08-14 - Neuroscience Research (Cron Job)
 
 ### A class of mean-field models to bridge molecular to brain scales
 - [[mean-field-multi-scale-brain-models]] - Framework for bridging molecular processes to whole-brain dynamics using biophysically-based mean-field models. (arXiv: 2608.11185)
