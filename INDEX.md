@@ -1,3 +1,11 @@
+## 2026-08-14 - Neuroscience Research (Cron Job)
+
+### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
+- [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT status updates. (arXiv: 2608.10640)
+  - Proves existence of optimal threshold policy for MDP minimizing Age of Information (AoI) and transmission energy
+  - Lightweight SNN architecture with explicit threshold policy representation and constant complexity
+  - More energy-efficient implementation than comparable ANNs, reliable across operating regimes
+  - **Activation**: threshold-based SNN, event-driven status update, Age of Information optimization, IoT energy efficiency
 ## 2026-08-14 - Systems Engineering Research (Cron Job)
 
 ### Towards Automated Domain Model Extraction from Source Code using Heuristics and Open-Source LLMs
