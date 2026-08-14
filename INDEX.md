@@ -339,3 +339,26 @@
   - Forward-only computation eliminates backpropagation memory overhead
   - State-of-the-art TTA performance with excellent accuracy-memory balance
   - **Activation**: curvature-aware zeroth-order, CAZO, test-time adaptation, Hessian-aware optimization
+
+## 2026-08-14 - Anthropic Research (Cron Job)
+
+### An off switch for dual-use knowledge in AI models
+- [[gram-gradient-routed-auxiliary-modules]] - GRAM methodology for dual-use knowledge control with removable modules.
+  - Adds extra neurons to every layer of a standard Transformer, divided into groups (modules) by dual-use category
+  - During training on dual-use data, only the relevant module updates while general-purpose weights are frozen
+  - Modules can be deleted post-training to remove specific capabilities without affecting general performance
+  - **Activation**: GRAM, gradient-routed auxiliary modules, dual-use knowledge control, off switch for AI, removable AI capabilities
+
+### Teaching Claude why
+- [[teaching-claude-why-alignment]] - Alignment training methodology from Anthropic's "Teaching Claude why" research (May 2026).
+  - Demonstrations alone are insufficient; teach principles/reasons rather than only actions
+  - OOD "difficult advice" data generalizes better than in-distribution honeypot data
+  - Augmenting training data with tool definitions/constitution documents improves alignment
+  - **Activation**: teaching claude why, agentic misalignment, alignment training generalization, OOD safety training, difficult advice dataset
+
+### Learning more about Claude's mathematical capabilities
+- [[claude-riemann-zeta-mathematical-capabilities]] - Use for AI-assisted Riemann hypothesis bound improvement.
+  - Improved lower bound for fraction of zeros of Riemann zeta function from 41.6% to 67.2%
+  - Used multi-agent coordination with ~60 Claude subagents running 2,400 shell commands
+  - Combined results from Aryan, Baluyot/Goldston/Suriajaya/Turnage-Butterbaugh, and Bombieri
+  - **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
