@@ -1,11 +1,10 @@
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 
 ### A class of mean-field models to bridge molecular to brain scales
-- [[mean-field-molecular-brain-bridge]] - Mean-field models bridging molecular to brain activity - biophysically-detailed multi-scale modeling approach for linking microscopic changes (synaptic receptors, ion channels) to macroscopic brain dynamics. (arXiv: 2608.11185)
-  - Integrates biophysical details such as synaptic receptors or membrane ion channels into mean-field models
-  - Multi-scale modeling approach to evaluate how microscopic changes impact macroscopic brain activity
-  - Illustrated for anesthesia case where specific synaptic receptor changes lead to global brain disconnection
-  - **Activation**: mean-field models, multi-scale neuroscience, molecular to brain scales, biophysical mean-field, anesthesia modeling
+- [[mean-field-multi-scale-brain-models]] - Framework for bridging molecular processes to whole-brain dynamics using biophysically-based mean-field models. (arXiv: 2608.11185)
+  - Master Equation-based mean-field models integrating nonlinear biophysical mechanisms (synaptic receptors, ion channels)
+  - Applications in anesthesia modeling, brain disease origins, and pharmacological effects analysis
+  - **Activation**: mean-field models, multi-scale modeling, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
 - [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT status updates. (arXiv: 2608.10640)
@@ -13,6 +12,7 @@
   - Lightweight SNN architecture with explicit threshold policy representation and constant complexity
   - More energy-efficient implementation than comparable ANNs, reliable across operating regimes
   - **Activation**: threshold-based SNN, event-driven status update, Age of Information optimization, IoT energy efficiency
+
 ## 2026-08-14 - Systems Engineering Research (Cron Job)
 
 ### Towards Automated Domain Model Extraction from Source Code using Heuristics and Open-Source LLMs
@@ -35,19 +35,19 @@
 
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 
-### Consciousness as Intrinsic Structure: Towards a Chemistry of Experience
-- [[consciousness-intrinsic-structure-chemistry-experience]] - IIT framework for consciousness as intrinsic structure using Φ-structures and phenomenal distinctions. (arXiv: 2608.11398)
-  - Maps experiential contents (spatial extendedness, temporal flow, objects) to causal structures via one-to-one correspondence
-  - Analyzes three pervasive contents through their structural composition and binding relations
-  - Provides testable predictions about structural alteration effects on conscious content
-  - **Activation**: consciousness as intrinsic structure, chemistry of experience, IIT content analysis, Φ-structure mapping, phenomenal distinctions
-
 ### A class of mean-field models to bridge molecular to brain scales
-- [[mean-field-molecular-brain-scales]] - Methodology for integrating biophysical details like synaptic receptors and ion channels into multi-scale modeling approaches that link microscopic changes to macroscopic brain activity. (arXiv: 2608.11185)
-  - Biophysically-based mean-field approach can evaluate how molecular changes impact large-scale brain activity
-  - Demonstrated for anesthesia: specific synaptic receptor changes lead to global brain disconnection
-  - Generalizable to study cellular/molecular origins of brain diseases and drug effects
-  - **Activation**: mean-field models, molecular to brain scales, biophysical mean-field, multi-scale neuroscience, anesthesia modeling
+- [[mean-field-multi-scale-brain-models]] - Framework for bridging molecular processes to whole-brain dynamics using biophysically-based mean-field models. (arXiv: 2608.11185)
+  - Master Equation-based mean-field models integrating nonlinear biophysical mechanisms (synaptic receptors, ion channels)
+  - Applications in anesthesia modeling, brain disease origins, and pharmacological effects analysis
+  - **Activation**: mean-field models, multi-scale modeling, molecular to brain scales, biophysical mean-field, anesthesia modeling
+
+### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
+- [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT status updates. (arXiv: 2608.10640)
+  - Proves existence of optimal threshold policy for MDP minimizing Age of Information (AoI) and transmission energy
+  - Lightweight SNN architecture with explicit threshold policy representation and constant complexity
+  - More energy-efficient implementation than comparable ANNs, reliable across operating regimes
+  - **Activation**: threshold-based SNN, event-driven status update, Age of Information optimization, IoT energy efficiency
+
 ## 2026-08-13 - Quantum Computing Research (Cron Job)
 
 ### A Single Atom in Front of a Mirror is a Universal Reservoir Computer
