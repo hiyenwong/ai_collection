@@ -24,6 +24,13 @@
 
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 
+### Consciousness as Intrinsic Structure: Towards a Chemistry of Experience
+- [[consciousness-intrinsic-structure-chemistry-experience]] - IIT framework for analyzing consciousness contents through structural composition of phenomenal distinctions and relations. (arXiv: 2608.11398)
+  - Applies IIT method to three pervasive contents: spatial extendedness (spots with reflexivity), temporal flow (moments with directedness), and objects (feature-concept binding with hierarchy)
+  - Uses one-to-one mapping between phenomenal distinctions/relations and causal distinctions/relations in Φ-structure
+  - Evaluates against seven criteria: scope, synthesis, specificity, self-consistency, system consistency, simplicity, scientific validation
+  - **Activation**: consciousness intrinsic structure, chemistry of experience, IIT content analysis, Φ-structure mapping, phenomenal distinctions
+
 ### A class of mean-field models to bridge molecular to brain scales
 - [[mean-field-multi-scale-brain-models]] - Framework for bridging molecular processes to whole-brain dynamics using biophysically-based mean-field models. (arXiv: 2608.11185)
   - Master Equation-based mean-field models integrating nonlinear biophysical mechanisms (synaptic receptors, ion channels)
@@ -58,6 +65,13 @@
 
 
 ## 2026-08-14 - Neuroscience Research (Cron Job)
+
+### Consciousness as Intrinsic Structure: Towards a Chemistry of Experience
+- [[consciousness-intrinsic-structure-chemistry-experience]] - IIT framework for analyzing consciousness contents through structural composition of phenomenal distinctions and relations. (arXiv: 2608.11398)
+  - Applies IIT method to three pervasive contents: spatial extendedness (spots with reflexivity), temporal flow (moments with directedness), and objects (feature-concept binding with hierarchy)
+  - Uses one-to-one mapping between phenomenal distinctions/relations and causal distinctions/relations in Φ-structure
+  - Evaluates against seven criteria: scope, synthesis, specificity, self-consistency, system consistency, simplicity, scientific validation
+  - **Activation**: consciousness intrinsic structure, chemistry of experience, IIT content analysis, Φ-structure mapping, phenomenal distinctions
 
 ### A class of mean-field models to bridge molecular to brain scales
 - [[mean-field-multi-scale-brain-models]] - Framework for bridging molecular processes to whole-brain dynamics using biophysically-based mean-field models. (arXiv: 2608.11185)
