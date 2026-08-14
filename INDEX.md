@@ -5,6 +5,16 @@
   - Uses progressive analysis with ranked code subsets to overcome LLM context window limitations
   - Combines structural heuristics (dependencies, inheritance) with semantic heuristics (naming, documentation)
   - Designed for privacy-sensitive industrial environments with locally deployable LLMs
+
+
+### Developing LLM-based Multi-Agent Systems in Software Engineering: A Mixed-Method Experience Report
+- [[llm-multi-agent-systems-software-engineering]] - Select frameworks for LLM multi-agent systems. (arXiv: 2608.11965)
+  - Provides mixed-method approach combining quantitative framework analysis with qualitative empirical evaluation
+  - Evaluates documentation quality, feature coverage, developer experience, and advanced capabilities
+  - Includes lessons learned on technology selection, coordination rules, role design, and error handling
+  - **Activation**: LLM multi-agent systems, MAS framework selection, software engineering agents
+
+
   - **Activation**: automated domain model extraction, reverse engineering domain models, LLM-based domain modeling
 
 
