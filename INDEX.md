@@ -1,3 +1,13 @@
+## 2026-08-14 - Systems Engineering Research (Cron Job)
+
+### Towards Automated Domain Model Extraction from Source Code using Heuristics and Open-Source LLMs
+- [[automated-domain-model-extraction-llm]] - Extract domain models from code using LLMs and heuristics. (arXiv: 2608.12228)
+  - Uses progressive analysis with ranked code subsets to overcome LLM context window limitations
+  - Combines structural heuristics (dependencies, inheritance) with semantic heuristics (naming, documentation)
+  - Designed for privacy-sensitive industrial environments with locally deployable LLMs
+  - **Activation**: automated domain model extraction, reverse engineering domain models, LLM-based domain modeling
+
+
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 
 ### Consciousness as Intrinsic Structure: Towards a Chemistry of Experience
