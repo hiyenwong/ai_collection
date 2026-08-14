@@ -15,6 +15,13 @@
   - Transfer experimental logic from LLMs to generate sharper biological hypotheses
   - **Activation**: brain-llm memory, functional memory comparison, memory representation, memory retrieval, memory updating, experimental access
 
+### Spiking Neural Networks with Elephant Reinforcement
+- [[spiking-neural-networks-elephant-reinforcement]] - Stochastic SNN framework with memory-dependent thresholds and theoretical stability guarantees. (arXiv: 2608.12839)
+  - Elephant-type memory where past firing activity modifies future excitability through reinforcement-dependent threshold
+  - Non-explosion proof and conditional exponential contraction in Wasserstein distance
+  - Replica mean-field dynamics with global existence and numerical validation
+  - **Activation**: elephant reinforcement, elephant memory SNN, spiking neural networks elephant, SNN elephant memory, elephant-type memory
+
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 
 ### A class of mean-field models to bridge molecular to brain scales
