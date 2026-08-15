@@ -1,20 +1,12 @@
 ## 2026-08-15 - Neuroscience Research (Cron Job)
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-- [[threshold-based-snn-event-driven]] - SNN threshold policies for event-driven IoT status updates. (arXiv: 2608.10640)
+- [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT status updates. (arXiv: 2608.10640)
   - Proves existence of optimal threshold policy for MDP formulation of event-driven status update systems
   - Novel SNN architecture explicitly represents threshold policies with constant complexity relative to maximum AoI
   - Energy-efficient implementation demonstrates superior performance compared to comparable ANNs
   - Robust learning across different operating regimes with reliable threshold optimization
-  - **Activation**: threshold-based SNN, event-driven status update, Age of Information optimization, energy-efficient IoT, spiking neural network threshold policy, MDP for status updates, arXiv:2608.10640
-
-## 2026-08-15 - Neuroscience Research (Cron Job)
-### Activity-dependent epidemic spreading on multiscale brain networks predicts Alzheimer's disease progression
-- [[activity-dependent-epidemic-spreading-alzheimers]] - Epidemic spreading with neuronal activity predicts Alzheimer's progression. (arXiv: 2608.12647)
-  - Couples neuronal activity to SIS dynamics for pathological protein transmission modeling
-  - Shows how neuronal activity shifts epidemic threshold and redirects spreading via network modes
-  - Validates with longitudinal PET using glucose metabolism as activity proxy and tau accumulation as progression marker
-  - **Activation**: alzheimer's disease, epidemic spreading, brain networks, neuronal activity, tau propagation
+  - **Activation**: threshold-based SNN, event-driven status update, Age of Information optimization, energy-efficient IoT, spiking neural network threshold policy, MDP for status updates
 
 ### Activity-dependent epidemic spreading on multiscale brain networks predicts Alzheimer's disease progression
 - [[activity-dependent-epidemic-spreading-alzheimers]] - Epidemic spreading with neuronal activity predicts Alzheimer's progression. (arXiv: 2608.12647)
@@ -22,95 +14,13 @@
   - Shows how neuronal activity shifts epidemic threshold and redirects spreading via network modes
   - Validates with longitudinal PET using glucose metabolism as activity proxy and tau accumulation as progression marker
   - **Activation**: alzheimer's disease, epidemic spreading, brain networks, neuronal activity, tau propagation
-## 2026-08-15 - Neuroscience Research (Cron Job)
-### From Observation to Intervention: Memory in Brains and Large Language Models
-- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
-  - Establishes four shared functional questions: representation, retrieval, updating, and perturbation
-  - Identifies experimental access asymmetry: LLMs provide unprecedented direct manipulation capabilities
-  - Proposes transferring experimental logic from LLMs to generate sharper biological hypotheses
-  - **Activation**: brain-llm memory comparison, functional memory analysis, experimental access asymmetry, memory system comparison, cross-system hypothesis generation
 
-### From Observation to Intervention: Memory in Brains and Large Language Models
-- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
-  - Establishes four shared functional questions: representation, retrieval, updating, and perturbation
-  - Identifies experimental access asymmetry: LLMs provide unprecedented direct manipulation capabilities
-  - Proposes transferring experimental logic from LLMs to generate sharper biological hypotheses
-  - **Activation**: brain-llm memory comparison, functional memory analysis, experimental access asymmetry, memory system comparison, cross-system hypothesis generation
-
-### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-  - Proves existence of optimal threshold policy for joint minimization of Age of Information (AoI) and transmission energy
-  - Develops lightweight policy-gradient SNN with constant complexity independent of maximum AoI
-  - Demonstrates 25% reduced energy consumption compared to ANN benchmark while learning optimal thresholds reliably
-  - **Activation**: threshold-based spiking neural networks, event-driven status update, age of information optimization, IoT transmission scheduling, energy-efficient SNN, threshold policy reinforcement learning## 2026-08-15 - Systems Engineering Research (Cron Job)
-
-### Runtime Monitoring of Distributed Cyber-Physical Systems Without a Global Clock
-- [[runtime-monitoring-distributed-cps-no-global-clock]] - Monitor distributed CPS without global clock using STL. (arXiv: 2608.13486)
-  - First theoretical characterization and algorithm for continuous monitoring of distributed CPS against dense-time temporal logic specifications with clock drift
-  - Novel satisfaction signals extension to partially synchronous settings and multi-dimensional time geometry analysis
-  - Returns set of all possible global moments satisfying specification, validated with up to 50 agents
-  - **Activation**: distributed CPS monitoring, clock drift, temporal logic verification, Signal Temporal Logic (STL)## 2026-08-15 - Deep Learning Research (Cron Job)
-
-### Latent On-Policy Self-Distillation
-- [[latent-on-policy-self-distillation]] - LOPD: learnable privileged context for agentic AI evolution. (arXiv: 2608.13040)
-  - Retrieves relevant experiences and composes them into continuous latent tokens that condition a self-teacher
-  - Student generates trajectories and receives dense token-level supervision at every visited prefix
-  - Privileged-margin objective stabilizes and regulates the learning of latent context
-  - **Activation**: latent on-policy self-distillation, LOPD, self-evolving agents, learnable privileged context
-## 2026-08-15 - Neuroscience Research (Cron Job)
-### From Observation to Intervention: Memory in Brains and Large Language Models
-- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
-  - Establishes four shared functional questions: representation, retrieval, updating, and perturbation
-  - Identifies experimental access asymmetry: LLMs provide unprecedented direct manipulation capabilities
-  - Proposes transferring experimental logic from LLMs to generate sharper biological hypotheses
-  - **Activation**: brain-llm memory comparison, functional memory analysis, experimental access asymmetry, memory system comparison, cross-system hypothesis generation
-
-### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-  - Theoretical proof of optimal threshold policy existence for event-driven status update systems
-  - Two-neuron SNN architecture with constant complexity w.r.t. maximum AoI
-  - 25% energy reduction vs ANN benchmark through multiplication-free computation
-  - **Activation**: threshold-based spiking neural network, event-driven status update, age of information optimization
-
-### From Observation to Intervention: Memory in Brains and Large Language Models
-- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
-  - Shared functional questions: representation, retrieval, updating, perturbation across domains
-  - Asymmetry in experimental access: LLMs provide unprecedented manipulation capabilities
-  - Transfer experimental logic from LLMs to generate sharper biological hypotheses
-  - **Activation**: brain-llm memory, functional memory comparison, memory representation, memory retrieval, memory updating, experimental access
-
-### Spiking Neural Networks with Elephant Reinforcement
-- [[spiking-neural-networks-elephant-reinforcement]] - Stochastic SNN framework with memory-dependent thresholds and theoretical stability guarantees. (arXiv: 2608.12839)
-  - Elephant-type memory where past firing activity modifies future excitability through reinforcement-dependent threshold
-  - Non-explosion proof and conditional exponential contraction in Wasserstein distance
-  - Replica mean-field dynamics with global existence and numerical validation
-  - **Activation**: elephant reinforcement, elephant memory SNN, spiking neural networks elephant, SNN elephant memory, elephant-type memory
-
-### From Observation to Intervention: Memory in Brains and Large Language Models
-- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
-  - Establishes four shared functional questions: representation, retrieval, updating, and perturbation
-  - Identifies experimental access asymmetry: LLMs provide unprecedented direct manipulation capabilities
-  - Proposes transferring experimental logic from LLMs to generate sharper biological hypotheses
-  - **Activation**: brain-llm memory comparison, functional memory analysis, experimental access asymmetry, memory system comparison, cross-system hypothesis generation
-
-### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-  - Theoretical proof of optimal threshold policy existence for event-driven status update systems
-  - Two-neuron SNN architecture with constant complexity w.r.t. maximum AoI
-  - 25% energy reduction vs ANN benchmark through multiplication-free computation
-  - **Activation**: threshold-based spiking neural network, event-driven status update, age of information optimization
-
-### From Observation to Intervention: Memory in Brains and Large Language Models
-- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
-  - Shared functional questions: representation, retrieval, updating, perturbation across domains
-  - Asymmetry in experimental access: LLMs provide unprecedented manipulation capabilities
-  - Transfer experimental logic from LLMs to generate sharper biological hypotheses
-  - **Activation**: brain-llm memory, functional memory comparison, memory representation, memory retrieval, memory updating, experimental access
-
-### Spiking Neural Networks with Elephant Reinforcement
-- [[spiking-neural-networks-elephant-reinforcement]] - Stochastic SNN framework with memory-dependent thresholds and theoretical stability guarantees. (arXiv: 2608.12839)
-  - Elephant-type memory where past firing activity modifies future excitability through reinforcement-dependent threshold
-  - Non-explosion proof and conditional exponential contraction in Wasserstein distance
-  - Replica mean-field dynamics with global existence and numerical validation
-  - **Activation**: elephant reinforcement, elephant memory SNN, spiking neural networks elephant, SNN elephant memory, elephant-type memory
-
+### Latent On-Policy Self-Distillation for Agentic AI Evolution
+- [[latent-on-policy-self-distillation]] - Learnable privileged context for agentic AI evolution through on-policy self-distillation. (arXiv: 2608.13040)
+  - Introduces learnable privileged context that enables agents to distill knowledge from their own trajectories
+  - Provides theoretical foundation for agentic AI evolution through self-distillation mechanisms
+  - Demonstrates improved sample efficiency and policy quality in reinforcement learning settings
+  - **Activation**: on-policy distillation, agentic AI, self-distillation, reinforcement learning, privileged context
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 ### Consciousness as Intrinsic Structure: Towards a Chemistry of Experience
 - [[consciousness-intrinsic-structure-chemistry-experience]] - IIT framework for analyzing consciousness contents through structural composition of phenomenal distinctions and relations. (arXiv: 2608.11398)
@@ -125,7 +35,6 @@
   - Applications in anesthesia modeling, brain disease origins, and pharmacological effects analysis
   - **Activation**: mean-field models, multi-scale modeling, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
-### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
   - Proves existence of optimal threshold policy for MDP minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with explicit threshold policy representation and constant complexity
   - More energy-efficient implementation than comparable ANNs, reliable across operating regimes
@@ -144,7 +53,6 @@
   - Applications in anesthesia modeling, brain disease origins, and pharmacological effects analysis
   - **Activation**: mean-field models, multi-scale modeling, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
-### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
   - Proves existence of optimal threshold policy for MDP minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with explicit threshold policy representation and constant complexity
   - More energy-efficient implementation than comparable ANNs, reliable across operating regimes
@@ -184,7 +92,6 @@
   - Applications in anesthesia modeling, brain disease origins, and pharmacological effects analysis
   - **Activation**: mean-field models, multi-scale modeling, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
-### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
   - Proves existence of optimal threshold policy for MDP minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with explicit threshold policy representation and constant complexity
   - More energy-efficient implementation than comparable ANNs, reliable across operating regimes
@@ -203,7 +110,6 @@
   - Applications in anesthesia modeling, brain disease origins, and pharmacological effects analysis
   - **Activation**: mean-field models, multi-scale modeling, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
-### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
   - Proves existence of optimal threshold policy for MDP minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with explicit threshold policy representation and constant complexity
   - More energy-efficient implementation than comparable ANNs, reliable across operating regimes
@@ -236,7 +142,6 @@
   - Applications in anesthesia modeling, brain disease origins, and drug effects analysis
   - **Activation**: mean-field models, multi-scale brain dynamics, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
-### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
   - Proves existence of optimal threshold policy for jointly minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with constant complexity w.r.t. maximum AoI
   - More energy-efficient implementation than comparable ANNs with reliable learning across operating regimes
@@ -264,7 +169,6 @@
   - Applications in anesthesia modeling, brain disease origins, and drug effects analysis
   - **Activation**: mean-field models, multi-scale brain dynamics, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
-### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
   - Proves existence of optimal threshold policy for jointly minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with constant complexity w.r.t. maximum AoI
   - More energy-efficient implementation than comparable ANNs with reliable learning across operating regimes
