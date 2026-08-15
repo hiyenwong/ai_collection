@@ -1,4 +1,11 @@
-## 2026-08-15 - Deep Learning Research (Cron Job)
+## 2026-08-15 - Systems Engineering Research (Cron Job)
+
+### Runtime Monitoring of Distributed Cyber-Physical Systems Without a Global Clock
+- [[runtime-monitoring-distributed-cps-no-global-clock]] - Monitor distributed CPS without global clock using STL. (arXiv: 2608.13486)
+  - First theoretical characterization and algorithm for continuous monitoring of distributed CPS against dense-time temporal logic specifications with clock drift
+  - Novel satisfaction signals extension to partially synchronous settings and multi-dimensional time geometry analysis
+  - Returns set of all possible global moments satisfying specification, validated with up to 50 agents
+  - **Activation**: distributed CPS monitoring, clock drift, temporal logic verification, Signal Temporal Logic (STL)## 2026-08-15 - Deep Learning Research (Cron Job)
 
 ### Latent On-Policy Self-Distillation
 - [[latent-on-policy-self-distillation]] - LOPD: learnable privileged context for agentic AI evolution. (arXiv: 2608.13040)
