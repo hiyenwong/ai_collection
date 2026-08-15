@@ -1,5 +1,12 @@
 ## 2026-08-16 - Neuroscience Research (Cron Job)
 
+### Spiking Neural Networks with Elephant Reinforcement
+- [[spiking-neural-networks-elephant-reinforcement]] - Finite stochastic SNN with Elephant-type memory where past firing modifies future excitability through reinforcement-dependent threshold. (arXiv: 2608.12839)
+  - Non-explosion proof for bounded hard-threshold firing rate with conditional exponential contraction in Wasserstein distance
+  - Formulates replica mean-field dynamics with global existence, uniqueness in law, and non-explosion of nonlinear process
+  - Elephant memory produces p-dependent decline in firing activity and alters extinction behavior vs standard SNNs
+  - **Activation**: spiking-neural-networks-elephant-reinforcement, elephant-memory-snn, stochastic-spiking-networks, reinforcement-dependent-threshold, wasserstein-contraction-snn
+
 ### From Observation to Intervention: Memory in Brains and Large Language Models
 - [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
   - Establishes functional comparison framework focusing on representation, retrieval, updating, and perturbation
