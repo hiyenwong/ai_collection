@@ -1,5 +1,12 @@
 ## 2026-08-15 - Neuroscience Research (Cron Job)
 
+### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
+- [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT AoI-energy optimization. (arXiv: 2608.10640)
+  - Proves existence of optimal threshold policy for joint minimization of Age of Information (AoI) and transmission energy
+  - Develops lightweight policy-gradient SNN with constant complexity independent of maximum AoI
+  - Demonstrates 25% reduced energy consumption compared to ANN benchmark while learning optimal thresholds reliably
+  - **Activation**: threshold-based spiking neural networks, event-driven status update, age of information optimization, IoT transmission scheduling, energy-efficient SNN, threshold policy reinforcement learning## 2026-08-15 - Neuroscience Research (Cron Job)
+
 ### Activity-dependent epidemic spreading on multiscale brain networks predicts Alzheimer's disease progression
 - [[activity-dependent-epidemic-spreading-alzheimers]] - Epidemic spreading with neuronal activity predicts Alzheimer's progression. (arXiv: 2608.12647)
   - Couples neuronal activity to SIS dynamics for pathological protein transmission modeling
@@ -16,7 +23,6 @@
   - **Activation**: brain-llm memory comparison, functional memory analysis, experimental access asymmetry, memory system comparison, cross-system hypothesis generation
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-- [[threshold-based-snn-event-driven-status-update]] - SNNs with explicit threshold policy representation for energy-efficient IoT communication decisions. (arXiv: 2608.10640)
   - Proves existence of optimal threshold policy for joint minimization of Age of Information (AoI) and transmission energy
   - Develops lightweight policy-gradient SNN with constant complexity independent of maximum AoI
   - Demonstrates 25% reduced energy consumption compared to ANN benchmark while learning optimal thresholds reliably
@@ -45,7 +51,6 @@
   - **Activation**: brain-llm memory comparison, functional memory analysis, experimental access asymmetry, memory system comparison, cross-system hypothesis generation
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-- [[threshold-based-snn-event-driven-status-update]] - Threshold SNNs for event-driven IoT balancing AoI. (arXiv: 2608.10640)
   - Theoretical proof of optimal threshold policy existence for event-driven status update systems
   - Two-neuron SNN architecture with constant complexity w.r.t. maximum AoI
   - 25% energy reduction vs ANN benchmark through multiplication-free computation
@@ -81,7 +86,6 @@
   - **Activation**: mean-field models, multi-scale modeling, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-- [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT status updates. (arXiv: 2608.10640)
   - Proves existence of optimal threshold policy for MDP minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with explicit threshold policy representation and constant complexity
   - More energy-efficient implementation than comparable ANNs, reliable across operating regimes
@@ -123,7 +127,6 @@
   - **Activation**: mean-field models, multi-scale modeling, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-- [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT status updates. (arXiv: 2608.10640)
   - Proves existence of optimal threshold policy for MDP minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with explicit threshold policy representation and constant complexity
   - More energy-efficient implementation than comparable ANNs, reliable across operating regimes
@@ -158,7 +161,6 @@
   - **Activation**: mean-field models, multi-scale brain dynamics, molecular to brain scales, biophysical mean-field, anesthesia modeling
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-- [[threshold-based-snn-event-driven-status-update]] - Threshold SNNs for event-driven IoT status updates. (arXiv: 2608.10640)
   - Proves existence of optimal threshold policy for jointly minimizing Age of Information (AoI) and transmission energy
   - Lightweight SNN architecture with constant complexity w.r.t. maximum AoI
   - More energy-efficient implementation than comparable ANNs with reliable learning across operating regimes
