@@ -1,3 +1,13 @@
+## 2026-08-16 - Neuroscience Research (Cron Job)
+
+### From Observation to Intervention: Memory in Brains and Large Language Models
+- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
+  - Establishes functional comparison framework focusing on representation, retrieval, updating, and perturbation
+  - Highlights asymmetry in experimental access: LLMs provide unprecedented manipulation capabilities despite lacking lived episodic memory
+  - Argues for transferring experimental logic rather than anatomical parts between domains
+  - Enables sharper biological hypotheses through LLM intervention techniques
+  - **Activation**: brain-llm memory, functional memory comparison, memory representation, memory retrieval, memory updating, experimental access
+
 ## 2026-08-15 - Neuroscience Research (Cron Job)
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
