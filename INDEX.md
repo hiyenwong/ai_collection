@@ -1,11 +1,14 @@
 ## 2026-08-15 - Neuroscience Research (Cron Job)
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-- [[threshold-based-snn-event-driven-status-update]] - SNN threshold policies for event-driven IoT AoI-energy optimization. (arXiv: 2608.10640)
-  - Proves existence of optimal threshold policy for joint minimization of Age of Information (AoI) and transmission energy
-  - Develops lightweight policy-gradient SNN with constant complexity independent of maximum AoI
-  - Demonstrates 25% reduced energy consumption compared to ANN benchmark while learning optimal thresholds reliably
-  - **Activation**: threshold-based spiking neural networks, event-driven status update, age of information optimization, IoT transmission scheduling, energy-efficient SNN, threshold policy reinforcement learning## 2026-08-15 - Neuroscience Research (Cron Job)
+- [[threshold-based-snn-event-driven]] - SNN threshold policies for event-driven IoT status updates. (arXiv: 2608.10640)
+  - Proves existence of optimal threshold policy for MDP formulation of event-driven status update systems
+  - Novel SNN architecture explicitly represents threshold policies with constant complexity relative to maximum AoI
+  - Energy-efficient implementation demonstrates superior performance compared to comparable ANNs
+  - Robust learning across different operating regimes with reliable threshold optimization
+  - **Activation**: threshold-based SNN, event-driven status update, Age of Information optimization, energy-efficient IoT, spiking neural network threshold policy, MDP for status updates, arXiv:2608.10640
+
+## 2026-08-15 - Neuroscience Research (Cron Job)
 ### Activity-dependent epidemic spreading on multiscale brain networks predicts Alzheimer's disease progression
 - [[activity-dependent-epidemic-spreading-alzheimers]] - Epidemic spreading with neuronal activity predicts Alzheimer's progression. (arXiv: 2608.12647)
   - Couples neuronal activity to SIS dynamics for pathological protein transmission modeling
