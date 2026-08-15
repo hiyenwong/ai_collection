@@ -1,5 +1,12 @@
 ## 2026-08-15 - Neuroscience Research (Cron Job)
 
+### From Observation to Intervention: Memory in Brains and Large Language Models
+- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
+  - Establishes four shared functional questions: representation, retrieval, updating, and perturbation
+  - Identifies experimental access asymmetry: LLMs provide unprecedented direct manipulation capabilities
+  - Proposes transferring experimental logic from LLMs to generate sharper biological hypotheses
+  - **Activation**: brain-llm memory comparison, functional memory analysis, experimental access asymmetry, memory system comparison, cross-system hypothesis generation
+
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
 - [[threshold-based-snn-event-driven-status-update]] - SNNs with explicit threshold policy representation for energy-efficient IoT communication decisions. (arXiv: 2608.10640)
   - Proves existence of optimal threshold policy for joint minimization of Age of Information (AoI) and transmission energy
@@ -21,6 +28,13 @@
   - Privileged-margin objective stabilizes and regulates the learning of latent context
   - **Activation**: latent on-policy self-distillation, LOPD, self-evolving agents, learnable privileged context
 ## 2026-08-15 - Neuroscience Research (Cron Job)
+
+### From Observation to Intervention: Memory in Brains and Large Language Models
+- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
+  - Establishes four shared functional questions: representation, retrieval, updating, and perturbation
+  - Identifies experimental access asymmetry: LLMs provide unprecedented direct manipulation capabilities
+  - Proposes transferring experimental logic from LLMs to generate sharper biological hypotheses
+  - **Activation**: brain-llm memory comparison, functional memory analysis, experimental access asymmetry, memory system comparison, cross-system hypothesis generation
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
 - [[threshold-based-snn-event-driven-status-update]] - Threshold SNNs for event-driven IoT balancing AoI. (arXiv: 2608.10640)
