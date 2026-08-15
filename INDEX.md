@@ -1,4 +1,11 @@
-## 2026-08-15 - Systems Engineering Research (Cron Job)
+## 2026-08-15 - Neuroscience Research (Cron Job)
+
+### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
+- [[threshold-based-snn-event-driven-status-update]] - SNNs with explicit threshold policy representation for energy-efficient IoT communication decisions. (arXiv: 2608.10640)
+  - Proves existence of optimal threshold policy for joint minimization of Age of Information (AoI) and transmission energy
+  - Develops lightweight policy-gradient SNN with constant complexity independent of maximum AoI
+  - Demonstrates 25% reduced energy consumption compared to ANN benchmark while learning optimal thresholds reliably
+  - **Activation**: threshold-based spiking neural networks, event-driven status update, age of information optimization, IoT transmission scheduling, energy-efficient SNN, threshold policy reinforcement learning## 2026-08-15 - Systems Engineering Research (Cron Job)
 
 ### Runtime Monitoring of Distributed Cyber-Physical Systems Without a Global Clock
 - [[runtime-monitoring-distributed-cps-no-global-clock]] - Monitor distributed CPS without global clock using STL. (arXiv: 2608.13486)
