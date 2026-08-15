@@ -1,5 +1,13 @@
 ## 2026-08-15 - Neuroscience Research (Cron Job)
 
+### Activity-dependent epidemic spreading on multiscale brain networks predicts Alzheimer's disease progression
+- [[activity-dependent-epidemic-spreading-alzheimers]] - Epidemic spreading with neuronal activity predicts Alzheimer's progression. (arXiv: 2608.12647)
+  - Couples neuronal activity to SIS dynamics for pathological protein transmission modeling
+  - Shows how neuronal activity shifts epidemic threshold and redirects spreading via network modes
+  - Validates with longitudinal PET using glucose metabolism as activity proxy and tau accumulation as progression marker
+  - **Activation**: alzheimer's disease, epidemic spreading, brain networks, neuronal activity, tau propagation
+## 2026-08-15 - Neuroscience Research (Cron Job)
+
 ### From Observation to Intervention: Memory in Brains and Large Language Models
 - [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
   - Establishes four shared functional questions: representation, retrieval, updating, and perturbation
