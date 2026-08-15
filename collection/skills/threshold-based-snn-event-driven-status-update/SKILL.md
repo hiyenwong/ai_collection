@@ -1,162 +1,80 @@
 ---
 name: threshold-based-snn-event-driven-status-update
-description: "Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems - lightweight RL approach using SNNs with explicit threshold policy representation for energy-efficient IoT communication decisions. Use when: implementing event-driven IoT systems, optimizing Age of Information (AoI) vs energy trade-offs, designing threshold-based SNN policies, or building energy-efficient neuromorphic controllers for status update systems."
+description: "Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems - lightweight RL approach using SNNs with explicit threshold policy representation for IoT status updates that jointly minimizes Age of Information (AoI) and transmission energy. Use when designing energy-efficient event-driven IoT systems, optimizing information freshness vs energy trade-offs, or implementing threshold policies with SNNs."
 metadata:
   arxiv_id: "2608.10640"
   published: "2026-08-11"
   authors: "Marco Fries, Andrea Ortiz"
-  tags: [spiking-neural-networks, reinforcement-learning, internet-of-things, age-of-information, threshold-policies, energy-efficiency, event-driven-systems]
+  tags: [spiking-neural-network, reinforcement-learning, threshold-policy, age-of-information, event-driven, iot, energy-efficiency]
 license: Complete terms in LICENSE.txt
 ---
 
 # Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
 
-This skill implements the methodology from arXiv:2608.10640 for energy-efficient event-driven IoT status update systems using threshold-based Spiking Neural Networks (SNNs).
+## Overview
 
-## Core Concept
+This methodology addresses the challenge of jointly optimizing information freshness and energy consumption in event-driven Internet-of-Things (IoT) systems. In such systems, transmission decisions are governed by monitored process dynamics rather than predefined schedules, making the optimization problem challenging due to randomly occurring wake-up events.
 
-The paper establishes that optimal policies for event-driven status update systems follow a **threshold structure** where transmission decisions are based on whether the Age of Information (AoI) exceeds a learned threshold. The key innovation is implementing this threshold policy directly in SNN architecture, resulting in constant complexity and superior energy efficiency compared to traditional Artificial Neural Networks (ANNs).
+The key insight is proving the existence of an optimal threshold policy for determining whether to transmit sensing data, providing an interpretable characterization of the optimal transmission strategy. This leads to a lightweight Reinforcement Learning (RL) approach based on Spiking Neural Networks (SNNs) whose architecture explicitly represents threshold policies.
 
-## Mathematical Foundation
+## Key Contributions
 
-### Optimal Threshold Policy
-For threshold parameter κ ∈ ℝ, the optimal policy ϑ_κ is defined as:
-- ϑ_κ(0 | s) := I[s < κ] (do not transmit if AoI < threshold)
-- ϑ_κ(1 | s) := I[κ ≤ s] (transmit if AoI ≥ threshold)
+1. **Optimal Threshold Policy Proof**: Mathematical proof of the existence of an optimal threshold policy for the Markov Decision Process (MDP) that jointly minimizes Age of Information (AoI) and transmission energy.
 
-Where s represents the observed Age of Information at the Access Point (AoI_AP).
+2. **SNN Architecture for Threshold Policies**: Lightweight SNN implementation that explicitly represents threshold policies with constant complexity relative to maximum AoI.
 
-### SNN Architecture Implementation
+3. **Energy-Efficient Implementation**: More energy-efficient than comparable Artificial Neural Networks (ANNs) while reliably learning optimal thresholds across different operating regimes.
 
-The proposed SNN uses **two Integrate-and-Fire (IF) neurons** to implement the randomized threshold policy ζ_{κ,ω}: S → ΔA:
+4. **Interpretable Policy Representation**: The threshold-based approach provides clear interpretability compared to black-box neural network policies.
 
-**Input Current Encoding:**
-- Î(s) := s + I[s = κ]ε (primary neuron input)
-- Ĭ(s) := 2κ - s (secondary neuron input)
+## Methodology
 
-**Membrane Potentials:**
-- Û, Ŭ initially set to 0
-- Common firing threshold: κ
+### Problem Formulation
+- **System Model**: Event-driven status update system where wake-up events follow monitored process dynamics
+- **Objective**: Jointly minimize Age of Information (AoI) and transmission energy
+- **Decision Framework**: Cast as Markov Decision Process (MDP)
 
-**Network Output:**
-- Ĩ := Ẑ - Ž = ω[ϑ_κ(1 | s) - ϑ_κ(0 | s)]
-- Transmission probability: ζ_{κ,ω}(1 | s) := σ(Ĩ) ∈ (0, 1)
-- Where σ(x) = 1/(1 + exp(-x)) is the sigmoid function
-- Spike-grading factor ω controls exploration-exploitation trade-off
+### Threshold Policy Architecture
+- **Input**: Current AoI state and system parameters
+- **Threshold Mechanism**: SNN neurons fire when input exceeds learned threshold values
+- **Output**: Binary decision (transmit/do not transmit)
+- **Complexity**: Constant complexity with respect to maximum AoI
 
-**Decision Sampling:**
-- Final action a ∈ A sampled as a ~ ζ_{κ,ω}(· | s)
-
-## Energy Efficiency Advantages
-
-The SNN implementation provides significant energy savings over comparable ANN benchmarks:
-
-**SNN Energy Consumption:**
-- E[ζ_{κ,ω}] = 2E_R + E_A + E_A
-- Where E_R = read parameters, E_A = addition/comparison operations
-
-**ANN Benchmark Energy Consumption:**
-- E[α_{w,b}] = 2E_R + E_M + E_A  
-- Where E_M = multiplication operation
-
-**Key Advantage:** The SNN replaces the expensive multiplication operation (E_M) required by ANNs with cheaper comparison and bit-flip operations, achieving **25% reduced energy consumption** in the pre-sigmoid computation phase.
+### Training Approach
+- **Reinforcement Learning**: Train SNN to learn optimal threshold values
+- **Reward Function**: Combines AoI penalty and energy cost
+- **Convergence**: Demonstrated reliable learning across different operating regimes
 
 ## Implementation Guidelines
 
-### Training Procedure
-Use REINFORCE algorithm with state-value baseline:
-1. Sample trajectory ψ of fixed length H from environment interactions
-2. Compute TD-error: Ã_t = r(s_t, a_t) + γṼ(s_{t+1}) - Ṽ(s_t)
-3. Update parameters using policy gradient with surrogate gradients for threshold κ
+### When to Use This Skill
+- Designing energy-efficient IoT status update systems
+- Optimizing information freshness vs energy consumption trade-offs
+- Implementing interpretable threshold policies for event-driven systems
+- Replacing ANNs with more energy-efficient SNN alternatives
+- Working with randomly occurring wake-up events in monitoring systems
 
-**Parameter Updates:**
-- For exploitation parameter ω:
-  ∂L[ψ_t]/∂ω = Ã_t [1 - ζ_{κ,ω}(a_t | s_t)] [2ϑ_κ(a_t | s_t) - 1]
-  
-- For threshold parameter κ (using surrogate gradient):
-  ∂L[ψ_t]/∂κ ≈ Ã_t [1 - ζ_{κ,ω}(a_t | s_t)] [1 - 2a_t] 2ω σ_g(κ - s_t)
+### Key Parameters to Consider
+- **Maximum AoI**: Defines the state space bounds
+- **Energy Cost per Transmission**: System-specific parameter
+- **Event Arrival Rate**: Affects optimal threshold values
+- **Operating Regime**: Different regimes may require different threshold strategies
 
-Where σ_g represents the surrogate gradient function for the step function.
-
-### System Parameters
-Key system parameters from the paper:
-- Transmission success probability: p_Tx = 0.9
-- Wake-up probability: p_w = 0.1  
-- Maximum AoI: Λ = 20
-- Discount factor: γ = 0.99
-- Learning rates: η_κ = 0.01, η_ω = 0.1
-
-## Use Cases
-
-### Primary Applications
-1. **Energy-constrained IoT devices** with event-driven sensing
-2. **Status update systems** requiring optimal AoI-energy trade-offs
-3. **Neuromorphic hardware implementations** for edge AI
-4. **Real-time decision systems** with interpretable threshold policies
-
-### Activation Keywords
-- threshold-based SNN
-- event-driven status update
-- Age of Information optimization
-- energy-efficient neuromorphic control
-- spiking neural network threshold policy
-- IoT communication optimization
-
-## Pitfalls and Considerations
-
-### Implementation Challenges
-1. **Surrogate gradients required**: Direct gradients for threshold parameter κ cannot be computed due to discontinuous step function; must use surrogate gradients
-2. **Hardware dependency**: Actual energy savings depend on underlying neuromorphic hardware implementation
-3. **System dynamics unknown**: Requires reinforcement learning when system parameters (channel quality, wake-up probability) are unknown a priori
-
-### Performance Characteristics
-- **Constant complexity**: Policy representation complexity does not scale with maximum AoI (Λ)
-- **Interpretable**: Explicit threshold parameter provides clear decision boundary
-- **Energy-efficient**: 25% reduction in pre-sigmoid energy consumption vs ANN benchmark
-- **Robust**: Learns optimal thresholds across different operating regimes
+### Potential Pitfalls
+- **Non-stationary Environments**: Threshold policies assume stationary dynamics; non-stationary environments may require adaptive thresholds
+- **Multi-dimensional States**: Extension to multi-dimensional state spaces requires careful threshold design
+- **Hardware Constraints**: SNN implementation must consider specific neuromorphic hardware limitations
 
 ## References
+- Original paper: arXiv:2608.10640 [cs.IT]
+- Related work on Age of Information optimization
+- Spiking Neural Network architectures for RL applications
 
-### Source Paper
-- **Title**: Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
-- **Authors**: Marco Fries, Andrea Ortiz
-- **Institution**: Institute of Telecommunications, Vienna University of Technology, Austria
-- **arXiv**: 2608.10640 [cs.IT]
-- **Date**: August 11, 2026
-
-### Related Work
-- Age of Information (AoI) literature [1]
-- Energy-efficient status updating [4-9]
-- Event-driven sensing applications [2,3]
-- Spiking Neural Network fundamentals [10]
-
-## Validation Metrics
-
-### Performance Benchmarks
-- Compare against optimal threshold policy ϑ_{κ*}
-- Benchmark against ANN implementation α_{w,b}
-- Evaluate against baseline policies:
-  - Always transmit
-  - Never transmit  
-  - Random transmission
-
-### Energy Consumption Metrics
-- Operation-level energy accounting model
-- Pre-sigmoid energy comparison (SNN vs ANN)
-- Total inference energy including sigmoid and sampling
-
-### Key Results from Paper
-- Optimal threshold for tested parameters: κ* = 8
-- SNN closely approximates optimal policy performance
-- 33%+ energy reduction vs random policy with <15% mean AoI increase
-- 62% energy reduction vs always-transmit policy
-
-## Activation
-
-Use this skill when working with:
-- Event-driven IoT communication systems
-- Age of Information optimization problems  
-- Energy-efficient neuromorphic computing
-- Threshold-based decision policies
-- Spiking Neural Network implementations for control
-- Reinforcement learning with interpretable policies
+## Activation Keywords
+- threshold-based spiking neural network
+- event-driven status update
+- age of information optimization
+- energy-efficient IoT
+- SNN threshold policy
+- event-driven IoT
+- information freshness energy trade-off
