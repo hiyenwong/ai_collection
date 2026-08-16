@@ -1,3 +1,12 @@
+## 2026-08-17 - Neuroscience Research (Cron Job)
+
+### Spiking Neural Networks with Elephant Reinforcement
+- [[snn-elephant-reinforcement]] - SNNs with Elephant reinforcement memory where past firing activity modifies future excitability through reinforcement-dependent threshold. (arXiv: 2608.12839)
+  - Theoretical proof of non-explosion for finite system with bounded hard-threshold firing rate
+  - Conditional exponential contraction in (1)-Wasserstein distance on truncated potential space
+  - Replica mean-field dynamics with global existence, uniqueness in law, and non-explosion
+  - **Activation**: Elephant reinforcement, spiking neural networks, stochastic SNN, mean-field dynamics
+
 ## 2026-08-16 - Neuroscience Research (Cron Job)
 
 ### Trophic structure predicts seizure propagation in brain network models
