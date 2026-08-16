@@ -35,6 +35,35 @@
   - Enables sharper biological hypotheses through LLM intervention techniques
   - **Activation**: brain-llm memory, functional memory comparison, memory representation, memory retrieval, memory updating, experimental access
 
+## 2026-08-16 - Anthropic Research (Cron Job)
+
+### Learning more about Claude's mathematical capabilities
+- [[claude-riemann-zeta-mathematical-capabilities]] - AI-assisted Riemann hypothesis bound improvement methodology.
+  - Improved longstanding lower bound from 41.6% to 67.2%
+  - Demonstrates AI capability in advanced mathematical problem-solving
+  - Provides framework for AI-assisted mathematical discovery
+  - **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
+
+### A global workspace in language models
+- [[global-workspace-j-space]] - LLM interpretability methodology from Anthropic's "A global workspace in language models" (Jul 2026).
+  - Reveals emergent mental workspace in Claude that holds internal thoughts not appearing in output
+  - Uses Jacobian lens (J-lens) to probe consciously-accessible internal representations
+  - Can catch hidden goals, deception, or test-awareness
+  - **Activation**: jacobian lens, J-lens, global workspace theory LLM, consciously accessible representations, silent thoughts in language models
+
+### Teaching Claude why
+- [[teaching-claude-why-alignment]] - Alignment training methodology from Anthropic's "Teaching Claude why" research (May 2026).
+  - Reduces agentic misalignment through principled OOD training
+  - Teaches principles/reasons rather than only actions
+  - "Difficult advice" dataset pattern generalizes better than in-distribution honeypot data
+  - **Activation**: teaching claude why, agentic misalignment, alignment training generalization, OOD safety training, difficult advice dataset
+
+### An off switch for dual-use knowledge in AI models
+- [[off-switch-dual-use-knowledge-control]] - Off switch for dual-use knowledge using GRAM methodology.
+  - Gradient-Routed Auxiliary Modules (GRAM) selectively disable harmful capabilities
+  - Preserves beneficial capabilities while removing dual-use knowledge
+  - Provides architectural control over model capabilities
+  - **Activation**: off switch dual use, GRAM methodology, gradient-routed auxiliary modules, dual-use knowledge control
 ## 2026-08-15 - Neuroscience Research (Cron Job)
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
