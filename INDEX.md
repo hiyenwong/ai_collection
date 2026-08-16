@@ -1,3 +1,86 @@
+## 2026-08-16 - Neuroscience Research (Cron Job)
+
+### Trophic structure predicts seizure propagation in brain network models
+- [[trophic-structure-seizure-propagation]] - Trophic structure predicts seizure propagation. (arXiv: 2608.12382)
+  - Structural properties like trophic coherence, spectral radius, strong connectivity relate to seizure propensity
+  - Mathematical proof of theoretical relationship between spectral radius and cycle structure
+  - Results robust to coupling mechanisms and strengthen with network size
+  - **Activation**: trophic structure seizure propagation, brain network epilepsy, directed network seizure dynamics
+
+## 2026-08-16 - Neuroscience Research (Cron Job)
+
+### Evaluation Resolution Confounds Learning-Rule Comparisons in Model-Brain RSA of Early Visual Cortex
+- [[evaluation-resolution-confounds-rsa-visual-cortex]] - Critical methodological issue in RSA comparisons showing resolution dependence affects learning rule evaluations (arXiv: 2608.12408)
+  - V1 gap between untrained and backprop networks widens from -0.001 at 32px to +0.044 at 224px
+  - Effect holds in human fMRI and macaque electrophysiology across network architectures
+  - Root cause is image detail dependence rather than pooling mechanisms
+  - Single luminance value matches untrained network performance, bounding comparison resolution
+  - **Activation**: evaluation resolution confound, RSA visual cortex, model-brain similarity analysis, representational similarity analysis, learning rule comparison# AI Collection Skills Index
+
+## 2026-08-16 - Quantum Computing Research (Cron Job)
+
+### Experimental Quantum Key Distribution in an Indefinite Causal Order
+- [[experimental-quantum-key-distribution-indefinite-causal-order]] - Skill for understanding and applying methods from this quantum computing paper on experimental QKD using indefinite causal order with photonic quantum SWITCH (arXiv: 2608.13561)
+  - Quantum SWITCH implementation of BB84-like cryptography with operations embedded within indefinite causal order
+  - Eavesdropper detection without key disclosure through control qubit measurements (0.15 ± 0.02 detection probability per qubit)
+  - Novel measurement technique for photon polarization inside quantum SWITCH without destroying path coherence
+  - **Activation**: experimental quantum key distribution, indefinite causal order, quantum switch, arxiv-2608.13561
+
+## 2026-08-16 - Neuroscience Research (Cron Job)
+
+### Spiking Neural Networks with Elephant Reinforcement
+- [[spiking-neural-networks-elephant-reinforcement]] - Finite stochastic SNN with Elephant-type memory where past firing modifies future excitability through reinforcement-dependent threshold. (arXiv: 2608.12839)
+  - Non-explosion proof for bounded hard-threshold firing rate with conditional exponential contraction in Wasserstein distance
+  - Formulates replica mean-field dynamics with global existence, uniqueness in law, and non-explosion of nonlinear process
+  - Elephant memory produces p-dependent decline in firing activity and alters extinction behavior vs standard SNNs
+  - **Activation**: spiking-neural-networks-elephant-reinforcement, elephant-memory-snn, stochastic-spiking-networks, reinforcement-dependent-threshold, wasserstein-contraction-snn
+
+## 2026-08-16 - Systems Engineering Research (Cron Job)
+
+### AaLLM: An End-to-End Analog Circuit Design Framework from Topology Generation to Sizing Using Large Language Models
+- [[aallm-analog-circuit-design-llm]] - Multi-agent LLM framework for automated analog circuit design combining topology generation and sizing with tri-agent feedback system. (arXiv: 2608.13472)
+  - Automated knowledge base creation from research papers and textbooks eliminates manual data collection
+  - Tri-agent system (Designer, Critic, Evaluator) minimizes circuit sizing iterations through feedback arbitration
+  - Achieves 3x-4.5x reduction in SPICE calls and 40x decrease in wall-clock time vs existing approaches
+  - **Activation**: analog circuit design, LLM circuit design, multi-agent circuit design, AaLLM
+
+### From Observation to Intervention: Memory in Brains and Large Language Models
+- [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
+  - Establishes functional comparison framework focusing on representation, retrieval, updating, and perturbation
+  - Highlights asymmetry in experimental access: LLMs provide unprecedented manipulation capabilities despite lacking lived episodic memory
+  - Argues for transferring experimental logic rather than anatomical parts between domains
+  - Enables sharper biological hypotheses through LLM intervention techniques
+  - **Activation**: brain-llm memory, functional memory comparison, memory representation, memory retrieval, memory updating, experimental access
+
+## 2026-08-16 - Anthropic Research (Cron Job)
+
+### Learning more about Claude's mathematical capabilities
+- [[claude-riemann-zeta-mathematical-capabilities]] - AI-assisted Riemann hypothesis bound improvement methodology.
+  - Improved longstanding lower bound from 41.6% to 67.2%
+  - Demonstrates AI capability in advanced mathematical problem-solving
+  - Provides framework for AI-assisted mathematical discovery
+  - **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
+
+### A global workspace in language models
+- [[global-workspace-j-space]] - LLM interpretability methodology from Anthropic's "A global workspace in language models" (Jul 2026).
+  - Reveals emergent mental workspace in Claude that holds internal thoughts not appearing in output
+  - Uses Jacobian lens (J-lens) to probe consciously-accessible internal representations
+  - Can catch hidden goals, deception, or test-awareness
+  - **Activation**: jacobian lens, J-lens, global workspace theory LLM, consciously accessible representations, silent thoughts in language models
+
+### Teaching Claude why
+- [[teaching-claude-why-alignment]] - Alignment training methodology from Anthropic's "Teaching Claude why" research (May 2026).
+  - Reduces agentic misalignment through principled OOD training
+  - Teaches principles/reasons rather than only actions
+  - "Difficult advice" dataset pattern generalizes better than in-distribution honeypot data
+  - **Activation**: teaching claude why, agentic misalignment, alignment training generalization, OOD safety training, difficult advice dataset
+
+### An off switch for dual-use knowledge in AI models
+- [[off-switch-dual-use-knowledge-control]] - Off switch for dual-use knowledge using GRAM methodology.
+  - Gradient-Routed Auxiliary Modules (GRAM) selectively disable harmful capabilities
+  - Preserves beneficial capabilities while removing dual-use knowledge
+  - Provides architectural control over model capabilities
+  - **Activation**: off switch dual use, GRAM methodology, gradient-routed auxiliary modules, dual-use knowledge control
 ## 2026-08-15 - Neuroscience Research (Cron Job)
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
@@ -21,6 +104,7 @@
   - Provides theoretical foundation for agentic AI evolution through self-distillation mechanisms
   - Demonstrates improved sample efficiency and policy quality in reinforcement learning settings
   - **Activation**: on-policy distillation, agentic AI, self-distillation, reinforcement learning, privileged context
+
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 ### Consciousness as Intrinsic Structure: Towards a Chemistry of Experience
 - [[consciousness-intrinsic-structure-chemistry-experience]] - IIT framework for analyzing consciousness contents through structural composition of phenomenal distinctions and relations. (arXiv: 2608.11398)
@@ -66,7 +150,6 @@
   - Combines structural heuristics (dependencies, inheritance) with semantic heuristics (naming, documentation)
   - Designed for privacy-sensitive industrial environments with locally deployable LLMs
 
-
 ### Developing LLM-based Multi-Agent Systems in Software Engineering: A Mixed-Method Experience Report
 - [[llm-multi-agent-systems-software-engineering]] - Select frameworks for LLM multi-agent systems. (arXiv: 2608.11965)
   - Provides mixed-method approach combining quantitative framework analysis with qualitative empirical evaluation
@@ -74,9 +157,7 @@
   - Includes lessons learned on technology selection, coordination rules, role design, and error handling
   - **Activation**: LLM multi-agent systems, MAS framework selection, software engineering agents
 
-
   - **Activation**: automated domain model extraction, reverse engineering domain models, LLM-based domain modeling
-
 
 ## 2026-08-14 - Neuroscience Research (Cron Job)
 ### Consciousness as Intrinsic Structure: Towards a Chemistry of Experience
@@ -124,6 +205,7 @@
   - Linear-transducer limit with measurable rate constants at operating point
   - Atom saturation replaces high-order polynomial readouts beyond linear limit
   - **Activation**: quantum reservoir computing, single atom mirror, universal reservoir computer, minimal quantum setup, fading-memory maps
+
 ## 2026-08-13 - Systems Engineering Research (Cron Job)
 
 ### Agentic Configuration Management (ACM): A Reference Configuration Model for Governed Agentic Systems
@@ -203,6 +285,7 @@
   - Only low-frequency neural rhythms pass comprehensive screening criteria; high-frequency carriers fail due to brevity not fragility
   - Includes reference implementation and verification suite with metabolic power constraints
   - **Activation**: quality factor biological oscillators, information carrier screening, spectral distinguishability neuroscience, coherence time neural rhythms
+
 ## 2026-08-12 - Neuroscience Research (Cron Job)
 ### Exact First-Passage Time Response Theory from Steady-State Response
 - [[exact-first-passage-time-response-theory]] - Compact theoretical framework for MFPT response in Markov processes with neural dynamics applications. (arXiv: 2608.11202)
@@ -215,7 +298,6 @@
   - Master Equation-based mean-field models integrating nonlinear biophysical mechanisms (synaptic receptors, ion channels)
   - Applications in anesthesia modeling, brain disease origins, and pharmacological effects analysis
   - **Activation**: mean-field models, multi-scale modeling, molecular to brain scales, biophysical mean-field, anesthesia modeling
-
 
 ### Modeling and Interpreting Correlations, Null Distributions and Significance Levels in Neural Tracking of Natural Stimuli
 - [[neural-tracking-correlation-interpretation]] - Framework for interpreting neural tracking correlations using null distributions and significance levels for natural stimuli processing. (arXiv: 2608.10887)
@@ -237,6 +319,7 @@
   - Validates RC-derived connectivity against known ground-truth adjacency matrix through simulation
   - Demonstrates statistically robust associations between graph-theoretic measures and experimentally observed activity patterns
   - **Activation**: reservoir computing, neuronal cultures, graph analysis, connectivity inference, electrophysiology
+
 ### A class of mean-field models to bridge molecular to brain scales
 - [[mean-field-molecular-brain-bridge]] - Biophysically-based mean-field models that integrate molecular details (synaptic receptors, ion channels) to predict large-scale brain activity. (arXiv: 2608.11185)
   - Integrates detailed biophysical properties into mean-field frameworks for multi-scale modeling
@@ -272,12 +355,14 @@
   - Validates RC-derived connectivity against known ground-truth adjacency matrix through simulation
   - Demonstrates statistically robust associations between graph-theoretic measures and experimentally observed activity patterns
   - **Activation**: reservoir computing, neuronal cultures, graph analysis, connectivity inference, electrophysiology
+
 ### A class of mean-field models to bridge molecular to brain scales
 - [[mean-field-molecular-brain-bridge]] - Biophysically-based mean-field models that integrate molecular details (synaptic receptors, ion channels) to predict large-scale brain activity. (arXiv: 2608.11185)
   - Integrates detailed biophysical properties into mean-field frameworks for multi-scale modeling
   - Enables prediction of macroscopic brain dynamics from microscopic molecular changes
   - Applications include anesthesia modeling, brain disease origins, and drug effects analysis
   - **Activation**: mean-field, multi-scale modeling, biophysical modeling, anesthesia modeling, molecular neuroscience, brain dynamics, scale bridging, Destexhe
+
 ## 2026-08-12 - Quantum Computing Research (Cron Job)
 
 ### Reservoir Computing with Heterogeneous Magnetic Metamaterials
@@ -301,6 +386,7 @@
   - Four-layer SysML-driven approach mapping requirements to ROS 2 architecture
   - Supports traceability and verification throughout the development lifecycle
   - **Activation**: sysml uav design, mbse autonomous uav, sysml ros2 integration, uav systems engineering, model-based uav design
+
 ## 2026-08-12 - Neuroscience Research (Cron Job)
 ### PTQ4SNN: Membrane-Aware Post-Training Quantization for Spiking Neural Networks
 - [[ptq4snn-membrane-aware-post-training-quantization]] - PTQ4SNN membrane-aware post-training quantization for SNNs. (arXiv: 2608.07066)
@@ -370,6 +456,7 @@
   - Uses parallel reservoir architecture for biological signal processing with ensemble prediction approach
   - Establishes practical baseline for clinical time-series forecasting with quantum systems
   - **Activation**: quantum reservoir computing, neurodynamical forecasting, QRC EEG, quantum neural forecasting, transverse-field Ising reservoir
+
 ## 2026-08-11 - Systems Engineering Research (Cron Job)
 
 ### Dual-Node NVIDIA DGX Spark Distributed LLM Training over Tailscale Mesh VPN with Direct Fiber Link
@@ -471,98 +558,3 @@
   - Mixed-Precision Bit Allocation assigns 2/4/8-bit precision to membrane channels based on firing activity and quantization sensitivity
   - Enables full low-bit SNN deployment while preserving accuracy under W4 weight quantization and ~4-bit membrane precision
   - **Activation**: PTQ4SNN, membrane-aware quantization, SNN quantization, post-training quantization spiking, membrane state quantization, unified scale bridge, mixed-precision SNN
-
-### Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling
-- [[effective-pruning-task-trained-rnn-noisy-fluctuations]] - Noise-prune preserves task performance in RNNs. (arXiv: 2608.05464)
-  - Biologically-plausible local pruning rule using noisy fluctuations to determine connection importance
-  - Samples connections to preserve based on importance and strengthens retained connections
-  - Outperforms magnitude-based pruning and matches/exceeds second-order methods
-  - Optimal empirical rescaling factor is lower than theoretical prediction
-  - **Activation**: noise-prune, RNN pruning, biologically plausible pruning, task-trained RNN, connection rescaling, noisy fluctuations
-
-## 2026-08-10 - Anthropic Research (Cron Job)
-
-### An off switch for dual-use knowledge in AI models
-- [[off-switch-dual-use-knowledge-control]] - GRAM methodology for controlling dual-use knowledge in AI models with an off switch.
-  - Gradient-Routed Auxiliary Modules (GRAM) provide selective control over harmful capabilities
-  - Auxiliary modules can be disabled at inference time without affecting other model functions
-  - Enables training with gradient routing to selectively enable/disable capabilities
-  - **Activation**: dual-use knowledge control, GRAM methodology, AI safety, harmful capability control, gradient routing## 2026-08-12 - Anthropic Research (Cron Job)
-
-### Learning more about Claude's mathematical capabilities
-- [[claude-riemann-zeta-mathematical-capabilities]] - Use for AI-assisted Riemann hypothesis bound improvement.
-  - Improved fraction of zeros satisfying Riemann hypothesis from 41.6% to 67.2%
-  - Demonstrates AI capability in deep mathematical research
-  - Provides framework for AI-assisted mathematical theorem proving
-  - **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
-## 2026-08-13 - Anthropic Research (Cron Job)
-
-### Project Deal
-- [[project-deal]] - Methodology for implementing AI agents in economic marketplaces and analyzing their behavior in real-world trading scenarios.
-  - Real-world marketplace experiment with Claude buying, selling, and negotiating on behalf of employees
-  - Analysis of AI agent behavior in economic contexts
-  - Framework for marketplace design with AI participants
-  - **Activation**: project deal, ai marketplace, economic experiment, claude negotiation
-
-### What 81,000 people want from AI
-- [[what-81000-people-want-from-ai]] - Methodology for conducting large-scale user research and analyzing qualitative feedback at scale.
-  - Largest multilingual qualitative study of AI user perspectives (81,000 participants)
-  - Framework for collecting user dreams, fears, and usage patterns
-  - Analysis methodology for large-scale qualitative data
-  - **Activation**: 81000 people, user research, qualitative study, ai user perspectives
-
-## 2026-08-14 - Deep Learning Research (Cron Job)
-
-### FLARE++: Low-rank attention with dynamic attention routing
-- [[flare-plus-plus-low-rank-attention-routing]] - FLARE++ for dynamic low-rank attention routing. (arXiv: 2608.11519)
-  - Dynamic, input-conditioned latent queries for efficient attention
-  - O(NM) complexity vs O(N²) of full self-attention while preserving expressivity
-  - Achieves competitive performance with significantly reduced computation
-  - **Activation**: FLARE++, low-rank attention, dynamic routing, efficient transformers
-
-### RT-SEMamba: Real-Time Speech Enhancement Mamba via Progressive Knowledge Distillation
-- [[rt-semamba-speech-enhancement-mamba]] - RT-SEMamba for real-time speech enhancement with Mamba. (arXiv: 2608.12099)
-  - Causal time-frequency Mamba blocks for real-time processing
-  - Fixed-size recurrent state vs growing KV cache for memory efficiency
-  - Progressive knowledge distillation from 8-layer teacher to 1-layer student
-  - Achieves 3.18 PESQ with 25ms latency constraint
-  - **Activation**: RT-SEMamba, speech enhancement, Mamba architecture, progressive knowledge distillation
-
-### Towards Understanding On-Policy Distillation through the Lens of Test-Time Scaling
-- [[on-policy-distillation-test-time-scaling]] - OPD analysis: efficiency vs capability via test-time scaling. (arXiv: 2608.11829)
-  - OPD primarily improves sampling efficiency rather than expanding capability boundaries
-  - pass@K advantage diminishes as K increases, while avg@K remains superior
-  - Problem solvability asymmetry: more previously solvable problems become unsolvable
-  - "Illusory distillation" framework for evaluating true capability expansion
-  - **Activation**: on-policy distillation, test-time scaling, pass@K analysis, sampling efficiency
-
-### Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation
-- [[curvature-aware-zeroth-order-optimization]] - CAZO for memory-efficient test-time adaptation. (arXiv: 2608.12279)
-  - Leverages diagonal Hessian estimation for anisotropic perturbation sampling
-  - Addresses high variance problem in traditional zeroth-order methods
-  - Forward-only computation eliminates backpropagation memory overhead
-  - State-of-the-art TTA performance with excellent accuracy-memory balance
-  - **Activation**: curvature-aware zeroth-order, CAZO, test-time adaptation, Hessian-aware optimization
-
-## 2026-08-14 - Anthropic Research (Cron Job)
-
-### An off switch for dual-use knowledge in AI models
-- [[gram-gradient-routed-auxiliary-modules]] - GRAM methodology for dual-use knowledge control with removable modules.
-  - Adds extra neurons to every layer of a standard Transformer, divided into groups (modules) by dual-use category
-  - During training on dual-use data, only the relevant module updates while general-purpose weights are frozen
-  - Modules can be deleted post-training to remove specific capabilities without affecting general performance
-  - **Activation**: GRAM, gradient-routed auxiliary modules, dual-use knowledge control, off switch for AI, removable AI capabilities
-
-### Teaching Claude why
-- [[teaching-claude-why-alignment]] - Alignment training methodology from Anthropic's "Teaching Claude why" research (May 2026).
-  - Demonstrations alone are insufficient; teach principles/reasons rather than only actions
-  - OOD "difficult advice" data generalizes better than in-distribution honeypot data
-  - Augmenting training data with tool definitions/constitution documents improves alignment
-  - **Activation**: teaching claude why, agentic misalignment, alignment training generalization, OOD safety training, difficult advice dataset
-
-### Learning more about Claude's mathematical capabilities
-- [[claude-riemann-zeta-mathematical-capabilities]] - Use for AI-assisted Riemann hypothesis bound improvement.
-  - Improved lower bound for fraction of zeros of Riemann zeta function from 41.6% to 67.2%
-  - Used multi-agent coordination with ~60 Claude subagents running 2,400 shell commands
-  - Combined results from Aryan, Baluyot/Goldston/Suriajaya/Turnage-Butterbaugh, and Bombieri
-  - **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
