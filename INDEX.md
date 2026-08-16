@@ -1,5 +1,12 @@
 ## 2026-08-17 - Neuroscience Research (Cron Job)
 
+### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision
+- [[lonic-algorithm-hardware-codesign-snn]] - INT4 energy-efficient SNN training co-design. (arXiv: 2608.12500)
+  - Algorithm side: INT4 low-precision training for fully local online SNN learning while maintaining accuracy
+  - Hardware side: Reconfigurable multiplier-free integer PE arrays, dual-optimization zero-gating strategy, temporal prefix-accelerated local learning dataflow
+  - Performance: 17.44x/66.28x energy efficiency vs Apple M4/Nvidia V100, 15.95x/1.52x vs ASIC TPU-like/H2Learn accelerators
+  - **Activation**: lonic, algorithm-hardware codesign, INT4 SNN, energy-efficient SNN training, fully local online learning
+
 ### Spiking Neural Networks with Elephant Reinforcement
 - [[snn-elephant-reinforcement]] - SNNs with Elephant reinforcement memory where past firing activity modifies future excitability through reinforcement-dependent threshold. (arXiv: 2608.12839)
   - Theoretical proof of non-explosion for finite system with bounded hard-threshold firing rate
