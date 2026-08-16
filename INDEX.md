@@ -1,4 +1,12 @@
-# AI Collection Skills Index
+## 2026-08-16 - Neuroscience Research (Cron Job)
+
+### Evaluation Resolution Confounds Learning-Rule Comparisons in Model-Brain RSA of Early Visual Cortex
+- [[evaluation-resolution-confounds-rsa-visual-cortex]] - Critical methodological issue in RSA comparisons showing resolution dependence affects learning rule evaluations (arXiv: 2608.12408)
+  - V1 gap between untrained and backprop networks widens from -0.001 at 32px to +0.044 at 224px
+  - Effect holds in human fMRI and macaque electrophysiology across network architectures
+  - Root cause is image detail dependence rather than pooling mechanisms
+  - Single luminance value matches untrained network performance, bounding comparison resolution
+  - **Activation**: evaluation resolution confound, RSA visual cortex, model-brain similarity analysis, representational similarity analysis, learning rule comparison# AI Collection Skills Index
 
 ## 2026-08-16 - Quantum Computing Research (Cron Job)
 
