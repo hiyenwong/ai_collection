@@ -7,6 +7,15 @@
   - Elephant memory produces p-dependent decline in firing activity and alters extinction behavior vs standard SNNs
   - **Activation**: spiking-neural-networks-elephant-reinforcement, elephant-memory-snn, stochastic-spiking-networks, reinforcement-dependent-threshold, wasserstein-contraction-snn
 
+## 2026-08-16 - Systems Engineering Research (Cron Job)
+
+### AaLLM: An End-to-End Analog Circuit Design Framework from Topology Generation to Sizing Using Large Language Models
+- [[aallm-analog-circuit-design-llm]] - Multi-agent LLM framework for automated analog circuit design combining topology generation and sizing with tri-agent feedback system. (arXiv: 2608.13472)
+  - Automated knowledge base creation from research papers and textbooks eliminates manual data collection
+  - Tri-agent system (Designer, Critic, Evaluator) minimizes circuit sizing iterations through feedback arbitration
+  - Achieves 3x-4.5x reduction in SPICE calls and 40x decrease in wall-clock time vs existing approaches
+  - **Activation**: analog circuit design, LLM circuit design, multi-agent circuit design, AaLLM
+
 ### From Observation to Intervention: Memory in Brains and Large Language Models
 - [[brain-llm-memory-comparison]] - Functional comparison framework for memory systems across biological brains and LLMs. (arXiv: 2608.12377)
   - Establishes functional comparison framework focusing on representation, retrieval, updating, and perturbation
