@@ -1,5 +1,14 @@
 ## 2026-08-16 - Neuroscience Research (Cron Job)
 
+### Trophic structure predicts seizure propagation in brain network models
+- [[trophic-structure-seizure-propagation]] - Trophic structure predicts seizure propagation. (arXiv: 2608.12382)
+  - Structural properties like trophic coherence, spectral radius, strong connectivity relate to seizure propensity
+  - Mathematical proof of theoretical relationship between spectral radius and cycle structure
+  - Results robust to coupling mechanisms and strengthen with network size
+  - **Activation**: trophic structure seizure propagation, brain network epilepsy, directed network seizure dynamics
+
+## 2026-08-16 - Neuroscience Research (Cron Job)
+
 ### Evaluation Resolution Confounds Learning-Rule Comparisons in Model-Brain RSA of Early Visual Cortex
 - [[evaluation-resolution-confounds-rsa-visual-cortex]] - Critical methodological issue in RSA comparisons showing resolution dependence affects learning rule evaluations (arXiv: 2608.12408)
   - V1 gap between untrained and backprop networks widens from -0.001 at 32px to +0.044 at 224px
