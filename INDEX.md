@@ -246,12 +246,14 @@
   - **Activation**: rosetta stone consciousness, other minds inference, qualia structure paradigm, integrated information theory comparison, category theory consciousness
 
 ### Lapis: Laplacian Spiking Attention via First-Spike Timing and Membrane Leakage
-- [[lapis-laplacian-spiking-attention]] - Spiking attention mechanism using first-spike timing and membrane leakage dynamics for energy-efficient computation. (arXiv: 2608.11865)
-  - Novel spiking attention that scores token pairs by ℓ1 distance between first-spike latency vectors under TTFS coding
-  - Maps temporal distance to affinity through Laplacian kernel with exponential decay matching LIF membrane dynamics
-  - Eliminates all multiplication between query and key channels, reducing arithmetic energy by 14.5×
-  - Achieves 96.56% accuracy on CIFAR-10 and 83.25% on ImageNet-1K with significant energy reduction
-  - **Activation**: lapis, laplacian spiking attention, first-spike timing attention, membrane leakage attention, ttfs attention, spiking transformer attention, energy-efficient spiking attention
+- [[lapis-spiking-attention]] - Lapis: multiplication-free spiking attention using first-spike timing and membrane leakage dynamics. (arXiv: 2608.11865)
+  - Uses L1 distance between first-spike latency vectors under time-to-first-spike coding
+  - Laplacian kernel matches leaky integrate-and-fire membrane dynamics naturally
+  - Eliminates all multiplications; uses only subtraction, absolute value, accumulation
+  - Achieves 96.56% CIFAR-10 accuracy (within 0.53 points of dot-product baseline)
+  - 14.5× lower arithmetic energy compared to dense dot-product attention
+  - **Activation**: lapis, spiking attention, first-spike timing, membrane leakage, energy-efficient SNN, Laplacian kernel attention, multiplication-free attention
+
 
 ### A class of mean-field models to bridge molecular to brain scales
 - [[mean-field-models-bridge-molecular-brain-scales]] - Bridging molecular to brain scales with mean-field models. (arXiv: 2608.11185)
@@ -272,13 +274,6 @@
   - Shows structural approaches reduce but cannot eliminate the acquaintance gap; provide principled constraints rather than solving Other Minds problem
   - **Activation**: rosetta stone consciousness, other minds inference, qualia structure paradigm, integrated information theory comparison, category theory consciousness
 
-### Lapis: Laplacian Spiking Attention via First-Spike Timing and Membrane Leakage
-- [[lapis-laplacian-spiking-attention]] - Spiking attention mechanism using first-spike timing and membrane leakage dynamics for energy-efficient computation. (arXiv: 2608.11865)
-  - Novel spiking attention that scores token pairs by ℓ1 distance between first-spike latency vectors under TTFS coding
-  - Maps temporal distance to affinity through Laplacian kernel with exponential decay matching LIF membrane dynamics
-  - Eliminates all multiplication between query and key channels, reducing arithmetic energy by 14.5×
-  - Achieves 96.56% accuracy on CIFAR-10 and 83.25% on ImageNet-1K with significant energy reduction
-  - **Activation**: lapis, laplacian spiking attention, first-spike timing attention, membrane leakage attention, ttfs attention, spiking transformer attention, energy-efficient spiking attention
 
 ## 2026-08-13 - Neuroscience Research (Cron Job)
 ### How many labels can a biological oscillator carry? A quality-factor screen for proposed information carriers
