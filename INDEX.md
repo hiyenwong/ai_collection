@@ -23,6 +23,21 @@
   - Replica mean-field dynamics with global existence, uniqueness in law, and non-explosion
   - **Activation**: Elephant reinforcement, spiking neural networks, stochastic SNN, mean-field dynamics
 
+### Data-driven techniques for translational neuroscience and personalized neuro-health
+- [[data-driven-techniques-translational-neuroscience]] - Neurodegenerative diagnosis via multimodal fusion. (arXiv: 2608.13749)
+  - Early diagnosis framework using multimodal data integration (imaging, genetic, clinical, behavioral)
+  - Machine learning pipelines for early biomarker discovery and personalized risk stratification
+  - Longitudinal progression modeling with privacy-preserving federated learning approaches
+  - **Activation**: translational neuroscience, personalized neuro-health, neurodegenerative disease diagnosis, early biomarker discovery, multimodal data fusion neuroscience
+
+### BCIJelly: An integrated ecosystem for brain-computer interface research
+- [[bcijelly-integrated-ecosystem-bci]] - BCIJelly: integrated BCI research ecosystem. (arXiv: 2608.13576)
+  - Unified data processing pipeline with standardized preprocessing for EEG/ECoG signals
+  - Modular algorithm framework with plug-and-play architecture for BCI algorithms
+  - Hardware integration layer with unified API for various BCI platforms
+  - Reproducibility features including containerized deployment and version-controlled configurations
+  - **Activation**: BCIJelly, brain-computer interface ecosystem, BCI reproducibility, standardized BCI pipeline, integrated BCI research
+
 ## 2026-08-16 - Neuroscience Research (Cron Job)
 
 ### Trophic structure predicts seizure propagation in brain network models
