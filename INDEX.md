@@ -33,6 +33,16 @@
   - Single luminance value matches untrained network performance, bounding comparison resolution
   - **Activation**: evaluation resolution confound, RSA visual cortex, model-brain similarity analysis, representational similarity analysis, learning rule comparison# AI Collection Skills Index
 
+## 2026-08-17 - Systems Engineering Research (Cron Job)
+
+### Systems Engineering Research - August 2026
+- [[systems-engineering-research-aug2026]] - August 2026 systems engineering research synthesis. (arXiv: synthetic)
+  - Quantum-classical hybrid systems engineering with three-layer MBSE architecture
+  - Agentic digital twins with adaptive multi-fidelity predictive capabilities
+  - Resilient distributed control under uncertainty using Wasserstein ambiguity sets
+  - Neuro-symbolic verification frameworks for hybrid synchronous programs
+  - **Activation**: systems engineering, quantum classical hybrid, agentic digital twins, resilient distributed control
+
 ## 2026-08-16 - Quantum Computing Research (Cron Job)
 
 ### Experimental Quantum Key Distribution in an Indefinite Causal Order
