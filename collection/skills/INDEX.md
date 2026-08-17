@@ -1,4 +1,4 @@
-
+\n## {today} - arXiv Paper Skills (Cron Job)\n\n
 ## 2026-08-16 - arXiv Paper Skills (Cron Job)
 
 ## 2026-08-16 - arXiv Paper Skills (Cron Job)
