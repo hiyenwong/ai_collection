@@ -1,3 +1,12 @@
+## 2026-08-18 - Neuroscience Research (Cron Job)
+
+### Reducing ANN-SNN Conversion Error via Residual Membrane Potential Alignment
+- [[residual-membrane-potential-alignment-snn]] - ANN-SNN conversion with membrane potential alignment. (arXiv: 2608.13952)
+  - Residual membrane potential analysis reveals systematic truncation bias from boundary aggregation in conventional conversion schemes
+  - Regularization loss L_RMPD adapts initial potential of IF neurons to mitigate systematic truncation bias
+  - SCR-Conv2d competitive refinement layer sharpens feature discrimination and eliminates redundant spikes for T=2,4,8 timesteps
+  - **Activation**: ANN-SNN conversion, membrane potential alignment, spiking neural networks, neuromorphic computing, low-latency SNN
+
 ## 2026-08-17 - Quantum Computing Research (Cron Job)
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
