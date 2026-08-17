@@ -1,3 +1,12 @@
+## 2026-08-17 - Quantum Computing Research (Cron Job)
+
+### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
+- [[threshold-based-snn-event-driven-status-update]] - Threshold-based SNNs for event-driven IoT status updates that jointly minimize Age of Information (AoI) and transmission energy. (arXiv: 2608.10640)
+  - Proves existence of optimal threshold policy for transmission decisions in event-driven systems
+  - Lightweight RL approach using SNNs with explicit threshold policy representation
+  - Constant complexity with respect to maximum AoI and more energy-efficient than ANNs
+  - **Activation**: threshold-based SNN, event-driven status update, Age of Information, optimal threshold policy, SNN IoT
+
 ## 2026-08-17 - Neuroscience Research (Cron Job)
 
 ### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision
