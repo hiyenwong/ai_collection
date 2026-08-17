@@ -8,7 +8,11 @@
   - **Activation**: threshold-based SNN, event-driven status update, Age of Information, optimal threshold policy, SNN IoT
 
 ## 2026-08-17 - Neuroscience Research (Cron Job)
-
+### E-S2Feat:Semantic-Guided Spiking Local Feature Detection and Description for Event Cameras
+- [[e-s2feat-semantic-guided-spiking-local-feature]] - E-S2Feat for event camera local features using SNNs. (arXiv: 2608.14027)
+  - Semantic-guided spiking neural network framework addressing event sparsity, noise, and limited texture challenges
+  - Balances accuracy and energy efficiency for resource-constrained platforms like UAVs
+  - **Activation**: E-S2Feat, semantic-guided spiking features, event camera local features, spiking local feature detection
 ### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision
 - [[lonic-algorithm-hardware-codesign-snn]] - INT4 energy-efficient SNN training co-design. (arXiv: 2608.12500)
   - Algorithm side: INT4 low-precision training for fully local online SNN learning while maintaining accuracy
