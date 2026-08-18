@@ -1,0 +1,29 @@
+## 2026-08-18 - Anthropic Research (Cron Job)
+
+### Learning more about Claude's mathematical capabilities
+- [[claude-riemann-zeta-mathematical-capabilities]] - AI-assisted Riemann hypothesis bound improvement methodology that increased the proven fraction of zeta function zeros on the critical line from 41.6% to 67.2%
+  - Bound improvement in analytic number theory using AI assistants
+  - Template for AI-assisted mathematical theorem proving and bound optimization
+  - Requires human mathematician verification of AI-generated proofs
+  - **Activation**: riemann zeta, mathematical capabilities, zeta function zeros, riemann hypothesis bound
+
+### A global workspace in language models
+- [[jacobian-lens-interpretability]] - Jacobian lens (J-lens) methodology for analyzing internal neural patterns that serve as a global workspace in language models
+  - Enables reading what LLMs are thinking but not saying through J-space analysis
+  - Monitoring for misbehavior, intervention and control, verification of training effectiveness
+  - Real-time monitoring pipeline for safety-critical applications
+  - **Activation**: jacobian, j-lens, global workspace, internal thoughts, hidden intentions
+
+### Teaching Claude why
+- [[teaching-claude-why-alignment]] - Alignment training methodology teaching models to explain their reasoning rather than just correct actions
+  - Reduced agentic misalignment from 96% to 0% through reasoning-focused training
+  - 28x efficiency improvement using out-of-distribution "difficult advice" dataset
+  - Constitution-based reasoning training with user-centric scenarios
+  - **Activation**: alignment training, agentic misalignment, RLHF, constitution training, reasoning-based alignment
+
+### An off switch for dual-use knowledge in AI models
+- [[off-switch-gram]] - Gradient-Routed Auxiliary Modules (GRAM) methodology for surgically removing dual-use knowledge while preserving general performance
+  - Structural "off switch" that physically isolates and removes capability weights
+  - Resists restoration via fine-tuning far better than standard unlearning
+  - Requires architectural intervention at training time with auxiliary modules
+  - **Activation**: GRAM, gradient-routed auxiliary modules, off switch for dual-use knowledge, surgical capability removal
