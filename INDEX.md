@@ -7,6 +7,13 @@
   - Produces anatomically plausible reconstructions localized to auditory cortex in MEG studies
   - **Activation**: biophysics-informed deep learning, electrophysiological source reconstruction, MEG inverse problem, EEG source localization, differentiable physics layers, geometric deep operator learning, subject-specific adaptation, neural signal reconstruction
 
+### Order-Sensitive Fast-Synapse Limits in Sparse Excitatory-Inhibitory Threshold-Reset Networks
+- [[order-sensitive-fast-synapse-limits]] - Analyze E/I arrival order effects in threshold-reset SNNs. (arXiv: 2608.16701v1)
+  - Shows componentwise weak convergence doesn't determine fast-synapse limits without arrival order information
+  - Demonstrates excitatory-first vs inhibitory-first arrival orders produce different firing responses
+  - Proves macroscopic effects persist on sparse Dale-compatible random block graphs
+  - **Activation**: spiking neural networks, threshold-reset dynamics, excitatory-inhibitory balance, fast-synapse limits, order-sensitive computation, neural population coding
+
 ## 2026-08-18 - Neuroscience Research (Cron Job)
 
 ### Learning Generalizable Reconstruction of High-Dimensional Neural Dynamics
