@@ -1,3 +1,12 @@
+## 2026-08-19 - Neuroscience Research (Cron Job)
+
+### Biophysics-informed deep operator learning for inverse problems with application to electrophysiological source reconstruction
+- [[biophysics-informed-deep-operator-learning]] - Electrophysiological source reconstruction with biophysics. (arXiv: 2608.16871)
+  - Introduces DeepOp-Informed framework embedding biophysical principles via differentiable layers
+  - Enables subject-specific adaptation to brain anatomy and sensor positioning variations
+  - Produces anatomically plausible reconstructions localized to auditory cortex in MEG studies
+  - **Activation**: biophysics-informed deep learning, electrophysiological source reconstruction, MEG inverse problem, EEG source localization, differentiable physics layers, geometric deep operator learning, subject-specific adaptation, neural signal reconstruction
+
 ## 2026-08-18 - Neuroscience Research (Cron Job)
 
 ### Learning Generalizable Reconstruction of High-Dimensional Neural Dynamics
@@ -48,13 +57,3 @@
   - Comprehensive mixed-method approach combining quantitative analysis of MAS frameworks with qualitative empirical evaluation
   - Framework evaluation criteria: documentation quality, feature coverage, developer experience, advanced capabilities
   - Practical guidelines for framework selection process and implementation best practices
-  - **Activation**: LLM multi-agent systems, MAS framework selection, software engineering agents, multi-agent coordination, LLM-based software development, agent orchestration patterns
-
-## 2026-08-17 - Quantum Computing Research (Cron Job)
-
-## 2026-08-17 - Neuroscience Research (Cron Job)
-### E-S2Feat:Semantic-Guided Spiking Local Feature Detection and Description for Event Cameras
-- [[e-s2feat-semantic-guided-spiking-local-feature]] - E-S2Feat for event camera local features using SNNs. (arXiv: 2608.14027)
-  - Semantic-guided spiking neural network framework addressing event sparsity, noise, and limited texture challenges
-  - Balances accuracy and energy efficiency for resource-constrained platforms like UAVs
-  - **Activation**: E-S2Feat, semantic-guided spiking features, event camera local features, spiking local feature detection
