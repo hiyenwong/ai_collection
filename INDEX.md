@@ -12,6 +12,13 @@
   - Replica mean-field dynamics with global existence and uniqueness
   - Elephant memory produces p-dependent decline in firing activity and alters extinction behavior
   - **Activation**: elephant reinforcement, spiking neural networks elephant, elephant memory SNN, reinforcement-dependent threshold
+### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training
+- [[lonic-algorithm-hardware-codesign-snn]] - INT4 algorithm-hardware co-design for energy-efficient fully local online SNN training (arXiv: 2608.12500)
+  - Implements 4-bit integer precision for fully local online SNN learning while maintaining accuracy
+  - Reconfigurable multiplier-free integer PE arrays eliminate expensive multiplication operations
+  - Achieves 17.44x energy efficiency improvement vs Apple M4 and 66.28x vs Nvidia V100
+  - **Activation**: lonic, int4 snn training, algorithm-hardware codesign, energy-efficient snn
+
 ## 2026-08-18 - Systems Engineering Research (Cron Job)
 
 ### LLM-based Multi-Agent Systems in Software Engineering: A Mixed-Method Approach for Framework Selection
