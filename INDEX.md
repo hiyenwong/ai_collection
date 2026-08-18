@@ -4,7 +4,7 @@
 - [[pca-dmd-neural-dynamics-reconstruction]] - PCA-DMD framework combining PCA projection with Dynamic Mode Decomposition for scalable neural dynamics reconstruction with zero-shot cross-subject generalization (arXiv: 2608.16569v1)
   - Achieves correlations of 0.9504-0.9800 in cross-subject zero-shot generalization without target-subject fine-tuning
   - Scalable from 400,000 to 900,000 samples with stable performance (mean correlation ~0.965-0.968)
-  - **Activation**: pca-dmd, neural dynamics reconstruction, koopman operator neuroscience, cross-subject neural generalization## 2026-08-18 - Quantum Neuromorphic Computing (Cron Job)
+  - **Activation**: pca-dmd, neural dynamics reconstruction, koopman operator neuroscience, cross-subject neural generalization
 
 ### Spiking Neural Networks with Elephant Reinforcement
 - [[snn-elephant-reinforcement]] - Finite stochastic SNN with memory-dependent threshold that modifies future excitability based on past firing activity (arXiv: 2608.12839)
