@@ -3,9 +3,10 @@ name: threshold-based-snn-event-driven-status-update
 description: "Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems - lightweight RL approach using SNNs with explicit threshold policy representation for IoT status updates that jointly minimizes Age of Information (AoI) and transmission energy. Use when designing energy-efficient event-driven IoT systems, optimizing information freshness vs energy trade-offs, or implementing threshold policies with SNNs."
 metadata:
   arxiv_id: "2608.10640"
-  published: "2026-08-11"
-  authors: "Marco Fries, Andrea Ortiz"
-  tags: [spiking-neural-network, reinforcement-learning, threshold-policy, age-of-information, event-driven, iot, energy-efficiency]
+  published: "2026-08-15"
+  authors: "Najman, Fernando A., Papageorgiou, Ioannis, da Silveira, Sabricia K. Cauanny A."
+  subjects: "Information Theory (cs.IT)"
+  tags: [spiking-neural-network, threshold-policy, event-driven, iot, age-of-information, reinforcement-learning, energy-efficiency]
 license: Complete terms in LICENSE.txt
 ---
 
