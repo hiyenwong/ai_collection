@@ -57,3 +57,22 @@
   - Comprehensive mixed-method approach combining quantitative analysis of MAS frameworks with qualitative empirical evaluation
   - Framework evaluation criteria: documentation quality, feature coverage, developer experience, advanced capabilities
   - Practical guidelines for framework selection process and implementation best practices
+## 2026-08-19 - Deep Learning Research (Cron Job)
+
+### Title:SQuad: Sub-Quadratic Attention Distillation for Efficient Video Generation
+- [[sqaud-sub-quadratic-attention-distillation]] - SQuad: Sub-quadratic attention distillation for video. (arXiv: 2608.16585)
+  - Achieves O(n√n) attention complexity, reduces FLOPs by ~67×, latency by ~11×
+  - Matches VBench score 83.20 vs 83.08 of baseline
+  - **Activation**: efficient attention, video generation, distillation
+
+### Title:Step-Level On-Policy Distillation: Interpolating Between On-Policy Distillation and Supervised Fine-Tuning
+- [[step-level-on-policy-distillation]] - SOPD: Step-level supervision combining SFT and OPD. (arXiv: 2608.16333)
+  - Improves ALFWorld success rate by 13.4 points over Vanilla OPD
+  - Provides longer-horizon corrections rather than fragmented token-level guidance
+  - **Activation**: reinforcement learning, distillation, agent tasks
+
+### Title:Le Critique: Privileged Value Functions for LLM Reinforcement Learning
+- [[le-critique-privileged-value-functions]] - Privileged Value Functions for LLM reinforcement learning. (arXiv: 2608.16739)
+  - Introduces Privileged Value Functions (PVF) and TETHER baseline for token-level RL advantages
+  - Addresses gradient variance reduction and throughput issues in value function RL
+  - **Activation**: reinforcement learning, value functions, LLM alignment
