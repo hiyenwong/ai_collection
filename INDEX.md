@@ -1,3 +1,12 @@
+## 2026-08-18 - Systems Engineering Research (Cron Job)
+
+### LLM-based Multi-Agent Systems in Software Engineering: A Mixed-Method Approach for Framework Selection
+- [[llm-multi-agent-systems-software-engineering]] - Select frameworks for LLM multi-agent systems. (arXiv: 2608.11965)
+  - Comprehensive mixed-method approach combining quantitative analysis of MAS frameworks with qualitative empirical evaluation
+  - Framework evaluation criteria: documentation quality, feature coverage, developer experience, advanced capabilities
+  - Practical guidelines for framework selection process and implementation best practices
+  - **Activation**: LLM multi-agent systems, MAS framework selection, software engineering agents, multi-agent coordination, LLM-based software development, agent orchestration patterns
+
 ## 2026-08-18 - Neuroscience Research (Cron Job)
 
 ### Reducing ANN-SNN Conversion Error via Residual Membrane Potential Alignment
