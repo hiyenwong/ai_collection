@@ -12,6 +12,14 @@
   - Replica mean-field dynamics with global existence and uniqueness
   - Elephant memory produces p-dependent decline in firing activity and alters extinction behavior
   - **Activation**: elephant reinforcement, spiking neural networks elephant, elephant memory SNN, reinforcement-dependent threshold
+
+### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
+- [[threshold-based-snn-event-driven-status-update]] - Threshold-based SNNs for event-driven IoT status updates that jointly minimize Age of Information (AoI) and transmission energy. (arXiv: 2608.10640)
+  - Proves existence of optimal threshold policy for transmission decisions in event-driven systems
+  - Lightweight RL approach using SNNs with explicit threshold policy representation
+  - Constant complexity with respect to maximum AoI and more energy-efficient than ANNs
+  - **Activation**: threshold-based SNN, event-driven status update, Age of Information, optimal threshold policy, SNN IoT
+
 ### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training
 - [[lonic-algorithm-hardware-codesign-snn]] - INT4 algorithm-hardware co-design for energy-efficient fully local online SNN training (arXiv: 2608.12500)
   - Implements 4-bit integer precision for fully local online SNN learning while maintaining accuracy
@@ -19,6 +27,30 @@
   - Achieves 17.44x energy efficiency improvement vs Apple M4 and 66.28x vs Nvidia V100
   - **Activation**: lonic, int4 snn training, algorithm-hardware codesign, energy-efficient snn
 
+## 2026-08-18 - Systems Engineering Research (Cron Job)
+
+### LLM-based Multi-Agent Systems in Software Engineering: A Mixed-Method Approach for Framework Selection
+- [[llm-multi-agent-systems-software-engineering]] - Select frameworks for LLM multi-agent systems. (arXiv: 2608.11965)
+  - Comprehensive mixed-method approach combining quantitative analysis of MAS frameworks with qualitative empirical evaluation
+  - Framework evaluation criteria: documentation quality, feature coverage, developer experience, advanced capabilities
+  - Practical guidelines for framework selection process and implementation best practices
+  - **Activation**: LLM multi-agent systems, MAS framework selection, software engineering agents, multi-agent coordination, LLM-based software development, agent orchestration patterns
+
+## 2026-08-18 - Neuroscience Research (Cron Job)
+
+### Reducing ANN-SNN Conversion Error via Residual Membrane Potential Alignment
+- [[residual-membrane-potential-alignment-snn]] - ANN-SNN conversion with membrane potential alignment. (arXiv: 2608.13952)
+  - Residual membrane potential analysis reveals systematic truncation bias from boundary aggregation in conventional conversion schemes
+  - Regularization loss L_RMPD adapts initial potential of IF neurons to mitigate systematic truncation bias
+  - SCR-Conv2d competitive refinement layer sharpens feature discrimination and eliminates redundant spikes for T=2,4,8 timesteps
+  - **Activation**: ANN-SNN conversion, membrane potential alignment, spiking neural networks, neuromorphic computing, low-latency SNN
+
+### Synaptic delays modulate population phase and amplitude responses in oscillatory excitatory-inhibitory networks
+- [[synaptic-delays-oscillatory-ei-networks]] - Synaptic delays in oscillatory E-I networks. (arXiv: 2608.15077)
+  - Frequency-Coherence Trade-off: Increasing synaptic delay slows network oscillations while enhancing population synchrony
+  - Excitatory Perturbation Response: Relatively robust phase responses but pronounced delay-dependent reduction in amplitude enhancement  
+  - Inhibitory Perturbation Response: Substantially stronger delay-dependent modulation of both phase resetting and amplitude suppression
+  - **Activation**: synaptic delays oscillatory networks, delay-dependent phase response, nPRC nARC computation, PING regime synaptic delay, excitatory-inhibitory delay modulation, gamma oscillation delay control, population synchrony synaptic transmission, oscillatory brain network delays
 ## 2026-08-18 - Systems Engineering Research (Cron Job)
 
 ### LLM-based Multi-Agent Systems in Software Engineering: A Mixed-Method Approach for Framework Selection
