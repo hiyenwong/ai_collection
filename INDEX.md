@@ -24,6 +24,13 @@
   - SCR-Conv2d competitive refinement layer sharpens feature discrimination and eliminates redundant spikes for T=2,4,8 timesteps
   - **Activation**: ANN-SNN conversion, membrane potential alignment, spiking neural networks, neuromorphic computing, low-latency SNN
 
+### Synaptic delays modulate population phase and amplitude responses in oscillatory excitatory-inhibitory networks
+- [[synaptic-delays-oscillatory-ei-networks]] - Synaptic delays in oscillatory E-I networks. (arXiv: 2608.15077)
+  - Frequency-Coherence Trade-off: Increasing synaptic delay slows network oscillations while enhancing population synchrony
+  - Excitatory Perturbation Response: Relatively robust phase responses but pronounced delay-dependent reduction in amplitude enhancement  
+  - Inhibitory Perturbation Response: Substantially stronger delay-dependent modulation of both phase resetting and amplitude suppression
+  - **Activation**: synaptic delays oscillatory networks, delay-dependent phase response, nPRC nARC computation, PING regime synaptic delay, excitatory-inhibitory delay modulation, gamma oscillation delay control, population synchrony synaptic transmission, oscillatory brain network delays
+
 ## 2026-08-17 - Quantum Computing Research (Cron Job)
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
