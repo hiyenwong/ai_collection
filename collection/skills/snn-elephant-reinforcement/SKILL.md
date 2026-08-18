@@ -1,60 +1,68 @@
 ---
 name: snn-elephant-reinforcement
-description: Spiking Neural Networks with Elephant Reinforcement — finite stochastic spiking-neuron network where past firing activity modifies future excitability through reinforcement-dependent threshold.
+description: Spiking Neural Networks with Elephant Reinforcement — finite stochastic SNN with memory-dependent threshold that modifies future excitability based on past firing activity.
+trigger_words:
+  - elephant reinforcement
+  - spiking neural networks elephant
+  - elephant memory SNN
+  - reinforcement-dependent threshold
 ---
 
 # Spiking Neural Networks with Elephant Reinforcement
 
 ## Overview
-This skill implements the methodology from arXiv paper 2608.12839 "Spiking Neural Networks with Elephant Reinforcement" by Fernando A. Najman, Ioannis Papageorgiou, and Sabricia K. Cauanny A. da Silveirau.
-
-The paper introduces a finite stochastic spiking-neuron network with Elephant-type memory, where past firing activity modifies future excitability through a reinforcement-dependent threshold.
+This methodology introduces a finite stochastic spiking-neuron network with Elephant-type memory, where past firing activity modifies future excitability through a reinforcement-dependent threshold. The approach provides theoretical guarantees for non-explosion and convergence properties while demonstrating practical benefits in numerical experiments.
 
 ## Key Contributions
 
 ### Theoretical Foundations
-- **Non-explosion proof**: For bounded hard-threshold firing rate, proves non-explosion of the finite system
-- **Contraction properties**: Obtains conditional exponential contraction in (1)-Wasserstein distance on truncated potential space
-- **Mean-field dynamics**: Formulates replica mean-field dynamics with global existence, uniqueness in law, and non-explosion of nonlinear process
-- **Invariant measures**: Provides characterization of invariant measures for the system
+- **Non-explosion guarantee**: For bounded hard-threshold firing rate, proves non-explosion of the finite system
+- **Contraction property**: Obtains conditional exponential contraction in (1)-Wasserstein distance on truncated potential space
+- **Mean-field dynamics**: Formulates replica mean-field dynamics with global existence, uniqueness in law, and non-explosion
+- **Invariant measures**: Characterizes invariant measures of the nonlinear process
 
 ### Practical Implications
-- **Activity decline**: Elephant memory produces (p)-dependent decline in firing activity
+- **Activity regulation**: Elephant memory produces p-dependent decline in firing activity
 - **Extinction behavior**: Alters extinction behavior compared to standard SNNs
 - **Approximation quality**: Finite-network dynamics closely matched by replica mean-field approximation
 
+## Mathematical Framework
+
+The model uses a reinforcement-dependent threshold mechanism where the threshold θ_i(t) for neuron i at time t depends on its past firing history:
+
+θ_i(t) = θ_0 + α ∑_{s < t} K(t-s) X_i(s)
+
+Where:
+- θ_0 is the base threshold
+- α is the reinforcement strength parameter
+- K(·) is the memory kernel (Elephant-type)
+- X_i(s) is the firing indicator at time s
+
 ## Implementation Guidelines
 
-### Network Architecture
-- Implement stochastic spiking neurons with reinforcement-dependent thresholds
-- Use Elephant-type memory mechanism to track past firing activity
-- Ensure bounded hard-threshold firing rate to maintain stability
+### Parameters to Tune
+- **Memory parameter p**: Controls the strength of elephant memory effect
+- **Base threshold θ_0**: Initial firing threshold
+- **Reinforcement strength α**: How strongly past activity affects future thresholds
+- **Memory kernel K**: Shape of the temporal memory decay
 
-### Training Considerations
-- Leverage Wasserstein distance metrics for convergence analysis
-- Apply truncated potential space constraints during optimization
-- Validate against mean-field approximation for large-scale networks
+### Numerical Considerations
+- Use truncated potential space for stability
+- Implement Wasserstein distance monitoring for convergence
+- Consider replica mean-field approximation for large networks
 
-### Applications
-- Neuromorphic computing systems requiring memory-enhanced spiking dynamics
-- Stochastic neural network models for probabilistic inference
-- Reinforcement learning with biologically plausible spiking mechanisms
+## Applications
 
-## Usage Examples
-
-### Research Applications
-- Modeling neural systems with long-term memory dependencies
-- Analyzing extinction behavior in stochastic neural populations
-- Comparing finite-network vs mean-field dynamics
-
-### Engineering Applications
-- Designing stable spiking neural hardware with memory capabilities
-- Implementing reinforcement-based threshold adaptation in neuromorphic chips
-- Optimizing spiking network parameters using Wasserstein contraction properties
+This methodology is particularly useful for:
+- Modeling neural systems with activity-dependent plasticity
+- Creating SNNs with self-regulating firing rates
+- Studying extinction dynamics in neural populations
+- Developing biologically plausible reinforcement learning mechanisms
 
 ## References
-- Original paper: [arXiv:2608.12839](https://arxiv.org/abs/2608.12839)
-- Related work: Elephant Random Walk literature, stochastic spiking neuron models, mean-field theory for neural networks
+- arXiv:2608.12839 [math.PR]
+- Authors: Fernando A. Najman, Ioannis Papageorgiou, Sabricia K. Cauanny A. da Silveira
+- Submitted: 2026-08-15
 
 ## Activation Keywords
-snn-elephant-reinforcement, elephant-memory-snn, stochastic-spiking-networks, reinforcement-dependent-threshold, wasserstein-contraction-snn
+elephant reinforcement, spiking neural networks elephant, elephant memory SNN, reinforcement-dependent threshold, stochastic SNN memory

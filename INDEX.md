@@ -1,3 +1,11 @@
+## 2026-08-18 - Quantum Neuromorphic Computing (Cron Job)
+
+### Spiking Neural Networks with Elephant Reinforcement
+- [[snn-elephant-reinforcement]] - Finite stochastic SNN with memory-dependent threshold that modifies future excitability based on past firing activity (arXiv: 2608.12839)
+  - Non-explosion guarantee and conditional exponential contraction in Wasserstein distance
+  - Replica mean-field dynamics with global existence and uniqueness
+  - Elephant memory produces p-dependent decline in firing activity and alters extinction behavior
+  - **Activation**: elephant reinforcement, spiking neural networks elephant, elephant memory SNN, reinforcement-dependent threshold
 ## 2026-08-18 - Systems Engineering Research (Cron Job)
 
 ### LLM-based Multi-Agent Systems in Software Engineering: A Mixed-Method Approach for Framework Selection
