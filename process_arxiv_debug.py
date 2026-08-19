@@ -6,17 +6,22 @@ from datetime import datetime, timedelta
 from urllib import request
 import xml.etree.ElementTree as ET
 
+print("Starting script...")
+
 # Step 1: Fetch recent papers from arXiv API
 def fetch_recent_arxiv_papers(days=2, max_results=100):
+    print(f"Fetching papers from arXiv for last {days} days...")
     # Categories: cs.AI, cs.NE, cs.LG, q-bio.NC
     categories = ['cs.AI', 'cs.NE', 'cs.LG', 'q-bio.NC']
     cat_query = '+OR+'.join([f'cat:{cat}' for cat in categories])
     # We'll use the arXiv API without date range, then filter by date
     url = f'http://export.arxiv.org/api/query?search_query={cat_query}&start=0&max_results={max_results}&sortBy=submittedDate&sortOrder=descending'
+    print(f"URL: {url}")
     try:
         req = request.Request(url)
         with request.urlopen(req) as response:
             xml_data = response.read()
+        print(f"Received {len(xml_data)} bytes from arXiv")
     except Exception as e:
         print(f"Error fetching from arXiv API: {e}")
         return []
@@ -24,6 +29,7 @@ def fetch_recent_arxiv_papers(days=2, max_results=100):
     # Parse XML
     try:
         root = ET.fromstring(xml_data)
+        print("XML parsed successfully")
     except ET.ParseError as e:
         print(f"Error parsing XML: {e}")
         return []
@@ -32,7 +38,10 @@ def fetch_recent_arxiv_papers(days=2, max_results=100):
     ns = {'atom': 'http://www.w3.org/2005/Atom'}
     papers = []
     cutoff_date = datetime.now() - timedelta(days=days)
+    print(f"Cutoff date: {cutoff_date}")
+    count = 0
     for entry in root.findall('atom:entry', ns):
+        count += 1
         id_elem = entry.find('atom:id', ns)
         if id_elem is None:
             continue
@@ -60,6 +69,7 @@ def fetch_recent_arxiv_papers(days=2, max_results=100):
         # Filter by date
         if published < cutoff_date:
             # Since results are sorted by submittedDate descending, we can break early
+            print(f"Reached older papers at count {count}, breaking")
             break
         papers.append({
             'id': arxiv_id,
@@ -67,12 +77,14 @@ def fetch_recent_arxiv_papers(days=2, max_results=100):
             'abstract': abstract,
             'published': published_str  # Keep original string for consistency
         })
+    print(f"Found {len(papers)} recent papers")
     return papers
 
 # Step 2: Query knowledge graph for utility
 def get_utility_from_kg(arxiv_ids):
     # Path to knowledge graph
     kg_path = '/Users/hiyenwong/projects/ai_projects/ai_collection/knowledge/kg.db'
+    print(f"Looking for knowledge graph at {kg_path}")
     if not os.path.exists(kg_path):
         print(f"Knowledge graph not found at {kg_path}")
         return {}
@@ -83,10 +95,12 @@ def get_utility_from_kg(arxiv_ids):
         # Placeholders for IN query
         placeholders = ','.join(['?'] * len(arxiv_ids))
         query = f"SELECT arxiv_id, utility FROM papers WHERE arxiv_id IN ({placeholders})"
+        print(f"Querying utility for {len(arxiv_ids)} papers")
         cursor.execute(query, arxiv_ids)
         rows = cursor.fetchall()
         conn.close()
         utility_dict = {row[0]: row[1] for row in rows}
+        print(f"Retrieved utility for {len(utility_dict)} papers")
         return utility_dict
     except Exception as e:
         print(f"Error querying knowledge graph: {e}")
@@ -234,20 +248,23 @@ def run_maintenance_scripts(base_path='/Users/hiyenwong/projects/ai_projects/ai_
     # Run classify_skills.py
     script1 = os.path.join(base_path, 'scripts', 'classify_skills.py')
     if os.path.exists(script1):
+        print(f"Running {script1}")
         os.system(f"cd {base_path} && python {script1}")
     # Run update_neural_map.py
     script2 = os.path.join(base_path, 'scripts', 'update_neural_map.py')
     if os.path.exists(script2):
+        print(f"Running {script2}")
         os.system(f"cd {base_path} && python {script2}")
 
 # Step 7: Git commit and push
 def git_commit_push(base_path='/Users/hiyenwong/projects/ai_projects/ai_collection'):
     commit_message = f"feat: add paper skills from arXiv {datetime.now().strftime('%Y-%m-%d')}"
     cmd = f"cd {base_path} && git add -A && git commit -m \"{commit_message}\" && git push origin main"
+    print(f"Running git command: {cmd}")
     os.system(cmd)
 
 # Main execution
-if __name__ == '__main':
+if __name__ == '__main__':
     base_path = '/Users/hiyenwong/projects/ai_projects/ai_collection'
     print("Fetching recent arXiv papers...")
     papers = fetch_recent_arxiv_papers(days=2, max_results=50)
@@ -263,6 +280,7 @@ if __name__ == '__main':
     for paper in papers:
         uid = paper['id']
         utility = utility_dict.get(uid, 0)
+        print(f"Paper {uid}: utility = {utility}")
         if utility >= 0.85:
             high_utility_papers.append(paper)
     

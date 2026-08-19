@@ -4588,5 +4588,29 @@
     "skillCreated": "arxiv-2608-13560v1-autodesign-meta-harness-optimization-for-long-hori",
     "lastAccessed": "2026-08-14",
     "category": "deployment-optimization"
+  },
+  {
+    "id": "2608.14109",
+    "title": "A Graph-Based Reinforcement Learning Framework for Structured Drift Diagnosis and Recovery in Autonomous LLM Agents.",
+    "skill_name": "agraph-basedreinforcementlearningframeworkforstruc",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-08-19"
+  },
+  {
+    "id": "2608.16357",
+    "title": "MELD: A Protocol for Merging Knowledge Across Distributed Agentic Memories",
+    "skill_name": "meldaprotocolformergingknowledgeacrossdistributeda",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-08-19"
+  },
+  {
+    "id": "2608.13030",
+    "title": "InterSAGE: The Secure and Verifiable Interoperability Protocol for An Internet of Agents",
+    "skill_name": "intersagethesecureandverifiableinteroperabilitypro",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-08-19"
   }
 ]
