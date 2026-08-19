@@ -20,10 +20,11 @@
 
 ### Noisy group neurons with synchronous resetting for high-performance spiking neural networks
 - [[noisy-group-neurons-synchronous-resetting]] - Noisy Group Neuron model for high-performance SNNs (arXiv: 2608.17394v1)
-  - Population-level synchronous resetting preserves temporal information
-  - Neural stochasticity used as computational resource rather than nuisance
+  - Population-level synchronous resetting preserves temporal information while avoiding tracking K independent membrane histories
+  - Neural stochasticity used as computational resource rather than nuisance, enabling parameter-induced stochastic resonance
+  - Mean-field dynamics enables backpropagation learning through Gaussian surrogate functions
   - Achieves 87.35% accuracy on CIFAR10-DVS within 10 inference time steps
-  - **Activation**: noisy group neurons, synchronous resetting, NGN model, spiking neural networks, neuromorphic computing
+  - **Activation**: noisy group neurons, synchronous resetting, NGN model, spiking neural networks, neuromorphic computing, gradient mismatching, stochastic resonance, mean-field learning
 
 ### Biophysics-informed deep operator learning for inverse problems with application to electrophysiological source reconstruction
 - [[biophysics-informed-deep-operator-learning]] - Electrophysiological source reconstruction with biophysics. (arXiv: 2608.16871)
