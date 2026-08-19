@@ -1,12 +1,12 @@
 ---
-name: threshold-based-snn-event-driven-status-update
-description: "Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems - lightweight RL approach using SNNs with explicit threshold policy representation for IoT status updates that jointly minimizes Age of Information (AoI) and transmission energy. Use when designing energy-efficient event-driven IoT systems, optimizing information freshness vs energy trade-offs, or implementing threshold policies with SNNs."
+name: threshold-based-snn-event-driven-status-update-systems
+description: "Threshold policies for event-driven IoT status updates."
 metadata:
   arxiv_id: "2608.10640"
-  published: "2026-08-15"
-  authors: "Najman, Fernando A., Papageorgiou, Ioannis, da Silveira, Sabricia K. Cauanny A."
+  published: "2026-08-18"
+  authors: "Fries, Marco; Ortiz, Andrea"
   subjects: "Information Theory (cs.IT)"
-  tags: [spiking-neural-network, threshold-policy, event-driven, iot, age-of-information, reinforcement-learning, energy-efficiency]
+  tags: [spiking-neural-network, threshold-policy, event-driven, iot, age-of-information, reinforcement-learning, energy-efficiency, distributed-systems, control-systems]
 license: Complete terms in LICENSE.txt
 ---
 
@@ -28,23 +28,28 @@ The key insight is proving the existence of an optimal threshold policy for dete
 
 4. **Interpretable Policy Representation**: The threshold-based approach provides clear interpretability compared to black-box neural network policies.
 
+5. **Systems Engineering Application**: Direct application to distributed systems and control systems design for IoT environments.
+
 ## Methodology
 
 ### Problem Formulation
 - **System Model**: Event-driven status update system where wake-up events follow monitored process dynamics
 - **Objective**: Jointly minimize Age of Information (AoI) and transmission energy
 - **Decision Framework**: Cast as Markov Decision Process (MDP)
+- **Challenge**: Transmission decisions restricted to randomly occurring events
 
 ### Threshold Policy Architecture
 - **Input**: Current AoI state and system parameters
 - **Threshold Mechanism**: SNN neurons fire when input exceeds learned threshold values
 - **Output**: Binary decision (transmit/do not transmit)
 - **Complexity**: Constant complexity with respect to maximum AoI
+- **Energy Efficiency**: Enables more energy-efficient implementation than comparable ANNs
 
 ### Training Approach
 - **Reinforcement Learning**: Train SNN to learn optimal threshold values
 - **Reward Function**: Combines AoI penalty and energy cost
 - **Convergence**: Demonstrated reliable learning across different operating regimes
+- **Validation**: Numerical results show SNN reliably learns optimal thresholds
 
 ## Implementation Guidelines
 
@@ -54,22 +59,37 @@ The key insight is proving the existence of an optimal threshold policy for dete
 - Implementing interpretable threshold policies for event-driven systems
 - Replacing ANNs with more energy-efficient SNN alternatives
 - Working with randomly occurring wake-up events in monitoring systems
+- Distributed systems with event-driven communication patterns
+- Control systems requiring interpretable decision policies
 
 ### Key Parameters to Consider
 - **Maximum AoI**: Defines the state space bounds
 - **Energy Cost per Transmission**: System-specific parameter
 - **Event Arrival Rate**: Affects optimal threshold values
 - **Operating Regime**: Different regimes may require different threshold strategies
+- **Hardware Constraints**: SNN implementation must consider specific neuromorphic hardware limitations
 
 ### Potential Pitfalls
 - **Non-stationary Environments**: Threshold policies assume stationary dynamics; non-stationary environments may require adaptive thresholds
 - **Multi-dimensional States**: Extension to multi-dimensional state spaces requires careful threshold design
 - **Hardware Constraints**: SNN implementation must consider specific neuromorphic hardware limitations
+- **Real-time Requirements**: Ensure SNN inference latency meets system timing constraints
+
+## Systems Engineering Relevance
+
+This work bridges several key systems engineering domains:
+- **Distributed Systems**: Event-driven communication patterns in IoT networks
+- **Control Systems**: Optimal control under uncertainty with MDP formulation
+- **Energy-Efficient Design**: Resource-constrained system optimization
+- **Reliability Engineering**: Information freshness as a reliability metric
+- **Interpretability**: Transparent decision-making for safety-critical systems
 
 ## References
 - Original paper: arXiv:2608.10640 [cs.IT]
 - Related work on Age of Information optimization
 - Spiking Neural Network architectures for RL applications
+- Event-driven systems design principles
+- IoT energy efficiency optimization techniques
 
 ## Activation Keywords
 - threshold-based spiking neural network
@@ -79,3 +99,6 @@ The key insight is proving the existence of an optimal threshold policy for dete
 - SNN threshold policy
 - event-driven IoT
 - information freshness energy trade-off
+- distributed event-driven systems
+- interpretable control policies
+- MDP threshold policies
