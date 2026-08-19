@@ -41,6 +41,15 @@
   - Successfully applied to resting-state EEG recordings to distinguish eyes-open vs eyes-closed conditions within individuals
   - **Activation**: phase-based spatial ordinal patterns, spatial permutation entropy, oscillatory dynamics analysis, brain network phase analysis, EEG phase synchronization, transient dynamics detection, regime transition analysis
 
+## 2026-08-20 - Neuroscience Research (Cron Job)
+
+### Spiking Sequence Machines and Transformers
+- [[spiking-transformer-unification]] - Theoretical framework unifying SNNs and Transformers through shared computational primitives. (arXiv: 2605.00662)
+  - Shows both architectures implement five shared functional operations: encoding, context maintenance, associative retrieval, storage, and decoding
+  - Establishes Phase-Latency Isomorphism linking spike timing to sinusoidal positional encoding
+  - Demonstrates cosine similarity as shared retrieval primitive between Spiking SDM and Transformer attention
+  - **Activation**: spiking transformer, spike-timing attention, phase-latency isomorphism, sparse distributed memory SNN, positional encoding theory, sequence learning theory, SNN transformer unification, cosine similarity retrieval
+
 ## 2026-08-20 - Deep Learning Research (Cron Job)
 
 ### Efficient RLVR Scheduling via Graph-Structured Online Difficulty Estimation
