@@ -1,5 +1,12 @@
 ## 2026-08-19 - Neuroscience Research (Cron Job)
 
+### Learning Generalizable Reconstruction of High-Dimensional Neural Dynamics
+- [[pca-dmd-neural-dynamics-reconstruction]] - PCA-DMD framework for scalable neural dynamics reconstruction with zero-shot cross-subject generalization. (arXiv: 2608.16569)
+  - Segments LFP recordings into overlapping windows, projects into PCA space, learns Koopman evolution
+  - Achieves 0.9504-0.9800 correlations in cross-subject zero-shot generalization
+  - Scalable from 400k to 900k samples with stable performance
+  - **Activation**: pca-dmd, neural dynamics reconstruction, koopman operator neuroscience
+
 ### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision
 - [[lonic-algorithm-hardware-codesign]] - Lonic INT4 algorithm-hardware co-design for energy-efficient SNN training (arXiv: 2608.12500)
   - INT4 low-precision fully local online SNN training algorithms
