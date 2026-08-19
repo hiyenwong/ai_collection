@@ -1,3 +1,12 @@
+## 2026-08-19 - Neuroscience Research (Cron Job)
+
+### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision
+- [[lonic-algorithm-hardware-codesign]] - Lonic INT4 algorithm-hardware co-design for energy-efficient SNN training (arXiv: 2608.12500)
+  - INT4 low-precision fully local online SNN training algorithms
+  - Reconfigurable multiplier-free integer PE arrays for hardware efficiency
+  - Dual-optimization zero-gating strategy and temporal prefix-accelerated dataflow
+  - **Activation**: lonic, INT4 SNN training, algorithm-hardware co-design
+
 ## 2026-08-19 - Systems Engineering Research (Cron Job)
 
 ### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
