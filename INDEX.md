@@ -22,6 +22,14 @@
   - Proves macroscopic effects persist on sparse Dale-compatible random block graphs
   - **Activation**: spiking neural networks, threshold-reset dynamics, excitatory-inhibitory balance, fast-synapse limits, order-sensitive computation, neural population coding
 
+### Phase-based spatial ordinal patterns for characterizing oscillatory dynamics
+- [[phase-based-spatial-ordinal-patterns-oscillatory-dynamics]] - Framework using spatial ordinal patterns acting on phase (not amplitude) to characterize spatiotemporal dynamics; defines spatial permutation entropy for tracking transient dynamics and regime transitions. (arXiv: 2608.17196)
+  - Introduces spatial ordinal patterns that encode local spatial ordering relations, capturing both phase gradients and synchronized clusters
+  - Enables real-time detection of transient dynamics and regime transitions through spatial permutation entropy
+  - Distinguishes phase-locked states with identical global synchronization but distinct spatial organization
+  - Validated on both synthetic oscillator networks and human resting-state EEG recordings
+  - **Activation**: phase-based patterns, spatial ordinal patterns, oscillatory dynamics, neural populations, EEG analysis, brain networks, spatiotemporal patterns
+
 ## 2026-08-18 - Neuroscience Research (Cron Job)
 
 ### Learning Generalizable Reconstruction of High-Dimensional Neural Dynamics
