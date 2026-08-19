@@ -33,3 +33,40 @@
   - Distinguishes phase-locked states with identical global synchronization but distinct spatial organization
   - Successfully applied to resting-state EEG recordings to distinguish eyes-open vs eyes-closed conditions within individuals
   - **Activation**: phase-based spatial ordinal patterns, spatial permutation entropy, oscillatory dynamics analysis, brain network phase analysis, EEG phase synchronization, transient dynamics detection, regime transition analysis
+
+## 2026-08-20 - Deep Learning Research (Cron Job)
+
+### Efficient RLVR Scheduling via Graph-Structured Online Difficulty Estimation
+- [[graph-structured-online-difficulty-estimation]] - Graph-based RLVR difficulty estimation without probing overhead (arXiv: 2608.17941)
+  - Uses semantic similarity graphs with Potts prior and Beta-Binomial model for continuous difficulty updates
+  - Shares rollout feedback across related samples using graph structure
+  - Provides cold start mitigation and continuous updates without dedicated probing
+  - **Activation**: rlvr, difficulty estimation, graph-based scheduling
+
+### Efficient Resource Optimization for Split Federated Learning
+- [[split-federated-learning-resource-optimization]] - Polynomial-time optimal model splitting for SFL (arXiv: 2608.17849)
+  - Achieves global optimum for model splitting problem in polynomial time
+  - Provides (1+ε)-approximation guarantee for joint resource allocation
+  - Optimally balances energy and latency costs under resource constraints
+  - **Activation**: split federated learning, resource optimization, model splitting
+
+### rl-triton: High-Performance Triton GPU Kernels for Reinforcement Learning Credit Assignment
+- [[rl-triton-gpu-kernels-credit-assignment]] - Unified credit assignment via associative scan in Triton (arXiv: 2608.17641)
+  - Unifies 7 RL credit assignment algorithms under single computational primitive
+  - Achieves 1.6–5.7× speedup over state-of-the-art implementations
+  - Optimized memory access patterns reduce bandwidth requirements
+  - **Activation**: rl-triton, gpu kernels, credit assignment, triton
+
+### Iterative tensor network transformations for element-wise evaluation of elementary functions
+- [[iterative-tensor-network-transformations]] - Nonlinear tensor train operations via iterative transforms (arXiv: 2608.17135)
+  - Handles arbitrary element-wise nonlinear functions on tensor trains
+  - Converges through iterative refinement with controllable accuracy
+  - Demonstrated on 3D flow fields and Max-SAT up to 2^70 states
+  - **Activation**: tensor networks, tensor train, nonlinear operations
+
+### EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing
+- [[editbridge-ultra-hdr-image-editing]] - Faithful 4K image editing via diffusion bridge framework (arXiv: 2608.18063)
+  - Uses block-wise sparse attention for O(n) complexity instead of O(n²)
+  - Direct HR source conditioning prevents hallucination
+  - Completes 4K editing in 61 seconds on single GPU
+  - **Activation**: editbridge, ultra-hdr, image editing, diffusion bridge
