@@ -1,4 +1,12 @@
-## 2026-08-19 - Neuroscience Research (Cron Job)
+## 2026-08-19 - Systems Engineering Research (Cron Job)
+
+### Threshold-Based Spiking Neural Networks for Event-Driven Status Update Systems
+- [[threshold-based-snn-event-driven-status-update-systems]] - Optimal threshold policies for event-driven IoT status updates that jointly minimize Age of Information (AoI) and transmission energy. (arXiv: 2608.10640)
+  - Proves existence of optimal threshold policy for MDP that jointly minimizes AoI and transmission energy
+  - Proposes lightweight SNN architecture with explicit threshold policy representation and constant complexity
+  - Enables more energy-efficient implementation than comparable ANNs while reliably learning optimal thresholds
+  - Provides interpretable policy representation for event-driven IoT systems with randomly occurring wake-up events
+  - **Activation**: threshold-based spiking neural network, event-driven status update, age of information optimization, energy-efficient IoT, SNN threshold policy, event-driven IoT, information freshness energy trade-off, distributed event-driven systems, interpretable control policies, MDP threshold policies## 2026-08-19 - Neuroscience Research (Cron Job)
 
 ### Biophysics-informed deep operator learning for inverse problems with application to electrophysiological source reconstruction
 - [[biophysics-informed-deep-operator-learning]] - Electrophysiological source reconstruction with biophysics. (arXiv: 2608.16871)
