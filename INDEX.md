@@ -8,6 +8,13 @@
   - Provides interpretable policy representation for event-driven IoT systems with randomly occurring wake-up events
   - **Activation**: threshold-based spiking neural network, event-driven status update, age of information optimization, energy-efficient IoT, SNN threshold policy, event-driven IoT, information freshness energy trade-off, distributed event-driven systems, interpretable control policies, MDP threshold policies## 2026-08-19 - Neuroscience Research (Cron Job)
 
+### Noisy group neurons with synchronous resetting for high-performance spiking neural networks
+- [[noisy-group-neurons-synchronous-resetting]] - Noisy Group Neuron model for high-performance SNNs (arXiv: 2608.17394v1)
+  - Population-level synchronous resetting preserves temporal information
+  - Neural stochasticity used as computational resource rather than nuisance
+  - Achieves 87.35% accuracy on CIFAR10-DVS within 10 inference time steps
+  - **Activation**: noisy group neurons, synchronous resetting, NGN model, spiking neural networks, neuromorphic computing
+
 ### Biophysics-informed deep operator learning for inverse problems with application to electrophysiological source reconstruction
 - [[biophysics-informed-deep-operator-learning]] - Electrophysiological source reconstruction with biophysics. (arXiv: 2608.16871)
   - Introduces DeepOp-Informed framework embedding biophysical principles via differentiable layers
