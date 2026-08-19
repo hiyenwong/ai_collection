@@ -50,6 +50,13 @@
   - Demonstrates cosine similarity as shared retrieval primitive between Spiking SDM and Transformer attention
   - **Activation**: spiking transformer, spike-timing attention, phase-latency isomorphism, sparse distributed memory SNN, positional encoding theory, sequence learning theory, SNN transformer unification, cosine similarity retrieval
 
+### Synaptic delays modulate population phase and amplitude responses in oscillatory excitatory-inhibitory networks
+- [[synaptic-delays-oscillatory-ei-networks]] - Synaptic delays regulate collective response of neuronal populations to transient perturbations in PING regime E-I networks. (arXiv: 2608.15077)
+  - Demonstrates frequency-coherence trade-off: increasing delay slows oscillations while enhancing synchrony
+  - Shows differential delay-dependent modulation: inhibitory perturbations show stronger phase/amplitude effects than excitatory
+  - Uses network Phase Response Curves (nPRCs) and Amplitude Response Curves (nARCs) for comprehensive analysis
+  - **Activation**: synaptic delays oscillatory networks, delay-dependent phase response, nPRC nARC computation, PING regime synaptic delay
+
 ## 2026-08-20 - Deep Learning Research (Cron Job)
 
 ### Efficient RLVR Scheduling via Graph-Structured Online Difficulty Estimation
