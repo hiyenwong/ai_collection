@@ -3,9 +3,9 @@ name: phase-based-spatial-ordinal-patterns-oscillatory-dynamics
 description: "Phase-based spatial ordinal patterns analysis."
 metadata:
   arxiv_id: "2608.17196"
-  published: "2026-08-17"
+  published: "2026-08-19"
   authors: "Robison J. Santos-Silva, Bruno R. R. Boaretto, Thiago L. Prado, Roberto C. Budzinski"
-  categories: ["nlin.AO", "q-bio.NC"]
+  tags: [neuroscience, brain-network, neural-dynamics, oscillatory-dynamics, EEG, phase-analysis, spatial-permutation-entropy]
 license: Complete terms in LICENSE.txt
 ---
 
