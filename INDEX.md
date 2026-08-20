@@ -44,7 +44,7 @@
 ## 2026-08-20 - Neuroscience Research (Cron Job)
 
 ### Leveraging unlabelled data for generalizable neural population decoding
-- [[mojo-ssl-neural-decoding]] - MOJO framework for joint SSL-SL neural decoding using unlabelled data. (arXiv: 2607.14086)
+- [[mojo-ssl-neural-decoding]] - MOJO framework for joint SSL-SL neural decoding using unlabelled data. (arXiv: 2608.14086)
   - Combines self-supervised learning via masked autoencoding with supervised learning objectives
   - Superior performance over purely SL-trained models, especially with limited labelled data
   - Enables few-shot finetuning with minimal labelled data from new sessions
@@ -101,6 +101,7 @@
   - Direct HR source conditioning prevents hallucination
   - Completes 4K editing in 61 seconds on single GPU
   - **Activation**: editbridge, ultra-hdr, image editing, diffusion bridge
+
 ## 2026-08-20 - Systems Engineering Research (Cron Job)
 
 ### Extending and Unifying the Fundamental Tasks of Hamilton-Jacobi Reachability Analysis
@@ -116,3 +117,34 @@
   - Enables transformation of ODEs from real domain to Laplace domain in GA
   - Direct application to electrical circuit modeling and analysis
   - **Activation**: geometric algebra Laplace transform, GA system modeling, electrical circuit GA analysis
+
+## 2026-08-21 - Deep Learning Research (Cron Job)
+
+### MLREF: Efficient Module Reuse for Reward Design in Reinforcement Learning via Large Language Models
+- [[mlref-module-reward-evolution-framework]] - MLREF framework for efficient module reuse in reward design using LLMs to evolve specialized reward modules. (arXiv: 2608.18827)
+  - Evolves specialized reward modules using LLMs instead of handcrafting or end-to-end learning
+  - Enables modular composition of reward functions for complex multi-objective tasks
+  - Achieves superior performance on WebArena benchmark compared to standard approaches
+  - **Activation**: mlref, reward design, reinforcement learning, module reuse, llm reward evolution
+
+### Beyond Teacher Likelihood: Group-Calibrated On-Policy Distillation for Long-Context Reasoning
+- [[gc-opd-group-calibrated-on-policy-distillation]] - Group-Calibrated On-Policy Distillation (GC-OPD) framework addressing teacher-student distribution shift in long-context reasoning. (arXiv: 2608.19181)
+  - Addresses distribution shift between teacher and student in long-context reasoning tasks
+  - Introduces group calibration to maintain alignment across different context lengths
+  - Improves performance on long-context benchmarks like LongBench and GovReports
+  - **Activation**: gc-opd, on-policy distillation, long-context reasoning, group calibration, teacher-student alignment
+
+### Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation
+- [[open-mopd-multi-teacher-on-policy-distillation]] - Open-MOPD framework for diagnosing and fixing capability imbalance in multi-teacher on-policy distillation. (arXiv: 2608.19098)
+  - Diagnoses capability integration gap where standard M-OPD captures only 35.6% of available headroom
+  - Implements token-share balancing, gap-aware dynamic budget allocation, and student reward refresh
+  - Improves headroom recovery from 35.6% to 83.4% in a single deployable student
+  - **Activation**: open-mopd, multi-teacher distillation, capability imbalance, on-policy distillation, generalist student
+
+### Monroe: A Molecular Foundation Model for In-Context Probabilistic Inference
+- [[monroe-molecular-foundation-model]] - Monroe molecular foundation model for in-context probabilistic inference using prior-data-fitted models (TabPFN). (arXiv: 2608.18982)
+  - Pre-trained on 81+ million molecules from PM6 quantum chemistry dataset
+  - Uses enhanced graph representation with stereochemistry awareness
+  - Integrates with TabPFN for in-context few-shot learning without fine-tuning
+  - Achieves significant improvements on activity cliff benchmarks for drug discovery
+  - **Activation**: monroe, molecular foundation model, in-context learning, TabPFN, bioassay prediction
