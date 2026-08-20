@@ -118,6 +118,15 @@
   - Direct application to electrical circuit modeling and analysis
   - **Activation**: geometric algebra Laplace transform, GA system modeling, electrical circuit GA analysis
 
+## 2026-08-21 - Neuroscience Research (Cron Job)
+
+### Accurate Decoding of Natural Sentences from Non-Invasive Brain Recordings
+- [[brain2qwerty-v2-noninvasive-decoding]] - Brain2Qwerty v2: non-invasive MEG sentence decoding (arXiv: 2608.18114)
+  - Decodes natural sentences from real-time MEG with 39% average WER, best participant achieves 50% accuracy with ≤1 word error
+  - Leverages character/word/sentence-level representations and AI-driven pipeline refinement via LLM fine-tuning
+  - Performance log-linearly improves with data volume, bridging gap with intracranial approaches
+  - **Activation**: brain2qwerty, non-invasive bci, meg decoding, brain-to-text
+
 ## 2026-08-21 - Deep Learning Research (Cron Job)
 
 ### MLREF: Efficient Module Reuse for Reward Design in Reinforcement Learning via Large Language Models
