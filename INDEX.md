@@ -44,7 +44,7 @@
 ## 2026-08-20 - Neuroscience Research (Cron Job)
 
 ### Leveraging unlabelled data for generalizable neural population decoding
-- [[mojo-ssl-neural-decoding]] - MOJO framework for joint SSL-SL neural decoding using unlabelled data. (arXiv: 2608.14086)
+- [[mojo-ssl-neural-decoding]] - MOJO framework for joint SSL-SL neural decoding using unlabelled data. (arXiv: 2607.14086)
   - Combines self-supervised learning via masked autoencoding with supervised learning objectives
   - Superior performance over purely SL-trained models, especially with limited labelled data
   - Enables few-shot finetuning with minimal labelled data from new sessions
