@@ -43,6 +43,14 @@
 
 ## 2026-08-20 - Neuroscience Research (Cron Job)
 
+### Leveraging unlabelled data for generalizable neural population decoding
+- [[mojo-ssl-neural-decoding]] - MOJO framework for joint SSL-SL neural decoding using unlabelled data. (arXiv: 2607.14086)
+  - Combines self-supervised learning via masked autoencoding with supervised learning objectives
+  - Superior performance over purely SL-trained models, especially with limited labelled data
+  - Enables few-shot finetuning with minimal labelled data from new sessions
+  - Generalizes beyond spiking data to human electrocorticography during speech
+  - **Activation**: MOJO framework, masked autoencoder neural decoding, self-supervised spiking neural networks, joint SSL-SL neural training, unlabelled neural data decoding, few-shot neural decoding, cross-modal neural foundation models
+
 ### Spiking Sequence Machines and Transformers
 - [[spiking-transformer-unification]] - Theoretical framework unifying SNNs and Transformers through shared computational primitives. (arXiv: 2605.00662)
   - Shows both architectures implement five shared functional operations: encoding, context maintenance, associative retrieval, storage, and decoding
