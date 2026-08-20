@@ -101,3 +101,11 @@
   - Direct HR source conditioning prevents hallucination
   - Completes 4K editing in 61 seconds on single GPU
   - **Activation**: editbridge, ultra-hdr, image editing, diffusion bridge
+## 2026-08-20 - Systems Engineering Research (Cron Job)
+
+### Extending and Unifying the Fundamental Tasks of Hamilton-Jacobi Reachability Analysis
+- [[hamilton-jacobi-reachability-analysis]] - Generalized Reach-Avoid (GRA) task framework that extends and unifies canonical Hamilton-Jacobi Reachability tasks (arXiv: 2608.18060v1)
+  - Introduces GRA as common primitive for fundamental HJR tasks
+  - Enables computation of value functions for composite tasks including timed temporal logic
+  - Provides PDE perspective showing GRA represents all sufficiently regular HJ-PDE solutions
+  - **Activation**: Hamilton-Jacobi reachability, control systems verification, GRA tasks
