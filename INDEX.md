@@ -134,6 +134,13 @@
   - V5/MT stimulation reduced task-dependent functional connectivity between V5/MT and LGN
   - **Activation**: transcranial magnetic stimulation, visual speech recognition, corticothalamic feedback, lateral geniculate nucleus, V5/MT area, fMRI thalamus
 
+### The Role of Grid Cells in Reducing Spatial Aliasing in Hippocampal Place Representations
+- [[grid-cells-reduce-spatial-aliasing-hippocampal-place]] - Grid cells reduce spatial aliasing in place representations. (arXiv: 2608.18569)
+  - Grid cells achieve 94-99% reduction in spatial aliasing compared to BVC-only baseline
+  - Greatest improvement occurs in environments with highest visual symmetry
+  - Demonstrates complementary information from grid cells vs boundary-based inputs
+  - **Activation**: grid cells, place cells, spatial aliasing, boundary vector cells, hippocampal representations, spatial navigation
+
 ## 2026-08-21 - Deep Learning Research (Cron Job)
 
 ### MLREF: Efficient Module Reuse for Reward Design in Reinforcement Learning via Large Language Models
