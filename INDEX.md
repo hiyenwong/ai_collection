@@ -109,3 +109,10 @@
   - Enables computation of value functions for composite tasks including timed temporal logic
   - Provides PDE perspective showing GRA represents all sufficiently regular HJ-PDE solutions
   - **Activation**: Hamilton-Jacobi reachability, control systems verification, GRA tasks
+
+### The geometric Laplace transform: Definition, existence and properties of the Geometric Algebra Laplace transform
+- [[geometric-laplace-transform-systems]] - Geometric Algebra Laplace transform framework for system modeling and analysis (arXiv: 2608.18043v1)
+  - First rigorous definition of Laplace transform within Geometric Algebra framework
+  - Enables transformation of ODEs from real domain to Laplace domain in GA
+  - Direct application to electrical circuit modeling and analysis
+  - **Activation**: geometric algebra Laplace transform, GA system modeling, electrical circuit GA analysis
