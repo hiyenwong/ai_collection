@@ -127,6 +127,13 @@
   - Performance log-linearly improves with data volume, bridging gap with intracranial approaches
   - **Activation**: brain2qwerty, non-invasive bci, meg decoding, brain-to-text
 
+### Transcranial magnetic stimulation of visual-motion area V5/MT modulates sensory thalamus responses during visual speech recognition
+- [[tms-v5-mt-modulates-thalamus-visual-speech]] - TMS of V5/MT modulates thalamus during visual speech recognition. (arXiv: 2608.19034)
+  - Demonstrates causal role of visual-motion area V5/MT in modulating lateral geniculate nucleus (LGN) responses during visual speech recognition
+  - Inhibitory TMS over V5/MT significantly reduced LGN signal modulation between visual speech and color tasks
+  - V5/MT stimulation reduced task-dependent functional connectivity between V5/MT and LGN
+  - **Activation**: transcranial magnetic stimulation, visual speech recognition, corticothalamic feedback, lateral geniculate nucleus, V5/MT area, fMRI thalamus
+
 ## 2026-08-21 - Deep Learning Research (Cron Job)
 
 ### MLREF: Efficient Module Reuse for Reward Design in Reinforcement Learning via Large Language Models
