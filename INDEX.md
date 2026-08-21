@@ -1,5 +1,12 @@
 ## 2026-08-22 - Neuroscience Research (Cron Job)
 
+### Spike-based Belief Propagation in Nonlinear Dynamical Systems
+- [[spike-belief-propagation-nonlinear-dynamics]] - Bayesian control framework integrating spiking neural models with probabilistic inference for adaptive control (arXiv: 2608.19907)
+  - Combines biologically inspired spiking dynamics with Bayesian inference for real-time state updates
+  - Demonstrates goal-directed action planning through spike-driven dynamics on mountain car benchmark
+  - Bridges computational neuroscience and probabilistic control theory
+  - **Activation**: spike belief propagation, bayesian spiking control, nonlinear dynamical systems, probabilistic inference spiking, mountain car spiking
+
 ### Active Spiking Perception
 - [[active-spiking-perception-3d-recognition]] - Active Spiking Perception framework for 3D recognition using membrane potential as decision-making mechanism (arXiv: 2608.19232)
   - Uses leaky integrate-and-fire (LIF) membrane potential as running belief over class for active chunk selection
