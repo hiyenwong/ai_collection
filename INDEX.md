@@ -1,5 +1,12 @@
 ## 2026-08-22 - Neuroscience Research (Cron Job)
 
+### Decoding silent reading from non-invasive EEG
+- [[eeg-silent-reading-decoding]] - EEG-based silent reading decoding framework for scalable inner speech BCI using contrastive learning (arXiv: 2608.20186)
+  - Uses silent reading as scalable proxy task to overcome fundamental data problem in inner speech decoding
+  - Demonstrates data-limited decoding that scales log-linearly with training data volume
+  - Shows removing occipital/posterior-temporal electrodes reduces word-level gain by one-third
+  - **Activation**: silent reading, EEG decoding, inner speech BCI, non-invasive brain-computer interface, contrastive decoder
+
 ### Spike-based Belief Propagation in Nonlinear Dynamical Systems
 - [[spike-belief-propagation-nonlinear-dynamics]] - Bayesian control framework integrating spiking neural models with probabilistic inference for adaptive control (arXiv: 2608.19907)
   - Combines biologically inspired spiking dynamics with Bayesian inference for real-time state updates
