@@ -1,5 +1,13 @@
 ## 2026-08-21 - Neuroscience Research (Cron Job)
 
+### The Connectome and the Quest for the Functional Logic of the Drosophila Early Olfactory System
+- [[drosophila-olfactory-connectome-functional-logic]] - Framework for understanding Drosophila olfactory system functional logic through connectome analysis, feedback loop abstractions, and natural odorant environment modeling (arXiv: 2608.19290)
+  - Moves beyond static wiring diagrams to understand dense local feedback circuits governing input/output transformations
+  - Requires explicit modeling of natural odorant environment with semantics and syntax for associative memory operations
+  - Treats circuit as real-time, stage-by-stage cascade of giant local feedback loops respecting causality
+  - **Activation**: drosophila olfactory, fruit fly connectome, olfactory feedback circuits, functional logic neural circuits
+## 2026-08-21 - Neuroscience Research (Cron Job)
+
 ### Spike-based Belief Propagation in Nonlinear Dynamical Systems
 - [[spike-belief-propagation-nonlinear-dynamics]] - Bayesian control framework integrating spike-based dynamics with probabilistic inference for adaptive control in uncertain environments (arXiv: 2608.19907)
   - Combines biologically inspired spiking neural models with Bayesian inference principles
