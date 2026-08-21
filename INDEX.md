@@ -7,6 +7,20 @@
   - Shows removing occipital/posterior-temporal electrodes reduces word-level gain by one-third
   - **Activation**: silent reading, EEG decoding, inner speech BCI, non-invasive brain-computer interface, contrastive decoder
 
+### Petri Net Description of Biological Neural Circuits for Fast Hardware Prototyping
+- [[petri-net-neural-circuits]] - Formal Petri net model for biological neural circuits with T-timed semantics enabling deadline-guaranteed real-time execution and analytical correspondence to LIF dynamics (arXiv: 2608.20147)
+  - Models neurons, synapses, and spikes as T-timed Petri net with formally verifiable timing semantics
+  - Enables deadline-guaranteed real-time execution independent of integration timestep
+  - Provides analytical mapping from biological parameters to Petri net parameters via Padé approximation
+  - **Activation**: Petri net neural circuits, T-timed Petri nets, formally verifiable neural models, deadline-guaranteed neuromorphic computing, real-time spiking neural networks
+
+### The Forward-Backward Disconnect: State Dynamics, Credit Assignment, and Biological Grounding in Neural Computation
+- [[forward-backward-disconnect-taxonomy]] - Comprehensive taxonomy analyzing asymmetry between diversified forward dynamics and concentrated credit assignment mechanisms across neural model families (arXiv: 2608.19995)
+  - Three-axis taxonomy: state-dynamics structure, credit-assignment mechanism, biological grounding (split forward/learning)
+  - Identifies forward-backward disconnect: forward computation diversified while scalable learning remains concentrated around backpropagation variants
+  - Uses architecture-learning configuration as atomic unit rather than architecture name alone
+  - **Activation**: forward-backward disconnect, neural computation taxonomy, state-dynamics structure, credit assignment mechanisms, biological grounding neural models
+
 ### Spike-based Belief Propagation in Nonlinear Dynamical Systems
 - [[spike-belief-propagation-nonlinear-dynamics]] - Bayesian control framework integrating spiking neural models with probabilistic inference for adaptive control (arXiv: 2608.19907)
   - Combines biologically inspired spiking dynamics with Bayesian inference for real-time state updates
