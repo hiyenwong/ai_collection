@@ -1,5 +1,15 @@
 ## 2026-08-21 - Neuroscience Research (Cron Job)
 
+### Intensity-based scattering correction enables in vivo two-photon imaging beyond 1 mm
+- [[deepfocus-two-photon-imaging]] - DeepFOCUS methodology for intensity-based scattering correction enabling in vivo two-photon imaging beyond 1 mm depth in intact mouse brain. Uses deep learning to compute intensity-modulation masks for real-time excitation light modulation during image acquisition. (arXiv: 2608.20224v1)
+  - Real-time intensity modulation directly improves image formation during acquisition
+  - Experimental validation prevents hallucination artifacts  
+  - Enables hippocampal imaging with existing two-photon systems
+  - **Activation**: deepfocus, two-photon imaging beyond 1mm, scattering correction microscopy
+
+
+## 2026-08-21 - Neuroscience Research (Cron Job)
+
 ### APEX: A Dual-Sparsity Accelerator for Precise and Efficient SNN Inference
 - [[apex-dual-sparsity-snn-accelerator]] - APEX dual-sparsity SNN accelerator with PASC-IF neurons guaranteeing ANN-equivalent accuracy. (arXiv: 2608.19046)
   - PASC-IF neuron guarantees mathematical equivalence between converted SNN and source ANN
