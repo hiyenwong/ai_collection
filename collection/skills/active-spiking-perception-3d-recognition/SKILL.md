@@ -1,74 +1,88 @@
 ---
 name: active-spiking-perception-3d-recognition
-description: "Active Spiking Perception for 3D recognition."
+description: "Active Spiking Perception (ASP) framework for anytime 3D point cloud recognition using membrane potential as belief state. Use when working with spiking neural networks for 3D recognition, active perception, or anytime inference with confidence-based early exit."
 metadata:
   arxiv_id: "2608.19232"
-  published: "2026-08-22"
-  authors: "Various Authors"
-  tags: [spiking-neural-networks, 3d-recognition, active-perception, membrane-potential, bayesian-filter]
+  published: "2026-08-04"
+  authors: "Jain, Akarsh; Pawa, Arya; Debnath, Ayush; Rawal, Smera; Chowdhury, Sayeed Shafayet"
+  tags: [spiking-neural-network, 3d-point-cloud, active-perception, anytime-inference, membrane-potential, belief-state]
 license: Complete terms in LICENSE.txt
 ---
 
-# Active Spiking Perception for 3D Recognition
+# Active Spiking Perception
 
-This skill implements the Active Spiking Perception (ASP) framework that recasts 3D recognition as an iterative decision process using the spiking neural network's membrane potential as a running belief for decision-making, as described in arXiv:2608.19232.
+## Overview
 
-## Core Concepts
+Active Spiking Perception (ASP) recasts 3D point cloud recognition as an iterative decision process where the spiking neural network's leaky integrate-and-fire (LIF) membrane potential serves as a running belief state over the class prediction. This approach enables:
 
-The framework introduces:
-1. **Membrane Potential as Belief**: Uses the leaky integrate-and-fire (LIF) membrane potential as a running belief over the class
-2. **Active Chunk Selection**: The membrane state selects the next chunk to observe from farthest-point-sampled point clouds
-3. **Confidence-Margin Early Exit**: Triggers early exit based on confidence thresholds
-4. **Bayesian Filter Interpretation**: Proves that leaky integration is equivalent to recursive log-posterior update of a Bayesian filter
+1. **Active chunk selection**: The membrane potential selects the next spatial chunk to observe
+2. **Confidence-margin early exit**: Triggers termination when confidence threshold is met
+3. **Anytime interface**: Provides certified performance at any observation budget
+4. **Energy efficiency**: Achieves 2.8x to 1.35x less energy consumption
 
-## Implementation Guidelines
+## Key Theoretical Contributions
 
-### Key Components
+### Bayesian Interpretation of Leaky Integration
+The paper proves that leaky integration in LIF neurons is equivalent to the recursive log-posterior update of a Bayesian filter. This provides a normative foundation for using membrane potential as a belief state.
 
-- **Slice-Selection Policy**: Lightweight policy that scores unvisited chunks based on membrane state and geometric descriptors
-- **End-to-End Training**: Trains through straight-through Gumbel-Softmax, reduces to argmax at inference
-- **Streaming State Carry-Forward**: Equivalent to prefix recomputation with bounded finite-precision drift
-- **Anytime Interface**: Provides certified anytime capability with linear cost in observations
+### Distribution-Free Selective Risk
+The exit rule attains distribution-free selective risk with no multiple-testing penalty at the stopping time, providing theoretical guarantees for the anytime interface.
 
-### Performance Characteristics
+### Streaming State Equivalence
+Streaming state carry-forward is exactly equivalent to prefix recomputation with bounded finite-precision drift, ensuring computational correctness.
 
-- **Accuracy**: 90.62% on ModelNet40, 93.28% on ModelNet10
-- **Energy Efficiency**: 2.8x to 1.35x less energy consumption based on threshold setting
-- **Transferability**: Works for dense prediction (83.21 mIoU on ShapeNetPart, 48.50 mIoU on S3DIS Area 5)
-- **Parameter Overhead**: Adds only ~2% of backbone parameters
+## Implementation Components
 
-## Usage Scenarios
+### Slice-Selection Policy
+- Scores unvisited farthest-point-sampled chunks from membrane state and geometric descriptors
+- Trains end-to-end through straight-through Gumbel-Softmax
+- Reduces to argmax at inference time
+- Adds only ~2% of backbone parameters
 
-- **3D Object Recognition**: Implement efficient 3D recognition systems with active perception
-- **Point Cloud Processing**: Process large point clouds with adaptive sampling strategies
-- **Energy-Efficient Inference**: Deploy spiking networks with certified anytime interfaces
-- **Bayesian Neural Networks**: Implement neural networks with built-in uncertainty quantification
+### Performance Results
+- **ModelNet40**: 90.62% accuracy
+- **ModelNet10**: 93.28% accuracy  
+- **ShapeNetPart**: 83.21 instance mIoU
+- **S3DIS Area 5**: 48.50 mIoU (first spiking results on this dataset)
 
-## Pitfalls and Considerations
+### Transferability
+The mechanism transfers unchanged to:
+- Dense prediction tasks
+- Foveated non-spiking transformers (fixation replaces chunk selection)
+- Cost remains exactly linear in observations
 
-- **Class Identifiability**: Some classes may be unidentifiable at certain crop sizes
-- **Geometric Descriptor Quality**: Performance depends on quality of precomputed geometric descriptors
-- **Threshold Calibration**: Energy-accuracy tradeoff requires careful threshold calibration
-- **Hardware Implementation**: Streaming state carry-forward requires careful finite-precision handling
+## Usage Guidelines
 
-## Validation
+### When to Apply ASP
+- 3D point cloud classification with resource constraints
+- Anytime inference requirements with confidence guarantees
+- Energy-efficient spiking neural network deployment
+- Active perception scenarios where observation order matters
 
-To validate the implementation:
-1. Reproduce ModelNet40 and ModelNet10 results
-2. Verify energy consumption measurements across different thresholds
-3. Test transfer to dense prediction tasks (ShapeNetPart, S3DIS)
-4. Compare against baseline spiking networks without active perception
+### Implementation Steps
+1. **Preprocess point clouds** into farthest-point-sampled chunks
+2. **Initialize backbone SNN** with LIF neurons
+3. **Implement slice-selection policy** using membrane potential and geometric features
+4. **Set confidence threshold** based on compute/energy budget requirements
+5. **Train end-to-end** with straight-through Gumbel-Softmax
+6. **Deploy with argmax selection** and early exit logic
 
-## References
-
-- Original paper: https://arxiv.org/abs/2608.19232
-- Related work on active perception and spiking neural networks
-- Bayesian filtering in neural computation
+### Pitfalls to Avoid
+- **Chunk size selection**: One S3DIS class is unidentifiable at certain crop sizes
+- **Geometric descriptor computation**: Precompute descriptors offline for efficiency
+- **Threshold calibration**: Balance between accuracy and energy savings empirically
+- **Finite-precision effects**: Monitor drift in streaming state carry-forward
 
 ## Activation Keywords
-
 - active spiking perception
-- membrane potential decision making
-- 3D recognition spiking networks
-- anytime spiking inference
-- Bayesian spiking filters
+- membrane potential belief state
+- anytime 3D recognition
+- spiking point cloud networks
+- confidence-margin early exit
+- slice-selection policy
+- leaky integrate-and-fire belief
+
+## References
+- Original paper: [arXiv:2608.19232](https://arxiv.org/abs/2608.19232)
+- Supplementary material: Appendices A-J (28 pages, 9 figures, 17 tables)
+- Related work: Spiking neural networks, active perception, Bayesian filtering
