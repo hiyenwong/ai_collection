@@ -1,3 +1,12 @@
+## 2026-08-21 - Neuroscience Research (Cron Job)
+
+### Spike-based Belief Propagation in Nonlinear Dynamical Systems
+- [[spike-based-belief-propagation-nonlinear-dynamics]] - Spike belief propagation for nonlinear dynamical systems. (arXiv: 2608.19907)
+  - Combines biologically inspired spiking neural model with Bayesian inference principles
+  - Provides real-time state updates and goal-directed action planning through spike-driven dynamics
+  - Demonstrated on mountain car parking problem with non-linear dynamics
+  - **Activation**: spike-based belief propagation, Bayesian spiking control, nonlinear dynamical systems control
+
 ## 2026-08-19 - Neuroscience Research (Cron Job)
 
 ### Learning Generalizable Reconstruction of High-Dimensional Neural Dynamics
@@ -7,7 +16,7 @@
   - Scalable from 400k to 900k samples with stable performance
   - **Activation**: pca-dmd, neural dynamics reconstruction, koopman operator neuroscience
 
-### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision
+### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision### Lonic: Algorithm-Hardware Co-Design for Energy-Efficient Fully Local Online SNN Training with INT4 Precision
 - [[lonic-algorithm-hardware-codesign]] - Lonic INT4 algorithm-hardware co-design for energy-efficient SNN training (arXiv: 2608.12500)
   - INT4 low-precision fully local online SNN training algorithms
   - Reconfigurable multiplier-free integer PE arrays for hardware efficiency
