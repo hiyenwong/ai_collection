@@ -14,9 +14,6 @@
   - Demonstrates real-time state updates and goal-directed action planning through spike-driven dynamics
   - Validated on mountain car parking problem with nonlinear dynamics
   - **Activation**: spike belief propagation, bayesian spiking control, nonlinear dynamical systems, probabilistic inference spiking, mountain car spiking
-
-## 2026-08-21 - Neuroscience Research (Cron Job)
-
 ### Decoding silent reading from non-invasive EEG
 - [[eeg-silent-reading-decoding]] - EEG-based silent reading decoding framework for scalable inner speech BCI using contrastive decoding (arXiv: 2608.20186)
   - Uses silent reading as scalable proxy task for inner speech decoding
@@ -31,7 +28,6 @@
   - Experimental validation prevents hallucination artifacts  
   - Enables hippocampal imaging with existing two-photon systems
   - **Activation**: deepfocus, two-photon imaging beyond 1mm, scattering correction microscopy
-
 
 ## 2026-08-21 - Neuroscience Research (Cron Job)
 
@@ -242,3 +238,33 @@
   - 30% model mismatch tolerance while maintaining constraint satisfaction
   - 40% sensor dropout resilience with recursive feasibility guarantees
   - **Activation**: distributionally robust mpc, partial observability control, wasserstein ambiguity sets
+
+## 2026-08-22 - Deep Learning Research (Cron Job)
+
+### Task-CoEvolve: Efficient Harness Optimization via Adaptive Validation
+- [[task-coevolve-adaptive-validation-task-selection]] - Adaptive validation for LLM harness optimization. (arXiv: 2608.20169)
+  - Uses adaptive validation set selection to optimize task-specific harnesses
+  - Dynamically adjusts validation criteria based on model performance
+  - Improves efficiency of LLM agent deployment and evaluation
+  - **Activation**: task-coevolve, adaptive validation, LLM harness optimization, task selection
+
+### Scale-Aware Pretraining of Time Series Foundation Models via Multi-Patch Token Alignment
+- [[scale-aware-pretraining-time-series-foundation]] - Scale-aware pretraining for time series foundation models. (arXiv: 2608.20005)
+  - Treats patch size as explicit notion of scale with contrastive-inspired alignment regularizer
+  - Uses hybrid masking strategy combining random and contiguous masking
+  - Achieves 9.2% improvement in MSE on LSTF benchmarks and 8.3% gain in GIFT-Eval MASE
+  - **Activation**: scale-aware pretraining, time series foundation models, multi-patch token alignment, hybrid masking, heterogeneous time series
+
+### RIPE++: Reinforced Keypoint Learning from Positive Pairs Only
+- [[ripe-plus-plus-reinforced-keypoint-learning]] - Reinforced keypoint learning from positive pairs only. (arXiv: 2608.19693)
+  - Derives both reward and penalty from single positive pair without contrasting against negatives
+  - Learns discriminative detectors and descriptors from positive image pairs alone
+  - Raises AUC@5 on MegaDepth1500 from 56.58 to 59.65
+  - **Activation**: ripe++, reinforced keypoint learning, positive pairs only, geometric consistency reward, weakly-supervised matching
+
+### Truncate Bad, Upweight Good: BoN-Style Distillation via Ranking
+- [[truncate-upweight-distillation-rank-based]] - TUP: Rank-based distillation via truncation and upweighting. (arXiv: 2608.19748)
+  - Truncates bottom portion of samples based on quality scores or rankings
+  - Upweights remaining high-quality samples proportionally to their ranks
+  - Flexible quality assessment through likelihood scores, reward model outputs, or human preferences
+  - **Activation**: TUP distillation, truncate upweight good, rank-based distillation, BoN-style distillation, quality-based truncation
