@@ -1,5 +1,13 @@
 ## 2026-08-21 - Neuroscience Research (Cron Job)
 
+### Decoding silent reading from non-invasive EEG
+- [[eeg-silent-reading-decoding]] - EEG-based silent reading decoding framework for scalable inner speech BCI using contrastive decoding (arXiv: 2608.20186)
+  - Uses silent reading as scalable proxy task for inner speech decoding
+  - Implements contrastive decoder to extract lexical and semantic information from EEG
+  - Addresses fundamental data problem in non-invasive inner speech BCI
+  - **Activation**: silent reading, EEG decoding, inner speech BCI, non-invasive brain-computer interface, contrastive decoder
+## 2026-08-21 - Neuroscience Research (Cron Job)
+
 ### Intensity-based scattering correction enables in vivo two-photon imaging beyond 1 mm
 - [[deepfocus-two-photon-imaging]] - DeepFOCUS methodology for intensity-based scattering correction enabling in vivo two-photon imaging beyond 1 mm depth in intact mouse brain. Uses deep learning to compute intensity-modulation masks for real-time excitation light modulation during image acquisition. (arXiv: 2608.20224v1)
   - Real-time intensity modulation directly improves image formation during acquisition
