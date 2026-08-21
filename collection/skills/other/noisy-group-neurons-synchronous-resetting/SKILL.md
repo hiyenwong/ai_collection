@@ -1,62 +1,108 @@
 ---
 name: noisy-group-neurons-synchronous-resetting
-description: Noisy Group Neuron model for high-performance SNNs.
-trigger_words:
-  - noisy group neurons
-  - synchronous resetting
-  - NGN model
-  - spiking neural networks
-  - neuromorphic computing
+description: "Noisy Group Neurons (NGN) framework for high-performance spiking neural networks using population-level synchronous resetting and neural stochasticity. Combines NGN model with backpropagation learning based on mean-field dynamics to address spatiotemporal information loss and gradient mismatching in deep SNNs. Use when implementing or analyzing SNNs with stochastic resonance, synchronous resetting, or mean-field learning approaches."
+metadata:
+  arxiv_id: "2608.17394"
+  published: "2026-08-18"
+  authors: "Yajie Zhai, Yanmei Kang, Meng Li, Zigang Huang"
+  tags: [spiking neural network, stochastic resonance, gradient mismatching, synchronous resetting, mean-field learning]
+license: Complete terms in LICENSE.txt
 ---
 
-# Noisy Group Neurons with Synchronous Resetting for High-Performance Spiking Neural Networks
+# Noisy Group Neurons for High-Performance Spiking Neural Networks
 
 ## Overview
-The Noisy Group Neuron (NGN) model incorporates population-level synchronous resetting and neural stochasticity as fundamental computational mechanisms to address the challenges of training deep Spiking Neural Networks (SNNs). This approach simultaneously tackles spatiotemporal information loss and gradient mismatching issues that have hindered SNN performance.
+
+The Noisy Group Neuron (NGN) framework addresses two fundamental challenges in training deep Spiking Neural Networks (SNNs):
+1. **Spatiotemporal information loss**: LIF neurons struggle to simultaneously encode spatial intensity distributions and temporal dynamics due to binary spike representation
+2. **Gradient mismatching**: Discrepancy between forward response and backward matching signals during backpropagation
+
+The NGN model incorporates **population-level synchronous resetting** and **neural stochasticity** as fundamental computational mechanisms, combined with mean-field dynamics for efficient backpropagation learning.
 
 ## Core Methodology
 
 ### Noisy Group Neuron (NGN) Model
-- **Population-level synchronous resetting**: Groups of neurons reset synchronously to preserve temporal information
-- **Neural stochasticity**: Incorporates noise as a computational resource rather than a nuisance
-- **Mean-field dynamics**: Enables backpropagation learning through mean-field approximations
 
-### NGN Framework Implementation
-1. **Model Architecture**: Replace standard LIF neurons with NGN units
-2. **Training Protocol**: Use backpropagation learning based on mean-field dynamics
-3. **Inference Optimization**: Leverage synchronous resetting for efficient temporal processing
+The NGN model consists of K sub-neurons that share common input but have independent noise:
 
-## Performance Results
-- **CIFAR10-DVS**: 87.35% accuracy within 10 inference time steps
-- **CIFAR-10, CIFAR-100, Tiny-ImageNet**: Competitive performance against state-of-the-art SNNs
-- **DVS-Gesture, N-Caltech101**: Strong results on neuromorphic datasets
+**Membrane Potential Dynamics:**
+```
+V_k^(t+1) = τ * H_k^t + I_0 + σ * η_k^t, 1 ≤ k ≤ K
+```
 
-## Applications
-- **High-performance neuromorphic computing**: Practical approach for real-world SNN deployment
-- **Event-driven vision systems**: Efficient processing of dynamic vision sensor data
-- **Low-latency inference**: Reduced time steps required for accurate predictions
+Where:
+- `H_k^t = V_k^t * (1 - O_k^t) + V_re * δ_(1,O_k^t)` (hard-resetting mechanism)
+- `O_k^t = Θ(V_k^t - V_th)` (spike output)
+- `η_k^t ~ N(0, 1)` (independent Gaussian noise for each sub-neuron)
+- `σ` is noise intensity parameter
+- `τ` is membrane time constant
+- `V_re` is reset potential (typically 0)
+
+### Mean-Field Learning
+
+Instead of tracking individual sub-neuron dynamics (computationally expensive), the framework uses mean-field approximation:
+
+**Averaged Membrane Potential:**
+```
+V̄(t + Δt) = (1 - e^(-Δt/τ_m)) * R_m * I_0 + V̄(t) * e^(-Δt/τ_m) + noise_term
+```
+
+This enables efficient backpropagation by treating the group response as a population probability rather than individual firing events.
+
+### Key Parameters
+
+- **Group Size (K)**: Number of sub-neurons in the group. Larger K provides better approximation to continuous response
+- **Noise Intensity (σ)**: Controls stochastic resonance effect. Optimal σ enhances information transmission
+- **Time Constant (τ)**: Membrane time constant affecting temporal integration
+- **Reset Potential (V_re)**: Typically set to 0 for hard-resetting
+- **Threshold (V_th)**: Spike threshold for all sub-neurons
 
 ## Implementation Guidelines
-1. Start with standard SNN architectures (e.g., ResNet-based SNNs)
-2. Replace individual neurons with NGN groups
-3. Implement synchronous resetting mechanism at group level
-4. Add controlled stochasticity to neuron dynamics
-5. Train using mean-field backpropagation
 
-## Key Advantages
-- **Addresses fundamental SNN limitations**: Simultaneously solves information loss and gradient issues
-- **Bio-inspired yet practical**: Combines biological plausibility with engineering efficiency
-- **Scalable to deep networks**: Enables training of deeper SNN architectures
-- **Hardware-friendly**: Compatible with existing neuromorphic hardware platforms
+### For SNN Training
+
+1. **Replace standard LIF neurons** with NGN units in your SNN architecture
+2. **Initialize group size K** based on computational budget (K=10-100 typical)
+3. **Tune noise intensity σ** using validation performance (start with σ=0.1-0.5)
+4. **Use mean-field gradients** for backpropagation instead of surrogate gradients
+5. **Apply synchronous resetting** across all K sub-neurons when any fires
+
+### Performance Benefits
+
+- Achieves **87.35% accuracy on CIFAR10-DVS** within only 10 inference time steps
+- Demonstrates superior performance on CIFAR-10, CIFAR-100, Tiny-ImageNet, DVS-Gesture, and N-Caltech101
+- Reduces spatiotemporal information loss through stochastic population coding
+- Mitigates gradient mismatching via mean-field learning framework
+
+## When to Use This Skill
+
+- Implementing high-performance SNNs for neuromorphic computing
+- Addressing gradient mismatching issues in deep SNN training
+- Working with event-based vision datasets (DVS, N-Caltech101)
+- Researching stochastic resonance in neural computation
+- Developing mean-field learning algorithms for SNNs
+- Analyzing population-level neural dynamics in SNNs
+
+## Pitfalls and Considerations
+
+- **Computational overhead**: NGN requires simulating K sub-neurons per unit, increasing memory and compute requirements
+- **Hyperparameter sensitivity**: Performance depends on careful tuning of K, σ, and τ parameters
+- **Implementation complexity**: Mean-field learning requires custom gradient computation
+- **Dataset dependency**: Benefits most pronounced on event-based datasets with temporal dynamics
 
 ## References
-- arXiv:2608.17394v1 (August 18, 2026)
-- Published in: Computer Vision (cs.CV)
 
-## Activation Conditions
-Use when:
-- Developing high-performance Spiking Neural Networks
-- Need to address spatiotemporal information loss in SNNs
-- Working with neuromorphic vision datasets (DVS, N-Caltech101)
-- Seeking bio-inspired alternatives to standard deep learning
-- Requiring low-latency inference with limited time steps
+- Original paper: [arXiv:2608.17394](https://arxiv.org/abs/2608.17394)
+- Related work on stochastic resonance in SNNs
+- Mean-field theory applications in neural networks
+- Population coding in biological neural systems
+
+## Activation Keywords
+
+- noisy group neuron
+- NGN framework
+- synchronous resetting SNN
+- mean-field SNN learning
+- stochastic resonance spiking
+- population-level SNN
+- gradient mismatching SNN

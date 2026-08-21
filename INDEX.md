@@ -43,14 +43,6 @@
 
 ## 2026-08-20 - Neuroscience Research (Cron Job)
 
-### Leveraging unlabelled data for generalizable neural population decoding
-- [[mojo-ssl-neural-decoding]] - MOJO framework for joint SSL-SL neural decoding using unlabelled data. (arXiv: 2607.14086)
-  - Combines self-supervised learning via masked autoencoding with supervised learning objectives
-  - Superior performance over purely SL-trained models, especially with limited labelled data
-  - Enables few-shot finetuning with minimal labelled data from new sessions
-  - Generalizes beyond spiking data to human electrocorticography during speech
-  - **Activation**: MOJO framework, masked autoencoder neural decoding, self-supervised spiking neural networks, joint SSL-SL neural training, unlabelled neural data decoding, few-shot neural decoding, cross-modal neural foundation models
-
 ### Spiking Sequence Machines and Transformers
 - [[spiking-transformer-unification]] - Theoretical framework unifying SNNs and Transformers through shared computational primitives. (arXiv: 2605.00662)
   - Shows both architectures implement five shared functional operations: encoding, context maintenance, associative retrieval, storage, and decoding
@@ -101,6 +93,7 @@
   - Direct HR source conditioning prevents hallucination
   - Completes 4K editing in 61 seconds on single GPU
   - **Activation**: editbridge, ultra-hdr, image editing, diffusion bridge
+
 ## 2026-08-20 - Systems Engineering Research (Cron Job)
 
 ### Extending and Unifying the Fundamental Tasks of Hamilton-Jacobi Reachability Analysis
@@ -116,3 +109,72 @@
   - Enables transformation of ODEs from real domain to Laplace domain in GA
   - Direct application to electrical circuit modeling and analysis
   - **Activation**: geometric algebra Laplace transform, GA system modeling, electrical circuit GA analysis
+
+## 2026-08-21 - Neuroscience Research (Cron Job)
+
+### Leveraging unlabelled data for generalizable neural population decoding
+- [[mojo-ssl-neural-decoding]] - MOJO framework for joint SSL-SL neural decoding using unlabelled data. (arXiv: 2607.14086)
+  - Combines self-supervised learning via masked autoencoding with supervised learning objectives
+  - Superior performance over purely SL-trained models, especially with limited labelled data
+  - Enables few-shot finetuning with minimal labelled data from new sessions
+  - Generalizes beyond spiking data to human electrocorticography during speech
+  - **Activation**: MOJO framework, masked autoencoder neural decoding, self-supervised spiking neural networks, joint SSL-SL neural training, unlabelled neural data decoding, few-shot neural decoding, cross-modal neural foundation models
+
+### Accurate Decoding of Natural Sentences from Non-Invasive Brain Recordings
+- [[brain2qwerty-v2-noninvasive-decoding]] - Brain2Qwerty v2: non-invasive MEG sentence decoding (arXiv: 2608.18114)
+  - Decodes natural sentences from real-time MEG with 39% average WER, best participant achieves 50% accuracy with ≤1 word error
+  - Leverages character/word/sentence-level representations and AI-driven pipeline refinement via LLM fine-tuning
+  - Performance log-linearly improves with data volume, bridging gap with intracranial approaches
+  - **Activation**: brain2qwerty, non-invasive bci, meg decoding, brain-to-text
+
+### Transcranial magnetic stimulation of visual-motion area V5/MT modulates sensory thalamus responses during visual speech recognition
+- [[tms-v5-mt-modulates-thalamus-visual-speech]] - TMS of V5/MT modulates thalamus during visual speech recognition. (arXiv: 2608.19034)
+  - Demonstrates causal role of visual-motion area V5/MT in modulating lateral geniculate nucleus (LGN) responses during visual speech recognition
+  - Inhibitory TMS over V5/MT significantly reduced LGN signal modulation between visual speech and color tasks
+  - V5/MT stimulation reduced task-dependent functional connectivity between V5/MT and LGN
+  - **Activation**: transcranial magnetic stimulation, visual speech recognition, corticothalamic feedback, lateral geniculate nucleus, V5/MT area, fMRI thalamus
+
+### The Role of Grid Cells in Reducing Spatial Aliasing in Hippocampal Place Representations
+- [[grid-cells-reduce-spatial-aliasing-hippocampal-place]] - Grid cells reduce spatial aliasing in place representations. (arXiv: 2608.18569)
+  - Grid cells achieve 94-99% reduction in spatial aliasing compared to BVC-only baseline
+  - Greatest improvement occurs in environments with highest visual symmetry
+  - Demonstrates complementary information from grid cells vs boundary-based inputs
+  - **Activation**: grid cells, place cells, spatial aliasing, boundary vector cells, hippocampal representations, spatial navigation
+
+## 2026-08-21 - Deep Learning Research (Cron Job)
+
+### MLREF: Efficient Module Reuse for Reward Design in Reinforcement Learning via Large Language Models
+- [[mlref-module-reward-evolution-framework]] - MLREF framework for efficient module reuse in reward design using LLMs to evolve specialized reward modules. (arXiv: 2608.18827)
+  - Evolves specialized reward modules using LLMs instead of handcrafting or end-to-end learning
+  - Enables modular composition of reward functions for complex multi-objective tasks
+  - Achieves superior performance on WebArena benchmark compared to standard approaches
+  - **Activation**: mlref, reward design, reinforcement learning, module reuse, llm reward evolution
+
+### Beyond Teacher Likelihood: Group-Calibrated On-Policy Distillation for Long-Context Reasoning
+- [[gc-opd-group-calibrated-on-policy-distillation]] - Group-Calibrated On-Policy Distillation (GC-OPD) framework addressing teacher-student distribution shift in long-context reasoning. (arXiv: 2608.19181)
+  - Addresses distribution shift between teacher and student in long-context reasoning tasks
+  - Introduces group calibration to maintain alignment across different context lengths
+  - Improves performance on long-context benchmarks like LongBench and GovReports
+  - **Activation**: gc-opd, on-policy distillation, long-context reasoning, group calibration, teacher-student alignment
+
+### Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation
+- [[open-mopd-multi-teacher-on-policy-distillation]] - Open-MOPD framework for diagnosing and fixing capability imbalance in multi-teacher on-policy distillation. (arXiv: 2608.19098)
+  - Diagnoses capability integration gap where standard M-OPD captures only 35.6% of available headroom
+  - Implements token-share balancing, gap-aware dynamic budget allocation, and student reward refresh
+  - Improves headroom recovery from 35.6% to 83.4% in a single deployable student
+  - **Activation**: open-mopd, multi-teacher distillation, capability imbalance, on-policy distillation, generalist student
+
+### Monroe: A Molecular Foundation Model for In-Context Probabilistic Inference
+- [[monroe-molecular-foundation-model]] - Monroe molecular foundation model for in-context probabilistic inference using prior-data-fitted models (TabPFN). (arXiv: 2608.18982)
+  - Pre-trained on 81+ million molecules from PM6 quantum chemistry dataset
+  - Uses enhanced graph representation with stereochemistry awareness
+  - Integrates with TabPFN for in-context few-shot learning without fine-tuning
+  - Achieves significant improvements on activity cliff benchmarks for drug discovery
+  - **Activation**: monroe, molecular foundation model, in-context learning, TabPFN, bioassay prediction
+## 2026-08-21 - Systems Engineering Research (Cron Job)
+
+### Distributionally Robust MPC for Networked Control Systems with Partial Observability
+- [[distributionally-robust-mpc-partial-observability]] - Distributionally robust MPC methodology combining Wasserstein ambiguity sets with recursive feasibility guarantees for systems with partial observability and model uncertainty (arXiv: 2608.05103)
+  - 30% model mismatch tolerance while maintaining constraint satisfaction
+  - 40% sensor dropout resilience with recursive feasibility guarantees
+  - **Activation**: distributionally robust mpc, partial observability control, wasserstein ambiguity sets
