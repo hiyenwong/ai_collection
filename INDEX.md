@@ -21,6 +21,14 @@
   - Achieves 90.62% on ModelNet40 while adding only ~2% backbone parameters
   - **Activation**: active spiking perception, membrane potential decision making, 3D recognition spiking networks, anytime spiking inference, Bayesian spiking filters
 
+### Multi-Source Wasserstein Distributionally Robust Graph Learning
+- [[ms-wdro-graph-learning]] - Multi-Source Wasserstein Distributionally Robust Graph Learning framework for heterogeneous brain connectivity learning using Wasserstein barycenter fusion (arXiv: 2608.19914)
+  - Fuses heterogeneous source-domain data via Wasserstein barycenter to preserve intrinsic geometry of each source
+  - Builds ambiguity ball around barycenter and minimizes worst-case risk for robustness
+  - Provides non-asymptotic guarantees with parametric rate decay and logarithmic source dependence
+  - Validated on ABIDE~I neuroimaging dataset, outperforms 7 baselines in sample-scarce regime
+  - **Activation**: MS-WDRO, multi-source graph learning, Wasserstein graph fusion, heterogeneous brain networks, distributionally robust graph learning
+
 ## 2026-08-21 - Neuroscience Research (Cron Job)
 
 ### The Connectome and the Quest for the Functional Logic of the Drosophila Early Olfactory System
