@@ -1,5 +1,14 @@
 ## 2026-08-21 - Neuroscience Research (Cron Job)
 
+### Spike-based Belief Propagation in Nonlinear Dynamical Systems
+- [[spike-belief-propagation-nonlinear-dynamics]] - Bayesian control framework integrating spike-based dynamics with probabilistic inference for adaptive control in uncertain environments (arXiv: 2608.19907)
+  - Combines biologically inspired spiking neural models with Bayesian inference principles
+  - Demonstrates real-time state updates and goal-directed action planning through spike-driven dynamics
+  - Validated on mountain car parking problem with nonlinear dynamics
+  - **Activation**: spike belief propagation, bayesian spiking control, nonlinear dynamical systems, probabilistic inference spiking, mountain car spiking
+
+## 2026-08-21 - Neuroscience Research (Cron Job)
+
 ### Decoding silent reading from non-invasive EEG
 - [[eeg-silent-reading-decoding]] - EEG-based silent reading decoding framework for scalable inner speech BCI using contrastive decoding (arXiv: 2608.20186)
   - Uses silent reading as scalable proxy task for inner speech decoding
