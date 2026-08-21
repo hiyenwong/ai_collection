@@ -1,3 +1,12 @@
+## 2026-08-22 - Neuroscience Research (Cron Job)
+
+### Active Spiking Perception
+- [[active-spiking-perception-3d-recognition]] - Active Spiking Perception framework for 3D recognition using membrane potential as decision-making mechanism (arXiv: 2608.19232)
+  - Uses leaky integrate-and-fire (LIF) membrane potential as running belief over class for active chunk selection
+  - Provides certified anytime interface with confidence-margin early exit and linear observation cost
+  - Achieves 90.62% on ModelNet40 while adding only ~2% backbone parameters
+  - **Activation**: active spiking perception, membrane potential decision making, 3D recognition spiking networks, anytime spiking inference, Bayesian spiking filters
+
 ## 2026-08-21 - Neuroscience Research (Cron Job)
 
 ### The Connectome and the Quest for the Functional Logic of the Drosophila Early Olfactory System
@@ -6,57 +15,6 @@
   - Requires explicit modeling of natural odorant environment with semantics and syntax for associative memory operations
   - Treats circuit as real-time, stage-by-stage cascade of giant local feedback loops respecting causality
   - **Activation**: drosophila olfactory, fruit fly connectome, olfactory feedback circuits, functional logic neural circuits
-## 2026-08-21 - Neuroscience Research (Cron Job)
-
-### Spike-based Belief Propagation in Nonlinear Dynamical Systems
-- [[spike-belief-propagation-nonlinear-dynamics]] - Bayesian control framework integrating spike-based dynamics with probabilistic inference for adaptive control in uncertain environments (arXiv: 2608.19907)
-  - Combines biologically inspired spiking neural models with Bayesian inference principles
-  - Demonstrates real-time state updates and goal-directed action planning through spike-driven dynamics
-  - Validated on mountain car parking problem with nonlinear dynamics
-  - **Activation**: spike belief propagation, bayesian spiking control, nonlinear dynamical systems, probabilistic inference spiking, mountain car spiking
-### Decoding silent reading from non-invasive EEG
-- [[eeg-silent-reading-decoding]] - EEG-based silent reading decoding framework for scalable inner speech BCI using contrastive decoding (arXiv: 2608.20186)
-  - Uses silent reading as scalable proxy task for inner speech decoding
-  - Implements contrastive decoder to extract lexical and semantic information from EEG
-  - Addresses fundamental data problem in non-invasive inner speech BCI
-  - **Activation**: silent reading, EEG decoding, inner speech BCI, non-invasive brain-computer interface, contrastive decoder
-## 2026-08-21 - Neuroscience Research (Cron Job)
-
-### Intensity-based scattering correction enables in vivo two-photon imaging beyond 1 mm
-- [[deepfocus-two-photon-imaging]] - DeepFOCUS methodology for intensity-based scattering correction enabling in vivo two-photon imaging beyond 1 mm depth in intact mouse brain. Uses deep learning to compute intensity-modulation masks for real-time excitation light modulation during image acquisition. (arXiv: 2608.20224v1)
-  - Real-time intensity modulation directly improves image formation during acquisition
-  - Experimental validation prevents hallucination artifacts  
-  - Enables hippocampal imaging with existing two-photon systems
-  - **Activation**: deepfocus, two-photon imaging beyond 1mm, scattering correction microscopy
-
-## 2026-08-21 - Neuroscience Research (Cron Job)
-
-### APEX: A Dual-Sparsity Accelerator for Precise and Efficient SNN Inference
-- [[apex-dual-sparsity-snn-accelerator]] - APEX dual-sparsity SNN accelerator with PASC-IF neurons guaranteeing ANN-equivalent accuracy. (arXiv: 2608.19046)
-  - PASC-IF neuron guarantees mathematical equivalence between converted SNN and source ANN
-  - Exploits dual sparsity in both input spikes and weights through fully temporal-parallel dataflow
-  - Three-stage PASC-IF datapath as fully combinational circuit with no additional latency cost
-  - Achieves up to 3% higher accuracy than standard IF neurons with 40% energy reduction
-  - **Activation**: APEX accelerator, dual-sparsity SNN, PASC-IF neuron, precise ANN-SNN conversion, SNN hardware acceleration, neuromorphic computing, energy-efficient SNN inference
-
-## 2026-08-21 - Neuroscience Research (Cron Job)
-
-### Multi-Source Wasserstein Distributionally Robust Graph Learning
-- [[ms-wdro-graph-learning]] - MS-WDRO framework for brain connectivity with heterogeneous multi-site data using Wasserstein barycenter fusion. (arXiv: 2608.19914)
-  - Fuses heterogeneous source distributions via weighted Wasserstein barycenter as geometrically principled nominal distribution
-  - Provides finite-sample concentration bounds, pooling bias lower bounds, and out-of-sample excess risk guarantees
-  - Demonstrated on ABIDE I multi-site functional neuroimaging dataset with superior graph recovery accuracy
-  - **Activation**: multi-source graph learning, Wasserstein barycenter brain connectivity, distributionally robust graph inference, heterogeneous neuroimaging analysis, MS-WDRO framework, ABIDE multi-site analysis
-
-## 2026-08-21 - Neuroscience Research (Cron Job)
-
-### Spike-based Belief Propagation in Nonlinear Dynamical Systems
-- [[spike-belief-propagation-nonlinear-dynamics]] - Spike belief propagation for nonlinear dynamical systems. (arXiv: 2608.19907)
-  - Combines biologically inspired spiking neural model with Bayesian inference principles
-  - Provides real-time state updates and goal-directed action planning through spike-driven dynamics
-  - Demonstrated on mountain car parking problem with non-linear dynamics
-  - **Activation**: spike-based belief propagation, Bayesian spiking control, nonlinear dynamical systems control
-
 ## 2026-08-19 - Neuroscience Research (Cron Job)
 
 ### Learning Generalizable Reconstruction of High-Dimensional Neural Dynamics
@@ -82,23 +40,6 @@
   - Enables more energy-efficient implementation than comparable ANNs while reliably learning optimal thresholds
   - Provides interpretable policy representation for event-driven IoT systems with randomly occurring wake-up events
   - **Activation**: threshold-based spiking neural network, event-driven status update, age of information optimization, energy-efficient IoT, SNN threshold policy, event-driven IoT, information freshness energy trade-off, distributed event-driven systems, interpretable control policies, MDP threshold policies
-
-## 2026-08-19 - Neuroscience Research (Cron Job)
-
-### Noisy group neurons with synchronous resetting for high-performance spiking neural networks
-- [[noisy-group-neurons-synchronous-resetting]] - NGN model with population-level synchronous resetting and neural stochasticity for high-performance SNNs. (arXiv: 2608.17394)
-  - Introduces Noisy Group Neuron (NGN) model that simultaneously addresses spatiotemporal information loss and gradient mismatching in deep SNNs
-  - Achieves 87.35% accuracy on CIFAR10-DVS within only 10 inference time steps through mean-field backpropagation
-  - Incorporates neural stochasticity as computational resource and enables practical high-performance neuromorphic computing
-  - **Activation**: noisy group neurons, NGN model, synchronous resetting, SNN training, gradient mismatching, neuromorphic computing, arxiv:2608.17394
-
-### Phase-based spatial ordinal patterns for characterizing oscillatory dynamics
-- [[phase-based-spatial-ordinal-patterns-oscillatory-dynamics]] - Spatial ordinal patterns for oscillatory dynamics. (arXiv: 2608.17196)
-  - Introduces framework based on spatial ordinal patterns acting directly on phase rather than amplitude
-  - Defines spatial permutation entropy that quantifies diversity of spatiotemporal patterns at each time point
-  - Distinguishes phase-locked states with identical global synchronization but distinct spatial organization
-  - Successfully applied to resting-state EEG recordings to distinguish eyes-open vs eyes-closed conditions within individuals
-  - **Activation**: phase-based spatial ordinal patterns, spatial permutation entropy, oscillatory dynamics analysis, brain network phase analysis, EEG phase synchronization, transient dynamics detection, regime transition analysis
 
 ## 2026-08-20 - Neuroscience Research (Cron Job)
 
@@ -168,37 +109,6 @@
   - Enables transformation of ODEs from real domain to Laplace domain in GA
   - Direct application to electrical circuit modeling and analysis
   - **Activation**: geometric algebra Laplace transform, GA system modeling, electrical circuit GA analysis
-
-## 2026-08-21 - Neuroscience Research (Cron Job)
-
-### Leveraging unlabelled data for generalizable neural population decoding
-- [[mojo-ssl-neural-decoding]] - MOJO framework for joint SSL-SL neural decoding using unlabelled data. (arXiv: 2607.14086)
-  - Combines self-supervised learning via masked autoencoding with supervised learning objectives
-  - Superior performance over purely SL-trained models, especially with limited labelled data
-  - Enables few-shot finetuning with minimal labelled data from new sessions
-  - Generalizes beyond spiking data to human electrocorticography during speech
-  - **Activation**: MOJO framework, masked autoencoder neural decoding, self-supervised spiking neural networks, joint SSL-SL neural training, unlabelled neural data decoding, few-shot neural decoding, cross-modal neural foundation models
-
-### Accurate Decoding of Natural Sentences from Non-Invasive Brain Recordings
-- [[brain2qwerty-v2-noninvasive-decoding]] - Brain2Qwerty v2: non-invasive MEG sentence decoding (arXiv: 2608.18114)
-  - Decodes natural sentences from real-time MEG with 39% average WER, best participant achieves 50% accuracy with ≤1 word error
-  - Leverages character/word/sentence-level representations and AI-driven pipeline refinement via LLM fine-tuning
-  - Performance log-linearly improves with data volume, bridging gap with intracranial approaches
-  - **Activation**: brain2qwerty, non-invasive bci, meg decoding, brain-to-text
-
-### Transcranial magnetic stimulation of visual-motion area V5/MT modulates sensory thalamus responses during visual speech recognition
-- [[tms-v5-mt-modulates-thalamus-visual-speech]] - TMS of V5/MT modulates thalamus during visual speech recognition. (arXiv: 2608.19034)
-  - Demonstrates causal role of visual-motion area V5/MT in modulating lateral geniculate nucleus (LGN) responses during visual speech recognition
-  - Inhibitory TMS over V5/MT significantly reduced LGN signal modulation between visual speech and color tasks
-  - V5/MT stimulation reduced task-dependent functional connectivity between V5/MT and LGN
-  - **Activation**: transcranial magnetic stimulation, visual speech recognition, corticothalamic feedback, lateral geniculate nucleus, V5/MT area, fMRI thalamus
-
-### The Role of Grid Cells in Reducing Spatial Aliasing in Hippocampal Place Representations
-- [[grid-cells-reduce-spatial-aliasing-hippocampal-place]] - Grid cells reduce spatial aliasing in place representations. (arXiv: 2608.18569)
-  - Grid cells achieve 94-99% reduction in spatial aliasing compared to BVC-only baseline
-  - Greatest improvement occurs in environments with highest visual symmetry
-  - Demonstrates complementary information from grid cells vs boundary-based inputs
-  - **Activation**: grid cells, place cells, spatial aliasing, boundary vector cells, hippocampal representations, spatial navigation
 
 ## 2026-08-21 - Deep Learning Research (Cron Job)
 
