@@ -171,3 +171,10 @@
   - Integrates with TabPFN for in-context few-shot learning without fine-tuning
   - Achieves significant improvements on activity cliff benchmarks for drug discovery
   - **Activation**: monroe, molecular foundation model, in-context learning, TabPFN, bioassay prediction
+## 2026-08-21 - Systems Engineering Research (Cron Job)
+
+### Distributionally Robust MPC for Networked Control Systems with Partial Observability
+- [[distributionally-robust-mpc-partial-observability]] - Distributionally robust MPC methodology combining Wasserstein ambiguity sets with recursive feasibility guarantees for systems with partial observability and model uncertainty (arXiv: 2608.05103)
+  - 30% model mismatch tolerance while maintaining constraint satisfaction
+  - 40% sensor dropout resilience with recursive feasibility guarantees
+  - **Activation**: distributionally robust mpc, partial observability control, wasserstein ambiguity sets
