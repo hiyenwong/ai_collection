@@ -1,11 +1,22 @@
 ## 2026-08-21 - Neuroscience Research (Cron Job)
 
+### APEX: A Dual-Sparsity Accelerator for Precise and Efficient SNN Inference
+- [[apex-dual-sparsity-snn-accelerator]] - APEX dual-sparsity SNN accelerator with PASC-IF neurons guaranteeing ANN-equivalent accuracy. (arXiv: 2608.19046)
+  - PASC-IF neuron guarantees mathematical equivalence between converted SNN and source ANN
+  - Exploits dual sparsity in both input spikes and weights through fully temporal-parallel dataflow
+  - Three-stage PASC-IF datapath as fully combinational circuit with no additional latency cost
+  - Achieves up to 3% higher accuracy than standard IF neurons with 40% energy reduction
+  - **Activation**: APEX accelerator, dual-sparsity SNN, PASC-IF neuron, precise ANN-SNN conversion, SNN hardware acceleration, neuromorphic computing, energy-efficient SNN inference
+
+## 2026-08-21 - Neuroscience Research (Cron Job)
+
 ### Multi-Source Wasserstein Distributionally Robust Graph Learning
 - [[multi-source-wasserstein-distributionally-robust-graph-learning]] - MS-WDRO framework for brain connectivity with heterogeneous multi-site data using Wasserstein barycenter fusion. (arXiv: 2608.19914)
   - Fuses heterogeneous source distributions via weighted Wasserstein barycenter as geometrically principled nominal distribution
   - Provides finite-sample concentration bounds, pooling bias lower bounds, and out-of-sample excess risk guarantees
   - Demonstrated on ABIDE I multi-site functional neuroimaging dataset with superior graph recovery accuracy
   - **Activation**: multi-source graph learning, Wasserstein barycenter brain connectivity, distributionally robust graph inference, heterogeneous neuroimaging analysis, MS-WDRO framework, ABIDE multi-site analysis
+
 ## 2026-08-21 - Neuroscience Research (Cron Job)
 
 ### Spike-based Belief Propagation in Nonlinear Dynamical Systems
@@ -188,6 +199,7 @@
   - Integrates with TabPFN for in-context few-shot learning without fine-tuning
   - Achieves significant improvements on activity cliff benchmarks for drug discovery
   - **Activation**: monroe, molecular foundation model, in-context learning, TabPFN, bioassay prediction
+
 ## 2026-08-21 - Systems Engineering Research (Cron Job)
 
 ### Distributionally Robust MPC for Networked Control Systems with Partial Observability
