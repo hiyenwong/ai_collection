@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06031v1-dynamic-graph-prompting-via-topology-routed-mixed
 description: 'Dynamic Graph Prompting via Topology-Routed Mixed-Curvature Experts (arXiv: 2608.06031v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Quanxin Wang, Xuanting Xie, Bingheng Li, Xingtong Yu, Shuo Wang, Ruiyi Fang, Zhao Kang",
     "url": "http://arxiv.org/abs/2608.06031v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Dynamic Graph Prompting via Topology-Routed Mixed-Curvature Experts
 

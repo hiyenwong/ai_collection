@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06294v1-quantimedai-quantum-enhanced-time-series-model-gui
 description: 'QuanTiMedAI: Quantum-Enhanced Time-Series Model guided by Agentic AI for Cardiac Arrest Mortality Prediction (arXiv: 2608.06294v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Mutasim Fuad Sarker, Adiba Rahman Namira, Wafa Binte Alam, Md Adnan Arefeen, Mahzabeen Emu, Sumaiya Tabassum Nimi",
     "url": "http://arxiv.org/abs/2608.06294v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # QuanTiMedAI: Quantum-Enhanced Time-Series Model guided by Agentic AI for Cardiac Arrest Mortality Prediction
 

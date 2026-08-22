@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06012v1-herald-counterfactual-audits-and-minimal-repairs-f
 description: 'HERALD: Counterfactual Audits and Minimal Repairs for Proof-of-Retrieval Rewards (arXiv: 2608.06012v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zhuowen Liu, Bohan Cui, YinShang Guo, Yuting Wang, Hao Li",
     "url": "http://arxiv.org/abs/2608.06012v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # HERALD: Counterfactual Audits and Minimal Repairs for Proof-of-Retrieval Rewards
 

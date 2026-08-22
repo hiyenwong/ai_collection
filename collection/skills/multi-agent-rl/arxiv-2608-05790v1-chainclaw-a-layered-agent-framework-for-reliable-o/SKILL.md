@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05790v1-chainclaw-a-layered-agent-framework-for-reliable-o
 description: 'ChainClaw: A Layered Agent Framework for Reliable On-Chain Execution (arXiv: 2608.05790v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Jiacheng Wei, Zhaoxin Fan, Xin Wen, Yuqin Lan, Dongrun Li, Wenjun Wu, Faguo Wu, Xiao Zhang",
     "url": "http://arxiv.org/abs/2608.05790v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # ChainClaw: A Layered Agent Framework for Reliable On-Chain Execution
 

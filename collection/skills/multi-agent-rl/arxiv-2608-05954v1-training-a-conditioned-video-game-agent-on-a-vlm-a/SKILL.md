@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05954v1-training-a-conditioned-video-game-agent-on-a-vlm-a
 description: 'Training a Conditioned Video Game Agent on a VLM Annotated Dataset (arXiv: 2608.05954v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Katrin Schmid, Iuri Frosio",
     "url": "http://arxiv.org/abs/2608.05954v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Training a Conditioned Video Game Agent on a VLM Annotated Dataset
 

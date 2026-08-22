@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06161v1-iarcs-iterative-agentic-rl-for-controllable-3d-sce
 description: 'iARCS: Iterative Agentic RL for Controllable 3D Scene Generation (arXiv: 2608.06161v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Saugat Adhikari, Ashok Prasad Neupane, Pramish Paudel, Ajad Chhatkuli, Danda Pani Paudel",
     "url": "http://arxiv.org/abs/2608.06161v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # iARCS: Iterative Agentic RL for Controllable 3D Scene Generation
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06366v1-tracing-the-heart-an-evidence-linked-pipeline-for
 description: 'Tracing the Heart: An Evidence-Linked Pipeline for Heart-Failure Feature Engineering (arXiv: 2608.06366v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Soorya Ram Shimgekar, Michelle Hu, Dorisa Shehi, Daniel Kang, Roy Ka-Wei Lee, Koustuv Saha, Christian Poellabauer, Christopher Lee, Sajeev Singh, Piyum Zonooz, Navin Kumar, Zeeshan Ahmed, Priyadarshini Kachroo",
     "url": "http://arxiv.org/abs/2608.06366v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Tracing the Heart: An Evidence-Linked Pipeline for Heart-Failure Feature Engineering
 

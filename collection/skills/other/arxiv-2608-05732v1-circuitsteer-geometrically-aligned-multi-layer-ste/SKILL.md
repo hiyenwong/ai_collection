@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05732v1-circuitsteer-geometrically-aligned-multi-layer-ste
 description: 'CircuitSteer: Geometrically Aligned Multi-Layer Steering via Sparse Autoencoder Circuits (arXiv: 2608.05732v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Mehrshad Saadatinia, Parsa Razmara, Ardalan Aryashad, Ali Abbasi, Seyedarmin Azizi",
     "url": "http://arxiv.org/abs/2608.05732v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # CircuitSteer: Geometrically Aligned Multi-Layer Steering via Sparse Autoencoder Circuits
 

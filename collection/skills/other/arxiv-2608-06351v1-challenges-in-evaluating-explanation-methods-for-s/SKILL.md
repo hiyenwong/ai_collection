@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06351v1-challenges-in-evaluating-explanation-methods-for-s
 description: 'Challenges in Evaluating Explanation Methods for Static and Evolving Data (arXiv: 2608.06351v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Jerzy Stefanowski",
     "url": "http://arxiv.org/abs/2608.06351v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Challenges in Evaluating Explanation Methods for Static and Evolving Data
 

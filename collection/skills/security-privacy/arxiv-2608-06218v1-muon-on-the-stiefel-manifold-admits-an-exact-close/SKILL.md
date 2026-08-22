@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06218v1-muon-on-the-stiefel-manifold-admits-an-exact-close
 description: 'Muon on the Stiefel Manifold Admits an Exact Closed-Form Update (arXiv: 2608.06218v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Mikhail Solonko, Molozhavenko Alexander, Maxim Rakhuba",
     "url": "http://arxiv.org/abs/2608.06218v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Muon on the Stiefel Manifold Admits an Exact Closed-Form Update
 

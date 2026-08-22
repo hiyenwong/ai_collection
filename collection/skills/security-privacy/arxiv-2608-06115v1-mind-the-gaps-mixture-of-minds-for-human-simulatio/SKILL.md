@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06115v1-mind-the-gaps-mixture-of-minds-for-human-simulatio
 description: 'Mind the Gaps: Mixture-of-Minds for Human Simulation (arXiv: 2608.06115v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Pranav Dahiya",
     "url": "http://arxiv.org/abs/2608.06115v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Mind the Gaps: Mixture-of-Minds for Human Simulation
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06027v1-formbharo-designing-and-evaluating-a-voice-agent-f
 description: 'FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India (arXiv: 2608.06027v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Aman Dalmia, Sanskriti Midha, Jigar Doshi",
     "url": "http://arxiv.org/abs/2608.06027v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India
 

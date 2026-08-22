@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05813v1-cautious-context-steering-for-language-model-perso
 description: 'Cautious Context Steering for Language Model Personalization (arXiv: 2608.05813v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Gihoon Kim, Jeyoung Lee, Suhan Woo, Sekwon Oh, Minsu Jeon, Hyounsoo Han, Euntai Kim",
     "url": "http://arxiv.org/abs/2608.05813v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Cautious Context Steering for Language Model Personalization
 

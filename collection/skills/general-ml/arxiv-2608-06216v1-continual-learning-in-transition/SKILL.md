@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06216v1-continual-learning-in-transition
 description: 'Continual Learning in Transition (arXiv: 2608.06216v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zhiyan Hou, Dan Zhang, Tao Feng, Liyuan Wang, Wei Li, Xiangzhao Hao, Hongyan An, Junfeng Fang, Haokai Ma, Zhaohui Xu, Haiyun Guo, Jinqiao Wang, Tat-Seng Chua",
     "url": "http://arxiv.org/abs/2608.06216v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Continual Learning in Transition
 

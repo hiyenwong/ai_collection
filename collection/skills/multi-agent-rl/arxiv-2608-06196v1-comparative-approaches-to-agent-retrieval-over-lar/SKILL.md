@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06196v1-comparative-approaches-to-agent-retrieval-over-lar
 description: 'Comparative Approaches to Agent Retrieval over Large Skill Libraries (arXiv: 2608.06196v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Indivara Kolluru, Nathan Sportsman",
     "url": "http://arxiv.org/abs/2608.06196v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Comparative Approaches to Agent Retrieval over Large Skill Libraries
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05798v1-kvae-family-of-tokenizers-for-multimodal-generativ
 description: 'KVAE: Family of Tokenizers for Multimodal Generative Models (arXiv: 2608.05798v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Andrey Shutkin, Denis Parkhomenko, Ivan Kirillov, Kirill Chernyshev, Kirill Malakhov, Ilia Vasiliev, Ilia Trushkin, Valeriya Kobenko, David Chikovani, Alexander Ivanov, Azat Saginbaev, Egor Silvestrov, Ivan Mikheev, Konstantin Zakharov",
     "url": "http://arxiv.org/abs/2608.05798v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # KVAE: Family of Tokenizers for Multimodal Generative Models
 

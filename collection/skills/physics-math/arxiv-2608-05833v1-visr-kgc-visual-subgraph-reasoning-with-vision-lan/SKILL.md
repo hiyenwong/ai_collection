@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05833v1-visr-kgc-visual-subgraph-reasoning-with-vision-lan
 description: 'ViSR-KGC: Visual Subgraph Reasoning with Vision-Language Models for Multimodal Knowledge Graph Completion (arXiv: 2608.05833v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Jiafan Li, Mengxue Yang, Jiaqi Zhu, Liang Chang, Ying Li, Hongan Wang",
     "url": "http://arxiv.org/abs/2608.05833v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # ViSR-KGC: Visual Subgraph Reasoning with Vision-Language Models for Multimodal Knowledge Graph Completion
 

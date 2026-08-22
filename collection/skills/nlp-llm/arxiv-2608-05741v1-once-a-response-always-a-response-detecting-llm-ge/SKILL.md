@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05741v1-once-a-response-always-a-response-detecting-llm-ge
 description: 'Once a Response, Always a Response: Detecting LLM-generated Text via Latent Prompt Restoration (arXiv: 2608.05741v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Hongrui Bao, Yubing Ren, Yanan Cao, Jinhan You, Fang Fang, Shi Wang",
     "url": "http://arxiv.org/abs/2608.05741v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Once a Response, Always a Response: Detecting LLM-generated Text via Latent Prompt Restoration
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06146v1-padoc-layout-grounded-parallel-decoding-for-docume
 description: 'PaDoc: Layout-Grounded Parallel Decoding for Document Parsing (arXiv: 2608.06146v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Hao Yu, Jiabo Zhan, Kang Liu, Linnan Zhao, Dongxu Yue, Rui Chen, Jinglin Wang, Chong Sun, Chen Li, Jing Lyu, Chun Yuan",
     "url": "http://arxiv.org/abs/2608.06146v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # PaDoc: Layout-Grounded Parallel Decoding for Document Parsing
 

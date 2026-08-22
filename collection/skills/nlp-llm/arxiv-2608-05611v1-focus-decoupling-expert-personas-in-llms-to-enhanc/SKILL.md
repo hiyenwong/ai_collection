@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05611v1-focus-decoupling-expert-personas-in-llms-to-enhanc
 description: 'FOCUS: Decoupling Expert Personas in LLMs to Enhance Domain Expert Capabilities (arXiv: 2608.05611v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Guanyu Wang, Zidi Zhang, Xu Chu",
     "url": "http://arxiv.org/abs/2608.05611v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # FOCUS: Decoupling Expert Personas in LLMs to Enhance Domain Expert Capabilities
 

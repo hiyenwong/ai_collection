@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06105v1-does-latent-context-help-a-controlled-evaluation-o
 description: 'Does Latent Context Help? A Controlled Evaluation of Inverse Reinforcement Learning in Arctic Shipping (arXiv: 2608.06105v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Vaishnav Vaidheeswaran, Dilith Jayakody, Biruk Ambaw, Jaswanth Kumar, Md Mahbub Alam, Gabriel Spadon",
     "url": "http://arxiv.org/abs/2608.06105v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Does Latent Context Help? A Controlled Evaluation of Inverse Reinforcement Learning in Arctic Shipping
 

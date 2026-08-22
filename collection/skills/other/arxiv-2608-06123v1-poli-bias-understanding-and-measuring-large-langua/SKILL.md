@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06123v1-poli-bias-understanding-and-measuring-large-langua
 description: 'Poli-Bias: Understanding and Measuring Large Language Model Biases in International Political Conflicts (arXiv: 2608.06123v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Massi-Nissa Abboud, Aladin Djuhera, Elena Cabrio, Holger Boche",
     "url": "http://arxiv.org/abs/2608.06123v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Poli-Bias: Understanding and Measuring Large Language Model Biases in International Political Conflicts
 

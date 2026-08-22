@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06270v1-the-illusion-of-visual-tool-use-a-causal-audit-of
 description: 'The Illusion of Visual Tool-Use: A Causal Audit of Thinking with Images (arXiv: 2608.06270v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zhiheng Wang, Bo Peng, Lai Wei, Chaochao Lu",
     "url": "http://arxiv.org/abs/2608.06270v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # The Illusion of Visual Tool-Use: A Causal Audit of Thinking with Images
 

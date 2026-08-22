@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06296v1-on-policy-self-distillation-without-any-supervisio
 description: 'On-Policy Self-Distillation without Any Supervision (arXiv: 2608.06296v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yijiang Li, Bingyang Wang, Yijun Liang, Yunjie Tian, Di Fu, Nuno Vasconcelos",
     "url": "http://arxiv.org/abs/2608.06296v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # On-Policy Self-Distillation without Any Supervision
 

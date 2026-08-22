@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05684v1-nonvisual-classification-of-ground-condition-by-ar
 description: 'Nonvisual Classification of Ground-Condition by Artificial Proprioception in an Amoeba-Inspired Autonomous Walking Robot (arXiv: 2608.05684v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Hyoto Yamaguchi, Zenji Yatabe, Seiya Kasai",
     "url": "http://arxiv.org/abs/2608.05684v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Nonvisual Classification of Ground-Condition by Artificial Proprioception in an Amoeba-Inspired Autonomous Walking Robot
 

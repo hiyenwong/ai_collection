@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05891v1-appdeltaworld-transition-grounded-delta-code-world
 description: 'AppDeltaWorld: Transition-Grounded Delta Code World Model for Mobile GUI Agents (arXiv: 2608.05891v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Weikai Xu, Yunren Feng, Haoxiang Lei, Kun Huang, Yuxuan Liu, Kang Zhao, Xiaolin Hu, Shuo Shang, Bo An",
     "url": "http://arxiv.org/abs/2608.05891v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # AppDeltaWorld: Transition-Grounded Delta Code World Model for Mobile GUI Agents
 

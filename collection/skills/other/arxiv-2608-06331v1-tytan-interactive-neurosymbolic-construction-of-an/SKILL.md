@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06331v1-tytan-interactive-neurosymbolic-construction-of-an
 description: 'Tytan: Interactive Neurosymbolic Construction of Analytic Semantic Schemas from Relational Data (arXiv: 2608.06331v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Donna Hooshmand, Shubham Shahi, Cameron Barrie, Abhratanu Dutta, Marko Sterbentz, Harper Pack, Kristian J. Hammond",
     "url": "http://arxiv.org/abs/2608.06331v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Tytan: Interactive Neurosymbolic Construction of Analytic Semantic Schemas from Relational Data
 

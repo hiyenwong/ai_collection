@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05802v1-on-policy-delta-distillation-for-multilingual-math
 description: 'On-Policy Delta Distillation for Multilingual Math Reasoning (arXiv: 2608.05802v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Byeongho Heo, Jaehui Hwang, Sangdoo Yun, Dongyoon Han",
     "url": "http://arxiv.org/abs/2608.05802v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # On-Policy Delta Distillation for Multilingual Math Reasoning
 

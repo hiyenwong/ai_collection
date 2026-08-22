@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05773v1-neuro-symbolic-closed-loop-control-of-laser-powder
 description: 'Neuro-Symbolic Closed-Loop Control of Laser Powder Bed Fusion with an In-Loop Ontology (arXiv: 2608.05773v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Gisuk Hong, Jaebong Cho, Hyunbo Cho",
     "url": "http://arxiv.org/abs/2608.05773v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Neuro-Symbolic Closed-Loop Control of Laser Powder Bed Fusion with an In-Loop Ontology
 

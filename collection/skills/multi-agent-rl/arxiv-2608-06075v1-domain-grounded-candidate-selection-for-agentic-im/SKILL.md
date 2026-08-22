@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06075v1-domain-grounded-candidate-selection-for-agentic-im
 description: 'Domain-Grounded Candidate Selection for Agentic Image Editing: A Shadow Removal Case (arXiv: 2608.06075v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Shilin Hu, Jingyi Xu, Dimitris Samaras, Hieu Le",
     "url": "http://arxiv.org/abs/2608.06075v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Domain-Grounded Candidate Selection for Agentic Image Editing: A Shadow Removal Case
 

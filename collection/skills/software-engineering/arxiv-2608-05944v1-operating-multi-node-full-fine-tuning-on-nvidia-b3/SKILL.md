@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05944v1-operating-multi-node-full-fine-tuning-on-nvidia-b3
 description: 'Operating Multi-Node Full Fine-Tuning on NVIDIA B300: A Field Report on Telemetry-Based Triage, Negative Results, and Operational Hardening (arXiv: 2608.05944v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Seon Ho Kim, Ui Jeong Jeon, Su Hyeon Kim, Min Tae Hwang",
     "url": "http://arxiv.org/abs/2608.05944v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Operating Multi-Node Full Fine-Tuning on NVIDIA B300: A Field Report on Telemetry-Based Triage, Negative Results, and Operational Hardening
 

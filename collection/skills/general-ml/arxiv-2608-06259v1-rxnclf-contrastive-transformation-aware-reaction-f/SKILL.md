@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06259v1-rxnclf-contrastive-transformation-aware-reaction-f
 description: 'RxnCLF: Contrastive Transformation-Aware Reaction Foundation Model for Improved Reactivity Prediction (arXiv: 2608.06259v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yiting Zheng, Cheng Fang, Anthony Donofrio, Haote Li",
     "url": "http://arxiv.org/abs/2608.06259v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # RxnCLF: Contrastive Transformation-Aware Reaction Foundation Model for Improved Reactivity Prediction
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06291v1-bakron-efficient-quantization-with-kronecker-facto
 description: 'BaKron: Efficient Quantization with Kronecker-Factored Hessians (arXiv: 2608.06291v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Johann Birnick, Rayan Saab",
     "url": "http://arxiv.org/abs/2608.06291v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # BaKron: Efficient Quantization with Kronecker-Factored Hessians
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05900v1-cohorthijack-robustness-of-single-cell-annotation
 description: 'CohortHijack: Robustness of Single Cell Annotation to Companion Cell Removal (arXiv: 2608.05900v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Arash Vashagh, Yasmin Vashagh",
     "url": "http://arxiv.org/abs/2608.05900v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # CohortHijack: Robustness of Single Cell Annotation to Companion Cell Removal
 

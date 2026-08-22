@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06020v1-from-economic-agents-to-agentic-economies-a-system
 description: 'From Economic Agents to Agentic Economies: A Systems Blueprint for Economic World Models (arXiv: 2608.06020v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Jiale Han, Xiang Li, Jing Qian, Wenyuan Gu, Pin Gao, Ye Luo, Hongyuan Zha, Dacheng Tao, Benyou Wang, Lin William Cong",
     "url": "http://arxiv.org/abs/2608.06020v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # From Economic Agents to Agentic Economies: A Systems Blueprint for Economic World Models
 

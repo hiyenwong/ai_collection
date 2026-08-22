@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05600v1-lc-grpo-bridging-train-inference-gap-for-flow-base
 description: 'LC-GRPO: Bridging Train-Inference Gap for Flow-Based GRPO with Langevin Correction (arXiv: 2608.05600v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yingqing Guo, Hui Yuan, Zijian He, Mengdi Wang, Zheng Ding",
     "url": "http://arxiv.org/abs/2608.05600v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # LC-GRPO: Bridging Train-Inference Gap for Flow-Based GRPO with Langevin Correction
 

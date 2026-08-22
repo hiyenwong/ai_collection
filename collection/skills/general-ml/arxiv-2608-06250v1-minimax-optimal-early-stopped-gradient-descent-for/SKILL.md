@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06250v1-minimax-optimal-early-stopped-gradient-descent-for
 description: 'Minimax Optimal Early-Stopped Gradient Descent for Gaussian Mixture Classification (arXiv: 2608.06250v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Alex Buna, Shirley Xiaoqi Liu, Patrick Rebeschini",
     "url": "http://arxiv.org/abs/2608.06250v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Minimax Optimal Early-Stopped Gradient Descent for Gaussian Mixture Classification
 

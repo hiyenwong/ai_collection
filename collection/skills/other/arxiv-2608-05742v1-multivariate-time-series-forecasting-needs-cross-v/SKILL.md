@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05742v1-multivariate-time-series-forecasting-needs-cross-v
 description: 'Multivariate Time Series Forecasting needs Cross Variable Loss (arXiv: 2608.05742v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Kuiye Ding, Yifan Hu, Hanchen Wang, Hao Xue",
     "url": "http://arxiv.org/abs/2608.05742v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Multivariate Time Series Forecasting needs Cross Variable Loss
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05610v1-lc-implicit-qaoa-active-workspace-capped-exact-obj
 description: 'LC-Implicit-QAOA: Active-Workspace-Capped Exact Objective-and-Gradient Evaluation for Training over Bounded QUBO Light Cones (arXiv: 2608.05610v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Chih-Chung Hsu",
     "url": "http://arxiv.org/abs/2608.05610v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # LC-Implicit-QAOA: Active-Workspace-Capped Exact Objective-and-Gradient Evaluation for Training over Bounded QUBO Light Cones
 

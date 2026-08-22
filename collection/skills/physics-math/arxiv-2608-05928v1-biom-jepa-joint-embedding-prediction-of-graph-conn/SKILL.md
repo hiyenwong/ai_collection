@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05928v1-biom-jepa-joint-embedding-prediction-of-graph-conn
 description: 'BioM-JEPA: joint-embedding prediction of graph-connected gene blocks in single cells (arXiv: 2608.05928v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yuhao Wang, Zelin Zang, Yuxuan Liu, Zhen Lei, Stan Z. Li",
     "url": "http://arxiv.org/abs/2608.05928v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # BioM-JEPA: joint-embedding prediction of graph-connected gene blocks in single cells
 

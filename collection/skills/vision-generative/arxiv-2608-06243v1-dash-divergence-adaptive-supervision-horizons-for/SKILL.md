@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06243v1-dash-divergence-adaptive-supervision-horizons-for
 description: 'DASH: Divergence-Adaptive Supervision Horizons for On-Policy Self-Distillation of Reasoning Models (arXiv: 2608.06243v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "ZhiYan Hou, Xinyu Tang, Hongyan An, Jianjin Zhang, Weizhen Wang, Yunyun Han, Gengsheng Li, Xiangzhao Hao, Haiyun Guo, Wenbin Hu, Jinqiao Wang, Yafeng Deng",
     "url": "http://arxiv.org/abs/2608.06243v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # DASH: Divergence-Adaptive Supervision Horizons for On-Policy Self-Distillation of Reasoning Models
 

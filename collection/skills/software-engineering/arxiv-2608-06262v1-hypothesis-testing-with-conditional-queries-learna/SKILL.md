@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06262v1-hypothesis-testing-with-conditional-queries-learna
 description: 'Hypothesis Testing with Conditional Queries: Learnability and the Value of Interaction (arXiv: 2608.06262v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zonghuan Xu",
     "url": "http://arxiv.org/abs/2608.06262v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Hypothesis Testing with Conditional Queries: Learnability and the Value of Interaction
 

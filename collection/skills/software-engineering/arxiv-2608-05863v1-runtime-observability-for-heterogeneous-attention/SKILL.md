@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05863v1-runtime-observability-for-heterogeneous-attention
 description: 'Runtime Observability for Heterogeneous Attention Memory (arXiv: 2608.05863v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Fanzhe Wei, Li Liu, Ziyang Wang, Chenyu Wang",
     "url": "http://arxiv.org/abs/2608.05863v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Runtime Observability for Heterogeneous Attention Memory
 

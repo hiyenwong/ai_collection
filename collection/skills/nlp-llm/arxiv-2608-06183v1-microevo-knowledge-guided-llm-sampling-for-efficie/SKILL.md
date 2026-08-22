@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06183v1-microevo-knowledge-guided-llm-sampling-for-efficie
 description: 'MicroEvo: Knowledge-Guided LLM Sampling for Efficient Microarchitecture Design Space Exploration (arXiv: 2608.06183v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Jia Xiong, Runkai Li, Chenxu Niu, Guangyuan Gao, Changwen Xing, Yifan Zhang, Xinlai Wan, Jieran Cui, Chen Bai, Yusheng Hua, Ying Wang, Ming Ling, Xi Wang, Tao Xie",
     "url": "http://arxiv.org/abs/2608.06183v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # MicroEvo: Knowledge-Guided LLM Sampling for Efficient Microarchitecture Design Space Exploration
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05926v1-balance-hybrid-autoregressive-speculative-llm-infe
 description: 'BALANCE: Hybrid Autoregressive-Speculative LLM Inference in Wireless Edge Networks (arXiv: 2608.05926v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Guanqiao Qu, Shuo Chen, Qian Chen, Kin K. Leung, Xianhao Chen",
     "url": "http://arxiv.org/abs/2608.05926v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # BALANCE: Hybrid Autoregressive-Speculative LLM Inference in Wireless Edge Networks
 

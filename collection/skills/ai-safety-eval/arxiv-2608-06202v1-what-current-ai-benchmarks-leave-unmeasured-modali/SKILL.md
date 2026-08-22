@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06202v1-what-current-ai-benchmarks-leave-unmeasured-modali
 description: 'What Current AI Benchmarks Leave Unmeasured: Modality, Search, Citations, and Implications (for Safety Evaluations) (arXiv: 2608.06202v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Ro Encarnación, Tina Behzad, Emma Lurie, Danaé Metaxa",
     "url": "http://arxiv.org/abs/2608.06202v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # What Current AI Benchmarks Leave Unmeasured: Modality, Search, Citations, and Implications (for Safety Evaluations)
 

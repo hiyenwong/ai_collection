@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05985v1-convergent-evolution-in-algorithmic-space
 description: 'Convergent Evolution in Algorithmic Space (arXiv: 2608.05985v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Patrick Krauss, Achim Schilling, Andreas Maier, Thomas Kinfe, Henri Stübner, Niklas Römmelt, Claus Metzner",
     "url": "http://arxiv.org/abs/2608.05985v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Convergent Evolution in Algorithmic Space
 

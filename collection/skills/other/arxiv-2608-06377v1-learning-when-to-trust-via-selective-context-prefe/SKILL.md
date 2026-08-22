@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06377v1-learning-when-to-trust-via-selective-context-prefe
 description: 'Learning When to Trust via Selective Context Preference Optimization (arXiv: 2608.06377v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Xian Sun, Wei Chow, Yingshuo Wang, Junhao Liu, Wei Gao, Qing Wu, Lingdong Kong",
     "url": "http://arxiv.org/abs/2608.06377v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Learning When to Trust via Selective Context Preference Optimization
 

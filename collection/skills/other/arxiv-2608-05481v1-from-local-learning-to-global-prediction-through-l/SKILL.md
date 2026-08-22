@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05481v1-from-local-learning-to-global-prediction-through-l
 description: 'From Local Learning to Global Prediction Through Layered Surprise Cascades (arXiv: 2608.05481v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Andrew L. Smith, Linxing Preston Jiang, Jason K. Eshraghian, Matthew S. Bull, Stefano Recanatesi",
     "url": "http://arxiv.org/abs/2608.05481v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # From Local Learning to Global Prediction Through Layered Surprise Cascades
 

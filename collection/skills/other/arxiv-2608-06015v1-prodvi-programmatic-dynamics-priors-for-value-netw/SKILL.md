@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06015v1-prodvi-programmatic-dynamics-priors-for-value-netw
 description: 'ProDVI: Programmatic Dynamics Priors for Value Network Initialization (arXiv: 2608.06015v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Xinwei Liu, Junyuan Liang, Jianting Zhang, Wuhui Chen",
     "url": "http://arxiv.org/abs/2608.06015v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # ProDVI: Programmatic Dynamics Priors for Value Network Initialization
 

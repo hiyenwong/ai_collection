@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05819v1-learning-to-rank-tensor-network-contraction-plans
 description: 'Learning to Rank Tensor Network Contraction Plans for GPU-Accelerated Quantum Circuit Simulation (arXiv: 2608.05819v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Alfred M. Pastor, Maribel Castillo, Jose M. Badia",
     "url": "http://arxiv.org/abs/2608.05819v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Learning to Rank Tensor Network Contraction Plans for GPU-Accelerated Quantum Circuit Simulation
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06352v1-calibforge-adversarial-solver-calibration-for-scal
 description: 'CalibForge: Adversarial Solver Calibration for Scaling Learnable Terminal Tasks (arXiv: 2608.06352v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Fanzhe Meng, Guoxin Chen, Jiale Zhao, Shuang Sun, Zhiyu Lin, Wayne Xin Zhao, Ruihua Song, Ji-Rong Wen, Kai Jia",
     "url": "http://arxiv.org/abs/2608.06352v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # CalibForge: Adversarial Solver Calibration for Scaling Learnable Terminal Tasks
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05949v1-vlms-for-videogame-data-annotation
 description: 'VLMs for Videogame Data Annotation (arXiv: 2608.05949v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Katrin Schmid, Iuri Frosio",
     "url": "http://arxiv.org/abs/2608.05949v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # VLMs for Videogame Data Annotation
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05697v1-a-low-power-wearable-respiratory-sensor-for-non-in
 description: 'A Low-Power Wearable Respiratory Sensor for Non-Invasive Stress Monitoring (arXiv: 2608.05697v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Mohammad Hosseini, Hamed Khatounabadi, Mohammad Fakharzadeh",
     "url": "http://arxiv.org/abs/2608.05697v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # A Low-Power Wearable Respiratory Sensor for Non-Invasive Stress Monitoring
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05930v1-deep-generalised-mixed-models-a-novel-neural-netwo
 description: 'Deep Generalised Mixed Models: a Novel Neural Network Structure for Analysing Hierarchical Data (arXiv: 2608.05930v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Nina van Gerwen, Dimitris Rizopoulos, Manon Hillegers, Loes Keijsers, Sten Willemsen",
     "url": "http://arxiv.org/abs/2608.05930v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Deep Generalised Mixed Models: a Novel Neural Network Structure for Analysing Hierarchical Data
 

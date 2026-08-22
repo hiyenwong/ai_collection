@@ -39,7 +39,7 @@ def parse_fetch_output(output):
     i = 0
     while i < len(lines):
         line = lines[i]
-        match = re.match(r'^[·⭐]\s+(\d+)\.\s+\[(.+?)\]\s+Utility:\s+([0-9.]+)', line)
+        match = re.match(r'^[·⭐]\\s+(\\d+)\\.\\s+\\[(.+?)\\]\\s+Utility:\\s+([0-9.]+)', line)
         if match:
             rank = int(match.group(1))
             paper_id = match.group(2)
@@ -48,9 +48,9 @@ def parse_fetch_output(output):
             if i >= len(lines):
                 break
             title_line = lines[i]
-            title_match = re.match(r'^\s{5}Title:\s+(.+)', title_line)
+            title_match = re.match(r'^\\s{5}Title:\\s+(.+)', title_line)
             if not title_match:
-                title_match = re.match(r'^\s*Title:\s+(.+)', title_line)
+                title_match = re.match(r'^\\s*Title:\\s+(.+)', title_line)
             if title_match:
                 title = title_match.group(1).strip()
             else:
@@ -59,9 +59,9 @@ def parse_fetch_output(output):
             if i >= len(lines):
                 break
             authors_line = lines[i]
-            authors_match = re.match(r'^\s{5}Authors:\s+(.+)', authors_line)
+            authors_match = re.match(r'^\\s{5}Authors:\\s+(.+)', authors_line)
             if not authors_match:
-                authors_match = re.match(r'^\s*Authors:\s+(.+)', authors_line)
+                authors_match = re.match(r'^\\s*Authors:\\s+(.+)', authors_line)
             if authors_match:
                 authors = authors_match.group(1).strip()
             else:
@@ -70,9 +70,9 @@ def parse_fetch_output(output):
             if i >= len(lines):
                 break
             url_line = lines[i]
-            url_match = re.match(r'^\s{5}URL:\s+(.+)', url_line)
+            url_match = re.match(r'^\\s{5}URL:\\s+(.+)', url_line)
             if not url_match:
-                url_match = re.match(r'^\s*URL:\s+(.+)', url_line)
+                url_match = re.match(r'^\\s*URL:\\s+(.+)', url_line)
             if url_match:
                 url = url_match.group(1).strip()
             else:
@@ -92,7 +92,7 @@ def load_index_json():
     if INDEX_JSON.exists():
         with open(INDEX_JSON, 'r') as f:
             return json.load(f)
-    return {}
+    return []
 
 def save_index_json(data):
     with open(INDEX_JSON, 'w') as f:
@@ -117,138 +117,76 @@ def main():
     papers = parse_fetch_output(output)
     print(f"Found {len(papers)} papers with utility >= 0.85 from fetch output.")
     
-    # Load existing index.json
-    index_data = load_index_json()
+    # Load existing index.json as a list
+    index_list = load_index_json()
+    # Convert to dict for easy lookup by id
+    index_dict = {item['id']: item for item in index_list}
     
-    # We'll ensure that for each paper, there is a skill directory (flat) and an entry in index.json.
-    # First, create missing skill directories flat under SKILLS_DIR.
-    created_flat = 0
-    for paper in papers:
-        arxiv_id = paper['id']
-        skill_dir_name = get_skill_dir_name(arxiv_id, paper['title'])
-        flat_dir = SKILLS_DIR / skill_dir_name
-        if not flat_dir.exists():
-            # Create the directory
-            flat_dir.mkdir(parents=True)
-            # Create SKILL.md
-            skill_md = flat_dir / 'SKILL.md'
-            content = f"""---
-name: {skill_dir_name}
-description: '{paper["title"]} (arXiv: {arxiv_id})'
-metadata:
-  {{
-    "arxiv_id": "{arxiv_id}",
-    "utility": {paper["utility"]},
-    "title": "{paper["title"]}",
-    "authors": "{paper["authors"]}",
-    "url": "{paper["url"]}"
-  }}
----
-
-# {paper["title"]}
-
-**arXiv ID:** {arxiv_id}
-**Authors:** {paper["authors"]}
-**URL:** {paper["url"]}
-**Utility Score:** {paper["utility"]:.2f}
-
-## Summary
-
-This skill was automatically generated from the arXiv paper titled "{paper["title"]}" (ID: {arxiv_id}).
-
-## Usage
-
-This skill can be used to reference the paper's concepts, methodologies, or findings in agent workflows.
-
-## References
-
-- arXiv: {paper["url"]}
-"""
-            skill_md.write_text(content)
-            created_flat += 1
-            print(f"Created flat skill directory: {skill_dir_name}")
-        else:
-            # Directory already exists; we can optionally update the SKILL.md, but we skip for now.
-            pass
-    
-    print(f"Created {created_flat} new flat skill directories.")
-    
-    # Now run the classification script to move them to the correct category
-    print("Running classification script...")
-    result = subprocess.run([sys.executable, str(REPO_ROOT / 'scripts' / 'classify_skills.py')], capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"Classification script failed: {result.stderr}")
-    else:
-        print("Classification script completed.")
-        # Show summary
-        lines = result.stdout.strip().split('\n')
-        for line in lines[-10:]:
-            print(line)
-    
-    # Now, for each paper, find the actual skill directory (now in the correct category)
+    # We'll ensure that for each paper, there is an entry in index_dict
     updated_count = 0
     for paper in papers:
         arxiv_id = paper['id']
         skill_dir_name = get_skill_dir_name(arxiv_id, paper['title'])
-        # Search for this directory under SKILLS_DIR
-        found = None
+        # Determine category by looking for the skill directory
+        category = None
         for category_dir in SKILLS_DIR.iterdir():
             if not category_dir.is_dir():
                 continue
             candidate = category_dir / skill_dir_name
             if candidate.is_dir():
-                found = (category_dir.name, skill_dir_name)
+                category = category_dir.name
                 break
-        if found is None:
-            print(f"Warning: Could not find skill directory for {arxiv_id} after classification.")
-            continue
-        category, _ = found
-        # Update index.json
-        if arxiv_id in index_data:
-            # Update the entry
-            index_data[arxiv_id]['file'] = f"collection/skills/{category}/{skill_dir_name}/SKILL.md"
-            index_data[arxiv_id]['category'] = category
-            # Ensure skillCreated is set to the directory name (should already be)
-            index_data[arxiv_id]['skillCreated'] = skill_dir_name
-            updated_count += 1
+        if category is None:
+            # If not found, default to 'other' (should not happen after classification)
+            category = 'other'
+        # Create or update entry in index_dict
+        if arxiv_id in index_dict:
+            # Update existing entry
+            index_dict[arxiv_id]['title'] = paper['title']
+            index_dict[arxiv_id]['skill_name'] = skill_dir_name
+            index_dict[arxiv_id]['category'] = category
+            index_dict[arxiv_id]['utility'] = paper['utility']
+            index_dict[arxiv_id]['date_added'] = date.today().isoformat()
         else:
             # Add new entry
-            index_data[arxiv_id] = {
-                "title": paper["title"],
-                "file": f"collection/skills/{category}/{skill_dir_name}/SKILL.md",
-                "keywords": [],
-                "utility": paper["utility"],
-                "skillCreated": skill_dir_name,
-                "lastAccessed": date.today().isoformat(),
-                "category": category
+            index_dict[arxiv_id] = {
+                'id': arxiv_id,
+                'title': paper['title'],
+                'skill_name': skill_dir_name,
+                'category': category,
+                'utility': paper['utility'],
+                'date_added': date.today().isoformat()
             }
-            updated_count += 1
+        updated_count += 1
     
+    # Convert back to list
+    new_index_list = list(index_dict.values())
+    # Sort by date_added descending for consistency? We'll keep as is.
     if updated_count > 0:
-        save_index_json(index_data)
-        print(f"Updated {updated_count} entries in {INDEX_JSON} with correct categories and paths.")
+        save_index_json(new_index_list)
+        print(f"Updated {updated_count} entries in {INDEX_JSON}.")
     else:
         print("No entries to update in index.json.")
     
     # Now update INDEX.md with a section for today.
-    # We'll use the papers list and the updated index_data to get the correct category and file.
-    # Let's rebuild the mapping from arxiv_id to (category, skill_dir_name) by scanning again.
+    # We'll use the papers list and the index_dict to get the correct category and skill_name.
+    # Build mapping from arxiv_id to (category, skill_name)
     paper_info = {}
     for paper in papers:
         arxiv_id = paper['id']
         skill_dir_name = get_skill_dir_name(arxiv_id, paper['title'])
-        found = None
+        # Find category by scanning again (or we can use the one we found above)
+        category = None
         for category_dir in SKILLS_DIR.iterdir():
             if not category_dir.is_dir():
                 continue
             candidate = category_dir / skill_dir_name
             if candidate.is_dir():
-                found = (category_dir.name, skill_dir_name)
+                category = category_dir.name
                 break
-        if found:
-            paper_info[arxiv_id] = found
-        else:
-            print(f"Warning: Could not find {arxiv_id} for INDEX.md.")
+        if category is None:
+            category = 'other'
+        paper_info[arxiv_id] = (category, skill_dir_name)
     
     # Build the new section for INDEX.md
     today = date.today().isoformat()

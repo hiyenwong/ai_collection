@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06364v1-investigating-artificial-intelligence-digital-sove
 description: 'Investigating Artificial Intelligence Digital Sovereignty in Mobile Shopping Apps: A Case Study of Nigeria (arXiv: 2608.06364v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "George Grispos, Sajda Qureshi",
     "url": "http://arxiv.org/abs/2608.06364v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Investigating Artificial Intelligence Digital Sovereignty in Mobile Shopping Apps: A Case Study of Nigeria
 

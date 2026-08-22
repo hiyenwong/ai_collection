@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06206v1-beyond-marginal-validity-finite-sample-guarantees
 description: 'Beyond Marginal Validity: Finite-Sample Guarantees for Localized Conformal Prediction (arXiv: 2608.06206v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Anton Conrad, Rustam Isaev, Denis Belomestny, Eric Moulines, Sergey Samsonov",
     "url": "http://arxiv.org/abs/2608.06206v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Beyond Marginal Validity: Finite-Sample Guarantees for Localized Conformal Prediction
 

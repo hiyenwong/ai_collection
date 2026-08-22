@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05882v1-complexity-and-stability-of-neural-activity-across
 description: 'Complexity and Stability of Neural Activity Across Aging and Neurodegenerative Disease (arXiv: 2608.05882v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Junjie Yu, Jianyu Zhang, Zian Pei, Xue Shi, Yumei Liu, Xin Jiang, Quanying Liu, Yi Guo",
     "url": "http://arxiv.org/abs/2608.05882v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Complexity and Stability of Neural Activity Across Aging and Neurodegenerative Disease
 

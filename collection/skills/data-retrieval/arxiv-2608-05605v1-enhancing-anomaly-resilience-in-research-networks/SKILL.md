@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05605v1-enhancing-anomaly-resilience-in-research-networks
 description: 'Enhancing Anomaly Resilience in Research Networks: A Large-Scale Forecasting Benchmark for Dynamic Security Baselining (arXiv: 2608.05605v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Mohammad Arafath Uddin Shariff, Byrav Ramamurthy",
     "url": "http://arxiv.org/abs/2608.05605v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Enhancing Anomaly Resilience in Research Networks: A Large-Scale Forecasting Benchmark for Dynamic Security Baselining
 

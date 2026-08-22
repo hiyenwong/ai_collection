@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06037v1-integrating-implicit-and-explicit-relational-biase
 description: 'Integrating Implicit and Explicit Relational Biases through Graph-Based Multiple Instance Learning: A Case Study in Skin Lesion Diagnosis (arXiv: 2608.06037v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Rafał Buler, Jakub Buler, Maciej Bobowicz, Michał Grochowski",
     "url": "http://arxiv.org/abs/2608.06037v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Integrating Implicit and Explicit Relational Biases through Graph-Based Multiple Instance Learning: A Case Study in Skin Lesion Diagnosis
 

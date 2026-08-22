@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06223v1-ts-rag-retrieval-augmented-generation-for-time-ser
 description: 'TS-RAG: Retrieval Augmented Generation for Time Series Forecasting (arXiv: 2608.06223v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yixiong Xiao, Congxi Xiao, Jingbo Zhou",
     "url": "http://arxiv.org/abs/2608.06223v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # TS-RAG: Retrieval Augmented Generation for Time Series Forecasting
 

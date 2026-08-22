@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05981v1-temporal-bridges-for-spatial-resolution-enhancing
 description: 'Temporal Bridges for Spatial Resolution: Enhancing Climate Data Super-Resolution with Bidirectional Alignment (arXiv: 2608.05981v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yichen Zhang, Yixiong Xiao, Congxi Xiao, Jingbo Zhou",
     "url": "http://arxiv.org/abs/2608.05981v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Temporal Bridges for Spatial Resolution: Enhancing Climate Data Super-Resolution with Bidirectional Alignment
 

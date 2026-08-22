@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05859v1-evidential-rule-learning-for-interpretable-classif
 description: 'Evidential Rule Learning for Interpretable Classification with Abstention (arXiv: 2608.05859v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Javier Fumanal-Idocin, Javier Andreu-Perez",
     "url": "http://arxiv.org/abs/2608.05859v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Evidential Rule Learning for Interpretable Classification with Abstention
 

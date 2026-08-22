@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05774v1-sr-jepa-learning-predictive-latent-state-in-3d-sce
 description: 'SR-JEPA: Learning Predictive Latent State in 3D Scenes (arXiv: 2608.05774v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zihan Zhou, Qifu Wen, Xi Zeng",
     "url": "http://arxiv.org/abs/2608.05774v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # SR-JEPA: Learning Predictive Latent State in 3D Scenes
 

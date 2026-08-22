@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05660v1-reasoning-errors-have-a-region-and-a-direction-in
 description: 'Reasoning Errors Have a Region and a Direction in the Residual-Stream Trajectory of LLMs (arXiv: 2608.05660v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Hamed Damirchi, Ignacio Meza De la Jara, Damith Ranasinghe, Yuhang Liu, Javen Shi",
     "url": "http://arxiv.org/abs/2608.05660v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Reasoning Errors Have a Region and a Direction in the Residual-Stream Trajectory of LLMs
 

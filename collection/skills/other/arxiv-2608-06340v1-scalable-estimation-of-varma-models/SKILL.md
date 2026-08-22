@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06340v1-scalable-estimation-of-varma-models
 description: 'Scalable estimation of VARMA models (arXiv: 2608.06340v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Daniel Paulin, Victor Elvira",
     "url": "http://arxiv.org/abs/2608.06340v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Scalable estimation of VARMA models
 

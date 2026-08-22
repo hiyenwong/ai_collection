@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05948v1-gauge-a-measurement-grounded-benchmark-for-physica
 description: 'GAUGE: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models (arXiv: 2608.05948v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Shuai Wang, Yaxin Feng, Xuekun Jiang, Shihan Tian, Ningyu Yan, Xing Shen, Chaoyang Lyu, Hui Wang, Yunsong Zhou, Hanqing Wang, Jiangmiao Pang, Yang Xiang, Xing Gao, Chunhua Shen, Weinan Zhang",
     "url": "http://arxiv.org/abs/2608.05948v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # GAUGE: A Measurement-Grounded Benchmark for Physical Fidelity in Simulation Engines and Video World Models
 

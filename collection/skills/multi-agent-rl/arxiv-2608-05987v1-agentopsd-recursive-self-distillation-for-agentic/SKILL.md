@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05987v1-agentopsd-recursive-self-distillation-for-agentic
 description: 'AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning (arXiv: 2608.05987v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zi-Han Wang, Zhengxi Lu, Zhiyuan Yao, Jinyang Wu, Jie Wu, Zhengzhou Cai, Yueqing Sun, Ziang Ye, Linji Hao, Qi Gu, Xunliang Cai, Yongliang Shen, Yujiu Yang",
     "url": "http://arxiv.org/abs/2608.05987v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning
 

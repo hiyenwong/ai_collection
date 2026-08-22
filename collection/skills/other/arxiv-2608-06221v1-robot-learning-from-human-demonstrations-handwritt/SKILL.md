@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06221v1-robot-learning-from-human-demonstrations-handwritt
 description: 'Robot Learning from Human Demonstrations: Handwritten Alphabet Trajectories and Human-Likeness Evaluation (arXiv: 2608.06221v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Alperen Kenan, Paul Bremner, Manuel Giuliani",
     "url": "http://arxiv.org/abs/2608.06221v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Robot Learning from Human Demonstrations: Handwritten Alphabet Trajectories and Human-Likeness Evaluation
 

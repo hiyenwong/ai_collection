@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06301v1-harnessopt-bench-evaluating-llms-at-harness-optimi
 description: 'HarnessOpt-Bench: Evaluating LLMs at Harness Optimization (arXiv: 2608.06301v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Varun Ursekar, Apaar Shanker, Yash Maurya, Shehab Yasser, Vijay S. Kalmath, Veronica Chatrath, Yuan Xue",
     "url": "http://arxiv.org/abs/2608.06301v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # HarnessOpt-Bench: Evaluating LLMs at Harness Optimization
 

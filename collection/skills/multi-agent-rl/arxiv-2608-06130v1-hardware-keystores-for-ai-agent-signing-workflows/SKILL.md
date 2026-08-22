@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06130v1-hardware-keystores-for-ai-agent-signing-workflows
 description: 'Hardware Keystores for AI Agent Signing Workflows: A Zero-Trust MCP Enforcement Architecture (arXiv: 2608.06130v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Leo Sambrook, Sampo Sovio",
     "url": "http://arxiv.org/abs/2608.06130v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Hardware Keystores for AI Agent Signing Workflows: A Zero-Trust MCP Enforcement Architecture
 

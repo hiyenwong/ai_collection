@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06329v1-benchmarking-the-benchmarks-evaluating-benchmarks
 description: 'Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents (arXiv: 2608.06329v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Noam Koren, Roy Bar-Haim, Abigail Goldsteen",
     "url": "http://arxiv.org/abs/2608.06329v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents
 

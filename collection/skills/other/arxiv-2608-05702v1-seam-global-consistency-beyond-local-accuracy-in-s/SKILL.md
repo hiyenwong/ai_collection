@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05702v1-seam-global-consistency-beyond-local-accuracy-in-s
 description: 'SEAM: Global consistency beyond local accuracy in scientific machine learning (arXiv: 2608.05702v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Gnankan Landry Regis N'guessan, Bum Jun Kim",
     "url": "http://arxiv.org/abs/2608.05702v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # SEAM: Global consistency beyond local accuracy in scientific machine learning
 

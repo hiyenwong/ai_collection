@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05608v1-gauge-granularity-adaptive-counterfactual-gating-o
 description: 'GAUGE: Granularity-Adaptive Counterfactual Gating of Evidence for Incomplete Multimodal Classification (arXiv: 2608.05608v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yunping Shi, En Yu, Kairui Guo, Jie Lu",
     "url": "http://arxiv.org/abs/2608.05608v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # GAUGE: Granularity-Adaptive Counterfactual Gating of Evidence for Incomplete Multimodal Classification
 

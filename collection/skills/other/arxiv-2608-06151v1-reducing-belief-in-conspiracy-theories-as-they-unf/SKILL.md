@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06151v1-reducing-belief-in-conspiracy-theories-as-they-unf
 description: 'Reducing belief in conspiracy theories as they unfold using large language models (arXiv: 2608.06151v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Thomas H. Costello, Nathaniel Rabb, Michael Nicholas Stagnaro, Gordon Pennycook, David Rand",
     "url": "http://arxiv.org/abs/2608.06151v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Reducing belief in conspiracy theories as they unfold using large language models
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05727v1-lilac-an-idempotent-neural-speech-codec
 description: 'LILAC: An Idempotent Neural Speech Codec (arXiv: 2608.05727v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "June Young Yi, Dongwook Lee, Jiheum Yeom, Sungroh Yoon",
     "url": "http://arxiv.org/abs/2608.05727v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # LILAC: An Idempotent Neural Speech Codec
 

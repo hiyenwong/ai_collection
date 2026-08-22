@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05990v1-opera-operator-residual-feedback-for-reliable-auto
 description: 'OPERA: Operator-residual feedback for reliable autonomous optical experiments with language-model agents (arXiv: 2608.05990v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Ning Xu, Xiang Zheng, Fuqiang Zhong, Huadong Wang, Xiaolong Wu, Zhiyuan Liu, Hui Ning",
     "url": "http://arxiv.org/abs/2608.05990v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # OPERA: Operator-residual feedback for reliable autonomous optical experiments with language-model agents
 

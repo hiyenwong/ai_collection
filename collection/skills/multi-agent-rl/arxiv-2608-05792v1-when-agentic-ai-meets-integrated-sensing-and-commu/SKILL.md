@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05792v1-when-agentic-ai-meets-integrated-sensing-and-commu
 description: 'When Agentic AI Meets Integrated Sensing and Communication (arXiv: 2608.05792v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Kai Li, Conggai Li, Sarah Ali Siddiqui, Syed Sohail Ahmed, Xin Yuan, Shenghong Li, Wei Ni",
     "url": "http://arxiv.org/abs/2608.05792v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # When Agentic AI Meets Integrated Sensing and Communication
 

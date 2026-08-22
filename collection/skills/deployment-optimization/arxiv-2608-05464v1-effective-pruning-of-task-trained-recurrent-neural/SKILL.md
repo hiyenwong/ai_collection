@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05464v1-effective-pruning-of-task-trained-recurrent-neural
 description: 'Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling (arXiv: 2608.05464v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Sanjith Senthil, Rishidev Chaudhuri",
     "url": "http://arxiv.org/abs/2608.05464v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Effective pruning of task-trained recurrent neural networks using noisy fluctuations and connection rescaling
 

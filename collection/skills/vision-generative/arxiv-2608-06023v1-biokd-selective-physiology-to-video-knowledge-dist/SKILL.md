@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06023v1-biokd-selective-physiology-to-video-knowledge-dist
 description: 'BioKD: Selective Physiology-to-Video Knowledge Distillation via Reliability Gate for Emotion Recognition (arXiv: 2608.06023v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Bojing Hou, Ruohao Li, Yitong Zhu, Hongjun Liu, Luwen Yu, Yuyang Wang",
     "url": "http://arxiv.org/abs/2608.06023v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # BioKD: Selective Physiology-to-Video Knowledge Distillation via Reliability Gate for Emotion Recognition
 

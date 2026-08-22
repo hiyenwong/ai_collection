@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06135v1-llm-inference-under-bursty-workload-distribution-m
 description: 'LLM Inference Under Bursty Workload Distribution: Modifying the WAIT Algorithm (arXiv: 2608.06135v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Anjali Gangadhar Katageria, Shobha Rani, Raghu Nandan Sengupta",
     "url": "http://arxiv.org/abs/2608.06135v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # LLM Inference Under Bursty Workload Distribution: Modifying the WAIT Algorithm
 

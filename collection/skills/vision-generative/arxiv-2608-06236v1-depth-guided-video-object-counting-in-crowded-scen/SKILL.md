@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06236v1-depth-guided-video-object-counting-in-crowded-scen
 description: 'Depth-Guided Video Object Counting in Crowded Scenes (arXiv: 2608.06236v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yuanjing Xu, Xinyan Liu, Weidong Chen, Zixuan Zou, Linhao Zhang, Zhuangzhe Meng, Antoni B. Chan, Weigang Zhang",
     "url": "http://arxiv.org/abs/2608.06236v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Depth-Guided Video Object Counting in Crowded Scenes
 

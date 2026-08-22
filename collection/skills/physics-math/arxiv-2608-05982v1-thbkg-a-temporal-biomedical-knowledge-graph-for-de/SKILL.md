@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05982v1-thbkg-a-temporal-biomedical-knowledge-graph-for-de
 description: 'THBKG: A Temporal Biomedical Knowledge Graph for Decision-Aligned Clinical Advancement Prediction (arXiv: 2608.05982v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Pui Chung Siu, Claudia Cabrera, Mani Mudaliar, Arkaitz Zubiaga",
     "url": "http://arxiv.org/abs/2608.05982v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # THBKG: A Temporal Biomedical Knowledge Graph for Decision-Aligned Clinical Advancement Prediction
 

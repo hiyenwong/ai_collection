@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06264v1-otlesmix-wasserstein-barycenter-and-optimal-transp
 description: 'OTLesMix: Wasserstein Barycenter and Optimal Transport Map for Synthetic Lesion Generation with Diverse Shapes and Locations (arXiv: 2608.06264v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Robin Trombetta, Carole Lartizien",
     "url": "http://arxiv.org/abs/2608.06264v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # OTLesMix: Wasserstein Barycenter and Optimal Transport Map for Synthetic Lesion Generation with Diverse Shapes and Locations
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06137v1-skilltfm-gated-skill-evolution-for-training-free-a
 description: 'SkillTFM: Gated Skill Evolution for Training-Free Adaptation of Tabular Foundation Models (arXiv: 2608.06137v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yi He, Zhengkang Guan, Anpeng Wu, Peng Cui, Fei Wu, Kun Kuang",
     "url": "http://arxiv.org/abs/2608.06137v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # SkillTFM: Gated Skill Evolution for Training-Free Adaptation of Tabular Foundation Models
 

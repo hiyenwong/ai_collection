@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06246v1-a-six-dimensional-taxonomy-of-post-training-adapta
 description: 'A Six-Dimensional Taxonomy of Post-Training Adaptation Techniques with Applications in AI Governance (arXiv: 2608.06246v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Fardin Afdideh, Fernando Seoane, Farhad Abtahi",
     "url": "http://arxiv.org/abs/2608.06246v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # A Six-Dimensional Taxonomy of Post-Training Adaptation Techniques with Applications in AI Governance
 

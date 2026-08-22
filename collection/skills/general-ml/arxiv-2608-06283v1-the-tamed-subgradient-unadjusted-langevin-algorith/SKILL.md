@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06283v1-the-tamed-subgradient-unadjusted-langevin-algorith
 description: 'The Tamed Subgradient Unadjusted Langevin Algorithm beyond Convexity (arXiv: 2608.06283v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Iosif Lytras, Nikolaos Makras, Sotirios Sabanis",
     "url": "http://arxiv.org/abs/2608.06283v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # The Tamed Subgradient Unadjusted Langevin Algorithm beyond Convexity
 

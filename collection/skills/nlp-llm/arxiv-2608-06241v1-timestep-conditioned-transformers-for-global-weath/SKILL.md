@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06241v1-timestep-conditioned-transformers-for-global-weath
 description: 'Timestep-Conditioned Transformers for Global Weather Forecasting (arXiv: 2608.06241v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Sam Levang, Fran Bartolic, Ty Dickinson, Chase Dwelle, Paulius Rauba, Viktor Cikojevic",
     "url": "http://arxiv.org/abs/2608.06241v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Timestep-Conditioned Transformers for Global Weather Forecasting
 

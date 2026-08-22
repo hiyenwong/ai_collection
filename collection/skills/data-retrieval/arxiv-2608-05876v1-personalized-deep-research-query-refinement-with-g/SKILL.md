@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05876v1-personalized-deep-research-query-refinement-with-g
 description: 'Personalized Deep Research Query Refinement with Graph-Scaffolded Evidence Grounding (arXiv: 2608.05876v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Soojin Yoon, Dongha Lee",
     "url": "http://arxiv.org/abs/2608.05876v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Personalized Deep Research Query Refinement with Graph-Scaffolded Evidence Grounding
 

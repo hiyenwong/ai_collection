@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05784v1-activity-frames-deterministic-screen-activity-comp
 description: 'Activity Frames: Deterministic Screen-Activity Compilation for Agent Memory and Replay (arXiv: 2608.05784v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Nossa Iyamu",
     "url": "http://arxiv.org/abs/2608.05784v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Activity Frames: Deterministic Screen-Activity Compilation for Agent Memory and Replay
 

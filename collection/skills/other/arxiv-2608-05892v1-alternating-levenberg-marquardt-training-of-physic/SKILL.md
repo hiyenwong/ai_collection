@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05892v1-alternating-levenberg-marquardt-training-of-physic
 description: 'Alternating Levenberg-Marquardt Training of Physics-Informed Neural Networks with Fourier-Enhanced Features (arXiv: 2608.05892v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yulun Wu, Matthieu Barreau, Miguel Aguiar, Karl H. Johansson",
     "url": "http://arxiv.org/abs/2608.05892v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Alternating Levenberg-Marquardt Training of Physics-Informed Neural Networks with Fourier-Enhanced Features
 

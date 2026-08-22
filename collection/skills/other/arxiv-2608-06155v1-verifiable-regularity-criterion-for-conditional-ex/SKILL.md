@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06155v1-verifiable-regularity-criterion-for-conditional-ex
 description: 'Verifiable Regularity Criterion for Conditional Expectation Operators and Conditional Mean Embeddings with Applications to Nonparametric Regression, Bayesian Inverse Problems, and Koopman Operators (arXiv: 2608.06155v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Maximiliano Hertel, Ilja Klebanov, Manuel Schaller, Karl Worthmann",
     "url": "http://arxiv.org/abs/2608.06155v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Verifiable Regularity Criterion for Conditional Expectation Operators and Conditional Mean Embeddings with Applications to Nonparametric Regression, Bayesian Inverse Problems, and Koopman Operators
 

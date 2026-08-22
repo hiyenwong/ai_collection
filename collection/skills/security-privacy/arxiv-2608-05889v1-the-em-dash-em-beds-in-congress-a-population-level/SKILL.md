@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05889v1-the-em-dash-em-beds-in-congress-a-population-level
 description: 'The em-dash em-beds in Congress: A population-level rise in em-dash frequency in U.S. congressional press releases at the dawn of the large-language-model era, 2021-2025 (arXiv: 2608.05889v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Przemysław Czuma",
     "url": "http://arxiv.org/abs/2608.05889v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # The em-dash em-beds in Congress: A population-level rise in em-dash frequency in U.S. congressional press releases at the dawn of the large-language-model era, 2021-2025
 

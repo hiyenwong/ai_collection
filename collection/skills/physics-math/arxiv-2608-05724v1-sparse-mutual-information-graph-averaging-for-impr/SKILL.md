@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05724v1-sparse-mutual-information-graph-averaging-for-impr
 description: 'Sparse Mutual Information Graph Averaging for Improving Random Indexing Embeddings (arXiv: 2608.05724v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Sriram Loganathan, Gokul Anand, Aung Bo Bo, Yourui Shao, William B. Andreopoulos",
     "url": "http://arxiv.org/abs/2608.05724v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Sparse Mutual Information Graph Averaging for Improving Random Indexing Embeddings
 

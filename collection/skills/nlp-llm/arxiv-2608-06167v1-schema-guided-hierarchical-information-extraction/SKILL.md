@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06167v1-schema-guided-hierarchical-information-extraction
 description: 'Schema-Guided Hierarchical Information Extraction and Semantic Evaluation Using Generative AI (arXiv: 2608.06167v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Modhurita Mitra, Jan-Willem Versteeg, Maarten D. Schermer, Shiva Nadi Najafabadi, Marie L. De Bruin, Lourens T. Bloem",
     "url": "http://arxiv.org/abs/2608.06167v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Schema-Guided Hierarchical Information Extraction and Semantic Evaluation Using Generative AI
 

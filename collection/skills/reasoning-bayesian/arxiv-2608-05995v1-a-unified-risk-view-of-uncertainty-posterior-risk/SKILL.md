@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05995v1-a-unified-risk-view-of-uncertainty-posterior-risk
 description: 'A Unified Risk View of Uncertainty: Posterior Risk for Disentanglement and Evaluation Beyond Proxies (arXiv: 2608.05995v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Frieder Wizgall, Georg Tirpitz, Moritz Seiler, Kerstin Ritter, Bálint Mucsányi",
     "url": "http://arxiv.org/abs/2608.05995v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # A Unified Risk View of Uncertainty: Posterior Risk for Disentanglement and Evaluation Beyond Proxies
 

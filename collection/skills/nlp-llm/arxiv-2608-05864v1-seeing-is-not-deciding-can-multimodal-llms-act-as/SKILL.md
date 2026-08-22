@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05864v1-seeing-is-not-deciding-can-multimodal-llms-act-as
 description: 'Seeing Is Not Deciding: Can Multimodal LLMs Act as Effective CEOs? (arXiv: 2608.05864v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yuyang Dai, Xueqing Peng, Yuxia Wang, Preslav Nakov, Zhuohan Xie",
     "url": "http://arxiv.org/abs/2608.05864v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Seeing Is Not Deciding: Can Multimodal LLMs Act as Effective CEOs?
 

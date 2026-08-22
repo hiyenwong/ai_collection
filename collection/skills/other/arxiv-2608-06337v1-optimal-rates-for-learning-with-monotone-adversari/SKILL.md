@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06337v1-optimal-rates-for-learning-with-monotone-adversari
 description: 'Optimal Rates for Learning with Monotone Adversaries (arXiv: 2608.06337v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Anay Mehrotra",
     "url": "http://arxiv.org/abs/2608.06337v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Optimal Rates for Learning with Monotone Adversaries
 

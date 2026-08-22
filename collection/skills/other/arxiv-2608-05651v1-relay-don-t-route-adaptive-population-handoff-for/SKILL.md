@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05651v1-relay-don-t-route-adaptive-population-handoff-for
 description: 'Relay, Don't Route: Adaptive Population Handoff for Cost-Efficient LLM-Driven Evolution (arXiv: 2608.05651v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Sichun Luo, Yi Huang, Guanzhi Deng, Haibo Wang, Haochen Luo, Lei Li, Zefa Hu, Junlan Feng, Qi Liu",
     "url": "http://arxiv.org/abs/2608.05651v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Relay, Don't Route: Adaptive Population Handoff for Cost-Efficient LLM-Driven Evolution
 

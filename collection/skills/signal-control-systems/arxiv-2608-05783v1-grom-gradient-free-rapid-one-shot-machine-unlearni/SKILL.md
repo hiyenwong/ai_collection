@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05783v1-grom-gradient-free-rapid-one-shot-machine-unlearni
 description: 'GROM: Gradient-Free Rapid One-Shot Machine Unlearning (arXiv: 2608.05783v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Paweł Batorski, Przemysław Spurek, Paul Swoboda",
     "url": "http://arxiv.org/abs/2608.05783v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # GROM: Gradient-Free Rapid One-Shot Machine Unlearning
 

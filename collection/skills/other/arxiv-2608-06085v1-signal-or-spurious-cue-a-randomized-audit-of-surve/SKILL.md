@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06085v1-signal-or-spurious-cue-a-randomized-audit-of-surve
 description: 'Signal or Spurious Cue? A Randomized Audit of Survey-Country Metadata in LLM Social Inference (arXiv: 2608.06085v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yifan Lyu, Xinran Li, Jiaqi Qiao, Xiujuan Xu",
     "url": "http://arxiv.org/abs/2608.06085v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Signal or Spurious Cue? A Randomized Audit of Survey-Country Metadata in LLM Social Inference
 

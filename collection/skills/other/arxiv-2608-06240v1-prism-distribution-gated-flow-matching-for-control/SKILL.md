@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06240v1-prism-distribution-gated-flow-matching-for-control
 description: 'PRISM: Distribution-Gated Flow Matching for Controllable Unpaired Image Translation (arXiv: 2608.06240v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Elad Yoshai, Natan T. Shaked",
     "url": "http://arxiv.org/abs/2608.06240v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # PRISM: Distribution-Gated Flow Matching for Controllable Unpaired Image Translation
 

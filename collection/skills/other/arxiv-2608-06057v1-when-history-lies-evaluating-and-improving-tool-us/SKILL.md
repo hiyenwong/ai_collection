@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06057v1-when-history-lies-evaluating-and-improving-tool-us
 description: 'When History Lies: Evaluating and Improving Tool Use under Misleading Multi-Turn Histories (arXiv: 2608.06057v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Xiaoqing Wu, Xingyu Fan, Feifei Li, Wenhui Que",
     "url": "http://arxiv.org/abs/2608.06057v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # When History Lies: Evaluating and Improving Tool Use under Misleading Multi-Turn Histories
 

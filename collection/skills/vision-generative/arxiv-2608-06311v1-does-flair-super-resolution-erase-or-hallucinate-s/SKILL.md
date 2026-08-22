@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06311v1-does-flair-super-resolution-erase-or-hallucinate-s
 description: 'Does FLAIR super-resolution erase or hallucinate small white-matter lesions? (arXiv: 2608.06311v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zahra Khodakarami, Yue Li, Pulkit Khandelwal, John Detre, Sandhitsu Das, Christopher Brown, David Wolk, Paul Yushkevich",
     "url": "http://arxiv.org/abs/2608.06311v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Does FLAIR super-resolution erase or hallucinate small white-matter lesions?
 

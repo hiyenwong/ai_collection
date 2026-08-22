@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05806v1-hierarchical-latent-prediction-for-language-models
 description: 'Hierarchical Latent Prediction for Language Models (arXiv: 2608.05806v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Chang Shi, Tim Pearce, Manan Tomar, Siddhartha Sen, John Langford",
     "url": "http://arxiv.org/abs/2608.05806v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Hierarchical Latent Prediction for Language Models
 

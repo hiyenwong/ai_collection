@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05872v1-macro-markov-chain-routing-of-transformer-layers
 description: 'MACRO: Markov Chain Routing of Transformer Layers (arXiv: 2608.05872v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Paweł Batorski, Abtin Pourhadi, Akylgali Aitaza, Przemysław Spurek, Paul Swoboda",
     "url": "http://arxiv.org/abs/2608.05872v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # MACRO: Markov Chain Routing of Transformer Layers
 

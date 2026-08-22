@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06362v1-av-aivat-74x-cheaper-agent-evaluation-with-certifi
 description: 'AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games (arXiv: 2608.06362v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Boning Li, Yu Chen, Longbo Huang",
     "url": "http://arxiv.org/abs/2608.06362v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games
 

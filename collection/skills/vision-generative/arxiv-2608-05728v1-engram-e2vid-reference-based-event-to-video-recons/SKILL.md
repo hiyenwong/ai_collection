@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05728v1-engram-e2vid-reference-based-event-to-video-recons
 description: 'Engram-E2VID: Reference-Based Event-to-Video Reconstruction via Generative Activation of Appearance Engrams (arXiv: 2608.05728v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Feiyu Ji, Xiang Li, Hao Ma, Tianxiang Huang, Qingxin Lu, Mengqi Ji, Lei Han, Xiaokang Yang, Xiaoyun Yuan",
     "url": "http://arxiv.org/abs/2608.05728v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Engram-E2VID: Reference-Based Event-to-Video Reconstruction via Generative Activation of Appearance Engrams
 

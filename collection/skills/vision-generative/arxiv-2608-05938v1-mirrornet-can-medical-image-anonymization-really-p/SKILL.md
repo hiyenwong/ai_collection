@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05938v1-mirrornet-can-medical-image-anonymization-really-p
 description: 'MirrorNet: Can Medical Image Anonymization Really Protect Patient Identity? (arXiv: 2608.05938v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Attila Simkó",
     "url": "http://arxiv.org/abs/2608.05938v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # MirrorNet: Can Medical Image Anonymization Really Protect Patient Identity?
 

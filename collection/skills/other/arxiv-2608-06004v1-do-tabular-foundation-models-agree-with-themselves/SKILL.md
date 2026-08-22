@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06004v1-do-tabular-foundation-models-agree-with-themselves
 description: 'Do Tabular Foundation Models Agree with Themselves? (arXiv: 2608.06004v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Christian Klötergens, Vijaya Krishna Yalavarthi, Lars Schmidt-Thieme, Tom Hanika",
     "url": "http://arxiv.org/abs/2608.06004v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Do Tabular Foundation Models Agree with Themselves?
 

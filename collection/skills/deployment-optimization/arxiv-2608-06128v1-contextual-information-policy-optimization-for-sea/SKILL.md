@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06128v1-contextual-information-policy-optimization-for-sea
 description: 'Contextual Information Policy Optimization for Search Agents (arXiv: 2608.06128v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Xingyu Guo, Wei Chen, Linlin Yang, Baochang Zhang",
     "url": "http://arxiv.org/abs/2608.06128v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Contextual Information Policy Optimization for Search Agents
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05658v1-two-base-rates-two-weights-base-rate-neglect-has-a
 description: 'Two base rates, two weights: base-rate neglect has a second axis (arXiv: 2608.05658v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Adam Y. Shavit",
     "url": "http://arxiv.org/abs/2608.05658v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Two base rates, two weights: base-rate neglect has a second axis
 

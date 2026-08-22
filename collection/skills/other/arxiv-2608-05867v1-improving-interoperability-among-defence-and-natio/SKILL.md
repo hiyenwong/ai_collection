@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05867v1-improving-interoperability-among-defence-and-natio
 description: 'Improving Interoperability among Defence and National Security Ontologies: Analysis and Evaluation Tasks (arXiv: 2608.05867v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Jonathon Dilworth, Pedro Giesteira Cotovio, David Herron, Paul Cripps, Nigel Dewdney, Catia Pesquita, Ernesto Jiménez-Ruiz",
     "url": "http://arxiv.org/abs/2608.05867v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Improving Interoperability among Defence and National Security Ontologies: Analysis and Evaluation Tasks
 

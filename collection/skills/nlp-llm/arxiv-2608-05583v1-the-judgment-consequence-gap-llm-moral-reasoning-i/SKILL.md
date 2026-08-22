@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05583v1-the-judgment-consequence-gap-llm-moral-reasoning-i
 description: 'The Judgment-Consequence Gap: LLM Moral Reasoning in Healthcare Decisions (arXiv: 2608.05583v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Hadi Hosseini, Samarth Khanna, Leona Pierce",
     "url": "http://arxiv.org/abs/2608.05583v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # The Judgment-Consequence Gap: LLM Moral Reasoning in Healthcare Decisions
 

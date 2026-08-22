@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05670v1-when-does-consensus-mean-correctness-measuring-the
 description: 'When Does Consensus Mean Correctness? Measuring the Agreement-Accuracy Coupling with Semantics-Preserving Re-Rendering (arXiv: 2608.05670v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Rasul Khanbayov, Hasan Kurban",
     "url": "http://arxiv.org/abs/2608.05670v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # When Does Consensus Mean Correctness? Measuring the Agreement-Accuracy Coupling with Semantics-Preserving Re-Rendering
 

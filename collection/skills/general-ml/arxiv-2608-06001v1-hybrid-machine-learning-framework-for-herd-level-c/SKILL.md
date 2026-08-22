@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06001v1-hybrid-machine-learning-framework-for-herd-level-c
 description: 'Hybrid Machine Learning Framework for Herd-Level Cattle Growth Pattern and Weight Gain Forecasting in Grazing-Based Production Systems (arXiv: 2608.06001v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Muhammad Riaz Hasib Hossain, Rafiqul Islam, Shawn R. McGrath, Md Zahidul Islam, David W. Lamb",
     "url": "http://arxiv.org/abs/2608.06001v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Hybrid Machine Learning Framework for Herd-Level Cattle Growth Pattern and Weight Gain Forecasting in Grazing-Based Production Systems
 

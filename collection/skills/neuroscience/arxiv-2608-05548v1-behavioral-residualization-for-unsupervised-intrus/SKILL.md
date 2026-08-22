@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05548v1-behavioral-residualization-for-unsupervised-intrus
 description: 'Behavioral Residualization for Unsupervised Intrusion Detection in Automotive CAN Networks (arXiv: 2608.05548v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Chandan Hegde, Mukundh R Reddy",
     "url": "http://arxiv.org/abs/2608.05548v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Behavioral Residualization for Unsupervised Intrusion Detection in Automotive CAN Networks
 

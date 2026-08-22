@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05771v1-hytbe-hyperbolic-target-background-expert-model-fo
 description: 'HyTBE: Hyperbolic Target-Background Expert Model for Cross-Domain Infrared Small Target Detection (arXiv: 2608.05771v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Aohua Li, Jin Kuang, Yubing Lu, Pingping Liu",
     "url": "http://arxiv.org/abs/2608.05771v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # HyTBE: Hyperbolic Target-Background Expert Model for Cross-Domain Infrared Small Target Detection
 

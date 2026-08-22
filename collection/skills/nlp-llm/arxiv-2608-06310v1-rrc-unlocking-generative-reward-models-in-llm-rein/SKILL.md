@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06310v1-rrc-unlocking-generative-reward-models-in-llm-rein
 description: 'RRC: Unlocking Generative Reward Models in LLM Reinforcement Learning via Ranking-Based Reward Construction (arXiv: 2608.06310v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Chenglong Wang, Ziming Zhu, Yifu Huo, Bei Li, Qiaozhi He, Yan Ding, Xiaoyang Hao, Yuxin Gao, Tianhua Zhou, Xiaojia Chang, Tongran Liu, Jingbo Zhu",
     "url": "http://arxiv.org/abs/2608.06310v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # RRC: Unlocking Generative Reward Models in LLM Reinforcement Learning via Ranking-Based Reward Construction
 

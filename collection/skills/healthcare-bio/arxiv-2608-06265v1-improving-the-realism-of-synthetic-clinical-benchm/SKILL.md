@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06265v1-improving-the-realism-of-synthetic-clinical-benchm
 description: 'Improving the Realism of Synthetic Clinical Benchmarks Under Utility Constraints (arXiv: 2608.06265v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Omid Bazgir, Md Nasir, Jacob Hoffman, Yang Yang, Manu Agrawal, Anusua Trivedi, Vinay Rao Dandin, Chris Gibbons, Christine Swisher",
     "url": "http://arxiv.org/abs/2608.06265v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Improving the Realism of Synthetic Clinical Benchmarks Under Utility Constraints
 

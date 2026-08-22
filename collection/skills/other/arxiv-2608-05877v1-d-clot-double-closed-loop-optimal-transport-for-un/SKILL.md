@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05877v1-d-clot-double-closed-loop-optimal-transport-for-un
 description: 'D-CLOT: Double Closed Loop Optimal Transport for Unsupervised Action Segmentation (arXiv: 2608.05877v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Elena Bueno-Benito, Mariella Dimiccoli",
     "url": "http://arxiv.org/abs/2608.05877v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # D-CLOT: Double Closed Loop Optimal Transport for Unsupervised Action Segmentation
 

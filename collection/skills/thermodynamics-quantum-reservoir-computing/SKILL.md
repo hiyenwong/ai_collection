@@ -1,69 +1,56 @@
 ---
 name: thermodynamics-quantum-reservoir-computing
-title: Thermodynamics of Quantum Reservoir Computing
-description: Non-equilibrium thermodynamic framework linking quantum reservoir computing performance to energetic costs, establishing fundamental limits for quantum neuromorphic hardware.
-authors: ["Lixiang Ding", "Xingze Qiu"]
-arxiv_id: "2607.02157"
-categories: ["quantum-computing", "neuromorphic-computing", "thermodynamics", "reservoir-computing"]
-date: "2026-07-23"
-version: "1.0"
+description: Non-equilibrium thermodynamic framework for quantum reservoir computing that links predictive performance to energetic costs. Establishes fundamental limits and trade-offs in quantum neuromorphic hardware.
 ---
 
 # Thermodynamics of Quantum Reservoir Computing
 
 ## Overview
-This methodology establishes a non-equilibrium thermodynamic framework that links the macroscopic predictive performance of driven open quantum systems (quantum reservoir computing) to their microscopic energetic costs. The research resolves fundamental computational and energetic limits of quantum learning devices.
+This skill implements the methodology from the arXiv paper "Thermodynamics of Quantum Reservoir Computing" (arXiv:2607.02157) by Lixiang Ding and Xingze Qiu. The paper establishes a non-equilibrium thermodynamic framework that links the macroscopic predictive performance of driven open quantum systems to their microscopic energetic costs.
 
 ## Core Methodology
 
-### Key Theoretical Framework
-- **Non-equilibrium thermodynamic framework**: Maps Holevo capacities onto the Bogoliubov-Kubo-Mori geometric manifold
-- **Quantum critical region analysis**: Proves that computational peak originates from spectral resonance where intrinsic energy gap closing forces reservoir transition frequencies to align with chaotic drive
-- **Quantum informational dissipation**: Introduced to quantify non-predictive historical data retained by the reservoir
-- **Generalized Landauer bound**: Derived for continuous temporal processing, revealing fundamental thermodynamic trade-off
+### Key Contributions
+1. **Non-equilibrium thermodynamic framework**: Maps Holevo capacities onto the Bogoliubov-Kubo-Mori geometric manifold to analytically prove that computational peaks within quantum critical regions originate from spectral resonance.
 
-### Fundamental Trade-offs
-1. **Critical resonance maximizes both predictive capacity AND informational dissipation**
-2. **Quantum coherences amplify predictive capacity without additional mechanical work**
-3. **Irreversible work required for environmental erasure scales with predictive performance**
+2. **Quantum informational dissipation**: Introduces a measure to quantify non-predictive historical data retained by the reservoir, enabling derivation of a generalized Landauer bound for continuous temporal processing.
 
-## Applications
+3. **Fundamental thermodynamic trade-off**: Reveals that the critical resonance maximizing predictive capacity simultaneously maximizes informational dissipation and irreversible work required for environmental erasure.
 
-### Quantum Neuromorphic Hardware Design
-- Energy-efficient quantum learning device design principles
-- Optimization of reservoir parameters within thermodynamic constraints
-- Coherence engineering for enhanced performance without work penalty
+4. **Coherence decomposition**: Demonstrates that quantum coherences amplify predictive capacity without demanding additional mechanical work.
 
-### Performance Prediction
-- Analytical prediction of computational peaks in quantum critical regions
-- Quantification of thermodynamic costs for temporal processing tasks
-- Benchmarking framework for quantum reservoir architectures
+### Mathematical Framework
+- **Spectral resonance condition**: Closing of intrinsic energy gap forces reservoir's internal transition frequencies to align with chaotic drive
+- **Generalized Landauer bound**: For continuous temporal processing in quantum reservoirs
+- **Bogoliubov-Kubo-Mori geometric manifold**: Framework for mapping information-theoretic measures to thermodynamic quantities
+
+## Use Cases
+- Designing energy-efficient quantum neuromorphic hardware
+- Analyzing fundamental limits of quantum learning devices
+- Optimizing quantum reservoir computing systems for specific energy-performance trade-offs
+- Evaluating thermodynamic costs of quantum temporal data processing
 
 ## Implementation Guidelines
 
-### System Requirements
-- Driven open quantum systems capable of maintaining quantum coherence
-- Access to reservoir internal state measurements for dissipation quantification
-- Capability to tune system parameters through quantum critical points
+### When to Apply
+Use when designing or analyzing quantum reservoir computing systems where energy efficiency and thermodynamic constraints are critical considerations.
 
-### Key Parameters to Monitor
-- **Holevo capacity**: Measure of accessible information
-- **Energy gap**: Distance between ground and excited states
-- **Transition frequencies**: Internal reservoir dynamics
-- **Informational dissipation**: Non-predictive historical data retention
-- **Coherence measures**: Quantum superposition preservation
+### Key Parameters to Consider
+- Quantum critical region proximity
+- Spectral alignment between reservoir transitions and input drive
+- Coherence preservation requirements
+- Environmental erasure costs
 
-## Verification Steps
-
-1. **Spectral resonance verification**: Confirm alignment between reservoir transition frequencies and chaotic drive
-2. **Thermodynamic cost measurement**: Quantify irreversible work and environmental erasure requirements  
-3. **Predictive capacity validation**: Measure actual performance against theoretical bounds
-4. **Coherence contribution analysis**: Isolate quantum coherence effects on performance enhancement
-
-## Activation Keywords
-quantum reservoir computing, thermodynamics, quantum criticality, informational dissipation, Landauer bound, quantum neuromorphic, energy efficiency, Holevo capacity, Bogoliubov-Kubo-Mori manifold
+### Pitfalls to Avoid
+- Ignoring the fundamental trade-off between predictive capacity and thermodynamic cost
+- Overlooking the role of quantum coherences in amplifying predictive capacity
+- Failing to account for informational dissipation in system design
 
 ## References
-- arXiv:2607.02157 [quant-ph]
-- DOI: 10.48550/arXiv.2607.02157
+- Original paper: arXiv:2607.02157 [quant-ph]
+- DOI: https://doi.org/10.48550/arXiv.2607.02157
+- Authors: Lixiang Ding, Xingze Qiu
 - Subjects: Quantum Physics, Disordered Systems and Neural Networks, Quantum Gases, Statistical Mechanics
+
+## Activation Keywords
+quantum reservoir computing, thermodynamics, quantum neuromorphic, energy efficiency, quantum criticality, informational dissipation, Landauer bound, coherence decomposition

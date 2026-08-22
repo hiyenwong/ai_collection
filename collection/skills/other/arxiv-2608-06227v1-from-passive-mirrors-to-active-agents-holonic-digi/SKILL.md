@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06227v1-from-passive-mirrors-to-active-agents-holonic-digi
 description: 'From Passive Mirrors to Active Agents: Holonic Digital Twins for Physical AI over Networks (arXiv: 2608.06227v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Christo Kurisummoottil Thomas, Omar Hashash, Walid Saad",
     "url": "http://arxiv.org/abs/2608.06227v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # From Passive Mirrors to Active Agents: Holonic Digital Twins for Physical AI over Networks
 

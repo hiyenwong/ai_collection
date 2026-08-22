@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06197v1-envace-internalizing-environment-dynamics-via-worl
 description: 'EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning (arXiv: 2608.06197v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zishan Xu, Zhiyuan Yao, Yuxin Chen, Yifu Guo, Zhengxi Lu, Yuquan Lu, Jinyang Huang, Yan Xu, Yasheng Wang, Weinan Zhang, Xingshan Zeng, Weiwen Liu",
     "url": "http://arxiv.org/abs/2608.06197v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning
 

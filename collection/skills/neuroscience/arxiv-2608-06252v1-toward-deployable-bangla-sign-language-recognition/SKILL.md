@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06252v1-toward-deployable-bangla-sign-language-recognition
 description: 'Toward Deployable Bangla Sign Language Recognition with Expert-Validated Data and a Lightweight Attention-Based Model (arXiv: 2608.06252v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Saad Ahmed, Md Khalid Syfullaha",
     "url": "http://arxiv.org/abs/2608.06252v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Toward Deployable Bangla Sign Language Recognition with Expert-Validated Data and a Lightweight Attention-Based Model
 

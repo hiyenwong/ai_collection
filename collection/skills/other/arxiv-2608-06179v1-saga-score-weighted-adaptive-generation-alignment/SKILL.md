@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06179v1-saga-score-weighted-adaptive-generation-alignment
 description: 'SAGA: Score-Weighted Adaptive Generation Alignment for Low-Resource Nordic Language Models (arXiv: 2608.06179v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Hoda Fakharzadehjahromy, Emil Wiman, Andreas Bueff, Hafsteinn Einarsson, Fredrik Heintz",
     "url": "http://arxiv.org/abs/2608.06179v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # SAGA: Score-Weighted Adaptive Generation Alignment for Low-Resource Nordic Language Models
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06195v1-handling-missing-data-in-probabilistic-regression
 description: 'Handling Missing Data in Probabilistic Regression Trees (arXiv: 2608.06195v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Taiane Schaedler Prass, Alisson Silva Neimaier, Guilherme Pumi",
     "url": "http://arxiv.org/abs/2608.06195v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Handling Missing Data in Probabilistic Regression Trees
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05571v1-align-rag-alignment-is-all-you-need-for-tsfm-in-co
 description: 'Align-RAG: Alignment Is All You Need for TSFM In-Context Learning (arXiv: 2608.05571v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Mohammad Asadi, Soheil Hor, Bardiya Akhbari, Jack W. O'Sullivan, Tahoura Nedaee, Layne C. Price, Raviteja Anantha, Euan Ashley, Ehsan Adeli",
     "url": "http://arxiv.org/abs/2608.05571v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Align-RAG: Alignment Is All You Need for TSFM In-Context Learning
 

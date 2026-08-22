@@ -1,52 +1,62 @@
 ---
 name: mojo-ssl-neural-decoding
-description: MOJO (Masked autOencoder-based JOint training) framework for decoding neural population activity using self-supervised learning with unlabelled data. Use when: working with limited labelled neural data, needing cross-session generalization, or wanting to leverage unlabelled spiking data for brain-computer interfaces.
+description: MOJO (Masked autOencoder-based JOint training) framework for leveraging unlabelled neural data via self-supervised learning combined with supervised objectives. Enables robust neural population decoding with limited labelled data across species and modalities.
 ---
 
-# MOJO: Masked autOencoder-based JOint Training
+# MOJO SSL Neural Decoding
 
-## Overview
+MOJO (Masked autOencoder-based JOint training) is a training framework for spike-tokenizing models that jointly leverages self-supervised learning (SSL) via masked autoencoding and supervised learning (SL) objectives.
 
-MOJO is a training framework for spike-tokenizing neural models that jointly leverages self-supervised learning (SSL) via masked autoencoding and supervised learning (SL) objectives. This approach addresses the limitation of current spike-based models that are restricted to supervised learning, which limits training to datasets with paired behavioral labels.
+## Use when
 
-## Key Benefits
+- Training neural decoders with limited labelled behavioral data
+- Working with multi-session neural recording datasets across species
+- Needing few-shot fine-tuning capabilities for new experimental sessions
+- Building neuro-foundation models that generalize across neural modalities (spiking to continuous signals like ECoG)
 
-- **Superior performance** over purely SL-trained models, especially with limited labelled data
-- **Few-shot finetuning capability** where only small amounts of labelled data from new sessions are available  
-- **More interpretable neuronal representations** improving brain region classification and spike-statistics prediction
-- **Cross-modality generalization** beyond spiking data to human electrocorticography during speech
-- **Comparable performance** to neuro-foundation models (NFMs) designed specifically for continuous signals
+## Core methodology
 
-## Implementation Steps
+1. **Spike tokenization**: Convert neural spiking data into discrete tokens at the individual spike level
+2. **Joint training objective**: Combine masked autoencoding (SSL) with supervised behavioral prediction (SL)
+3. **Multi-session pretraining**: Pretrain on large unlabelled datasets, then fine-tune on small labelled datasets
+4. **Cross-species generalization**: Framework works across monkey motor cortex, mouse multi-regional recordings, and human ECoG
 
-1. **Data Preparation**: Tokenize neural data at the spike level to facilitate multi-session pretraining
-2. **Model Architecture**: Implement a transformer-based architecture capable of handling spike-tokenized sequences
-3. **Joint Training Objective**: Combine SSL via masked autoencoding with SL objectives:
-   - SSL: Randomly mask spike tokens and train model to reconstruct them
-   - SL: Train on available labelled behavioral data for decoding tasks
-4. **Training Protocol**:
-   - Pretrain on large unlabelled datasets using SSL objective
-   - Finetune on limited labelled data using combined SSL+SL objectives
-5. **Evaluation**: Test on multiple neural datasets (monkey motor cortex, mouse multi-regional recordings, human ECoG)
+## Key benefits
 
-## Use Cases
+- Superior performance over purely supervised models, especially with limited labelled data
+- Enhanced few-shot fine-tuning capabilities for new sessions
+- More interpretable neuronal representations (improved brain region classification)
+- Generalization beyond spiking data to continuous neural signals (ECoG during speech)
+- Comparable performance to specialized neuro-foundation models despite broader applicability
 
-- Brain-computer interfaces with limited calibration data
-- Cross-session neural decoding without extensive retraining
-- Multi-species neural data analysis leveraging unlabelled recordings
-- Neuro-foundation model pretraining for flexible downstream applications
+## Implementation steps
 
-## Evaluation Datasets
+1. **Data preprocessing**: Tokenize neural spiking data at spike level using established methods
+2. **Model architecture**: Implement transformer-based architecture with masked autoencoding capability
+3. **Joint loss function**: Combine reconstruction loss (SSL) with behavioral prediction loss (SL)
+4. **Pretraining**: Train on large unlabelled datasets across multiple sessions/species
+5. **Fine-tuning**: Adapt to specific tasks with limited labelled data from target sessions
 
-- Monkey motor cortex during reaching tasks
-- Multi-regional mouse recordings during vision and decision making tasks  
-- Human electrocorticography during speech production
+## Evaluation metrics
 
-## Activation Keywords
+- Behavioral decoding accuracy (primary task performance)
+- Brain region classification accuracy (representation interpretability)
+- Spike statistics prediction quality
+- Cross-modal transfer performance (spiking → ECoG)
+- Few-shot learning curves with varying amounts of labelled data
 
-neural decoding, spike-tokenizing, self-supervised learning, few-shot finetuning, brain-computer interface, neuro-foundation models, unlabelled neural data
+## Pitfalls to avoid
+
+- Ensure proper spike tokenization that preserves temporal structure
+- Balance SSL and SL loss weights appropriately for your specific dataset
+- Account for session-specific variability when pretraining across multiple recordings
+- Validate cross-species generalization carefully as neural coding principles may differ
 
 ## References
 
-- arXiv:2607.14086 - "Leveraging unlabelled data for generalizable neural population decoding"
-- Subjects: Machine Learning (cs.LG), Neurons and Cognition (q-bio.NC)
+- Original paper: "Leveraging unlabelled data for generalizable neural population decoding" (arXiv:2607.14086)
+- Related work: Spike-tokenizing models, neuro-foundation models, masked autoencoders in neuroscience
+
+## Activation keywords
+
+MOJO, masked autoencoder, self-supervised neural decoding, spike tokenization, few-shot neural decoding, neuro-foundation models, joint SSL-SL training

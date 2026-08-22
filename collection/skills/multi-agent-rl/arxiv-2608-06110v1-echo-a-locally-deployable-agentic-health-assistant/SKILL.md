@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06110v1-echo-a-locally-deployable-agentic-health-assistant
 description: 'ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment (arXiv: 2608.06110v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Abdulkadir Külçe, Alihan Esen, Cağla Fikir, Berke Kurt, Kuzey Arar, Gökhan Ercan, Faik Boray Tek",
     "url": "http://arxiv.org/abs/2608.06110v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # ECHO: A Locally-Deployable Agentic Health Assistant with Temporal Memory, Safety Guardrails, and Speech Assessment
 

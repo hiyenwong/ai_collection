@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06300v1-bias-analysis-of-l2-speaking-assessment-systems-us
 description: 'Bias Analysis of L2 Speaking Assessment Systems Using Concept Activation Vectors (arXiv: 2608.06300v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Arya Labroo, Mengjie Qian, Kate Knill",
     "url": "http://arxiv.org/abs/2608.06300v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Bias Analysis of L2 Speaking Assessment Systems Using Concept Activation Vectors
 

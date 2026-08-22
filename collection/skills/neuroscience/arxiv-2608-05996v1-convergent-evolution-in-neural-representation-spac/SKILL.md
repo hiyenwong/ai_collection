@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05996v1-convergent-evolution-in-neural-representation-spac
 description: 'Convergent Evolution in Neural Representation Space: Emergent Order in Deep Belief Networks (arXiv: 2608.05996v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Patrick Krauss, Achim Schilling, Andreas Maier, Thomas Kinfe, Claus Metzner",
     "url": "http://arxiv.org/abs/2608.05996v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Convergent Evolution in Neural Representation Space: Emergent Order in Deep Belief Networks
 

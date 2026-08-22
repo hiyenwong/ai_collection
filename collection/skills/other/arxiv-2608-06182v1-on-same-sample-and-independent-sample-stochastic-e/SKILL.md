@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06182v1-on-same-sample-and-independent-sample-stochastic-e
 description: 'On Same-Sample and Independent-Sample Stochastic Extragradient for Monotone Variational Inequalities (arXiv: 2608.06182v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "TaeHo Yoon, Nicolas Loizou",
     "url": "http://arxiv.org/abs/2608.06182v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # On Same-Sample and Independent-Sample Stochastic Extragradient for Monotone Variational Inequalities
 

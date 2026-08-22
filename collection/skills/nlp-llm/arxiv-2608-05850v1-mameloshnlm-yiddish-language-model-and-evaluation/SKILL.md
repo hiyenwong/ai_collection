@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05850v1-mameloshnlm-yiddish-language-model-and-evaluation
 description: 'MameLoshnLM: Yiddish Language Model and Evaluation Benchmark (arXiv: 2608.05850v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Uri Katz, Omer Goldman, Tomasz Limisiewicz, Reut Tsarfaty, Noah A. Smith",
     "url": "http://arxiv.org/abs/2608.05850v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # MameLoshnLM: Yiddish Language Model and Evaluation Benchmark
 

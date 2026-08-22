@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06111v1-beyond-sequence-order-syntax-informed-positional-e
 description: 'Beyond Sequence Order: Syntax-Informed Positional Embeddings for Transformers (arXiv: 2608.06111v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Haris Riaz, Hyungji Kim, Mihai Surdeanu",
     "url": "http://arxiv.org/abs/2608.06111v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Beyond Sequence Order: Syntax-Informed Positional Embeddings for Transformers
 

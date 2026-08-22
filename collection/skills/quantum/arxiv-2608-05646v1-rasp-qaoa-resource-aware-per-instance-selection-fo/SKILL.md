@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05646v1-rasp-qaoa-resource-aware-per-instance-selection-fo
 description: 'RASP-QAOA: Resource-Aware Per-Instance Selection for Exact QAOA Simulation (arXiv: 2608.05646v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Chih-Chung Hsu",
     "url": "http://arxiv.org/abs/2608.05646v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # RASP-QAOA: Resource-Aware Per-Instance Selection for Exact QAOA Simulation
 

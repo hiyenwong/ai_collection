@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06363v1-an-optimal-agnostic-pac-algorithm
 description: 'An Optimal Agnostic PAC Algorithm (arXiv: 2608.06363v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Markus Engelund Mathiasen, Jian Qian, Nikita Zhivotovskiy",
     "url": "http://arxiv.org/abs/2608.06363v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # An Optimal Agnostic PAC Algorithm
 

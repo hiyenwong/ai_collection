@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06305v1-beyond-top-k-replacing-black-box-retrieval-with-in
 description: 'Beyond Top-K: Replacing Black-Box Retrieval with Interpretable Agentic Operations (arXiv: 2608.06305v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Sagar Tamang, Ayush Vyas, Tabarakul Hazarika",
     "url": "http://arxiv.org/abs/2608.06305v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Beyond Top-K: Replacing Black-Box Retrieval with Interpretable Agentic Operations
 

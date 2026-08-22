@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06144v1-finevo-bench-a-longitudinal-benchmark-for-self-evo
 description: 'FinEvo-Bench: A Longitudinal Benchmark for Self-Evolving Agents in Professional Financial Workflows (arXiv: 2608.06144v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Bo Deng, Kang Zhou, Lifan Guo, Chongyang Tao, Xuanren Chen, Chenggang Xie, Renzhao Liang, Feng Chen, Chi Zhang",
     "url": "http://arxiv.org/abs/2608.06144v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # FinEvo-Bench: A Longitudinal Benchmark for Self-Evolving Agents in Professional Financial Workflows
 

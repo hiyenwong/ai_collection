@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06153v1-learning-globally-reusable-skills-for-coding-agent
 description: 'Learning Globally Reusable Skills for Coding Agents (arXiv: 2608.06153v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Chen Yang, Jiashuo Tian, Ziqi Wang, Xinyin Liu, Meiru Ye, Junjie Chen",
     "url": "http://arxiv.org/abs/2608.06153v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Learning Globally Reusable Skills for Coding Agents
 

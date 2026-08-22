@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05744v1-equipment-centric-workpiece-localization-in-near-r
 description: 'Equipment-centric workpiece localization in near real-time using deep learning-based vision and event-driven finite state machines (arXiv: 2608.05744v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Dohyeon Kong, Jaebong Cho, Hyunbo Cho",
     "url": "http://arxiv.org/abs/2608.05744v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Equipment-centric workpiece localization in near real-time using deep learning-based vision and event-driven finite state machines
 

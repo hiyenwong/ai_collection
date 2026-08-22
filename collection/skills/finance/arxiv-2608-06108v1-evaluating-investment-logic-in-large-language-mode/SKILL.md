@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06108v1-evaluating-investment-logic-in-large-language-mode
 description: 'Evaluating Investment Logic in Large Language Models: A Real-World Benchmark Towards Personalzied Financial Agents (arXiv: 2608.06108v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yuanhong Jiang, Jingjie Zou, Zhenghong Lin, Xusheng Yu, Qiqi Huang, Shuai Jia, Shijie Dai",
     "url": "http://arxiv.org/abs/2608.06108v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Evaluating Investment Logic in Large Language Models: A Real-World Benchmark Towards Personalzied Financial Agents
 

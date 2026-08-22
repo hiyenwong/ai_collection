@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05666v1-potential-matching-optimal-transport-continuous-no
 description: 'Potential Matching Optimal Transport: Continuous Normalizing Flows for Exact $p$-Wasserstein Dynamics (arXiv: 2608.05666v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Lishuo Zhang, Ruizhi Huang, Yang Yu, Lei Li",
     "url": "http://arxiv.org/abs/2608.05666v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Potential Matching Optimal Transport: Continuous Normalizing Flows for Exact $p$-Wasserstein Dynamics
 

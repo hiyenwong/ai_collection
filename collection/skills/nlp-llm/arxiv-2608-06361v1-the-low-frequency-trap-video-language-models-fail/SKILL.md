@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06361v1-the-low-frequency-trap-video-language-models-fail
 description: 'The Low Frequency Trap: Video Language Models Fail at Simple Event Bookkeeping (arXiv: 2608.06361v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Sarvesh Baskar, Zikui Cai, Shayan Shabihi, Anirudh Satheesh, Muhammad R. Islam, Udari Madhushani Sehwag, Tom Goldstein, Furong Huang",
     "url": "http://arxiv.org/abs/2608.06361v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # The Low Frequency Trap: Video Language Models Fail at Simple Event Bookkeeping
 

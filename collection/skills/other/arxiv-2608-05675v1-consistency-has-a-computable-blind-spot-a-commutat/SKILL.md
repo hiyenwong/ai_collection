@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05675v1-consistency-has-a-computable-blind-spot-a-commutat
 description: 'Consistency Has a Computable Blind Spot: A Commutation Theory of Label-Free Reliability for Vision-Language Figure Reading (arXiv: 2608.05675v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Rasul Khanbayov, Hasan Kurban",
     "url": "http://arxiv.org/abs/2608.05675v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Consistency Has a Computable Blind Spot: A Commutation Theory of Label-Free Reliability for Vision-Language Figure Reading
 

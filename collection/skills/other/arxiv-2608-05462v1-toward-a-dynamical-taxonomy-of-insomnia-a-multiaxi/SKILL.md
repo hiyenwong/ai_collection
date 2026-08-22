@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05462v1-toward-a-dynamical-taxonomy-of-insomnia-a-multiaxi
 description: 'Toward a Dynamical Taxonomy of Insomnia: A Multiaxial Framework for Sleep-State Transitions and Architectural Failure (arXiv: 2608.05462v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Alexander Poltorak",
     "url": "http://arxiv.org/abs/2608.05462v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Toward a Dynamical Taxonomy of Insomnia: A Multiaxial Framework for Sleep-State Transitions and Architectural Failure
 

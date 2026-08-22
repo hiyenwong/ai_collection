@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05705v1-spectral-aliasing-pretext-a-novel-task-for-self-su
 description: 'Spectral Aliasing Pretext: A novel task for Self-Supervised fault diagnosis in rotating machinery (arXiv: 2608.05705v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Victor Gialis, Maxime Metz, David Esteve, Abdenour Soualhi",
     "url": "http://arxiv.org/abs/2608.05705v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Spectral Aliasing Pretext: A novel task for Self-Supervised fault diagnosis in rotating machinery
 

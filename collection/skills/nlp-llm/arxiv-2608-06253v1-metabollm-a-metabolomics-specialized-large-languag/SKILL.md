@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06253v1-metabollm-a-metabolomics-specialized-large-languag
 description: 'MetaboLLM: a metabolomics-specialized large language model for biochemical knowledge integration and predictive metabolite graph construction (arXiv: 2608.06253v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Dohyun Ku, Min Gu Kwak, Francisco J. Pasquel, Jing Li",
     "url": "http://arxiv.org/abs/2608.06253v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # MetaboLLM: a metabolomics-specialized large language model for biochemical knowledge integration and predictive metabolite graph construction
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05745v1-univvt-a-unified-end-to-end-framework-for-high-fid
 description: 'UniVVT: A Unified End-to-End Framework for High-Fidelity Video Virtual Try-on (arXiv: 2608.05745v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yushe Cao, Shikun Feng, Fei Shen, Haikuo Peng, Jianqiang Xia, Yiheng Zhu, Dianxi Shi, Chun Yu",
     "url": "http://arxiv.org/abs/2608.05745v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # UniVVT: A Unified End-to-End Framework for High-Fidelity Video Virtual Try-on
 

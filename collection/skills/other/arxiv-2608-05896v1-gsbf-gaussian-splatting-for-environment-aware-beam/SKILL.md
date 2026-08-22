@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05896v1-gsbf-gaussian-splatting-for-environment-aware-beam
 description: 'GSBF: Gaussian Splatting for Environment-Aware Beamforming (arXiv: 2608.05896v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yijie Bian, Wei Guo, Zixin Wang, Shenghui Song, Jun Zhang, Khaled B. Letaief",
     "url": "http://arxiv.org/abs/2608.05896v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # GSBF: Gaussian Splatting for Environment-Aware Beamforming
 

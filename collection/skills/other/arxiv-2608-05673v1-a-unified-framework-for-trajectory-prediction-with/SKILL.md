@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05673v1-a-unified-framework-for-trajectory-prediction-with
 description: 'A Unified Framework for Trajectory Prediction with Explicit Planning and Reaction Decomposition (arXiv: 2608.05673v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Jiaheng Chen, Jiaxing Li, Tinghe Zhang, Chaopeng Guo",
     "url": "http://arxiv.org/abs/2608.05673v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # A Unified Framework for Trajectory Prediction with Explicit Planning and Reaction Decomposition
 

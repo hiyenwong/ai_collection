@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05880v1-beyond-feature-importance-a-comparative-analysis-o
 description: 'Beyond Feature Importance: A Comparative Analysis of Pattern Detection Methods in Cluster Interpretation (arXiv: 2608.05880v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Benjamin Connor, Anna Jurek-Loughrey, Lu Bai, Muhammad Fahim",
     "url": "http://arxiv.org/abs/2608.05880v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Beyond Feature Importance: A Comparative Analysis of Pattern Detection Methods in Cluster Interpretation
 

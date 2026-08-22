@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06353v1-resourced-authority-a-mechanism-design-model-for-p
 description: 'Resourced Authority A Mechanism-Design Model for Participatory Governance of Deployed AI Agents (arXiv: 2608.06353v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Praphul Chandra, Sujit Gujar, Ganesh Ghalme",
     "url": "http://arxiv.org/abs/2608.06353v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Resourced Authority A Mechanism-Design Model for Participatory Governance of Deployed AI Agents
 

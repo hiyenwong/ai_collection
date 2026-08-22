@@ -1,90 +1,94 @@
 ---
-name: synaptic-clustering-covariance-discrimination
-description: "Synaptic clustering methodology for learning covariance structure discrimination using Dendrinet architecture with hierarchical dendritic segments and sparse conductance-based synapses. Use when analyzing how functional synapse clusters (FSCs) emerge from learning to support computation of covariance structure in neural networks."
+name: synaptic-clustering-learning-covariance-discrimination
+description: "Synaptic clustering methodology for learning covariance structure discrimination using Dendrinet architecture with hierarchical dendritic segments and sparse conductance-based synapses. Use when analyzing functional synapse clusters (FSCs), dendritic nonlinearities, synaptic structural plasticity, or covariance classification tasks in computational neuroscience."
 metadata:
   arxiv_id: "2607.24503"
   published: "2026-07-27"
   authors: "Ilenna Simone Jones, Maceo Richards, Houman Safaai, Elom Amematsro, Bernardo Sabatini"
-  tags: [synaptic-clustering, dendritic-computation, covariance-discrimination, neural-networks, computational-neuroscience]
+  tags: [synaptic-clustering, dendritic-nonlinearities, covariance-discrimination, computational-neuroscience, neural-dynamics]
 license: Complete terms in LICENSE.txt
 ---
 
-# Synaptic Clustering for Covariance Discrimination
+# Synaptic Clustering Learning Covariance Discrimination
 
 ## Overview
 
-This methodology introduces **Dendrinet** - an artificial neural network architecture with hierarchical dendritic segments and sparse conductance-based synapses that can solve Permuted-Covariance Classification (PCC) tasks that are impossible for single-layer linear-nonlinear networks.
+This skill implements the methodology from the paper "Synaptic clustering emerges from learning and supports covariance discrimination" (arXiv:2607.24503). The research introduces **Dendrinet**, an artificial neural network architecture with hierarchical dendritic segments and sparse conductance-based synapses, trained on a Permuted-Covariance Classification (PCC) task that cannot be solved by single-layer linear-nonlinear networks.
 
-Functional synapse clusters (FSCs) are synapses with correlated presynaptic activity that are colocalized on the same neuronal dendritic branch. This work demonstrates that FSCs emerge naturally from learning when both dendritic nonlinearities and synaptic structural plasticity are active.
+## Key Contributions
 
-## Key Findings
-
-1. **Emergent FSCs**: Neurons with dendrites develop both excitatory and inhibitory FSCs when trained on PCC tasks
-2. **Causal necessity**: Turning off dendritic nonlinearities reduces excitatory FSCs and performance while unexpectedly increasing inhibitory FSCs
-3. **Connectivity sensitivity**: Shuffling learned synaptic connectivity while keeping nonlinearities fixed reduces performance, showing sensitivity to learned organization
-4. **Inhibitory dominance**: Shuffling inhibitory synapse properties reduces performance more than excitatory shuffle, showing higher sensitivity to inhibitory organization
+1. **Functional Synapse Clusters (FSCs)**: Demonstrates that neurons with dendrites develop excitatory and inhibitory FSCs when both dendritic nonlinearities and synaptic structural plasticity are active
+2. **Causal Necessity**: Shows that learned synaptic connectivity is sensitive to performance - shuffling connectivity reduces performance even with fixed nonlinearities
+3. **Inhibitory Organization**: Reveals higher sensitivity to inhibitory synapse organization compared to excitatory organization
+4. **Dendritic Compartmentalization**: Establishes that dendritic compartmentalization and learned synaptic organization support computation of covariance structure
 
 ## Methodology
 
-### Architecture Components
-- **Hierarchical dendritic segments**: Multi-compartment dendritic structure enabling local nonlinear computations
-- **Sparse conductance-based synapses**: Biologically realistic synaptic transmission model
-- **Structural plasticity**: Synaptic rewiring during learning based on activity correlations
-- **Dendritic nonlinearities**: Local dendritic spike generation and propagation
+### Dendrinet Architecture
+- Hierarchical dendritic segments with compartmentalized processing
+- Sparse conductance-based synapses (both excitatory and inhibitory)
+- Dendritic nonlinearities enabling local computation
+- Synaptic structural plasticity for adaptive connectivity
 
-### Training Protocol
-1. Initialize Dendrinet with random sparse connectivity
-2. Present Permuted-Covariance Classification (PCC) task samples
-3. Apply learning rule that combines:
-   - Activity-dependent synaptic weight updates
-   - Structural plasticity for synapse formation/elimination
-   - Dendritic nonlinearity modulation
-4. Monitor emergence of functional synapse clusters (FSCs)
+### Permuted-Covariance Classification (PCC) Task
+- Cannot be solved by single-layer linear-nonlinear artificial neural networks
+- Requires detection of covariance structure in input patterns
+- Tests the ability to discriminate between different covariance matrices
 
-### Analysis Methods
-- **FSC detection**: Identify synapses with correlated presynaptic activity on same dendritic branch
-- **Performance evaluation**: Compare accuracy on PCC task with/without dendritic nonlinearities
-- **Connectivity shuffling**: Systematic perturbation analysis of learned connectivity patterns
-- **Excitatory vs inhibitory analysis**: Separate analysis of E and I synapse organization effects
-
-## Applications
-
-- **Neural computation**: Understanding how biological neurons compute covariance structure
-- **AI architecture design**: Designing dendritic neural networks for complex statistical learning tasks
-- **Brain-inspired computing**: Implementing biologically plausible learning rules in artificial systems
-- **Neuroscience validation**: Testing hypotheses about functional synapse cluster necessity in vivo
+### Experimental Conditions
+1. **Full Model**: Both dendritic nonlinearities and synaptic structural plasticity active
+2. **No Nonlinearities**: Turn off dendritic nonlinearities (replicates experimental findings)
+3. **Connectivity Shuffle**: Shuffle learned synaptic connectivity while keeping nonlinearities fixed
+4. **Inhibitory Shuffle**: Shuffle inhibitory synapse properties specifically
 
 ## Implementation Guidelines
 
-When implementing Dendrinet or similar architectures:
+### When to Use This Skill
+- Analyzing functional synapse clusters in cortical and hippocampal neurons
+- Studying dendritic nonlinearities and their computational role
+- Investigating synaptic structural plasticity mechanisms
+- Designing neural architectures for covariance structure computation
+- Researching inhibitory vs excitatory organization in neural networks
 
-1. **Start with basic dendritic model**: Begin with simple two-compartment models before scaling to complex hierarchies
-2. **Implement sparse connectivity**: Ensure initial connectivity sparsity matches biological constraints (~10% connection probability)
-3. **Include both E and I synapses**: Both excitatory and inhibitory synapses are crucial for proper FSC formation
-4. **Enable structural plasticity**: Allow synapse formation/elimination during learning, not just weight changes
-5. **Monitor FSC emergence**: Track correlation structure of synapses on dendritic branches throughout training
+### Key Parameters
+- **Dendritic Segment Count**: Number of hierarchical dendritic compartments
+- **Synapse Sparsity**: Density of conductance-based synaptic connections
+- **Nonlinearity Strength**: Degree of dendritic nonlinear processing
+- **Plasticity Rate**: Rate of synaptic structural adaptation during learning
 
-## Pitfalls to Avoid
+### Validation Metrics
+- **Excitatory FSC Formation**: Measure correlation of presynaptic activity within dendritic branches
+- **Inhibitory FSC Formation**: Same measurement for inhibitory synapses
+- **PCC Task Performance**: Classification accuracy on permuted-covariance task
+- **Shuffle Sensitivity**: Performance degradation after connectivity shuffling
 
-- **Confounding dendritic effects**: Pharmacological ablation of dendritic nonlinearities may have confounding effects beyond FSC disruption
-- **Ignoring inhibitory organization**: Inhibitory synapse organization is more critical than previously assumed
-- **Over-simplified connectivity**: Fixed connectivity without structural plasticity prevents natural FSC emergence
-- **Single-compartment models**: Single-compartment neurons cannot replicate the computational advantages of dendritic processing
+## Pitfalls and Considerations
 
-## Activation Keywords
+### Common Issues
+1. **Confounding Effects**: Pharmacological blocking of dendritic nonlinearities may have confounding effects beyond FSC ablation
+2. **Performance Trade-offs**: Turning off dendritic nonlinearities reduces excitatory FSCs but unexpectedly increases inhibitory FSCs
+3. **Connectivity Specificity**: Shuffling affects more than just FSCs - it changes overall learned connectivity patterns
 
-- synaptic clustering
-- dendritic computation  
-- covariance discrimination
-- functional synapse clusters
-- Dendrinet
-- Permuted-Covariance Classification
-- dendritic nonlinearities
-- structural plasticity
-- inhibitory organization
-- neural computation
+### Best Practices
+- Always compare full model performance against all ablation conditions
+- Measure both excitatory and inhibitory FSC formation separately
+- Use multiple shuffle variants to isolate specific organizational effects
+- Validate findings with biological plausibility constraints
 
 ## References
 
-- Original paper: [arXiv:2607.24503](https://arxiv.org/abs/2607.24503)
-- Related neuroscience concepts: Functional synapse clusters, dendritic computation, covariance structure learning
+- **Original Paper**: [arXiv:2607.24503](https://arxiv.org/abs/2607.24503)
+- **Related Skills**: 
+  - `dendrocentric-snn-event-classification` - DendroNN methodology for event classification
+  - `synaptic-motifs-mean-field-dynamics` - Mean-field theory linking microscale synaptic motifs
+  - `structural-plasticity-growth-stability` - Analysis of structural plasticity in neural networks
+
+## Activation Keywords
+- synaptic clustering
+- functional synapse clusters
+- dendritic nonlinearities  
+- covariance discrimination
+- Dendrinet architecture
+- permuted-covariance classification
+- inhibitory organization
+- dendritic compartmentalization

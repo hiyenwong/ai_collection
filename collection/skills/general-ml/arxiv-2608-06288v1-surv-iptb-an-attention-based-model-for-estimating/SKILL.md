@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06288v1-surv-iptb-an-attention-based-model-for-estimating
 description: 'Surv-IPTB: An Attention-Based Model for Estimating Individual Probability of Treatment Benefit with Survival Data (arXiv: 2608.06288v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Lev V. Utkin, Stanislav K. Kogan, Andrei V. Konstantinov",
     "url": "http://arxiv.org/abs/2608.06288v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Surv-IPTB: An Attention-Based Model for Estimating Individual Probability of Treatment Benefit with Survival Data
 

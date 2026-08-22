@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05989v1-observation-grounded-self-predictive-reinforcement
 description: 'Observation-Grounded Self-Predictive Reinforcement Learning for Visual Continuous Control (arXiv: 2608.05989v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Xinwei Liu, Junyuan Liang, Jianting Zhang, Wuhui Chen",
     "url": "http://arxiv.org/abs/2608.05989v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Observation-Grounded Self-Predictive Reinforcement Learning for Visual Continuous Control
 

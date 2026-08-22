@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06046v1-ml-for-ml
 description: 'ML-for-ML (arXiv: 2608.06046v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Yutong Zhao, Noga H. Rotman, Gianni Antichi, Ran Ben Basat",
     "url": "http://arxiv.org/abs/2608.06046v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # ML-for-ML
 

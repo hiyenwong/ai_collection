@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05970v1-skillmemo-expert-guided-skill-memory-framework-for
 description: 'SkillMemo: Expert-guided Skill Memory Framework for Compositional Embodied Manipulation (arXiv: 2608.05970v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Changyuan Wang, Chubin Zhang, Zhenyu Wu, Runhao Li, Angyuan Ma, Ke Chao, Yinan Liang, Xiuwei Xu, Ziwei Wang, Yansong Tang, Jiwen Lu",
     "url": "http://arxiv.org/abs/2608.05970v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # SkillMemo: Expert-guided Skill Memory Framework for Compositional Embodied Manipulation
 

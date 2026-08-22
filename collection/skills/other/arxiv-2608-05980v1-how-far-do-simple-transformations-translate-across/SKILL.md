@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05980v1-how-far-do-simple-transformations-translate-across
 description: 'How Far Do Simple Transformations Translate Across Text Embedding Models? (arXiv: 2608.05980v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Sid Ali Hamideche, Louis Adrien Dufrene, Quentin Lampin, Guillaume Larue",
     "url": "http://arxiv.org/abs/2608.05980v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # How Far Do Simple Transformations Translate Across Text Embedding Models?
 

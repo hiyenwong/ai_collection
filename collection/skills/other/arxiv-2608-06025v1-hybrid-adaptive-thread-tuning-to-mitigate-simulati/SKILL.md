@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06025v1-hybrid-adaptive-thread-tuning-to-mitigate-simulati
 description: 'Hybrid-Adaptive Thread Tuning to Mitigate Simulation Execution Bottlenecks in High-Performance Reinforcement Learning Inference (arXiv: 2608.06025v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Jiming Su, Hantao Hua, Lujia Yin, Yiping Yao, Feng Zhu",
     "url": "http://arxiv.org/abs/2608.06025v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Hybrid-Adaptive Thread Tuning to Mitigate Simulation Execution Bottlenecks in High-Performance Reinforcement Learning Inference
 

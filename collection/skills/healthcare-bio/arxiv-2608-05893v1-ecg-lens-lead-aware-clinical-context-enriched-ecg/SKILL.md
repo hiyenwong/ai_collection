@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05893v1-ecg-lens-lead-aware-clinical-context-enriched-ecg
 description: 'ECG-LENS: Lead-Aware Clinical Context Enriched ECG Report Generation and Evaluation (arXiv: 2608.05893v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Akanta Das, Tasinul Islam Ahon, Ahmed Mahir Sultan Rumi, Md Mahbubur Rahman, Tausif Amim Shadly, Tanzima Hashem",
     "url": "http://arxiv.org/abs/2608.05893v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # ECG-LENS: Lead-Aware Clinical Context Enriched ECG Report Generation and Evaluation
 

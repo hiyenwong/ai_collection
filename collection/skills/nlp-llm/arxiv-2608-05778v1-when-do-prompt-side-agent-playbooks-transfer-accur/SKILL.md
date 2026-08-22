@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05778v1-when-do-prompt-side-agent-playbooks-transfer-accur
 description: 'When Do Prompt-Side Agent Playbooks Transfer? Accuracy, Cost, and Runtime Shift in Agent Deployment (arXiv: 2608.05778v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Weihong Lin, Lin Sun, Xiangzheng Zhang",
     "url": "http://arxiv.org/abs/2608.05778v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # When Do Prompt-Side Agent Playbooks Transfer? Accuracy, Cost, and Runtime Shift in Agent Deployment
 

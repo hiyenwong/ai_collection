@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05958v1-stability-of-ranking-dependent-pair-wise-compariso
 description: 'Stability of Ranking-dependent Pair-wise Comparison Patterns in the Analytic Hierarchy Process (arXiv: 2608.05958v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Vitaliy Tsyganok, Sergii Kadenko, Oleh Andriichuk",
     "url": "http://arxiv.org/abs/2608.05958v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Stability of Ranking-dependent Pair-wise Comparison Patterns in the Analytic Hierarchy Process
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05797v1-predicting-task-difficulty-without-rollouts
 description: 'Predicting Task Difficulty Without Rollouts (arXiv: 2608.05797v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Stefan Krsteski, Charlotte Meyer",
     "url": "http://arxiv.org/abs/2608.05797v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Predicting Task Difficulty Without Rollouts
 

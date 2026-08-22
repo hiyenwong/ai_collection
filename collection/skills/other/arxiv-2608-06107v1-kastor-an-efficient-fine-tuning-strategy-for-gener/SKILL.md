@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06107v1-kastor-an-efficient-fine-tuning-strategy-for-gener
 description: 'Kastor: An efficient fine-tuning strategy for generative emulation of PDE simulations (arXiv: 2608.06107v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Guillaume Couairon, Alexis Jacq, Yu-Han Wu, Renu Singh, Yana Hasson, Quentin Berthet, Romuald Elie",
     "url": "http://arxiv.org/abs/2608.06107v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Kastor: An efficient fine-tuning strategy for generative emulation of PDE simulations
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06177v1-threshold-based-early-stopping-of-accumulations-in
 description: 'Threshold-Based Early Stopping of Accumulations in Neural Networks with Binary Activation (arXiv: 2608.06177v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Quentin Luquet de Saint-Germain, Massil Ait Abdeslam, Jean Pierre David",
     "url": "http://arxiv.org/abs/2608.06177v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Threshold-Based Early Stopping of Accumulations in Neural Networks with Binary Activation
 

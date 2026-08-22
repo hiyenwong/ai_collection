@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06096v1-a-special-point-skeleton-reconstruction-algorithm
 description: 'A Special Point Skeleton Reconstruction Algorithm for Dynamic Multiobjective Optimization (arXiv: 2608.06096v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "GuangXian Gan, MinRong Chen",
     "url": "http://arxiv.org/abs/2608.06096v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # A Special Point Skeleton Reconstruction Algorithm for Dynamic Multiobjective Optimization
 

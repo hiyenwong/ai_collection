@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06150v1-cogvis-must-open-vocabulary-change-detection-perce
 description: 'CogVis: Must Open-Vocabulary Change Detection Perceive the Scene Anew for Every Query? (arXiv: 2608.06150v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zijie Wang, Chen Zhong, Wei He",
     "url": "http://arxiv.org/abs/2608.06150v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # CogVis: Must Open-Vocabulary Change Detection Perceive the Scene Anew for Every Query?
 

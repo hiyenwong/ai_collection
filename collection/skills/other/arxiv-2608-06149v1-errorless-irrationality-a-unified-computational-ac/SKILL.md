@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06149v1-errorless-irrationality-a-unified-computational-ac
 description: 'Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures (arXiv: 2608.06149v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Lenard Dome, Andy J. Wills",
     "url": "http://arxiv.org/abs/2608.06149v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Errorless Irrationality: A unified computational account of the inverse base-rate effect across predictive, observational, and unsupervised procedures
 

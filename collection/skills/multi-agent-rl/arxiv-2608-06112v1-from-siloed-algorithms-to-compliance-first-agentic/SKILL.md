@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06112v1-from-siloed-algorithms-to-compliance-first-agentic
 description: 'From Siloed Algorithms to Compliance-First Agentic Platforms: A Multi-Layered Architecture for Hospital AI Systems (arXiv: 2608.06112v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Manideep Dhar, Ritwik Singh, Sharat Chandra Kumar Manikonda",
     "url": "http://arxiv.org/abs/2608.06112v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # From Siloed Algorithms to Compliance-First Agentic Platforms: A Multi-Layered Architecture for Hospital AI Systems
 

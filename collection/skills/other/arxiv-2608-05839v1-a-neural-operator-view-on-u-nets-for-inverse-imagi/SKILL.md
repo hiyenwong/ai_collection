@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05839v1-a-neural-operator-view-on-u-nets-for-inverse-imagi
 description: 'A neural operator view on U-Nets for inverse imaging problems (arXiv: 2608.05839v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Alexander Auras, Martin Burger, Samira Kabri, Michael Moeller, Michael Schopf-Kuester",
     "url": "http://arxiv.org/abs/2608.05839v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # A neural operator view on U-Nets for inverse imaging problems
 

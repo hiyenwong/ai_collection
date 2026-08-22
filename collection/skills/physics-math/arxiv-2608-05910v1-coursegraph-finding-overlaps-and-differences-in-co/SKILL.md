@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05910v1-coursegraph-finding-overlaps-and-differences-in-co
 description: 'CourseGraph: Finding overlaps and differences in Computer Science courses across universities (arXiv: 2608.05910v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Arthur Nijdam, Paul Stankovski Wagner, Sara Ramezanian",
     "url": "http://arxiv.org/abs/2608.05910v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # CourseGraph: Finding overlaps and differences in Computer Science courses across universities
 

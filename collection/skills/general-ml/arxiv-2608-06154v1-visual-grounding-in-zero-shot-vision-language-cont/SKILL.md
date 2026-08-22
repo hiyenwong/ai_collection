@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06154v1-visual-grounding-in-zero-shot-vision-language-cont
 description: 'Visual Grounding in Zero-Shot Vision-Language Control (arXiv: 2608.06154v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "J. de Curtò, Dayani Plasencia, Diego Sánchez, I. de Zarzà",
     "url": "http://arxiv.org/abs/2608.06154v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Visual Grounding in Zero-Shot Vision-Language Control
 

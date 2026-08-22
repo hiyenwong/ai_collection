@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05686v1-provably-efficient-self-calibrating-quantum-fault
 description: 'Provably Efficient Self-Calibrating Quantum Fault Tolerance (arXiv: 2608.05686v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Weiyuan Gong, Hong-Ye Hu",
     "url": "http://arxiv.org/abs/2608.05686v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Provably Efficient Self-Calibrating Quantum Fault Tolerance
 

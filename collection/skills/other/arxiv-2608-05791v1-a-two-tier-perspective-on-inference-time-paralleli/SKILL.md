@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05791v1-a-two-tier-perspective-on-inference-time-paralleli
 description: 'A Two-Tier Perspective on Inference-Time Parallelism in Multi-Agent LLM Systems (arXiv: 2608.05791v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Zihan Xu, Haolin Tian, Hai Jiang",
     "url": "http://arxiv.org/abs/2608.05791v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # A Two-Tier Perspective on Inference-Time Parallelism in Multi-Agent LLM Systems
 

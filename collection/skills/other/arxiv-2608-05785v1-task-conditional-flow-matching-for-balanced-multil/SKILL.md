@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05785v1-task-conditional-flow-matching-for-balanced-multil
 description: 'Task-Conditional Flow Matching for Balanced Multilingual Text Embedding Adaptation (arXiv: 2608.05785v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Tirth Bhatt, Naren Kumar S, Mayank Singh",
     "url": "http://arxiv.org/abs/2608.05785v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Task-Conditional Flow Matching for Balanced Multilingual Text Embedding Adaptation
 

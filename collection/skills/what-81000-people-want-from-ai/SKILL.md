@@ -10,15 +10,13 @@ metadata:
 license: Complete terms in LICENSE.txt
 ---
 
-# What 81000 People Want From Ai
+# What 81,000 People Want From AI
 
 ## Overview
 
-[TODO: 1-2 sentences explaining what this skill enables]
+This research presents findings from the largest and most multilingual qualitative study of AI user perspectives, with nearly 81,000 Claude.ai users sharing how they use AI, what they dream it could make possible, and what they fear it might do. This skill provides methodology for conducting large-scale user research and analyzing qualitative feedback at scale.
 
-## Structuring This Skill
-
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+## Core Methodology
 
 **1. Workflow-Based** (best for sequential processes)
 - Works well when there are clear step-by-step procedures

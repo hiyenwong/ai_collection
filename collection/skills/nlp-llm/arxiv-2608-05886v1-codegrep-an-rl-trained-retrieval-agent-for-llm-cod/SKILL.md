@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05886v1-codegrep-an-rl-trained-retrieval-agent-for-llm-cod
 description: 'CodeGrep: An RL-Trained Retrieval Agent for LLM Coding Agents (arXiv: 2608.05886v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Wuya Chen, Yihao yang, Yang Cao, Yue Lin",
     "url": "http://arxiv.org/abs/2608.05886v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # CodeGrep: An RL-Trained Retrieval Agent for LLM Coding Agents
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05737v1-abc-numerical-data-collection-under-local-differen
 description: 'ABC: Numerical Data Collection under Local Differential Privacy without Prior Knowledge (arXiv: 2608.05737v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Incheol Baek, Hyungbin Kim, Yon Dohn Chung",
     "url": "http://arxiv.org/abs/2608.05737v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # ABC: Numerical Data Collection under Local Differential Privacy without Prior Knowledge
 

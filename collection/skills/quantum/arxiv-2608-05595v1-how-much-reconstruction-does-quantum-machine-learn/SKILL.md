@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05595v1-how-much-reconstruction-does-quantum-machine-learn
 description: 'How Much Reconstruction Does Quantum Machine Learning Need? Late Fusion of Independently Trained Quantum Subcircuits (arXiv: 2608.05595v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Prabhjot Singh, Adel N. Toosi, Rajkumar Buyya",
     "url": "http://arxiv.org/abs/2608.05595v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # How Much Reconstruction Does Quantum Machine Learning Need? Late Fusion of Independently Trained Quantum Subcircuits
 

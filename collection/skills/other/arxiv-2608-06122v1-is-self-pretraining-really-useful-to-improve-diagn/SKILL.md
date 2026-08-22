@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-06122v1-is-self-pretraining-really-useful-to-improve-diagn
 description: 'Is Self-Pretraining really useful to improve diagnosis in medical Time Series? (arXiv: 2608.06122v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Omar Coser, Antonio Orvieto, Paolo Soda, Loredana Zollo",
     "url": "http://arxiv.org/abs/2608.06122v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # Is Self-Pretraining really useful to improve diagnosis in medical Time Series?
 

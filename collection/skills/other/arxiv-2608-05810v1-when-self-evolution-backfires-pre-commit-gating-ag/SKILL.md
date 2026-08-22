@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05810v1-when-self-evolution-backfires-pre-commit-gating-ag
 description: 'When Self-Evolution Backfires: Pre-Commit Gating against Skill Contamination in LLM Agents (arXiv: 2608.05810v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Linfang Shang, Ming Xu, Yiding Sun, Tianle Xia, Lingxiang Hu, Lan Xu, Ning Zheng",
     "url": "http://arxiv.org/abs/2608.05810v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # When Self-Evolution Backfires: Pre-Commit Gating against Skill Contamination in LLM Agents
 

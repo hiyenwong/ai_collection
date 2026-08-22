@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 name: arxiv-2608-05975v1-trace-learned-proprioceptive-odometry-for-legged-r
 description: 'TRACE: Learned Proprioceptive Odometry for Legged Robots under Unreliable Contact Conditions (arXiv: 2608.05975v1)'
 metadata:
@@ -9,7 +13,11 @@ metadata:
     "authors": "Taehyeon Kong, Woojin Kim, Jemin Hwangbo",
     "url": "http://arxiv.org/abs/2608.05975v1"
   }
+<<<<<<< HEAD
 ---
+=======
+--
+>>>>>>> origin/main
 
 # TRACE: Learned Proprioceptive Odometry for Legged Robots under Unreliable Contact Conditions
 
