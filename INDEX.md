@@ -33,3 +33,19 @@
   - Distributed execution: Successfully validated across geographically separated ECUs
   - OEM-supplier applicability: Confirmed pipeline works for real-world automotive industry workflows
   - **Activation**: IoT automotive testing, deployment-aware testing, Eclipse openDuT, requirement-driven testing, LLM testing, VLM testing, distributed automotive testing, OEM-supplier testing, Gherkin generation
+
+## 2026-08-22 - Anthropic Research (Cron Job)
+
+### An off switch for dual-use knowledge in AI models
+- [[off-switch-dual-use-knowledge]] - Off switch for dual-use knowledge using GRAM methodology.
+  - Gradient-Routed Auxiliary Modules (GRAM) provide fine-grained control over harmful capabilities
+  - Enables selective activation/deactivation of specific knowledge pathways
+  - Maintains model utility while reducing dual-use risks
+  - **Activation**: off switch dual-use knowledge, GRAM methodology, gradient-routed auxiliary modules, knowledge control
+
+### Discovering cryptographic weaknesses with Claude
+- [[discovering-cryptographic-weaknesses]] - Discovering cryptographic weaknesses using Claude AI.
+  - AI-assisted vulnerability discovery in cryptographic protocols and implementations
+  - Systematic analysis of edge cases and implementation gaps
+  - Enhanced code review automation for security-critical systems
+  - **Activation**: discovering cryptographic weaknesses, Claude AI security analysis, cryptographic vulnerability discovery, AI-assisted code review
