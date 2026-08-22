@@ -1,3 +1,13 @@
+## 2026-08-22 - Neuroscience Research (Cron Job)
+
+### Decoding silent reading from non-invasive EEG
+- [[eeg-silent-reading-decoding]] - EEG-based silent reading decoding framework for scalable inner speech BCI. Uses contrastive decoding to extract lexical and semantic information from non-invasive EEG during silent reading as a proxy task for inner speech. (arXiv: 2608.20186)
+  - Scalable proxy paradigm: Uses silent reading instead of unverifiable inner speech paradigms
+  - Open-vocabulary decoding: Recovers lexical and semantic information from ~240,000 word presentations
+  - CLIP-style contrastive objective: Aligns short EEG windows with LLM hidden-state embeddings
+  - Data-limited performance: Shows log-linear scaling with training data volume, no saturation observed
+  - **Activation**: silent reading, EEG decoding, inner speech BCI, non-invasive brain-computer interface, contrastive decoder
+
 ## 2026-08-22 - Quantum Neuromorphic Computing (Cron Job)
 
 ### Active Spiking Perception: The Membrane Potential as a Belief State for Anytime 3D Point Cloud Recognition
