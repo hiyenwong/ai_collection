@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+\n## {today} - arXiv Paper Skills (Cron Job)\n\n<<<<<<< HEAD
 
 ## 2026-08-12 - arXiv Paper Skills (Cron Job)
 \n## 2026-08-07 - arXiv Paper Skills (Cron Job)\n\n## 2026-08-07 - arXiv Paper Skills (Cron Job)\n\n## 2026-08-07 - arXiv Paper Skills (Cron Job)\n\n## 2026-08-07 - arXiv Paper Skills (Cron Job)\n\n## 2026-08-07 - arXiv Paper Skills (Cron Job)\n\n## 2026-08-07 - arXiv Paper Skills (Cron Job)\n\n## 2026-08-07 - arXiv Paper Skills (Cron Job)\n\n## 2026-08-07 - arXiv Paper Skills (Cron Job)\n## New High-Utility Papers (2026-07-30)
