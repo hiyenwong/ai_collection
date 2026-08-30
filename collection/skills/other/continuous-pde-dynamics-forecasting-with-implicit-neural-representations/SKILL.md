@@ -1,0 +1,19 @@
+# Continuous PDE Dynamics Forecasting with Implicit Neural Representations
+
+**arXiv ID:** 2209.14855
+**Authors:** Yuan Yin, Matthieu Kirchmeyer, Jean-Yves Franceschi, Alain Rakotomamonjy, Patrick Gallinari
+**Published:** 2022-09-29T15:17:50Z
+**Abstract:**
+Effective data-driven PDE forecasting methods often rely on fixed spatial and / or temporal discretizations. This raises limitations in real-world applications like weather prediction where flexible extrapolation at arbitrary spatiotemporal locations is required. We address this problem by introducing a new data-driven approach, DINo, that models a PDE's flow with continuous-time dynamics of spatially continuous functions. This is achieved by embedding spatial observations independently of their discretization via Implicit Neural Representations in a small latent space temporally driven by a learned ODE. This separate and flexible treatment of time and space makes DINo the first data-driven model to combine the following advantages. It extrapolates at arbitrary spatial and temporal locations; it can learn from sparse irregular grids or manifolds; at test time, it generalizes to new grids or resolutions. DINo outperforms alternative neural PDE forecasters in a variety of challenging generalization scenarios on representative PDE systems.
+
+## Skill Description
+
+This skill is generated from the arXiv paper: Continuous PDE Dynamics Forecasting with Implicit Neural Representations (2209.14855).
+
+## How to Use
+
+[To be filled in by the user or by future automation]
+
+## References
+
+- [arXiv:2209.14855](http://arxiv.org/abs/2209.14855v2)

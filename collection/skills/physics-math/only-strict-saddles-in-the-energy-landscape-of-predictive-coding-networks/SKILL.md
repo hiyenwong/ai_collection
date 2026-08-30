@@ -1,0 +1,19 @@
+# Only Strict Saddles in the Energy Landscape of Predictive Coding Networks?
+
+**arXiv ID:** 2408.11979
+**Authors:** Francesco Innocenti, El Mehdi Achour, Ryan Singh, Christopher L. Buckley
+**Published:** 2024-08-21T20:23:44Z
+**Abstract:**
+Predictive coding (PC) is an energy-based learning algorithm that performs iterative inference over network activities before updating weights. Recent work suggests that PC can converge in fewer learning steps than backpropagation thanks to its inference procedure. However, these advantages are not always observed, and the impact of PC inference on learning is not theoretically well understood. Here, we study the geometry of the PC energy landscape at the inference equilibrium of the network activities. For deep linear networks, we first show that the equilibrated energy is simply a rescaled mean squared error loss with a weight-dependent rescaling. We then prove that many highly degenerate (non-strict) saddles of the loss including the origin become much easier to escape (strict) in the equilibrated energy. Our theory is validated by experiments on both linear and non-linear networks. Based on these and other results, we conjecture that all the saddles of the equilibrated energy are strict. Overall, this work suggests that PC inference makes the loss landscape more benign and robust to vanishing gradients, while also highlighting the fundamental challenge of scaling PC to deeper models.
+
+## Skill Description
+
+This skill is generated from the arXiv paper: Only Strict Saddles in the Energy Landscape of Predictive Coding Networks? (2408.11979).
+
+## How to Use
+
+[To be filled in by the user or by future automation]
+
+## References
+
+- [arXiv:2408.11979](http://arxiv.org/abs/2408.11979v2)

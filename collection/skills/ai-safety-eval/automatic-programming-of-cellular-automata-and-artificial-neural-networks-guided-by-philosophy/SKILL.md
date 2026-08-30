@@ -1,0 +1,19 @@
+# Automatic Programming of Cellular Automata and Artificial Neural Networks Guided by Philosophy
+
+**arXiv ID:** 1905.04232
+**Authors:** Patrik Christen, Olivier Del Fabbro
+**Published:** 2019-05-10T16:00:09Z
+**Abstract:**
+Many computer models such as cellular automata and artificial neural networks have been developed and successfully applied. However, in some cases, these models might be restrictive on the possible solutions or their solutions might be difficult to interpret. To overcome this problem, we outline a new approach, the so-called allagmatic method, that automatically programs and executes models with as little limitations as possible while maintaining human interpretability. Earlier we described a metamodel and its building blocks according to the philosophical concepts of structure (spatial dimension) and operation (temporal dimension). They are entity, milieu, and update function that together abstractly describe cellular automata, artificial neural networks, and possibly any kind of computer model. By automatically combining these building blocks in an evolutionary computation, interpretability might be increased by the relationship to the metamodel, and models might be translated into more interpretable models via the metamodel. We propose generic and object-oriented programming to implement the entities and their milieus as dynamic and generic arrays and the update function as a method. We show two experiments where a simple cellular automaton and an artificial neural network are automatically programmed, compiled, and executed. A target state is successfully evolved and learned in the cellular automaton and artificial neural network, respectively. We conclude that the allagmatic method can create and execute cellular automaton and artificial neural network models in an automated manner with the guidance of philosophy.
+
+## Skill Description
+
+This skill is generated from the arXiv paper: Automatic Programming of Cellular Automata and Artificial Neural Networks Guided by Philosophy (1905.04232).
+
+## How to Use
+
+[To be filled in by the user or by future automation]
+
+## References
+
+- [arXiv:1905.04232](http://arxiv.org/abs/1905.04232v6)

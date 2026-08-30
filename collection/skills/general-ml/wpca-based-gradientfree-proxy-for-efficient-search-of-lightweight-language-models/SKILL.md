@@ -1,0 +1,19 @@
+# W-PCA Based Gradient-Free Proxy for Efficient Search of Lightweight Language Models
+
+**arXiv ID:** 2504.15983
+**Authors:** Shang Wang
+**Published:** 2025-04-22T15:33:01Z
+**Abstract:**
+The demand for efficient natural language processing (NLP) systems has led to the development of lightweight language models. Previous work in this area has primarily focused on manual design or training-based neural architecture search (NAS) methods. Recently, zero-shot NAS methods have been proposed for evaluating language models without the need for training. However, prevailing approaches to zero-shot NAS often face challenges such as biased evaluation metrics and computational inefficiencies. In this paper, we introduce weight-weighted PCA (W-PCA), a novel zero-shot NAS method specifically tailored for lightweight language models. Our approach utilizes two evaluation proxies: the parameter count and the number of principal components with cumulative contribution exceeding $η$ in the feed-forward neural (FFN) layer. Additionally, by eliminating the need for gradient computations, we optimize the evaluation time, thus enhancing the efficiency of designing and evaluating lightweight language models. We conduct a comparative analysis on the GLUE and SQuAD datasets to evaluate our approach. The results demonstrate that our method significantly reduces training time compared to one-shot NAS methods and achieves higher scores in the testing phase compared to previous state-of-the-art training-based methods. Furthermore, we perform ranking evaluations on a dataset sampled from the FlexiBERT search space. Our approach exhibits superior ranking correlation and further reduces solving time compared to other zero-shot NAS methods that require gradient computation.
+
+## Skill Description
+
+This skill is generated from the arXiv paper: W-PCA Based Gradient-Free Proxy for Efficient Search of Lightweight Language Models (2504.15983).
+
+## How to Use
+
+[To be filled in by the user or by future automation]
+
+## References
+
+- [arXiv:2504.15983](http://arxiv.org/abs/2504.15983v1)

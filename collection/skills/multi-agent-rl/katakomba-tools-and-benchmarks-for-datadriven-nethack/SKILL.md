@@ -1,0 +1,19 @@
+# Katakomba: Tools and Benchmarks for Data-Driven NetHack
+
+**arXiv ID:** 2306.08772
+**Authors:** Vladislav Kurenkov, Alexander Nikulin, Denis Tarasov, Sergey Kolesnikov
+**Published:** 2023-06-14T22:50:25Z
+**Abstract:**
+NetHack is known as the frontier of reinforcement learning research where learning-based methods still need to catch up to rule-based solutions. One of the promising directions for a breakthrough is using pre-collected datasets similar to recent developments in robotics, recommender systems, and more under the umbrella of offline reinforcement learning (ORL). Recently, a large-scale NetHack dataset was released; while it was a necessary step forward, it has yet to gain wide adoption in the ORL community. In this work, we argue that there are three major obstacles for adoption: resource-wise, implementation-wise, and benchmark-wise. To address them, we develop an open-source library that provides workflow fundamentals familiar to the ORL community: pre-defined D4RL-style tasks, uncluttered baseline implementations, and reliable evaluation tools with accompanying configs and logs synced to the cloud.
+
+## Skill Description
+
+This skill is generated from the arXiv paper: Katakomba: Tools and Benchmarks for Data-Driven NetHack (2306.08772).
+
+## How to Use
+
+[To be filled in by the user or by future automation]
+
+## References
+
+- [arXiv:2306.08772](http://arxiv.org/abs/2306.08772v2)

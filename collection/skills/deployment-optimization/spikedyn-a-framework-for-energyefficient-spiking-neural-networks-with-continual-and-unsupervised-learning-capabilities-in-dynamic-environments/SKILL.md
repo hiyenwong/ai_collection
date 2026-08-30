@@ -1,0 +1,19 @@
+# SpikeDyn: A Framework for Energy-Efficient Spiking Neural Networks with Continual and Unsupervised Learning Capabilities in Dynamic Environments
+
+**arXiv ID:** 2103.00424
+**Authors:** Rachmad Vidya Wicaksana Putra, Muhammad Shafique
+**Published:** 2021-02-28T08:26:23Z
+**Abstract:**
+Spiking Neural Networks (SNNs) bear the potential of efficient unsupervised and continual learning capabilities because of their biological plausibility, but their complexity still poses a serious research challenge to enable their energy-efficient design for resource-constrained scenarios (like embedded systems, IoT-Edge, etc.). We propose SpikeDyn, a comprehensive framework for energy-efficient SNNs with continual and unsupervised learning capabilities in dynamic environments, for both the training and inference phases. It is achieved through the following multiple diverse mechanisms: 1) reduction of neuronal operations, by replacing the inhibitory neurons with direct lateral inhibitions; 2) a memory- and energy-constrained SNN model search algorithm that employs analytical models to estimate the memory footprint and energy consumption of different candidate SNN models and selects a Pareto-optimal SNN model; and 3) a lightweight continual and unsupervised learning algorithm that employs adaptive learning rates, adaptive membrane threshold potential, weight decay, and reduction of spurious updates. Our experimental results show that, for a network with 400 excitatory neurons, our SpikeDyn reduces the energy consumption on average by 51% for training and by 37% for inference, as compared to the state-of-the-art. Due to the improved learning algorithm, SpikeDyn provides on avg. 21% accuracy improvement over the state-of-the-art, for classifying the most recently learned task, and by 8% on average for the previously learned tasks.
+
+## Skill Description
+
+This skill is generated from the arXiv paper: SpikeDyn: A Framework for Energy-Efficient Spiking Neural Networks with Continual and Unsupervised Learning Capabilities in Dynamic Environments (2103.00424).
+
+## How to Use
+
+[To be filled in by the user or by future automation]
+
+## References
+
+- [arXiv:2103.00424](http://arxiv.org/abs/2103.00424v1)

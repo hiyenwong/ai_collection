@@ -1,0 +1,19 @@
+# Bridging LSTM Architecture and the Neural Dynamics during Reading
+
+**arXiv ID:** 1604.06635
+**Authors:** Peng Qian, Xipeng Qiu, Xuanjing Huang
+**Published:** 2016-04-22T12:51:11Z
+**Abstract:**
+Recently, the long short-term memory neural network (LSTM) has attracted wide interest due to its success in many tasks. LSTM architecture consists of a memory cell and three gates, which looks similar to the neuronal networks in the brain. However, there still lacks the evidence of the cognitive plausibility of LSTM architecture as well as its working mechanism. In this paper, we study the cognitive plausibility of LSTM by aligning its internal architecture with the brain activity observed via fMRI when the subjects read a story. Experiment results show that the artificial memory vector in LSTM can accurately predict the observed sequential brain activities, indicating the correlation between LSTM architecture and the cognitive process of story reading.
+
+## Skill Description
+
+This skill is generated from the arXiv paper: Bridging LSTM Architecture and the Neural Dynamics during Reading (1604.06635).
+
+## How to Use
+
+[To be filled in by the user or by future automation]
+
+## References
+
+- [arXiv:1604.06635](http://arxiv.org/abs/1604.06635v1)

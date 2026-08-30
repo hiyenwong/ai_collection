@@ -1,0 +1,19 @@
+# Options as responses: Grounding behavioural hierarchies in multi-agent RL
+
+**arXiv ID:** 1906.01470
+**Authors:** Alexander Sasha Vezhnevets, Yuhuai Wu, Remi Leblond, Joel Z. Leibo
+**Published:** 2019-06-04T14:18:47Z
+**Abstract:**
+This paper investigates generalisation in multi-agent games, where the generality of the agent can be evaluated by playing against opponents it hasn't seen during training. We propose two new games with concealed information and complex, non-transitive reward structure (think rock/paper/scissors). It turns out that most current deep reinforcement learning methods fail to efficiently explore the strategy space, thus learning policies that generalise poorly to unseen opponents. We then propose a novel hierarchical agent architecture, where the hierarchy is grounded in the game-theoretic structure of the game -- the top level chooses strategic responses to opponents, while the low level implements them into policy over primitive actions. This grounding facilitates credit assignment across the levels of hierarchy. Our experiments show that the proposed hierarchical agent is capable of generalisation to unseen opponents, while conventional baselines fail to generalise whatsoever.
+
+## Skill Description
+
+This skill is generated from the arXiv paper: Options as responses: Grounding behavioural hierarchies in multi-agent RL (1906.01470).
+
+## How to Use
+
+[To be filled in by the user or by future automation]
+
+## References
+
+- [arXiv:1906.01470](http://arxiv.org/abs/1906.01470v3)
