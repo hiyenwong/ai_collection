@@ -97,8 +97,22 @@ def load_index_json():
             data = json.load(f)
         # Convert list to dict for easy lookup by arxiv id
         if isinstance(data, list):
-            return {item['id']: item for item in data}
-        return data
+            result = {}
+            for item in data:
+                if isinstance(item, dict) and 'id' in item:
+                    result[item['id']] = item
+                else:
+                    # Skip malformed entries
+                    print(f"Warning: skipping malformed item in index.json: {item}", file=sys.stderr)
+            return result
+        elif isinstance(data, dict):
+            # Already a dict mapping id to item? Ensure it has the right structure.
+            # If the dict's keys are arxiv ids and values are items, return as is.
+            # But we need to check if the values are items (dicts) with 'id' field.
+            # For safety, we can assume it's already in the desired format.
+            return data
+        else:
+            return {}
     return {}
 
 def save_index_json(data):
@@ -136,7 +150,16 @@ def main():
     # Step 0: Pull latest changes to avoid conflicts
     print("Pulling latest changes...")
     try:
+        # Stash any local changes
+        subprocess.run(["git", "stash", "push", "-m", "cron job stash"], check=True)
+        # Pull with rebase
         subprocess.run(["git", "pull", "--rebase"], check=True)
+        # Try to pop the stash
+        try:
+            subprocess.run(["git", "stash", "pop"], check=True)
+        except subprocess.CalledProcessError as e:
+            print(f"Warning: git stash pop failed: {e}")
+            print("You may need to manually apply the stash.")
     except subprocess.CalledProcessError as e:
         print(f"Warning: git pull failed: {e}")
         # Continue anyway, we'll try to push later and maybe need to pull again
