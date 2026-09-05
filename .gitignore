@@ -87,7 +87,7 @@ htmlcov/
 *.db
 *.sqlite
 *.sqlite3
-dump.rdb
+*.rdb
 
 # Skill/Agent Specific
 references/local/
