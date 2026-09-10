@@ -12616,5 +12616,1429 @@
     "category": "general-ml",
     "utility": 1.0,
     "date_added": "2026-09-09T22:04:42.375574"
+  },
+  {
+    "id": "2609.10534v1",
+    "title": "Likelihood-free inference with nuisance parameters through normalizing flows",
+    "skill_name": "arxiv-2609-10534v1-likelihood-free-inference-with-nuisance-parameters",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.873577"
+  },
+  {
+    "id": "2609.10529v1",
+    "title": "A positive resolution of the gap-entropy conjecture",
+    "skill_name": "arxiv-2609-10529v1-a-positive-resolution-of-the-gap-entropy-conjectur",
+    "category": "physics-math",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.873649"
+  },
+  {
+    "id": "2609.10525v1",
+    "title": "Characterizing Language Generation in the Limit: Finite Witnesses and a Separation-Width Hierarch",
+    "skill_name": "arxiv-2609-10525v1-characterizing-language-generation-in-the-limit-fi",
+    "category": "security-privacy",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.873737"
+  },
+  {
+    "id": "2609.10522v1",
+    "title": "Show-Harness: Just a VLM Agent Can Play Robots",
+    "skill_name": "arxiv-2609-10522v1-show-harness-just-a-vlm-agent-can-play-robots",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.873772"
+  },
+  {
+    "id": "2609.10518v1",
+    "title": "BrainTaskonomy: Learning How to Pretrain and What to Transfer in fMRI Foundation Models",
+    "skill_name": "arxiv-2609-10518v1-braintaskonomy-learning-how-to-pretrain-and-what-t",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.873872"
+  },
+  {
+    "id": "2609.10514v1",
+    "title": "Optimal Low-Rank Quantum State Tomography with Bounded-Sample Joint Measurements",
+    "skill_name": "arxiv-2609-10514v1-optimal-low-rank-quantum-state-tomography-with-bou",
+    "category": "quantum",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.873892"
+  },
+  {
+    "id": "2609.10505v1",
+    "title": "Quantum Feature Engineering for Credit Default Prediction: When and Why IQP Circuits Help Linear Classifiers",
+    "skill_name": "arxiv-2609-10505v1-quantum-feature-engineering-for-credit-default-pre",
+    "category": "quantum",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.873911"
+  },
+  {
+    "id": "2609.10495v1",
+    "title": "Cross-Model Agreement as a Deployment-Time Reliability Signal for Automatic Polyp Segmentation",
+    "skill_name": "arxiv-2609-10495v1-cross-model-agreement-as-a-deployment-time-reliabi",
+    "category": "deployment-optimization",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.873989"
+  },
+  {
+    "id": "2609.10494v1",
+    "title": "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier",
+    "skill_name": "arxiv-2609-10494v1-ibib-a-protocol-for-measuring-enterprise-ai-system",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874091"
+  },
+  {
+    "id": "2609.10490v1",
+    "title": "Learning with Covariance Matrices: Principal Component Analysis Meets Learning with Graphs",
+    "skill_name": "arxiv-2609-10490v1-learning-with-covariance-matrices-principal-compon",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874190"
+  },
+  {
+    "id": "2609.10487v1",
+    "title": "Nonmaximal sums of maximally monotone operators under Rockafellar's constraint qualification",
+    "skill_name": "arxiv-2609-10487v1-nonmaximal-sums-of-maximally-monotone-operators-un",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874291"
+  },
+  {
+    "id": "2609.10479v1",
+    "title": "Deep Learning-Based Detection of Electrical Faults and Power Quality Disturbances in Aerospace Power Systems",
+    "skill_name": "arxiv-2609-10479v1-deep-learning-based-detection-of-electrical-faults",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874338"
+  },
+  {
+    "id": "2609.10464v1",
+    "title": "Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization",
+    "skill_name": "arxiv-2609-10464v1-semigroup-jepa-latent-dynamics-consistency-for-zer",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874436"
+  },
+  {
+    "id": "2609.10451v1",
+    "title": "JarvisGUI: Towards Cross-Device GUI Agents with Dynamic Task Composition",
+    "skill_name": "arxiv-2609-10451v1-jarvisgui-towards-cross-device-gui-agents-with-dyn",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874531"
+  },
+  {
+    "id": "2609.10441v1",
+    "title": "ConvMem: Convolutional Memory for Long-Context Reasoning",
+    "skill_name": "arxiv-2609-10441v1-convmem-convolutional-memory-for-long-context-reas",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874630"
+  },
+  {
+    "id": "2609.10439v1",
+    "title": "Forgetting Only What Matters: Layer-Selective Unlearning toward Robust LLMs",
+    "skill_name": "arxiv-2609-10439v1-forgetting-only-what-matters-layer-selective-unlea",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874733"
+  },
+  {
+    "id": "2609.10433v1",
+    "title": "Multi-Agent Reinforcement Learning for Autonomous UAV Exploration in Wildfire Response",
+    "skill_name": "arxiv-2609-10433v1-multi-agent-reinforcement-learning-for-autonomous",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874772"
+  },
+  {
+    "id": "2609.10428v1",
+    "title": "Algorithmic stability via ensembling",
+    "skill_name": "arxiv-2609-10428v1-algorithmic-stability-via-ensembling",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874858"
+  },
+  {
+    "id": "2609.10421v1",
+    "title": "Emergency Department Revisit Quality Review Screening: Exploring Human Decision-Making and Artificial Intelligence Support",
+    "skill_name": "arxiv-2609-10421v1-emergency-department-revisit-quality-review-screen",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.874959"
+  },
+  {
+    "id": "2609.10413v1",
+    "title": "Fortunate Recall: Ontology-Driven Memory Lifecycle Management for Persistent Coherence in LLMs",
+    "skill_name": "arxiv-2609-10413v1-fortunate-recall-ontology-driven-memory-lifecycle",
+    "category": "knowledge-graph",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875041"
+  },
+  {
+    "id": "2609.10410v1",
+    "title": "Can Foundation Models Moderate Online Content? Evaluating Instruction- vs. Example-Driven Policy Operationalization",
+    "skill_name": "arxiv-2609-10410v1-can-foundation-models-moderate-online-content-eval",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875145"
+  },
+  {
+    "id": "2609.10404v1",
+    "title": "HybridFLow: SDN-Orchestrated Client Partitioning for Hybrid Federated Learning",
+    "skill_name": "arxiv-2609-10404v1-hybridflow-sdn-orchestrated-client-partitioning-fo",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875243"
+  },
+  {
+    "id": "2609.10385v1",
+    "title": "MOONWALK: Mediating Operations with Intent-Evidence-Action Alignment Across Junior-Supervisor Review Workflows in Animation/VFX Pre-Production",
+    "skill_name": "arxiv-2609-10385v1-moonwalk-mediating-operations-with-intent-evidence",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875346"
+  },
+  {
+    "id": "2609.10382v1",
+    "title": "Searching for New Physics with Reinforcement Learning",
+    "skill_name": "arxiv-2609-10382v1-searching-for-new-physics-with-reinforcement-learn",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875381"
+  },
+  {
+    "id": "2609.10372v1",
+    "title": "PACE: Perceived-Latency-Aware Cascading Service Routing and Filler Control for QoE-Efficient Retrieval-Augmented Dialogue Serving",
+    "skill_name": "arxiv-2609-10372v1-pace-perceived-latency-aware-cascading-service-rou",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875480"
+  },
+  {
+    "id": "2609.10364v1",
+    "title": "OmniMed-FL: A Robust Multimodal Federated Learning Framework for Clinical Diagnosis",
+    "skill_name": "arxiv-2609-10364v1-omnimed-fl-a-robust-multimodal-federated-learning",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875529"
+  },
+  {
+    "id": "2609.10357v1",
+    "title": "A Later Test Set Is Not a New Domain: Pretraining Familiarity Survives a Contamination-Free Hold-Out",
+    "skill_name": "arxiv-2609-10357v1-a-later-test-set-is-not-a-new-domain-pretraining-f",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875640"
+  },
+  {
+    "id": "2609.10350v1",
+    "title": "Cyber-Financial Contagion: Modeling the Propagation of an AI Vendor Compromise Through the Banking System",
+    "skill_name": "arxiv-2609-10350v1-cyber-financial-contagion-modeling-the-propagation",
+    "category": "security-privacy",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875719"
+  },
+  {
+    "id": "2609.10346v1",
+    "title": "Beyond One-Size-Fits-All: Sample-Adaptive Strategy Routing for Vision Token Pruning in MLLMs",
+    "skill_name": "arxiv-2609-10346v1-beyond-one-size-fits-all-sample-adaptive-strategy",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875817"
+  },
+  {
+    "id": "2609.10338v1",
+    "title": "TimeCues Studio: A Workspace for Music Annotation and Algorithm Prototyping",
+    "skill_name": "arxiv-2609-10338v1-timecues-studio-a-workspace-for-music-annotation-a",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.875916"
+  },
+  {
+    "id": "2609.10335v1",
+    "title": "From Symbolic Perception to Logical Deduction: A Framework for Guiding Language Models in Geometric Reasoning",
+    "skill_name": "arxiv-2609-10335v1-from-symbolic-perception-to-logical-deduction-a-fr",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876014"
+  },
+  {
+    "id": "2609.10315v1",
+    "title": "TRACE: Training Reasoning Agents for Causal Exploration with Synthesized Rewards",
+    "skill_name": "arxiv-2609-10315v1-trace-training-reasoning-agents-for-causal-explora",
+    "category": "reasoning-bayesian",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876106"
+  },
+  {
+    "id": "2609.10311v1",
+    "title": "One Loop, Two Gains: Can Active Learning win the Lottery for Free?",
+    "skill_name": "arxiv-2609-10311v1-one-loop-two-gains-can-active-learning-win-the-lot",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876157"
+  },
+  {
+    "id": "2609.10307v1",
+    "title": "View-Structured Conformal Prediction for 3D Gaussian Splatting",
+    "skill_name": "arxiv-2609-10307v1-view-structured-conformal-prediction-for-3d-gaussi",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876250"
+  },
+  {
+    "id": "2609.10305v1",
+    "title": "RiLM: Parameter-Efficient Language Modeling via Geodesic Decoding",
+    "skill_name": "arxiv-2609-10305v1-rilm-parameter-efficient-language-modeling-via-geo",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876280"
+  },
+  {
+    "id": "2609.10299v1",
+    "title": "A Dominant Diffuse Phase in the Sparse Autoencoder Phase Diagram",
+    "skill_name": "arxiv-2609-10299v1-a-dominant-diffuse-phase-in-the-sparse-autoencoder",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876327"
+  },
+  {
+    "id": "2609.10298v1",
+    "title": "Learning Intrusion Response Strategies for OT Systems",
+    "skill_name": "arxiv-2609-10298v1-learning-intrusion-response-strategies-for-ot-syst",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876427"
+  },
+  {
+    "id": "2609.10296v1",
+    "title": "The Semantic Bottleneck: Leveraging Semantic Representations for Non-Invasive Speech Decoding",
+    "skill_name": "arxiv-2609-10296v1-the-semantic-bottleneck-leveraging-semantic-repres",
+    "category": "security-privacy",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876507"
+  },
+  {
+    "id": "2609.10293v1",
+    "title": "GANDR: Claim Auditing for Verifiable Legal Answer Generation",
+    "skill_name": "arxiv-2609-10293v1-gandr-claim-auditing-for-verifiable-legal-answer-g",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876603"
+  },
+  {
+    "id": "2609.10287v1",
+    "title": "Training Trajectories Determine Circuit Removability in Annealable Soft-Prior Transformers",
+    "skill_name": "arxiv-2609-10287v1-training-trajectories-determine-circuit-removabili",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876704"
+  },
+  {
+    "id": "2609.10276v1",
+    "title": "Structural Fusion of Bayesian Networks with Limited Treewidth Using Genetic Algorithms",
+    "skill_name": "arxiv-2609-10276v1-structural-fusion-of-bayesian-networks-with-limite",
+    "category": "reasoning-bayesian",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876792"
+  },
+  {
+    "id": "2609.10264v1",
+    "title": "Maverick: Private and Verifiable LLM Inference Made Practical via Matrix-Vector Multiplication Delegation",
+    "skill_name": "arxiv-2609-10264v1-maverick-private-and-verifiable-llm-inference-made",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876825"
+  },
+  {
+    "id": "2609.10263v1",
+    "title": "What Should an Agent Forget? Separating What Is Stored from What Is Used",
+    "skill_name": "arxiv-2609-10263v1-what-should-an-agent-forget-separating-what-is-sto",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876861"
+  },
+  {
+    "id": "2609.10253v1",
+    "title": "DiSCo: A Distribution-First Steering and Cultural Prior Evaluation Framework for Measuring Cultural Preference Bias in LLMs",
+    "skill_name": "arxiv-2609-10253v1-disco-a-distribution-first-steering-and-cultural-p",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876963"
+  },
+  {
+    "id": "2609.10248v1",
+    "title": "A-JIT: Agentic Just-In-Time Software Construction",
+    "skill_name": "arxiv-2609-10248v1-a-jit-agentic-just-in-time-software-construction",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.876999"
+  },
+  {
+    "id": "2609.10239v1",
+    "title": "LiteRAG: Cost-Efficient Graph-Based Retrieval-Augmented Generation",
+    "skill_name": "arxiv-2609-10239v1-literag-cost-efficient-graph-based-retrieval-augme",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877029"
+  },
+  {
+    "id": "2609.10225v1",
+    "title": "Hierarchical and Permutation-Invariant Feature Transformation Learning via Policy-Guided Embedding Search",
+    "skill_name": "arxiv-2609-10225v1-hierarchical-and-permutation-invariant-feature-tra",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877130"
+  },
+  {
+    "id": "2609.10221v1",
+    "title": "Why Sample What You Can Enumerate? Exact Policy Optimization for Genomic Tool Selection",
+    "skill_name": "arxiv-2609-10221v1-why-sample-what-you-can-enumerate-exact-policy-opt",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877227"
+  },
+  {
+    "id": "2609.10210v1",
+    "title": "Through the Looking Glass: Directly Reading and Writing Transformers",
+    "skill_name": "arxiv-2609-10210v1-through-the-looking-glass-directly-reading-and-wri",
+    "category": "security-privacy",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877303"
+  },
+  {
+    "id": "2609.10200v1",
+    "title": "Robust Beam Prediction for V2X Networks with Multi-Modal Sensing",
+    "skill_name": "arxiv-2609-10200v1-robust-beam-prediction-for-v2x-networks-with-multi",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877397"
+  },
+  {
+    "id": "2609.10196v1",
+    "title": "An Exponential Deterministic--Randomized Gap in ERM-Oracle Complexity for Thresholds on an Unknown Order",
+    "skill_name": "arxiv-2609-10196v1-an-exponential-deterministic-randomized-gap-in-erm",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877499"
+  },
+  {
+    "id": "2609.10193v1",
+    "title": "Are You Learning Biological Signal or Shortcuts? Auditing and Mitigating Bias in Protein-Protein Interaction Datasets",
+    "skill_name": "arxiv-2609-10193v1-are-you-learning-biological-signal-or-shortcuts-au",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877599"
+  },
+  {
+    "id": "2609.10183v1",
+    "title": "A Bio-Plausible Visual Neural Network for Locust-Inspired Collision Perception",
+    "skill_name": "arxiv-2609-10183v1-a-bio-plausible-visual-neural-network-for-locust-i",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877645"
+  },
+  {
+    "id": "2609.10181v1",
+    "title": "Can AI Agents Deliver Verifiable Network-Wide Outcomes Across Authority Boundaries?",
+    "skill_name": "arxiv-2609-10181v1-can-ai-agents-deliver-verifiable-network-wide-outc",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877745"
+  },
+  {
+    "id": "2609.10177v1",
+    "title": "Beyond Surface Imitation: Contrastive Modeling for Reasoning Path Alignment in Multimodal In-Context Learning",
+    "skill_name": "arxiv-2609-10177v1-beyond-surface-imitation-contrastive-modeling-for",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877795"
+  },
+  {
+    "id": "2609.10158v1",
+    "title": "CoGe-GCD: Reframing Generalized Category Discovery with Compositional Generalization",
+    "skill_name": "arxiv-2609-10158v1-coge-gcd-reframing-generalized-category-discovery",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877892"
+  },
+  {
+    "id": "2609.10154v1",
+    "title": "CompassOPD: Cross-Family On-Policy Distillation via Within-Family Likelihood Shifts",
+    "skill_name": "arxiv-2609-10154v1-compassopd-cross-family-on-policy-distillation-via",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.877941"
+  },
+  {
+    "id": "2609.10144v1",
+    "title": "Kernel-Managed Shared Memory for System-Wide Personalization",
+    "skill_name": "arxiv-2609-10144v1-kernel-managed-shared-memory-for-system-wide-perso",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878037"
+  },
+  {
+    "id": "2609.10142v1",
+    "title": "Active Adaptation, Not Static Defense: Temporal Dynamics of Preventative Steering in Adversarial Fine-Tuning",
+    "skill_name": "arxiv-2609-10142v1-active-adaptation-not-static-defense-temporal-dyna",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878139"
+  },
+  {
+    "id": "2609.10141v1",
+    "title": "The Sample Complexity of Quantum Entanglement Allocation",
+    "skill_name": "arxiv-2609-10141v1-the-sample-complexity-of-quantum-entanglement-allo",
+    "category": "quantum",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878155"
+  },
+  {
+    "id": "2609.10135v1",
+    "title": "Agent-Based ML-LLM Fusion with Self-Optimizing Prompts for Plateau Weather Alerts",
+    "skill_name": "arxiv-2609-10135v1-agent-based-ml-llm-fusion-with-self-optimizing-pro",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878186"
+  },
+  {
+    "id": "2609.10132v1",
+    "title": "Context operations to architecture modelling output from large language models and evaluation criteria for their use in systems engineering design",
+    "skill_name": "arxiv-2609-10132v1-context-operations-to-architecture-modelling-outpu",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878291"
+  },
+  {
+    "id": "2609.10125v1",
+    "title": "SA-Profile: Automated Sulcus Angle Profiling from Super-Resolution MRI",
+    "skill_name": "arxiv-2609-10125v1-sa-profile-automated-sulcus-angle-profiling-from-s",
+    "category": "software-engineering",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878348"
+  },
+  {
+    "id": "2609.10112v1",
+    "title": "Storage-Scalable Progressive Semantic Communication via Knowledge-Base Reuse",
+    "skill_name": "arxiv-2609-10112v1-storage-scalable-progressive-semantic-communicatio",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878448"
+  },
+  {
+    "id": "2609.10108v1",
+    "title": "A Trust-Network-Based Federated Learning Framework for Multi-Center Aging Clock Prediction",
+    "skill_name": "arxiv-2609-10108v1-a-trust-network-based-federated-learning-framework",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878497"
+  },
+  {
+    "id": "2609.10105v1",
+    "title": "Beyond Training: A Feasibility Taxonomy for Inference-Time AI Governance",
+    "skill_name": "arxiv-2609-10105v1-beyond-training-a-feasibility-taxonomy-for-inferen",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878594"
+  },
+  {
+    "id": "2609.10099v1",
+    "title": "A Systematic Evaluation of Molecule Generation Models for De Novo Drug Design: From Benchmarks to Practical Insights",
+    "skill_name": "arxiv-2609-10099v1-a-systematic-evaluation-of-molecule-generation-mod",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878698"
+  },
+  {
+    "id": "2609.10092v1",
+    "title": "RAP: Research Attention Prediction Reveals Target-Conditioned Evidence Acquisition Biases",
+    "skill_name": "arxiv-2609-10092v1-rap-research-attention-prediction-reveals-target-c",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878749"
+  },
+  {
+    "id": "2609.10089v1",
+    "title": "Hybrid Quantum-Classical NLP Classification with Compact Semantic Representations: An Experimental Analysis of Representation Compression",
+    "skill_name": "arxiv-2609-10089v1-hybrid-quantum-classical-nlp-classification-with-c",
+    "category": "quantum",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878768"
+  },
+  {
+    "id": "2609.10084v1",
+    "title": "A statistical approach to bias in zero-shot learning: the lens of handwriting recognition",
+    "skill_name": "arxiv-2609-10084v1-a-statistical-approach-to-bias-in-zero-shot-learni",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878817"
+  },
+  {
+    "id": "2609.10077v1",
+    "title": "Physics-Informed Multi-Task Surrogate Model for the Martian Nightside Thermosphere",
+    "skill_name": "arxiv-2609-10077v1-physics-informed-multi-task-surrogate-model-for-th",
+    "category": "physics-math",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878879"
+  },
+  {
+    "id": "2609.10060v1",
+    "title": "Reference-Based Bias Detection in LLMs via Relative Representations of Hidden States",
+    "skill_name": "arxiv-2609-10060v1-reference-based-bias-detection-in-llms-via-relativ",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.878910"
+  },
+  {
+    "id": "2609.10058v1",
+    "title": "NOPE-HYPE: A Structured Simulation Workflow for Robust Speech-to-Text Across Diverse Acoustic Environments",
+    "skill_name": "arxiv-2609-10058v1-nope-hype-a-structured-simulation-workflow-for-rob",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879007"
+  },
+  {
+    "id": "2609.10055v1",
+    "title": "OntologyAligner: Ontology-Aligned Retrieval and Hierarchy-Guided Large Language Model Reranking for Biomedical Ontology Normalization",
+    "skill_name": "arxiv-2609-10055v1-ontologyaligner-ontology-aligned-retrieval-and-hie",
+    "category": "ai-safety-eval",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879065"
+  },
+  {
+    "id": "2609.10054v1",
+    "title": "Orukeet: Multilingual ASR with Frozen Gabor Kernels",
+    "skill_name": "arxiv-2609-10054v1-orukeet-multilingual-asr-with-frozen-gabor-kernels",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879161"
+  },
+  {
+    "id": "2609.10052v1",
+    "title": "Direct Diversity Optimization for Diverse Successful Trajectories in Preference Post-Training",
+    "skill_name": "arxiv-2609-10052v1-direct-diversity-optimization-for-diverse-successf",
+    "category": "deployment-optimization",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879236"
+  },
+  {
+    "id": "2609.10051v1",
+    "title": "Zero-Shot Temporal Localisation of Audio Deepfakes in Multi-Speaker Conversations",
+    "skill_name": "arxiv-2609-10051v1-zero-shot-temporal-localisation-of-audio-deepfakes",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879284"
+  },
+  {
+    "id": "2609.10049v1",
+    "title": "MedDeID enables locally governed clinical-text de-identification from real or synthetic training data",
+    "skill_name": "arxiv-2609-10049v1-meddeid-enables-locally-governed-clinical-text-de",
+    "category": "healthcare-bio",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879352"
+  },
+  {
+    "id": "2609.10036v1",
+    "title": "Belief-State Engine: Augmenting LLMs for Principled Planning Under Partial Observability",
+    "skill_name": "arxiv-2609-10036v1-belief-state-engine-augmenting-llms-for-principled",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879383"
+  },
+  {
+    "id": "2609.10032v1",
+    "title": "Field-level prediction of mid-plane stress tensor fields in concrete target penetration: a cross-velocity graph neural operator surrogate",
+    "skill_name": "arxiv-2609-10032v1-field-level-prediction-of-mid-plane-stress-tensor",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879486"
+  },
+  {
+    "id": "2609.10028v1",
+    "title": "Dynamical Non-compensatory Multidimensional IRT Model Using Variational Approximation",
+    "skill_name": "arxiv-2609-10028v1-dynamical-non-compensatory-multidimensional-irt-mo",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879587"
+  },
+  {
+    "id": "2609.10026v1",
+    "title": "Beyond Contact Sensors: Deep learning with Pseudo-Labeling for remote Photoplethysmography",
+    "skill_name": "arxiv-2609-10026v1-beyond-contact-sensors-deep-learning-with-pseudo-l",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879632"
+  },
+  {
+    "id": "2609.10022v1",
+    "title": "Deterministic Prompting for Speaker-Stable Low-Resource Greek TTS",
+    "skill_name": "arxiv-2609-10022v1-deterministic-prompting-for-speaker-stable-low-res",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879731"
+  },
+  {
+    "id": "2609.10018v1",
+    "title": "Elastoformer: Enabling Dynamic Adaptivity via Elastic Model Transformation",
+    "skill_name": "arxiv-2609-10018v1-elastoformer-enabling-dynamic-adaptivity-via-elast",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879830"
+  },
+  {
+    "id": "2609.10017v1",
+    "title": "Structure-Aware Unsupervised Anomaly Detection for Spacecraft Telemetry with Adaptive EVT Thresholding",
+    "skill_name": "arxiv-2609-10017v1-structure-aware-unsupervised-anomaly-detection-for",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879929"
+  },
+  {
+    "id": "2609.10016v1",
+    "title": "MetroLLM-Bench: Evaluating Language Models as Transit Kiosk Runtimes",
+    "skill_name": "arxiv-2609-10016v1-metrollm-bench-evaluating-language-models-as-trans",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.879961"
+  },
+  {
+    "id": "2609.10012v1",
+    "title": "An Explainable Machine Learning Framework for Predicting Blood-Brain Barrier Permeability Using Molecular Descriptors",
+    "skill_name": "arxiv-2609-10012v1-an-explainable-machine-learning-framework-for-pred",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880007"
+  },
+  {
+    "id": "2609.10002v1",
+    "title": "What Makes Adversarial Examples Transfer Across Deepfake Detectors?",
+    "skill_name": "arxiv-2609-10002v1-what-makes-adversarial-examples-transfer-across-de",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880104"
+  },
+  {
+    "id": "2609.09986v1",
+    "title": "A Sharp Barrier for Consistent Submodular Maximization: Any Improvement over $2-\\sqrt{2}$ Entails Exponential Queries or Linear Recourse",
+    "skill_name": "arxiv-2609-09986v1-a-sharp-barrier-for-consistent-submodular-maximiza",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880204"
+  },
+  {
+    "id": "2609.09981v1",
+    "title": "Optimal Value Inference for Reinforcement Learning",
+    "skill_name": "arxiv-2609-09981v1-optimal-value-inference-for-reinforcement-learning",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880240"
+  },
+  {
+    "id": "2609.09980v1",
+    "title": "Fidelity-Aware Scheduling of Quantum Circuits on Multi-QPU Systems",
+    "skill_name": "arxiv-2609-09980v1-fidelity-aware-scheduling-of-quantum-circuits-on-m",
+    "category": "quantum",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880256"
+  },
+  {
+    "id": "2609.09971v1",
+    "title": "Deep Neural Networks for Learning Intent from sEMG Signals to Support Hardware Devices for Post-Stroke Neurorehabilitation",
+    "skill_name": "arxiv-2609-09971v1-deep-neural-networks-for-learning-intent-from-semg",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880305"
+  },
+  {
+    "id": "2609.09953v1",
+    "title": "Improving Cross-Lingual Token Representations by Adding a Pinch of SALT",
+    "skill_name": "arxiv-2609-09953v1-improving-cross-lingual-token-representations-by-a",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880403"
+  },
+  {
+    "id": "2609.09949v1",
+    "title": "Vague2Detect: Handling Ambiguous Prompts in Knowledge-Based Open-World Detection",
+    "skill_name": "arxiv-2609-09949v1-vague2detect-handling-ambiguous-prompts-in-knowled",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880499"
+  },
+  {
+    "id": "2609.09945v1",
+    "title": "Adversarial Training for Tabular Credit Scoring: A Multi-Attack Robustness Evaluation in P2P Lending",
+    "skill_name": "arxiv-2609-09945v1-adversarial-training-for-tabular-credit-scoring-a",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880552"
+  },
+  {
+    "id": "2609.09928v1",
+    "title": "Structural Process Supervision for Latent Chain-of-Thought Reasoning",
+    "skill_name": "arxiv-2609-09928v1-structural-process-supervision-for-latent-chain-of",
+    "category": "vision-generative",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880635"
+  },
+  {
+    "id": "2609.09925v1",
+    "title": "Time-Frequency Geometric Cross-Attention for Chunked Vision-Language-Action Models",
+    "skill_name": "arxiv-2609-09925v1-time-frequency-geometric-cross-attention-for-chunk",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880686"
+  },
+  {
+    "id": "2609.09920v1",
+    "title": "Multi-Pass, Multi-View Blended Learning for High-Fidelity Volumetric CT Synthesis from Chest X-Rays",
+    "skill_name": "arxiv-2609-09920v1-multi-pass-multi-view-blended-learning-for-high-fi",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880786"
+  },
+  {
+    "id": "2609.09912v1",
+    "title": "Development and Validation of a Physics-Guided Machine Learning Extrapolation Framework Using a Classical Transient Diffusion Benchmark",
+    "skill_name": "arxiv-2609-09912v1-development-and-validation-of-a-physics-guided-mac",
+    "category": "physics-math",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880849"
+  },
+  {
+    "id": "2609.09910v1",
+    "title": "A Kernel-Based Modular Discriminant Analysis Framework for Small-Sample Learning",
+    "skill_name": "arxiv-2609-09910v1-a-kernel-based-modular-discriminant-analysis-frame",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.880948"
+  },
+  {
+    "id": "2609.09907v1",
+    "title": "Meta-LinEXP3: Online-within-Online Learning for Adversarial Linear Contextual Bandits",
+    "skill_name": "arxiv-2609-09907v1-meta-linexp3-online-within-online-learning-for-adv",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881053"
+  },
+  {
+    "id": "2609.09905v1",
+    "title": "FlowCPO: A Unified Divergence View of Preference Alignment for Flow Models",
+    "skill_name": "arxiv-2609-09905v1-flowcpo-a-unified-divergence-view-of-preference-al",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881148"
+  },
+  {
+    "id": "2609.09904v1",
+    "title": "Beyond Conventional Federated Learning via High-Order Regularization",
+    "skill_name": "arxiv-2609-09904v1-beyond-conventional-federated-learning-via-high-or",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881195"
+  },
+  {
+    "id": "2609.09899v1",
+    "title": "Strangers to Themselves: What Language Models Say About Themselves Is Generic",
+    "skill_name": "arxiv-2609-09899v1-strangers-to-themselves-what-language-models-say-a",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881225"
+  },
+  {
+    "id": "2609.09898v1",
+    "title": "Grounded Evaluation and Repair for NL-to-PDDL Problem Generation",
+    "skill_name": "arxiv-2609-09898v1-grounded-evaluation-and-repair-for-nl-to-pddl-prob",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881322"
+  },
+  {
+    "id": "2609.09891v1",
+    "title": "ProMeta: Few-shot PROTAC-targeted degradation prediction across E3 ligases",
+    "skill_name": "arxiv-2609-09891v1-prometa-few-shot-protac-targeted-degradation-predi",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881369"
+  },
+  {
+    "id": "2609.09885v1",
+    "title": "Decision Transformer for UAV-Mounted RIS-Assisted Dynamic D2D Communications",
+    "skill_name": "arxiv-2609-09885v1-decision-transformer-for-uav-mounted-ris-assisted",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881400"
+  },
+  {
+    "id": "2609.09884v1",
+    "title": "Albedo Estimation via Latent Bridge Matching",
+    "skill_name": "arxiv-2609-09884v1-albedo-estimation-via-latent-bridge-matching",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881495"
+  },
+  {
+    "id": "2609.09883v1",
+    "title": "Forward-Free LLM Depth Pruning via Weight Redundancy",
+    "skill_name": "arxiv-2609-09883v1-forward-free-llm-depth-pruning-via-weight-redundan",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881524"
+  },
+  {
+    "id": "2609.09882v1",
+    "title": "Scored vs. Generated Readouts in Behavioral Language Models: An Empirical Study of Elicitation Format",
+    "skill_name": "arxiv-2609-09882v1-scored-vs-generated-readouts-in-behavioral-languag",
+    "category": "neuroscience",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881540"
+  },
+  {
+    "id": "2609.09875v1",
+    "title": "AgentAudit: An Open, Extensible Framework for Full-Lifecycle Trust Evaluation of AI Agents",
+    "skill_name": "arxiv-2609-09875v1-agentaudit-an-open-extensible-framework-for-full-l",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881636"
+  },
+  {
+    "id": "2609.09864v1",
+    "title": "Shifting Relational Paradigms for Affective Computing: Affective Resonance, Vitality Affects, and Vocal Interaction Fields",
+    "skill_name": "arxiv-2609-09864v1-shifting-relational-paradigms-for-affective-comput",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881734"
+  },
+  {
+    "id": "2609.09860v1",
+    "title": "Exact Degeneracy Under Balanced k-Shot Sampling:Consequences for Small-Sample Discriminant Analysis on LLM Embeddings",
+    "skill_name": "arxiv-2609-09860v1-exact-degeneracy-under-balanced-k-shot-sampling-co",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881832"
+  },
+  {
+    "id": "2609.09856v1",
+    "title": "With a Thermomix You Lose the Ability to Cook: A Kitchen Machine Analogy for Applications of Generative AI in Education",
+    "skill_name": "arxiv-2609-09856v1-with-a-thermomix-you-lose-the-ability-to-cook-a-ki",
+    "category": "security-privacy",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.881910"
+  },
+  {
+    "id": "2609.09855v1",
+    "title": "A Unifying Perspective on Probabilities as Model Predictions",
+    "skill_name": "arxiv-2609-09855v1-a-unifying-perspective-on-probabilities-as-model-p",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882007"
+  },
+  {
+    "id": "2609.09854v1",
+    "title": "When Does Low-Bit Quantization Preserve the Decisions of Vector Search?",
+    "skill_name": "arxiv-2609-09854v1-when-does-low-bit-quantization-preserve-the-decisi",
+    "category": "deployment-optimization",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882077"
+  },
+  {
+    "id": "2609.09853v1",
+    "title": "The Era by Eon Benchmark: A Generated Enterprise Estate with Exact Ground Truth for Benchmarking LLM Agents",
+    "skill_name": "arxiv-2609-09853v1-the-era-by-eon-benchmark-a-generated-enterprise-es",
+    "category": "ai-safety-eval",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882131"
+  },
+  {
+    "id": "2609.09849v1",
+    "title": "Can AI Agents Detect and Repair Artifact Drift in Network Experiments?",
+    "skill_name": "arxiv-2609-09849v1-can-ai-agents-detect-and-repair-artifact-drift-in",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882224"
+  },
+  {
+    "id": "2609.09848v1",
+    "title": "Subgroup Membership Inference Audits of Differentially Private Synthetic Text",
+    "skill_name": "arxiv-2609-09848v1-subgroup-membership-inference-audits-of-differenti",
+    "category": "security-privacy",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882294"
+  },
+  {
+    "id": "2609.09840v1",
+    "title": "TempTPI: Informer-Based trajectory prediction for maritime vessels",
+    "skill_name": "arxiv-2609-09840v1-temptpi-informer-based-trajectory-prediction-for-m",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882383"
+  },
+  {
+    "id": "2609.09824v1",
+    "title": "In Medical Claims Data, Enhancing Predictive Performance for Major Adverse Cardiovascular Events Using Cross Attention",
+    "skill_name": "arxiv-2609-09824v1-in-medical-claims-data-enhancing-predictive-perfor",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882477"
+  },
+  {
+    "id": "2609.09815v1",
+    "title": "UnitBoost: Managing Compound LLM Systems with a Merge Operator, Not a Model",
+    "skill_name": "arxiv-2609-09815v1-unitboost-managing-compound-llm-systems-with-a-mer",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882507"
+  },
+  {
+    "id": "2609.09809v1",
+    "title": "Online Inverse Integer Linear Optimization via Small-Gradient Skipping: Constant Regret and Finite Mistakes",
+    "skill_name": "arxiv-2609-09809v1-online-inverse-integer-linear-optimization-via-sma",
+    "category": "deployment-optimization",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882579"
+  },
+  {
+    "id": "2609.09799v1",
+    "title": "uFlowCSP: Crystal Structure Prediction using Mean flow generative models",
+    "skill_name": "arxiv-2609-09799v1-uflowcsp-crystal-structure-prediction-using-mean-f",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882668"
+  },
+  {
+    "id": "2609.09798v1",
+    "title": "CS-Guard: Benchmarking LLM Guardrails for Code Generation Security",
+    "skill_name": "arxiv-2609-09798v1-cs-guard-benchmarking-llm-guardrails-for-code-gene",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882696"
+  },
+  {
+    "id": "2609.09796v1",
+    "title": "A practical DIRECT-type algorithm for medium-scale black-box global optimization",
+    "skill_name": "arxiv-2609-09796v1-a-practical-direct-type-algorithm-for-medium-scale",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882786"
+  },
+  {
+    "id": "2609.09794v1",
+    "title": "Privacy-Preserving Split Learning for Federated LLM Fine-Tuning",
+    "skill_name": "arxiv-2609-09794v1-privacy-preserving-split-learning-for-federated-ll",
+    "category": "deployment-optimization",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882852"
+  },
+  {
+    "id": "2609.09793v1",
+    "title": "How Fragile Is Safety Alignment at Frontier Scale? A Single-Direction Attack on a 320B MoE",
+    "skill_name": "arxiv-2609-09793v1-how-fragile-is-safety-alignment-at-frontier-scale",
+    "category": "ai-safety-eval",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882904"
+  },
+  {
+    "id": "2609.09790v1",
+    "title": "LogiScope-VQA: Benchmarking Vision-Language Models for Logistics Hazard Identification in Industrial Scenarios",
+    "skill_name": "arxiv-2609-09790v1-logiscope-vqa-benchmarking-vision-language-models",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.882933"
+  },
+  {
+    "id": "2609.09789v1",
+    "title": "Pairit: A Platform for Live Experiments on Human-AI Collaboration",
+    "skill_name": "arxiv-2609-09789v1-pairit-a-platform-for-live-experiments-on-human-ai",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883027"
+  },
+  {
+    "id": "2609.09788v1",
+    "title": "Evaluating Model Retraining under Drift: Paired Comparisons of Cumulative Subgroup Disparity",
+    "skill_name": "arxiv-2609-09788v1-evaluating-model-retraining-under-drift-paired-com",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883119"
+  },
+  {
+    "id": "2609.09786v1",
+    "title": "NEXUS-MI: Communication-Aware Federated Personalization for Gateway-Coordinated Motor-Imagery Brain-Computer Interfaces",
+    "skill_name": "arxiv-2609-09786v1-nexus-mi-communication-aware-federated-personaliza",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883211"
+  },
+  {
+    "id": "2609.09783v1",
+    "title": "BRACE: Anchored Bellman-Residual Correction for Stale Critics in Asynchronous RL",
+    "skill_name": "arxiv-2609-09783v1-brace-anchored-bellman-residual-correction-for-sta",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883303"
+  },
+  {
+    "id": "2609.09776v1",
+    "title": "Proof-Carrying Cognition: Closing the Verification Gap with Reality-Settled Reward",
+    "skill_name": "arxiv-2609-09776v1-proof-carrying-cognition-closing-the-verification",
+    "category": "neuroscience",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883316"
+  },
+  {
+    "id": "2609.09774v1",
+    "title": "Procedural Memory Under Change: Reuse and Interference in Controlled Web Tasks",
+    "skill_name": "arxiv-2609-09774v1-procedural-memory-under-change-reuse-and-interfere",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883404"
+  },
+  {
+    "id": "2609.09768v1",
+    "title": "Fine-Tuning a KV Cache Concatenation-Aware Model or Recomputing KV Caches? Why Not Both?",
+    "skill_name": "arxiv-2609-09768v1-fine-tuning-a-kv-cache-concatenation-aware-model-o",
+    "category": "security-privacy",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883478"
+  },
+  {
+    "id": "2609.09762v1",
+    "title": "MethaneFuse: Learning from Multi-Sensor Satellite Observations for Methane Plume Detection",
+    "skill_name": "arxiv-2609-09762v1-methanefuse-learning-from-multi-sensor-satellite-o",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883572"
+  },
+  {
+    "id": "2609.09754v1",
+    "title": "LexAgentHallu: A Hierarchical Benchmark for Profiling Hallucinations in Legal Agents",
+    "skill_name": "arxiv-2609-09754v1-lexagenthallu-a-hierarchical-benchmark-for-profili",
+    "category": "ai-safety-eval",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883619"
+  },
+  {
+    "id": "2609.09752v1",
+    "title": "HiRAD: A Flexible Large-Scale AGV Routing System",
+    "skill_name": "arxiv-2609-09752v1-hirad-a-flexible-large-scale-agv-routing-system",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883706"
+  },
+  {
+    "id": "2609.09737v1",
+    "title": "Distilling Image Prototypes for Guided Test-Time Adaptation",
+    "skill_name": "arxiv-2609-09737v1-distilling-image-prototypes-for-guided-test-time-a",
+    "category": "vision-generative",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883784"
+  },
+  {
+    "id": "2609.09735v1",
+    "title": "Can Artificial Intelligence Support Healthcare and Mental Health Through Early Cyberbullying Detection ? The Impact of Emotion-Aware AI on Proactive Online Safety",
+    "skill_name": "arxiv-2609-09735v1-can-artificial-intelligence-support-healthcare-and",
+    "category": "healthcare-bio",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883851"
+  },
+  {
+    "id": "2609.09728v1",
+    "title": "EEGBind: Detecting Source-Level Interictal Epileptiform Discharges via EEG-Centric Multimodal Binding",
+    "skill_name": "arxiv-2609-09728v1-eegbind-detecting-source-level-interictal-epilepti",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.883944"
+  },
+  {
+    "id": "2609.09721v1",
+    "title": "EFQ-Softmax: Exp-Free Quantization for Softmax",
+    "skill_name": "arxiv-2609-09721v1-efq-softmax-exp-free-quantization-for-softmax",
+    "category": "deployment-optimization",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884007"
+  },
+  {
+    "id": "2609.09708v1",
+    "title": "Efficient Graph Neural Networks for Multicarrier Wideband Hybrid Beamforming Optimization",
+    "skill_name": "arxiv-2609-09708v1-efficient-graph-neural-networks-for-multicarrier-w",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884049"
+  },
+  {
+    "id": "2609.09707v1",
+    "title": "Which Tokens Should SFT Actually Learn? A Token-Trimming Perspective on Mathematical Reasoning",
+    "skill_name": "arxiv-2609-09707v1-which-tokens-should-sft-actually-learn-a-token-tri",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884137"
+  },
+  {
+    "id": "2609.09702v1",
+    "title": "Decision Shifts, Lost Label Functionality, and an Inconclusive Grounding Audit in Correctness-Gated Multi-Teacher Distillation",
+    "skill_name": "arxiv-2609-09702v1-decision-shifts-lost-label-functionality-and-an-in",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884230"
+  },
+  {
+    "id": "2609.09698v1",
+    "title": "Kernel-Complexity Edge Sanitization for Training-Free Defense against Structural Graph Attacks",
+    "skill_name": "arxiv-2609-09698v1-kernel-complexity-edge-sanitization-for-training-f",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884321"
+  },
+  {
+    "id": "2609.09696v1",
+    "title": "When Auditors Fabricate: Batch-Size Degradation and Confident Hallucination in LLM Detection of Planted Document Contamination",
+    "skill_name": "arxiv-2609-09696v1-when-auditors-fabricate-batch-size-degradation-and",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884411"
+  },
+  {
+    "id": "2609.09692v1",
+    "title": "CT-SAFR: Safe and Interpretable Chain-of-Thought Reasoning for Autonomous Robots: A Multi-Layered Verification Framework for Trustworthy AI-Driven Robotic Decision Making",
+    "skill_name": "arxiv-2609-09692v1-ct-safr-safe-and-interpretable-chain-of-thought-re",
+    "category": "reasoning-bayesian",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884500"
+  },
+  {
+    "id": "2609.09691v1",
+    "title": "Looped GPT-BERT: Trading Parameters for Computation in Small Language Modeling",
+    "skill_name": "arxiv-2609-09691v1-looped-gpt-bert-trading-parameters-for-computation",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884529"
+  },
+  {
+    "id": "2609.09685v1",
+    "title": "ALIGN-HOLD: Experience Alignment for Real-Time Hold Control in Large-Scale Ride-Hailing Matching at DiDi",
+    "skill_name": "arxiv-2609-09685v1-align-hold-experience-alignment-for-real-time-hold",
+    "category": "ai-safety-eval",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884582"
+  },
+  {
+    "id": "2609.09684v1",
+    "title": "Which Medical Questions Deserve Rationales? Perturbation-Sensitive Selection for Robust QA",
+    "skill_name": "arxiv-2609-09684v1-which-medical-questions-deserve-rationales-perturb",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884674"
+  },
+  {
+    "id": "2609.09682v1",
+    "title": "Settling: Equilibrium Inference for Non-Convex Validity Sets",
+    "skill_name": "arxiv-2609-09682v1-settling-equilibrium-inference-for-non-convex-vali",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884766"
+  },
+  {
+    "id": "2609.09678v1",
+    "title": "Safe to Stop? Risk-Constrained Stopping for Sequential Clinical Diagnosis Agents",
+    "skill_name": "arxiv-2609-09678v1-safe-to-stop-risk-constrained-stopping-for-sequent",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884856"
+  },
+  {
+    "id": "2609.09676v1",
+    "title": "Muon-C: Operator-Aligned Muon for Convolutional Kernels",
+    "skill_name": "arxiv-2609-09676v1-muon-c-operator-aligned-muon-for-convolutional-ker",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884948"
+  },
+  {
+    "id": "2609.09671v1",
+    "title": "Introducing Consort: A Spec-First Agent Framework for Enforced, Test-Driven Development on Live Database Branches",
+    "skill_name": "arxiv-2609-09671v1-introducing-consort-a-spec-first-agent-framework-f",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.884984"
+  },
+  {
+    "id": "2609.09664v1",
+    "title": "PRAGMA: Evaluating Personalized Guidance with Memory Alignment in Lifelong Conversations",
+    "skill_name": "arxiv-2609-09664v1-pragma-evaluating-personalized-guidance-with-memor",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885073"
+  },
+  {
+    "id": "2609.09662v1",
+    "title": "PELM: Power Efficient On-Device LLM Inference with Speculative Decoding and Dynamic Voltage Frequency Scaling",
+    "skill_name": "arxiv-2609-09662v1-pelm-power-efficient-on-device-llm-inference-with",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885103"
+  },
+  {
+    "id": "2609.09659v1",
+    "title": "Cascading Gradient Inversion via LT-Code Inspired Peeling in Federated Learning",
+    "skill_name": "arxiv-2609-09659v1-cascading-gradient-inversion-via-lt-code-inspired",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885147"
+  },
+  {
+    "id": "2609.09657v1",
+    "title": "RESCUE-BENCH: Towards Relation-Aware Multi-Party Emotional Support Conversation Systems",
+    "skill_name": "arxiv-2609-09657v1-rescue-bench-towards-relation-aware-multi-party-em",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885237"
+  },
+  {
+    "id": "2609.09656v1",
+    "title": "Why Learning Rediscovers the Closed-Form Diagonal Regularizer",
+    "skill_name": "arxiv-2609-09656v1-why-learning-rediscovers-the-closed-form-diagonal",
+    "category": "security-privacy",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885308"
+  },
+  {
+    "id": "2609.09647v1",
+    "title": "Black-Box Red Teaming of Agentic AI: A Taxonomy-Driven Framework for Automated Risk Discovery",
+    "skill_name": "arxiv-2609-09647v1-black-box-red-teaming-of-agentic-ai-a-taxonomy-dri",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885345"
+  },
+  {
+    "id": "2609.09646v1",
+    "title": "RobustSGPO: Search-Space Control for Agent Harness Evolution",
+    "skill_name": "arxiv-2609-09646v1-robustsgpo-search-space-control-for-agent-harness",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885378"
+  },
+  {
+    "id": "2609.09634v1",
+    "title": "LightMedSeg-ISLES: Stroke Lesion Segmentation with 81x Fewer Parameters than nnU-Net",
+    "skill_name": "arxiv-2609-09634v1-lightmedseg-isles-stroke-lesion-segmentation-with",
+    "category": "vision-generative",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885458"
+  },
+  {
+    "id": "2609.09627v1",
+    "title": "Seven Sources of Physical AI Capability Formation",
+    "skill_name": "arxiv-2609-09627v1-seven-sources-of-physical-ai-capability-formation",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885544"
+  },
+  {
+    "id": "2609.09626v1",
+    "title": "Hyperbolic Geometry for Open-World Object Detection in Remote Sensing Imagery",
+    "skill_name": "arxiv-2609-09626v1-hyperbolic-geometry-for-open-world-object-detectio",
+    "category": "physics-math",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885599"
+  },
+  {
+    "id": "2609.09625v1",
+    "title": "From State Synchronization to Cognitive Self-Evolution: An Operational Architecture for Cognitive Digital Twins",
+    "skill_name": "arxiv-2609-09625v1-from-state-synchronization-to-cognitive-self-evolu",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885690"
+  },
+  {
+    "id": "2609.09606v1",
+    "title": "RouteBridge: Reliability-Routed Bidirectional Distillation Between Neural Radiance Fields and 3D Gaussian Splatting",
+    "skill_name": "arxiv-2609-09606v1-routebridge-reliability-routed-bidirectional-disti",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885779"
+  },
+  {
+    "id": "2609.09604v1",
+    "title": "Watermarks Without Verification: AI Text Watermarking After the EU AI Act",
+    "skill_name": "arxiv-2609-09604v1-watermarks-without-verification-ai-text-watermarki",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885865"
+  },
+  {
+    "id": "2609.09597v1",
+    "title": "Compact Visuotactile World Models for Lifting: Prediction, Reward Alignment, and Force Constraints",
+    "skill_name": "arxiv-2609-09597v1-compact-visuotactile-world-models-for-lifting-pred",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.885954"
+  },
+  {
+    "id": "2609.09595v1",
+    "title": "Teacher Geometry Shapes Learnability in Teacher-Student Networks",
+    "skill_name": "arxiv-2609-09595v1-teacher-geometry-shapes-learnability-in-teacher-st",
+    "category": "physics-math",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.886011"
+  },
+  {
+    "id": "2609.09591v1",
+    "title": "Modality-Decoupled Federated Learning for Privacy-Preserving Embodied Intelligence in 6G",
+    "skill_name": "arxiv-2609-09591v1-modality-decoupled-federated-learning-for-privacy",
+    "category": "general-ml",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.886056"
+  },
+  {
+    "id": "2609.09589v1",
+    "title": "A Function-Space Approach to the Statistical Mechanics of Learning Dynamics",
+    "skill_name": "arxiv-2609-09589v1-a-function-space-approach-to-the-statistical-mecha",
+    "category": "security-privacy",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.886128"
+  },
+  {
+    "id": "2609.09578v1",
+    "title": "CityPlanner: A Sandbox Agent for Executable Urban Planning",
+    "skill_name": "arxiv-2609-09578v1-cityplanner-a-sandbox-agent-for-executable-urban-p",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.886161"
+  },
+  {
+    "id": "2609.09564v1",
+    "title": "Robust Industrial Cyber Physical Classification Using Neuromorphic Temporal Embeddings and Hybrid SNN XGBoost Under Machine Unlearning Attacks",
+    "skill_name": "arxiv-2609-09564v1-robust-industrial-cyber-physical-classification-us",
+    "category": "signal-control-systems",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.886203"
+  },
+  {
+    "id": "2609.09438v1",
+    "title": "Emergence of criticality in models of real neurons",
+    "skill_name": "arxiv-2609-09438v1-emergence-of-criticality-in-models-of-real-neurons",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.886295"
+  },
+  {
+    "id": "2609.09388v1",
+    "title": "XAI-Refine: An Automated Explanation-Knowledge Loop for Brain-Age Prediction",
+    "skill_name": "arxiv-2609-09388v1-xai-refine-an-automated-explanation-knowledge-loop",
+    "category": "ai-safety-eval",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.886347"
+  },
+  {
+    "id": "2609.09306v1",
+    "title": "Gradland: On Phenomenal Experience, Differentiated Across Many Dimensions",
+    "skill_name": "arxiv-2609-09306v1-gradland-on-phenomenal-experience-differentiated-a",
+    "category": "other",
+    "utility": 1.0,
+    "date_added": "2026-09-10T22:07:59.886438"
   }
 ]
