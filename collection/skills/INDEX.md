@@ -1,4 +1,9 @@
 
+## 2026-09-12 - arXiv Paper Skills (Cron Job)
+### Multi Agent Rl
+- [[marlin-sustainable-llm-inference]] - MARLIN: Multi-Agent Game-Theoretic Reinforcement Learning for Sustainable LLM Inference in Cloud Datacenters (arXiv: 2605.13496) (utility=0.95)
+- [[orchestration-traces-llm-mas]] - Reinforcement Learning for LLM-based Multi-Agent Systems through Orchestration Traces (arXiv: 2605.02801) (utility=0.97)
+
 ## 2026-09-11 - arXiv Paper Skills (Cron Job)
 ### Ai Safety Eval
 - [[arxiv-2609-11911v1-artificial-id-drive-and-persistent-alignment-in-ag]] - Artificial Id: Drive and Persistent Alignment in Agentic AI (arXiv: 2609.11911v1) (utility=1.00)
