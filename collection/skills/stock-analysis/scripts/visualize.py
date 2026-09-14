@@ -11,7 +11,10 @@ Usage:
 
 import argparse
 import os
+<<<<<<< Updated upstream
 import sys
+=======
+>>>>>>> Stashed changes
 
 try:
     import matplotlib.pyplot as plt

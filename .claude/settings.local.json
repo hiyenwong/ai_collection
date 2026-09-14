@@ -5,6 +5,7 @@
       "Bash(gh auth:*)",
       "Bash(git checkout:*)",
       "Bash(git add:*)",
+<<<<<<< Updated upstream
       "Bash(gh pr list --state open)",
       "Bash(git commit:*)",
       "Bash(git push -u origin feat/update-claude-md)",
@@ -37,6 +38,17 @@
       "Bash(npm list *)",
       "Bash(/Users/hiyenwong/Library/pnpm/codex --version)",
       "Bash(codex *)"
+=======
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh repo view --json owner,name)",
+      "Bash(gh api /repos/hiyenwong/ai_collection/issues/1/comments)",
+      "Bash(gh api /repos/hiyenwong/ai_collection/pulls/1/comments)",
+      "Bash(ruff check collection/skills/stock-analysis/scripts/)",
+      "Bash(ruff check --fix collection/skills/stock-analysis/scripts/)",
+      "Bash(git pull)",
+      "Bash(git stash:*)"
+>>>>>>> Stashed changes
     ]
   }
 }

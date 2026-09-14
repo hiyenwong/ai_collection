@@ -1,18 +1,18 @@
 [
   {
-    "id": "2605.13496",
-    "title": "MARLIN: Multi-Agent Game-Theoretic Reinforcement Learning for Sustainable LLM Inference in Cloud Datacenters",
-    "skill_name": "marlin-sustainable-llm-inference",
-    "category": "multi-agent-rl",
-    "utility": 0.95,
-    "date_added": "2026-09-12T00:00:00.000000"
-  },
-  {
     "id": "2605.02801",
     "title": "Reinforcement Learning for LLM-based Multi-Agent Systems through Orchestration Traces",
     "skill_name": "orchestration-traces-llm-mas",
     "category": "multi-agent-rl",
     "utility": 0.97,
+    "date_added": "2026-09-12T00:00:00.000000"
+  },
+  {
+    "id": "2605.13496",
+    "title": "MARLIN: Multi-Agent Game-Theoretic Reinforcement Learning for Sustainable LLM Inference in Cloud Datacenters",
+    "skill_name": "marlin-sustainable-llm-inference",
+    "category": "multi-agent-rl",
+    "utility": 0.95,
     "date_added": "2026-09-12T00:00:00.000000"
   }
 ]

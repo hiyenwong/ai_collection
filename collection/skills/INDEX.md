@@ -1,4 +1,4 @@
-
+\n## {today} - arXiv Paper Skills (Cron Job)\n\n
 ## 2026-09-12 - arXiv Paper Skills (Cron Job)
 ### Multi Agent Rl
 - [[marlin-sustainable-llm-inference]] - MARLIN: Multi-Agent Game-Theoretic Reinforcement Learning for Sustainable LLM Inference in Cloud Datacenters (arXiv: 2605.13496) (utility=0.95)
