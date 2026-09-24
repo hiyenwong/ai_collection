@@ -1,3 +1,17 @@
+## 2026-09-25 - Neuroscience Research (Cron Job)
+
+### Heterogeneity-enhanced stochastic resonance improves liquid-state computing in delayed spiking neural networks
+- [[heterogeneity-sr-liquid-computing]] - Quenched disorder structure (Gaussian/bimodal/shifted-exponential), not magnitude, controls SR and LSM performance in FHN small-world reservoirs; bimodal coupling disorder gives largest RMSEmin reduction and shifts optimum toward weaker noise (arXiv: 2609.27896)
+  - Noise D and heterogeneity σ are coupled control parameters: well-chosen quenched disorder lets the liquid reach its most informative state with weaker stochastic forcing; shifted-exponential disorder degrades performance because it is one-sided and non-mean-preserving (σg secretly shifts mean coupling)
+  - Zero-lag aperiodic coherence Q̄ inversely tracks readout RMSE (D=0.022 → 0.00721 vs 0.00800/0.00820 at weak/strong noise); delay heterogeneity acts by distribution-weighted averaging over the structured delay-response landscape — enhancement or suppression depends on where the mean delay sits
+  - **Activation**: stochastic resonance reservoir, heterogeneous coupling, liquid state machine, FitzHugh-Nagumo, quenched disorder distribution, bimodal coupling, noise-coupling co-optimization, delay heterogeneity
+
+### The Computational Value of Sensory-Aligned Receptive Fields Depends on Neuronal Expressivity
+- [[sensory-aligned-receptive-fields-expressivity]] - Task-geometry-aligned receptive fields are a computational prior beyond sparsity at matched parameter count; their advantage shrinks as single-neuron expressivity (memory units M) grows (arXiv: 2609.26940)
+  - Scrambled-coordinate control removes the advantage (alignment matters, not restricted connectivity); crossover proof via motion-aligned helps DVS-Gesture / spatial-aligned helps CIFAR10-DVS; full-input overfits despite more capacity
+  - ℓ1 sparsity regularization on FF weights partially recovers performance and induces frequency-selective fields but stays well below explicit structure — sparsity alone is insufficient; simple units benefit most from aligned wiring, expressive multi-timescale units can compensate for its absence
+  - **Activation**: receptive field prior, sensory-aligned wiring, neuronal expressivity, ELM network, spiking neural network inductive bias, sparsity vs structure, task geometry alignment
+
 ## 2026-09-25 - Number Theory/Statistics/Math + Quantum (Cron Job)
 
 ### Sharp pairwise reduction for quantum hypothesis testing
