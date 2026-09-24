@@ -1,3 +1,10 @@
+## 2026-09-25 - Number Theory/Statistics/Math + Quantum (Cron Job)
+
+### Locally Private Inference for Riemannian Stochastic Optimization
+- [[riemannian-private-inference]] - LDP-compliant statistical inference for manifold-valued minimizers via tangent-score randomisation + symmetric-pair regression (arXiv: 2609.22642)
+  - Fixes target-shift bias of private surrogates: conditional centring of released tangent gradients preserves the population first-order equation; privacy noise inflates covariance (known sigma^2 floor) but never moves the minimizer
+  - One gradient message serves three roles: pair averages drive RSGD+Polyak-Ruppert point updates, pair differences regress to identify the Hessian, residual spread estimates score covariance — CLT with sandwich H^-1 Sigma_tot H^-1/n fully from the private transcript, no holdout needed
+  - **Activation**: riemannian optimization, local differential privacy, manifold statistics, symmetric-pair regression, Frechet mean, tangent space, sandwich covariance, federated geometric statistics
 ## 2026-09-25 - Neuroscience Research (Cron Job)
 
 ### Heterogeneity-enhanced stochastic resonance improves liquid-state computing in delayed spiking neural networks
