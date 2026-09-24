@@ -1,3 +1,12 @@
+## 2026-09-25 - Number Theory/Statistics/Math + Quantum (Cron Job)
+
+### Sharp pairwise reduction for quantum hypothesis testing
+- [[sharp-pairwise-reduction-pgm-hypothesis-testing]] - Proves PGM error <= 4x sum of optimal binary Holevo-Helstrom errors in multi-hypothesis quantum state discrimination, with constant 4 shown optimal via regular-simplex ensembles (arXiv: 2609.28440)
+  - Improves Cheng-Liu C=8 to sharp C=4; resolves Audenaert-Mosonyi Conjecture 2.3; guarantee holds for the standard PGM itself (experimentally friendly)
+  - Method: block Gram matrix analysis + Hellinger-chi2 inequality with constant one (removes factor-2 loss) + superoperator diagonalization reducing operator inequalities to scalar pointwise ones
+  - Yields refined one-shot pairwise Chernoff bound and explicit copy complexity n >= [log(N-1)-log(delta)]/log(1/epsilon); trace-class extension covers bosonic/Gaussian ensembles without photon truncation
+  - **Activation**: PGM error bound, pairwise reduction, quantum hypothesis testing, state discrimination, Hellinger distance, Chernoff bound, regular simplex ensemble, copy complexity
+
 ## 2026-09-25 - Deep Learning Research (Cron Job)
 
 ### Harness-Zero: Harness Distillation via Agent-as-Harness
