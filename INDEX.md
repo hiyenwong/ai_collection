@@ -1,3 +1,17 @@
+## 2026-09-25 - Neuroscience Research (Cron Job)
+
+### Spiking Neural Network Predicting Sequence of the External Worlds States in Model-Based Reinforcement Learning
+- [[snn-world-model-prediction-chain]] - Fully-spiking rollout of predicted future world-state chains: gating synapses + spike-train memory + Imagination winner-take-all loop, no external digital processing (arXiv: 2609.27459)
+  - Time-augmented discretized world state <s,t> pairs (value + time-since-change) go beyond classic Markov; CoLaNET ensemble learns next-state transitions, imported into an inference SNN
+  - Spiking control-flow toolkit: negative gating synapses = refractory blocking, spike-train emission = state-holding latches, forced firing = hard routing, lateral inhibition = per-dimension WTA; SNN inference matches C++ baseline (<2σ) on ATARI ping-pong (mean std error 8.93 vs 8.3, no-prediction 0.45%)
+  - **Activation**: spiking world model, model-based RL SNN, world state prediction chain, gating synapses, CoLaNET, imagination loop SNN, purely spiking inference, LIF temporal coding
+
+### Brain-to-Language Decoding: Tasks, Signals, Methods, Evaluation, Practical Use and Beyond
+- [[brain-to-language-decoding-survey]] - Survey organizing the field by Articulated/Inner/Perceived task conditions (9 subtypes) with matching signal-representation-output chains and a five-level L1-L5 interface trajectory (arXiv: 2609.27650)
+  - Definitional discipline: movement-free attempted speech is NOT Inner imagery; recoverable info = f(behaviour, sampled populations, timescale) jointly — match decoding target to modality information content
+  - Three complementary routes (phonetic/lexical, acoustic/articulatory, contextual/semantic); within-protocol benchmark lineages only (Brain-to-Text '24, LibriBrain, MEG-XL); L3 meaning interface is the frontier, L4 scenario / L5 bidirectional neural return channel are prospective
+  - **Activation**: brain-to-language decoding, speech neuroprosthesis, inner speech decoding, articulatory decoding, five-level BCI trajectory, semantic reconstruction, communication cost evaluation
+
 ## 2026-09-25 - Number Theory/Statistics/Math + Quantum (Cron Job)
 
 ### Locally Private Inference for Riemannian Stochastic Optimization
