@@ -123,6 +123,20 @@
   - Convergent motifs convert nonzero mean activity into quenched heterogeneity (suppress temporal chaos, q_T < 1); divergent motifs only rescale temporal noise; motifs reduce KS entropy & KY dimension even at fixed g_eff
   - **Activation**: synaptic motifs, DMFT, path-integral, glassy dynamics, limit cycles, chaos dimensionality, connectomics
 
+### Identifying Neural State Changes due to Gain versus Off-Manifold Displacement
+- [[gain-vs-off-manifold-decomposition]] - Decomposes neural state changes into on-manifold movement, multiplicative gain, and genuine off-manifold novelty via tangent/normal bundle geometry with a radial gain axis, plus a 7-gate identifiability cascade (arXiv: 2609.21272)
+  - r = P_T·r + (n̂_gᵀr)n̂_g + P_res·r with G+T+O≡1; gain axis defined by projecting the radial unit vector ρ̂_p into the normal space (a=‖P_N ρ̂‖), avoiding gain/tangential-drift conflation
+  - 7-gate cascade separates structural failures (no local chart, wrong intrinsic dim d) from estimation error (tangent frame rotation) and systematic bias (anchor bias ≈ (ℓ²/2)H⃗, gain-axis misalignment, ratio conditioning C₆=k‖r‖²/ℓ²); only Gates 4 and 6 are directly computable from data
+  - Dimension check trick: sweep d — sharp alignment drop between d and d+1 reveals absorbed normal directions; on origin-centered manifolds a² ≈ 1−capture
+  - **Activation**: neural manifold, gain modulation vs novelty, off-manifold displacement, memory segmentation decorrelation, neuromodulator excitability confound, state transition identifiability, neural geometry decomposition
+
+### Predictive Suppression Layers for Communication-Efficient Spiking Neural Networks
+- [[predictive-suppression-layers-snn]] - Per-layer predictor transmits only "surprising" spikes via error-magnitude gating; ~3× less communicated inter-layer activity with higher accuracy by splitting cost into E_local vs E_comm (arXiv: 2609.21583)
+  - Gate g=clamp(1−e^(−αm), g_min, 1) with α=10, g_min=0.05 suppresses predictable spikes; binary variants: hard-STE (θ=0.3 N-MNIST/0.1 SHD, straight-through gradients) and respike (LIF(γgz), γ=4); min-rate regularizer [0.05−r̄_pred]₊² prevents predictor collapse
+  - Break-even at communication/local cost ratio ρ*≈2.1; first layer carries 7× less weighted activity (198 vs 1397) with linear-probe accuracy equal to the full representation; SSI≈0.75, RCF≈0.07 confirm prediction-driven (not random) selectivity
+  - On temporal SHD, error-units (transmit residual as message) underperform gating — error works better as control signal than as message; binary variant choice is dataset-dependent
+  - **Activation**: SNN communication efficiency, predictive coding spiking layers, event-driven gating, surprise encoding, neuromorphic inter-core communication, E_comm decoupling, IoT edge SNN inference
+
 ## 2026-09-24 - Neuroscience Research (Cron Job)
 
 ### A Gradient-based yet Spike-Timing-Dependent Solution to the Feedback Learning Problem in Neural Microcircuits
