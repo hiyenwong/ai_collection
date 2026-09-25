@@ -1,3 +1,19 @@
+## 2026-09-26 - Economics, Investment + Quantum (Cron Job)
+
+### Loan Portfolio Optimization with Variational Quantum Algorithms
+- [[lpo-vqa-pce-credit-portfolio]] - Credit-risk loan portfolio QCBO→QUBO solved via PCE-compressed VQA on ≤11 qubits for 1500 variables, honest 40% gap vs OR-Tools (arXiv: 2609.30195)
+  - Sign-preserving covariance square root Σ̃_ij = sign(Σ_ij)|Σ_ij|^(1/2) unifies expected loss (O(10⁴), money) and loss covariance (O(10⁸), money²) into one quadratic objective without destroying QUBO structure
+  - δ=0 QUBO + top-K post-processing: quantum stage never learns the cardinality constraint — feasibility enforced deterministically; γ-annealing 0.3→50 with EMA-gated best-param tracking
+  - Three-subgroup PCE ({I,X}/{I,Y}/{I,Z} tensor products, 3(2ⁿ−1) operators): quality parity with full PCE but only 3 hardware measurement settings; IBM QPU results within 10% of simulation for N up to 1500
+  - **Activation**: loan portfolio optimization, credit risk QUBO, PCE portfolio, variational quantum algorithm lending, microfinance quantum optimization, borrower default correlation
+
+### Affine Pricing Models from Group Quantization and Holonomy
+- [[ahgq-affine-pricing-group-quantization]] - AHGQ unifies the affine pricing PDE operator and generalized Riccati transform as complementary polarizations of one group-quantized geometric structure (arXiv: 2609.28863)
+  - Affine pricing symbol C^A = F(p) + xᵀR(p) splits into homogeneous quadratic sector C_s (→ symplectic transport M_s(t)=exp(tK_s) ∈ Sp(2d,R), centrally extended Lie group G̃_s) + affine sector C_H (→ multiplicative thin-path groupoid holonomy H_H[γ]=exp(−∫C_H dt))
+  - R₊ (positive pricing scale) replaces U(1) as the central fiber of geometric quantization; momentum polarization of the affine Poincaré–Cartan characteristic field X_Θ reproduces ṗ=R(p) (Riccati) + χ̇=F(p)χ, coordinate polarization reproduces L^A = (b+Bx)ᵀ∇x + ½Tr(A(x)∇x²) − c + dᵀx
+  - State-dependent covariance (CIR/Heston x-proportional volatility) lives entirely in the holonomy sector; inverse-power default intensity breaks Riccati closure via discrete momentum translations (affinity boundary test: R(p) polynomial degree ≤ 2 in p)
+  - **Activation**: affine pricing, group approach quantization, holonomy, Riccati flow, symplectic transport finance, Heston geometric structure, thin-path groupoid, Poincare-Cartan pricing
+
 ## 2026-09-26 - Neuroscience Research (Cron Job)
 
 ### On the Second-Order Optimization for Spiking Neural Networks
