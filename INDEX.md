@@ -1,3 +1,11 @@
+## 2026-09-26 - Economics & Investment (Cron Job)
+
+### Cost-Sensitive Online Window Size Selection for Portfolio Management
+- [[csows-cost-sensitive-window-expert-aggregation]] - Online window-size expert aggregation via Fixed Share with turnover-inclusive tracking-regret bounds (arXiv: 2609.29887)
+  - Window sizes as "experts": each solves cost-sensitive Markowitz on its own rolling window; Fixed Share aggregates online with turnover-inclusive losses ℓ̃_j = ℓ + c‖Δw_j‖₁
+  - Sharp regret decomposition: weight-shift turnover term Σc(t)‖q(t)−q(t−1)‖₁ has tight coefficient 1 (2-expert certificate); Hedge = α=0 static special case; Hannan consistency for K(T)=o(T)
+  - S&P 500 2020–2026: Hedge/Fixed Share 578%/471% cumulative vs ~205% for UP/EG baselines; negative-PnL loss used
+  - **Activation**: window size selection, sliding window portfolio, Fixed Share, tracking regret, transaction cost aware online learning, expert aggregation finance
 ## 2026-09-26 - Deep Learning Research (Cron Job)
 
 ### FlashLoop: Fast and Memory-Efficient Looped Transformers via Lazy Updates
