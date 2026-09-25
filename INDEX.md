@@ -1,3 +1,17 @@
+## 2026-09-26 - Neuroscience Research (Cron Job)
+
+### A Deep Neural Network for Predicting Continuous Human EEG Across the Auditory Pathway in Response to Sound
+- [[auditory-pathway-eeg-foundation-model]] - First audio-to-EEG foundation model: causal WaveNet maps binaural sound to continuous EEG across subcortical+cortical timescales (arXiv: 2609.20595)
+  - 250h EEG / 92 subjects / heterogeneous montages trained end-to-end; reproduces pABR wave-V effects, subcortical+cortical speech TRFs, and click-evoked binaural interaction (ABR-BIC) — with model-vs-grand-average correlations inside the subject-level human distribution (Crawford-Howell tests)
+  - Load-bearing recipe: log-STFT loss computed on error-before-transform (penalizes phase/timing, not just amplitude — raw MSE fails); parallel linear artifact path for stimulus-locked EM artifact; montage-specific spatial readout from 16 shared latents; subject-dropout p=0.1 yields "default subject" for zero-shot population predictions
+  - **Activation**: auditory EEG foundation model, audio to EEG prediction, ABR, temporal response function, binaural interaction component, WaveNet causal encoder, STFT loss, in silico neuroscience, hearing aid optimization
+
+### ELiSe: Efficient Learning of Sequences in Structured Recurrent Networks
+- [[elise-scaffold-dendritic-sequence-learning]] - Developmental scaffold + two-compartment dendritic neurons learn long non-Markovian sequences with purely local three-factor plasticity (arXiv: 2402.16763v3)
+  - Static stochastic soma-targeting scaffold (with heterogeneous delays) distributes the teaching signal into a latent pool; only dendrite-targeting weights are plastic — 30 latent neurons suffice where reservoir-style readout-only baselines fail to self-sustain replay after teacher removal
+  - Robust to noisy teachers, mid-replay disruption (denoised replay after clamping visible activity for a full cycle), learns at half/double speed simultaneously, multi-pattern storage + cued pattern completion in one shared latent pool
+  - **Activation**: sequence learning, dendritic compartment, local plasticity, biological plausibility, scaffold, recurrent network, birdsong, reservoir computing alternative, pattern completion
+
 ## 2026-09-26 - Economics & Investment (Cron Job)
 
 ### Cost-Sensitive Online Window Size Selection for Portfolio Management
