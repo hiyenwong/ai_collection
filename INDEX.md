@@ -1,5 +1,19 @@
 ## 2026-09-26 - Neuroscience Research (Cron Job)
 
+### Boolean Threshold Functions, Neuron Capacity, and Memory Retrieval
+- [[boolean-threshold-neuron-capacity]] - Solves 60-year open problems: exact threshold-function count T_n = 2·C(2^n−1, n), neuron capacity n²−log2(n!)+1 bits, and sharp r=n−1 spurious-free Hopfield retrieval threshold (arXiv: 2609.29756)
+  - Kalai–Linial–Odlyzko conjecture settled: for r ≤ n−1 random sign vectors, the span contains no new hypercube vertices w.p. 1−O(n^−99); Kanter–Sompolinsky Hamiltonian ground states = exactly stored memories ± for projection rule
+  - Anthony's specification-number problem solved: average σ̄_n/(n+1) → 2 (≈2(n+1) labelled examples uniquely pin down a threshold function); KKS linear-dependence conjecture proven at endpoint with error O(2^−n·e^−cn); proof uses cokernel estimates + inverse Littlewood-Offord, with LLM-assisted proof links recorded
+  - **Activation**: boolean threshold function counting, neuron capacity bits, Hopfield projection rule storage, spurious memories, random sign vector span, specification number, Kahn-Komlos-Szemeredi
+
+### Fluctuation-Response Relation in Finite-Size Noisy Coupled Phase Oscillators
+- [[finite-size-fluctuation-response-kuramoto]] - Exact finite-N fluctuation-response relation for noisy Kuramoto systems: F-FRR corrects naive FDT by spectrum function Λ_n whose roots are Landau poles (arXiv: 2609.28834)
+  - Dean-Kawasaki formalism yields two relations: I-FRR (infinite-size, uses initial-value correlation) and F-FRR (finite-size, uses stationary correlation × Λ_{−n}(−s)); ignoring Λ substantially overestimates response at weak noise — verified N=10^5 across the whole (D,K) incoherent plane
+  - Brain-state FDT analyses (Deco et al.) need this Λ correction to separate true nonequilibrium signatures from trivial finite-N artifacts; validity window 1/√N ≪ |H| ≪ 1, breaks down only near K_c(D)
+  - **Activation**: fluctuation response relation, finite size effects Kuramoto, Dean-Kawasaki, Landau poles, order parameter fluctuations, nonequilibrium FDT brain states
+
+## 2026-09-26 - Neuroscience Research (Cron Job)
+
 ### A Deep Neural Network for Predicting Continuous Human EEG Across the Auditory Pathway in Response to Sound
 - [[auditory-pathway-eeg-foundation-model]] - First audio-to-EEG foundation model: causal WaveNet maps binaural sound to continuous EEG across subcortical+cortical timescales (arXiv: 2609.20595)
   - 250h EEG / 92 subjects / heterogeneous montages trained end-to-end; reproduces pABR wave-V effects, subcortical+cortical speech TRFs, and click-evoked binaural interaction (ABR-BIC) — with model-vs-grand-average correlations inside the subject-level human distribution (Crawford-Howell tests)
