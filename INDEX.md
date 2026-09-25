@@ -1,3 +1,47 @@
+## 2026-09-26 - Deep Learning Research (Cron Job)
+
+### FlashLoop: Fast and Memory-Efficient Looped Transformers via Lazy Updates
+- [[flashloop-lazy-updates]] - Training-free inference acceleration for Looped Transformers exploiting cross-loop redundancy: token-sparse updates, sparse stable-key attention, KV-residual low-bit quantization (arXiv: 2609.29812)
+  - Three empirical regularities as loops proceed: state deltas concentrate on few tokens, attention-output diffs dominated by stable key-column subset, adjacent-loop KV residuals become low-bit friendly
+  - Up to 1.64× end-to-end speedup + 6× KV-cache reduction at lossless accuracy; lazy-recomputation recipe: measure inter-iteration delta distribution → threshold-gate recomputation → store residual diffs not snapshots
+  - **Activation**: looped transformer, lazy updates, KV-cache compression, sparse attention inference, recurrent depth efficiency
+
+### LastOPD: Taming Collapse in Latent On-Policy Distillation
+- [[lastopd-latent-onpolicy-distillation]] - Fixes latent-alignment collapse in on-policy distillation: apply latent supervision only at last-layer state (shared LM-head interface) with 10-step crossfade into token-level OPD (arXiv: 2609.28845)
+  - Diagnosis: latent supervision gains MATH-500 25→46 in 10 steps then collapses to 11; alignment metric improves throughout — same-depth layer pairing has mismatched roles between teacher/student
+  - +5.55/+4.02 MATH-500 over token-only OPD (Qwen3 4B/8B teachers); patterns: metric-behavior divergence alarm, align at functional common interface not structural mirrors, crossfade fragile→robust signals
+  - **Activation**: on-policy distillation, latent collapse, reverse KL, layer-role mismatch, crossfade schedule, LLM distillation
+
+### Reward-Tilted On-Policy Distillation for Acoustic Grounding in Audio-Language Models
+- [[rt-opd-reward-tilted-distillation]] - Counterfactual modality-contrast reward: frozen teacher's log-prob with-vs-without audio per token tilts the target distribution before reverse-KL distillation (arXiv: 2609.28778)
+  - Recipe: two teacher forward passes (with/without critical modality) → per-token log-prob contrast as reward → reweight distillation target; no teacher retraining needed
+  - 3B model 72.72% MMAU (best 3B, competitive with 7B/8B); silenced-audio probes confirm stronger acoustic reliance; generalizes to any multimodal shortcut-learning setting
+  - **Activation**: reward-tilted distillation, modality grounding, counterfactual ablation reward, audio-language model, textual shortcut
+
+### Reasoning Instructions Can Break Answer Decoding in Vision-Language Models
+- [[cot-prefix-scoring-pitfall]] - CoT-prefix scoring (reasoning cue + immediate answer-logit readout) collapses VLM MCQ eval 80.76%→45.48% with 93.54% first-slot artifact; linear probes recover 78.94% (arXiv: 2609.29278)
+  - Root cause: probability mass shifts to continuation tokens while answer info stays linearly accessible in late layers — evaluation-interface mismatch, not knowledge loss
+  - Diagnostic workflow: linear-probe recovery test → vocabulary/layer diagnostics → option-permutation position-bias test; prescription: align scored event with requested event
+  - **Activation**: CoT evaluation, answer decoding, logit readout, position bias, VLM benchmark design, evaluation interface mismatch
+
+### GridSFM: A Foundation Model for Solving AC Optimal Power Flow
+- [[gridsfm-ac-opf-foundation-model]] - 15M-param physics-GNN pretrained over 54 topologies (500-4000 buses) for AC-OPF; disconnected feasible set repaired by log-penalized slack lifting making the elastic set contractible (arXiv: 2609.30173)
+  - Proofs: elastic set contractible, AC-OPF minimizers preserved above explicit penalty threshold, projection back to feasible set well-posed — repairs topology before learning
+  - 2.45% zero-shot cost error at 10,000 buses; Newton-based physics-informed fine-tuning adapts to unseen grids with only 100 solved instances, beats dedicated single-topology nets
+  - **Activation**: AC-OPF, neural optimization solver, disconnected feasible set, log-barrier slack lifting, contractible relaxation, physics-informed fine-tuning, grid foundation model
+
+### Temporal Gradient Inversion for Private Trajectory Reconstruction in Embodied RL
+- [[trace-temporal-gradient-inversion]] - Amortized autoregressive gradient-inversion attack reconstructing embodied RL trajectories from per-step policy gradients via cross-time MI bounds + closed-form action recovery (arXiv: 2609.30258)
+  - Two structural signals ignored by single-frame attacks: cross-time correlation between successive gradients (conditional MI bound) and exact closed-form action recovery when entropy regularization is small
+  - 18.8 dB PSNR, near-perfect action recovery at 3-4.5 ms/frame; works on recurrent/residual/transformer victims; defense requires sequence-aware privacy, not per-gradient noise
+  - **Activation**: gradient inversion, embodied RL privacy, temporal correlation attack, federated learning security, trajectory reconstruction, sequence-aware defense
+
+### ConPro: Contrast Projection Pretraining for Label-Efficient Vessel Segmentation in DSA Sequences
+- [[conpro-contrast-projection-pretraining]] - Self-supervised pretraining targeting a physics-derived temporal projection (pixelwise normalized drop below temporal median) that converts unlabeled contrast-dynamics into free supervision (arXiv: 2609.30043)
+  - Controlled comparisons prove the gain is from learning to predict the projection — using it as input channel or pseudo-label helps little or hurts; temporal-median target alone stays at scratch
+  - Architecture-transparent weights compose with semi-supervised training: UniMatch + ConPro gains +0.5-2.0 Dice at every label fraction (75.4 DIAS / 81.3 DSCA)
+  - **Activation**: self-supervised pretraining, label-efficient segmentation, temporal median projection, DSA angiography, physical process as target, semi-supervised composition
+
 ## 2026-09-26 - Economics, Investment + Quantum (Cron Job)
 
 ### Loan Portfolio Optimization with Variational Quantum Algorithms
