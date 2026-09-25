@@ -1,3 +1,17 @@
+## 2026-09-26 - Neuroscience Research (Cron Job)
+
+### Online Task Adaptation via Self-Organisation (NCA Fast Memory)
+- [[nca-deltarule-fast-memory-adaptation]] - Meta-learned gradient-free task adaptation: NCA cells update per-cell associative memory via error-norm-gated delta rule, slow params frozen (arXiv: 2609.29281)
+  - One pass over 2500 support images lifts held-out 5-way accuracy 20.0% -> 48.2% (82% of the gap to 54.4% from-scratch backprop baseline), no gradients/param updates at adaptation time; batch-size invariance (B'=1..128 all ~48%)
+  - Load-bearing recipe: non-episodic meta-training (same stream provides meta-loss AND memory updates, predict-before-adapt), write strength eta=||e||/gamma analytic (zero error -> zero write), truncated-window backprop L=8 beats full L=22 on repeated-pass stability (29.4% collapse at pass 20 for full BPTT)
+  - **Activation**: gradient-free adaptation, fast weights, delta rule memory, neural cellular automata, meta-learning, self-organisation, error-gated plasticity
+
+### Dynamical Diversity for Reservoir Computing in Reconfigurable Nanomechanics
+- [[nems-multiplexed-reservoir-drive-diversity]] - Single two-mode NEMS resonator as multiplexed reservoir: replay same input under complementary drive-amplitude allocations, stack responses for linear readout (arXiv: 2609.29532)
+  - NARMA-2 test NMSE 0.615 (one-mode) -> 0.068 (two-mode) -> 0.021 (10-pair stack), >28x reduction; linear memory capacity peaks at mode-2-dominated pairs with mode 1 near Duffing nonlinearity onset (MC 2.4 vs 0.4)
+  - Counter-intuitive physics: free-decay lifetime scales Q/f not Q, so high-Q high-f mode 2 has SHORTER memory; MC advantage attributed to inter-modal coupling regime. Honest-benchmark patterns: h1 feedthrough vs h2 mechanical matched control, NARMA order scaling + MC-delay diagnostics, fixed-total-drive allocation as clean ablation axis
+  - **Activation**: physical reservoir computing, NEMS, MEMS, drive multiplexing, Duffing nonlinearity, memory capacity, feedthrough control, operating-point stacking
+
 ## 2026-09-26 - Economics/Investment + Quantum (Cron Job)
 
 ### The Impossible Trinity of Time-Series Validation: A Conservation Law among Training Sufficiency, Test Coverage, and Temporal Causality
