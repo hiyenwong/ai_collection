@@ -1,3 +1,12 @@
+## 2026-09-26 - Neuroscience Research (Cron Job)
+
+### On the Second-Order Optimization for Spiking Neural Networks
+- [[spikfax-second-order-snn]] - SpiKFAX: first KFAC-style Kronecker-factored Fisher preconditioner adapted to time-recurrent surrogate-gradient SNN dynamics, directly attacking the sharp SNN loss landscape (arXiv: 2609.29379)
+  - Three explicit approximation assumptions: layer-wise block diagonality, activation/derivative independence, temporal homogeneity of input second moment (curvature sees spike trains only through time-averaged rate vector r)
+  - Time-aware factorization F_W ≈ A⊗G with A=E[rr^T] (rate second moment) and G=E[(Σ_t δ_t)(Σ_t δ_t)^T] (time-ACCUMULATED error second moment); preconditioned update ∆W = −γ·G⁻¹·(∇W L)·A⁻¹; per-layer cost O(N^1.5), only 1.2-1.4× slower than Adam per step
+  - Wins across ALL 5 architectures (S-MLP/LeNet5/VGG11/VGG16/ResNet18) × 7 datasets: N-MNIST 99.92%, CIFAR10-DVS 56.15% (+13.0 vs AdamW), DVS128 Gesture 76.13% (+6.43); peak accuracy by epoch 15
+  - **Activation**: SNN second-order optimization, KFAC spiking networks, Fisher information preconditioning, surrogate gradient BPTT, neuromorphic training, sharp loss landscape, spike rate curvature, DVS gesture recognition
+
 ## 2026-09-25 - Neuroscience Research (Cron Job)
 
 ### A Spiking Neural Network Model of Elementary Self-Consciousness via Endogenous Default Mode Network Dynamics
