@@ -1,5 +1,18 @@
 ## 2026-09-25 - Neuroscience Research (Cron Job)
 
+### A Spiking Neural Network Model of Elementary Self-Consciousness via Endogenous Default Mode Network Dynamics
+- [[snn-dmn-self-consciousness]] - 10,000-neuron Izhikevich SNN with endogenous DMN pacemaker maintaining autonomous "pulse of the Self" (tonic 7pA), quantified via IIT covariance-determinant phi (arXiv: 2609.29984)
+  - Dual-subsystem architecture: 5k RS sensory neurons (heterogeneous c,d from U(0,1)²) + 5k intrinsically-bursting DMN pacemakers (core c=-55mV,d=4), asymmetric top-down weights w_DMN=0.6 > w_sensory=0.4 over 10M sparse synapses
+  - Barrett-Seth style phi = (1/2)ln(det(Σ_Part)/det(Σ_Global)) from binary spike cross-covariance: quiescent states phi≈0, pre-burst priming 1-2.5 bits, peak integrated Qualia 12.5-15 bits during population ignition — endogenous activity alone integrates nothing, coupling with sensory perturbation generates experience
+  - **Activation**: default mode network, self-consciousness SNN, IIT integrated information phi, Izhikevich bursting pacemaker, tonic neuromodulation, top-down modulation, qualia simulation, philosophical zombie consciousness
+
+### Activation-Flexible ANN-to-SNN Conversion with Finite-State Markov Neurons
+- [[ctmc-markov-neuron-ann-snn-conversion]] - Finite-state CTMC neurons whose stationary spike flux uniformly approximates ANY continuous nonnegative monotone activation, breaking ReLU-only ANN-SNN conversion (arXiv: 2609.30102)
+  - Three-state B/G/R Markov neuron: spike flux v(H) = d·a(H)·c(H)/(d[a+b+c]+a·c) fitted by least squares per layer; Theorem 1 proves uniform approximation on compact intervals; sigmoid/ReLU/softplus/ClipReLU fit with MSE 1.1e-3 to 1.1e-2
+  - Conditional clipping law: moderate caps (K=4) cut SynOps 30% (tail truncation), aggressive caps fail (intersect distribution body); trend REVERSES on CIFAR-10 (+29% cost); mean-field decomposition shows finite-window sampling dominates residual gap on MNIST, terminal-layer upper-quantile mismatch on CIFAR
+  - **Activation**: ANN to SNN conversion, CTMC Markov neuron, activation flexible conversion, stationary spike flux approximation, layerwise rate scaling, ClipReLU spike budget, SynOps optimization, sigmoid softplus spiking
+
+
 ### Spiking Neural Network Predicting Sequence of the External Worlds States in Model-Based Reinforcement Learning
 - [[snn-world-model-prediction-chain]] - Fully-spiking rollout of predicted future world-state chains: gating synapses + spike-train memory + Imagination winner-take-all loop, no external digital processing (arXiv: 2609.27459)
   - Time-augmented discretized world state <s,t> pairs (value + time-since-change) go beyond classic Markov; CoLaNET ensemble learns next-state transitions, imported into an inference SNN
