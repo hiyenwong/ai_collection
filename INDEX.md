@@ -1,3 +1,11 @@
+## 2026-09-26 - Economics/Investment (Cron Job)
+
+### The Cross-Section of Stock Returns and AI Exposure
+- [[ai-exposure-stock-returns]] - AI consumption factor (PCA on OpenRouter token growth) + firm AI-beta long-short premium: 60.4bp/week H-L spread, market-implied occupation exposure (arXiv: 2606.30583)
+  - 5-stage pipeline: AI Factor = PC1 of weekly log growth (tokens/dollars/users, loadings 0.665/0.559/0.496, 56.5% var); firm β_AI from 13-week rolling regression vs AI factor + market; weekly-rebalanced value-weighted quintiles; premium heterogeneity (closed-source 51.6bp vs open-weight 23.0bp; seasoned 54.0 vs casual 31.6); occupation mapping firm→industry→BLS→O*NET
+  - Market-implied exposure diverges from task-based measures (<2% shared variance with ESZ/Felten/Eloundou/Webb); nonroutine interactive +0.16σ / nonroutine analytic −0.17σ; interaction/communication skill coeff 0.26 (1%); release-week event study: H−L 1.7% over 5-day window but 34.3bp/week persists excluding releases; agentic token share ~0%→~50% with declining price/token (cache reads + cheap-model routing)
+  - **Activation**: AI exposure stock returns, AI factor construction, AI beta estimation, LLM token consumption factor, AI premium quintile portfolios, market-implied AI exposure occupations, OpenRouter token data asset pricing, agentic token share, AI consumption growth PCA
+
 ## 2026-09-26 - Neuroscience Research (Cron Job)
 
 ### Online Task Adaptation via Self-Organisation (NCA Fast Memory)
