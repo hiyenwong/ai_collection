@@ -1,3 +1,17 @@
+## 2026-09-26 - Economics/Investment + Quantum (Cron Job)
+
+### The Impossible Trinity of Time-Series Validation: A Conservation Law among Training Sufficiency, Test Coverage, and Temporal Causality
+- [[ts-validation-impossible-trinity]] - Proves alpha+beta<=1+Lambda conservation law for ANY time-series validation scheme; leakage harm depends on distance delta, not volume Lambda (arXiv: 2609.29530)
+  - Four laws: ledger alpha+beta<=1+Lambda, proximity delta<=(1-alpha)T, trinity alpha+min{beta,delta/T}<=1, exchange rate bias<=2M*beta_mix(delta); expanding walk-forward IS the Pareto frontier of causal validation; fully covering causal scheme uses at most half the data on average (alpha_bar<(m-1)/2m)
+  - Volume harmless, proximity harmful: shuffled vs contiguous 5-fold share (alpha,beta,Lambda)=(0.8,1,0.8) yet on pure noise report IC +0.32 vs +0.004; embargo h>=2-3*tau buys causality back at sample cost O(m(2H+h)/T), non-stationarity NOT redeemable; includes scheme_coords() template for auditing any backtest
+  - **Activation**: time-series validation, backtest overfitting, purged k-fold, embargo, walk-forward, temporal causality, leakage, cross-validation, financial machine learning
+
+### Learned-projector QAOA for hierarchical optimization
+- [[lp-qaoa-learned-projector-hierarchical-optimization]] - Multistage QAOA freezing optimized circuits as projector mixers M_j=I-|Phi><Phi|; stability + gap theorems (arXiv: 2609.28888)
+  - Frozen-stage stability e_m<=sum eps_j*prod(1+B_k) allocates preparation accuracy across hierarchy; learned-projector mixing couples distant feasible configs directly -> EC3 min gap qN*L^{-1/2} vs local-mixer 2^{-Theta(N log N)} high-order tunnelling suppression; constraint terms concentrated by early stages can be omitted from later phase separators
+  - BCST: higher optimum-sampling probability, lower logical-resource cost (RTS99xRU), stronger normalized gradients than block-XY QAOA; extends to soft hierarchies via stochastic block model; projector mixing avoids exponential loss concentration (trainability)
+  - **Activation**: QAOA, learned-projector mixer, hierarchical optimization, frozen-stage stability, projector mixer, BCST, tunnelling suppression, energy gap, variational quantum optimization
+
 ## 2026-09-26 - Neuroscience Research (Cron Job)
 
 ### Boolean Threshold Functions, Neuron Capacity, and Memory Retrieval
