@@ -1,3 +1,13 @@
+## 2026-09-27 - Information Science (Cron Job)
+
+### PrivDrift: Auditing User-Secret Leakage Under Topic Drift in Active LLM Conversations
+- [[privdrift-active-context-privacy]] - User-disclosed secrets stay recoverable after topic drift (38.7-54.6% leakage); privacy as persistent behavioral failure, not memorization (arXiv: 2609.30094)
+  - 1,000 controlled multi-turn dialogues, seeded secrets (phone/email/SSN/CC), d∈{0..6} content-dense drift turns, 3-level persuasion probes; hybrid detector = normalized regex + LLM-judge
+  - Secret-type asymmetry dominates (Cramer's V 0.59-0.77): SSN/CC suppressed (<6%) but email leaks up to 81%, phone up to 71% — format heuristics ≠ contextual confidentiality
+  - Privacy Half-Life τ: stability metric requiring sustained decay below 0.1·L(0); all models τ>7 (dip at d=3 then rebound = transient, not suppression)
+  - Persuasion non-monotonic per model: hard pressure reduces GPT-OSS leakage, maximizes Qwen3-VL leakage
+  - **Activation**: PrivDrift, active-context privacy, topic drift leakage, secret recoverability, multi-turn privacy audit, persuasion probing, privacy half-life, contextual confidentiality
+
 ## 2026-09-27 - Neuroscience Research (Cron Job)
 
 ### On Growth and Form, and Function: Reusable Regulatory Handles Control Phenotypic Variation
