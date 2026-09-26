@@ -1,3 +1,18 @@
+## 2026-09-26 - Economics/Investment + Quantum (Cron Job, Late Session)
+
+### Propose, Don't Judge: An Anytime-Valid Referee for LLM Agents That Mine Investment Factors
+- [[governed-self-evolution-anytime-referee]] - Governed self-evolution: LLM proposes factors, frozen anytime-valid e-process referee judges; FDR controlled at every stopping time for any proposer (arXiv: 2609.27051)
+  - Three betting procedures: per-candidate aGRAPA e-process on post-submission rank-IC (whitened X̃_t = X_t − ρ̂X_{t−1}); online e-BH over frozen N_v=2000 slots (resubmission only spends proposer slots, cannot raise FDR); e-detector retirement with daily restarts (M_t = ΣW^(j) ≥ A*=1260), Kelly-vs-full-decay stake NOT data-fitted
+  - Measured: frozen referee 11.7 false admissions/campaign vs leaky 86-196 on 10y CSI 500 walk-forward; LLM beats script on yield 6/6, matches bandit on allocation, uniquely authors diagnostic probes (regret -0.23 to -0.39 in 3/6 families); cost = ~500-day median wait (information bound ~ ln(N_v/kα)·2σ²/µ²); certified Sharpe trails ungated due to horizon mismatch (daily certificate blind to slow momentum IC 0.001→0.009@63d) — design lesson: certify the horizon that is traded
+  - Local validation: null crossing rate 1% ≤ α=5% (Ville holds), true factor 200/200 admitted; e-detector A=200 false-alarm pitfall reproduced → Monte-Carlo calibration of A is mandatory
+  - **Activation**: LLM agent governance, anytime-valid testing, e-process betting, online e-BH, e-detector changepoint, FDR control in agentic loops, factor mining, rank-IC, governed self-evolution, frozen referee, trust kernel
+
+### Task-Resolved Fisher Spectroscopy for Quantum Reservoir Computing
+- [[qrc-task-resolved-fisher-spectroscopy]] - Task scores define Fisher coordinates separating QRC encoding vs measurement vs compression loss: 0 ⪯ B₁ ⪯ ⋯ ⪯ B_N = F ⪯ H_task (arXiv: 2609.29570)
+  - Exactly affine score perturbation P_θ(z) = P_ref(z)(1+Σθ_A s_A(z)) → ρ(θ) = ρ_ref + Σθ_AΓ_A without small-amplitude expansion, implemented by importance-weighting stationary labeled records (no tomography, no input model); B_r quadratic form in score coordinates = EXACT stationary capacity of optimal linear readout; Walsh modes are the closed-form score family for i.i.d. binary inputs
+  - Sampling overhead κ_j = 1/λ_j^(r) from generalized eigenproblem B_r v = λFv predicts extra shots needed BEFORE spending budget; 5-spin reservoir: interactions route 4th-order temporal info (PC4) into higher-body correlations — low-order compression costs orders-of-magnitude sampling overhead; measurement-axis optimization recovers hidden task info
+  - **Activation**: quantum reservoir computing diagnostics, Fisher information hierarchy, QFIM CFIM, many-body correlations, Walsh modes, shot allocation, measurement axis optimization, information-processing capacity
+
 ## 2026-09-26 - Neuroscience Research (Cron Job, Evening Session)
 
 ### BrainWideBench: Benchmarking large-scale pretraining and across-animal transfer in multi-region neural recordings
