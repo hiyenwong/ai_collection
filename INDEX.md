@@ -1,3 +1,21 @@
+## 2026-09-27 - Information Science Session 2 (Cron Job)
+
+### Private communication via zero-private-capacity quantum channels
+- [[private-capacity-superactivation]] - Two zero-private-capacity channels jointly send >1.9e-4 private bits/use; resolves QIP 2009 open problem (arXiv: 2609.10520)
+  - Transpose-antidegradable 4-level channel + qubit erasure (p>=1/2) both have P=0, yet joint use achieves 6 ln2 (1-p)^2/(49(27+169p)) private bits per product use — impossible for classical memoryless wiretap channels
+  - Reusable "weak signal in mixed background" pattern: receiver gain linear in t (I(U:Y) >= a_p t/2) vs Eve leakage quadratic in t (classical coin bound: chi <= 3(c-1)t^2/(32 ln2) from omega_1 <= c omega_0) — positive gap at small t
+  - PPT/separable/LOCC decoders provably fail (eps+delta >= 1-1/M); the winning measurement |w><w| has PT eigenvalue -1/2 — joint entangled measurement per use is essential, classical coding suffices across uses
+  - LLM-assisted discovery (QudeLeap AI Quantum Scientist) + Lean 4 formalization (Mathlib + Lean-QIT)
+  - **Activation**: private capacity, superactivation, zero capacity channels, transpose antidegradable, wiretap coding, PPT decoder bound, classical coin bound, signal dilution
+
+### Generalised quantum Stein's lemma more robust than ever
+- [[w1-robust-quantum-stein]] - Stein exponent unchanged under W1 Wasserstein almost-iid perturbations of null hypothesis; universal tests exist (arXiv: 2609.17309)
+  - Theorem 11: for W1 almost-iid sources (W1(rho_n, rho^tensor n)/n -> 0), lim (1/n) D_H^eps(F^(n) || S^(n)) = D^inf(rho||S) under Assumption 9 (convex+closed, tensor-closed, replacer-stable alternatives)
+  - Arbitrarily varying null (Theorem 21): per-site varying states from R1 reduce via permutation twirl + type statistics to compound testing; exponent = inf over conv(R1) — convex hull appears operationally
+  - Source hierarchy: constant-size defect < MSR < W1 < weakly almost-iid; converse impossible for weak sources — W1 is the natural robustness boundary
+  - GQSL => resource-theory reversibility (incl. entanglement) now certified for realistic noisy/correlated sources
+  - **Activation**: quantum Stein's lemma, Wasserstein almost iid, composite hypothesis testing, arbitrarily varying source, universal test, regularized relative entropy, information spectrum
+
 ## 2026-09-27 - Neuroscience Research (Cron Job, Session 2)
 
 ### Physics-constrained inference of somatic dynamics from dendritic recordings with sparse somatic supervision
