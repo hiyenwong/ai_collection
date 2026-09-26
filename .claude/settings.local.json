@@ -9,6 +9,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "Bash(gh pr list --state open)",
       "Bash(git commit:*)",
       "Bash(git push -u origin feat/update-claude-md)",
@@ -48,6 +49,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(gh repo view --json owner,name)",
@@ -60,6 +63,9 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
