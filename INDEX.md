@@ -1,3 +1,22 @@
+## 2026-09-27 - Neuroscience Research (Cron Job, Session 2)
+
+### Physics-constrained inference of somatic dynamics from dendritic recordings with sparse somatic supervision
+- [[pinn-somatic-dendritic-reconstruction]] - 2-compartment HH PINN: 1% sparse somatic anchors select the spiking branch; 5% → RMSE≈2mV, fast conductances <0.1% error (arXiv: 2609.25436)
+  - Sparse somatic anchoring ablation: 0% (dendrite-only) fails — converges to low-excitability solution (gNa −57%, all spikes missed, RMSE 10–14mV); 1% recovers every spike; 5% gives full waveform
+  - Identifiability hierarchy: fast spike conductances (gNa 0.06%, gDR 0.08%) strongly identifiable vs slow (gM 17.8%, gCa 14.1%) practically unidentifiable (small 2-3 orders, τ=569ms > 500ms window)
+  - PINN beats same-model UKF baseline 1.4–2.8× on RMSE with zero systematic offset (UKF has −4~5mV bias); global window-wide constraint vs sequential assimilation is the difference, not biophysics
+  - Practical synchronization bound: mismatch ball O(1/gc), frozen-gate term dissipative (slope ≤ −ḡL), no γ>Lvolt condition needed
+  - **Activation**: PINN neuron reconstruction, dendritic-only recording, two-compartment Hodgkin-Huxley, sparse somatic supervision, conductance identifiability, UKF comparison, Fourier features spectral bias, weak coupling inverse problem
+
+### A theory of plasticity: capacity for change as inverse configurational constraint
+- [[plasticity-inverse-configurational-constraint]] - Plasticity redefined as prospective property P=1/C; positive homogeneity ⇒ P orders the complete barrier spectrum, accessible repertoires nest (arXiv: 2609.25312)
+  - Definition: P = 1/C with C = mean |Jα| under declared structural representation; structural/prospective/counterfactual/valence-neutral — change is neither necessary nor sufficient
+  - Theorem 1: matched φ/B/Ĵ, P(2)>P(1) ⇒ every positive finite barrier scales by P(1)/P(2) (threshold-free, continuous+discrete spaces, no differentiability needed)
+  - Corollary: fixed accessibility criterion θ ⇒ repertoire R(P,θ) can expand but never shrink; critical plasticity P⋆=Δ̂/θ derived not postulated
+  - Network realization: aggregate coupling = configurational constraint; edge vs node normalization related by n/m; frustration correction (τb 84 vs 75) helps symmetric signed networks only
+  - Companion to effective-plasticity (2603.25180, same author); connects connectivity-quantification and plasticity-as-capacity traditions
+  - **Activation**: plasticity theory, inverse configurational constraint, prospective measure, barrier spectrum ordering, accessible repertoire, structural ray, frustration-adjusted constraint, symptom network plasticity, energy landscape
+
 ## 2026-09-27 - Information Science (Cron Job)
 
 ### PrivDrift: Auditing User-Secret Leakage Under Topic Drift in Active LLM Conversations
