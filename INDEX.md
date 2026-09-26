@@ -1,3 +1,17 @@
+## 2026-09-26 - Neuroscience Research (Cron Job, Evening Session)
+
+### BrainWideBench: Benchmarking large-scale pretraining and across-animal transfer in multi-region neural recordings
+- [[brain-wide-benchmark-pretraining-transfer]] - First across-animal transfer benchmark on IBL Brainwide Map (276 regions, 139 mice): three suites test behavior/dynamics/anatomy jointly; no method wins all three (arXiv: 2609.22064)
+  - Animal-level split: pretrain 126 mice/423 sessions → eval 13 held-out mice/29 sessions; TS1 8 behavior decoding tasks (R²/D²/balanced-acc), TS2 co-smoothing+forecasting (D²/bps, 5-min interleaved blocks NOT causal splits), TS3 zero-shot brain-region ID (macro-F1, transductive vs inductive)
+  - Objective-alignment law: forecasting←temporal masking (NDT-Stitch D²=0.157), co-smoothing←spatial masking (MtM D²=0.191), region ID←unit-embedding objectives (NuCLR F1=0.654 vs behavior-pretrained POYO+ ≈0.10); anatomy never comes free from behavior/dynamics objectives; pretraining amortizes per-session tuning compute
+  - **Activation**: neural foundation model benchmark, across-animal transfer, brain-wide pretraining, behavior decoding, co-smoothing forecasting, brain region classification zero-shot, IBL Brainwide Map, Neuropixels foundation model
+
+### Chaotic Dynamics-Regulated Topological Learning for Patient-Specific Preictal State Identification
+- [[chaotic-topological-preictal-eeg]] - CDRTL: coupled Lorenz oscillator response on EEG correlation sub-networks + persistent Laplacian fingerprints; Dyn_FPs alone reach 0.994 accuracy (arXiv: 2609.23317)
+  - Three fingerprint families from 10 decile-partitioned correlation sub-networks: Dyn_FPs (6 pooled stats of coupled Lorenz x-traces, φ=0.42 coupling, RK4) + Top_FPs/Geo_FPs (persistent Laplacian harmonic/non-harmonic spectra) + node-removal topological differentiation for channel-level local features; nested 5×3 CV over 7 configs × 5 classifiers, CHB-MIT 23 patients
+  - Controls: sigmoid 0.508/tanh 0.774 (generic nonlinearity insufficient), Rössler 0.998 (chaos class robust), weight-shuffle preserved 0.980 but coupling-removal collapses to 0.516 → signal lives in coupled collective response, not edge placement; honest scope: transductive channel-node classification only, NOT cross-patient or prospective seizure prediction
+  - **Activation**: preictal EEG classification, persistent Laplacian, Lorenz oscillator network, topological data analysis EEG, epileptogenic zone, chaotic dynamics features, node importance, CHB-MIT
+
 ## 2026-09-26 - Economics/Investment (Cron Job)
 
 ### The Cross-Section of Stock Returns and AI Exposure
