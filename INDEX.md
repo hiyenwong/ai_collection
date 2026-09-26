@@ -1,3 +1,20 @@
+## 2026-09-27 - Neuroscience Research (Cron Job)
+
+### On Growth and Form, and Function: Reusable Regulatory Handles Control Phenotypic Variation
+- [[lora-nca-regulatory-handles]] - D'Arcy Thompson's transformations realized as reusable low-rank hyper-directions in NCA regulatory weight space (arXiv: 2609.29755)
+  - Rank-one LoRA adapters (320 params = 2.6%) implement x/y scaling of fully grown phenotypes; symmetric parametrization β=β0·log(s/s0); generalize out-of-distribution and compose with phenotype-specific adapters
+  - Zero-shot transfer: scale hyper-directions learned on ONE emoji apply to ALL phenotypes sharing the scaffold W0 (fish→lizard→extinguisher), preserving internal features — universal system-level geometric control
+  - From 25k shared-scaffold adapters, PCA on effective weights ΔW=A·B finds semantic axes: PC0↔x-extent (r=−0.71), PC1↔y-extent (r=−0.73), plus style-transfer and vertical-fission hyper-directions (centroid differences)
+  - Degeneracy/poly-computing: learned Δx,y vs PCA PC0/PC1 both control scale yet cosine≈0.1 — multiple functional organizations coexist; negative result: no generalizable regenerative→non-regenerative mapping found
+  - **Activation**: neural cellular automata, LoRA morphogenesis, D'Arcy Thompson grid transformation, regulatory hyper-directions, morphospace navigation, facilitated variation, anatomical compiler, bioelectric control handles, Pattee multiscale control
+
+### Differences in Neurovascular Coupling in Major Depressive Disorder: Simultaneous Resting-State EEG-fNIRS
+- [[nvc-mdd-eeg-fnirs]] - GFP peak-locked EEG-fNIRS correlation analysis shows MDD disrupts age-related neurovascular coupling maturation, scaled to illness severity (arXiv: 2506.11634)
+  - Resting-state NVC pipeline: top-5 GFP peaks per epoch (±5s local max) → Spearman corr between interpolated EEG and HbT over 10s window → mNVC_R/mNVC_RT + initial-dip (mID_R/mID_RT) + replenishment (ΔmNVC_T/R)
+  - Key results: age enhances NVC consistency in HC (HC_2>HC_1, p_FDR=0.013, d=0.90) but MDD flattens the age-coupling slope (r=0.253→−0.063); severity ↔ lower coupling (partial r=−0.336, p=0.060, ctrl age/gender/medication)
+  - All significant effects in eyes-open rest (arousal = "stress test" revealing latent NVC impairment); eyes-closed insensitive; deficit localized to neurovascular interface, not neural activity (topography controlled)
+  - Clinical: wearable EEG-fNIRS NVC consistency as severity/recovery biomarker; honest limitations — 65% data rejection (hair), N=74 final, trend-level severity effects
+  - **Activation**: neurovascular coupling, EEG-fNIRS multimodal, NVC consistency coefficient, initial dip, MDD biomarker, GFP peak-locked analysis, resting-state clinical neurophysiology, hemodynamic replenishment
 ## 2026-09-26 - Economics/Investment + Quantum (Cron Job, Late Session)
 
 ### Propose, Don't Judge: An Anytime-Valid Referee for LLM Agents That Mine Investment Factors
