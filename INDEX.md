@@ -1,3 +1,19 @@
+## 2026-09-28 - Neuroscience Research (Cron Job)
+
+### Latent kinetic Ising models of neural spike trains
+- [[latent-kinetic-ising-spike-trains]] - SpiKIsing双层生成模型：非对称kinetic Ising潜在网络动力学 + 连续时间历史依赖点过程发射层，变分平均场EM中点过程似然以单一"有效观测场"进入潜态更新 (arXiv: 2609.17213)
+  - 核心解耦：传统分箱kinetic Ising将单神经元历史效应（不应期、恢复）错误归因于网络交互并丢弃bin内时序；SpiKIsing用潜二态Ising描述集体动力学（J_ij为有向有效耦合），发射层以 λ±、恢复核 ρ(δ)=δ/(δ+c_i)、绝对不应期吸收单细胞时间效应，且脉冲历史跨潜区间边界连续携带
+  - 有效观测场 h_i^obs(t) = n·ln(λ+/λ−) + C − λ+A + λ−E 为激活/失活态对数似然比，保留kinetic Ising推断代数结构同时让连续精确脉冲时间直接贡献似然；E步含前向-后向反应项 R_i(t)（可省略为因果前向滤波），M步耦合梯度 ∂F/∂J_ij = Σ m_j(t−1)[m_i(t) − σ(η_i(t))]，发射率闭式更新，中心化参数化保证数值稳定
+  - 结构化先验：Laplace L1稀疏先验（软阈值直接置零）+ 层级Dale扩展（潜身份 z_j、φ_j = σ(βS_j)，跨全部出边累积证据，允许有限概率符号违规）；LIF电导模型严重失配下连接支持ROC 0.88、40/40神经元E/I类型全部分类正确
+  - **Activation**: spike train, effective connectivity, kinetic Ising, variational inference, point process emission, refractoriness, Dale principle, proximal gradient, MAP inference, neural population recording
+
+### Stability and Wandering of Bumps in Neural Fields with Interneuron Subtypes
+- [[neural-field-bumps-interneuron-subtypes]] - E/PV/SST三群体随机神经场bump吸引子：Heaviside界面分析将线性稳定性解耦为shift/scale两个3D特征值问题，弱噪声投影导出有效扩散系数，证明更宽SST连接既扩大稳定区又降低记忆扩散率 (arXiv: 2609.13074)
+  - 建模：E(局部快速)+PV(局部perisomatic)+SST(宽dendritic)三耦合随机积分微分方程，指数核、von Mises空间相关噪声；典型抑制 motifs（PV自抑制、SST→PV、无SST自抑制）；平稳解由半宽(a_e,a_p,a_s)的分段阈值自洽条件确定（4种序关系情形）
+  - 稳定性：Heaviside导数为界面δ函数 → 6维界面特征值问题按反射对称性分解为shift（奇，含平移零本征值=记忆编码中性模）与scale（偶）两个3D子空间；Λ_shift/Λ_scale比较判定失稳机制（漂移失稳 vs 膨胀/塌缩失稳，含Hopf边界）；抑制时间尺度τ_p/τ_s决定失稳类型，宽SST投影扩大并加深稳定区，微弱I/I连接有非单调大效应
+  - 漫游：Fredholm可解性投影到共轭零向量（界面δ组合，β_p/β_s闭式权重比）得 ⟨Δ²⟩ = ε𝒟t，𝒟由各群体噪声协方差与界面斜率/时间常数加权和的平方给出；SST空间尺度 σ_es 1→10 单调降低𝒟 —— 抑制亚型架构直接量化决定行为级记忆精度
+  - **Activation**: neural fields, bump attractor, working memory, interneuron subtypes, PV SST, linear stability, shift scale modes, Hopf bifurcation, noise-driven diffusion, wandering, Fredholm solvability
+
 ## 2026-09-27 - Neuroscience Research (Cron Job)
 
 ### The Cross-Substrate Access Assay: What an Indicator Test Must Declare to Travel from Brain to Language Model
