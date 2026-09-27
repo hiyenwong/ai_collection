@@ -1,3 +1,19 @@
+## 2026-09-28 - Neuroscience Research (Cron Job)
+
+### Deviations from Global Coupling in Adaptive Oscillator Networks: Mean-Field Theory for Coupling-Weight Variance
+- [[adaptive-coupling-variance-mean-field]] - 自适应网络耦合权重方差的二阶矩闭合均值场理论：5维ODE组预测结构化连接何时涌现 (arXiv: 2609.22597)
+  - 首次推导自适应Kuramoto网络耦合权重方差V_A的闭式均值场方程：V̇_A=2μC_A−2γV_A，协方差分解为静态/涨落两部分（Ċ_Γ=−γC_Γ+μσ_Γ², Ċ_g=−(γ+2Δ)C_g+μσ_g²），频率异质性Δ以2Δ速率淬灭涨落驱动结构
+  - 对称规则G=cos（Hebbian式）→ 强耦合同步核+双稳态（fold在Δ*=K(μ+γ)²/8μγ），偏离全局耦合始于分布尾部；反对称规则G=sin（时序式）→ 核内反称耦合、核失稳可致混沌，偏离始于分布中心，对OA动力学的偏离更强
+  - V_A/Ā²与异质性Δ呈非线性非单调关系，在对称fold分岔点或反对称混沌区达到峰值——方程精确划分"全局耦合近似有效"与"复杂耦合模式形成"的参数域
+  - **Activation**: adaptive coupling weight variance, second-order moment closure, adaptive Kuramoto mean field, STDP symmetry, Ott-Antonsen adaptive networks, structured connectivity, phase-oscillator plasticity
+
+### Deep Learning in Infant Functional Neuroimaging: Challenges, Advances, and Future Directions
+- [[infant-fmri-deep-learning-review]] - 婴儿fMRI深度学习综述：从群体描述到个体化发育预测的范式转变，表征选择决定生物学解释效力 (arXiv: 2609.26688)
+  - 系统综述输入表征格式化（FC矩阵/潜在成分/功能梯度）、群体与个体化脑映射、纵向轨迹预测、鲁棒可解释评估与临床转化五大方向
+  - 可复用模式：表征优先设计（先验证表征保留生物学构念再训练）、轨迹预测配方（纵向时间点训练预测未来连接组）、验证栈（跨站点泛化+生物学收敛+可解释性）
+  - 未来瓶颈：更大纵向队列、发育适配模型设计、标准化评估、计算预测与生物机制整合
+  - **Activation**: infant fMRI deep learning, infant functional connectome, developmental trajectory forecasting, individualized infant brain mapping, neurodevelopment risk prediction
+
 ## 2026-09-28 - Quantum Learning + Fault-Tolerant T Gates (Cron Job)
 
 ### Proper Agnostic Learning of Matrix Product States and Tree Tensor Networks
