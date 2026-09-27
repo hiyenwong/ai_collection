@@ -1,3 +1,12 @@
+## 2026-09-28 - Neuroscience + Quantum (Cron Job)
+
+### Associative Memory for Quantum Entangled States
+- [[entangled-hopfield-projector-memory]] - Hopfield memory storing entangled dimer-singlet states via truncated projector-sum Hamiltonians, O(N³/log N) capacity (arXiv: 2609.28726)
+  - Truncated projector construction unifies dense/modern Hopfield (p-spin) models with quantum memory: truncation order = capacity/k-locality knob
+  - Dimer-singlet (valence bond) memories store relational graph structures irreducible to any classical spin encoding; capacity scales N^(2p−1) vs classical N^(p−1)
+  - Stability via double-commutator criterion + Anderson-like hybridization metric W; single-spin rotations never destabilize, bond rearrangements (plaquette flips) set the O(N³/log N) bound
+  - **Activation**: entangled associative memory, quantum Hopfield, projector-sum Hamiltonian, dimer singlet covering, valence bond memory, quantum memory capacity, Mattis overlap
+
 ## 2026-09-28 - Neuroscience Research (Cron Job)
 
 ### Deviations from Global Coupling in Adaptive Oscillator Networks: Mean-Field Theory for Coupling-Weight Variance
