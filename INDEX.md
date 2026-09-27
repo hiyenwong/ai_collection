@@ -1,3 +1,20 @@
+## 2026-09-27 - Systems Engineering Research (Cron Job)
+
+### Requirement-Bound Verified Commissioning: Frozen 4B Local Model as Candidate Generator under External Acceptance Layer
+- [[requirement-bound-verified-commissioning]] - LLM 仅做候选生成，确定性 entailment gate 独占 release authority，sealed grammar + 预注册统计准则 (arXiv: 2609.30219)
+  - 三层信任分离：deterministic parser → frozen 4B LLM(仅提案) → external entailment gate(密封语法V1裁决)，模型置信度永不进入发布决策；abstention 是合法一等结果
+  - 实测证据：模型在22个不可回答任务上伪造21个 ready plan(95.5% fabrication)全部被 gate 拒绝；sealed run 0/83 false release，Clopper-Pearson 单侧95%上界0.0354<5%；无 gate 对照组50%错误交付
+  - Textual trust boundary：事实不被需求文本独立约束时 gate 只能信任用户答案(text-open 层 39.2% 错误答案被放行)；文本约束存在时 0/65 错误答案通过
+  - 诚实报告 post-seal 失败：146计划中1次false release(语法V1 anaphor失效)触发 kill rule 并透明披露，不掩盖
+  - **Activation**: llm acceptance layer, entailment gate, release authority separation, sealed grammar, commissioning, safety-critical llm, clopper-pearson, preregistration, candidate generator
+
+### Developing a Unified Verification and Validation Activity Standard at JPL
+- [[unified-vv-activity-schema-jpl]] - JPL 关系型 V&V 活动 schema：5种方法 item type 共享核心属性集，双向关系连接需求/活动/场所/证据，SysML 平台无关形式化 (arXiv: 2609.28600)
+  - Relationship-based schema：Verified By / Executed In 等显式类型化双向关系 + Venue 独立 item type，支撑变更传播、rollup 状态、设施利用率分析
+  - Common-core inheritance：Base MVP 块(标识/状态/调度/证据) + Test/Analysis/Inspection/Demonstration/Review-of-Design 子类——单一泛化 VA 类型已被实践证伪
+  - HCDP 工作坊(29名实践者, Double Diamond)：85%认可 MVP 全任务可用；两级 pick list(核心标准+项目可扩展)平衡标准化与定制
+  - Institutional flywheel：共享信息架构使一个项目的自动化可零修改部署到所有项目(inner-source)，双向可追溯性消除覆盖缺口/冗余
+  - **Activation**: vv schema, requirements traceability, digital thread, sysml information model, test management, requirements management platform, relationship-based schema, hcd workshop
 ## 2026-09-27 - Information Science Session 3 (Cron Job)
 
 ### Quantum Channel Stein Theorem beyond Definite Causal Order
