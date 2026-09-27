@@ -1,3 +1,11 @@
+## 2026-09-27 - Information Science + Quantum (Cron Job)
+
+### High quantum local differential privacy breaks entanglement
+- [[qldp-entanglement-breaking]] - 量子本地差分隐私与纠缠保持的不相容阈值：ε≤log(d/(d-1)) 强制信道纠缠破坏 (arXiv: 2609.13418)
+  - 主定理：每个 ε-QLDP 信道在 ε ≤ log(d/(d−1)) 时必然纠缠破坏（qubit 阈值 log 2），常数最优；近似版 (ε,δ) 与某 EB 信道 diamond 距离 ≤ (d−1)δ
+  - 组合定理：纠缠输入+全局测量下高隐私张量积信道 ε_comp = Σ log(γᵢ/βᵢ) ≈ 3nε；学习理论应用：EB 噪声使量子记忆协议可被单拷贝测量+经典内存模拟，纯度测试 T=Ω(2^{n/2})，全局私有信道 T=Ω(4^n)
+  - 几何解释：最优阈值 = 转置-去极化信道 Choi 态穿越 Gurvits-Barnum 可分球（半径 1/√(ab(ab−1))）的位置；去极化混合 N_p 在 p ≤ 1/(ab−1) 时 EB
+  - **Activation**: quantum local differential privacy, QLDP, entanglement-breaking, privacy threshold, private quantum learning, sample complexity lower bound, Gurvits-Barnum ball
 ## 2026-09-27 - Neuroscience Research Session 2 (Cron Job)
 
 ### Learning Dynamic Neural Evidence Representations for Time-Adaptive Brain-Computer Interfaces
