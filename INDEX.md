@@ -1,3 +1,21 @@
+## 2026-09-27 - Neuroscience Research (Cron Job)
+
+### The Cross-Substrate Access Assay: What an Indicator Test Must Declare to Travel from Brain to Language Model
+- [[cross-substrate-access-assay]] - 意识指标测试跨基板迁移的五组件声明协议：predictors/fitting/sampling unit/estimand/decision rule (arXiv: 2609.22300)
+  - 核心论点：n=1基板（人脑）上校准的测量无法区分现象与基板；迁移测量可在无迹象下改变其所测。信息论提供共同尺度（held-out交叉熵，nats/trial），使EEG微伏与LLM激活可并排审计
+  - 实测量代价：继承模型对在12,000个graded合成数据上误报989次two-state（均因item异质性τ/ω）；扩展族+选择规则0误报、600混合数据599检出；但95%区间在6/12设置跌破0.90 inclusion floor（最低0.216）——仅审计错误率会放过此缺陷
+  - LLM侧协议：自然文本包剂量k∈{0..8}线索、冻结剂量解码器、概念为采样单元（checkpoint确定性→变异置于刺激）；三项预注册预测（统计/bridge/causal）；pilot(layer 41, 16概念)三预测器均返回GRADED（−0.09~−0.12 nat/trial）
+  - **Activation**: cross-substrate measurement, consciousness indicators, global neuronal workspace, ignition, model comparison, cross-entropy scoring, calibration battery, sampling unit, estimand, decision rule, LLM workspace directions
+
+### Binding-Motivated Contextuality: A Cross-Domain Cyclic Test in Perception and Judgment
+- [[frustrated-cycle-contextuality]] - 知觉绑定与判断上下文性共享同一H¹层上同调障碍：受挫环循环的跨域个体差异设计 (arXiv: 2609.23977)
+  - 三种障碍度量辨析：CF（LP完备，CF=0 iff全局截面存在）≠ Čech类（仅充分，零类不能排除上下文性，Hardy witness）≠ 符号化margin V⋆（含CF全部信息+CF丢弃的阈下变异，确认性统计必用V⋆）
+  - 关键设计陷阱：单一forced-choice使H¹对象退化（c钉在−1，随机反应最大化上下文性而确定性循环优势反而非上下文性——7/8已发表系统踩坑）；修复=每对两个锚定外部固定标准的独立二值判断
+  - V⋆替代CF的结构性理由：CF在零处clamped，残差化留下不可消除依赖（假阳率渐近0.058且随N增长）；V⋆在双臂+对照上null statistic居中、率平坦；校准截止1.74-1.79而非1.645；对照臂需4-8×试验量
+  - 可识别性极限（已证明）：加载0.6于双对照的trait可伪造ρ=0.209且与真实共享障碍观测等价——六分数上无任何统计量有超越自身size的power；报告污染份额26.5%而非检验
+  - 回溯验证：scoping规则（受挫且循环即上下文，无论奇偶）postdict全部6个已发表CbD判定（Snow Queen是偶4环！）；8真实系统重算≤0.002吻合
+  - **Activation**: perceptual binding, contextuality, sheaf cohomology, H1 obstruction, contextual fraction, Contextuality-by-Default, cyclic inequalities, Suppes-Zanotti, frustrated cycle, cross-domain correlation, preregistered design
+
 ## 2026-09-27 - Information Science + Quantum (Cron Job)
 
 ### All you need is the universal correlation detector
