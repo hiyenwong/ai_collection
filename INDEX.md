@@ -1,3 +1,19 @@
+## 2026-09-27 - Neuroscience Research (Cron Job)
+
+### Disorder-promoted stability
+- [[disorder-promoted-stability]] - Random parameter disorder enhances stability when Jacobian is non-Hermitian (2D+ nodal dynamics); overturns "heterogeneity hurts stability" from 1D reduced models (arXiv: 2609.25226)
+  - Nonconvexity of min_b Λmax(J(b;A)) is necessary for heterogeneous optima; guaranteed by non-Hermitian J (any connected network of 2nd-order/phase-amplitude/E-I dynamics); convex only for measure-zero adjacency sets
+  - Mechanism: heterogeneity induces mode mixing in Laplacian eigenbasis → eigenvector alignment (optimum requires ≥2 parallel eigenvectors); Gershgorin disc overlap lets eigenvalues escape leftward. Directed networks: b*_hom is a saddle → random N(0,1) perturbations improve stability (~25% of trials in SW nets, ~100% circulant)
+  - Ecological: mutualistic Lotka-Volterra disorder GUARANTEED stability gain (up to 5×); competitive destabilized; prevalence grows with N and edge density — new route to May's complexity-stability paradox
+  - **Activation**: disorder-promoted stability, non-Hermitian Jacobian, converse symmetry breaking, heterogeneity optimization, May complexity-stability paradox
+
+### Matched-Input Estimates Differ in Sign Across Architectures: Auditing EEG Foundation Models on Motor Imagery
+- [[matched-input-eeg-fm-audit]] - Validation-locked audit of LaBraM/CBraMod: every supervised comparator beats every FM config on BCI IV-2a; matched-input term flips sign across architectures so single-comparator decompositions are untrustworthy (arXiv: 2609.23924)
+  - ShallowConvNet 0.6962 vs CBraMod fine-tuned 0.4796 (4-class, n=9, cross-session); FM deficit does NOT reproduce on 2-class BNCI2014-004 (0.8085 vs 0.8458 — competitive)
+  - Matched-input term (narrow−broad): ATCNet −0.078 vs EEG Conformer +0.088 — opposite signs; report raw diffs across ≥3 architectures, never a single "pipeline share" percentage
+  - Pretrained-vs-random-init robust (+0.13 acc across 3 reseeds); raw FM logits overconfident (T=3.5–9.5) but one validation-fitted temperature restores ECE to supervised range — calibration ≠ discrimination
+  - **Activation**: EEG foundation model audit, matched-input control, validation-locked protocol, BCI benchmark leakage, temperature scaling
+
 ## 2026-09-27 - Information Science + Quantum Mechanics (Cron Job)
 
 ### Learning and Interpreting Policies for Simultaneous Entanglement Requests in Quantum Networks
