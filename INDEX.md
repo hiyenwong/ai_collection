@@ -1,3 +1,18 @@
+## 2026-09-28 - Quantum Learning + Fault-Tolerant T Gates (Cron Job)
+
+### Proper Agnostic Learning of Matrix Product States and Tree Tensor Networks
+- [[proper-agnostic-learning-mps-ttn]] - 从任意混合态ρ学习真bond-D MPS/TTN：三阶段架构（相关子空间压缩目标、comparator-dual范数压缩、收缩式交叉环境动态规划），误差与链长n无关 (arXiv: 2609.30148)
+  - 首次解决MPS的proper agnostic学习开放问题：输出严格属于bond-D类，截断improper结果会破坏保证
+  - 关键创新：comparator-dual范数 ||x||_MPS(D)=sup|⟨ψ|x⟩| + 均匀收缩SVD谱（b_j=√(σ_j²−Δ_i)）实现伸缩预算，√D/(K+1)界与系统尺寸无关
+  - 一组测量复用于所有D≤D_max的bond维度扫描（免额外测量的模型选择）
+  - **Activation**: proper agnostic learning, MPS, tensor network learning, quantum tomography, bond dimension
+
+### Syndrome Measurements Enable Deterministic Fault-Tolerant T Gates
+- [[syndrome-mediated-deterministic-t-gates]] - 无需魔法态蒸馏：释放一个稳定子校验暴露额外逻辑量子比特，两次Pauli旋转+syndrome测量+Clifford前馈在任意d≥2稳定子码上实现确定性逻辑T门 (arXiv: 2609.29890)
+  - 逻辑Pauli因子分解AB=iL共享非零syndrome，均衡因子化最优权重⌈(d+1)/2⌉；分支各1/2概率、前馈后同一逻辑门——确定性
+  - 中间码D编码k+1量子比特，δ=min{d,μ(s),ν(A)}；纯码δ~d/2随距离增长，但LDPC类（界重校验）δ≤w封顶——结构性警告
+  - 两个单容错构造：选择级联[[22,1,3]]（15个物理T门+阈值）与Golay传输校验G_B监控（拒绝后可恢复未知输入重试）
+  - **Activation**: logical T gate, stabilizer codes, fault tolerance, syndrome measurement, non-Clifford, magic states
 ## 2026-09-28 - Neuroscience + Quantum Codes (Cron Job)
 
 ### Design Principles for Ultra-High-Rate Quantum Codes
