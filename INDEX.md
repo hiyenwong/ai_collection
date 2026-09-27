@@ -1,3 +1,231 @@
+## 2026-09-28 - Quantum Learning + Fault-Tolerant T Gates (Cron Job)
+
+### Proper Agnostic Learning of Matrix Product States and Tree Tensor Networks
+- [[proper-agnostic-learning-mps-ttn]] - 从任意混合态ρ学习真bond-D MPS/TTN：三阶段架构（相关子空间压缩目标、comparator-dual范数压缩、收缩式交叉环境动态规划），误差与链长n无关 (arXiv: 2609.30148)
+  - 首次解决MPS的proper agnostic学习开放问题：输出严格属于bond-D类，截断improper结果会破坏保证
+  - 关键创新：comparator-dual范数 ||x||_MPS(D)=sup|⟨ψ|x⟩| + 均匀收缩SVD谱（b_j=√(σ_j²−Δ_i)）实现伸缩预算，√D/(K+1)界与系统尺寸无关
+  - 一组测量复用于所有D≤D_max的bond维度扫描（免额外测量的模型选择）
+  - **Activation**: proper agnostic learning, MPS, tensor network learning, quantum tomography, bond dimension
+
+### Syndrome Measurements Enable Deterministic Fault-Tolerant T Gates
+- [[syndrome-mediated-deterministic-t-gates]] - 无需魔法态蒸馏：释放一个稳定子校验暴露额外逻辑量子比特，两次Pauli旋转+syndrome测量+Clifford前馈在任意d≥2稳定子码上实现确定性逻辑T门 (arXiv: 2609.29890)
+  - 逻辑Pauli因子分解AB=iL共享非零syndrome，均衡因子化最优权重⌈(d+1)/2⌉；分支各1/2概率、前馈后同一逻辑门——确定性
+  - 中间码D编码k+1量子比特，δ=min{d,μ(s),ν(A)}；纯码δ~d/2随距离增长，但LDPC类（界重校验）δ≤w封顶——结构性警告
+  - 两个单容错构造：选择级联[[22,1,3]]（15个物理T门+阈值）与Golay传输校验G_B监控（拒绝后可恢复未知输入重试）
+  - **Activation**: logical T gate, stabilizer codes, fault tolerance, syndrome measurement, non-Clifford, magic states
+## 2026-09-28 - Neuroscience + Quantum Codes (Cron Job)
+
+### Design Principles for Ultra-High-Rate Quantum Codes
+- [[ultra-high-rate-quantum-codes]] - 超高码率量子码系统设计原则：配对分割构造+减半变换压缩码长，列权重为核心设计旋钮，p=0.1%下距离增益胜过重校验代价 (arXiv: 2609.30069)
+  - 关键码：[[90,21,11]]、[[140,31,15]]、[[200,43,20]] 非CSS码（校验权重10），部分构造低至每逻辑量子位2个物理数据量子比特
+  - 设计空间四参数（码率k/n、距离d、校验权重、码长n）的Pareto前沿导航：列权重增大→紧凑码长下更大距离，代价是更重的校验
+  - **Activation**: ultra-high-rate quantum codes, quantum code design, encoding rate, pair-partition construction, column weight design, halving transformation, non-CSS codes, LDPC quantum codes
+
+### Spike Sorting with VanillaSort
+- [[vanillasort-spike-sorting]] - 从噪声自动生成标签学习锋电位检测与分选：可见性掩码+截断高斯目标+正包损失+SNR门控四件套，交叉拟合模板防止聚类自我确认 (arXiv: 2609.22322)
+  - VanillaDet在Hybrid Janelia静态/漂移子集上检测精度分别超SimSort 2/3个百分点；VanillaCluster用HuiduRep嵌入+相对幅度特征GMM聚类，波形一致性约束精化分配
+  - 可复用模式：噪声标签训练四件套（可见性掩码、截断目标、时间容差正包、条件SNR门控）适用于任何算法生成标签的检测器训练
+  - **Activation**: spike sorting, spike detection, noisy labels, positive-bag loss, visibility-aware masking, template-guided clustering, waveform consistency, electrophysiology
+### Emotions as Intrinsic Colored Noise in Biological Systems
+- [[emotions-intrinsic-colored-noise]] - 情绪=内在色噪声的量化决策框架：选择概率可加分解 p=f+q，效用因子f（KL最小化+Luce规则）+吸引因子q（quarter law ±1/4），非零均值情绪偏置使噪声"有色" (arXiv: 2609.25970)
+  - 八种网络动力学体制（Node/Focus/Limit-cycle/Chaotic组合）：强模仿效应→决策演化进入混沌；异质社会三类agent（长程记忆/短程记忆/超理性无情绪）
+  - Ellsberg悖论自然消解：不确定彩票获q=-1/4负情绪、确定彩票q=+1/4，红球黑球两问偏好无矛盾——不依赖单一期望效用排序
+  - **Activation**: emotions as colored noise, affective decision making, attraction factor, quarter law, biological networks, imitation chaos, Ellsberg paradox, affective AI, opinion dynamics
+
+### Frequency Bursts in Adaptive Delay-Coupled Oscillators
+- [[adaptive-delay-frequency-bursting]] - 自适应+延迟耦合振子的频率簇发：近同步状态被快速相位滑移打断，均值频率失谐被量子化为慢适应频率的整数倍 Ω₁−Ω₂=n·ε（n=每簇锋数=绕数） (arXiv: 2609.24671)
+  - 快-慢几何机制：延迟使临界流形叶片数M随τ增长（多重共存的相位锁定态），簇发=稳定叶片慢爬行→fold边界→跳转到另一叶片的交替循环
+  - 因果(STDP样)+Hebbian双适应规则产生反相位权重调制；用绕数（每慢周期整数累积相位）而非频率比来分类近同步态
+  - **Activation**: adaptive delay-coupled oscillators, frequency bursting, quantized detuning, critical manifolds, fast-slow analysis, phase slips, winding number, neuronal plasticity delay, DDE-BifTool
+## 2026-09-28 - Neuroscience + Quantum (Cron Job)
+
+### Exploring the robustness of permutation entropy analysis to differentiate between closed-eyes and open-eyes resting states
+- [[permutation-entropy-artifact-robust-eeg]] - 时间/空间置换熵在原始EEG上直接区分睁眼/闭眼静息态，无需去除眨眼伪影：配对t检验p<10⁻³，0.12秒数据即显著，空间熵单个64通道快照足够 (arXiv: 2609.22265)
+  - 机制：序数模式编码数据点相对次序而非绝对值，眨眼表现为时间单调斜坡（PE对此天然鲁棒）；空间上眨眼梯度沿前后（vertical）方向，故SPE_V被破坏（1-2-3模式过表达）而横向SPE_H垂直于梯度不受影响
+  - 稳健性边界：64→31→17通道缩减仍显著（欠采样负偏置在配对检验中抵消）；原始vs清洗后前额OP序列仅40%相同但概率分布几乎不变→PE不变；注意清洗仅施于EO记录，需用其他去除方法确认伪影无关性
+  - **Activation**: permutation entropy, ordinal patterns, spatial permutation entropy, EEG artifact robustness, eyes open closed, raw EEG, resting state, real-time BCI
+
+### Leg-Tied Tensor Network States: Entanglement Beyond Virtual Bonds
+- [[leg-tied-tensor-network-letta]] - LETTA：MPS虚拟骨架+物理腿共享（tie graph）直接编码长程关联，DMRG式确定性优化（广义本征值问题H_i a = ε_i N_i a），2D J1-J2 Heisenberg 6×6上D=4参数量仅为MPS D=32的7%且能量更低 (arXiv: 2609.30101)
+  - 结构：每个张量A[i]携带s_i及被绑邻居元组s_{P_i}；D=1时退化为correlator-product/Jastrow振幅网络而非乘积态；精确收缩代价由最大tie-boundary宽度决定（∏_{j∈F_i} d_j²），非PEPS式2D虚拟网络
+  - 基准：2D阻挫J1-J2能隙密度峰值在J2/J1≈0.7与条纹反铁磁转变(~0.62)一致；3D横场Ising N_x×3×3对称无约束优化给出正确宇称基态；QR/LQ规范条件一般不给出N_i=I
+  - **Activation**: LETTA, leg-tied tensor, physical leg ties, DMRG generalization, long-range correlation, frustrated Heisenberg, correlator product states, PEPS alternative, tie-boundary width
+
+## 2026-09-28 - Neuroscience Research (Cron Job)
+
+### Orbital Error Dynamics: Self-Organized Criticality, Ephemeral Parameter Resonance, and Non-Linear Biological Ontologies in Zero-Storage Neural Synthesis
+- [[orbital-error-dynamics-zero-storage]] - 权重不存储(O(W))而是从24字节坐标种子Θ=(cx,cy,ζ)经Mandelbrot映射z²+c程序化合成(O(1))：32×32网格四象限质量比→权重，λz≈0临界边界冲浪+Cauchy重尾跳跃逃逸鞍点 (arXiv: 2609.30115)
+  - 核心：模型即坐标——前向/反向后立即释放张量，恒定24字节内存与层数无关；轨道稳态损失L_orbital=[(N̄_esc−N*)/N*]²把逃逸计数拉向临界目标N*=22，象限方差正则Var(R₁..R₄)防退化；梯度停滞时门控注入Cauchy(0,0.10)重尾跳（无限方差跨势垒，对比Jin 2017高斯PGD）
+  - 基准：Two-Moons 5种子 clean 77.67%±5.35 vs 无约束GD 85.67%（配对差CI含0=无显著退化）；偏移下71.33%确实更差；内部共振肩部X=(0.25,±0.18)为采样甜点；⚠️投机性论文（玩具基准+专利驱动），可复用的是零存储程序化合成模式
+  - **Activation**: zero-storage, procedural weight synthesis, Mandelbrot, ephemeral parameters, edge of chaos, Lyapunov criticality, Cauchy heavy-tail jump, saddle escape, neuromorphic O(1) memory, optical co-processor
+
+### Latent kinetic Ising models of neural spike trains
+- [[latent-kinetic-ising-spike-trains]] - SpiKIsing双层生成模型：非对称kinetic Ising潜在网络动力学 + 连续时间历史依赖点过程发射层，变分平均场EM中点过程似然以单一"有效观测场"进入潜态更新 (arXiv: 2609.17213)
+  - 核心解耦：传统分箱kinetic Ising将单神经元历史效应（不应期、恢复）错误归因于网络交互并丢弃bin内时序；SpiKIsing用潜二态Ising描述集体动力学（J_ij为有向有效耦合），发射层以 λ±、恢复核 ρ(δ)=δ/(δ+c_i)、绝对不应期吸收单细胞时间效应，且脉冲历史跨潜区间边界连续携带
+  - 有效观测场 h_i^obs(t) = n·ln(λ+/λ−) + C − λ+A + λ−E 为激活/失活态对数似然比，保留kinetic Ising推断代数结构同时让连续精确脉冲时间直接贡献似然；E步含前向-后向反应项 R_i(t)（可省略为因果前向滤波），M步耦合梯度 ∂F/∂J_ij = Σ m_j(t−1)[m_i(t) − σ(η_i(t))]，发射率闭式更新，中心化参数化保证数值稳定
+  - 结构化先验：Laplace L1稀疏先验（软阈值直接置零）+ 层级Dale扩展（潜身份 z_j、φ_j = σ(βS_j)，跨全部出边累积证据，允许有限概率符号违规）；LIF电导模型严重失配下连接支持ROC 0.88、40/40神经元E/I类型全部分类正确
+  - **Activation**: spike train, effective connectivity, kinetic Ising, variational inference, point process emission, refractoriness, Dale principle, proximal gradient, MAP inference, neural population recording
+
+### Stability and Wandering of Bumps in Neural Fields with Interneuron Subtypes
+- [[neural-field-bumps-interneuron-subtypes]] - E/PV/SST三群体随机神经场bump吸引子：Heaviside界面分析将线性稳定性解耦为shift/scale两个3D特征值问题，弱噪声投影导出有效扩散系数，证明更宽SST连接既扩大稳定区又降低记忆扩散率 (arXiv: 2609.13074)
+  - 建模：E(局部快速)+PV(局部perisomatic)+SST(宽dendritic)三耦合随机积分微分方程，指数核、von Mises空间相关噪声；典型抑制 motifs（PV自抑制、SST→PV、无SST自抑制）；平稳解由半宽(a_e,a_p,a_s)的分段阈值自洽条件确定（4种序关系情形）
+  - 稳定性：Heaviside导数为界面δ函数 → 6维界面特征值问题按反射对称性分解为shift（奇，含平移零本征值=记忆编码中性模）与scale（偶）两个3D子空间；Λ_shift/Λ_scale比较判定失稳机制（漂移失稳 vs 膨胀/塌缩失稳，含Hopf边界）；抑制时间尺度τ_p/τ_s决定失稳类型，宽SST投影扩大并加深稳定区，微弱I/I连接有非单调大效应
+  - 漫游：Fredholm可解性投影到共轭零向量（界面δ组合，β_p/β_s闭式权重比）得 ⟨Δ²⟩ = ε𝒟t，𝒟由各群体噪声协方差与界面斜率/时间常数加权和的平方给出；SST空间尺度 σ_es 1→10 单调降低𝒟 —— 抑制亚型架构直接量化决定行为级记忆精度
+  - **Activation**: neural fields, bump attractor, working memory, interneuron subtypes, PV SST, linear stability, shift scale modes, Hopf bifurcation, noise-driven diffusion, wandering, Fredholm solvability
+
+## 2026-09-27 - Neuroscience Research (Cron Job)
+
+### The Cross-Substrate Access Assay: What an Indicator Test Must Declare to Travel from Brain to Language Model
+- [[cross-substrate-access-assay]] - 意识指标测试跨基板迁移的五组件声明协议：predictors/fitting/sampling unit/estimand/decision rule (arXiv: 2609.22300)
+  - 核心论点：n=1基板（人脑）上校准的测量无法区分现象与基板；迁移测量可在无迹象下改变其所测。信息论提供共同尺度（held-out交叉熵，nats/trial），使EEG微伏与LLM激活可并排审计
+  - 实测量代价：继承模型对在12,000个graded合成数据上误报989次two-state（均因item异质性τ/ω）；扩展族+选择规则0误报、600混合数据599检出；但95%区间在6/12设置跌破0.90 inclusion floor（最低0.216）——仅审计错误率会放过此缺陷
+  - LLM侧协议：自然文本包剂量k∈{0..8}线索、冻结剂量解码器、概念为采样单元（checkpoint确定性→变异置于刺激）；三项预注册预测（统计/bridge/causal）；pilot(layer 41, 16概念)三预测器均返回GRADED（−0.09~−0.12 nat/trial）
+  - **Activation**: cross-substrate measurement, consciousness indicators, global neuronal workspace, ignition, model comparison, cross-entropy scoring, calibration battery, sampling unit, estimand, decision rule, LLM workspace directions
+
+### Binding-Motivated Contextuality: A Cross-Domain Cyclic Test in Perception and Judgment
+- [[frustrated-cycle-contextuality]] - 知觉绑定与判断上下文性共享同一H¹层上同调障碍：受挫环循环的跨域个体差异设计 (arXiv: 2609.23977)
+  - 三种障碍度量辨析：CF（LP完备，CF=0 iff全局截面存在）≠ Čech类（仅充分，零类不能排除上下文性，Hardy witness）≠ 符号化margin V⋆（含CF全部信息+CF丢弃的阈下变异，确认性统计必用V⋆）
+  - 关键设计陷阱：单一forced-choice使H¹对象退化（c钉在−1，随机反应最大化上下文性而确定性循环优势反而非上下文性——7/8已发表系统踩坑）；修复=每对两个锚定外部固定标准的独立二值判断
+  - V⋆替代CF的结构性理由：CF在零处clamped，残差化留下不可消除依赖（假阳率渐近0.058且随N增长）；V⋆在双臂+对照上null statistic居中、率平坦；校准截止1.74-1.79而非1.645；对照臂需4-8×试验量
+  - 可识别性极限（已证明）：加载0.6于双对照的trait可伪造ρ=0.209且与真实共享障碍观测等价——六分数上无任何统计量有超越自身size的power；报告污染份额26.5%而非检验
+  - 回溯验证：scoping规则（受挫且循环即上下文，无论奇偶）postdict全部6个已发表CbD判定（Snow Queen是偶4环！）；8真实系统重算≤0.002吻合
+  - **Activation**: perceptual binding, contextuality, sheaf cohomology, H1 obstruction, contextual fraction, Contextuality-by-Default, cyclic inequalities, Suppes-Zanotti, frustrated cycle, cross-domain correlation, preregistered design
+
+## 2026-09-27 - Information Science + Quantum (Cron Job)
+
+### All you need is the universal correlation detector
+- [[universal-correlation-detector]] - Schur-Weyl universal symmetric states give state-agnostic first-order-optimal correlation tests; one detector + position-based decoding + convex splitting universalizes 6 communication tasks (arXiv: 2609.29954)
+  - Fully universal cq test (zero state knowledge) P^(n)(a) = Σ|x^n⟩⟨x^n|⊗{ρ_Bx^n ≥ 2^na·σ^U,n_B}; semi-universal general-state test needs only marginal ρ_B — both match known-state Stein exponent I(A:B) via poly(n) domination ρ^⊗n ≤ (n+1)^{|X|(d+2)(d−1)/2}·σ^U
+  - Six universal capacity-achieving codes: cq coding, wiretap, SK distillation, EA classical (simpler proof of compound C_EA), EA quantum Gel'fand-Pinsker (new), EA Marton inner bound L≥2 receivers (new); achievable-rate conditions identical in form, only the "need to know" list shrinks
+  - **Activation**: universal correlation detection, state-agnostic testing, universal channel coding, compound channel, quantum Stein's lemma, Schur-Weyl duality, universal symmetric state, position-based decoding, convex splitting, Marton bound
+
+## 2026-09-27 - Information Science + Quantum (Cron Job)
+
+### High quantum local differential privacy breaks entanglement
+- [[qldp-entanglement-breaking]] - 量子本地差分隐私与纠缠保持的不相容阈值：ε≤log(d/(d-1)) 强制信道纠缠破坏 (arXiv: 2609.13418)
+  - 主定理：每个 ε-QLDP 信道在 ε ≤ log(d/(d−1)) 时必然纠缠破坏（qubit 阈值 log 2），常数最优；近似版 (ε,δ) 与某 EB 信道 diamond 距离 ≤ (d−1)δ
+  - 组合定理：纠缠输入+全局测量下高隐私张量积信道 ε_comp = Σ log(γᵢ/βᵢ) ≈ 3nε；学习理论应用：EB 噪声使量子记忆协议可被单拷贝测量+经典内存模拟，纯度测试 T=Ω(2^{n/2})，全局私有信道 T=Ω(4^n)
+  - 几何解释：最优阈值 = 转置-去极化信道 Choi 态穿越 Gurvits-Barnum 可分球（半径 1/√(ab(ab−1))）的位置；去极化混合 N_p 在 p ≤ 1/(ab−1) 时 EB
+  - **Activation**: quantum local differential privacy, QLDP, entanglement-breaking, privacy threshold, private quantum learning, sample complexity lower bound, Gurvits-Barnum ball
+## 2026-09-27 - Neuroscience Research Session 2 (Cron Job)
+
+### Learning Dynamic Neural Evidence Representations for Time-Adaptive Brain-Computer Interfaces
+- [[prototrigger-atdm-bci]] - Prototype-based EEG state encoder for RL-driven adaptive stopping: evidence anchors replace self-attention for cross-length comparable states (arXiv: 2609.22088)
+  - LFE (temporal→spatial→refinement prototype matching) → stable local embeddings; GEA (24 learnable evidence anchors + PTES scorer) → decision-relevant temporal attention; all-steps supervised pretraining over every truncation length
+  - SOTA ITR across SSVEP 163.06 / MI 25.32 / RFH-VEP 134.24 bits/min; online HoloLens2 HITL: 90.33% ACC @1.80s DT (ITR 67.51 vs 40.47 FW), zero-calibration, 2.1ms inference latency; reward-grid robust
+  - State-quality metrics: CCD (cross-length drift) / PFR (prediction flip rate) / CM (classification margin) — reusable diagnostic triplet for variable-length RL encoders
+  - **Activation**: ATDM, dynamic window BCI, prototype learning, evidence accumulation, dueling DQN stop policy, ITR optimization, variable-length EEG encoding, human-in-the-loop BCI
+
+### Activation-Energy Pruning for Spiking Neural Networks: Unsupervised Personalization via Spike-Count Saliency
+- [[fp-snn-activation-energy-pruning]] - E[w]=|w|·Σspikes is a literal metabolic cost in SNNs: one-shot label-free pruning matches source ACC to σ=0.5 and exceeds it at σ=0.8 on N-MNIST (arXiv: 2609.26167)
+  - Negative result: SNIP/GraSP/magnitude pruning collapse to chance by σ=0.2–0.4 on SNNs — surrogate-gradient saliency is uninformative post-hoc on spike trains; random+BN becomes the honest baseline
+  - Improvement-under-pruning: 98.4% vs 97.2% source at 80% sparsity (3-class personalization, cross-class interference removal, lottery-ticket specialization, Cohen's d≈2.1)
+  - BN recalibration crossover at σ*≈0.4 (harmful below, essential above) — fixed LIF threshold amplifies activation drift, no continuous-activation analogue; scope rule: global ≤0.6, per-layer ≥0.7
+  - **Activation**: SNN pruning, activation energy, spike-count saliency, unsupervised personalization, surrogate gradient failure, BatchNorm recalibration, decapitation diagnostic, neuromorphic deployment
+
+## 2026-09-27 - Neuroscience Research (Cron Job)
+
+### Disorder-promoted stability
+- [[disorder-promoted-stability]] - Random parameter disorder enhances stability when Jacobian is non-Hermitian (2D+ nodal dynamics); overturns "heterogeneity hurts stability" from 1D reduced models (arXiv: 2609.25226)
+  - Nonconvexity of min_b Λmax(J(b;A)) is necessary for heterogeneous optima; guaranteed by non-Hermitian J (any connected network of 2nd-order/phase-amplitude/E-I dynamics); convex only for measure-zero adjacency sets
+  - Mechanism: heterogeneity induces mode mixing in Laplacian eigenbasis → eigenvector alignment (optimum requires ≥2 parallel eigenvectors); Gershgorin disc overlap lets eigenvalues escape leftward. Directed networks: b*_hom is a saddle → random N(0,1) perturbations improve stability (~25% of trials in SW nets, ~100% circulant)
+  - Ecological: mutualistic Lotka-Volterra disorder GUARANTEED stability gain (up to 5×); competitive destabilized; prevalence grows with N and edge density — new route to May's complexity-stability paradox
+  - **Activation**: disorder-promoted stability, non-Hermitian Jacobian, converse symmetry breaking, heterogeneity optimization, May complexity-stability paradox
+
+### Matched-Input Estimates Differ in Sign Across Architectures: Auditing EEG Foundation Models on Motor Imagery
+- [[matched-input-eeg-fm-audit]] - Validation-locked audit of LaBraM/CBraMod: every supervised comparator beats every FM config on BCI IV-2a; matched-input term flips sign across architectures so single-comparator decompositions are untrustworthy (arXiv: 2609.23924)
+  - ShallowConvNet 0.6962 vs CBraMod fine-tuned 0.4796 (4-class, n=9, cross-session); FM deficit does NOT reproduce on 2-class BNCI2014-004 (0.8085 vs 0.8458 — competitive)
+  - Matched-input term (narrow−broad): ATCNet −0.078 vs EEG Conformer +0.088 — opposite signs; report raw diffs across ≥3 architectures, never a single "pipeline share" percentage
+  - Pretrained-vs-random-init robust (+0.13 acc across 3 reseeds); raw FM logits overconfident (T=3.5–9.5) but one validation-fitted temperature restores ECE to supervised range — calibration ≠ discrimination
+  - **Activation**: EEG foundation model audit, matched-input control, validation-locked protocol, BCI benchmark leakage, temperature scaling
+
+## 2026-09-27 - Information Science + Quantum Mechanics (Cron Job)
+
+### Learning and Interpreting Policies for Simultaneous Entanglement Requests in Quantum Networks
+- [[dqn-mpnn-entanglement-scheduling]] - Double DQN + MPNN + curriculum training for scheduling simultaneous entanglement requests in quantum networks, with LLM trajectory-to-heuristic policy distillation (arXiv: 2609.30157)
+  - Curricular noise training: 11 phases over γ∈[1.5,5.8] with expert-seeded replay buffers (25% expert / 75% online); first failure at 51-71% lower link activation probability vs heuristics
+  - Four-component reward shaping: subgraph-edit-distance progress reward, betweenness-centrality bottleneck reward, |E_k|^κ complexity-weighted placement, step penalty
+  - LLM policy distillation: Gemini 3.1 Pro infers natural-language heuristic from DQN (state, action) examples, matching RL performance — interpretable policies without retraining
+  - Behavior profiling triplet: Holding Time (patience) / Bridge Span (link necessity) / Hub Anchor Bias (peripheral preference)
+  - **Activation**: quantum network scheduling, entanglement requests, DQN, MPNN, curriculum training, LLM policy distillation, subgraph edit distance, link activation probability
+## 2026-09-27 - Information Science Session 4 (Cron Job)
+
+### How Not to Build Microcrypt
+- [[np-aided-shadow-tomography-microcrypt]] - NP-aided shadow tomography learns computable PRS/PRU; computable+samplable OWSGs imply classical one-way functions (arXiv: 2609.30253)
+  - Theorem 1.1: any computable pure-state OWSG family (amplitudes/phases classically evaluable given key) is invertible in BQP^NP — two-stage pipeline: computational-basis max-likelihood key search, then self-referential controlled-SWAP interference (q=p balances branch magnitudes exactly; works for spiky states where uniform reference fails)
+  - Theorem 1.2: computable+samplable OWSGs imply classical OWFs — kills Hamiltonian Phase States (TQC 2025) and Morimae-Xagawa IQP group actions as Microcrypt candidates
+  - Theorem 1.3 (CMC attack): Clifford-monomial-Clifford unitaries C2 M C1 learnable in BQP^NP via Bell-displacement test — allowed displacement set |R|<=D/2 vs Haar-uniform; Clifford layers only relabel Bell states (CPC^T is Pauli); single NP query with witnesses x_i
+  - Fidelity bridge: 1-|<phi|psi>|^2 <= 100(t+g)^2 (Hellinger of controlled-SWAP outcome distributions + reference mismatch)
+  - Survivors (Table 4, legitimate research directions): full PRSS walks, long Kac walks, third blocked LRFC, glued LRFC, phased-permutation Hamiltonians, hidden-basis dynamics, ABGL composition — common theme: Clifford-in-the-middle or deep mixing breaks computability
+  - **Activation**: microcrypt, PRS, PRU, OWSG, NP oracle, shadow tomography, one-way functions, pseudorandom states, Hamiltonian phase states, CMC unitaries
+
+### Deep thermalization and Hilbert space ergodicity (入库)
+- arXiv: 2609.30248 — Review: state distributions become "maximally random" in precise sense; unifying framework via quantum information theory + maximum entropy explains ergodicity forms under physical constraints; irreversible statistical mechanics from reversible unitary dynamics; applications to benchmarking/tomography
+
+### Moreau-Yosida approximation of Entanglement of Formation (入库)
+- arXiv: 2609.30246 — E^lambda_F family (Moreau envelope of EoF) monotonically increases to EoF as lambda->0; computable upper bounds on E_F - E^lambda_F; uniform convergence rates on bounded rank/energy marginals; conditions for exact coincidence
+## 2026-09-27 - Neuroscience Research (Cron Job, Session 3)
+
+### Neural noise enables accurate internal simulation of rare events
+- [[noise-assisted-rare-event-simulation]] - Moderate OU noise on BCPNN unit supports repairs both deterministic-replay failure modes (greedy over-representation / low-prior-veto under-representation) with an inverted-U stochastic-resonance signature and parameter-tolerance broadening (arXiv: 2609.18033)
+  - Two-stage decomposition: internal-model failure splits into learning-stage sampling error vs expression-stage dynamics; this work isolates the circuit-level stage — replay fidelity depends on how learned structure is sampled, not just what is learned
+  - Failure modes from one support equation: over-representation = recurrent term run greedily (skips common alternatives, rare over-represented by elimination); under-representation = low prior beta_j vetoes the strongest common-to-rare weight (normalized Hebbian rule w_ij = log(P_ij/(p_i p_j)) registers even single co-occurrence, but bias term pulls support below common competitor)
+  - Inverted-U optimum sigma* approx 24 (occurrence deviation 0.0143 at 20% rarity): Level-2 transition-class KL minimized in the same moderate-noise band — conditional occurrence is the stricter test, cannot be met by prior-gain tuning alone
+  - Tolerance broadening: no parameter setting is accurate at both levels without noise; moderate sigma opens a 2D band of accurate settings across tau_p, g_beta, g_bayesian, g_I and all three rarities (20%/10%/6.7%) — noise buys robustness, not just accuracy
+  - Neuromodulator mapping: DA -> (prior gain g_beta + plasticity timescale tau_p), ACh -> encode/replay switch (suppresses recurrent evidence, raises afferent gain, relieves adaptation), NE/arousal -> sigma; PD trajectory: DA+ ACh fall while sigma rises, all pushing internal simulation to over-represent rare events — matches patient prior-use deficits and scopolamine data
+  - **Activation**: neural noise, internal simulation, rare events, bcpnn, stochastic resonance, attractor replay, occurrence fidelity, hebbian-bayesian, predictive processing, parkinsons noise band, 1/f aperiodic slope
+
+### A neural-astrocyte architecture implements a hybrid automaton for evidence accumulation
+- [[neural-astrocyte-hybrid-automaton-evidence]] - Slow astrocytic RNN (trial-scale A2C+GAE) modulates fast neuronal RNN (ms-scale DMS task) via low-rank Hadamard gain W_eff = J_xx odot (11T + H_px diag(pi) H_px^T); context switch = cascade of two bifurcations (arXiv: 2609.16217)
+  - Hybrid automaton in continuous dynamics: action level sets of the readout; reward omission (RPE) annihilates the active limit-cycle attractor, state traverses a flat low-velocity region, crossing the level-set boundary decodes a new action and triggers a second vector-field reconfiguration — integrate-to-bound generalized to bifurcation-relocated multidimensional bounds
+  - Stickiness is entropy-mediated: higher environmental entropy (p* 0.90 -> 0.48) flattens the unrewarded vector field near the annihilated attractor, requiring more unrewarded trials to cross the decision boundary; residual variability at zero internal noise comes from reward stochasticity placing trajectories in ambiguous level-set interface zones
+  - Astrocytic tiling suffices: lattice topology (k-nearest-neighbor banded recurrence, 1:3 astrocyte-to-neuron) matches dense connectivity in training rate and asymptotic regret; modulation robust up to ~90% sparsity — global integration from local gap-junction-like communication
+  - Trainability result: monolithic same-size RNN with dual readout fails — fast policy-gradient updates overwrite slow credit assignment; hierarchical timescale decoupling (A-RNN evidence integration -> stable modulation of N-RNN) is what makes the problem learnable
+  - A-RNN sees only its own action-reward history (pi_k, r_k), no oracle context; trained on sparse one-bit reward with 500-trial reward-magnitude curriculum; evaluation across 100 independently trained models
+  - **Activation**: neural-astrocyte networks, hybrid automaton, evidence accumulation, contextual inference, bifurcation analysis, fast-slow dynamics, astrocyte tiling, low-rank gain modulation, sticky policy, latent rule inference
+
+## 2026-09-27 - Systems Engineering Research (Cron Job)
+
+### Requirement-Bound Verified Commissioning: Frozen 4B Local Model as Candidate Generator under External Acceptance Layer
+- [[requirement-bound-verified-commissioning]] - LLM 仅做候选生成，确定性 entailment gate 独占 release authority，sealed grammar + 预注册统计准则 (arXiv: 2609.30219)
+  - 三层信任分离：deterministic parser → frozen 4B LLM(仅提案) → external entailment gate(密封语法V1裁决)，模型置信度永不进入发布决策；abstention 是合法一等结果
+  - 实测证据：模型在22个不可回答任务上伪造21个 ready plan(95.5% fabrication)全部被 gate 拒绝；sealed run 0/83 false release，Clopper-Pearson 单侧95%上界0.0354<5%；无 gate 对照组50%错误交付
+  - Textual trust boundary：事实不被需求文本独立约束时 gate 只能信任用户答案(text-open 层 39.2% 错误答案被放行)；文本约束存在时 0/65 错误答案通过
+  - 诚实报告 post-seal 失败：146计划中1次false release(语法V1 anaphor失效)触发 kill rule 并透明披露，不掩盖
+  - **Activation**: llm acceptance layer, entailment gate, release authority separation, sealed grammar, commissioning, safety-critical llm, clopper-pearson, preregistration, candidate generator
+
+### Developing a Unified Verification and Validation Activity Standard at JPL
+- [[unified-vv-activity-schema-jpl]] - JPL 关系型 V&V 活动 schema：5种方法 item type 共享核心属性集，双向关系连接需求/活动/场所/证据，SysML 平台无关形式化 (arXiv: 2609.28600)
+  - Relationship-based schema：Verified By / Executed In 等显式类型化双向关系 + Venue 独立 item type，支撑变更传播、rollup 状态、设施利用率分析
+  - Common-core inheritance：Base MVP 块(标识/状态/调度/证据) + Test/Analysis/Inspection/Demonstration/Review-of-Design 子类——单一泛化 VA 类型已被实践证伪
+  - HCDP 工作坊(29名实践者, Double Diamond)：85%认可 MVP 全任务可用；两级 pick list(核心标准+项目可扩展)平衡标准化与定制
+  - Institutional flywheel：共享信息架构使一个项目的自动化可零修改部署到所有项目(inner-source)，双向可追溯性消除覆盖缺口/冗余
+  - **Activation**: vv schema, requirements traceability, digital thread, sysml information model, test management, requirements management platform, relationship-based schema, hcd workshop
+## 2026-09-27 - Information Science Session 3 (Cron Job)
+
+### Quantum Channel Stein Theorem beyond Definite Causal Order
+- [[channel-stein-theorem-causal-order]] - Parallel/adaptive/indefinite-causal-order testers share the same Stein rate D^inf(N||M); adaptivity & quantum switch give zero asymptotic advantage (arXiv: 2609.30268)
+  - Theorem 2.4: for any finite-dim memoryless CPTP pair, lim (1/n) D_H^{eps,S}(N^otimes n || M^otimes n) = D^inf(N||M) for all S in {par, ada, gen}; strong converse a <= e^{-cn} at every r > D^inf holds even for general (ICO-permitting) testers
+  - Exact strong-converse exponent E^sc(r) = sup_{p>1} (p-1)/p (r - Dtilde_p^inf) via regularized sandwiched Renyi endpoint continuity (Theorem 5.1): lim_{p downarrow 1} Dtilde_p^inf = D^inf — continuity holds only AFTER regularization
+  - Reusable machinery: positive-slack SDP duality (testing score Delta_n(lambda) = min normalized positive Choi slack), fixed-marginal de Finetti reduction with polynomial loss g_n (transfers parallel bounds to ALL general testers: a <= lambda b + g_n Delta_n(lambda)), three-amplitude comparison closing the endpoint
+  - One-shot duality: parallel testers dual to all-channel Choi smoothing set K_all; general testers dual to positive AFFINE hull K_aff (affine constraints impose no slot-separability)
+  - **Activation**: channel discrimination, stein exponent, indefinite causal order, quantum switch no-advantage, regularized channel relative entropy, sandwiched renyi endpoint, strong converse exponent, de finetti reduction, smooth max-relative entropy AEP
+
+## 2026-09-27 - Neuroscience Research (Cron Job)
+
+### Transfer Dynamics and Spectral Cascades in Graph-Coupled Kuramoto Networks
+- [[spectral-transfer-cascade-kuramoto]] - Graph-spectral transfer matrix + spectral flux reveal cascades hidden beneath stationary synchronisation (arXiv: 2609.28432)
+  - Transfer matrix T_{m->k}(t) = 2 a_k f_{m->k}(t): reconstruct mode-m signal, propagate through nonlinear Kuramoto coupling only, project back onto Laplacian eigenbasis — a directed interaction network over graph Fourier modes
+  - Spectral flux Pi(t,K0) measures forward/inverse cascades between structural scales; interaction ratio Q(t)=I/(D+I) separates persistence- vs interaction-dominated regimes invisible to order parameter R(t)
+  - On modular (SBM) networks: intermittent cascade episodes, directional reversals, bursts persist while R(t) stays featureless — macroscopic coherence and microscopic spectral transfer decouple
+  - **Activation**: kuramoto, spectral cascade, graph fourier transfer matrix, synchronisation analysis, modular brain network, spectral flux, interaction ratio
+
+### Rethinking Pairwise Token Interaction in Spiking Transformers (GSAP)
+- [[gsap-gated-spike-axial-propagation]] - Spike-native token interaction: axial propagation + receiver-conditioned gate replaces QK matching (arXiv: 2609.26297)
+  - Binary spike QK-matching is coincidence-gated and input-dependent; GSAP decouples propagation from selection: horizontal->vertical axial aggregation with spiking neuron re-encoding, then binary receiver gate G odot M
+  - ImageNet-1K: Spikingformer 72.45/74.79/75.85 -> 73.29/76.07/78.19% with fewer params; QKFormer CIFAR-100 81.15->81.64; VOC QKFormer 32.63->36.90 mIoU; N-Caltech101 84.45->85.54%
+  - Under OTTT online learning, propagation-based interaction yields stable cross-step gradients (>10pt gain on CIFAR-100 OTTT-A) where Spiking Attention's sparse multiplicative terms destabilise gradient accumulation
+  - **Activation**: spiking transformer, token interaction, axial propagation, receiver gating, spike-driven attention, GSAP, OTTT online learning, event-based vision
 ## 2026-09-27 - Information Science Session 2 (Cron Job)
 
 ### Private communication via zero-private-capacity quantum channels
