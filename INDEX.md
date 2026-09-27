@@ -1,5 +1,13 @@
 ## 2026-09-27 - Information Science + Quantum (Cron Job)
 
+### All you need is the universal correlation detector
+- [[universal-correlation-detector]] - Schur-Weyl universal symmetric states give state-agnostic first-order-optimal correlation tests; one detector + position-based decoding + convex splitting universalizes 6 communication tasks (arXiv: 2609.29954)
+  - Fully universal cq test (zero state knowledge) P^(n)(a) = Σ|x^n⟩⟨x^n|⊗{ρ_Bx^n ≥ 2^na·σ^U,n_B}; semi-universal general-state test needs only marginal ρ_B — both match known-state Stein exponent I(A:B) via poly(n) domination ρ^⊗n ≤ (n+1)^{|X|(d+2)(d−1)/2}·σ^U
+  - Six universal capacity-achieving codes: cq coding, wiretap, SK distillation, EA classical (simpler proof of compound C_EA), EA quantum Gel'fand-Pinsker (new), EA Marton inner bound L≥2 receivers (new); achievable-rate conditions identical in form, only the "need to know" list shrinks
+  - **Activation**: universal correlation detection, state-agnostic testing, universal channel coding, compound channel, quantum Stein's lemma, Schur-Weyl duality, universal symmetric state, position-based decoding, convex splitting, Marton bound
+
+## 2026-09-27 - Information Science + Quantum (Cron Job)
+
 ### High quantum local differential privacy breaks entanglement
 - [[qldp-entanglement-breaking]] - 量子本地差分隐私与纠缠保持的不相容阈值：ε≤log(d/(d-1)) 强制信道纠缠破坏 (arXiv: 2609.13418)
   - 主定理：每个 ε-QLDP 信道在 ε ≤ log(d/(d−1)) 时必然纠缠破坏（qubit 阈值 log 2），常数最优；近似版 (ε,δ) 与某 EB 信道 diamond 距离 ≤ (d−1)δ
