@@ -1,3 +1,59 @@
+## 2026-09-29 - Deep Learning Research (Cron Job)
+
+### Persistent Negatives for Adversarial Black-Box On-Policy Distillation
+- [[persistent-negatives-adversarial-opd]] - 黑盒OPD的持久负样本对抗蒸馏：用历史prompt匹配的师生对比锚定判别器负分布，消除moving-target奖励问题 (arXiv: 2609.30864)
+  - 核心理论：判别器的Bayes最优奖励 = teacher→negative对数密度比；fresh negatives让该目标随每次policy更新漂移，persistent negatives锚定p_N并降低奖励估计MSE
+  - 解耦设计：判别器看历史对比（稳定），GRPO保持on-policy（新鲜学生响应）——锚定奖励模型不打折on-policyness；2学生×3judge×4基准全面胜出
+  - **Activation**: black-box distillation, adversarial discriminator reward, moving target, GRPO, reward estimation MSE, live-pool negatives
+
+### User Model Extraction via Belief Self-Distillation
+- [[belief-self-distillation-user-models]] - 信念自蒸馏：冻结LLM自任教师，从自然对话中无标注蒸馏隐式用户模型，统一read（解码）+write（写回干预）框架 (arXiv: 2609.31603)
+  - 因果可写性判据：表征只有同时支持解码与注入才是真实内部状态——BSD干预强度显著超过等规模hidden-state steering（原始激活steering纠缠了其他特征）
+  - 安全发现：refusal不只取决于请求，还取决于模型推断的用户意图——固定请求、只改写入的belief即可改变拒绝行为；独立训练的LLM收敛到共享用户表征几何
+  - **Activation**: user model extraction, causal probing, activation steering, refusal intervention, cross-model geometry
+
+### Learning to Stop without Learning to Stop
+- [[self-supervised-confidence-efficiency]] - 置信度自监督微调让推理自动变短：仅在600题上训练模型预测自己推理轨迹中间点的答案置信度，损失中零长度/停止目标，推理时token减少达25%且准确率持平 (arXiv: 2609.31619)
+  - 元认知信号→行为涌现：学会"知道自己已知道"后推理自然提前收敛；Gemma/Qwen/Nemotron/GPT-OSS全家族验证，效率与显式长度优化方法相当
+  - 成分分析：置信度监督大体保留基模型的高层推理组合，不选择性压制特定行为（对比长度惩罚RL的策略扭曲）
+  - **Activation**: reasoning efficiency, metacognitive supervision, confidence training, CoT length control, self-supervised fine-tuning
+
+### Trust Guided Decision Transformer
+- [[conformal-context-trust-decision-transformer]] - 信任先于价值引导：用模型自身滚动next-state预测误差+split conformal校准（held-out离线数据）过滤不可靠上下文后，冻结critic再在可信suffix中选动作 (arXiv: 2609.31586)
+  - 上下文漂移自可见：长rollout中next-state预测误差升高且持续——无需外部不确定性模型即可检测条件上下文OOD
+  - 顺序反转是关键：value-only选择会让critic挑中模型自己已标记不可靠的上下文生成的动作；TGDT在D4RL上减少持续高误差run、回报超vanilla DT/重置控制/value-only
+  - **Activation**: decision transformer, context drift, conformal prediction, offline RL, trust-then-guide ordering
+
+### HySTAR: Anchored Hypergraphs for Stable Credit Assignment
+- [[anchored-hypergraph-credit-assignment]] - 锚定超图消除MARL结构目标漂移：固定重叠稀疏超图作值分解骨架+自适应时空编码器学特征，时序+结构相关性构造agent专属优势 (arXiv: 2609.31531)
+  - 结构目标漂移命名：动态分组critic让agent→联盟→值分量的映射随交互演变而变——表征学习与目标分配纠缠导致两者都无法干净收敛
+  - 骨架固定/特征自适应分离：SMAC最难设定+16.7%超MAPPO、+15.6%超HYGMA；GRF全6场景第一；Traffic Junction收敛epoch减少40.2%
+  - **Activation**: multi-agent RL, credit assignment, hypergraph value decomposition, structural target drift, MAPPO
+
+### Benchmarking Attention for Tabular Foundation Models
+- [[tabular-attention-benchmark]] - 表格基础模型的注意力后端基准：行/列交替注意力的形状不对称（行长序列/列短序列/跨步内存布局）使最优后端因注意力类型×头维×硬件代际而异 (arXiv: 2609.31306)
+  - 无全局赢家：FlashAttention代际匹配构建总体最佳，但列注意力长序列时被cuDNN反超（交叉点随头维变化）；SageAttention在>16k行的行注意力上胜出
+  - 可复用方法论：形状不对称的核选择——按注意力类型分别基准、扫实际部署形状（交叉点是形状依赖的）、把跨步→连续拷贝成本计入测量、结果钉死硬件代际
+  - **Activation**: TabPFN, tabular attention backend, FlashAttention vs cuDNN, SageAttention, 2D attention kernels
+
+### How Far Can INRs Go? Cross-Domain INR-Based Semantic Segmentation
+- [[hierinrseg-implicit-neural-segmentation]] - HierINRSeg层级INR分割：INR优势集中于低参数+弱增广域，语义结构分布于多层——层级聚合多层表征比堆参数有效 (arXiv: 2609.31573)
+  - 域依赖而非普适优势：INR不随参数预算单调提升；预算小+增广弱时优势最大，U-Net从大容量+标准增广获益更多——给出模型选择决策表
+  - 多层聚合收益：域内+5.6pp Dice、域外+8.2pp Dice超MetaSeg；探针显示互补语义结构跨INR层分布
+  - **Activation**: INR segmentation, parameter-efficient medical imaging, hierarchical aggregation, cross-site MRI
+
+### Self-Supervised Representation Learning: From Spectral Foundation Models to Auroral Emission Spectra
+- [[spectral-window-transfer-pretraining]] - 谱窗口迁移分析：预训练模型的迁移质量由其训练谱窗口与目标谱段的重叠决定——红外预训练的SpectraFM在光学极光任务上低于未训练对照（负迁移） (arXiv: 2609.31206)
+  - 无标注域内MAE配方：1D ViT自监督预训练223k谱→冻结表征恢复物理学家诊断用的发射线强度比（R²0.91 vs 0.77）→10%标签微调超scratch训练+0.159
+  - 强制基线：未训练对照是检测负迁移的唯一手段；物理量探针（发射线比）验证预训练学到真实结构而非捷径
+  - **Activation**: spectral foundation model, transfer window, negative transfer, MAE 1D ViT, label-efficient scientific ML
+
+### Precision at Speed: Sample-Efficient Online MBRL for Hydraulic Excavator Control
+- [[precision-gated-mbrl-excavator]] - 精度门控MBRL：概率动力学集成从零在硬件上在线学习+采样MPC，进度奖励以路径精度为前提（精度门控速度）——11.5吨挖掘机20分钟达到前人100-150分钟控制器水平 (arXiv: 2609.31025)
+  - 精度门控防reward hacking：进度只在跟踪误差容差内才计入，杜绝抄近路换速度；40分钟后亚厘米级平均路径误差
+  - 采样MPC+在线集成是硬件样本效率的实用组合：每步重规划吸收早期模型误差，无策略梯度，每秒交互都转化为规划改进
+  - **Activation**: precision-gated reward, online MBRL, sampling MPC, hydraulic control, real robot learning
+
 ## 2026-09-28 - Neuroscience Research (Cron Job, late night)
 
 ### Common-Mode Collapse and Recovery in Direct Feedback Alignment
