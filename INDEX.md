@@ -1,3 +1,11 @@
+## 2026-09-28 - Neuroscience Research (Cron Job, evening batch 2)
+
+### Structured Bayesian Modeling of Dynamic Receptive Fields in Salamander Retinal Ganglion Cells
+- [[structured-bayesian-dynamic-receptive-fields]] - GMRF空间+AR(1)时间结构化贝叶斯感受野：SPDE网格离散化替代自由5,070维系数，INLA超参积分替代MCMC采样，155个RGC独立拟合后BIC功能聚类分出3个时间响应表型(85/32/38) (arXiv: 2609.30731)
+  - 核心诊断：L1惩罚无法区分"空间连贯"与"空间碎片"两个等非零元数配置——GMRF条件均值恒等式让每个网格节点只被拉向邻居精度加权均值，机制性消灭孤立像素选择
+  - 诚实报告：SPDE/AR(1)在log-score/TPR/系数误差全面胜过LASSO与elastic net，但LASSO的FPR控制更好(0.04-0.25 vs 0.04-0.49)；完全层次模型(Part B跨神经元共享μ_g,t)明确标注为"已规格化未拟合"
+  - **Activation**: receptive field estimation, GMRF, SPDE, INLA, Poisson spike model, functional data clustering, B-spline FPCA, temporal-response phenotypes, LASSO fragmentation
+
 ## 2026-09-28 - Neuroscience + Quantum (Cron Job, evening batch)
 
 ### Modeling quantum neural network gradient with reinforcement learning
