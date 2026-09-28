@@ -1,3 +1,23 @@
+## 2026-09-28 - Neuroscience + Quantum (Cron Job, evening batch)
+
+### Modeling quantum neural network gradient with reinforcement learning
+- [[rlq-grad-rl-qnn-optimizer]] - 经典 PPO 代理直接输出 QNN 参数梯度替代对酉 U(θ) 的微分，结构性地绕过 Jordan 代数型 barren plateau 方差衰减，成本随参数数 P 缩放而非希尔伯特空间维 2^n (arXiv: 2609.31066)
+  - 状态 = [θ_t, 批均损失, 批均准确率, 上一步更新]；动作 = g_t∈R^P 解释为梯度估计；奖励 = acc + 1/(loss+ε)；量子参数由代理更新、经典头 W,b 走常规 Adam 反传
+  - 诚实局限：深 barren plateau 下奖励同样集中（只保留计算优势无景观优势）；欠参数化时局部极小不可逃逸；2-design 电路下输入梯度 Cn/2^n 指数衰减仍传染给上游经典层
+  - **Activation**: QNN training, barren plateau, surrogate gradient, PPO agent, quantum neural network optimizer, Jordan algebra variance bound
+
+### Encryptability As a Coordinate Choice: Depth-One Homomorphic Federated Learning of Quantum Neural Networks
+- [[encryptability-coordinate-choice-he-fedavg]] - "可加密性是坐标选择的产物"：单位四元数（旋量）图中 SU(2) 群合成严格双线性（系数∈{-1,0,+1}），加密旋转更新仅耗 1 层乘法深度、FedAvg 零深度，彻底消除 bootstrapping（Euler 角坐标下需 25,000+ ops/权重）(arXiv: 2609.30581)
+  - 深度账本：旋转更新 1 层 / FedAvg 0 层 / 重归一化客户端明文 0 层；Pauli-OTP(离散 Clifford) + Quaternion-OTP(连续旋转) 编织成通用电路加密协议
+  - Spin(n) 推广：几何积在 2^(n-1) 偶阶坐标上双线性，一切结论对 Spin(n) 参数化层逐字成立；156 比特硬件验证保真 0.9918 vs 0.99957，零效用税（ΔMSE=+9e-6, p=0.92）
+  - **Activation**: homomorphic encryption, federated learning QNN, quaternion parameterization, SU(2) weights, depth ledger, Spin group rotors, encrypted aggregation
+
+### Learning a non-linguistic code for inferred rules from reward
+- [[reward-shaped-nonlinguistic-rule-codes]] - 失语症患者手势传规则的计算模型：说话者网络从示例学出 8 符号发明代码，执行者盲看符号完成三步组合变换；奖励通道把多规则压入少数标签（池化），梯度通道给每规则独立消息区域 (arXiv: 2609.31192)
+  - 五大发现：代码可组合泛化到训练从未出现的三步变换；离散瓶颈代价小（感知在通道外学习）；奖励 vs 梯度塑造不同代码；纯奖励下可测量的退化解（消息坍缩）需课程/信息压力阻止；奖励驱动命名随规则数饱和且容量提升无效
+  - 方法论要点：held-out 审计须枚举旋转/镜像/重着色对称——只有 held-out 三元组（300 中 100 个）真正测试组合性；能力度量应看消息与规则的互信息而非消息多样性
+  - **Activation**: emergent communication, rule transmission, signalling game, compositionality, aphasia model, reward vs gradient channels, degenerate pooling equilibrium
+
 ## 2026-09-28 - Neuroscience + Quantum (Cron Job)
 
 ### URCHIN: A Horizontal Spiking Language Model for Data-Constrained Pretraining
