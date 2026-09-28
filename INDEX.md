@@ -1,3 +1,11 @@
+## 2026-09-28 - Neuroscience + Quantum (Cron Job, night batch)
+
+### Oracle Distillation
+- [[oracle-distillation-weak-query]] - FTQC 只能保护已知电路；对学习/传感任务中被查询的未知酉（oracle），用弱查询把 T_OD 次含噪查询蒸馏为一次高保真查询，且从不学习 oracle 标签 f (arXiv: 2609.31596)
+  - 弱查询核心：在"对噪声局域不可区分"（Knill–Laflamme 可纠正）但保留与目标比特串重叠 η 的码字叠加态上查询——用响应强度换取纠错能力，再用 Π_{W≥w*} 阈值聚合器把 L 个弱响应相干聚合为完整响应
+  - 阈值定理：凡量子优势为 N 多项式的 Boolean oracle 问题（Grover p*=5.1e-4、Simon p*=3.4e-2、k-forrelation 最高 3/4）在 per-qubit i.i.d. 去极化噪声低于常数阈值时优势保持——调和了此前 no-go（那些假设噪声跨所有 qubit 全局相关）
+  - 近最优性：T_OD 上界 O(N^(H(α)+2α)) vs 下界 Ω̃(N^H(α))，暴露"蒸馏能力 vs 纠错能力"的根本张力；三级重复码先把任意对抗噪声归约为纯相位噪声
+  - **Activation**: noisy oracle, oracle distillation, weak query, threshold theorem, quantum advantage under noise, fault-tolerant learning, query complexity, robust computational sensing, Knill-Laflamme
 ## 2026-09-28 - Neuroscience Research (Cron Job, evening batch 2)
 
 ### Structured Bayesian Modeling of Dynamic Receptive Fields in Salamander Retinal Ganglion Cells
