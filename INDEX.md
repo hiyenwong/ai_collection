@@ -1,3 +1,19 @@
+## 2026-09-28 - Neuroscience Research (Cron Job, afternoon batch)
+
+### FlatClip: A Geometry-Aware Surface-Level Baseline for fMRI Representation Learning
+- [[flatclip-surface-frozen-encoder-fmri]] - 皮层flatmap渲染+冻结SigLIP2图像编码器实现fMRI表面级表征：零fMRI预训练即超越ROI级基线，扰动对照阶梯证明解剖排布与预训练特征各自独立贡献 (arXiv: 2609.31204)
+  - 三阶段管线：Pycortex确定性flatmap渲染（T=40帧RGB序列/或NSD的GLM响应图）→ 冻结SigLIP2全局特征（768d，时间均值池化；NSD用patch特征16×16自适应池化）→ 仅训练轻量MLP探针（768→256→256→C）
+  - 核心结果：HCP性别分类82.06%（超BrainMASS等ROI级基线）、ADNI AD/CN 75.46%，低于最强体素级模型Omni-fMRI(92.86%)——确立表面级"中间地带"参考点；NSD COCO80视觉解码中超fMRI基础模型，且全皮层<视觉皮层<任务激活区单调提升（任务相关皮层覆盖选择的价值）
+  - 可复用方法论：几何扰动阶梯（block-shuffle 76.1→半球交换75.0→半球内打乱70.9→像素置换72.9→相位随机化64.6→FC热图57.9→随机图48.9）+随机初始化编码器对照，将"空间组织有效"与"预训练特征有效"两个假设分离；三种colormap下真实排布一致优于置换（+7.3~+8.7 wF1）
+  - **Activation**: fMRI flatmap, frozen image encoder, SigLIP2 brain transfer, surface-level representation, geometry perturbation controls, cortical rendering, NSD visual decoding, frozen probe protocol
+
+### Grid-Cell Firing Fields Lack Local Sixfold Symmetry
+- [[grid-field-microstructure-matched-null-harmonics]] - 单个网格细胞放电场无内禀六重对称：逐细胞匹配零模拟的谐波分析将全局晶格对称与局部场微结构解耦，负结果强约束CAN模型 (arXiv: 2609.31145)
+  - 方法核心：对每个实验细胞构造匹配零模拟（复制spike数、occupancy、网格尺度λ、场宽σ̂、几何变换），仅操纵局部对称先验（圆形β=0 vs 六重von-Mises β>0），模拟数据流经与实验完全相同的预处理管线——彻底防御有限采样与预处理诱导的伪谐波
+  - 谐波回归f6=P6/Σ(k=2..11)Pk在0.1λ–0.4λ窗口：Exp vs 圆形参考p=0.279（无六重提升），Exp vs 强加六重参考p=5×10⁻⁵且随β单调分离（分析灵敏度已校准）；谐波leave-one-out保护组合度量（P2主导分母）；Burak–Fiete CAN同样呈现全局周期/局部无六重的解离
+  - 可复用模式：逐细胞匹配零推断、组合指标+逐项剔除防御、全局形变校正(ACF六峰椭圆拟合→仿射destretch)先于局部提问、晶格约束只做拒绝不做重定位、rectified von-Mises角调制注入旋钮、诚实负结果报告范式
+  - **Activation**: grid field microstructure, sixfold harmonic power fraction, matched-null simulation, grid cell angular structure, Burak-Fiete CAN constraint, destretching lattice deformation, negative result methodology
+
 ## 2026-09-28 - Neuroscience + Quantum (Cron Job)
 
 ### Associative Memory for Quantum Entangled States
