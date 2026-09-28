@@ -9608,5 +9608,69 @@
     "skillCreated": "arxiv-2609-30266v1-llm-agents-can-easily-tamper-with-their-own-traces",
     "lastAccessed": "2026-09-26",
     "category": "nlp-llm"
+  },
+  {
+    "id": "2609.30147",
+    "title": "GRASP: Generating, Revising, and Assessing for Strategic Planning with Agentic AI",
+    "skill_name": "arxiv-2609-30147-grasp-strategic-planning-agentic-ai",
+    "category": "multi-agent-rl",
+    "utility": 0.92,
+    "date_added": "2026-09-28T00:00:00.000000"
+  },
+  {
+    "id": "2609.25956",
+    "title": "Governed AI-Agent Coordination for Dementia Care: Architecture, Safety Contracts, and Evidence-Derived Workflow Verification",
+    "skill_name": "arxiv-2609-25956-governed-ai-agent-coordination-dementia-care",
+    "category": "ai-safety-eval",
+    "utility": 0.92,
+    "date_added": "2026-09-28T00:00:00.000000"
+  },
+  {
+    "id": "2609.30614",
+    "title": "Subjects, Not Authors: The Authorship Hazard in Agentic Dataspaces",
+    "skill_name": "arxiv-2609-30614-subjects-not-authors-authorship-hazard",
+    "category": "security-privacy",
+    "utility": 0.9,
+    "date_added": "2026-09-28T00:00:00.000000"
+  },
+  {
+    "id": "2609.31060",
+    "title": "The Crowd in the Machine: A Crisis-Informatics Reading of the 2026 Autonomous Agent Incidents",
+    "skill_name": "arxiv-2609-31060-crowd-in-machine-autonomous-agent-incidents",
+    "category": "ai-safety-eval",
+    "utility": 0.85,
+    "date_added": "2026-09-28T00:00:00.000000"
+  },
+  {
+    "id": "2609.28693",
+    "title": "Progressive Skill Discovery as Access Control for Tool-Using LLM Agents: Structural Governance through Role-Scoped Capability Delivery",
+    "skill_name": "arxiv-2609-28693-progressive-skill-discovery-access-control",
+    "category": "security-privacy",
+    "utility": 0.85,
+    "date_added": "2026-09-28T00:00:00.000000"
+  },
+  {
+    "id": "2609.31590",
+    "title": "AgentWorld: Benchmarking Long-Horizon Collaboration of Multi-agent LLMs",
+    "skill_name": "arxiv-2609-31590-agentworld-benchmark-long-horizon-collaboration",
+    "category": "multi-agent-rl",
+    "utility": 0.84,
+    "date_added": "2026-09-28T00:00:00.000000"
+  },
+  {
+    "id": "2609.30971",
+    "title": "SciHorizon-eLab: An Agentic Protocol-to-Task Compiler for Scalable Benchmarking",
+    "skill_name": "arxiv-2609-30971-scihorizon-elab-agentic-protocol-task-compiler",
+    "category": "ai-safety-eval",
+    "utility": 0.82,
+    "date_added": "2026-09-28T00:00:00.000000"
+  },
+  {
+    "id": "2609.28900",
+    "title": "Codetta: High-Capacity, Keyless, and Undetectable Multi-Agent Collusion",
+    "skill_name": "arxiv-2609-28900-codetta-multi-agent-collusion",
+    "category": "security-privacy",
+    "utility": 0.8,
+    "date_added": "2026-09-28T00:00:00.000000"
   }
 ]
