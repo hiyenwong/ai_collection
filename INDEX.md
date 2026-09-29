@@ -1,3 +1,17 @@
+## 2026-09-30 - Neuroscience Research (Cron Job)
+
+### Beyond Gaussian Assumptions: Distribution-Aware Channel Capacity for Effective Connectivity
+- [[distribution-aware-channel-capacity-ec]] - 双流min-max范式将ROI对建模为FIR信道，normalizing flow在功率约束下搜索输入分布+估计输出熵，跨模态非高斯残差下的有效连接估计全胜Granger/LiNGAM/GIMMIE (arXiv: 2609.32774)
+  - 脑信号与拟合残差跨模态/物种系统性偏离高斯；等方差不同熵功率的残差支持不同信息速率（熵功率不等式证明）
+  - 10条件仿真AUROC .858–.949 / AUPRC .521–.891全胜；稀疏Macq28网络AUPRC .521 vs 随机.069；HCP舌运动fMRI检出体感运动环路定向交互
+  - **Activation**: effective connectivity, non-Gaussian residuals, channel capacity, normalizing flows, directed brain interactions
+
+### Harmonic Theory of Behavior
+- [[harmonic-theory-behavior]] - 从神经环流形表征第一性原理推导个体与集体行为：粗粒化快神经动力学得到谐波分解的有效哈密顿量，取代预设交互规则 (arXiv: 2609.33896)
+  - 耦合系数三分量因子化 K_n = J_int(生态核)·c_n(感觉滤波)·M_n(决策滤波)，行为=谐波加权叠加，可从感知参数预测
+  - 奇偶性原理：奇谐波→相位偏移冲突模式（milling、fission-fusion），偶谐波→共识模式（同步、有序运动）；二元选择averaging→choice分岔由高次谐波cos(nΔ/2)变号驱动
+  - **Activation**: collective behavior, ring attractor, decision landscape, harmonic decomposition, fission-fusion, parity principle
+
 ## 2026-09-30 - Deep Learning Research (Cron Job)
 
 ### KV-streams for Efficient Compaction in Agentic Reinforcement Learning
