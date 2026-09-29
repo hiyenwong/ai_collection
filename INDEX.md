@@ -1,3 +1,12 @@
+## 2026-09-30 - Medicine × Quantum (Cron Job)
+
+### Quantum Diffusion Models for Medical Image Analysis
+- [[dtqw-diffusion-medical-imaging]] - 量子行走前向扩散 + 经典U-Net反向去噪的混合量子扩散模型，在真实IBM NISQ硬件上验证 (arXiv: 2609.31070)
+  - 反直觉设计：NISQ设备噪声被用作前向过程收敛的必要资源（纯幺正DTQW可逆、永不收敛到均匀先验，退相干补上缺失的耗散项），无需纠错
+  - 加性行走扩展：DTQW固定从|0⟩出发、采样结果加到各像素初始值（mod 2^Nq），一次量子运行摊销到全部像素——绕过其他QML医学工作卡死的输入编码尺寸瓶颈
+  - 结果诚实解读：KL散度全数据集优于经典对照（FractureMNIST3D上KL 0.011 vs 0.047，FID 89.7 vs 100.1），2D的FID较差但Inception-v3特征本身不适合医学数据；αt调度的CE+KL混合损失（高t学分布、低t学结构）
+  - **Activation**: quantum diffusion model, DTQW, discrete-time quantum walk, noise-as-resource, additive-walk scaling, medical image generation, NISQ forward process, BloodMNIST, BraTS2020, FractureMNIST3D
+
 ## 2026-09-29 - Deep Learning Research (Cron Job)
 
 ### Persistent Negatives for Adversarial Black-Box On-Policy Distillation
