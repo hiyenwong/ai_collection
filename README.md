@@ -4,9 +4,9 @@
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
 <<<<<<< Updated upstream
-[![Skills](https://img.shields.io/badge/Skills-13359-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-13382-purple.svg)](./collection/skills/)
 =======
-[![Skills](https://img.shields.io/badge/Skills-13359-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-13382-purple.svg)](./collection/skills/)
 >>>>>>> Stashed changes
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
@@ -130,11 +130,7 @@ Install agents and skills directly from Claude Code using the **Plugin Marketpla
 | [Tsodyks-Markram Chaotic Dynamics](collection/skills/tsodyks-markram-chaotic-dynamics/) | - | Chaotic dynamics in Tsodyks-Markram short-term synaptic plasticity via Shilnikov homoclinic bifurcation | short-term synaptic plasticity, Tsodyks-Markram, Shilnikov bifurcation, chaotic dynamics | ✅ |
 | [Spike Timing Neuronal Assemblies](collection/skills/spike-timing-neuronal-assemblies/) | - | STDP-driven formation and spontaneous reinforcement of neuronal assemblies with shared stimulus preferences | neuronal assembly, STDP, spike timing, noise correlation | ✅ |
 
-<<<<<<< Updated upstream
-[View all 7074 skills →](./collection/skills/)
-=======
-[View all 1880 skills →](./collection/skills/)
->>>>>>> Stashed changes
+[View all 13382 skills →](./collection/skills/)
 
 ### Version Check Feature
 
@@ -236,7 +232,7 @@ ai_collection/
 │
 ├── collection/            # Collected agents and skills
 │   ├── agents/            # Agent packages (27 agents)
-│   └── skills/            # Skill packages (31 category subdirectories)
+│   └── skills/            # Skill packages (38 category subdirectories)
 │       ├── neuroscience/          # Brain, EEG, cognitive science
 │       ├── quantum/               # Quantum computing, quantum ML
 │       ├── spiking-neuromorphic/  # SNNs, neuromorphic computing
@@ -264,7 +260,7 @@ ai_collection/
 
 ### Skill Category System
 
-Skills are organized into **31 category subdirectories**. New skills MUST be placed in `collection/skills/<category>/<skill-name>/`, never in the root skills directory. See [CONTRIBUTING.md](./CONTRIBUTING.md#skill-categories) for the full category list and selection rules.
+Skills are organized into **38 category subdirectories**. New skills MUST be placed in `collection/skills/<category>/<skill-name>/`, never in the root skills directory. See [CONTRIBUTING.md](./CONTRIBUTING.md#skill-categories) for the full category list and selection rules.
 
 **Enforcement policy:** All PRs containing new skills are reviewed before merge. Any skill found in the root `collection/skills/` directory (not in a category subdirectory) will block the merge. The reviewer will run `python scripts/classify_skills.py` to auto-classify, verify 0 flat skills remain, then merge.
 
@@ -289,7 +285,7 @@ Layer architecture:
 - **L4 Output** — Domain Applications: healthcare-bio, medical, finance, ai-safety-eval, security-privacy, other
 
 Features:
-- **30 neurons** in a 5-layer feedforward architecture (node size = log skill count)
+- **38 neurons** in a 5-layer feedforward architecture (node size = log skill count)
 - **Signal particles** flowing left→right through synapses between layers
 - **Activation glow** — neurons light up when signals pass through
 - **Click a node** to highlight its connections and dim unrelated neurons

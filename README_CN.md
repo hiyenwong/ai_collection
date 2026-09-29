@@ -4,9 +4,9 @@
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
 <<<<<<< Updated upstream
-[![Skills](https://img.shields.io/badge/Skills-13359-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-13382-purple.svg)](./collection/skills/)
 =======
-[![Skills](https://img.shields.io/badge/Skills-13359-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-13382-purple.svg)](./collection/skills/)
 >>>>>>> Stashed changes
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
@@ -89,7 +89,7 @@ OpenClaw 是一个灵活的 AI 代理框架，支持：
 | [Memory Retrieval](collection/skills/memory-retrieval/) | - | 两阶段记忆检索（语义+效用过滤） | memory retrieval, 记忆检索 | ✅ |
 | [Self-Challenge](collection/skills/self-challenge/) | - | 双代理自我挑战进化机制 | self challenge, 自我挑战 | ✅ |
 
-[查看全部 7074 个技能 →](./collection/skills/)
+[查看全部 13382 个技能 →](./collection/skills/)
 
 ### 神经网络技能可视化
 
