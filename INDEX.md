@@ -1,4 +1,30 @@
+## 2026-09-29 - Computer Science + Quantum (Cron Job)
+
+### Simulation-Based Quantum System Inference with Neural Posterior Estimation
+- [[sbi-quantum-system-inference]] - 似然不可解的量子参数推断统一框架：多项式成本模拟器(Pauli传播/张量网络)+条件神经样条流，一次训练摊销推理任意新测量 (arXiv: 2609.34995)
+  - 4元组(θ,π,x,S)统一噪声学习/QEM/断层/哈密顿量学习；50-qubit 735参数Pauli噪声、81原子Rydberg位移MAE 12.2nm R²=0.983
+  - 后验宽度=不可辨识性诊断(规范歧义检测)；数字孪生ML-QEM用后验采样造合成配对数据零样本纠错
+  - **Activation**: simulation-based inference, neural posterior estimation, Pauli noise learning, quantum error mitigation, Rydberg Hamiltonian learning, normalizing flows
+
+### Apparent Compression, Real Stability: The Intrinsic Dimension of Learning a Quantum Wavefunction
+- [[intrinsic-dimension-vmc-nqs]] - 子空间受限VMC测量量子波函数学习的内禀维度d*：表观压缩可能是变分界(非负振幅网络8/28642维达正锥界E=-4但无法更低)，d*跨相变抬升但有随机切片下限 (arXiv: 2609.33193)
+  - 符号块5.4%参数按比例仅得28/512维→误差超exact-sign控制5.9×：LoRA式按形状分配饿死小而高需求块
+  - 子空间训练246次零发散 vs 全参数6×6晶格重复发散——稳定器效应；QGT条件数~10^10胜出证明曲率条件性不预测优化质量
+  - **Activation**: intrinsic dimension, variational Monte Carlo, neural quantum states, subspace training, sign structure, quantum phase transition
+
+### QC-Stark: A Multi-Task Benchmark Revealing Capability Dissociations in LLMs Evaluated on Quantum Computing Tasks
+- [[qc-stark-llm-quantum-benchmark]] - 11任务×10模型×5难度×5种子=2750次全自动可验证LLM量子计算评估：总体排名与4/11任务Spearman不显著——能力分离是头条输出 (arXiv: 2609.35581)
+  - 2参数IRT验证测量质量；提示敏感性分析确认排名跨提示稳健
+  - 自动可验证设计消除裁判偏置：电路→仿真比对酉/态，程序→测试向量执行
+  - **Activation**: LLM benchmark, quantum computing, Item Response Theory, capability dissociation, auto-verifiable evaluation, prompt sensitivity
+
 ## 2026-09-29 - Neuroscience Research (Cron Job)
+
+### T-SNN: Temporal Simplicial Neural Network for EEG Decoding
+- [[temporal-simplicial-eeg-decoding]] - 时序单纯复形网络：EEG窗口经97分位相关阈值提升为演化clique complex，SCCN+LSTM联合时空消息传递（simplex identity状态追踪），SEED-VII七类情绪识别大幅超越SOTA (arXiv: 2609.34002)
+  - 核心方法：8s窗口/4s步进内Pearson相关97分位截断→rank-2 clique complex，SCCN聚合同rank/边界/上边界三方向消息，LSTM按simplex身份跨窗口携带状态（消失的simplex重现时恢复历史状态）
+  - 核心结果：trial-wise 70.94%（超越MAET 58.11达12.8点），LOSO 69.87%（+29点，泛化差距基本消除）；融合眼动特征后77.50%；T-SNN最强频段是theta（baseline峰值在beta/gamma），证明高阶交互提供正交信号
+  - **Activation**: higher-order brain interactions, simplicial neural network, dynamic functional connectivity EEG, clique complex message passing, multimodal emotion recognition
 
 ### Periodically modulated traveling waves in integrate-and-fire networks: recursive speed law and propagation failure
 - [[periodically-modulated-traveling-waves]] - IF网络周期调制耦合下行波的精确标量速度律：慢调制失败由最深谷底(saddle-node瓶颈速度√(c₁c₂))决定，快调制由全程sojourn密度Stieltjes变换决定，均匀化理论在两端都失效 (arXiv: 2609.33006)
