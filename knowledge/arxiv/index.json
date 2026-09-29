@@ -1,5 +1,85 @@
 [
   {
+    "id": "2509.25077",
+    "title": "BRIDGE: RL-Optimized Depth-to-Image Generation for Monocular Depth Estimation",
+    "skill_name": "arxiv-2509-25077-bridge-rl-optimized-depth-to-image-generation-for-monocular",
+    "category": "vision-generative",
+    "utility": 0.85,
+    "date_added": "2026-09-29T22:13:14.111408"
+  },
+  {
+    "id": "2509.26625",
+    "title": "Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training",
+    "skill_name": "arxiv-2509-26625-learning-to-see-before-seeing-demystifying-llm-visual-priors",
+    "category": "vision-generative",
+    "utility": 0.9,
+    "date_added": "2026-09-29T22:13:14.110952"
+  },
+  {
+    "id": "2509.26596",
+    "title": "Safety-Contract Graph Multi-Agent Reinforcement Learning for Network Security",
+    "skill_name": "arxiv-2509-26596-safety-contract-graph-multi-agent-reinforcement-learning-for",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-09-29T22:13:14.110074"
+  },
+  {
+    "id": "2509.25411",
+    "title": "Hybrid Layer-Wise ANN-SNN With Surrogate Spike Encoding-Decoding Structure",
+    "skill_name": "arxiv-2509-25411-hybrid-layer-wise-ann-snn-with-surrogate-spike-encoding-deco",
+    "category": "spiking-neuromorphic",
+    "utility": 0.88,
+    "date_added": "2026-09-29T22:13:14.109443"
+  },
+  {
+    "id": "2509.25072",
+    "title": "Optimizing Privacy-Preserving Primitives to Support LLM-Scale Applications",
+    "skill_name": "arxiv-2509-25072-optimizing-privacy-preserving-primitives-to-support-llm-scal",
+    "category": "security-privacy",
+    "utility": 0.88,
+    "date_added": "2026-09-29T22:13:14.108496"
+  },
+  {
+    "id": "2509.25035",
+    "title": "Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct",
+    "skill_name": "arxiv-2509-25035-ultra-fast-language-generation-via-discrete-diffusion-diverg",
+    "category": "nlp-llm",
+    "utility": 0.9,
+    "date_added": "2026-09-29T22:13:14.107242"
+  },
+  {
+    "id": "2509.26628",
+    "title": "Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models",
+    "skill_name": "arxiv-2509-26628-attention-as-a-compass-efficient-exploration-for-process-sup",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-09-29T22:13:14.106782"
+  },
+  {
+    "id": "2509.26626",
+    "title": "Recursive Self-Aggregation Unlocks Deep Thinking in Large Language Models",
+    "skill_name": "arxiv-2509-26626-recursive-self-aggregation-unlocks-deep-thinking-in-large-la",
+    "category": "nlp-llm",
+    "utility": 0.93,
+    "date_added": "2026-09-29T22:13:14.106044"
+  },
+  {
+    "id": "2509.25045",
+    "title": "Hyperdimensional Probe: Decoding LLM Representations via Vector Symbolic Architectures",
+    "skill_name": "arxiv-2509-25045-hyperdimensional-probe-decoding-llm-representations-via-vect",
+    "category": "general-ml",
+    "utility": 0.92,
+    "date_added": "2026-09-29T22:13:14.104919"
+  },
+  {
+    "id": "2509.25084",
+    "title": "Scaling Generalist Data-Analytic Agents",
+    "skill_name": "arxiv-2509-25084-scaling-generalist-data-analytic-agents",
+    "category": "multi-agent-rl",
+    "utility": 0.95,
+    "date_added": "2026-09-29T22:13:14.103566"
+  },
+  {
     "id": "2605.02801",
     "title": "Reinforcement Learning for LLM-based Multi-Agent Systems through Orchestration Traces",
     "skill_name": "orchestration-traces-llm-mas",
@@ -6881,7 +6961,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,

@@ -1,3 +1,33 @@
+## 2026-09-29 - arXiv Paper Skills (Cron Job)
+
+### General Ml
+
+- [[arxiv-2509-25045-hyperdimensional-probe-decoding-llm-representations-via-vect]] - Hyperdimensional Probe: Decoding LLM Representations via Vector Symbolic Architectures (arXiv: 2509.25045) (utility=0.92)
+
+### Multi Agent Rl
+
+- [[arxiv-2509-25084-scaling-generalist-data-analytic-agents]] - Scaling Generalist Data-Analytic Agents (arXiv: 2509.25084) (utility=0.95)
+- [[arxiv-2509-26628-attention-as-a-compass-efficient-exploration-for-process-sup]] - Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models (arXiv: 2509.26628) (utility=0.90)
+- [[arxiv-2509-26596-safety-contract-graph-multi-agent-reinforcement-learning-for]] - Safety-Contract Graph Multi-Agent Reinforcement Learning for Network Security (arXiv: 2509.26596) (utility=0.88)
+
+### Nlp Llm
+
+- [[arxiv-2509-26626-recursive-self-aggregation-unlocks-deep-thinking-in-large-la]] - Recursive Self-Aggregation Unlocks Deep Thinking in Large Language Models (arXiv: 2509.26626) (utility=0.93)
+- [[arxiv-2509-25035-ultra-fast-language-generation-via-discrete-diffusion-diverg]] - Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct (arXiv: 2509.25035) (utility=0.90)
+
+### Security Privacy
+
+- [[arxiv-2509-25072-optimizing-privacy-preserving-primitives-to-support-llm-scal]] - Optimizing Privacy-Preserving Primitives to Support LLM-Scale Applications (arXiv: 2509.25072) (utility=0.88)
+
+### Spiking Neuromorphic
+
+- [[arxiv-2509-25411-hybrid-layer-wise-ann-snn-with-surrogate-spike-encoding-deco]] - Hybrid Layer-Wise ANN-SNN With Surrogate Spike Encoding-Decoding Structure (arXiv: 2509.25411) (utility=0.88)
+
+### Vision Generative
+
+- [[arxiv-2509-26625-learning-to-see-before-seeing-demystifying-llm-visual-priors]] - Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training (arXiv: 2509.26625) (utility=0.90)
+- [[arxiv-2509-25077-bridge-rl-optimized-depth-to-image-generation-for-monocular]] - BRIDGE: RL-Optimized Depth-to-Image Generation for Monocular Depth Estimation (arXiv: 2509.25077) (utility=0.85)
+
 ## 2026-09-25 - Number Theory, Statistics, Advanced Mathematics (Cron Job)
 
 ### Real quadratic fields and finite quantum dilogarithms I
