@@ -1,3 +1,42 @@
+## 2026-09-30 - Deep Learning Research (Cron Job)
+
+### KV-streams for Efficient Compaction in Agentic Reinforcement Learning
+- [[kv-streams-agentic-context-compaction]] - KV缓存跨压缩事件流式前传替代flush+重prefill，训练吞吐2.6-5×且缓存成为RL自发利用的隐式循环记忆 (arXiv: 2609.35750)
+  - 压缩时保留存活token的KV条目原样前传+折叠被丢弃部分为摘要状态，与任意压缩策略即插即用
+  - 流式缓存充当recurrent state携带已从可见上下文消失的信息，RL alone即可涌现该行为（无需辅助损失）
+  - **Activation**: KV cache streaming, context compaction, agentic RL, training throughput
+
+### How to Loop MoE: Flatten the Experts, Untie the Attention
+- [[foil-looped-moe]] - Foil方法：专家层减半/每层专家翻倍/passes翻倍（参数与算力不变）+每pass独立attention参数（专家路由共享） (arXiv: 2609.35751)
+  - 100B tokens下loss随flatten程度单调改善，最佳-0.012 nat（等参数等算力）
+  - 路由置信度比负载均衡更健康地追踪专家使用——设计信号应选confidence而非balance loss
+  - **Activation**: looped MoE, expert flattening, attention untying, routing confidence
+
+### Improving Test-Time Scaling with Adaptive Looped Transformers
+- [[tah2-adaptive-looped-transformer]] - TaH2逐token自适应循环深度：lookahead深度监督（在线标签=再迭代一次是否改善该token预测）联合训练backbone+迭代决策器 (arXiv: 2609.35748)
+  - AIME accuracy-compute斜率2.74 vs 1.79（+53%），等算力峰值超基线3.4点
+  - 固定深度loop模型随深度预算饱和，TaH2优势从depth2的+2.8增长到depth8的+3.9持续扩大
+  - **Activation**: adaptive loop depth, test-time scaling, iteration decider, lookahead supervision
+
+### Frontier Learning: Training LLM Reasoners at the Edge of Capability
+- [[frontier-learning-procedural-generators]] - 开放式RL后训练：程序化生成器在线产题+regret信号在生成器参数空间搜索模型能力边缘，替代固定题池 (arXiv: 2609.35426)
+  - 固定池随模型进步快速stale——GRPO信号只在成功率∈(0,1)的题上存在，前沿定向最大化非零advantage密度
+  - 多reasoning任务与模型家族上一致超越固定池基线：有效后训练需持续生成而非仅筛选题目
+  - **Activation**: open-ended learning, procedural generation, regret curriculum, capability frontier
+
+### Latency and accuracy tradeoffs in Spiking Neural Networks (Falcon)
+- [[falcon-snn-latency-pipeline-delay]] - Falcon：逐层Pipeline Delay Search优化SNN延迟，并证明"多等输入"可使网络又慢又不准的非单调反直觉结论 (arXiv: 2609.35260)
+  - 跨层timestep级overlap计算使SNN快于bit-serial QNN，但spike不可撤销→等待延迟与任务精度非单调
+  - 延迟选择必须端到端评估（逐层代理失效），配合spike-QAT+阈值/初始膜电位有界调优
+  - GSCV2/SSC达96.31/83.02精度，建模网络核心延迟119.64/124.00µs
+  - **Activation**: SNN latency, pipeline delay search, timestep overlap, spike QAT, compute-in-memory
+
+### SpikeLite: Lightweight Spiking Neural Networks for Time-Series Forecasting
+- [[spikelite-snn-forecasting]] - 轻量SNN预测框架：FSSE利用LIF低通滤波特性做频率选择性编码 + SSCA二值掩码稀疏跨通道脉冲注意力，附通道独立轻量路径 (arXiv: 2609.35097)
+  - 神经元动力学本身就是滤波器——参数化时间常数做频率分解，无需外挂FFT模块
+  - SeqSNN+SpikF协议下聚合R²=0.790/RSE=0.440最优，长程MSE/MAE=0.343/0.345，ECL能耗最低
+  - **Activation**: SNN forecasting, frequency-selective encoding, sparse channel attention, LIF low-pass
+
 ## 2026-09-29 - Computer Science + Quantum (Cron Job)
 
 ### Simulation-Based Quantum System Inference with Neural Posterior Estimation
