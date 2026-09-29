@@ -1,3 +1,17 @@
+## 2026-09-29 - Neuroscience Research (Cron Job)
+
+### Periodically modulated traveling waves in integrate-and-fire networks: recursive speed law and propagation failure
+- [[periodically-modulated-traveling-waves]] - IF网络周期调制耦合下行波的精确标量速度律：慢调制失败由最深谷底(saddle-node瓶颈速度√(c₁c₂))决定，快调制由全程sojourn密度Stieltjes变换决定，均匀化理论在两端都失效 (arXiv: 2609.33006)
+  - 核心发现1：指数核firing map精确归约为局部速度ODE a(x)=-(c-c₁)(c-c₂)/σ+BcK(x)，波失稳=周期解fold，与launch失败是两个不同的观测量(差≤4%)
+  - 核心发现2：慢极限失败阈值 ε₀=(√c₂-√c₁)²/(σB)=1-g_min/g 只依赖谷底极值；快极限 ε_f≈(a_c/B)ω 线性增长，弱纹波截断的均匀化在该点高估斜率2.5倍(纹波a_c/C*=0.93已是O(1))
+  - **Activation**: traveling wave propagation failure, periodic coupling modulation, integrate-and-fire wave speed, homogenization breakdown neural media
+
+### Scaling Laws for EEG Decoding: How Much Data Is Enough?
+- [[eeg-decoding-scaling-laws]] - 首个EEG解码数据缩放律系统刻画：5模型×4数据集交叉被试验证，trial数与被试数在总量大时不可区分，幂律拟合外推RMSE<0.1 (arXiv: 2609.35056)
+  - 核心发现1：幂律指数是模型+数据集特定的，无普适常数，需为自己的pipeline重新拟合
+  - 核心发现2：拟合曲线可直接回答"还需多少被试/试次"，用于数据高效实验设计（预算在增加被试vs增加试次之间分配）
+  - **Activation**: EEG scaling law, data requirements EEG, subject count trial count, data-efficient experiment design
+
 ## 2026-09-29 - Deep Learning Research (Cron Job)
 
 ### Persistent Negatives for Adversarial Black-Box On-Policy Distillation
