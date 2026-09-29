@@ -8,6 +8,14 @@
 
 ## 2026-09-30 - Neuroscience Research (Cron Job)
 
+### Space versus Context: Competition for Limited Neural Resources Determines Engram Cell Allocation in the Hippocampus
+- [[engram-resource-competition-allocation]] - 信息论资源竞争框架解释CA1印迹细胞分配：位置野扩展(1+α)是上下文编码的精度代价，优化互信息下限得非单调分配曲线+KKT解析相边界 (arXiv: 2609.32620)
+  - 非单调预测：印迹比例f_s在临界概率处不连续跃升、中间概率达峰、高频上下文反而下降（巩固至皮层+空间精度代价）；移除Σf_s≤1竞争约束后单调化——竞争是不连续转变的根源
+  - 解析相边界 W ≥ 1 − α/[(1+α)ln(1+α)]（无印迹相充分条件）：强上下文输入(大α)使印迹分配在高空间权重下仍存活；可解释遗忘=有效p_s衰减穿越临界概率
+  - **Activation**: engram cell allocation, place field expansion, mutual information neural resource allocation, memory forgetting theory, context probability engram, KKT phase boundary, sparse memory code
+
+## 2026-09-30 - Neuroscience Research (Cron Job)
+
 ### Beyond Gaussian Assumptions: Distribution-Aware Channel Capacity for Effective Connectivity
 - [[distribution-aware-channel-capacity-ec]] - 双流min-max范式将ROI对建模为FIR信道，normalizing flow在功率约束下搜索输入分布+估计输出熵，跨模态非高斯残差下的有效连接估计全胜Granger/LiNGAM/GIMMIE (arXiv: 2609.32774)
   - 脑信号与拟合残差跨模态/物种系统性偏离高斯；等方差不同熵功率的残差支持不同信息速率（熵功率不等式证明）
