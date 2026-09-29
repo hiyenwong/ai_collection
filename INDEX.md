@@ -1,3 +1,11 @@
+## 2026-09-30 - Medicine × Quantum (Cron Job)
+
+### Quantum Entanglement in Variational Quantum Classification for Breast Cancer Diagnosis
+- [[vqc-entanglement-structure-audit]] - 受控纠缠阶梯审计VQC结构 vs 临床性能：仅改变纠缠拓扑（Ising 1-rep→2-rep→Heisenberg全连接），熵0.40→0.71与准确率92.98%→93.68%同步上升，但fold级相关不显著（r=0.215-0.368, p>0.18），纠缠与表达力混杂，是关联非因果 (arXiv: 2609.34617)
+  - 双度量互补：von Neumann熵B→C续升(0.637→0.712)而concurrence饱和(0.318→0.322)，单一度量会掩盖成对相关饱和
+  - VQC比LR/SVM-RBF/RF高~1.2pp且specificity更高(0.969 vs 0.938)，但经典模型recall更高——按临床FN/FP代价选型而非只看准确率；诚实声明无量子优势证据
+  - **Activation**: VQC entanglement audit, quantum feature map topology, breast cancer diagnosis, entanglement entropy, Wootters concurrence, medical QML confounding
+
 ## 2026-09-30 - Neuroscience Research (Cron Job)
 
 ### Beyond Gaussian Assumptions: Distribution-Aware Channel Capacity for Effective Connectivity
