@@ -1,3 +1,12 @@
+## 2026-10-01 - Systems Engineering × Quantum II (Cron Job)
+
+### The Overlap Gap Property: Separating Quantum and Quantum-Inspired Approximate Optimization Algorithms
+- [[ogp-separating-quantum-inspired-optimization]] - OGP刚性分离两类算法：MF-AOA嵌入有限记忆AMP框架被Gamarnik-Jagannath定理阻塞，QAOA以超多项式深度穿越OGP屏障；发现参数schedule在屏障附近从绝热跳变到非绝热的不可微点 (arXiv: 2609.35131)
+  - 模式1 有限记忆AMP归约：经典启发式迭代写成U^t=F_t(J(·,f_t(U^0..U^{t-1})),U^0..U^{t-1})，旋转矩阵正交性给出Lipschitz K=2√T（与N无关），催化场仿射项max s²(1-s)=4/27 → 直接继承OGP阻碍定理
+  - 模式3 深度临界点：N=15实例p*≈28处approximation ratio出现kink，最优(γ,β)从线性绝热schedule跳到非绝热分支；按(p−p*,F_p−E_OGP)对齐所有实例证明是共性而非涨落；换优化目标为ground-state overlap则kink消失
+  - 资源估计：N=50需p≈250层穿屏障，但IBM Heron相干极限p_T2=13–33（T2=300µs,t_2Q=200ns,D_p=G_p/(Δ+1)）→ 当前超导硬件在到达OGP屏障前耗尽相干时间；TTS=p/P_p在有限深度(28–52)取最优，盲目加深适得其反
+  - **Activation**: overlap gap property, OGP, QAOA depth barrier, MF-AOA, AMP obstruction, adiabatic non-adiabatic transition, clustered solution space, Max-4-XORSAT, resource estimation, coherence limit, quantum advantage boundary
+
 ## 2026-10-01 - Neuroscience Research (Cron Job)
 
 ### NeuroDyn-EEG: An Interpretable Pre-trained Model for EEG Based on Neural Dynamics
