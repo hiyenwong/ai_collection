@@ -1,3 +1,85 @@
+## 2026-10-01 - Systems Engineering × Quantum II (Cron Job)
+
+### The Overlap Gap Property: Separating Quantum and Quantum-Inspired Approximate Optimization Algorithms
+- [[ogp-separating-quantum-inspired-optimization]] - OGP刚性分离两类算法：MF-AOA嵌入有限记忆AMP框架被Gamarnik-Jagannath定理阻塞，QAOA以超多项式深度穿越OGP屏障；发现参数schedule在屏障附近从绝热跳变到非绝热的不可微点 (arXiv: 2609.35131)
+  - 模式1 有限记忆AMP归约：经典启发式迭代写成U^t=F_t(J(·,f_t(U^0..U^{t-1})),U^0..U^{t-1})，旋转矩阵正交性给出Lipschitz K=2√T（与N无关），催化场仿射项max s²(1-s)=4/27 → 直接继承OGP阻碍定理
+  - 模式3 深度临界点：N=15实例p*≈28处approximation ratio出现kink，最优(γ,β)从线性绝热schedule跳到非绝热分支；按(p−p*,F_p−E_OGP)对齐所有实例证明是共性而非涨落；换优化目标为ground-state overlap则kink消失
+  - 资源估计：N=50需p≈250层穿屏障，但IBM Heron相干极限p_T2=13–33（T2=300µs,t_2Q=200ns,D_p=G_p/(Δ+1)）→ 当前超导硬件在到达OGP屏障前耗尽相干时间；TTS=p/P_p在有限深度(28–52)取最优，盲目加深适得其反
+  - **Activation**: overlap gap property, OGP, QAOA depth barrier, MF-AOA, AMP obstruction, adiabatic non-adiabatic transition, clustered solution space, Max-4-XORSAT, resource estimation, coherence limit, quantum advantage boundary
+
+## 2026-10-01 - Neuroscience Research (Cron Job)
+
+### NeuroDyn-EEG: An Interpretable Pre-trained Model for EEG Based on Neural Dynamics
+- [[neurodyn-eeg-neural-dynamics-pretrained]] - 用90节点双时间尺度Jansen-Rit神经质量模型生成合成"参数-EEG"对做预训练，从19导头皮EEG直接反演90个AAL脑区×11个生物物理参数场+全局延迟，仅2.43M参数在PD31/MDD全面超越LaBraM/BrainOmni等基础模型 (arXiv: 2609.36773)
+  - 确定性SBI点估计：MAE损失在先验×仿真器分布下收敛到分量条件中位数（后验点摘要），避开NPE全后验估计的巨大仿真预算和SBC校准开销；反演网络=多尺度时域conv+leadfield伪逆源空间分支+频谱分支+节点自注意/交叉注意
+  - 疾病参数签名：AD65以C1（锥体→兴奋性中间神经元连接，37/90区，DMN/边缘/皮层-丘脑，支持AD失连接综合征）为主；MDD以θ（群体放电阈值，23/90区，前额-边缘，E/I失衡）为主——FDR校正后的"参数×脑区"假设检验替代纯分类
+  - 诚实局限：sigmoid族参数(θ,β,rmax)可辨识性天花板r≈0.7；1/f粉噪是最坏噪声源；生成式生物物理约束过滤伪迹导致TUAB广义异常检测偏弱；闭环重建一致性≠唯一可辨识性
+  - **Activation**: neural mass model, Jansen-Rit, simulation-based inference, EEG foundation model, interpretable EEG, parameter inversion, source localization, leadfield, AAL atlas, Alzheimer EEG, depression biomarker, FDR case-control
+
+## 2026-10-01 - Systems Engineering × Quantum (Cron Job)
+
+### Quantum Monte Carlo Tree Search with Fixed Confidence
+- [[quantum-mcts-fixed-confidence]] - 量子MCTS定置信度识别：lazy-measurement原则+几何阈值消除+QMC叶子估计，查询复杂度对有效难度从二次降到线性（近最优），Hybrid按(α,η)成本公式逐叶切换经典/量子 (arXiv: 2609.33132)
+  - 三设计支柱：lazy measurement（每轮只测一次防态坍缩破坏优势）、QMC子程序 O((1/α)log(1/η)) vs Hoeffding O(1/α²)、γr=2⁻ʳ阈值消除+ηr=δ/(2Lr²)逐叶置信预算
+  - 匹配界：上界 O(Σ 1/dℓ,ε) 与下界（新序列量子相位测试技术，pivotal leaves）在一致关键实例上对数因子内匹配；Lichess深度11树Hybrid 11.7M查询胜QMCTS 35.1M/CMCTS 47.1M；IBM真机4.5×优势
+  - 姊妹篇2609.35511（量子随机博弈expectiminimax嵌套）：去随机化多级MC望远镜求和+相干二分搜索，两个二次加速(√deg, ε⁻¹)在嵌套中同时存活——RMSE↔uniform转换引理是组合关键
+  - **Activation**: quantum MCTS, fixed confidence, lazy measurement, quantum query complexity, best arm identification, threshold elimination, hybrid classical-quantum, expectiminimax, multilevel Monte Carlo, coherent binary search
+
+## 2026-09-30 - Medicine × Quantum II (Cron Job)
+
+### Hybrid quantum-classical attention for histopathology-based molecular profiling
+- [[qdsm-quantum-attention-molecular-profiling]] - 用量子衍生双随机矩阵(QDSM)替换transformer的softmax注意力，从常规H&E病理图像预测基因表达，29个TCGA队列验证、小队列增益最大 (arXiv: 2609.21115)
+  - 核心结构对应：双随机矩阵=幺正过程振幅平方——量子硬件是这一注意力原语的天然来源；IBM量子处理器单独复现了QDSM原语
+  - 选择性再分布而非均匀提升：QDSM把预测精度在基因/通路间重新分配（部分肿瘤改善、部分恶化）；肾上腺皮质癌中优先改善的基因富集于总生存期不良关联——分子推断命中预后相关生物学
+  - Leave-one-cancer-out混合效应分解：基线分子特征预测部分基因级收益，残差识别癌症特异性程序；跨队列迁移诚实报告：胰腺癌上未一致改善
+  - **Activation**: quantum attention, doubly stochastic matrix, QDSM, histopathology, gene expression prediction, molecular triage, TCGA, small cohort, precision oncology
+
+### Improving Sample Efficiency in Peptide-HLA Binding Prediction with HQNN
+- [[hqnn-peptide-hla-binding]] - 并行量子特征提取器+量子分类头的HQNN做肽-HLA结合预测（新抗原识别关键步骤），参数匹配对照下全训练规模胜出且数据越少优势越大 (arXiv: 2609.19642)
+  - 低数据优势曲线判据：量子增益随训练集缩小而扩大是归纳偏置有效的指纹——平坦或收窄则宣告失败；多源生物特征编码分载到并行浅PQC分支（NISQ友好+可消融）
+  - 噪声感知仿真预检：真实硬件噪声下仅轻度退化=NISQ可行；诚实边界：仅测试2个HLA等位基因，数据充足时经典CNN仍占优——量子价值仅限低数据场景
+  - **Activation**: peptide-HLA binding, neoantigen, immunoinformatics, HQNN, sample efficiency, low-data regime, quantum feature extractor, parameter-matched baseline
+
+### Experimental evidence of generalization in quantum ML in small-data regime
+- [[qcnn-small-data-generalization]] - 硬件兼容QCNN（中途测量+经典前馈）小数据泛化实验证据：10个训练样本即可学习；45参数匹配下QCNN学会而经典CNN停留在随机 (arXiv: 2609.24666)
+  - 编码瓶颈审计：2×2→512×512跨分辨率transpile暴露主导约束——振幅编码省比特但深度爆炸、角度编码浅但比特爆炸，真实瓶颈是数据编码而非优化
+  - 诚实三角：参数匹配赢、无约束经典基线(2.5万参数)在数据充足时仍最强、BreastMNIST上QCNN未超越但用少数量级参数持续高于随机——报告交叉点而非只报赢面
+  - **Activation**: QCNN, small-data generalization, amplitude encoding, angle encoding, mid-circuit measurement, Caro bounds, encoding bottleneck, BreastMNIST
+
+## 2026-09-29 - Neuroscience × Quantum late batch (Cron Job, pending sync)
+
+### Certified Mixing Analysis of the Drosophila CNS Connectome
+- [[connectome-synapse-flow-certified-mixing]] - 果蝇CNS连接组随机游走混合证书：Dobrushin系数+谱隙认证混合时间边界，识别近闭集与边界集 (arXiv: 2609.33054)
+  - **Activation**: connectome, random walk, Dobrushin coefficient, spectral gap, mixing time, certified bounds
+
+### High-Rank Connectivity Scaffolds in Recurrent Neural Networks
+- [[high-rank-connectivity-scaffolds-rnn]] - 高秩RNN连接支架：SVD分解区分核心支架与冗余模式，支架决定路径整合等任务的泛化与纠错 (arXiv: 2609.35207)
+  - **Activation**: low-rank RNN, high-rank connectivity, singular value decomposition, path integration, mode decomposition, core scaffold
+
+### Purin — Split Synaptic Efficacy + Bounded Short-Term Factor for ANNs
+- [[purin-synaptic-efficacy-ann]] - 短时程突触可塑性注入标准CNN：分裂突触效能+有界短期因子，稳态调节提升小样本鲁棒性 (arXiv: 2609.31235)
+  - **Activation**: short-term plasticity, synaptic efficacy, CNN, homeostatic regulation, small-sample robustness
+
+## 2026-09-30 - Neuroscience Research (Cron Job)
+
+### A neural network that maintains and retrieves memories based on context
+- [[context-modulated-emrnn-memory]] - PFC式上下文双重调制记忆：低秩门控共享RNN连接（工作记忆）+ 缓冲区显式存储上下文做content×context乘性检索（情景记忆），测试期无标签贝叶斯推断上下文，fMRI/人类"aha"检索数据双重验证 (arXiv: 2609.37791)
+  - 调制位置是第一性设计变量：调制循环动力学(WM)远胜输入/输出调制（脑对齐 0.0087 vs 0.0039/0.0053, t(32)>9, FDR p<.0001）；低秩门控共享W0优于每上下文独立连接——轨迹更直(tortuosity t(19)=5.5)、维度更低、上下文端点更正交
+  - 分工加速律：EM缓冲区显式存储π后，键值系统无需隐式学上下文，人类式检索快4倍（r=0.2 @22 iter vs 94）；但增益依赖检索选择性（softmax τ=0.1，τ↑或无softmax退化为基线）；单WM调制反而伤检索(0.207 vs 0.265)——机制收益以全系统为条件；门控检索分数而非key/query变换(0.139 vs 0.283)
+  - **Activation**: context modulation, low-rank RNN gating, working memory, episodic memory, key-value memory buffer, Bayesian context inference, PFC hippocampus, naturalistic fMRI, RSM similarity, memory-augmented network
+
+### An adaptive fractional state links circuit mechanisms to cortical dynamics across the visual hierarchy
+- [[adaptive-fractional-state-cortical-dynamics]] - AF态：重尾超扩散+长程记忆+振荡共存的皮层工作态，双分数均场理论(bFNS)统一5种经典随机描述，把"层级时间尺度"升级为(a,b)动力学regime平面 (arXiv: 2609.37355)
+  - 反直觉判据：LFP超扩散(a=0.62>0.5)与浅谱(b=-1.75>-2)对高斯过程是矛盾的（高斯超扩散要求b≤-2）——唯一解是重尾增量（κ=0.35 vs 傅里叶代理0, p<1e-20）产生超扩散、长程记忆产生浅谱，非高斯与非马尔可夫必须同时存在
+  - 层级二维轴：视皮层自下而上扩散指数a降(0.62→0.51)、谱指数b升(-1.75→-1.57)反向联动（L2/3 Kendall τ_a=-0.40, τ_b=+0.60），电路机制=有效抑制渐进减弱（I:E比δ），时间分数阶β主导位移方向；深层消失且L6符号反转——浅层特有
+  - **Activation**: adaptive fractional state, bFNS, bi-fractional mean field, superdiffusion, MAD increment exponent, cortical hierarchy, Neuropixels, E:I balance, exploration-exploitation, anomalous diffusion
+
+### Which Attention Heads are like the Human Head? Not the Ones that Compute
+- [[brain-alignment-causal-dissociation-attention-heads]] - 脑对齐≠因果重要：17个LLM上脑对齐注意力头的移除损害不足FV头的1/3（12.8pp@24.5% vs 42.6pp@12.5%），对齐捕获的是"模型怎么读刺激"而非"怎么解题" (arXiv: 2609.37991)
+  - 两族注意profile：novelty头盯独特元素、与人类注视全模型正相关(ρ=.373)但移除比随机消融伤害更小（潜在spandrel，softmax强制分配注意）；repetition头与概念表征共变(ρ=.45)但移除后模式信息仍100%可解码
+  - 可复用审计协议：对齐分+因果分独立计算→交叉相关→两排序消融对随机基线，报告解离——诚实负结果范式；指令微调会翻转对齐-概念关系（Qwen instruct全负）
+  - **Activation**: brain-AI alignment, causal ablation, attention head interpretability, FRP EEG, function vectors, concept vectors, novelty heads, spandrel, alignment audit
+
 ## 2026-09-30 - Medicine × Quantum (Cron Job)
 
 ### Quantum Diffusion Models for Medical Image Analysis
