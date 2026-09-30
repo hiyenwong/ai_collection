@@ -1,3 +1,12 @@
+## 2026-10-01 - Systems Engineering × Quantum (Cron Job)
+
+### Quantum Monte Carlo Tree Search with Fixed Confidence
+- [[quantum-mcts-fixed-confidence]] - 量子MCTS定置信度识别：lazy-measurement原则+几何阈值消除+QMC叶子估计，查询复杂度对有效难度从二次降到线性（近最优），Hybrid按(α,η)成本公式逐叶切换经典/量子 (arXiv: 2609.33132)
+  - 三设计支柱：lazy measurement（每轮只测一次防态坍缩破坏优势）、QMC子程序 O((1/α)log(1/η)) vs Hoeffding O(1/α²)、γr=2⁻ʳ阈值消除+ηr=δ/(2Lr²)逐叶置信预算
+  - 匹配界：上界 O(Σ 1/dℓ,ε) 与下界（新序列量子相位测试技术，pivotal leaves）在一致关键实例上对数因子内匹配；Lichess深度11树Hybrid 11.7M查询胜QMCTS 35.1M/CMCTS 47.1M；IBM真机4.5×优势
+  - 姊妹篇2609.35511（量子随机博弈expectiminimax嵌套）：去随机化多级MC望远镜求和+相干二分搜索，两个二次加速(√deg, ε⁻¹)在嵌套中同时存活——RMSE↔uniform转换引理是组合关键
+  - **Activation**: quantum MCTS, fixed confidence, lazy measurement, quantum query complexity, best arm identification, threshold elimination, hybrid classical-quantum, expectiminimax, multilevel Monte Carlo, coherent binary search
+
 ## 2026-09-30 - Medicine × Quantum II (Cron Job)
 
 ### Hybrid quantum-classical attention for histopathology-based molecular profiling
