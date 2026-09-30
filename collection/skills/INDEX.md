@@ -1,3 +1,21 @@
+
+## 2026-09-30 - arXiv Paper Skills (Cron Job)
+
+### Multi Agent Rl
+
+- [[arxiv-2609-38178v1-skill-space-shooting-for-autonomous-robot-policy-improvement]] - Skill-Space Shooting for Autonomous Robot Policy Improvement (arXiv: 2609.38178) (utility=0.85)
+- [[arxiv-2609-38143v1-learning-meta-skills-for-agent-harness-design-in-test-time-a]] - Learning Meta-Skills for Agent Harness Design in Test-Time AI4AI (arXiv: 2609.38143) (utility=0.85)
+- [[arxiv-2609-38065v1-jaxolotl-a-unified-high-performance-benchmark-suite-for-ltl]] - Jaxolotl: A Unified High-Performance Benchmark Suite for LTL-Based Multi-Task RL (arXiv: 2609.38065) (utility=0.85)
+
+### Neuroscience
+
+- [[arxiv-2609-38016v1-brain-sad-a-brain-inspired-safe-autonomous-driving-control-]] - Brain-SAD: A Brain-Inspired Safe Autonomous Driving Control Framework with Dynam (arXiv: 2609.38016) (utility=0.98)
+- [[arxiv-2609-37944v1-identifiability-guarantees-for-drivers-and-dynamics-of-delay]] - Identifiability Guarantees for Drivers and Dynamics of Delayed Physical Systems (arXiv: 2609.37944) (utility=0.90)
+
+### Physics Math
+
+- [[arxiv-2609-37941v1-an-efficient-machine-learning-approach-for-degradation-forec]] - An Efficient Machine Learning Approach for Degradation Forecasting in AEM Water  (arXiv: 2609.37941) (utility=0.85)
+
 ## 2026-09-29 - arXiv Paper Skills (Cron Job)
 
 ### General Ml

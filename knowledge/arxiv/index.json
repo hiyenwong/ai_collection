@@ -6961,7 +6961,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,
@@ -9752,5 +9752,53 @@
     "category": "security-privacy",
     "utility": 0.8,
     "date_added": "2026-09-28T00:00:00.000000"
+  },
+  {
+    "id": "2609.38016",
+    "title": "Brain-SAD: A Brain-Inspired Safe Autonomous Driving Control Framework with Dynamic Fear-Oriented Constraint on Dual-Policy",
+    "skill_name": "arxiv-2609-38016v1-brain-sad-a-brain-inspired-safe-autonomous-driving-control-",
+    "category": "neuroscience",
+    "utility": 0.98,
+    "date_added": "2026-09-30T22:08:11.463297"
+  },
+  {
+    "id": "2609.37944",
+    "title": "Identifiability Guarantees for Drivers and Dynamics of Delayed Physical Systems",
+    "skill_name": "arxiv-2609-37944v1-identifiability-guarantees-for-drivers-and-dynamics-of-delay",
+    "category": "neuroscience",
+    "utility": 0.9,
+    "date_added": "2026-09-30T22:08:11.463309"
+  },
+  {
+    "id": "2609.38178",
+    "title": "Skill-Space Shooting for Autonomous Robot Policy Improvement",
+    "skill_name": "arxiv-2609-38178v1-skill-space-shooting-for-autonomous-robot-policy-improvement",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-09-30T22:08:11.463312"
+  },
+  {
+    "id": "2609.38143",
+    "title": "Learning Meta-Skills for Agent Harness Design in Test-Time AI4AI",
+    "skill_name": "arxiv-2609-38143v1-learning-meta-skills-for-agent-harness-design-in-test-time-a",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-09-30T22:08:11.463314"
+  },
+  {
+    "id": "2609.38065",
+    "title": "Jaxolotl: A Unified High-Performance Benchmark Suite for LTL-Based Multi-Task RL",
+    "skill_name": "arxiv-2609-38065v1-jaxolotl-a-unified-high-performance-benchmark-suite-for-ltl",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-09-30T22:08:11.463316"
+  },
+  {
+    "id": "2609.37941",
+    "title": "An Efficient Machine Learning Approach for Degradation Forecasting in AEM Water Electrolysis",
+    "skill_name": "arxiv-2609-37941v1-an-efficient-machine-learning-approach-for-degradation-forec",
+    "category": "physics-math",
+    "utility": 0.85,
+    "date_added": "2026-09-30T22:08:11.463318"
   }
 ]
