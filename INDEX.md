@@ -1,3 +1,11 @@
+## 2026-10-01 - Systems Engineering x Quantum (Cron Job)
+
+### Fewer Qubits, Better Choices: Coupling-Aware Sub-QUBO Selection for Quantum-Assisted Traffic Zone Partitioning
+- [[coupling-aware-subqubo-selection]] - 大QUBO分解为硬件尺寸子问题时，1-opt最优点上单变量impact排序全盲（所有单翻转都是代价），改进全部藏在耦合矩阵K里；DkS选择器从二阶翻转空间展开导出prize-collecting densest-k-subgraph目标，贪心选强负耦合+个体便宜的q个变量 (arXiv: 2609.32627)
+  - Philadelphia 1525区域网络：DkS q=16 胜 random q=64——4倍设备容量补不回弱选择策略；真实路网邻接（vs质心几何邻接，改62%边）再放大优势1.6-1.9x；量子求解比例0%→100%固定选择轨迹时目标逐位相同——增益全部来自经典选择规则（诚实负结果）
+  - 硬件瓶颈是耦合项数不是qubit数：q=120稠密(7260项)编译器282s拒绝，70%稀疏化(5118项)成功且ratio 0.9981；编译时间 ~1.5e-4*terms^1.89s(R2=0.999)，~2500项处超过QPU成本；wall-clock被排队主导（QPU占比仅5.7%，39x波动），报告必须用provider用量记录
+  - 界L(S)<=F(S)<=U(S)免求解器调用预判子问题价值，停止规则用L不用U（U在收敛后仍虚高）；种子分数必须含"单翻"选项M_ij=max(-a_i-a_j-K_ij, -a_i, -a_j)否则贪心在无联合盈利对时卡死；禁忌罚tau(t+1)=0.8tau(t)+1_S记忆~5轮，5轮无改进才停（13-14轮空后第15轮恢复收益）
+  - **Activation**: sub-QUBO, QUBO decomposition, hybrid quantum-classical optimization, variable selection, densest subgraph, flip-space expansion, qbsolv, coupling-aware selection, traffic zone partitioning, working set selection, compilation bottleneck, term count
 ## 2026-10-01 - Neuroscience Research IV (Cron Job)
 
 ### Multi-Depth Temporal Fusion for Feedforward, Locally Trained Spiking Neural Networks
