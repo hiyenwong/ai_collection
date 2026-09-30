@@ -1,3 +1,43 @@
+## 2026-10-01 - Neuroscience Research III (Cron Job)
+
+### Flattening the Connectome Spectrum: A Spectral Filter for FC Induces a Pretraining Target for fMRI Encoders
+- [[fc-spectral-flattening-fmri-pretraining]] - KRR能打败所有脑基础模型的原因：correlation kernel隐式用特征值加权特征向量重叠(⟨Σ_a^α,Σ_b^α⟩_F=Σλ_i^α μ_j^α(v_iᵀu_j)²)，raw FC谱失准。逐被试FC^α=VD^αVᵀ幂律压平谱(α*=0.35)后KRR在5数据集/11分区/6目标全面匹配或超越基线 (arXiv: 2609.37642)
+  - 同一组特征向量换权重：top-20模式raw 0.544→flattened 0.610，纯特征值加权增益；100个随机滤波器无一超过0.621，30参数binned/MLP学习滤波器过拟合内层CV反而更差(0.586/0.579 vs 0.624)——简单幂律赢
+  - kernel形式无关(per-subject基底才是关键)：Pearson/cosine/dot-product差0.0006，共享PCA基底需~200分量才追平自选top-20(0.610)；三重等价解释=SPD测地线(log-EU与affine-invariant在此路径重合)+热核+谱滤波
+  - 蒸馏预训练：fMRI-BERT学生窗口 vs 全录音teacher vec(FC^α*)，对齐Gram矩阵K_s=EEᵀ/K_t=ZZᵀ(免正样本免增强)，162数据集约4000小时fMRI，10×少参数打平最佳BFM，短扫描/小队列/fingerprinting全面胜出(0.762→0.895)
+  - **Activation**: functional connectivity, eigenvalue recalibration, spectral filter, kernel ridge regression, fMRI phenotype prediction, brain foundation model, distillation pretraining, connectome spectrum, fingerprinting, kernel target alignment, SPD geodesic, heat kernel
+
+### Traversing the solution space of neural networks with Hessian Null Space Continuation
+- [[hessian-null-space-continuation]] - 单个训练网络周围藏着高维函数保持自由度：function-matching loss的Hessian近似零空间(λ_i≤μ_rel·λ₁)内移动几乎不改输入输出但内部表征剧变。HNC=零空间平步θ̃=θ+ηd+GD恢复函数交替迭代，可软投影(I+H/μ)⁻¹∇φ向任意目标φ转向 (arXiv: 2609.38081)
+  - ViT-S/16 ImageNet：权重范数只动1.3%、top-1掉<1%，但端点表征与anchor的CKA相似度低于所有独立训练模型甚至随机初始化ViT——Platonic表征趋同可能是optimizer偏置采样窄解集的证据而非任务决定的唯一表征
+  - RL双杀：Plume Tracking滑到羽流边缘平滑追踪(替代surge-cast，OOD稀疏气味/换风向下反超anchor)；Boat Race暴露reward-hacking策略(单箭头格反复进出刷proxy reward零净进度)——好策略附近就藏着奖励设计欠指定
+  - 几何测量：有效零空间比例随宽度增、随类别数减；归一化曲率dᵀHd/(nC)任务越难越大——大模型局部解更多但训练收敛到更少(调和Huang2025与Huh 2024矛盾)
+  - **Activation**: mode connectivity, Hessian null space, function-preserving traversal, representational degeneracy, loss landscape geometry, reward hacking exposure, CKA steering, model editing, implicit bias, Platonic representation hypothesis, alternative solutions
+## 2026-10-01 - Systems Engineering × Quantum III (Cron Job)
+
+### Circuit-level benchmarks of GKP-concatenated qLDPC Codes
+- [[gkp-qldpc-circuit-benchmarks]] - 统一三噪声层级仿真框架对比GKP内码×qLDPC外码(BB vs tricycle)级联方案：码容量→方差聚合→调度解析电路级噪声，analog-informed BP-OSD在每个模型每个码族都优于硬判决 (arXiv: 2609.35282)
+  - 4组件处理栈：内层GKP纠正产出二进制Pauli转移+连续可靠性LLR；Tanner边作为SUM门执行外码综合征提取；analog信息(折叠残差z)保留为解码器先验而非二元舍入丢弃
+  - 核心系统工程洞见：外码性能不能只看块参数(n,k,d)——校验权重、Tanner结构、门调度深度、SUM门位移传播、解码器先验共同决定有效外码噪声；BB电路级analog交叉点σ≈0.212(10.46dB)优于tricycle 0.142(13.94dB)
+  - 可复用工作流：外码仅通过CSS校验矩阵H_X,H_Z接入(全管线码族无关)→码容量模型廉价筛选σ窗口→方差聚合捕获权重依赖暴露→调度解析电路验证后才可做FT声明；硬判决/analog在同一采样噪声实现上配对比较
+  - **Activation**: GKP code, qLDPC, BB code, tricycle code, bosonic error correction, analog-informed decoding, BP-OSD, circuit-level noise, syndrome extraction, displacement propagation, squeezing threshold, finite-size crossing, concatenated codes, fault tolerance benchmark
+
+## 2026-10-01 - Neuroscience Research II (Cron Job)
+
+### Neural Structural Reasoner: A Brain-inspired Architecture for Reasoning over Structured Knowledge
+- [[neural-structural-reasoner]] - 关系结构直接编码在四层耦合神经元群(实体LE/推理LZ/关系LR/组合LC)的连接里做KG多跳推理：Heaviside门控+路径积分式状态转移，对称Oja规则学关系等价，三步闭环检测r_p∘r_q⇒r_k组合规则；静态图有精确闭式解Alg.3（邻接矩阵稀疏积S=A_ri·A_rj），Nations 3秒训练 (arXiv: 2609.36620)
+  - 推理=离散可读激活序列：LR一次迭代检索等价关系(equivalence置信度=激活值)→LZ动力学路径积分→LE读出尾实体，激活轨迹即计算过程，错误可在发散步审计；max/sum路径支持度聚合（验证集选模式）
+  - 涌现双重潜在结构：组合规则置信度区分语义稳定桥(exportbooks+releconomicaid→embassy=0.93)vs高频共现(embassy²失败)；W_ZZ连接PCA无监督恢复Nations冷战地缘 blocs
+  - 诚实报告：数据集依赖性（Nations/YAGO近最优0.814/0.589，Kinship弱0.652），卖点=精度/3秒级训练效率/原生可解释性三角权衡；局限：离散符号三元组、组合规则发现组合爆炸
+  - **Activation**: knowledge graph reasoning, link prediction, relational structure, path integration, Hebbian learning, Oja rule, compositional rule, brain-inspired architecture, interpretable reasoning, Tolman-Eichenbaum, cognitive map, entity relation, multi-hop inference
+
+### Context-dependent time-series prediction via HyperReservoirs
+- [[hyperreservoir-context-dependent-readout]] - 上下文不该改表征而该改解码：主reservoir(观测动力学)+小context reservoir(纯上下文驱动)，双线性读出ψ=[h_R;h_H;h_H⊗h_R]使W_eff(h_H)=W_R+Σh_H,m·B_m成为上下文参数化的仿射读出族，全部仍单次ridge回归零反向传播 (arXiv: 2609.34847)
+  - 三种上下文注入点taxonomy：输入级(context-input ESN)/状态级(full-matrix Conceptor C_k=R_k(R_k+γ⁻²I)⁻¹)/读出级(HyperReservoir)——Conceptor假设regime可由状态分布区分，时间缩放ṡ=ν·f(s)保持轨道几何故慢/快Conceptor对齐(S_C=0.813)时状态级调制失效
+  - 共享吸引子不同速度任务最大优势：HyperReservoir全三任务最低cNMSE，同吸引子场景Conceptor比朴素ESN差一个数量级；Augmented>Concat/Strict消融证明加性+双线性缺一不可
+  - 严格对照协议可复用：总reservoir维数恒定N+M=120、M验证选5-10足够（非单调：context reservoir过大反而损害）、R_ctx错误上下文替换比最小=真正功能使用上下文、跨regime共享归一化防预处理泄漏regime身份
+  - **Activation**: reservoir computing, echo state network, context-dependent prediction, bilinear readout, hypernetwork, Conceptor, temporal scaling, multifunctionality, regime switching, time series prediction, physical reservoir, ridge regression
+
 ## 2026-10-01 - Systems Engineering × Quantum II (Cron Job)
 
 ### The Overlap Gap Property: Separating Quantum and Quantum-Inspired Approximate Optimization Algorithms
