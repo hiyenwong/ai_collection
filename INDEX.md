@@ -1,3 +1,27 @@
+## 2026-10-01 - Neuroscience Research III (Cron Job)
+
+### Flattening the Connectome Spectrum: A Spectral Filter for FC Induces a Pretraining Target for fMRI Encoders
+- [[fc-spectral-flattening-fmri-pretraining]] - KRR能打败所有脑基础模型的原因：correlation kernel隐式用特征值加权特征向量重叠(⟨Σ_a^α,Σ_b^α⟩_F=Σλ_i^α μ_j^α(v_iᵀu_j)²)，raw FC谱失准。逐被试FC^α=VD^αVᵀ幂律压平谱(α*=0.35)后KRR在5数据集/11分区/6目标全面匹配或超越基线 (arXiv: 2609.37642)
+  - 同一组特征向量换权重：top-20模式raw 0.544→flattened 0.610，纯特征值加权增益；100个随机滤波器无一超过0.621，30参数binned/MLP学习滤波器过拟合内层CV反而更差(0.586/0.579 vs 0.624)——简单幂律赢
+  - kernel形式无关(per-subject基底才是关键)：Pearson/cosine/dot-product差0.0006，共享PCA基底需~200分量才追平自选top-20(0.610)；三重等价解释=SPD测地线(log-EU与affine-invariant在此路径重合)+热核+谱滤波
+  - 蒸馏预训练：fMRI-BERT学生窗口 vs 全录音teacher vec(FC^α*)，对齐Gram矩阵K_s=EEᵀ/K_t=ZZᵀ(免正样本免增强)，162数据集约4000小时fMRI，10×少参数打平最佳BFM，短扫描/小队列/fingerprinting全面胜出(0.762→0.895)
+  - **Activation**: functional connectivity, eigenvalue recalibration, spectral filter, kernel ridge regression, fMRI phenotype prediction, brain foundation model, distillation pretraining, connectome spectrum, fingerprinting, kernel target alignment, SPD geodesic, heat kernel
+
+### Traversing the solution space of neural networks with Hessian Null Space Continuation
+- [[hessian-null-space-continuation]] - 单个训练网络周围藏着高维函数保持自由度：function-matching loss的Hessian近似零空间(λ_i≤μ_rel·λ₁)内移动几乎不改输入输出但内部表征剧变。HNC=零空间平步θ̃=θ+ηd+GD恢复函数交替迭代，可软投影(I+H/μ)⁻¹∇φ向任意目标φ转向 (arXiv: 2609.38081)
+  - ViT-S/16 ImageNet：权重范数只动1.3%、top-1掉<1%，但端点表征与anchor的CKA相似度低于所有独立训练模型甚至随机初始化ViT——Platonic表征趋同可能是optimizer偏置采样窄解集的证据而非任务决定的唯一表征
+  - RL双杀：Plume Tracking滑到羽流边缘平滑追踪(替代surge-cast，OOD稀疏气味/换风向下反超anchor)；Boat Race暴露reward-hacking策略(单箭头格反复进出刷proxy reward零净进度)——好策略附近就藏着奖励设计欠指定
+  - 几何测量：有效零空间比例随宽度增、随类别数减；归一化曲率dᵀHd/(nC)任务越难越大——大模型局部解更多但训练收敛到更少(调和Huang2025与Huh 2024矛盾)
+  - **Activation**: mode connectivity, Hessian null space, function-preserving traversal, representational degeneracy, loss landscape geometry, reward hacking exposure, CKA steering, model editing, implicit bias, Platonic representation hypothesis, alternative solutions
+## 2026-10-01 - Systems Engineering × Quantum III (Cron Job)
+
+### Circuit-level benchmarks of GKP-concatenated qLDPC Codes
+- [[gkp-qldpc-circuit-benchmarks]] - 统一三噪声层级仿真框架对比GKP内码×qLDPC外码(BB vs tricycle)级联方案：码容量→方差聚合→调度解析电路级噪声，analog-informed BP-OSD在每个模型每个码族都优于硬判决 (arXiv: 2609.35282)
+  - 4组件处理栈：内层GKP纠正产出二进制Pauli转移+连续可靠性LLR；Tanner边作为SUM门执行外码综合征提取；analog信息(折叠残差z)保留为解码器先验而非二元舍入丢弃
+  - 核心系统工程洞见：外码性能不能只看块参数(n,k,d)——校验权重、Tanner结构、门调度深度、SUM门位移传播、解码器先验共同决定有效外码噪声；BB电路级analog交叉点σ≈0.212(10.46dB)优于tricycle 0.142(13.94dB)
+  - 可复用工作流：外码仅通过CSS校验矩阵H_X,H_Z接入(全管线码族无关)→码容量模型廉价筛选σ窗口→方差聚合捕获权重依赖暴露→调度解析电路验证后才可做FT声明；硬判决/analog在同一采样噪声实现上配对比较
+  - **Activation**: GKP code, qLDPC, BB code, tricycle code, bosonic error correction, analog-informed decoding, BP-OSD, circuit-level noise, syndrome extraction, displacement propagation, squeezing threshold, finite-size crossing, concatenated codes, fault tolerance benchmark
+
 ## 2026-10-01 - Neuroscience Research II (Cron Job)
 
 ### Neural Structural Reasoner: A Brain-inspired Architecture for Reasoning over Structured Knowledge
