@@ -1,3 +1,16 @@
+## 2026-10-01 - Neuroscience Research IV (Cron Job)
+
+### Multi-Depth Temporal Fusion for Feedforward, Locally Trained Spiking Neural Networks
+- [[mdtf-temporal-fusion-local-snn]] - 全局部学习SNN架构：局部STDP下被中间层抑制的特征永久丢失，深度问题变为"时间证据路由"。MDTF用H=[P,Δres,Δagree]融合：保留浅层P码+TopK稀疏残差Δres+跨深度时间一致性门控Δagree(|I(i)-D(i)|≤m_agree才保留)，深特征需与中间码时间对齐才被信任 (arXiv: 2609.37047)
+  - 完全局部训练在困难任务碾压传统STDP/R-STDP基线：Fashion-MNIST +18.2pp、CIFAR-10 +29.2pp、N-MNIST +73pp(基线缺事件前端)；前端消融显示simple latency编码MNIST仅9.8%(=随机)，完整早视觉前端(去相关+极性分离+校准)达96.7%——局部学习下前端即表征
+  - 多原型R-STDP读出：时间走廊margin奖励(违例越大更新越强，替代二值reward)+仅top-K竞争类稀疏anti-STDP惩罚(稳定性关键)；spike-budget Pareto分析：仅保留最早X%事件重训读出仍 graceful degradation，早期强事件携带集中信息
+  - **Activation**: spiking neural network, local learning, STDP, R-STDP, time-to-first-spike, TTFS, temporal fusion, residual routing, event-based vision, neuromorphic, layerwise training, population coding, spike sparsity
+
+### Receptive-field-constrained stimulus optimization for human early and intermediate visual cortex
+- [[rf-constrained-mei-visual-cortex]] - 人类V1-hV4体素级MEI合成：小pRF使无约束优化失效，解法=pRF约束编码模型内建后梯度穿透优化。RF-DiVE(SD v2.1逐步去噪brain-guidance scale 300)生成自然图像，RF-GO(Fourier相位梯度上升)生成纹理图像，每体素1000种子取top-10 (arXiv: 2609.36391)
+  - 生成/排序/测试三模型分离是有效性关键：RF-GO在自家编码器下difference score更高但对独立测试编码器泛化更差(DINO后端尤甚)——生成器选择塑造MEI外观与跨模型泛化，跨方法共同特征才是真调谐
+  - 所有方法所有脑区MEI预测响应均超最强自然图像(NSD/LAION配对体素检验)；行为验证n=32：hV4 MEI被判定比V1更多3D形态(自然图无此效应)——合成MEI暴露自然图像挖掘不到的选择性
+  - **Activation**: most-exciting-input, MEI, receptive field, pRF, voxelwise encoding model, fMRI, stimulus optimization, diffusion-guided generation, gradient ascent visualization, natural scenes dataset, V1 hV4, feature visualization
 ## 2026-10-01 - Neuroscience Research III (Cron Job)
 
 ### Flattening the Connectome Spectrum: A Spectral Filter for FC Induces a Pretraining Target for fMRI Encoders
