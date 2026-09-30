@@ -1,3 +1,17 @@
+## 2026-09-30 - Neuroscience Research (Cron Job)
+
+### An adaptive fractional state links circuit mechanisms to cortical dynamics across the visual hierarchy
+- [[adaptive-fractional-state-cortical-dynamics]] - AF态：重尾超扩散+长程记忆+振荡共存的皮层工作态，双分数均场理论(bFNS)统一5种经典随机描述，把"层级时间尺度"升级为(a,b)动力学regime平面 (arXiv: 2609.37355)
+  - 反直觉判据：LFP超扩散(a=0.62>0.5)与浅谱(b=-1.75>-2)对高斯过程是矛盾的（高斯超扩散要求b≤-2）——唯一解是重尾增量（κ=0.35 vs 傅里叶代理0, p<1e-20）产生超扩散、长程记忆产生浅谱，非高斯与非马尔可夫必须同时存在
+  - 层级二维轴：视皮层自下而上扩散指数a降(0.62→0.51)、谱指数b升(-1.75→-1.57)反向联动（L2/3 Kendall τ_a=-0.40, τ_b=+0.60），电路机制=有效抑制渐进减弱（I:E比δ），时间分数阶β主导位移方向；深层消失且L6符号反转——浅层特有
+  - **Activation**: adaptive fractional state, bFNS, bi-fractional mean field, superdiffusion, MAD increment exponent, cortical hierarchy, Neuropixels, E:I balance, exploration-exploitation, anomalous diffusion
+
+### Which Attention Heads are like the Human Head? Not the Ones that Compute
+- [[brain-alignment-causal-dissociation-attention-heads]] - 脑对齐≠因果重要：17个LLM上脑对齐注意力头的移除损害不足FV头的1/3（12.8pp@24.5% vs 42.6pp@12.5%），对齐捕获的是"模型怎么读刺激"而非"怎么解题" (arXiv: 2609.37991)
+  - 两族注意profile：novelty头盯独特元素、与人类注视全模型正相关(ρ=.373)但移除比随机消融伤害更小（潜在spandrel，softmax强制分配注意）；repetition头与概念表征共变(ρ=.45)但移除后模式信息仍100%可解码
+  - 可复用审计协议：对齐分+因果分独立计算→交叉相关→两排序消融对随机基线，报告解离——诚实负结果范式；指令微调会翻转对齐-概念关系（Qwen instruct全负）
+  - **Activation**: brain-AI alignment, causal ablation, attention head interpretability, FRP EEG, function vectors, concept vectors, novelty heads, spandrel, alignment audit
+
 ## 2026-09-30 - Medicine × Quantum (Cron Job)
 
 ### Quantum Diffusion Models for Medical Image Analysis
