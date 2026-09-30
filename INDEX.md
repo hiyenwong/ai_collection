@@ -1,3 +1,19 @@
+## 2026-10-01 - Neuroscience Research II (Cron Job)
+
+### Neural Structural Reasoner: A Brain-inspired Architecture for Reasoning over Structured Knowledge
+- [[neural-structural-reasoner]] - 关系结构直接编码在四层耦合神经元群(实体LE/推理LZ/关系LR/组合LC)的连接里做KG多跳推理：Heaviside门控+路径积分式状态转移，对称Oja规则学关系等价，三步闭环检测r_p∘r_q⇒r_k组合规则；静态图有精确闭式解Alg.3（邻接矩阵稀疏积S=A_ri·A_rj），Nations 3秒训练 (arXiv: 2609.36620)
+  - 推理=离散可读激活序列：LR一次迭代检索等价关系(equivalence置信度=激活值)→LZ动力学路径积分→LE读出尾实体，激活轨迹即计算过程，错误可在发散步审计；max/sum路径支持度聚合（验证集选模式）
+  - 涌现双重潜在结构：组合规则置信度区分语义稳定桥(exportbooks+releconomicaid→embassy=0.93)vs高频共现(embassy²失败)；W_ZZ连接PCA无监督恢复Nations冷战地缘 blocs
+  - 诚实报告：数据集依赖性（Nations/YAGO近最优0.814/0.589，Kinship弱0.652），卖点=精度/3秒级训练效率/原生可解释性三角权衡；局限：离散符号三元组、组合规则发现组合爆炸
+  - **Activation**: knowledge graph reasoning, link prediction, relational structure, path integration, Hebbian learning, Oja rule, compositional rule, brain-inspired architecture, interpretable reasoning, Tolman-Eichenbaum, cognitive map, entity relation, multi-hop inference
+
+### Context-dependent time-series prediction via HyperReservoirs
+- [[hyperreservoir-context-dependent-readout]] - 上下文不该改表征而该改解码：主reservoir(观测动力学)+小context reservoir(纯上下文驱动)，双线性读出ψ=[h_R;h_H;h_H⊗h_R]使W_eff(h_H)=W_R+Σh_H,m·B_m成为上下文参数化的仿射读出族，全部仍单次ridge回归零反向传播 (arXiv: 2609.34847)
+  - 三种上下文注入点taxonomy：输入级(context-input ESN)/状态级(full-matrix Conceptor C_k=R_k(R_k+γ⁻²I)⁻¹)/读出级(HyperReservoir)——Conceptor假设regime可由状态分布区分，时间缩放ṡ=ν·f(s)保持轨道几何故慢/快Conceptor对齐(S_C=0.813)时状态级调制失效
+  - 共享吸引子不同速度任务最大优势：HyperReservoir全三任务最低cNMSE，同吸引子场景Conceptor比朴素ESN差一个数量级；Augmented>Concat/Strict消融证明加性+双线性缺一不可
+  - 严格对照协议可复用：总reservoir维数恒定N+M=120、M验证选5-10足够（非单调：context reservoir过大反而损害）、R_ctx错误上下文替换比最小=真正功能使用上下文、跨regime共享归一化防预处理泄漏regime身份
+  - **Activation**: reservoir computing, echo state network, context-dependent prediction, bilinear readout, hypernetwork, Conceptor, temporal scaling, multifunctionality, regime switching, time series prediction, physical reservoir, ridge regression
+
 ## 2026-10-01 - Systems Engineering × Quantum II (Cron Job)
 
 ### The Overlap Gap Property: Separating Quantum and Quantum-Inspired Approximate Optimization Algorithms
