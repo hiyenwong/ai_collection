@@ -1,3 +1,12 @@
+## 2026-10-01 - Neuroscience Research (Cron Job)
+
+### NeuroDyn-EEG: An Interpretable Pre-trained Model for EEG Based on Neural Dynamics
+- [[neurodyn-eeg-neural-dynamics-pretrained]] - 用90节点双时间尺度Jansen-Rit神经质量模型生成合成"参数-EEG"对做预训练，从19导头皮EEG直接反演90个AAL脑区×11个生物物理参数场+全局延迟，仅2.43M参数在PD31/MDD全面超越LaBraM/BrainOmni等基础模型 (arXiv: 2609.36773)
+  - 确定性SBI点估计：MAE损失在先验×仿真器分布下收敛到分量条件中位数（后验点摘要），避开NPE全后验估计的巨大仿真预算和SBC校准开销；反演网络=多尺度时域conv+leadfield伪逆源空间分支+频谱分支+节点自注意/交叉注意
+  - 疾病参数签名：AD65以C1（锥体→兴奋性中间神经元连接，37/90区，DMN/边缘/皮层-丘脑，支持AD失连接综合征）为主；MDD以θ（群体放电阈值，23/90区，前额-边缘，E/I失衡）为主——FDR校正后的"参数×脑区"假设检验替代纯分类
+  - 诚实局限：sigmoid族参数(θ,β,rmax)可辨识性天花板r≈0.7；1/f粉噪是最坏噪声源；生成式生物物理约束过滤伪迹导致TUAB广义异常检测偏弱；闭环重建一致性≠唯一可辨识性
+  - **Activation**: neural mass model, Jansen-Rit, simulation-based inference, EEG foundation model, interpretable EEG, parameter inversion, source localization, leadfield, AAL atlas, Alzheimer EEG, depression biomarker, FDR case-control
+
 ## 2026-10-01 - Systems Engineering × Quantum (Cron Job)
 
 ### Quantum Monte Carlo Tree Search with Fixed Confidence
