@@ -35,6 +35,12 @@
 
 ## 2026-09-30 - Neuroscience Research (Cron Job)
 
+### A neural network that maintains and retrieves memories based on context
+- [[context-modulated-emrnn-memory]] - PFC式上下文双重调制记忆：低秩门控共享RNN连接（工作记忆）+ 缓冲区显式存储上下文做content×context乘性检索（情景记忆），测试期无标签贝叶斯推断上下文，fMRI/人类"aha"检索数据双重验证 (arXiv: 2609.37791)
+  - 调制位置是第一性设计变量：调制循环动力学(WM)远胜输入/输出调制（脑对齐 0.0087 vs 0.0039/0.0053, t(32)>9, FDR p<.0001）；低秩门控共享W0优于每上下文独立连接——轨迹更直(tortuosity t(19)=5.5)、维度更低、上下文端点更正交
+  - 分工加速律：EM缓冲区显式存储π后，键值系统无需隐式学上下文，人类式检索快4倍（r=0.2 @22 iter vs 94）；但增益依赖检索选择性（softmax τ=0.1，τ↑或无softmax退化为基线）；单WM调制反而伤检索(0.207 vs 0.265)——机制收益以全系统为条件；门控检索分数而非key/query变换(0.139 vs 0.283)
+  - **Activation**: context modulation, low-rank RNN gating, working memory, episodic memory, key-value memory buffer, Bayesian context inference, PFC hippocampus, naturalistic fMRI, RSM similarity, memory-augmented network
+
 ### An adaptive fractional state links circuit mechanisms to cortical dynamics across the visual hierarchy
 - [[adaptive-fractional-state-cortical-dynamics]] - AF态：重尾超扩散+长程记忆+振荡共存的皮层工作态，双分数均场理论(bFNS)统一5种经典随机描述，把"层级时间尺度"升级为(a,b)动力学regime平面 (arXiv: 2609.37355)
   - 反直觉判据：LFP超扩散(a=0.62>0.5)与浅谱(b=-1.75>-2)对高斯过程是矛盾的（高斯超扩散要求b≤-2）——唯一解是重尾增量（κ=0.35 vs 傅里叶代理0, p<1e-20）产生超扩散、长程记忆产生浅谱，非高斯与非马尔可夫必须同时存在
