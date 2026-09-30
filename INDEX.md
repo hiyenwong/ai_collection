@@ -1,3 +1,38 @@
+## 2026-09-30 - Medicine × Quantum II (Cron Job)
+
+### Hybrid quantum-classical attention for histopathology-based molecular profiling
+- [[qdsm-quantum-attention-molecular-profiling]] - 用量子衍生双随机矩阵(QDSM)替换transformer的softmax注意力，从常规H&E病理图像预测基因表达，29个TCGA队列验证、小队列增益最大 (arXiv: 2609.21115)
+  - 核心结构对应：双随机矩阵=幺正过程振幅平方——量子硬件是这一注意力原语的天然来源；IBM量子处理器单独复现了QDSM原语
+  - 选择性再分布而非均匀提升：QDSM把预测精度在基因/通路间重新分配（部分肿瘤改善、部分恶化）；肾上腺皮质癌中优先改善的基因富集于总生存期不良关联——分子推断命中预后相关生物学
+  - Leave-one-cancer-out混合效应分解：基线分子特征预测部分基因级收益，残差识别癌症特异性程序；跨队列迁移诚实报告：胰腺癌上未一致改善
+  - **Activation**: quantum attention, doubly stochastic matrix, QDSM, histopathology, gene expression prediction, molecular triage, TCGA, small cohort, precision oncology
+
+### Improving Sample Efficiency in Peptide-HLA Binding Prediction with HQNN
+- [[hqnn-peptide-hla-binding]] - 并行量子特征提取器+量子分类头的HQNN做肽-HLA结合预测（新抗原识别关键步骤），参数匹配对照下全训练规模胜出且数据越少优势越大 (arXiv: 2609.19642)
+  - 低数据优势曲线判据：量子增益随训练集缩小而扩大是归纳偏置有效的指纹——平坦或收窄则宣告失败；多源生物特征编码分载到并行浅PQC分支（NISQ友好+可消融）
+  - 噪声感知仿真预检：真实硬件噪声下仅轻度退化=NISQ可行；诚实边界：仅测试2个HLA等位基因，数据充足时经典CNN仍占优——量子价值仅限低数据场景
+  - **Activation**: peptide-HLA binding, neoantigen, immunoinformatics, HQNN, sample efficiency, low-data regime, quantum feature extractor, parameter-matched baseline
+
+### Experimental evidence of generalization in quantum ML in small-data regime
+- [[qcnn-small-data-generalization]] - 硬件兼容QCNN（中途测量+经典前馈）小数据泛化实验证据：10个训练样本即可学习；45参数匹配下QCNN学会而经典CNN停留在随机 (arXiv: 2609.24666)
+  - 编码瓶颈审计：2×2→512×512跨分辨率transpile暴露主导约束——振幅编码省比特但深度爆炸、角度编码浅但比特爆炸，真实瓶颈是数据编码而非优化
+  - 诚实三角：参数匹配赢、无约束经典基线(2.5万参数)在数据充足时仍最强、BreastMNIST上QCNN未超越但用少数量级参数持续高于随机——报告交叉点而非只报赢面
+  - **Activation**: QCNN, small-data generalization, amplitude encoding, angle encoding, mid-circuit measurement, Caro bounds, encoding bottleneck, BreastMNIST
+
+## 2026-09-29 - Neuroscience × Quantum late batch (Cron Job, pending sync)
+
+### Certified Mixing Analysis of the Drosophila CNS Connectome
+- [[connectome-synapse-flow-certified-mixing]] - 果蝇CNS连接组随机游走混合证书：Dobrushin系数+谱隙认证混合时间边界，识别近闭集与边界集 (arXiv: 2609.33054)
+  - **Activation**: connectome, random walk, Dobrushin coefficient, spectral gap, mixing time, certified bounds
+
+### High-Rank Connectivity Scaffolds in Recurrent Neural Networks
+- [[high-rank-connectivity-scaffolds-rnn]] - 高秩RNN连接支架：SVD分解区分核心支架与冗余模式，支架决定路径整合等任务的泛化与纠错 (arXiv: 2609.35207)
+  - **Activation**: low-rank RNN, high-rank connectivity, singular value decomposition, path integration, mode decomposition, core scaffold
+
+### Purin — Split Synaptic Efficacy + Bounded Short-Term Factor for ANNs
+- [[purin-synaptic-efficacy-ann]] - 短时程突触可塑性注入标准CNN：分裂突触效能+有界短期因子，稳态调节提升小样本鲁棒性 (arXiv: 2609.31235)
+  - **Activation**: short-term plasticity, synaptic efficacy, CNN, homeostatic regulation, small-sample robustness
+
 ## 2026-09-30 - Neuroscience Research (Cron Job)
 
 ### An adaptive fractional state links circuit mechanisms to cortical dynamics across the visual hierarchy
