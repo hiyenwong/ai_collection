@@ -1,3 +1,125 @@
+## 2026-10-02 - Number Theory, Statistics, Mathematics × Quantum (Cron Job)
+
+### Uniqueness, Cramér–Rao Efficiency and Concentration Bounds for Quantum U-Statistics
+- [[quantum-u-statistics-efficiency]] - Dasgupta-Warsi-Chatterjee 证明量子 U-统计量是多项式泛函估计中唯一无偏置换不变估计量，且渐近达到量子 Cramér–Rao 极限——无需自适应测量或预层析 (arXiv: 2609.08745)
+  - 核心结果：①边际核-梯度等价 ∇f(ρ)=m·O^sym_{B,1}（置换不变核的偏迹=泛函导数）；②唯一性：置换不变算子空间由 {A^⊗n} 张成，任意两个无偏不变扩展之差恒为零；③方差展开 Var(U_{n,k})=Var(∇f)/n+O(1/n²)，首项恰为多参数 SLD QCRB；④Bures χ² 散度估计：λ_min(σ)≥δ 谱条件充分不必要，弱化为 Var(∇χ²_B) 有界（Lyapunov 积分表示 χ²_B=2∫Tr[(ρe^{−τσ})²]dτ−1）
+  - 有限样本理论：交叠子集映射到相交图 + Cayley 生成树计数 r^{r−2} 控制高阶连通矩 → 方差敏感 MGF 界 → 闭式 Bernstein 型集中不等式；中偏差原理（MDP）：εₙ=n^{−α} (1/3<α<1/2) 时尾部纯高斯、仅由 QFI Var(∇f) 支配；数值稳定测试参数 s*=ε/(√(nV)+2√(Aε)+2Bε) 有理化避免灾难性消去
+  - **Activation**: quantum U-statistic, Cramér-Rao efficiency, permutation-invariant kernel, marginal kernel gradient, Hoeffding decomposition, Bernstein concentration, moderate deviation principle, Bures chi-square divergence, quantum Fisher information, polynomial functional estimation
+
+## 2026-10-02 - Neuroscience Research (Cron Job)
+
+### Association Profile Conditioning in a Set-Temporal Transformer for Cross-Session Intracortical Motor Decoding
+- [[apst-association-profile-frozen-bci]] - APST：冻结权重的跨会话颅内运动解码——从少量带标签校准试验闭式估计每单元 4-D 行为关联轮廓（方向调谐 cos/sin 或 SVD 压缩 EMG/速度关联，统一 4 维接口），经 FiLM（零初始化）条件化置换不变集合注意力编码器 + 滑窗因果 Transformer 流式解码，无需目标会话梯度 (arXiv: 2609.39080)
+  - 核心结果：DANDI688 held-out 速度 R² 0.78/0.81（Sub-C/Sub-M）vs activity-only 0.40/0.58；FALCON M1/M2/H1 = 0.65/0.42/0.44，M2、H1 为无梯度方法最优；8 试验校准超 16 试验 RNN 微调，校准成本 <22M MACs vs 微调 383–1195 亿 forward MACs（5 个数量级）；最远会话（138 天后）0.58 vs RNN-FT 0.48
+  - 方法论模式：①闭式轮廓 <15k ops（方向调谐 vs 高维 SVD 投影到源关联 V₄ 基，同一 4-D 接口跨任务共享）；②双条件位点（校准期缓存身份 + 流式 token 拼接），adaLNZero 零初始化使 FiLM 为纯残差；③profile-shuffle 消融跌破 activity-only（0.00/0.03）证明轮廓是单元级身份而非会话级摘要；④source 训练期 whole-unit dropout + 集合注意力槽查询处理任意单元集漂移；⑤滑窗 KV cache 有界流式状态 O(R)
+  - **Activation**: cross-session intracortical decoding, frozen-weight BCI, association profile, FALCON benchmark, few-shot calibration, unit drift, permutation-invariant set attention, directional tuning, SVD-compressed profile, sliding-window causal transformer
+
+### Large Language Model-Guided Evolutionary Discovery of Native Neural Architectures for Spiking Sequence Modeling
+- [[openarchevo-native-snn-discovery]] - OpenArchEvo：LLM 在开放程序空间中进化可执行 SNN 架构代码（受接口/因果性/脉冲投影三重约束），三视图表征（代码 CodeBLEU + 设计意图 embedding + 21 维行为指纹）同时支撑新颖性估计与性能预测，TabPFN-2.5 代理 + NSGA-II 双目标（预测性能×新颖性）分配昂贵训练预算 (arXiv: 2609.40258)
+  - 核心发现：ANN→SNN 直接移植欠用脉冲计算（97 对架构 ANN/SNN 排名仅部分一致）；发现的 NeuroGate 在 WikiText-103 达 26.4 PPL（超 ANN DeltaNet 的 27.5），LoopMem 估算算术能耗比稠密 Transformer 低 50.6×；发现机制=脉冲活动依赖的递归状态更新控制与输出门控
+  - 可复用管线：可执行约束检查（18% 编译失败+3% 因果检查拦截）→ 指纹近重复筛除（30%）→ 代理预测 → 多岛进化内环/训练外环，全程 132 V100-days；SWSP（二值脉冲的样本级模式计数）+ FireRate + 5 种零成本代理构成 7 个初始化时探针，代理研究 Kendall τ 从 0.46 升至 0.76
+  - **Activation**: LLM-guided architecture search, spiking sequence modeling, evolutionary NAS, open program space, three-view novelty, behavioral fingerprint, TabPFN surrogate, NSGA-II, spike-activity-dependent gating, native SNN architecture
+
+### Arithmetic of the sync basin for pulse-coupled oscillators
+- [[arithmetic-sync-basin-pulse-coupled-oscillators]] - 脉冲耦合振荡器同步盆地的精确数论结构：线性充电曲线（γ=0，泄漏型与活跃型动力学边界）处同步概率由 N 的素因子分解控制——素数 N 有闭形式 P_sync=1−1/N^N，一般 N 归约为均匀整数"词"计数 P_sync=A_{N,1}/N^N，复合 N 渐近 1−P_sync∼C_m·N^{−(m−1)}（m=最小素因子），为分形/riddled/tentacled 盆地图谱新增"算术盆地" (arXiv: 2609.01668)
+  - 等大小原理（EXACT）：线性充电下 Poincaré 回归映射为纯平移，逃逸吸收要求各簇脉冲分数相等 → 非同步结局仅为均分 N 的等簇，结局数=d(N)（N=100 时 9 个 vs 先验 1.9×10⁸ 个划分）；凸充电 γ<0（对应二次/指数 IF 神经元加速发放区）N≤5 有精确有理函数解，γ=0 处全部解跳跃突变
+  - 方法论模式：①连续盆地体积→离散字计数（动力学仅依赖小数部分秩序，整数"词"上结局恒定）；②素数 N 仅剩全单例逃逸（体积 1/N^N）；③复合 N 的 lpf(N) 决定主导非同步信道（N=15: sync 99.785%、(5)³ 2.14e−3）；④算术结构是充电非线性临界现象而非脉冲耦合普遍性质（fragility is the message）
+  - **Activation**: pulse-coupled oscillators, synchronization basin, prime factorization sync, equal-size principle, convex charging, integrate-and-fire, cluster states, return map translation, exotic basin geometry, cardiac rhythm robustness
+### Disentangling Computation in Multi-Task Neural Networks with the Green's Operator
+- [[greens-operator-multitask-rnn]] - 有限视界 Green's 算子 P_[DhF]^-1 全局映射扰动源→下游响应，任务级/时间级双约简揭示多任务 RNN 的计算复用与训练中涌现的时序路由 (arXiv: 2609.40292)
+  - 核心发现：相同活动轨迹+相同特征谱的系统可有完全不同的扰动路由（三角玩具模型精确推导 lag-k 响应 c(a^k-b^k)/(a-b)）；15 任务 leaky RNN 上 Green 相似度恢复已知 motif 块结构（8-trial 公平比较 AUC 0.920 vs 隐状态协方差 0.852、增益谱 0.785），置换零假设 0.812±0.017 (p=2e-4)
+  - 方法论模式：①前向递推 y=Pu 与伴随递推 z=J*z+v 矩阵自由估计（代价线性于视界），支撑随机化 SVD/低秩摘要，永不构造 T²N² 全算子；②D_θh=-P·D_θF 表明学习算子是全局响应几何的参数选择草图；③训练后 MemoryPro 长程响应占比 0.353 vs ReactPro 0.017（初始化均 ~5e-4）——训练按持久性需求组织时序路由
+  - 诚实局限：一阶+有限视界，约简必丢信息；任务级组织跨模型不稳定；DMC/DNMC 谱相同但响应方向大异；控制任务方差后与梯度对齐相关性不再唯一 → 不声称预测迁移
+  - **Activation**: Green's operator, multitask RNN, perturbation routing, task reuse, matrix-free randomized SVD, adjoint recurrence, response geometry, Lyapunov complement, NeurReps 2026
+
+### How much of fly walking is written in the wiring?
+- [[connectome-wiring-specificity-null-models]] - 果蝇连接组固定权重模型的预注册嵌套重连零模型检验：节律是泛化的（重连网络更节律），拮抗肌协调才是布线特异的——Sherrington 交互神经支配直接写入连接组 (arXiv: 2609.38665)
+  - 核心发现：真实 MaleCNS 拮抗分数 S=0.312 超过全部 40 个重连网络（最高 0.144），MANC 0.173/0.128 vs ≤0.084，两个独立连接组同向复制；交互神经支配指数真实 0.48/0.38 vs 所有重连 <0；跨池重分配 premotor 输入（强度中位变化 <4%）即废除协调
+  - 方法论模式：①嵌套零模型族（density→cell role→degree→leg block→lineage block→leg×lineage，每族 5 网）逐级保留结构；②仅 3 个全局参数扫描后冻结，解剖学接口（DNg100 输入/运动神经元池输出）；③预注册声明水平+60s 新噪声 20 次确认+精确再生验证（4,692 记录）；④协调集中位于 thorax–coxa 关节且持续数分钟
+  - 可迁移教训：连接组模型产生某行为 ≠ 布线特异；测布线特异性要看协调（模式形成）而非节律；修剪充分性测试与重连特异性测试回答不同问题
+  - **Activation**: connectome null models, rewired networks, wiring specificity, reciprocal innervation, antagonist coordination, Drosophila walking, pre-registered criteria, fixed-weight rate model, MaleCNS, MANC
+## 2026-10-02 - Number Theory × Quantum (Cron Job)
+
+### The twisted convolution identity and ghost r-SICs from finite quantum dilogarithms
+- [[ghost-r-sic-twisted-convolution]] - Appleby-Flammia-Kopp 将 Radchenko-Wheeler 有限五边形关系证明从 rank-1 主形式推广到全部 rank-r admissible tuples，无条件证明 ghost r-SIC 存在性 (arXiv: 2609.39192)
+  - 核心结果：对满足 r<(d−1)/2 且 (d²−1)/(r(d−r))∈ℤ 的正整数 d,r，存在 d² 个 rank-r 子空间构成非 Hermitian equichordal 配置（ghost r-SIC）；Stark 猜想下经 Galois 共轭升级为真正 Hermitian r-SIC
+  - 方法论模式：①惯例字典桥接（RW 的 F_γ^± 与 AFK 的 Shintani-Faddeev cocycle ש 显式换算，Rademacher 不变量 Ψ(γ) 为桥）；②rank-1→rank-r 提升用有限交换群特征理论+子群对偶 H/H^∨；③无条件核心+条件升级分离（ghost 无条件，Hermitian 需 Stark 的 Galois 自同构）；④幂等性编码为上链特殊值的二次型消失条件（TCI ⟺ Π̃²=rΠ̃）
+  - 关键引理链：L^m = r_{j,m}L − r_{j,m−1}I（Fibonacci 型递推）、L^{2m+1}−I = d_{j,m}L^m(L−I)、det(L−I) = −(d^j−3)
+  - **Activation**: ghost SIC, twisted convolution identity, finite quantum dilogarithm, pentagon relation, equichordal, rank-r SIC-POVM, Shintani-Faddeev cocycle, character theory lift, Stark conjecture Galois
+
+## 2026-10-01 - OpenAI Research (Cron Job)
+
+### GPT-Red: Unlocking Self-Improvement for Robustness
+- [[gpt-red-self-play-red-teaming]] - OpenAI 自动化红队模型 GPT-Red：自博弈 RL 中攻击者与多样防御者池同时训练（零和奖励：攻击者以"诱发有效失败"得分，防御者以"抵御攻击+完成原任务"得分），防御者变强迫使攻击者发现更强攻击；生成的对抗数据注入生产模型训练（GPT-5.6 训练后对 GPT-Red 直接注入失败率仅 0.05%），攻击者模型与部署隔离只转移鲁棒性 (https://openai.com/index/unlocking-self-improvement-gpt-red/)
+  - 关键协议：每个场景环境显式 threat model（攻击者可控面+成功判据）；评估四件套——held-out 新场景泛化（间接注入 arena 84% vs 人类 13%）、simulate-then-attack 实机迁移（Vendy 售货机案例全部 3 个恶意目标达成）、held-out 数据外泄套件（比 prompted 基线更有效且更省 token）、能力保持检查（鲁棒性≠拒答，通用能力不受损）
+  - 发现新攻击类"Fake Chain-of-Thought"：GPT-5.1 上 >95% 成功率 → GPT-5.6 Sol 上 <10%，展示红队-加固飞轮的单调收敛
+  - **Activation**: automated red-teaming, self-play adversarial training, prompt injection robustness, GPT-Red, attacker-defender RL, adversarial data generation
+
+### Towards safety cases for frontier AI training
+- [[frontier-training-safety-cases]] - OpenAI 安全案例方法论：借鉴航空/核电的证据驱动安全论证，要求在继续任何前沿 RL 训练运行之前完成结构化安全文档；技术栈三支柱=对齐（模型不想做未授权行为）+遏制（做了也难越界）+监控（伤害前捕获）(https://openai.com/index/towards-safety-cases-for-frontier-ai-training/)
+  - 对齐训练护栏五件套：自动化数据集审查（agent 修复可被 reward hack 的 RL 环境）+人工数据集审查+grader 调优（惩罚环境利用行为）+prior run 追踪分析（分类器验证 grader）+对齐度量评估
+  - 核心立场：安全案例是"论证"而非合规清单——每条风险声明必须溯源到可测量证据（评估/分析/红队结果）；能力涌现使过往安全不自动迁移，每个 run 须重新论证
+  - **Activation**: safety case, frontier training safety, RL training governance, pre-training safety review, alignment containment monitoring, evidence-based safety argument
+
+## 2026-10-01 - Neuroscience Research V (Cron Job)
+
+### Causal pieces: analysing and improving spiking neural networks piece by piece
+- [[causal-pieces-snn-expressivity]] - SNN 表达力理论框架：输入×参数空间按"同一子网络引发输出脉冲"分区为 causal pieces，piece 数给出近似误差下界 ‖Φ−g‖>c·ζ⁻²·p^(−1/2)（对任意不连续行为有效），是首个不要求正权重、不回避脉冲不连续性的 SNN 表达力度量 (arXiv: 2504.14015)
+  - 反直觉初始化洞见：非零均值权重分布才能最大化 piece 数（Sparre Andersen 随机游走定理给出大方差下界），文献普遍借用 ANN 零均值初始化恰恰次优；初始化时训练样本落入的 piece 数与最终精度强相关（log-linear r=0.70→0.92），差初始化训练后 piece 数反而下降、难恢复
+  - 正权重 SNN（仿生，皮层 80% 兴奋性）：每神经元权和>阈值即全局 Lipschitz→覆盖数泛化界；lognormal 正初始化+线性读出在 Yin-Yang/MNIST/EuroSAT 达全连接 ANN 水平；piece 数随深度 logistic 饱和而非 ReLU 式指数
+  - **Activation**: causal pieces, SNN expressivity, spiking neural network, single-spike coding, TTFS, nLIF, weight initialization, Sparre Andersen, Lipschitz continuity, positive weights, covering number, approximation bound, spike-time discontinuity
+
+### Better Behavioral Prediction, More Faithful Model Ablations? Evidence from Sequential Choice
+- [[ablation-response-fidelity-behavioral-models]] - 消融忠实性验证协议：合成 bandit（已知生成器）证明"预测更好"≠"消融响应更忠实"——LLaMA/GRU/Transformer donor 奖励替换响应仅 0.08-0.46 nats 而 oracle 2.067；RW 预测最差但响应最忠实（响应向量误差 0.407 vs 0.501-0.592）(arXiv: 2609.36097)
+  - 三操作必须区分：G=choice-only 重训练收益 / donor derangement 置换（固定预测器 teacher-forced 一步评估）/ 带符号概率响应向量误差 E[½Σ|v_p−v_o|]（不允许跨动作抵消）；spatial 任务中 LLaMA 反而全面胜 RW——排序是任务×管线经验属性，无必然灵活性-忠实性权衡
+  - 可复用校准流程：报告 intact+perturbed 绝对值而非相对百分比；有受控模拟器时同 histories 同操作下对比概率响应+同族 fitted 参考+简单 pooled 基线；"模型不看 X 也预测好→人不依赖 X"类推断的通用反例
+  - **Activation**: input ablation, behavioral model validation, response fidelity, oracle calibration, donor replacement, sequential choice, cognitive modeling, Centaur, LLaMA behavioral prediction, reward learning, mechanism recovery, prediction vs explanation
+
+## 2026-10-01 - Systems Engineering x Quantum: Chiplet Compiler (Cron Job)
+
+### QBX: A Compiler for 2-local Qubit Hamiltonian Simulation on Quantum Chiplets
+- [[qbx-chiplet-hamiltonian-compiler]] - 首个面向chiplet架构的2-local哈密顿量模拟编译器：Pauli字符串按Trotter置换自由度聚合成多目标受控门经highway执行，ILP/METIS分层映射最小化跨片通信 (arXiv: 2609.33997)
+  - 核心洞察：同类型(XX/YY/ZZ)共享qubit的2-local Pauli strings可聚合为Pauli set（Trotter公式置换不变），Pauli block按ZZ→YY→XX排序最大化highway复用；两个复用定理——control-empty（目标间门隔开即可复用）与cross-Y（控制上恰一个Y gate时Y+X修正复用）均有态矢量正确性证明
+  - 五级流水线：Pauli图分割（ILP/CPLEX→METIS兜底）→ set orchestrator（二次分配ILP，通信矩阵×chiplet距离）→ Pauli block调度（O(Nc·m·n)贪心，Steiner树Mehlhorn算法选highway路径）→ SABRE片内映射 → 电路生成；关键工程决策：调度必须在映射之后（否则highway路径冲突）
+  - 结果：深度较Qiskit降8.9×、较t|ket⟩降53.2×、较MECH降1.69×（eff-CNOT 1.08×）；较2QAN快19.54×且深度低1.13×（2QAN的O(m⁴)调度在24h超时）；SABRE映射产生2.54×跨片通信量/2.66×更大距离；异构错误成本模型 eff_CNOT = #on + 7.4·#cross + 0.7·#meas
+  - **Activation**: chiplet architecture, quantum compiler, Hamiltonian simulation, Pauli string aggregation, highway mechanism, multi-target controlled gates, qubit mapping, METIS partitioning, quadratic assignment, Steiner tree, QAOA compilation, Ising model, heterogeneous coupling cost, modular quantum computing
+
+## 2026-10-01 - Systems Engineering Research (Cron Job)
+
+### Control and Estimation Co-Design via Envelope-Theorem Gradients
+- [[contest-envelope-codesign]] - plant/传感/执行/估计器放入单一两阶段优化，设计梯度直接从内层SDP对偶变量经包络定理读出，免KKT隐式微分 (arXiv: 2609.36090)
+  - 包络梯度：∇θJ*=∂θL(z*,μ*,S*,θ)，正则条件(A.I)-(A.IV)下精确；唯一性破坏时退化为Clarke次梯度（下降方向仍有效）——方法优雅降级不崩溃；复杂度O(rx²) vs KKT隐式微分O(rx⁶)
+  - 三内层变体统一：LQG控制/估计SDP互为转置对偶（Jacobians从LMI对偶块读）；H∞最小-γ对偶集值需fixed-γ+epigraph slack恢复精确；非线性eKF信息状态线性化→凸MPC，梯度从costates读（近似）
+  - HVDC案例：协同droop调参+4传感器≈固定droop+15传感器的估计质量，砍73%遥测——纯传感器选择无法表述此权衡（droop重塑估计器跟踪的动力学）；四案例J_sc降幅5.6%-39.5%
+  - **Activation**: control co-design, estimation co-design, sensor placement, actuator design, bilevel optimization, envelope theorem, SDP dual gradient, LQG, H-infinity, sensor selection, information architecture, MDO
+
+### Invariance is Compositional for Continuous-time Systems: From Sleekness to Lebesgue Density
+- [[compositional-invariance-lebesgue]] - 首个双向（充要）组合不变性定理：互联系统全局安全⟺各子系统在邻居耦合输入下局部安全，验证复杂度从R^n不可数边界点降至2N标量检查 (arXiv: 2609.36539)
+  - 技术核心：tangential Lebesgue-density弱于经典sleekness（ sleek⟹稠密，逆命题为假，凸集免费），足以保证∏T_Ki=T_K，从而同步局部序列合成全局等价
+  - 100-DGU直流微电网（k=6环拓扑）：每DGU标量一阶droop模型，K_i=[47.2,48.6]V电压带，200个标量不等式完成全网安全证书，复杂度线性于N且与拓扑无关；此前后所有assume-guarantee框架只有充分方向
+  - 诊断能力：局部检查失败⟹全局必不安全且可定位故障子系统——充分性-only框架无此能力；限制：需Cartesian积安全集+Lipschitz动力学，耦合集取邻居整个安全集可能保守
+  - **Activation**: forward invariance, compositional safety, interconnected systems, assume-guarantee, tangent cone, contingent cone, sleekness, networked control, DC microgrid, safety certificate, scalable verification, CPS safety
+## 2026-10-01 - Systems Engineering x Quantum (Cron Job)
+
+### Fewer Qubits, Better Choices: Coupling-Aware Sub-QUBO Selection for Quantum-Assisted Traffic Zone Partitioning
+- [[coupling-aware-subqubo-selection]] - 大QUBO分解为硬件尺寸子问题时，1-opt最优点上单变量impact排序全盲（所有单翻转都是代价），改进全部藏在耦合矩阵K里；DkS选择器从二阶翻转空间展开导出prize-collecting densest-k-subgraph目标，贪心选强负耦合+个体便宜的q个变量 (arXiv: 2609.32627)
+  - Philadelphia 1525区域网络：DkS q=16 胜 random q=64——4倍设备容量补不回弱选择策略；真实路网邻接（vs质心几何邻接，改62%边）再放大优势1.6-1.9x；量子求解比例0%→100%固定选择轨迹时目标逐位相同——增益全部来自经典选择规则（诚实负结果）
+  - 硬件瓶颈是耦合项数不是qubit数：q=120稠密(7260项)编译器282s拒绝，70%稀疏化(5118项)成功且ratio 0.9981；编译时间 ~1.5e-4*terms^1.89s(R2=0.999)，~2500项处超过QPU成本；wall-clock被排队主导（QPU占比仅5.7%，39x波动），报告必须用provider用量记录
+  - 界L(S)<=F(S)<=U(S)免求解器调用预判子问题价值，停止规则用L不用U（U在收敛后仍虚高）；种子分数必须含"单翻"选项M_ij=max(-a_i-a_j-K_ij, -a_i, -a_j)否则贪心在无联合盈利对时卡死；禁忌罚tau(t+1)=0.8tau(t)+1_S记忆~5轮，5轮无改进才停（13-14轮空后第15轮恢复收益）
+  - **Activation**: sub-QUBO, QUBO decomposition, hybrid quantum-classical optimization, variable selection, densest subgraph, flip-space expansion, qbsolv, coupling-aware selection, traffic zone partitioning, working set selection, compilation bottleneck, term count
+## 2026-10-01 - Neuroscience Research IV (Cron Job)
+
+### Multi-Depth Temporal Fusion for Feedforward, Locally Trained Spiking Neural Networks
+- [[mdtf-temporal-fusion-local-snn]] - 全局部学习SNN架构：局部STDP下被中间层抑制的特征永久丢失，深度问题变为"时间证据路由"。MDTF用H=[P,Δres,Δagree]融合：保留浅层P码+TopK稀疏残差Δres+跨深度时间一致性门控Δagree(|I(i)-D(i)|≤m_agree才保留)，深特征需与中间码时间对齐才被信任 (arXiv: 2609.37047)
+  - 完全局部训练在困难任务碾压传统STDP/R-STDP基线：Fashion-MNIST +18.2pp、CIFAR-10 +29.2pp、N-MNIST +73pp(基线缺事件前端)；前端消融显示simple latency编码MNIST仅9.8%(=随机)，完整早视觉前端(去相关+极性分离+校准)达96.7%——局部学习下前端即表征
+  - 多原型R-STDP读出：时间走廊margin奖励(违例越大更新越强，替代二值reward)+仅top-K竞争类稀疏anti-STDP惩罚(稳定性关键)；spike-budget Pareto分析：仅保留最早X%事件重训读出仍 graceful degradation，早期强事件携带集中信息
+  - **Activation**: spiking neural network, local learning, STDP, R-STDP, time-to-first-spike, TTFS, temporal fusion, residual routing, event-based vision, neuromorphic, layerwise training, population coding, spike sparsity
+
+### Receptive-field-constrained stimulus optimization for human early and intermediate visual cortex
+- [[rf-constrained-mei-visual-cortex]] - 人类V1-hV4体素级MEI合成：小pRF使无约束优化失效，解法=pRF约束编码模型内建后梯度穿透优化。RF-DiVE(SD v2.1逐步去噪brain-guidance scale 300)生成自然图像，RF-GO(Fourier相位梯度上升)生成纹理图像，每体素1000种子取top-10 (arXiv: 2609.36391)
+  - 生成/排序/测试三模型分离是有效性关键：RF-GO在自家编码器下difference score更高但对独立测试编码器泛化更差(DINO后端尤甚)——生成器选择塑造MEI外观与跨模型泛化，跨方法共同特征才是真调谐
+  - 所有方法所有脑区MEI预测响应均超最强自然图像(NSD/LAION配对体素检验)；行为验证n=32：hV4 MEI被判定比V1更多3D形态(自然图无此效应)——合成MEI暴露自然图像挖掘不到的选择性
+  - **Activation**: most-exciting-input, MEI, receptive field, pRF, voxelwise encoding model, fMRI, stimulus optimization, diffusion-guided generation, gradient ascent visualization, natural scenes dataset, V1 hV4, feature visualization
 ## 2026-10-01 - Neuroscience Research III (Cron Job)
 
 ### Flattening the Connectome Spectrum: A Spectral Filter for FC Induces a Pretraining Target for fMRI Encoders
