@@ -25,7 +25,19 @@
   - 等大小原理（EXACT）：线性充电下 Poincaré 回归映射为纯平移，逃逸吸收要求各簇脉冲分数相等 → 非同步结局仅为均分 N 的等簇，结局数=d(N)（N=100 时 9 个 vs 先验 1.9×10⁸ 个划分）；凸充电 γ<0（对应二次/指数 IF 神经元加速发放区）N≤5 有精确有理函数解，γ=0 处全部解跳跃突变
   - 方法论模式：①连续盆地体积→离散字计数（动力学仅依赖小数部分秩序，整数"词"上结局恒定）；②素数 N 仅剩全单例逃逸（体积 1/N^N）；③复合 N 的 lpf(N) 决定主导非同步信道（N=15: sync 99.785%、(5)³ 2.14e−3）；④算术结构是充电非线性临界现象而非脉冲耦合普遍性质（fragility is the message）
   - **Activation**: pulse-coupled oscillators, synchronization basin, prime factorization sync, equal-size principle, convex charging, integrate-and-fire, cluster states, return map translation, exotic basin geometry, cardiac rhythm robustness
+### Disentangling Computation in Multi-Task Neural Networks with the Green's Operator
+- [[greens-operator-multitask-rnn]] - 有限视界 Green's 算子 P_[DhF]^-1 全局映射扰动源→下游响应，任务级/时间级双约简揭示多任务 RNN 的计算复用与训练中涌现的时序路由 (arXiv: 2609.40292)
+  - 核心发现：相同活动轨迹+相同特征谱的系统可有完全不同的扰动路由（三角玩具模型精确推导 lag-k 响应 c(a^k-b^k)/(a-b)）；15 任务 leaky RNN 上 Green 相似度恢复已知 motif 块结构（8-trial 公平比较 AUC 0.920 vs 隐状态协方差 0.852、增益谱 0.785），置换零假设 0.812±0.017 (p=2e-4)
+  - 方法论模式：①前向递推 y=Pu 与伴随递推 z=J*z+v 矩阵自由估计（代价线性于视界），支撑随机化 SVD/低秩摘要，永不构造 T²N² 全算子；②D_θh=-P·D_θF 表明学习算子是全局响应几何的参数选择草图；③训练后 MemoryPro 长程响应占比 0.353 vs ReactPro 0.017（初始化均 ~5e-4）——训练按持久性需求组织时序路由
+  - 诚实局限：一阶+有限视界，约简必丢信息；任务级组织跨模型不稳定；DMC/DNMC 谱相同但响应方向大异；控制任务方差后与梯度对齐相关性不再唯一 → 不声称预测迁移
+  - **Activation**: Green's operator, multitask RNN, perturbation routing, task reuse, matrix-free randomized SVD, adjoint recurrence, response geometry, Lyapunov complement, NeurReps 2026
 
+### How much of fly walking is written in the wiring?
+- [[connectome-wiring-specificity-null-models]] - 果蝇连接组固定权重模型的预注册嵌套重连零模型检验：节律是泛化的（重连网络更节律），拮抗肌协调才是布线特异的——Sherrington 交互神经支配直接写入连接组 (arXiv: 2609.38665)
+  - 核心发现：真实 MaleCNS 拮抗分数 S=0.312 超过全部 40 个重连网络（最高 0.144），MANC 0.173/0.128 vs ≤0.084，两个独立连接组同向复制；交互神经支配指数真实 0.48/0.38 vs 所有重连 <0；跨池重分配 premotor 输入（强度中位变化 <4%）即废除协调
+  - 方法论模式：①嵌套零模型族（density→cell role→degree→leg block→lineage block→leg×lineage，每族 5 网）逐级保留结构；②仅 3 个全局参数扫描后冻结，解剖学接口（DNg100 输入/运动神经元池输出）；③预注册声明水平+60s 新噪声 20 次确认+精确再生验证（4,692 记录）；④协调集中位于 thorax–coxa 关节且持续数分钟
+  - 可迁移教训：连接组模型产生某行为 ≠ 布线特异；测布线特异性要看协调（模式形成）而非节律；修剪充分性测试与重连特异性测试回答不同问题
+  - **Activation**: connectome null models, rewired networks, wiring specificity, reciprocal innervation, antagonist coordination, Drosophila walking, pre-registered criteria, fixed-weight rate model, MaleCNS, MANC
 ## 2026-10-02 - Number Theory × Quantum (Cron Job)
 
 ### The twisted convolution identity and ghost r-SICs from finite quantum dilogarithms
