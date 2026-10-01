@@ -1,3 +1,18 @@
+## 2026-10-01 - Systems Engineering Research (Cron Job)
+
+### Control and Estimation Co-Design via Envelope-Theorem Gradients
+- [[contest-envelope-codesign]] - plant/传感/执行/估计器放入单一两阶段优化，设计梯度直接从内层SDP对偶变量经包络定理读出，免KKT隐式微分 (arXiv: 2609.36090)
+  - 包络梯度：∇θJ*=∂θL(z*,μ*,S*,θ)，正则条件(A.I)-(A.IV)下精确；唯一性破坏时退化为Clarke次梯度（下降方向仍有效）——方法优雅降级不崩溃；复杂度O(rx²) vs KKT隐式微分O(rx⁶)
+  - 三内层变体统一：LQG控制/估计SDP互为转置对偶（Jacobians从LMI对偶块读）；H∞最小-γ对偶集值需fixed-γ+epigraph slack恢复精确；非线性eKF信息状态线性化→凸MPC，梯度从costates读（近似）
+  - HVDC案例：协同droop调参+4传感器≈固定droop+15传感器的估计质量，砍73%遥测——纯传感器选择无法表述此权衡（droop重塑估计器跟踪的动力学）；四案例J_sc降幅5.6%-39.5%
+  - **Activation**: control co-design, estimation co-design, sensor placement, actuator design, bilevel optimization, envelope theorem, SDP dual gradient, LQG, H-infinity, sensor selection, information architecture, MDO
+
+### Invariance is Compositional for Continuous-time Systems: From Sleekness to Lebesgue Density
+- [[compositional-invariance-lebesgue]] - 首个双向（充要）组合不变性定理：互联系统全局安全⟺各子系统在邻居耦合输入下局部安全，验证复杂度从R^n不可数边界点降至2N标量检查 (arXiv: 2609.36539)
+  - 技术核心：tangential Lebesgue-density弱于经典sleekness（ sleek⟹稠密，逆命题为假，凸集免费），足以保证∏T_Ki=T_K，从而同步局部序列合成全局等价
+  - 100-DGU直流微电网（k=6环拓扑）：每DGU标量一阶droop模型，K_i=[47.2,48.6]V电压带，200个标量不等式完成全网安全证书，复杂度线性于N且与拓扑无关；此前后所有assume-guarantee框架只有充分方向
+  - 诊断能力：局部检查失败⟹全局必不安全且可定位故障子系统——充分性-only框架无此能力；限制：需Cartesian积安全集+Lipschitz动力学，耦合集取邻居整个安全集可能保守
+  - **Activation**: forward invariance, compositional safety, interconnected systems, assume-guarantee, tangent cone, contingent cone, sleekness, networked control, DC microgrid, safety certificate, scalable verification, CPS safety
 ## 2026-10-01 - Systems Engineering x Quantum (Cron Job)
 
 ### Fewer Qubits, Better Choices: Coupling-Aware Sub-QUBO Selection for Quantum-Assisted Traffic Zone Partitioning
