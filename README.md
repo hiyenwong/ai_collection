@@ -4,9 +4,9 @@
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
 <<<<<<< Updated upstream
-[![Skills](https://img.shields.io/badge/Skills-13382-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-13424-purple.svg)](./collection/skills/)
 =======
-[![Skills](https://img.shields.io/badge/Skills-13382-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-13424-purple.svg)](./collection/skills/)
 >>>>>>> Stashed changes
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
@@ -130,7 +130,7 @@ Install agents and skills directly from Claude Code using the **Plugin Marketpla
 | [Tsodyks-Markram Chaotic Dynamics](collection/skills/tsodyks-markram-chaotic-dynamics/) | - | Chaotic dynamics in Tsodyks-Markram short-term synaptic plasticity via Shilnikov homoclinic bifurcation | short-term synaptic plasticity, Tsodyks-Markram, Shilnikov bifurcation, chaotic dynamics | ✅ |
 | [Spike Timing Neuronal Assemblies](collection/skills/spike-timing-neuronal-assemblies/) | - | STDP-driven formation and spontaneous reinforcement of neuronal assemblies with shared stimulus preferences | neuronal assembly, STDP, spike timing, noise correlation | ✅ |
 
-[View all 13382 skills →](./collection/skills/)
+[View all 13424 skills →](./collection/skills/)
 
 ### Version Check Feature
 
