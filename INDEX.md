@@ -1,3 +1,17 @@
+## 2026-10-02 - Neuroscience Research (Cron Job)
+
+### Large Language Model-Guided Evolutionary Discovery of Native Neural Architectures for Spiking Sequence Modeling
+- [[openarchevo-native-snn-discovery]] - OpenArchEvo：LLM 在开放程序空间中进化可执行 SNN 架构代码（受接口/因果性/脉冲投影三重约束），三视图表征（代码 CodeBLEU + 设计意图 embedding + 21 维行为指纹）同时支撑新颖性估计与性能预测，TabPFN-2.5 代理 + NSGA-II 双目标（预测性能×新颖性）分配昂贵训练预算 (arXiv: 2609.40258)
+  - 核心发现：ANN→SNN 直接移植欠用脉冲计算（97 对架构 ANN/SNN 排名仅部分一致）；发现的 NeuroGate 在 WikiText-103 达 26.4 PPL（超 ANN DeltaNet 的 27.5），LoopMem 估算算术能耗比稠密 Transformer 低 50.6×；发现机制=脉冲活动依赖的递归状态更新控制与输出门控
+  - 可复用管线：可执行约束检查（18% 编译失败+3% 因果检查拦截）→ 指纹近重复筛除（30%）→ 代理预测 → 多岛进化内环/训练外环，全程 132 V100-days；SWSP（二值脉冲的样本级模式计数）+ FireRate + 5 种零成本代理构成 7 个初始化时探针，代理研究 Kendall τ 从 0.46 升至 0.76
+  - **Activation**: LLM-guided architecture search, spiking sequence modeling, evolutionary NAS, open program space, three-view novelty, behavioral fingerprint, TabPFN surrogate, NSGA-II, spike-activity-dependent gating, native SNN architecture
+
+### Arithmetic of the sync basin for pulse-coupled oscillators
+- [[arithmetic-sync-basin-pulse-coupled-oscillators]] - 脉冲耦合振荡器同步盆地的精确数论结构：线性充电曲线（γ=0，泄漏型与活跃型动力学边界）处同步概率由 N 的素因子分解控制——素数 N 有闭形式 P_sync=1−1/N^N，一般 N 归约为均匀整数"词"计数 P_sync=A_{N,1}/N^N，复合 N 渐近 1−P_sync∼C_m·N^{−(m−1)}（m=最小素因子），为分形/riddled/tentacled 盆地图谱新增"算术盆地" (arXiv: 2609.01668)
+  - 等大小原理（EXACT）：线性充电下 Poincaré 回归映射为纯平移，逃逸吸收要求各簇脉冲分数相等 → 非同步结局仅为均分 N 的等簇，结局数=d(N)（N=100 时 9 个 vs 先验 1.9×10⁸ 个划分）；凸充电 γ<0（对应二次/指数 IF 神经元加速发放区）N≤5 有精确有理函数解，γ=0 处全部解跳跃突变
+  - 方法论模式：①连续盆地体积→离散字计数（动力学仅依赖小数部分秩序，整数"词"上结局恒定）；②素数 N 仅剩全单例逃逸（体积 1/N^N）；③复合 N 的 lpf(N) 决定主导非同步信道（N=15: sync 99.785%、(5)³ 2.14e−3）；④算术结构是充电非线性临界现象而非脉冲耦合普遍性质（fragility is the message）
+  - **Activation**: pulse-coupled oscillators, synchronization basin, prime factorization sync, equal-size principle, convex charging, integrate-and-fire, cluster states, return map translation, exotic basin geometry, cardiac rhythm robustness
+
 ## 2026-10-02 - Number Theory × Quantum (Cron Job)
 
 ### The twisted convolution identity and ghost r-SICs from finite quantum dilogarithms
