@@ -1,3 +1,17 @@
+## 2026-10-01 - Neuroscience Research V (Cron Job)
+
+### Causal pieces: analysing and improving spiking neural networks piece by piece
+- [[causal-pieces-snn-expressivity]] - SNN 表达力理论框架：输入×参数空间按"同一子网络引发输出脉冲"分区为 causal pieces，piece 数给出近似误差下界 ‖Φ−g‖>c·ζ⁻²·p^(−1/2)（对任意不连续行为有效），是首个不要求正权重、不回避脉冲不连续性的 SNN 表达力度量 (arXiv: 2504.14015)
+  - 反直觉初始化洞见：非零均值权重分布才能最大化 piece 数（Sparre Andersen 随机游走定理给出大方差下界），文献普遍借用 ANN 零均值初始化恰恰次优；初始化时训练样本落入的 piece 数与最终精度强相关（log-linear r=0.70→0.92），差初始化训练后 piece 数反而下降、难恢复
+  - 正权重 SNN（仿生，皮层 80% 兴奋性）：每神经元权和>阈值即全局 Lipschitz→覆盖数泛化界；lognormal 正初始化+线性读出在 Yin-Yang/MNIST/EuroSAT 达全连接 ANN 水平；piece 数随深度 logistic 饱和而非 ReLU 式指数
+  - **Activation**: causal pieces, SNN expressivity, spiking neural network, single-spike coding, TTFS, nLIF, weight initialization, Sparre Andersen, Lipschitz continuity, positive weights, covering number, approximation bound, spike-time discontinuity
+
+### Better Behavioral Prediction, More Faithful Model Ablations? Evidence from Sequential Choice
+- [[ablation-response-fidelity-behavioral-models]] - 消融忠实性验证协议：合成 bandit（已知生成器）证明"预测更好"≠"消融响应更忠实"——LLaMA/GRU/Transformer donor 奖励替换响应仅 0.08-0.46 nats 而 oracle 2.067；RW 预测最差但响应最忠实（响应向量误差 0.407 vs 0.501-0.592）(arXiv: 2609.36097)
+  - 三操作必须区分：G=choice-only 重训练收益 / donor derangement 置换（固定预测器 teacher-forced 一步评估）/ 带符号概率响应向量误差 E[½Σ|v_p−v_o|]（不允许跨动作抵消）；spatial 任务中 LLaMA 反而全面胜 RW——排序是任务×管线经验属性，无必然灵活性-忠实性权衡
+  - 可复用校准流程：报告 intact+perturbed 绝对值而非相对百分比；有受控模拟器时同 histories 同操作下对比概率响应+同族 fitted 参考+简单 pooled 基线；"模型不看 X 也预测好→人不依赖 X"类推断的通用反例
+  - **Activation**: input ablation, behavioral model validation, response fidelity, oracle calibration, donor replacement, sequential choice, cognitive modeling, Centaur, LLaMA behavioral prediction, reward learning, mechanism recovery, prediction vs explanation
+
 ## 2026-10-01 - Systems Engineering x Quantum: Chiplet Compiler (Cron Job)
 
 ### QBX: A Compiler for 2-local Qubit Hamiltonian Simulation on Quantum Chiplets
