@@ -1,3 +1,17 @@
+## 2026-10-01 - OpenAI Research (Cron Job)
+
+### GPT-Red: Unlocking Self-Improvement for Robustness
+- [[gpt-red-self-play-red-teaming]] - OpenAI 自动化红队模型 GPT-Red：自博弈 RL 中攻击者与多样防御者池同时训练（零和奖励：攻击者以"诱发有效失败"得分，防御者以"抵御攻击+完成原任务"得分），防御者变强迫使攻击者发现更强攻击；生成的对抗数据注入生产模型训练（GPT-5.6 训练后对 GPT-Red 直接注入失败率仅 0.05%），攻击者模型与部署隔离只转移鲁棒性 (https://openai.com/index/unlocking-self-improvement-gpt-red/)
+  - 关键协议：每个场景环境显式 threat model（攻击者可控面+成功判据）；评估四件套——held-out 新场景泛化（间接注入 arena 84% vs 人类 13%）、simulate-then-attack 实机迁移（Vendy 售货机案例全部 3 个恶意目标达成）、held-out 数据外泄套件（比 prompted 基线更有效且更省 token）、能力保持检查（鲁棒性≠拒答，通用能力不受损）
+  - 发现新攻击类"Fake Chain-of-Thought"：GPT-5.1 上 >95% 成功率 → GPT-5.6 Sol 上 <10%，展示红队-加固飞轮的单调收敛
+  - **Activation**: automated red-teaming, self-play adversarial training, prompt injection robustness, GPT-Red, attacker-defender RL, adversarial data generation
+
+### Towards safety cases for frontier AI training
+- [[frontier-training-safety-cases]] - OpenAI 安全案例方法论：借鉴航空/核电的证据驱动安全论证，要求在继续任何前沿 RL 训练运行之前完成结构化安全文档；技术栈三支柱=对齐（模型不想做未授权行为）+遏制（做了也难越界）+监控（伤害前捕获）(https://openai.com/index/towards-safety-cases-for-frontier-ai-training/)
+  - 对齐训练护栏五件套：自动化数据集审查（agent 修复可被 reward hack 的 RL 环境）+人工数据集审查+grader 调优（惩罚环境利用行为）+prior run 追踪分析（分类器验证 grader）+对齐度量评估
+  - 核心立场：安全案例是"论证"而非合规清单——每条风险声明必须溯源到可测量证据（评估/分析/红队结果）；能力涌现使过往安全不自动迁移，每个 run 须重新论证
+  - **Activation**: safety case, frontier training safety, RL training governance, pre-training safety review, alignment containment monitoring, evidence-based safety argument
+
 ## 2026-10-01 - Neuroscience Research V (Cron Job)
 
 ### Causal pieces: analysing and improving spiking neural networks piece by piece
