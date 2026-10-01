@@ -1,3 +1,12 @@
+## 2026-10-01 - Systems Engineering x Quantum: Chiplet Compiler (Cron Job)
+
+### QBX: A Compiler for 2-local Qubit Hamiltonian Simulation on Quantum Chiplets
+- [[qbx-chiplet-hamiltonian-compiler]] - 首个面向chiplet架构的2-local哈密顿量模拟编译器：Pauli字符串按Trotter置换自由度聚合成多目标受控门经highway执行，ILP/METIS分层映射最小化跨片通信 (arXiv: 2609.33997)
+  - 核心洞察：同类型(XX/YY/ZZ)共享qubit的2-local Pauli strings可聚合为Pauli set（Trotter公式置换不变），Pauli block按ZZ→YY→XX排序最大化highway复用；两个复用定理——control-empty（目标间门隔开即可复用）与cross-Y（控制上恰一个Y gate时Y+X修正复用）均有态矢量正确性证明
+  - 五级流水线：Pauli图分割（ILP/CPLEX→METIS兜底）→ set orchestrator（二次分配ILP，通信矩阵×chiplet距离）→ Pauli block调度（O(Nc·m·n)贪心，Steiner树Mehlhorn算法选highway路径）→ SABRE片内映射 → 电路生成；关键工程决策：调度必须在映射之后（否则highway路径冲突）
+  - 结果：深度较Qiskit降8.9×、较t|ket⟩降53.2×、较MECH降1.69×（eff-CNOT 1.08×）；较2QAN快19.54×且深度低1.13×（2QAN的O(m⁴)调度在24h超时）；SABRE映射产生2.54×跨片通信量/2.66×更大距离；异构错误成本模型 eff_CNOT = #on + 7.4·#cross + 0.7·#meas
+  - **Activation**: chiplet architecture, quantum compiler, Hamiltonian simulation, Pauli string aggregation, highway mechanism, multi-target controlled gates, qubit mapping, METIS partitioning, quadratic assignment, Steiner tree, QAOA compilation, Ising model, heterogeneous coupling cost, modular quantum computing
+
 ## 2026-10-01 - Systems Engineering Research (Cron Job)
 
 ### Control and Estimation Co-Design via Envelope-Theorem Gradients
