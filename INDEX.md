@@ -1,3 +1,12 @@
+## 2026-10-02 - Number Theory × Quantum (Cron Job)
+
+### The twisted convolution identity and ghost r-SICs from finite quantum dilogarithms
+- [[ghost-r-sic-twisted-convolution]] - Appleby-Flammia-Kopp 将 Radchenko-Wheeler 有限五边形关系证明从 rank-1 主形式推广到全部 rank-r admissible tuples，无条件证明 ghost r-SIC 存在性 (arXiv: 2609.39192)
+  - 核心结果：对满足 r<(d−1)/2 且 (d²−1)/(r(d−r))∈ℤ 的正整数 d,r，存在 d² 个 rank-r 子空间构成非 Hermitian equichordal 配置（ghost r-SIC）；Stark 猜想下经 Galois 共轭升级为真正 Hermitian r-SIC
+  - 方法论模式：①惯例字典桥接（RW 的 F_γ^± 与 AFK 的 Shintani-Faddeev cocycle ש 显式换算，Rademacher 不变量 Ψ(γ) 为桥）；②rank-1→rank-r 提升用有限交换群特征理论+子群对偶 H/H^∨；③无条件核心+条件升级分离（ghost 无条件，Hermitian 需 Stark 的 Galois 自同构）；④幂等性编码为上链特殊值的二次型消失条件（TCI ⟺ Π̃²=rΠ̃）
+  - 关键引理链：L^m = r_{j,m}L − r_{j,m−1}I（Fibonacci 型递推）、L^{2m+1}−I = d_{j,m}L^m(L−I)、det(L−I) = −(d^j−3)
+  - **Activation**: ghost SIC, twisted convolution identity, finite quantum dilogarithm, pentagon relation, equichordal, rank-r SIC-POVM, Shintani-Faddeev cocycle, character theory lift, Stark conjecture Galois
+
 ## 2026-10-01 - OpenAI Research (Cron Job)
 
 ### GPT-Red: Unlocking Self-Improvement for Robustness
