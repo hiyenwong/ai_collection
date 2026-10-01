@@ -1,5 +1,11 @@
 ## 2026-10-02 - Neuroscience Research (Cron Job)
 
+### Association Profile Conditioning in a Set-Temporal Transformer for Cross-Session Intracortical Motor Decoding
+- [[apst-association-profile-frozen-bci]] - APST：冻结权重的跨会话颅内运动解码——从少量带标签校准试验闭式估计每单元 4-D 行为关联轮廓（方向调谐 cos/sin 或 SVD 压缩 EMG/速度关联，统一 4 维接口），经 FiLM（零初始化）条件化置换不变集合注意力编码器 + 滑窗因果 Transformer 流式解码，无需目标会话梯度 (arXiv: 2609.39080)
+  - 核心结果：DANDI688 held-out 速度 R² 0.78/0.81（Sub-C/Sub-M）vs activity-only 0.40/0.58；FALCON M1/M2/H1 = 0.65/0.42/0.44，M2、H1 为无梯度方法最优；8 试验校准超 16 试验 RNN 微调，校准成本 <22M MACs vs 微调 383–1195 亿 forward MACs（5 个数量级）；最远会话（138 天后）0.58 vs RNN-FT 0.48
+  - 方法论模式：①闭式轮廓 <15k ops（方向调谐 vs 高维 SVD 投影到源关联 V₄ 基，同一 4-D 接口跨任务共享）；②双条件位点（校准期缓存身份 + 流式 token 拼接），adaLNZero 零初始化使 FiLM 为纯残差；③profile-shuffle 消融跌破 activity-only（0.00/0.03）证明轮廓是单元级身份而非会话级摘要；④source 训练期 whole-unit dropout + 集合注意力槽查询处理任意单元集漂移；⑤滑窗 KV cache 有界流式状态 O(R)
+  - **Activation**: cross-session intracortical decoding, frozen-weight BCI, association profile, FALCON benchmark, few-shot calibration, unit drift, permutation-invariant set attention, directional tuning, SVD-compressed profile, sliding-window causal transformer
+
 ### Large Language Model-Guided Evolutionary Discovery of Native Neural Architectures for Spiking Sequence Modeling
 - [[openarchevo-native-snn-discovery]] - OpenArchEvo：LLM 在开放程序空间中进化可执行 SNN 架构代码（受接口/因果性/脉冲投影三重约束），三视图表征（代码 CodeBLEU + 设计意图 embedding + 21 维行为指纹）同时支撑新颖性估计与性能预测，TabPFN-2.5 代理 + NSGA-II 双目标（预测性能×新颖性）分配昂贵训练预算 (arXiv: 2609.40258)
   - 核心发现：ANN→SNN 直接移植欠用脉冲计算（97 对架构 ANN/SNN 排名仅部分一致）；发现的 NeuroGate 在 WikiText-103 达 26.4 PPL（超 ANN DeltaNet 的 27.5），LoopMem 估算算术能耗比稠密 Transformer 低 50.6×；发现机制=脉冲活动依赖的递归状态更新控制与输出门控
