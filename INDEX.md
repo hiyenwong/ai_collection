@@ -1,3 +1,11 @@
+## 2026-10-02 - Number Theory, Statistics, Mathematics × Quantum (Cron Job)
+
+### Uniqueness, Cramér–Rao Efficiency and Concentration Bounds for Quantum U-Statistics
+- [[quantum-u-statistics-efficiency]] - Dasgupta-Warsi-Chatterjee 证明量子 U-统计量是多项式泛函估计中唯一无偏置换不变估计量，且渐近达到量子 Cramér–Rao 极限——无需自适应测量或预层析 (arXiv: 2609.08745)
+  - 核心结果：①边际核-梯度等价 ∇f(ρ)=m·O^sym_{B,1}（置换不变核的偏迹=泛函导数）；②唯一性：置换不变算子空间由 {A^⊗n} 张成，任意两个无偏不变扩展之差恒为零；③方差展开 Var(U_{n,k})=Var(∇f)/n+O(1/n²)，首项恰为多参数 SLD QCRB；④Bures χ² 散度估计：λ_min(σ)≥δ 谱条件充分不必要，弱化为 Var(∇χ²_B) 有界（Lyapunov 积分表示 χ²_B=2∫Tr[(ρe^{−τσ})²]dτ−1）
+  - 有限样本理论：交叠子集映射到相交图 + Cayley 生成树计数 r^{r−2} 控制高阶连通矩 → 方差敏感 MGF 界 → 闭式 Bernstein 型集中不等式；中偏差原理（MDP）：εₙ=n^{−α} (1/3<α<1/2) 时尾部纯高斯、仅由 QFI Var(∇f) 支配；数值稳定测试参数 s*=ε/(√(nV)+2√(Aε)+2Bε) 有理化避免灾难性消去
+  - **Activation**: quantum U-statistic, Cramér-Rao efficiency, permutation-invariant kernel, marginal kernel gradient, Hoeffding decomposition, Bernstein concentration, moderate deviation principle, Bures chi-square divergence, quantum Fisher information, polynomial functional estimation
+
 ## 2026-10-02 - Neuroscience Research (Cron Job)
 
 ### Association Profile Conditioning in a Set-Temporal Transformer for Cross-Session Intracortical Motor Decoding
