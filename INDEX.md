@@ -1,3 +1,25 @@
+## 2026-10-03 - Economics, Investment × Quantum (Cron Job)
+
+### On the generic structures of the protocols for quantum auction and quantum summation and their relation
+- [[quantum-auction-summation-reductions]] - 量子密封拍卖与量子安全求和相互归约：指数竞赛密钥 K=U^(1/x) 使清盘价满足 Pr[p<m]=(m/B)^S 只依赖总和，O(S²log(1/δ)) 轮最优（相干访问 O(Slog(1/δ))）；反向复合密钥 κ=B_max·b+π(i) 的阈值析取搜索定位价格+中标者 (arXiv: 2606.27693)
+  - 核心洞见：①两类 SMC 任务共享同一运算结构（阈值指示函数上的求和预言机），归约是结构性的不保成本；②泄漏陷阱——Shi & Li 无拍卖行协议析取子程序按原文泄露占用计数（m=2 时 31.7% 轮公开值为 00，实测硬件反例），一行标签修改修复；③公开中标者身份=泄露全部输入；④再编码攻击：查询消耗量子编码，投标方可无检测调整有效出价，固定查询集（2L−1 阈值）恢复密封性
+  - 硬件验证（ibm_kingston 156q）：N=4 五个出价向量含平局全部正确；470 场拍卖 Bell 轮单次宇称错误 12.4–16.7% 但 16-shot 多数投票 3354 轮全对，ML 95% CI 全含真值 S；去相干对照证明析取查询依赖傅里叶相位相干性
+  - **Activation**: quantum auction, quantum summation, secure multi-party computation SMC, sealed-bid auction, exponential race, threshold disjunction, auctioneer-free auction, amplitude estimation, composite key search, re-encoding attack
+
+## 2026-10-03 - Neuroscience Research (Cron Job)
+
+### Inferring Multi-Timescale Neural Dynamics with Switching Linear Dynamical Systems
+- [[mts-slds-multi-timescale-switching]] - MTS-SLDS：从群体记录中恢复 regime 特定潜态时间尺度——多滞后矩初始化（Poisson log 矩转换 Buesing 谱学习）+ regime-conditioned Laplace EM（每 regime 独立高斯状态矩，防止跨 regime 统计混合），特征值直接读出 τ=-Δt/log|λ| (arXiv: 2610.01786)
+  - 核心发现：轨迹重构与时间尺度恢复可解离——切换 Poisson 实验两者 held-out R²=0.82 相当时，MTS-SLDS 时间尺度误差 11% vs SLDS 44%，regime 准确率 0.95 vs 0.54；V4 固视三时间尺度 26.4/49.5/120.2ms（ACF 池化把两个快带压成一个有效衰减）；S2 到达运动 regime 188ms（主动）vs 99ms（被动），与行为衰减 168/86ms 对应而 SLDS 无法区分（117/108ms）
+  - 方法论模式：①A_k 更新矩差异是关键——RC 版 M_{t,k}=Σξ_t(i,k)E_{q^ik}[x_t x_{t-1}⊤]（期望以 regime 对为条件）vs 因子化版只有标量权重；②多滞后初始化：K-means 滑窗 ACF 描述子临时分割 → Poisson 元素级 log(1+Cov/μμ) 矩转换 → 同 regime 滞后区间正则化回归；③判别式验证：合成 ground truth 谱 MAPE + 打乱对照 + 行为时间相关
+  - **Activation**: neural timescales, switching linear dynamical systems, regime-conditioned Laplace EM, multi-lag moment initialization, Poisson moment conversion, eigenvalue timescale recovery, V4 fixation, somatosensory reaching, trajectory reconstruction dissociation
+
+### Spiking neural networks for streaming qubit readout
+- [[snn-streaming-qubit-readout]] - 流式 SNN 超导量子比特读出：LIF 网络按 100-200ns 时间块顺序处理频率复用 IQ 迹线、在读出窗口内持续更新 5 比特指派（F_geom 0.9084 vs 匹配滤波 0.8960、全迹 ANN 0.9100），QAT 8-bit 仅损 5e-4，hls4ml 综合每步 31-52ns < 100ns 块时长实现采集期间连续推理 (arXiv: 2610.02129)
+  - 核心模式：①局部 L5 + 累积 C5 分块特征（ADC 端平均）；②LIF 可学习 β + 减法 reset + 膜积累无衰减读出，bitwise BCE，surrogate gradient；③QAT 累加器必须截断+wrap（rounding/saturation 拖慢前向 pass）——ap_fixed<18,8>；④64-dim SNN 串扰矩阵最干净（最大非对角 0.0130）；⑤q2 是数据集内在瓶颈（F_22≈0.48）不可 ML 消除
+  - 诚实披露：C5 增益主要是容量效应（参数量）而非信息论内容；延迟报告仅含 SNN 内核不含解调/传输；流式 SNN 准确率天花板略低于全迹 ANN 是换实时性的权衡
+  - **Activation**: streaming qubit readout, spiking neural networks FPGA, superconducting qubits, frequency-multiplexed readout, crosstalk correction, hls4ml, quantisation-aware training, geometric mean assignment fidelity, QEC real-time syndrome
+
 ## 2026-10-02 - Number Theory, Statistics, Mathematics × Quantum (Cron Job)
 
 ### Uniqueness, Cramér–Rao Efficiency and Concentration Bounds for Quantum U-Statistics
