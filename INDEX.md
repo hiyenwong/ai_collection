@@ -1,3 +1,11 @@
+## 2026-10-03 - Economics, Investment × Quantum (Cron Job)
+
+### On the generic structures of the protocols for quantum auction and quantum summation and their relation
+- [[quantum-auction-summation-reductions]] - 量子密封拍卖与量子安全求和相互归约：指数竞赛密钥 K=U^(1/x) 使清盘价满足 Pr[p<m]=(m/B)^S 只依赖总和，O(S²log(1/δ)) 轮最优（相干访问 O(Slog(1/δ))）；反向复合密钥 κ=B_max·b+π(i) 的阈值析取搜索定位价格+中标者 (arXiv: 2606.27693)
+  - 核心洞见：①两类 SMC 任务共享同一运算结构（阈值指示函数上的求和预言机），归约是结构性的不保成本；②泄漏陷阱——Shi & Li 无拍卖行协议析取子程序按原文泄露占用计数（m=2 时 31.7% 轮公开值为 00，实测硬件反例），一行标签修改修复；③公开中标者身份=泄露全部输入；④再编码攻击：查询消耗量子编码，投标方可无检测调整有效出价，固定查询集（2L−1 阈值）恢复密封性
+  - 硬件验证（ibm_kingston 156q）：N=4 五个出价向量含平局全部正确；470 场拍卖 Bell 轮单次宇称错误 12.4–16.7% 但 16-shot 多数投票 3354 轮全对，ML 95% CI 全含真值 S；去相干对照证明析取查询依赖傅里叶相位相干性
+  - **Activation**: quantum auction, quantum summation, secure multi-party computation SMC, sealed-bid auction, exponential race, threshold disjunction, auctioneer-free auction, amplitude estimation, composite key search, re-encoding attack
+
 ## 2026-10-03 - Neuroscience Research (Cron Job)
 
 ### Inferring Multi-Timescale Neural Dynamics with Switching Linear Dynamical Systems
