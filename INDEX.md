@@ -1,3 +1,19 @@
+## 2026-10-03 - Neuroscience Research (Cron Job)
+
+### Stochastic Dynamics of Large-Scale Motif-Embedded Spiking Neuronal Networks
+- [[motif-embedded-spiking-networks]] - 局部motif排列与全局拓扑（ER/SF）如何共同塑造噪声驱动相干共振的因子分解仿真框架 (arXiv: 2610.00616, 配套 2610.00597)
+  - 四架构因子设计（ER/ERM/SF/SFM，突触数严格匹配）：motif嵌入使相干共振SNR*提升且最优噪声D*左移，ER背景下增益更大（+10.7% vs +2.9%），SF背景绝对相干远超ER（SNR*≈74 vs 29）
+  - Rewiring证明排列≠强度：保留突触数量/权重重排M2/M3c使相干性最大下降，重排M3a/M4反而提升；hub消融三元组（hub/node/edge匹配对照）证明SF优势部分依赖hub完整性（SNR* 20→11）
+  - 密度vs强度不对称：提高连接概率使ER/SF收敛（同质化），提高耦合强度放大两者分离；M2(双向对)>M3c(二型循环FFL)>M3b>M3a>M4的motif相干排序跨拓扑稳定，M2/M3c高频双脉冲与高相干关联
+  - **Activation**: network motifs, coherence resonance, spiking neuronal networks, scale-free topology, izhikevich, hub ablation, motif rewiring, stochastic dynamics, signal transmission
+
+### MEG-Mamba: A Scalable State-Space Foundation Model for Magnetoencephalography
+- [[meg-mamba-ssm-foundation]] - 首个Mamba-3骨干的MEG生成式基础模型：92-token因果tokenizer+parcel/session嵌入+冻结骨干LoRA刺激条件化 (arXiv: 2610.00746)
+  - 效率数量级提升：22 vs 400 GPU-hours预训练、4s vs 0.32s上下文，生成保真度超越MEG-GPT（band-power相关r≥0.93全频段）；3.4M参数、87h Cam-CAN静息态
+  - 可解释嵌入：parcel嵌入PCA无监督恢复皮层空间组织，session嵌入（token unigram/bigram特征MLP）编码被试年龄且支持新记录零样本推理
+  - 任务条件化：multi-hot boxcar刺激嵌入+零初始化LoRA rank16（仅167k参数=5%）注入Mamba输入/输出投影，对预训练和微调均未见的被试生成逼真任务诱发时频响应
+  - **Activation**: meg foundation model, mamba state-space, neural signal tokenizer, autoregressive generation, lora conditioning, generative fidelity, brain dynamics simulation, session embedding
+
 ## 2026-10-03 - Economics, Investment × Quantum (Cron Job)
 
 ### On the generic structures of the protocols for quantum auction and quantum summation and their relation
