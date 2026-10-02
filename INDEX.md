@@ -1,3 +1,17 @@
+## 2026-10-03 - Neuroscience Research (Cron Job)
+
+### Inferring Multi-Timescale Neural Dynamics with Switching Linear Dynamical Systems
+- [[mts-slds-multi-timescale-switching]] - MTS-SLDS：从群体记录中恢复 regime 特定潜态时间尺度——多滞后矩初始化（Poisson log 矩转换 Buesing 谱学习）+ regime-conditioned Laplace EM（每 regime 独立高斯状态矩，防止跨 regime 统计混合），特征值直接读出 τ=-Δt/log|λ| (arXiv: 2610.01786)
+  - 核心发现：轨迹重构与时间尺度恢复可解离——切换 Poisson 实验两者 held-out R²=0.82 相当时，MTS-SLDS 时间尺度误差 11% vs SLDS 44%，regime 准确率 0.95 vs 0.54；V4 固视三时间尺度 26.4/49.5/120.2ms（ACF 池化把两个快带压成一个有效衰减）；S2 到达运动 regime 188ms（主动）vs 99ms（被动），与行为衰减 168/86ms 对应而 SLDS 无法区分（117/108ms）
+  - 方法论模式：①A_k 更新矩差异是关键——RC 版 M_{t,k}=Σξ_t(i,k)E_{q^ik}[x_t x_{t-1}⊤]（期望以 regime 对为条件）vs 因子化版只有标量权重；②多滞后初始化：K-means 滑窗 ACF 描述子临时分割 → Poisson 元素级 log(1+Cov/μμ) 矩转换 → 同 regime 滞后区间正则化回归；③判别式验证：合成 ground truth 谱 MAPE + 打乱对照 + 行为时间相关
+  - **Activation**: neural timescales, switching linear dynamical systems, regime-conditioned Laplace EM, multi-lag moment initialization, Poisson moment conversion, eigenvalue timescale recovery, V4 fixation, somatosensory reaching, trajectory reconstruction dissociation
+
+### Spiking neural networks for streaming qubit readout
+- [[snn-streaming-qubit-readout]] - 流式 SNN 超导量子比特读出：LIF 网络按 100-200ns 时间块顺序处理频率复用 IQ 迹线、在读出窗口内持续更新 5 比特指派（F_geom 0.9084 vs 匹配滤波 0.8960、全迹 ANN 0.9100），QAT 8-bit 仅损 5e-4，hls4ml 综合每步 31-52ns < 100ns 块时长实现采集期间连续推理 (arXiv: 2610.02129)
+  - 核心模式：①局部 L5 + 累积 C5 分块特征（ADC 端平均）；②LIF 可学习 β + 减法 reset + 膜积累无衰减读出，bitwise BCE，surrogate gradient；③QAT 累加器必须截断+wrap（rounding/saturation 拖慢前向 pass）——ap_fixed<18,8>；④64-dim SNN 串扰矩阵最干净（最大非对角 0.0130）；⑤q2 是数据集内在瓶颈（F_22≈0.48）不可 ML 消除
+  - 诚实披露：C5 增益主要是容量效应（参数量）而非信息论内容；延迟报告仅含 SNN 内核不含解调/传输；流式 SNN 准确率天花板略低于全迹 ANN 是换实时性的权衡
+  - **Activation**: streaming qubit readout, spiking neural networks FPGA, superconducting qubits, frequency-multiplexed readout, crosstalk correction, hls4ml, quantisation-aware training, geometric mean assignment fidelity, QEC real-time syndrome
+
 ## 2026-10-02 - Number Theory, Statistics, Mathematics × Quantum (Cron Job)
 
 ### Uniqueness, Cramér–Rao Efficiency and Concentration Bounds for Quantum U-Statistics
