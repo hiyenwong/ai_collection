@@ -1,4 +1,27 @@
 
+## 2026-10-02 - arXiv Paper Skills (Cron Job)
+
+### Multi Agent Rl
+
+- [[arxiv-2610-01161-my-fault-self-diagnosis-as-credit-assignment]] - My FAULT: Self-Diagnosis as Credit Assignment in Self-Evolving Agentic RL (arXiv: 2610.01161) (utility=0.85)
+- [[arxiv-2610-01756-sok-decentralized-agent-economic-infrastructure]] - SoK: Decentralized Agent Economic Infrastructure (arXiv: 2610.01756) (utility=0.80)
+- [[arxiv-2609-39143-refcon-iterative-refinement-contrastive-memory]] - RefCon: Iterative Refinement and Contrastive Memory Extraction for Context-Evolving Agent (arXiv: 2609.39143) (utility=0.75)
+
+### Ai Safety Eval
+
+- [[arxiv-2610-00972-veriharness-scaling-agentic-verification]] - VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks (arXiv: 2610.00972) (utility=0.80)
+- [[arxiv-2609-39788-safety-of-latent-communication-in-multi-agent-systems]] - Safety of Latent Communication in Multi-Agent Systems (arXiv: 2609.39788) (utility=0.80)
+
+## 2026-10-01 - arXiv Paper Skills (Cron Job)
+
+### Multi Agent Rl
+
+- [[arxiv-2609-39045-rsigame-autonomous-agentic-game-development-with-r]] - RSIGame: Autonomous Agentic Game Development with Recursive Self-improvement (arXiv: 2609.39045) (utility=1.00)
+- [[arxiv-2609-38662-collabflow-recursive-self-improvement-of-agent-col]] - CollabFlow: Recursive Self-Improvement of Agent Collaboration (arXiv: 2609.38662) (utility=0.87)
+- [[arxiv-2609-38482-panda-a-decentralized-architecture-with-flexible-o]] - PANDA: A Decentralized Architecture with Flexible Orchestration for Scalable, Fault-Tolerant Multi-Agent Systems (arXiv: 2609.38482) (utility=0.92)
+- [[arxiv-2609-37457-veriweave-govern-evidence-gated-deterministic-runt]] - VeriWeave Govern: Evidence-Gated Deterministic Runtime Governance for Enterprise AI Agents (arXiv: 2609.37457) (utility=0.85)
+- [[arxiv-2609-35936-embodied-semantic-communication-for-collective-aut]] - Embodied Semantic Communication for Collective Autonomous Agents: A Tutorial on Representation, Wireless Delivery, and Closed-Loop Coordination (arXiv: 2609.35936) (utility=1.00)
+
 ## 2026-09-30 - arXiv Paper Skills (Cron Job)
 
 ### Multi Agent Rl

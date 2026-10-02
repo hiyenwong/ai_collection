@@ -1,5 +1,45 @@
 [
   {
+    "id": "2610.01161",
+    "title": "My FAULT: Self-Diagnosis as Credit Assignment in Self-Evolving Agentic Reinforcement Learning",
+    "skill_name": "arxiv-2610-01161-my-fault-self-diagnosis-as-credit-assignment",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-02T22:06:48.352148"
+  },
+  {
+    "id": "2610.01756",
+    "title": "SoK: Decentralized Agent Economic Infrastructure",
+    "skill_name": "arxiv-2610-01756-sok-decentralized-agent-economic-infrastructure",
+    "category": "multi-agent-rl",
+    "utility": 0.8,
+    "date_added": "2026-10-02T22:06:48.352154"
+  },
+  {
+    "id": "2610.00972",
+    "title": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks",
+    "skill_name": "arxiv-2610-00972-veriharness-scaling-agentic-verification",
+    "category": "ai-safety-eval",
+    "utility": 0.8,
+    "date_added": "2026-10-02T22:06:48.352155"
+  },
+  {
+    "id": "2609.39788",
+    "title": "Safety of Latent Communication in Multi-Agent Systems",
+    "skill_name": "arxiv-2609-39788-safety-of-latent-communication-in-multi-agent-systems",
+    "category": "ai-safety-eval",
+    "utility": 0.8,
+    "date_added": "2026-10-02T22:06:48.352156"
+  },
+  {
+    "id": "2609.39143",
+    "title": "RefCon: Iterative Refinement and Contrastive Memory Extraction for Context-Evolving Agent",
+    "skill_name": "arxiv-2609-39143-refcon-iterative-refinement-contrastive-memory",
+    "category": "multi-agent-rl",
+    "utility": 0.75,
+    "date_added": "2026-10-02T22:06:48.352157"
+  },
+  {
     "id": "2509.25077",
     "title": "BRIDGE: RL-Optimized Depth-to-Image Generation for Monocular Depth Estimation",
     "skill_name": "arxiv-2509-25077-bridge-rl-optimized-depth-to-image-generation-for-monocular",
@@ -9800,5 +9840,79 @@
     "category": "physics-math",
     "utility": 0.85,
     "date_added": "2026-09-30T22:08:11.463318"
+  },
+  {
+    "id": "2609.39045",
+    "title": "RSIGame: Autonomous Agentic Game Development with Recursive Self-improvement",
+    "authors": "Wenyi Wu, Minghao Fu, Jieyu You, Kun Zhou, Siqi Liu, Aayush Salvi, Yiheng Lin, Ce Zhang, Xiaohan Lan, Jiahui Zhu, Yujie Zhong, Qi She, Biwei Huang",
+    "url": "https://arxiv.org/abs/2609.39045",
+    "utility": 1.0,
+    "categories": [
+      "cs.CL",
+      "cs.GT",
+      "cs.LG",
+      "cs.MA"
+    ],
+    "published": "2026-09-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2609-39045-rsigame-autonomous-agentic-game-development-with-r",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2609.35936",
+    "title": "Embodied Semantic Communication for Collective Autonomous Agents: A Tutorial on Representation, Wireless Delivery, and Closed-Loop Coordination",
+    "authors": "Yizheng Huang, Wensheng Lin, Lixin Li, Qinghe Du, Wenchi Cheng, Zhu Han",
+    "url": "https://arxiv.org/abs/2609.35936",
+    "utility": 1.0,
+    "categories": [
+      "cs.MA",
+      "cs.AI"
+    ],
+    "published": "2026-09-28",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2609-35936-embodied-semantic-communication-for-collective-aut",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2609.38482",
+    "title": "PANDA: A Decentralized Architecture with Flexible Orchestration for Scalable, Fault-Tolerant Multi-Agent Systems",
+    "authors": "Matthew D. Laws, Cristina Nita-Rotaru",
+    "url": "https://arxiv.org/abs/2609.38482",
+    "utility": 0.92,
+    "categories": [
+      "cs.MA",
+      "cs.AI"
+    ],
+    "published": "2026-09-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2609-38482-panda-a-decentralized-architecture-with-flexible-o",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2609.38662",
+    "title": "CollabFlow: Recursive Self-Improvement of Agent Collaboration",
+    "authors": "Xiao Huang, Mingda Zhang, Junming Zhang, Qiang Huang, Hanwen Zhang, Yue Dai, Zijia Wang, Xiaoying Tang",
+    "url": "https://arxiv.org/abs/2609.38662",
+    "utility": 0.87,
+    "categories": [
+      "cs.MA",
+      "cs.AI"
+    ],
+    "published": "2026-09-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2609-38662-collabflow-recursive-self-improvement-of-agent-col",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2609.37457",
+    "title": "VeriWeave Govern: Evidence-Gated Deterministic Runtime Governance for Enterprise AI Agents",
+    "authors": "Kabeh Mohsenzadegan, Vahid Tavakkoli, Kyandoghere Kyamakya",
+    "url": "https://arxiv.org/abs/2609.37457",
+    "utility": 0.85,
+    "categories": [
+      "cs.AI",
+      "cs.CY",
+      "cs.MA",
+      "cs.SE"
+    ],
+    "published": "2026-09-26",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2609-37457-veriweave-govern-evidence-gated-deterministic-runt",
+    "skill_category": "multi-agent-rl"
   }
 ]
