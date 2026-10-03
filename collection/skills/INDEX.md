@@ -1,4 +1,12 @@
 
+
+## 2026-10-03 - arXiv Paper Skills (Cron Job)
+
+- **arxiv-2610-00746v1-meg-mamba-a-scalable-state-space-foundation-model-for-magnetoencephalography** [neuroscience]
+  - arXiv: 2610.00746v1 | Utility: 0.85
+  - Title: MEG-Mamba: A Scalable State-Space Foundation Model for Magnetoencephalography
+
+
 ## 2026-10-02 - arXiv Paper Skills (Cron Job)
 
 ### Multi Agent Rl
