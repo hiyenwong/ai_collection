@@ -1,3 +1,17 @@
+## 2026-10-04 - Neuroscience Research (Cron Job)
+
+### Increasing Width Allows Greedy Layer-wise Training to Rival End-to-End Backpropagation in Self-Supervised Learning
+- [[width-compensation-local-learning]] - 宽度补偿受限信用分配：32× 宽 Conv4 贪心逐层自监督训练反超端到端 backprop (arXiv: 2610.00753)
+  - 核心发现：贪心逐层训练随宽度增益不成比例放大（Conv4 1×→32× 贪心 +14.76pts vs 端到端 +7.97pts；Conv8 1×→16× 是 +12.01 vs +0.07），宽浅架构下局部学习可媲美/超越全局误差传播——为大脑"浅而宽"架构提供功能性解释
+  - 机制：Wakhloo 表征几何框架的 SSF/SNF 分解——端到端训练的 signal-signal factorization 在 epoch~160 达峰后持续退化（SSL 损失不显式保护类别结构），贪心训练的 SSF/SNF 随每层冻结单调上升并最终反超；Barlow Twins 损失在大宽度下与下游精度脱钩
+  - **Activation**: greedy layer-wise training, local learning, credit assignment, network width, biologically plausible learning, Barlow Twins, representational geometry, SSF, SNF, shallow wide architecture
+
+### Selection rules for the harmonic spectroscopy of animal decisions
+- [[harmonic-spectroscopy-animal-decisions]] - 线索几何=测量仪器：决策景观按衍射振幅分解为动物内在谱×结构因子，对称性施加选择规则，跨物种验证 (arXiv: 2610.00990)
+  - 核心公式：H(φ) = -Σ K_n Re[F_n e^{inφ}]，F_n = Σ w_j e^{-inΘ_j}；p 重对称线索阵列湮灭所有非 p 倍数谐波（三线索 120° 响应从 n=3 开始）；两线索间距扫描 Δ=180°/n 处切凹口；可检测性定律预测第三谐波需 13-652× 观测时间——解释文献一谐波"天花板"
+  - 实验验证：果蝇二谐波在预测凹口 90° 处变号 (实测 91.1°)、三目标队列凹口移至 118.2°；果蝇罗盘 EPG 神经元上对称场景压制禁戒矩 (10/10)、破坏对称即恢复 (10/10)——选择规则同时读出于行为与神经表征；高斯 bump 胜过方 bump (15/15)；一谐波不可能产生妥协→选择分岔，高谐波经 n² 权重主导转变
+  - **Activation**: harmonic spectroscopy, decision spectrum, cue geometry, selection rules, ring attractor, structure factor, angular landscape, collective behavior, occupancy estimator, fluctuation-dissipation
+
 ## 2026-10-04 - Information Science + Quantum (Cron Job)
 
 ### Quantum State Routing and Perfect State Transfer on Signed Graphs under Environmental Noise
