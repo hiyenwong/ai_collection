@@ -1,3 +1,22 @@
+## 2026-10-03 - Neuroscience Research (Cron Job, Round 2)
+
+### Removing Timing Shortcuts Improves Non-Invasive Brain-to-Text
+- [[simpleb2t-timing-shortcut-brain-to-text]] - 词对齐B2T联合解码的时间捷径：重叠窗口泄露词时长，合成信号（零脑信息）复现d'Ascoli全部增益（22.0% vs 22.3%），独立解码+观测聚合+LLM重打分使WER降至36.6% (arXiv: 2609.40359)
+  - 捷径机制：3秒固定窗口从连续MEG按词onset提取，相邻窗口共享90.6%样本，相对位移d=argmin SSD可平凡恢复词间interval（与词时长r=0.90），联合编码=免费获得每个词的时长先验；99.9996%相邻对重叠
+  - 五条件证据链：Joint(MEG) 22.3% ≈ Joint(合成) 22.0% > Timing-only 22.9%对照 > Isolated(MEG) 9.5% > Isolated(合成) 5.8%——增益几乎全来自时间非脑信号；d'Ascoli 9数据集中仅有的2个逐词等时阅读协议恰好是联合解码无增益的仅有的2个（跨论文一致性验证）
+  - SimpleB2T配方：20M参数CNN+MLP逐窗口独立编码（砍掉200M transformer）→ softmax温度化 p_brain → k观测一致性加权聚合 A_i(w)=(1+αr_i)u_i^T e_w/T（α=2）→ beam search 200 + Qwen3-8B base重打分 λ=0.5；k=5时WER 36.6%（侵入式里程碑25.6%），SMR 26%；oracle beam内选择可达16.4%（瓶颈在排序非生成）
+  - 关键洞见：捷径移除后聚合与LLM先验才有效（联合模型下聚合只是更好地估计时长、LLM重打分接近LM-only）；脑证据补动词、LLM补功能词（74.3%+73.8%→36.6%互补）；任务导向prompt 36.6% vs 通用prompt 55.2%
+  - **Activation**: brain-to-text decoding, word-aligned B2T, timing shortcut, shortcut learning BCI, MEG speech decoding, overlapping window leakage, LLM rescoring, synthetic control, LibriBrain
+
+### Not all solutions are created equal: functional vs representational similarity dissociation
+- [[functional-representational-dissociation-linear-networks]] - 两层线性网络解流形完整解析：GLS/LSS（task-agnostic表征，几乎任意）vs MRNS/MWNS（task-specific，唯一RSM），功能与表征完全可解离，且只有参数噪声鲁棒性（非输入噪声/泛化误差）迫使task-specific表征 (arXiv: 2609.38998)
+  - 解流形参数化（Thm 3.1）：Ω1=√QSV^T+Γ1Pi+Γ2Pu、Ω2=√USQ⁺+Ψ+Γ3(I−HH⁺)——核心映射+无关/零空间投影+干涉修正项Ψ/Φ，输入空间三分（relevant P_r / irrelevant P_i / unobserved P_u）；嵌套 MWNS⊂MRNS⊂LSS⊂GLS 逐级削减自由度
+  - 表征分类学：GLS/LSS 的 RSM 依赖任意 Q/Γ1（可在保持函数下摆出"大象"形表征）；MRNS RSM=ONO^TN、MWNS RSM=X^TV√SV^TX 由训练数据唯一决定——task-specific 但两者不同（跨类型同函数RSA不完美）
+  - 三大分析结论：①线性可预测性由solution type驱动非functional alignment（task-agnostic高秩源预测task-specific低秩目标最差，within-function可比across-function低）②固定解码器在解流形随机游走中迅速退化——表征漂移≠功能变化，只是功能等价类内重参数化③稳定性-可塑性困境在网络层面不成立
+  - 噪声选择定理：输入噪声期望损失∝‖Ω2Ω1‖²_F→选LSS（仍task-agnostic）；参数噪声期望损失∝‖Ω1X‖²+‖Ω2‖²→仅MRNS/MWNS最小化→task-specific——参数鲁棒性（低范数隐式正则）是脑-模型表征对齐的候选选择压力
+  - 非线性扩展：ReLU四不变换（置换/缩放/nuisance神经元/复制+输入零空间）精确保函数；MNIST网络隐藏激活可augmented-Lagrangian重塑为"双大象"且保持全部训练标签；经验结果镜像线性理论（input-null对输入噪声敏感、scaled/nuisance/duplicate对参数噪声敏感）
+  - **Activation**: representational similarity analysis, RSA caveats, solution manifold, task-specific representations, parameter noise robustness, linear predictivity, representational drift, brain model alignment, stability-plasticity
+
 ## 2026-10-03 - Neuroscience Research (Cron Job)
 
 ### Stochastic Dynamics of Large-Scale Motif-Embedded Spiking Neuronal Networks
