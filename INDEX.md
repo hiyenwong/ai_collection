@@ -1207,3 +1207,19 @@
   - Systematic analysis of edge cases and implementation gaps
   - Enhanced code review automation for security-critical systems
   - **Activation**: discovering cryptographic weaknesses, Claude AI security analysis, cryptographic vulnerability discovery, AI-assisted code review
+## 2026-10-03 - OpenAI Research (Cron Job)
+
+### Disrupting a coordinated model-distillation campaign
+- [[adversarial-distillation-defense]] - Detect, attribute, and disrupt coordinated campaigns extracting protected model reasoning.
+  - Threat model: no encryption break — operators manipulate model interactions (cross-conversation encrypted-reasoning replay, compaction exploitation) to surface hidden chain-of-thought; 16k requests/4k users spike, 15k+ user cluster
+  - Detection: reasoning-visibility invariant matrix, replay-path red-team probing, prompt-pattern clustering across account graphs, responsible-disclosure intake (arXiv:2608.09867)
+  - Layered response: investigate scope first → account enforcement → close cross-boundary replay paths (user/workspace/org/model-family) → third-party provider coordination → Frontier Model Forum sharing
+  - Residual risks: partner-hosted deployments, tool-output channels carrying reasoning beyond visible text
+  - **Activation**: adversarial distillation, protected reasoning extraction, chain-of-thought theft, reasoning replay attack, model security monitoring, distillation campaign disruption
+
+### A model guide for the GPT-6 family
+- [[practical-guide-building-gpt-6]] (Obsidian only, no skill - product guide) - Production playbook for GPT-6 model selection and long-running agent workflows.
+  - Model ladder: Astra (hardest reasoning) / 6.1 Sol (complex coding, computer use) / Luna (focused tasks at scale); reasoning effort Low→Max as intelligence/price dial
+  - Production: prompt caching (up to 95% input discount), compaction for long context, parallelize independent tasks, Fast/Ultrafast modes
+  - Long-running agents: steering, async tool calls, delegation; explicit decision boundaries replacing blanket "always ask" rules
+  - **Activation**: GPT-6 model selection, reasoning effort tuning, prompt caching, AGENTS.md best practices
