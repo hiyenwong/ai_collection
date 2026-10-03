@@ -1,3 +1,17 @@
+## 2026-10-04 - Information Science + Quantum (Cron Job)
+
+### Quantum State Routing and Perfect State Transfer on Signed Graphs under Environmental Noise
+- [[szegedy-signed-graph-quantum-routing]] - 符号图 Szegedy 量子游走实现免测量量子路由：边符号 π 相移精确消除背散射，哑铃图 D₂m,₀,₂n 单边换向即达 PST F=1.0 (arXiv: 2609.39890)
+  - 零背散射引理 p(e⃗)=1/2 ⟺ (Uα)e⃗⁻¹,e⃗=0；桥边 σ=−1 时 τ=m+1+n 完美传态，σ=+1 变存储环——二进制拓扑规范符号取代连续参数调谐
+  - 噪声视界（经典阈值 F=2/3）：幅阻 τmax≈0.4055/λ 跳（λ=0.02 时约20跳），相位阻尼 τmax≈1.0986/p 跳（约55跳，2倍距离，F 饱和于 1/2 底）
+  - **Activation**: quantum routing, signed graph, Szegedy quantum walk, perfect state transfer, topological router, back-scattering, dumbbell graph, glued trees
+
+### Adaptivity is all you need: Optimal stabilizer learning using just single-copy measurements
+- [[adaptive-single-copy-stabilizer-learning]] - 自适应单拷贝 Clifford 测量以 Θ(n) 样本学任意 n 比特 stabilizer 态，纯经典反馈即追平双拷贝 Bell 采样 (arXiv: 2610.02031)
+  - 核心循环：两次独立计算基测量差分采样 u=x+y，CNOT 层 F_u 将采样到的 X 型 stabilizer 压到单 pivot 比特且不破坏已对角化生成元，随机 H/H·S 猜测以 1/2 概率增 dim D；E[T]<2n+4
+  - 扩展：k 比特量子内存下测试代价 Θ(n−k+1/ε)；stabilizer nullity ≤r（含 t 个 T 门掺杂电路）O(n·2^r) 单拷贝可学；非自适应单拷贝需 Ω(n²)——自适应是消除二次差距的关键
+  - **Activation**: stabilizer learning, adaptive single-copy, Bell difference sampling, Clifford measurements, stabilizer nullity, T-doped states, sample complexity
+
 ## 2026-10-03 - Systems Engineering Research (Cron Job)
 
 ### Data-to-Certificates (D2C): Koopman Supereigenfunctions for Stability, Safety, and Control
