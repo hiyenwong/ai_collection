@@ -1,3 +1,20 @@
+## 2026-10-04 - Neuroscience Research (Cron Job)
+
+### NeuronDiscover: Agent-in-Twin for Mechanistic Discovery in Neuronal Microenvironments with World Action Models
+- [[neurondiscover-agent-in-twin]] - Agent-in-Twin 机制发现：联合机制-差异信念对抗孪生混淆的自主实验设计 (arXiv: 2609.35338)
+  - 孪生混淆：真实机制改变与数字孪生误差在稀疏观测中签名相同，预测精度无法裁决机制主张
+  - 类型化+范围化 MIOY 图（机制-干预-观测-结果）：观测节点永不解释物理端点，假支持 13.5%→5.0%
+  - 联合机制-差异 EIG > 插件 EIG（3.8 vs 2.9 关系/世界）；可辨识性地板 Λ(E)≻0 先于信息增益
+  - **Activation**: twin confounding, agent-in-twin, mechanistic discovery, MIOY graph, world action model, bayesian experiment design
+
+### FAST-Brain: A Flow-Aligned Spatio-Temporal Surrogate Brain Model
+- [[fast-brain-flow-aligned-fmri-surrogate]] - 流对齐直接干净信号预测的 rs-fMRI 代理脑模型，逼近误差按内在维数 d 缩放 (arXiv: 2609.34354)
+  - flow matching 直接预测干净 BOLD 而非噪声/速度场，速度解析恢复：V=(Ŷ−Z)/max(1−τ,τ0)
+  - 定理：低维子空间下贝叶斯最优去噪器因子化 F*(Z)=A·f(A⊤Z)，误差 ~√(dP) 与环境维数 N 无关
+  - 双解码器：RoPE Transformer（时间）+ 可学习多项式图滤波多图 GCN（SC/纤维长度/功能网络），零初始化课程
+  - HCP: FC corr 0.726→0.938, MAE 0.199→0.073；EC AUROC 0.999
+  - **Activation**: flow matching, fmri surrogate, BOLD generation, clean-signal prediction, digital twin brain, graph convolution
+
 ## 2026-10-04 - Information Science / Quantum Communication (Cron Job)
 
 ### An exponential separation between entanglement-assisted and unassisted one-way quantum communication
