@@ -1,5 +1,17 @@
 ## 2026-10-04 - Neuroscience Research (Cron Job)
 
+### Controllable Stochastic Quantization Encoding for Adversarially Robust Spiking Neural Networks
+- [[sqe-stochastic-quantization-snn-robust]] - 随机量化编码 SQE：单一量化尺度 N 在 Poisson 编码 (N=1) 与直接编码 (N→∞) 之间连续插值，Var≤1/(4N²) 精确控制编码随机性，输入层对抗防御与训练层防御可叠加 (arXiv: 2610.01558)
+  - 核心定理：无偏性 𝔼[s]=x、随机性上界 1/(4N²)、N=1 退化为 Poisson、N→∞ 退化为 direct——SQE 是统一两种标准编码的一般框架；STE 直通梯度训练
+  - 实验：CIFAR-10 RAT 训练平均鲁棒精度 16.58%→30.51% (+17% on WRN-16)，APGD10 达 43.41%；黑盒鲁棒性≈Poisson (74.95% vs 76.15%) 但干净精度高 ~6%；与 AT/RAT/SR/TGO 全部可组合
+  - **Activation**: stochastic quantization encoding, SNN adversarial robustness, Poisson encoding, direct encoding, input encoding defense, quantization scale, straight-through estimator, population coding
+
+### Synaptic placement reflects shared input in Drosophila descending neurons
+- [[dn-synaptic-placement-shared-input]] - 连接组拓扑↔亚细胞几何对应：果蝇下行神经元中，同时接触 partner DN 的源神经元输入比其他输入平均近 9.4μm (MaleCNS) / 8.0μm (FlyWire) 于 partner 输入位点 (arXiv: 2610.00690)
+  - 方法学：三边前馈配置 (source→partner+receiver, partner→receiver) 映射到接收神经元树枝上的相对突触位置；双比较设计 (between-source n=13,318 / within-source n=922 receivers) + 三站点参考集标准化消除最近邻距离的样本量偏差；两独立连接组 (雄/雌) + C. elegans 跨物种复制
+  - 次要发现：共享输入与空间重叠对 DN 互连提供互补预测信息 (held-out log loss 各降 3%/10%)；top-5 共享源贡献 ~90% cosine overlap；AN19B014 电路中源经独立突触前位点接触两 DN——排除了单 bouton 假象
+  - **Activation**: synaptic placement, connectomics, Drosophila, descending neurons, shared input, feedforward motif, subcellular organization, physical network models, skeleton path distance
+
 ### Increasing Width Allows Greedy Layer-wise Training to Rival End-to-End Backpropagation in Self-Supervised Learning
 - [[width-compensation-local-learning]] - 宽度补偿受限信用分配：32× 宽 Conv4 贪心逐层自监督训练反超端到端 backprop (arXiv: 2610.00753)
   - 核心发现：贪心逐层训练随宽度增益不成比例放大（Conv4 1×→32× 贪心 +14.76pts vs 端到端 +7.97pts；Conv8 1×→16× 是 +12.01 vs +0.07），宽浅架构下局部学习可媲美/超越全局误差传播——为大脑"浅而宽"架构提供功能性解释
