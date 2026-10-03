@@ -1,3 +1,21 @@
+## 2026-10-03 - Systems Engineering Research (Cron Job)
+
+### Data-to-Certificates (D2C): Koopman Supereigenfunctions for Stability, Safety, and Control
+- [[koopman-supereigenfunction-d2c]] - 绕过模型辨识，直接从轨迹数据学不等式型证书：超本征函数 K_f φ ≤ λφ 定义指数增长包络，统一稳定性/收缩/安全认证与QP控制综合 (arXiv: 2610.00178)
+  - 核心松弛：Koopman本征函数的谱等式 K_f φ = λφ 单边化为 K_f φ ≤ λφ——表征从"精确演化"变为"包络上界"，与Lyapunov/势垒函数天然兼容；速率恢复Lyapunov指数（λ̂=2χ̂）
+  - 三种数据驱动构造：①正预解式 φ_λ=∫₀^∞ e^{−λt} g(s_t(x))dt（探针g∈F₊直映证书，截断误差 Me^{−(λ−ω)T}‖g‖）②Gramian切丛证书 M_λ=∫e^{−2λt}YᵀQY dt（λ>χ_max，收缩度量是特例）③MET/QR本征方向 φ_i=(q_iᵀv)²（Benettin迭代）
+  - 安全风险探针：状态约束→非负风险r(x)=Σρ(g_i)，证书=折扣未来风险；零安全探针下 φ_{λ,T}=0⟺[0,T]全程安全；探针谱系（指示/铰链/softplus/指数）权衡连续性与边界裕度
+  - 控制综合：点态凸QP argmin ½uᵀRu s.t. (K_G Ψ)u ⪯ −(Λ−B)Ψ——结构同CLF/CBF-QP但约束由算子理论导出、可从数据计算；在线仅需短rollout的局部值+梯度，随状态维度可扩展
+  - **Activation**: Koopman operator, supereigenfunction, data-driven certificates, stability certification, safety certificate, contraction metric, resolvent, D2C, uncertainty propagation envelope
+
+### The Geometry of Time: Horizon-Independent Feasibility and Repair for STL
+- [[stl-geometric-feasibility-repair]] - STL可行性检查完全解耦时间视界：Bhat-Bernstein定常积分的解析逆把时间窗映射为t=0空间水平集，可行性=单次多面体包含评估，不可行时Farkas对偶证书+闭式时间修复 (arXiv: 2610.00199)
+  - 时间↔空间双射：μ̇=−c·sgn(μ)|μ|^β（非Lipschitz有限时间收敛）⟹ τ_s=μ₀^{1−β}/(c(1−β))，逆映射把[a,b]窗口解析为空间边界 μ₀=(μ^{1−β}+c(1−β)T)^{1/(1−β)}；常速极限 β→0⁺ 得线性预算 I_F=v_max·T_F
+  - 几何指称语义：STL→可微水平集场 ⟦ψ⟧（LSE软min/max组合），F/G算子=空间捕获盆地S_{b−a}与安全缓冲B_{b−a}的向后前像 Pre_a；多面体编译定理：仿射谓词+线性动力学下 Ax(0)≤b_eff ⟺ ⟦ψ⟧(x(0))≥0（流传播 a_iᵀ=g_iᵀe^{Fa} 保持仿射几何，LSE梯度=softmax→对偶向量y）
+  - 诊断与修复：不可行时Farkas引理产出对偶y≥0隔离最小冲突谓词+空间缺口r（无需组合slack优化），闭式修复 ΔT*=r^{1−β}/(c(1−β))（4.17m→1.83s使UAV任务可实现）
+  - 保证与性能：健全性（10⁴次蒙特卡洛0%假阳性）、完备性间隙 δ=ln k/η 可调、视界无关复杂度（N=10,000仍<0.25ms，嵌套深度p=32不变；MILP在N≥1000达120s超时）、570×快于Gurobi；限制：仿射谓词+线性动力学（非线性需局部线性化）、c=‖u‖∞最坏情形漂移界保守
+  - **Activation**: signal temporal logic, STL feasibility, temporal repair, horizon-independent, Bhat-Bernstein settling time, Farkas certificate, polyhedral compilation, backward reachable set, MILP alternative
+
 ## 2026-10-03 - Neuroscience Research (Cron Job, Round 2)
 
 ### Removing Timing Shortcuts Improves Non-Invasive Brain-to-Text
