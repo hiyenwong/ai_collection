@@ -1,3 +1,11 @@
+## 2026-10-04 - Information Science / Quantum Communication (Cron Job)
+
+### An exponential separation between entanglement-assisted and unassisted one-way quantum communication
+- [[entanglement-assisted-subgroup-membership]] - 纠缠辅助经典通信 vs 无辅助量子通信的首个总函数指数分离：O(log n) 经典比特+Θ(n) EPR 对 vs Θ(n^{1/3}) 量子比特 (arXiv: 2610.02099)
+  - 上界：有界阶子群成员问题 Memb_{G,k} 的纠缠辅助协议——Alice 远程制备左陪集态均匀混合 ρ（rank-[G:H] 平坦态，RSP 代价 log|H| 比特），Bob 用右乘 U_g 做 Hadamard 测试，tr(ρU_g)∈{1,0} 判定 g∈H；通信 O(log k) 而非 O(log|G|)
+  - 下界：ShiftEq 秩零问题（Hidden Matching 的群论推广）+ 矩方法——min-max/top-本征向量论证在 Bob POVM 无界维时失效，正是模型分离点；独立相位 ζ^{φ_s} 解耦后矩阵矩不等式 + Fourier 域谱间隙 ‖(I-P)K‖∞ = 1/D
+  - 群实例：广义 Heisenberg 群 H_{2^r}(F_3)（中心 ζ 阶 3，Weyl 对易 X_uY_v=ω^{u·v}Y_vX_u 强制 D=3^{2^r}），得 Ω(2^r)=Ω(n^{1/3})；否定 Newman 定理的纠缠模拟，Shi–Zhu 2^{O(C)} 模拟渐近最优
+  - **Activation**: entanglement-assisted communication, subgroup membership, remote state preparation, coset state Hadamard test, one-way communication complexity, moment method lower bound, Heisenberg group irrep, representation theory dimension, communication separation
 ## 2026-10-04 - Neuroscience Research (Cron Job)
 
 ### Controllable Stochastic Quantization Encoding for Adversarially Robust Spiking Neural Networks
