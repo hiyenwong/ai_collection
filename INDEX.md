@@ -14,6 +14,15 @@
   - 任务条件化：multi-hot boxcar刺激嵌入+零初始化LoRA rank16（仅167k参数=5%）注入Mamba输入/输出投影，对预训练和微调均未见的被试生成逼真任务诱发时频响应
   - **Activation**: meg foundation model, mamba state-space, neural signal tokenizer, autoregressive generation, lora conditioning, generative fidelity, brain dynamics simulation, session embedding
 
+## 2026-10-03 - Economics/Investment + Quantum (Cron Job, Round 2)
+
+### Quantum Advantage for Two-Party Differential Privacy
+- [[guarded-coherent-two-party-qdp]] - 信息论量子协议突破经典双方DP精度壁垒：O(1)误差 vs Ω(√n)，守卫相干往返+equal-Gram刚性 (arXiv: 2610.02113)
+  - Klauck诚实模型下，O(n)量子通信实现纯ε-QDP且 E|d̂−d| < 2/sinh ε + γ，无需计算假设/可信设置/先验纠缠；经典同模型需Ω(√n)误差
+  - Equal-Gram刚性原理：非正交消息保持相同Gram矩阵 → CPTP补输出状态与输入无关（Stinespring证明）；经典转录复制（McGregor下界根源）在量子中物理不可能
+  - 守卫分支模式：小概率κ=γ/(n+γ)输入无关回退分支使近似刚性变精确；精确hockey-stick散度校准给出α*>ε，近似DP误差严格更小；PC模型无分离、RR恶意模型量子协议被攻破——优势边界诚实标注
+  - **Activation**: two-party differential privacy, quantum communication advantage, hamming distance privacy, guarded coherent round trip, equal-Gram rigidity, Klauck honest model, hockey-stick divergence QDP, quantum differential privacy protocol
+
 ## 2026-10-03 - Economics, Investment × Quantum (Cron Job)
 
 ### On the generic structures of the protocols for quantum auction and quantum summation and their relation
