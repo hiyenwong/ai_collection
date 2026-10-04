@@ -1,3 +1,18 @@
+## 2026-10-04 - Neuroscience Research (Cron Job)
+
+### Attraction to hierarchical feature memory explains orientation bias
+- [[hierarchical-feature-memory-orientation-bias]] - 均匀编码精度下层级复合特征记忆即可复现 anti-cardinal bias 与序列依赖，推翻效率编码标准解释 (arXiv: 2609.40204)
+  - 反射吸引：incongruent 圆相关为负——序列吸引由前反应及其 cardinal 镜像反射的复合特征主导（复合记忆痕迹=层级再激活指纹）
+  - 跨半视野测试分离低层（空间特异）与高层（空间抽象）影响；von Mises 混合模型零调参复现全部 anti-cardinal 偏差；EEG ERP 同时相似于反射朝向
+  - **Activation**: serial dependence, orientation bias, anti-cardinal, compound feature memory, von Mises mixture, hemifield, efficient coding critique, hierarchical reactivation, circular correlation
+
+### Belief-Based Maximum Occupancy Principle and Active Inference
+- [[belief-mop-active-inference-bellman]] - MOP 扩展到 POMDP 信念空间 + EFE 的 Bellman 价值迭代重构：MOP 联合达成探索与生存，EFE 两者由精度 d 互斥交换 (arXiv: 2609.39342)
+  - EFE 树搜索→带 γ 折扣的 Bellman 方程：信念离散化(∆=0.1)+线性插值，深度线性代价，时间平稳策略；信念传播与 VFE 最小化数学等价
+  - MOP 策略熵随内部能量自适应分档(E>15 广探索/E≤15 直奔食物)且零超参；survival-occupancy 平面上 MOP 单点落在 EFE 的 d-权衡迹之外
+  - 终止态路径熵塌缩隐式产生生存倾向——Kiefer 约束熵最大化统一视角：MOP 与 EFE 的差异仅在保命约束显式 vs 隐式
+  - **Activation**: active inference, maximum occupancy principle, expected free energy, Bellman value iteration, POMDP belief state, intrinsic motivation, exploration-survival tradeoff, empowerment comparison, path entropy
+
 ## 2026-10-04 - Information Science / Quantum Security & Inference (Cron Job)
 
 ### Learnt Attacks on Quantum Key Distribution under Channel Noise and Device Drift
