@@ -1,5 +1,20 @@
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
+### Walshness: an intrinsic neural-network representability metric for quantum states
+- [[walshness-nqs-representability]] - 量子态NQS可表示性的内在度量：Walshness低⟺紧凑神经网络表示，最优基选择=经典自旋模型能量最小化，恢复并推广Marshall符号规则 (arXiv: 2610.00505)
+  - Wᶻ_α[ψ]=(1/α)log E_{r∼p_ψ}[e^{α|r|₁}]——Walsh谱质量集中在低阶模式⟺少体结构；内在W_α对所有局域SU(2)基取最小
+  - Proposition 1: 基优化映射为经典自旋哈密顿量能量最小化（每site一个n̂ⱼ向量，耦合=多体关联⟨σⱼ₁···σⱼₖ⟩），TFIM最优基自发破缺平移对称（周期2交错）
+  - Theorem 1/2 (双边): MLP宽度n^O(ω)深度O(logω)可表示低Walshness态；近最大Walshness⟹深度Ω(log n)不可避免；RBM用乘法Walshness（log ψ的）
+  - 实证: TFIM g=0.2用Walshness最小基训练MLP-NQS，infidelity降低数个数量级；混合场toric code同样大幅改善
+  - **Activation**: neural quantum states, NQS representability, Walshness, optimal basis, Marshall sign rule, sign structure, quantum state complexity
+
+### Brain-SAD: A Brain-Inspired Safe Autonomous Driving Control Framework with Dynamic Fear-Oriented Constraint on Dual-Policy
+- [[brain-sad-fear-oriented-dual-policy]] - 恐惧信号驱动的动态约束+双策略仲裁安全驾驶框架：在线恐惧信号解除约束与离线训练分布的耦合，替代静态Lagrangian/固定投影边界 (arXiv: 2609.38016)
+  - 现有Constrained RL缺陷：soft方法的动作代价是静态state→cost映射，hard方法的可行域边界来自离线演示——约束↔训练场景强耦合
+  - 杏仁核恐惧反应机制：场景感知→动态恐惧信号f(scene)→在线仲裁长期策略（常规交互）vs短期策略（紧急防撞），同时作为长期策略的动态约束
+  - 可复用模式：学习型风险头调制拉格朗日乘子/投影边界（替代固定值）；带迟滞的双阈值门控防策略振荡；防御策略需过采样near-miss数据
+  - **Activation**: safe reinforcement learning, fear-oriented constraint, dual policy, safe autonomous driving, dynamic action cost, amygdala, constrained RL distribution shift
+
 ### Sequential Capacity of Quantum Processes with Finite Memory
 - [[sequential-capacity-quantum-processes]] - 固定内存量子过程的自适应可测试容量定律 C_γ(K)=Θ(K log₂((K+1)/γ))，量子相干干预比经典固定基测量多出对数级容量 (arXiv: 2610.02068)
   - 相位树构造：单控制量子比特 + Möbius/Boolean 反演签名查询 (s∈{−1,0,1}^K) 隔离子集和的逐位二进制，精确 0/1 响应
