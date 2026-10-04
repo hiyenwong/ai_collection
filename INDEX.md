@@ -1,5 +1,18 @@
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
+### Sequential Capacity of Quantum Processes with Finite Memory
+- [[sequential-capacity-quantum-processes]] - 固定内存量子过程的自适应可测试容量定律 C_γ(K)=Θ(K log₂((K+1)/γ))，量子相干干预比经典固定基测量多出对数级容量 (arXiv: 2610.02068)
+  - 相位树构造：单控制量子比特 + Möbius/Boolean 反演签名查询 (s∈{−1,0,1}^K) 隔离子集和的逐位二进制，精确 0/1 响应
+  - 噪声定律：残差相位翻转概率 e(q)=min(qI,qZ)+min(qX,qY) 决定容量 Θ(RT·log₂[1+min(T,1/e)])——纯横向翻转 e=0 不损失增强
+  - 经典程序下界 Θ(T log T) vs 量子程序 O(T) qubits：容量与模拟程序大小是独立资源
+  - **Activation**: sequential capacity, fat-shattering dimension, quantum process testing, finite memory, adaptive tester, residual phase-flip
+
+### Null-model treatment of the sensory-motor boundary changes an evolutionary connectome comparison
+- [[boundary-preserving-null-connectome]] - 果蝇连接组进化实验中标准随机化null在感觉-运动边界注入1000×直连捷径，翻转比较结论；边界保持null将差异收缩到±0.10等价界内 (arXiv: 2609.39248)
+  - 标准null(列shuffle/保度swap)使嗅觉→运动直连输出 0.012%→10.6%，中位路径 3突触→1突触——null"保度"却改变了功能决定性的宏观性质
+  - 因果移植闭环：捷径移植+0.44适应度(10/10种子)、剂量响应、内部-only sham与边界sham双双无效应——效应就是捷径本身
+  - **Activation**: connectome null model, boundary-preserving null, degree-preserving swap, sensory-motor boundary, transplant experiment, equivalence bound
+
 ### Future Video Generation Better Aligns with the Human Visual Cortex than Observed Video
 - [[future-video-generation-visual-cortex-alignment]] - AR视频扩散模型的"未来生成"表征比观测视频本身更对齐人类视觉皮层，预测编码的脑-AI对齐直接证据 (arXiv: 2609.38819)
   - 未来token表征在全部5个视觉分区unique contribution超过观测视频(p=0.002)，优势沿视觉层级增长(MT+ 0.436 vs 0.363)
