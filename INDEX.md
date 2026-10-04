@@ -1,3 +1,19 @@
+## 2026-10-05 - Neuroscience Research (Cron Job)
+
+### Future Video Generation Better Aligns with the Human Visual Cortex than Observed Video
+- [[future-video-generation-visual-cortex-alignment]] - AR视频扩散模型的"未来生成"表征比观测视频本身更对齐人类视觉皮层，预测编码的脑-AI对齐直接证据 (arXiv: 2609.38819)
+  - 未来token表征在全部5个视觉分区unique contribution超过观测视频(p=0.002)，优势沿视觉层级增长(MT+ 0.436 vs 0.363)
+  - 未来生成在**最噪声步**(s=0)对齐最佳——未承诺的多可能未来态与贝叶斯神经编码一致；重建在中段步峰值(细节精修)
+  - STG层放大实验：人类偏好与层对齐度相关r=0.75 (p=0.029)，神经对齐→行为验证闭环
+  - **Activation**: brain alignment, video diffusion, predictive coding, fMRI encoding, autoregressive, variance partitioning
+
+### Field closure, ice neurons, and when a dendrite is a motif
+- [[field-closure-ice-neurons-dendritic-motifs]] - 场闭合(γ)将冰神经元(Mullins-Sekerka生长极限)变成真正的动力学motif——ephaptic反馈是有生物神经元与冰的分界线 (arXiv: 2610.00184)
+  - FHN界面态经γψ源项写回外场，γ=0谱分解为独立的MS生长支+FHN支；有限γ使长波侧重塑、开启孤立阈值以下的γ驱动Hopf区
+  - 冻结树motif检测：一阶超额核Q₁=z_out^T(βG_eph)z_in，40个最大ephaptic对承载99.9%贡献——直接场捷径而非轮廓
+  - 80种子系综：Q₁>0在所有树上成立(中位1.1×10⁻³)；亚阈值下"闭合几乎就是传输"(4.7×)，spike幅值下只是修正
+  - **Activation**: dendritic computation, ephaptic coupling, morphogenesis, motif detection, FitzHugh-Nagumo, cable theory
+
 ## 2026-10-04 - Information Science + Quantum (Cron Job)
 
 ### Interpreting Reasoning of LLMs via Partial Information Decomposition (SLIDER)
