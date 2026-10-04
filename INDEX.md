@@ -1372,3 +1372,35 @@
   - Production: prompt caching (up to 95% input discount), compaction for long context, parallelize independent tasks, Fast/Ultrafast modes
   - Long-running agents: steering, async tool calls, delegation; explicit decision boundaries replacing blanket "always ask" rules
   - **Activation**: GPT-6 model selection, reasoning effort tuning, prompt caching, AGENTS.md best practices
+
+## 2026-10-05 - Deep Learning Research (Cron Job)
+
+### CARM: Cancellation-Aware Response Masking for LLM Reinforcement Learning
+- [[carm-cancellation-aware-response-masking]] - LLM RL序列级off-policy掩码的符号对消缺陷与绝对值修正：几何均值log-ratio正负抵消掩盖双向漂移，|log-ratio|均值根除 (arXiv: 2610.02039)
+  - 带符号对数比可跨token位置抵消——策略某段大涨另一段大跌仍被判on-policy；CARM取绝对值后平均，接受响应满足带外token比例与带外平均对数距离的联合界
+  - 即插即用替换现有masking rule（TIS/GM），不改训练循环；AIME+BeyondAIME mean@16 +3.13pp，代码基准pass@1 +2.88pp
+  - **Activation**: response masking, off-policy RL, LLM reinforcement learning, sequence filtering, policy drift, importance ratio, PPO filtering, GRPO
+
+### Harnessing Domain Specialists in Multimodal Mixture-of-Experts for Efficient Adaptation
+- [[expertlens-moe-domain-specialist-adaptation]] - 多模态MoE专家自发语义专化：ExpertLens免数据从router权重解码专家领域标签，选择性微调仅更新21.7-47.0%参数 (arXiv: 2610.02123)
+  - 稀疏路由涌现语义modularity（数学/医学/遥感专家分化），router weights解码为词表token即得专家语义画像，无需前向数据
+  - 相关专家子集微调匹配或超全参数微调，平均4.0x训练加速，全面优于LoRA——"效率稀疏性→语义模块化→高效适配"因果链
+  - **Activation**: mixture-of-experts, expert specialization, router interpretation, efficient fine-tuning, selective expert tuning, MoE adaptation, semantic modularity
+
+### Decoding Looped Transformers Better for (Almost) Free
+- [[loopcd-contrastive-decoding-looped-transformers]] - Looped Transformer免训练对比解码：早期循环=弱模型、最终=强模型天然构成weak-strong对，对比引导解码可减半循环数 (arXiv: 2610.02185)
+  - LoopCD-Logits在logit空间p_final^(1+α)/p_early^α（一次额外输出pass）；LoopCD-Hidden在隐状态外推（零输出开销）；完全training-free
+  - Ouro-2.6B-Thinking AIME 2024 pass@1 61.88%→73.33%；Huginn HumanEval 22.56%→31.71%；剪半循环仍超全深度基线，前向FLOPs降22.5%-48.2%
+  - **Activation**: looped transformer, contrastive decoding, inference acceleration, recurrent depth, weak-strong pairs, training-free decoding, inference FLOPs reduction
+
+### Bellman Meets Lyapunov: Unsupervised Reinforcement Learning via Mastering Chaos
+- [[f-cip-controllable-information-production-unsupervised-rl]] - 无监督RL内在动机去变量选择：F-CIP仅由系统动力学定义CIP目标，无监督涌现平衡/可控性原语，配简单速度奖励即得协调步态 (arXiv: 2610.02012)
+  - 现有IM目标都要选信息变量（把专家知识从奖励转移到变量选择）；F-CIP的CIP目标只依赖dynamics，RL原生兼容，可与现有actor-critic直接组合
+  - 单独训练涌现balancing、controllability maintenance原语行为；+forward-velocity奖励产生hopping/running步态（通常需奖励工程）
+  - **Activation**: unsupervised RL, intrinsic motivation, controllable information, empowerment, reward-free exploration, primitive behavior discovery, forward CIP, robotics pretraining
+
+### Where-OPD: Spatially Guided On-Policy Self-Distillation of MLLMs with Synthetic Scenes
+- [[where-opd-spatially-guided-self-distillation]] - MLLM特权自蒸馏新形态：文本空间引导（物体身份+坐标）替代图像裁剪特权，程序化合成场景免标注post-training，合成到真实迁移+3.23pp (arXiv: 2610.02117)
+  - 教师收文本空间引导定位整合多区域证据，学生从图像+问题on-policy自蒸馏复现；合成场景特权标注自动免费，可扩展免标注
+  - 计数/文档/图表理解一致提升；仅合成场景训练迁移到CVBench/V*/ZoomBench/BLINK/HR-Bench/MME-RealWorld真实基准
+  - **Activation**: on-policy distillation, privileged information, MLLM perception, synthetic scenes, spatial grounding, annotation-free post-training, synthetic-to-real transfer, teacher guidance
