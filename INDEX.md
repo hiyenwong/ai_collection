@@ -27,6 +27,18 @@
   - 80种子系综：Q₁>0在所有树上成立(中位1.1×10⁻³)；亚阈值下"闭合几乎就是传输"(4.7×)，spike幅值下只是修正
   - **Activation**: dendritic computation, ephaptic coupling, morphogenesis, motif detection, FitzHugh-Nagumo, cable theory
 
+### Dense auto-hetero associative memories applied to noisy communication channels
+- [[dense-auto-hetero-associative-disentanglement]] - 密集高阶Hebbian耦合让模块化Hopfield网络在K=Θ(N)线性负载下实现模式解缠：把"混合态"从检索错误变成计算原语 (arXiv: 2609.32605)
+  - 核心设计律 2<P≤D：容量由最低耦合阶决定，P>2消除模式慢噪声、P≤D压制模块噪声，自洽方程只需Mattis磁化序参量（Guerra插值+RS），相图中解缠区边界与负载无关
+  - 吸引子解码通信协议：token↔三元模式混合+PRNG掩码(XOR密钥流)，解码即解缠动力学；60%块擦除仍无误码、80%擦除仅百分之几错误——优雅降级优于常规信道编码的悬崖式失败
+  - **Activation**: pattern disentanglement, dense Hopfield, high-order Hebbian, attractor decoding, mixture states, blind source separation, communication channel
+
+### Where Does Randomness Matter in Neural Cellular Automata?
+- [[nca-train-vs-execution-randomness]] - 受控分离NCA训练/执行随机性：异步更新是优化辅助而非运行必需——10/10异步训练模型可4096步全确定执行 (arXiv: 2609.36797)
+  - 精确二阶矩准则：P_{t+1}(ω)=d_α(ω)P_t(ω)+[α(1−α)/N^d]Σ|â|²P_t——随机掩码阻尼均值模但注入方差，均值检验误判4/25个配置
+  - 等质量对比：grow训练8/10长程脱靶，persist/regenerate全部保持；损伤恢复仅regenerate(+85%~99%)——重建损失、局部谱、微扰增长各只回答部分问题
+  - **Activation**: neural cellular automata, asynchronous update, persist recipe, second-moment criterion, retention vs repair, update mask
+
 ## 2026-10-04 - Information Science + Quantum (Cron Job)
 
 ### Interpreting Reasoning of LLMs via Partial Information Decomposition (SLIDER)
