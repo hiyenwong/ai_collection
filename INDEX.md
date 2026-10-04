@@ -1,3 +1,17 @@
+## 2026-10-04 - Information Science / Quantum Security & Inference (Cron Job)
+
+### Learnt Attacks on Quantum Key Distribution under Channel Noise and Device Drift
+- [[learnt-attacks-qkd-channel-drift]] - 约束 MDP 攻击者量化设备漂移下 QKD 自适应窃听：RL 攻击 Holevo 0.348 vs 固定电路 0.135（零检测，98% DP 上界）(arXiv: 2610.01792)
+  - OU 过程建模信道噪声漂移 + 每块 abort 预算约束 + 门结构/角度联合搜索 → 紧凑离散动作集，RL 良定义且可迁移无模板噪声（振幅阻尼）
+  - 平稳噪声对照：基不对称增益变号 → 自适应本质是追踪漂移；反制方向为随漂移率自适应的时变检测阈值
+  - **Activation**: QKD eavesdropping, channel noise drift, constrained MDP, RL attack circuits, Holevo information, device-independent E91, BB84, Ornstein-Uhlenbeck, security analysis, recalibration cadence
+
+### QuanVI: Score-based Variational Inference via Quantum Maximally Mixed States
+- [[quanvi-score-variational-inference]] - 简并低能子空间用最大化混合态替换本征向量 + MPO 压缩密度算符，解决 score-VI 参数爆炸与本征态非唯一性 (arXiv: 2609.39164)
+  - Fisher 散度目标 → ρ 的线性迹泛函；子空间旋转不变性消除基依赖震荡；DMRG 风格 sweep 优化 O(n·χ²) 参数
+  - 高维贝叶斯后验（非高斯）上验证：特征值 score-VI 震荡处 QuanVI 收敛；键维 χ 控制精度-成本前沿
+  - **Activation**: score-based variational inference, Fisher divergence, maximally mixed state, degenerate subspace, MPO tensor network, DMRG sweep, Bayesian posterior approximation, non-Gaussian targets, density operator optimization
+
 ## 2026-10-04 - Information Science / Quantum Cryptography (Cron Job)
 
 ### Time-Space Lower Bounds for Breaking Quantum Cryptography
