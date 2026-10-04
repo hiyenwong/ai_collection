@@ -1,5 +1,21 @@
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
+### Continual Reinforcement Learning with Neuroevolution
+- [[neuroevolution-continual-rl-stability-plasticity]] - 神经进化在持续RL中最优：ES最一致实现稳定-可塑性权衡，机制是参数空间探索偏向宽返回景观邻域，跨任务邻域重叠率预测LA−F权衡 (arXiv: 2610.01583)
+  - ES在8/18设置中LA−F最佳，GA在10/18设置学习准确率最高；PPO及ReDo/TRAC/C-CHAIN变体要么失去可塑性要么以稳定性换可塑性
+  - 共享邻域（ϵ=0.1扰动下同时解决两任务的分数）与LA−F的Spearman相关ρ=0.77（NE 0.90, RL 0.70）；ES邻域比PPO宽2.3-3.9倍
+  - RL可塑性损失症状（休眠神经元累积、权重漂移）在NE中不出现——源于梯度优化而非非平稳性；novelty search使DeepSea动作图重获率11%→57%（收益在elite不在centroid）
+  - **Activation**: continual RL, neuroevolution, evolution strategies, stability-plasticity tradeoff, plasticity loss, return landscape neighborhood, population-based training, forgetting
+
+### MorphAtt: A Neuromorphic Accelerator for Efficient Multi-Head Attention Processing in Spiking Vision Transformers
+- [[morphatt-spiking-vision-transformer-accelerator]] - SViT注意力ASIC：Q(KᵀV)重排将复杂度O(N²D)→O(ND²)，二值脉冲AND+popcount免乘法器，32nm下20.3-29.1 TOPS/W@39-55mW (arXiv: 2609.33207)
+  - SpikeQKV→SpikeAtten→RepConv级联架构+模块间缓冲消除片外访存；LIF取τ=2用右移代替除法；注意力引擎仅209µW（比乘法器注意力省96%，单操作12fJ vs 500fJ）
+  - 门控累加+sleep模式：Query MSB=0或KᵀV行全零时旁路切换功耗；支持SDTv2重参数化卷积仅增3.3%功耗
+  - 功耗分布：SpikeQKV 51.6% > 片上存储44.6% > RepConv 3.2% > SpikeAtten 0.6%——免乘法后注意力近免费，LIF生成与存储才是优化重点
+  - **Activation**: spiking vision transformer, neuromorphic ASIC, multiplier-free attention, AND-popcount, edge AI, SDTv2, reparameterization convolution, SViT accelerator
+
+## 2026-10-05 - Neuroscience Research (Cron Job)
+
 ### Walshness: an intrinsic neural-network representability metric for quantum states
 - [[walshness-nqs-representability]] - 量子态NQS可表示性的内在度量：Walshness低⟺紧凑神经网络表示，最优基选择=经典自旋模型能量最小化，恢复并推广Marshall符号规则 (arXiv: 2610.00505)
   - Wᶻ_α[ψ]=(1/α)log E_{r∼p_ψ}[e^{α|r|₁}]——Walsh谱质量集中在低阶模式⟺少体结构；内在W_α对所有局域SU(2)基取最小
