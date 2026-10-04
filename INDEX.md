@@ -1,3 +1,23 @@
+## 2026-10-04 - Information Science + Quantum (Cron Job)
+
+### Interpreting Reasoning of LLMs via Partial Information Decomposition (SLIDER)
+- [[slider-pid-llm-reasoning]] - PID 分解推理步骤的 answer-相关信息为 unique/redundant/synergistic，Step-RRI = Red − η·max{Uni,Syn} 检测重复推理，Trajectory-RRI 引导 SFT 数据选择 (arXiv: 2610.00571)
+  - PRMBench 冗余检测 +10 分超过 embedding-similarity/InfoGain 基线；Theorem 2: 重复步骤 Uni=Syn=0 故 RRI>0
+  - 低 Trajectory-RRI 训练数据微调 Qwen2.5-7B：推理效率与平均 RRI 相关 ρ=−0.97，任务性能保持
+  - **Activation**: partial information decomposition, PID, Step-RRI, Trajectory-RRI, repetitive reasoning, reasoning interpretability, fine-tuning data selection, PRMBench
+
+### Quantum state preparation for weighted d-DNNF
+- [[quantum-state-prep-ddnnf]] - 加权 d-DNNF 描述的量子态可线性时间编译为 O(|D|) 门电路：证书超对称逐层生长 + ancilla 反计算 (arXiv: 2610.02094)
+  - 知识编译语言（determinism+decomposability）成为量子态加载前端：贝叶斯网络/概率数据库/加权模型计数均可 d-DNNF 编译
+  - 比 weighted FBDD (Phe 2025) 指数级更 succinct；2-d-DNNF fan-out-2 归约只损失 log 因子
+  - **Activation**: quantum state preparation, QSP, d-DNNF, knowledge compilation, model counting, certificate superposition, succinct representation, quantum data loading
+
+### Submodularity of entropy under quantum convolution
+- [[quantum-convolution-submodular-entropy]] - 量子卷积熵增益的多拟阵几何：亚模扩展到整个子集格，机械化导出卷积 SSA、量子 Ruzsa 三角不等式、Plünnecke–Ruzsa 不等式族 (arXiv: 2609.40211)
+  - 量子倍增常数 δ_q[ρ] 控制所有 m-重卷积熵增长，指数 m−1 最优（计算基对角态已达到）
+  - 证明模式：辅助态边际熵归约 —— 把多输入卷积熵编码为单一辅助态的边际熵，化为标准 SSA 应用
+  - **Activation**: quantum convolution, von Neumann entropy, submodular, polymatroid, Ruzsa triangle inequality, Plünnecke-Ruzsa, doubling constant, additive combinatorics, entropy inequalities
+
 ## 2026-10-04 - Neuroscience Research (Cron Job)
 
 ### Attraction to hierarchical feature memory explains orientation bias
