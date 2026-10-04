@@ -44,6 +44,22 @@
   - **Activation**: entanglement-assisted communication, subgroup membership, remote state preparation, coset state Hadamard test, one-way communication complexity, moment method lower bound, Heisenberg group irrep, representation theory dimension, communication separation
 ## 2026-10-04 - Neuroscience Research (Cron Job)
 
+### How much of fly walking is written in the wiring?
+- [[fly-walking-wiring-specificity]] - 连接组接线特异性检验方法学：节奏是通用的，拮抗肌协调才是写入接线的；Sherrington 交互神经支配直接编码于果蝇腿运动连接组 (arXiv: 2609.38665)
+  - 固定权重（符号化突触计数）率模型，MaleCNS+MANC 双独立连接组，132 设置网格扫描+冻结+60s 多窗口确认；六族嵌套重连零模型（密度→细胞角色→度→腿块→谱系块→腿×谱系）
+  - 核心结果：9-14/30 重连网络节律性 ≥ 真实网络（最高 0.90 vs 0.32），但 0/30 达到真实拮抗协调（0.312 vs max 0.144）；交互神经支配指数 0.48/0.38 vs 全部重连网络为负
+  - 因果检验：跨池重分配前运动输入（强度仅变 2-4%）即废除协调而保留节律——协调取决于前运动输入分配给哪个拮抗池，非输入强度；协调集中于胸-髋关节（0.71 vs 0.09）
+  - 可复用清单：模式读出（相位关系）而非振荡读出、预注册声明级别、双连接组复制、结构签名验证、强度/剂量匹配因果扰动
+  - **Activation**: connectome specificity, wiring specificity, null model connectome, antagonist coordination, reciprocal innervation, central pattern generator, fly walking, degree-preserving rewiring, Maslov-Sneppen
+
+### Neuromorphic Pseudo-Random Number Generators with a Low Power Hardware Implementation
+- [[neuromorphic-prng-balanced-chaotic-snn]] - 平衡混沌 SNN 作为低功耗伪随机数发生器：spike-chaos 区制 LIF 网络经动态查找表变换通过全部 NIST SP-800-22 测试，FPGA 实现 3-5 mW/120kbps (arXiv: 2610.00719)
+  - 硬件友好修改：权重二值化 ±g/√N（每神经元恰 N/2 正负）、参数量化为 2^k 幂（全移位-加法、无乘法器）；ISI CV≈0.99 确认 Poisson 样放电、单脉冲删除/单权重翻转去相关轨迹
+  - 区制选择：rate-chaos（耦合过大）因长时自相关产生劣质比特流，NIST 通过数与 CV 强负相关 (ρ=-0.8147)；须选低 CV Poisson 样 spike-chaos 区，N≥128
+  - 比特提取：朴素脉冲索引编码因相对不应期失败；动态查找表 y_n=mod(y_{n−1}+s_n,N), b_n=L(y_n) 混合全网历史；Dieharder 短程相关用两遍 XOR 成对抽取白化消除
+  - 性能：与 LCG/BBS/Mersenne Twister 可比（~50% 比特流全过 15 项 NIST）；O(2^N²) 唯一实例可经抑制性偏置禁用神经元重配置；同一硬件块兼作储备池计算加速器；诚实定位为统计 RNG 而非 CSPRNG
+  - **Activation**: pseudo-random number generator, neuromorphic PRNG, balanced network chaos, spike chaos, rate chaos, NIST SP-800-22, entropy source hardware, FPGA SNN, stochastic computing, edge computing randomness
+
 ### Controllable Stochastic Quantization Encoding for Adversarially Robust Spiking Neural Networks
 - [[sqe-stochastic-quantization-snn-robust]] - 随机量化编码 SQE：单一量化尺度 N 在 Poisson 编码 (N=1) 与直接编码 (N→∞) 之间连续插值，Var≤1/(4N²) 精确控制编码随机性，输入层对抗防御与训练层防御可叠加 (arXiv: 2610.01558)
   - 核心定理：无偏性 𝔼[s]=x、随机性上界 1/(4N²)、N=1 退化为 Poisson、N→∞ 退化为 direct——SQE 是统一两种标准编码的一般框架；STE 直通梯度训练
