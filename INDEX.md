@@ -1,3 +1,160 @@
+## 2026-10-05 - Neuroscience Research (Cron Job)
+
+### Continual Reinforcement Learning with Neuroevolution
+- [[neuroevolution-continual-rl-stability-plasticity]] - 神经进化在持续RL中最优：ES最一致实现稳定-可塑性权衡，机制是参数空间探索偏向宽返回景观邻域，跨任务邻域重叠率预测LA−F权衡 (arXiv: 2610.01583)
+  - ES在8/18设置中LA−F最佳，GA在10/18设置学习准确率最高；PPO及ReDo/TRAC/C-CHAIN变体要么失去可塑性要么以稳定性换可塑性
+  - 共享邻域（ϵ=0.1扰动下同时解决两任务的分数）与LA−F的Spearman相关ρ=0.77（NE 0.90, RL 0.70）；ES邻域比PPO宽2.3-3.9倍
+  - RL可塑性损失症状（休眠神经元累积、权重漂移）在NE中不出现——源于梯度优化而非非平稳性；novelty search使DeepSea动作图重获率11%→57%（收益在elite不在centroid）
+  - **Activation**: continual RL, neuroevolution, evolution strategies, stability-plasticity tradeoff, plasticity loss, return landscape neighborhood, population-based training, forgetting
+
+### MorphAtt: A Neuromorphic Accelerator for Efficient Multi-Head Attention Processing in Spiking Vision Transformers
+- [[morphatt-spiking-vision-transformer-accelerator]] - SViT注意力ASIC：Q(KᵀV)重排将复杂度O(N²D)→O(ND²)，二值脉冲AND+popcount免乘法器，32nm下20.3-29.1 TOPS/W@39-55mW (arXiv: 2609.33207)
+  - SpikeQKV→SpikeAtten→RepConv级联架构+模块间缓冲消除片外访存；LIF取τ=2用右移代替除法；注意力引擎仅209µW（比乘法器注意力省96%，单操作12fJ vs 500fJ）
+  - 门控累加+sleep模式：Query MSB=0或KᵀV行全零时旁路切换功耗；支持SDTv2重参数化卷积仅增3.3%功耗
+  - 功耗分布：SpikeQKV 51.6% > 片上存储44.6% > RepConv 3.2% > SpikeAtten 0.6%——免乘法后注意力近免费，LIF生成与存储才是优化重点
+  - **Activation**: spiking vision transformer, neuromorphic ASIC, multiplier-free attention, AND-popcount, edge AI, SDTv2, reparameterization convolution, SViT accelerator
+
+## 2026-10-05 - Neuroscience Research (Cron Job)
+
+### Walshness: an intrinsic neural-network representability metric for quantum states
+- [[walshness-nqs-representability]] - 量子态NQS可表示性的内在度量：Walshness低⟺紧凑神经网络表示，最优基选择=经典自旋模型能量最小化，恢复并推广Marshall符号规则 (arXiv: 2610.00505)
+  - Wᶻ_α[ψ]=(1/α)log E_{r∼p_ψ}[e^{α|r|₁}]——Walsh谱质量集中在低阶模式⟺少体结构；内在W_α对所有局域SU(2)基取最小
+  - Proposition 1: 基优化映射为经典自旋哈密顿量能量最小化（每site一个n̂ⱼ向量，耦合=多体关联⟨σⱼ₁···σⱼₖ⟩），TFIM最优基自发破缺平移对称（周期2交错）
+  - Theorem 1/2 (双边): MLP宽度n^O(ω)深度O(logω)可表示低Walshness态；近最大Walshness⟹深度Ω(log n)不可避免；RBM用乘法Walshness（log ψ的）
+  - 实证: TFIM g=0.2用Walshness最小基训练MLP-NQS，infidelity降低数个数量级；混合场toric code同样大幅改善
+  - **Activation**: neural quantum states, NQS representability, Walshness, optimal basis, Marshall sign rule, sign structure, quantum state complexity
+
+### Brain-SAD: A Brain-Inspired Safe Autonomous Driving Control Framework with Dynamic Fear-Oriented Constraint on Dual-Policy
+- [[brain-sad-fear-oriented-dual-policy]] - 恐惧信号驱动的动态约束+双策略仲裁安全驾驶框架：在线恐惧信号解除约束与离线训练分布的耦合，替代静态Lagrangian/固定投影边界 (arXiv: 2609.38016)
+  - 现有Constrained RL缺陷：soft方法的动作代价是静态state→cost映射，hard方法的可行域边界来自离线演示——约束↔训练场景强耦合
+  - 杏仁核恐惧反应机制：场景感知→动态恐惧信号f(scene)→在线仲裁长期策略（常规交互）vs短期策略（紧急防撞），同时作为长期策略的动态约束
+  - 可复用模式：学习型风险头调制拉格朗日乘子/投影边界（替代固定值）；带迟滞的双阈值门控防策略振荡；防御策略需过采样near-miss数据
+  - **Activation**: safe reinforcement learning, fear-oriented constraint, dual policy, safe autonomous driving, dynamic action cost, amygdala, constrained RL distribution shift
+
+### Sequential Capacity of Quantum Processes with Finite Memory
+- [[sequential-capacity-quantum-processes]] - 固定内存量子过程的自适应可测试容量定律 C_γ(K)=Θ(K log₂((K+1)/γ))，量子相干干预比经典固定基测量多出对数级容量 (arXiv: 2610.02068)
+  - 相位树构造：单控制量子比特 + Möbius/Boolean 反演签名查询 (s∈{−1,0,1}^K) 隔离子集和的逐位二进制，精确 0/1 响应
+  - 噪声定律：残差相位翻转概率 e(q)=min(qI,qZ)+min(qX,qY) 决定容量 Θ(RT·log₂[1+min(T,1/e)])——纯横向翻转 e=0 不损失增强
+  - 经典程序下界 Θ(T log T) vs 量子程序 O(T) qubits：容量与模拟程序大小是独立资源
+  - **Activation**: sequential capacity, fat-shattering dimension, quantum process testing, finite memory, adaptive tester, residual phase-flip
+
+### Null-model treatment of the sensory-motor boundary changes an evolutionary connectome comparison
+- [[boundary-preserving-null-connectome]] - 果蝇连接组进化实验中标准随机化null在感觉-运动边界注入1000×直连捷径，翻转比较结论；边界保持null将差异收缩到±0.10等价界内 (arXiv: 2609.39248)
+  - 标准null(列shuffle/保度swap)使嗅觉→运动直连输出 0.012%→10.6%，中位路径 3突触→1突触——null"保度"却改变了功能决定性的宏观性质
+  - 因果移植闭环：捷径移植+0.44适应度(10/10种子)、剂量响应、内部-only sham与边界sham双双无效应——效应就是捷径本身
+  - **Activation**: connectome null model, boundary-preserving null, degree-preserving swap, sensory-motor boundary, transplant experiment, equivalence bound
+
+### Future Video Generation Better Aligns with the Human Visual Cortex than Observed Video
+- [[future-video-generation-visual-cortex-alignment]] - AR视频扩散模型的"未来生成"表征比观测视频本身更对齐人类视觉皮层，预测编码的脑-AI对齐直接证据 (arXiv: 2609.38819)
+  - 未来token表征在全部5个视觉分区unique contribution超过观测视频(p=0.002)，优势沿视觉层级增长(MT+ 0.436 vs 0.363)
+  - 未来生成在**最噪声步**(s=0)对齐最佳——未承诺的多可能未来态与贝叶斯神经编码一致；重建在中段步峰值(细节精修)
+  - STG层放大实验：人类偏好与层对齐度相关r=0.75 (p=0.029)，神经对齐→行为验证闭环
+  - **Activation**: brain alignment, video diffusion, predictive coding, fMRI encoding, autoregressive, variance partitioning
+
+### Field closure, ice neurons, and when a dendrite is a motif
+- [[field-closure-ice-neurons-dendritic-motifs]] - 场闭合(γ)将冰神经元(Mullins-Sekerka生长极限)变成真正的动力学motif——ephaptic反馈是有生物神经元与冰的分界线 (arXiv: 2610.00184)
+  - FHN界面态经γψ源项写回外场，γ=0谱分解为独立的MS生长支+FHN支；有限γ使长波侧重塑、开启孤立阈值以下的γ驱动Hopf区
+  - 冻结树motif检测：一阶超额核Q₁=z_out^T(βG_eph)z_in，40个最大ephaptic对承载99.9%贡献——直接场捷径而非轮廓
+  - 80种子系综：Q₁>0在所有树上成立(中位1.1×10⁻³)；亚阈值下"闭合几乎就是传输"(4.7×)，spike幅值下只是修正
+  - **Activation**: dendritic computation, ephaptic coupling, morphogenesis, motif detection, FitzHugh-Nagumo, cable theory
+
+### Dense auto-hetero associative memories applied to noisy communication channels
+- [[dense-auto-hetero-associative-disentanglement]] - 密集高阶Hebbian耦合让模块化Hopfield网络在K=Θ(N)线性负载下实现模式解缠：把"混合态"从检索错误变成计算原语 (arXiv: 2609.32605)
+  - 核心设计律 2<P≤D：容量由最低耦合阶决定，P>2消除模式慢噪声、P≤D压制模块噪声，自洽方程只需Mattis磁化序参量（Guerra插值+RS），相图中解缠区边界与负载无关
+  - 吸引子解码通信协议：token↔三元模式混合+PRNG掩码(XOR密钥流)，解码即解缠动力学；60%块擦除仍无误码、80%擦除仅百分之几错误——优雅降级优于常规信道编码的悬崖式失败
+  - **Activation**: pattern disentanglement, dense Hopfield, high-order Hebbian, attractor decoding, mixture states, blind source separation, communication channel
+
+### Where Does Randomness Matter in Neural Cellular Automata?
+- [[nca-train-vs-execution-randomness]] - 受控分离NCA训练/执行随机性：异步更新是优化辅助而非运行必需——10/10异步训练模型可4096步全确定执行 (arXiv: 2609.36797)
+  - 精确二阶矩准则：P_{t+1}(ω)=d_α(ω)P_t(ω)+[α(1−α)/N^d]Σ|â|²P_t——随机掩码阻尼均值模但注入方差，均值检验误判4/25个配置
+  - 等质量对比：grow训练8/10长程脱靶，persist/regenerate全部保持；损伤恢复仅regenerate(+85%~99%)——重建损失、局部谱、微扰增长各只回答部分问题
+  - **Activation**: neural cellular automata, asynchronous update, persist recipe, second-moment criterion, retention vs repair, update mask
+
+## 2026-10-04 - Information Science + Quantum (Cron Job)
+
+### Interpreting Reasoning of LLMs via Partial Information Decomposition (SLIDER)
+- [[slider-pid-llm-reasoning]] - PID 分解推理步骤的 answer-相关信息为 unique/redundant/synergistic，Step-RRI = Red − η·max{Uni,Syn} 检测重复推理，Trajectory-RRI 引导 SFT 数据选择 (arXiv: 2610.00571)
+  - PRMBench 冗余检测 +10 分超过 embedding-similarity/InfoGain 基线；Theorem 2: 重复步骤 Uni=Syn=0 故 RRI>0
+  - 低 Trajectory-RRI 训练数据微调 Qwen2.5-7B：推理效率与平均 RRI 相关 ρ=−0.97，任务性能保持
+  - **Activation**: partial information decomposition, PID, Step-RRI, Trajectory-RRI, repetitive reasoning, reasoning interpretability, fine-tuning data selection, PRMBench
+
+### Quantum state preparation for weighted d-DNNF
+- [[quantum-state-prep-ddnnf]] - 加权 d-DNNF 描述的量子态可线性时间编译为 O(|D|) 门电路：证书超对称逐层生长 + ancilla 反计算 (arXiv: 2610.02094)
+  - 知识编译语言（determinism+decomposability）成为量子态加载前端：贝叶斯网络/概率数据库/加权模型计数均可 d-DNNF 编译
+  - 比 weighted FBDD (Phe 2025) 指数级更 succinct；2-d-DNNF fan-out-2 归约只损失 log 因子
+  - **Activation**: quantum state preparation, QSP, d-DNNF, knowledge compilation, model counting, certificate superposition, succinct representation, quantum data loading
+
+### Submodularity of entropy under quantum convolution
+- [[quantum-convolution-submodular-entropy]] - 量子卷积熵增益的多拟阵几何：亚模扩展到整个子集格，机械化导出卷积 SSA、量子 Ruzsa 三角不等式、Plünnecke–Ruzsa 不等式族 (arXiv: 2609.40211)
+  - 量子倍增常数 δ_q[ρ] 控制所有 m-重卷积熵增长，指数 m−1 最优（计算基对角态已达到）
+  - 证明模式：辅助态边际熵归约 —— 把多输入卷积熵编码为单一辅助态的边际熵，化为标准 SSA 应用
+  - **Activation**: quantum convolution, von Neumann entropy, submodular, polymatroid, Ruzsa triangle inequality, Plünnecke-Ruzsa, doubling constant, additive combinatorics, entropy inequalities
+
+## 2026-10-04 - Neuroscience Research (Cron Job)
+
+### Attraction to hierarchical feature memory explains orientation bias
+- [[hierarchical-feature-memory-orientation-bias]] - 均匀编码精度下层级复合特征记忆即可复现 anti-cardinal bias 与序列依赖，推翻效率编码标准解释 (arXiv: 2609.40204)
+  - 反射吸引：incongruent 圆相关为负——序列吸引由前反应及其 cardinal 镜像反射的复合特征主导（复合记忆痕迹=层级再激活指纹）
+  - 跨半视野测试分离低层（空间特异）与高层（空间抽象）影响；von Mises 混合模型零调参复现全部 anti-cardinal 偏差；EEG ERP 同时相似于反射朝向
+  - **Activation**: serial dependence, orientation bias, anti-cardinal, compound feature memory, von Mises mixture, hemifield, efficient coding critique, hierarchical reactivation, circular correlation
+
+### Belief-Based Maximum Occupancy Principle and Active Inference
+- [[belief-mop-active-inference-bellman]] - MOP 扩展到 POMDP 信念空间 + EFE 的 Bellman 价值迭代重构：MOP 联合达成探索与生存，EFE 两者由精度 d 互斥交换 (arXiv: 2609.39342)
+  - EFE 树搜索→带 γ 折扣的 Bellman 方程：信念离散化(∆=0.1)+线性插值，深度线性代价，时间平稳策略；信念传播与 VFE 最小化数学等价
+  - MOP 策略熵随内部能量自适应分档(E>15 广探索/E≤15 直奔食物)且零超参；survival-occupancy 平面上 MOP 单点落在 EFE 的 d-权衡迹之外
+  - 终止态路径熵塌缩隐式产生生存倾向——Kiefer 约束熵最大化统一视角：MOP 与 EFE 的差异仅在保命约束显式 vs 隐式
+  - **Activation**: active inference, maximum occupancy principle, expected free energy, Bellman value iteration, POMDP belief state, intrinsic motivation, exploration-survival tradeoff, empowerment comparison, path entropy
+
+## 2026-10-04 - Information Science / Quantum Security & Inference (Cron Job)
+
+### Learnt Attacks on Quantum Key Distribution under Channel Noise and Device Drift
+- [[learnt-attacks-qkd-channel-drift]] - 约束 MDP 攻击者量化设备漂移下 QKD 自适应窃听：RL 攻击 Holevo 0.348 vs 固定电路 0.135（零检测，98% DP 上界）(arXiv: 2610.01792)
+  - OU 过程建模信道噪声漂移 + 每块 abort 预算约束 + 门结构/角度联合搜索 → 紧凑离散动作集，RL 良定义且可迁移无模板噪声（振幅阻尼）
+  - 平稳噪声对照：基不对称增益变号 → 自适应本质是追踪漂移；反制方向为随漂移率自适应的时变检测阈值
+  - **Activation**: QKD eavesdropping, channel noise drift, constrained MDP, RL attack circuits, Holevo information, device-independent E91, BB84, Ornstein-Uhlenbeck, security analysis, recalibration cadence
+
+### QuanVI: Score-based Variational Inference via Quantum Maximally Mixed States
+- [[quanvi-score-variational-inference]] - 简并低能子空间用最大化混合态替换本征向量 + MPO 压缩密度算符，解决 score-VI 参数爆炸与本征态非唯一性 (arXiv: 2609.39164)
+  - Fisher 散度目标 → ρ 的线性迹泛函；子空间旋转不变性消除基依赖震荡；DMRG 风格 sweep 优化 O(n·χ²) 参数
+  - 高维贝叶斯后验（非高斯）上验证：特征值 score-VI 震荡处 QuanVI 收敛；键维 χ 控制精度-成本前沿
+  - **Activation**: score-based variational inference, Fisher divergence, maximally mixed state, degenerate subspace, MPO tensor network, DMRG sweep, Bayesian posterior approximation, non-Gaussian targets, density operator optimization
+
+## 2026-10-04 - Information Science / Quantum Cryptography (Cron Job)
+
+### Time-Space Lower Bounds for Breaking Quantum Cryptography
+- [[quantum-timespace-trace-moment]] - 迹矩方法证明 QROM 预处理攻击时间-空间下界：S 比特建议+T 查询破二进制相位态概率 O((T²+√ST)/N)，量子密码安全空间 N² vs 经典 N (arXiv: 2610.02101)
+  - 三步流水线：建议态成功概率 → PSD 矩阵 Y_R 的期望算子范数 → 迹矩 E Tr(Y_R^{2S}) → 压缩预言机纯化（度数=数据库增长，Ŷ^S 支撑 ≤2S 条目）
+  - 小数据库界 ⟨φ|Ŷ|φ⟩ ≤ O((1+T²+√ℓ)/K)：重行 ℓ/(Kh) + 命中库 ℓ/(KN) + h+1 相干历史 Cauchy–Schwarz，h=√ℓ；1OWS 紧于 S=0（Grover）与 T=0（√S 副本+对称子空间测试）
+  - 中心化矩阵技巧将 PRG 区分优势归入同一管线：ε ≤ O(T²/N+√(ST/N))，改进 Liu23 的 O(T/√N+(ST/N)^{1/3})；1PRS@T=0 紧界 O(√S/N)
+  - 可复用：建议=算子范数、矩阶=寄存器大小、度数=数据库增长、重采样/交换混合（综合问题 O((T²+(T+1)log 2M)/K)）
+  - **Activation**: time-space tradeoff, quantum random oracle model, compressed oracle, trace moment method, preprocessing attacks, one-way states, pseudorandom states, non-uniform security, operator norm random matrix
+
+## 2026-10-04 - Information Science / Quantum Pseudorandomness (Cron Job)
+
+### On the Pseudorandomness of Simple Quantum Processes
+- [[design-pseudorandom-separation]] - 反驳量子 HMMR 猜想并首次分离多项式阶酉设计与伪随机酉：矩匹配≠伪随机性，最大扰乱≠Haar 行为 (arXiv: 2610.02100)
+  - 掺杂 Clifford 局部行走：概率 1/m 非 Clifford Z 旋转，T=O_t(n²log²n) 步成自适应 t-design 误差 exp(−Ω(log²n))，但 O_t(log²n) 查询可区分——Clifford twirl 不动点空间维数与 n 无关 [GNW21]，常数维子空间用掺杂谱界
+  - FB 系综分离任意多项式阶（1≤t≤2^{n/4-4}）：U=F·B，F 植入 2t-wise 独立相位态于不变子空间 span(|+⟩^⊗n)，B 在正交补 Haar——PFC 置换插入 + CSBH25 正算子分析得无平方根损失 design 误差
+  - 区分器：重复查询产生同一相位态副本，ABDY23 导数测量每副本一条种子线性方程，Weil 特征和界 + 高斯消元 O(n^t) 查询定种子
+  - 物理警示：t=Θ(n) 最大扰乱（min-entropy 距最大 8 比特）仍可 O(n²) 查询区分；新猜想 6.1：局部系综 t=Θ(n) design 或为 PRU 真阈值
+  - **Activation**: unitary designs, pseudorandom unitaries, Gowers conjecture, quantum HMMR, doped Clifford circuits, phase state learning, derivative measurement, information scrambling, maximal scrambling, black hole physics
+## 2026-10-04 - Neuroscience Research (Cron Job)
+
+### NeuronDiscover: Agent-in-Twin for Mechanistic Discovery in Neuronal Microenvironments with World Action Models
+- [[neurondiscover-agent-in-twin]] - Agent-in-Twin 机制发现：联合机制-差异信念对抗孪生混淆的自主实验设计 (arXiv: 2609.35338)
+  - 孪生混淆：真实机制改变与数字孪生误差在稀疏观测中签名相同，预测精度无法裁决机制主张
+  - 类型化+范围化 MIOY 图（机制-干预-观测-结果）：观测节点永不解释物理端点，假支持 13.5%→5.0%
+  - 联合机制-差异 EIG > 插件 EIG（3.8 vs 2.9 关系/世界）；可辨识性地板 Λ(E)≻0 先于信息增益
+  - **Activation**: twin confounding, agent-in-twin, mechanistic discovery, MIOY graph, world action model, bayesian experiment design
+
+### FAST-Brain: A Flow-Aligned Spatio-Temporal Surrogate Brain Model
+- [[fast-brain-flow-aligned-fmri-surrogate]] - 流对齐直接干净信号预测的 rs-fMRI 代理脑模型，逼近误差按内在维数 d 缩放 (arXiv: 2609.34354)
+  - flow matching 直接预测干净 BOLD 而非噪声/速度场，速度解析恢复：V=(Ŷ−Z)/max(1−τ,τ0)
+  - 定理：低维子空间下贝叶斯最优去噪器因子化 F*(Z)=A·f(A⊤Z)，误差 ~√(dP) 与环境维数 N 无关
+  - 双解码器：RoPE Transformer（时间）+ 可学习多项式图滤波多图 GCN（SC/纤维长度/功能网络），零初始化课程
+  - HCP: FC corr 0.726→0.938, MAE 0.199→0.073；EC AUROC 0.999
+  - **Activation**: flow matching, fmri surrogate, BOLD generation, clean-signal prediction, digital twin brain, graph convolution
+
 ## 2026-10-04 - Information Science / Quantum Communication (Cron Job)
 
 ### An exponential separation between entanglement-assisted and unassisted one-way quantum communication
@@ -7,6 +164,22 @@
   - 群实例：广义 Heisenberg 群 H_{2^r}(F_3)（中心 ζ 阶 3，Weyl 对易 X_uY_v=ω^{u·v}Y_vX_u 强制 D=3^{2^r}），得 Ω(2^r)=Ω(n^{1/3})；否定 Newman 定理的纠缠模拟，Shi–Zhu 2^{O(C)} 模拟渐近最优
   - **Activation**: entanglement-assisted communication, subgroup membership, remote state preparation, coset state Hadamard test, one-way communication complexity, moment method lower bound, Heisenberg group irrep, representation theory dimension, communication separation
 ## 2026-10-04 - Neuroscience Research (Cron Job)
+
+### How much of fly walking is written in the wiring?
+- [[fly-walking-wiring-specificity]] - 连接组接线特异性检验方法学：节奏是通用的，拮抗肌协调才是写入接线的；Sherrington 交互神经支配直接编码于果蝇腿运动连接组 (arXiv: 2609.38665)
+  - 固定权重（符号化突触计数）率模型，MaleCNS+MANC 双独立连接组，132 设置网格扫描+冻结+60s 多窗口确认；六族嵌套重连零模型（密度→细胞角色→度→腿块→谱系块→腿×谱系）
+  - 核心结果：9-14/30 重连网络节律性 ≥ 真实网络（最高 0.90 vs 0.32），但 0/30 达到真实拮抗协调（0.312 vs max 0.144）；交互神经支配指数 0.48/0.38 vs 全部重连网络为负
+  - 因果检验：跨池重分配前运动输入（强度仅变 2-4%）即废除协调而保留节律——协调取决于前运动输入分配给哪个拮抗池，非输入强度；协调集中于胸-髋关节（0.71 vs 0.09）
+  - 可复用清单：模式读出（相位关系）而非振荡读出、预注册声明级别、双连接组复制、结构签名验证、强度/剂量匹配因果扰动
+  - **Activation**: connectome specificity, wiring specificity, null model connectome, antagonist coordination, reciprocal innervation, central pattern generator, fly walking, degree-preserving rewiring, Maslov-Sneppen
+
+### Neuromorphic Pseudo-Random Number Generators with a Low Power Hardware Implementation
+- [[neuromorphic-prng-balanced-chaotic-snn]] - 平衡混沌 SNN 作为低功耗伪随机数发生器：spike-chaos 区制 LIF 网络经动态查找表变换通过全部 NIST SP-800-22 测试，FPGA 实现 3-5 mW/120kbps (arXiv: 2610.00719)
+  - 硬件友好修改：权重二值化 ±g/√N（每神经元恰 N/2 正负）、参数量化为 2^k 幂（全移位-加法、无乘法器）；ISI CV≈0.99 确认 Poisson 样放电、单脉冲删除/单权重翻转去相关轨迹
+  - 区制选择：rate-chaos（耦合过大）因长时自相关产生劣质比特流，NIST 通过数与 CV 强负相关 (ρ=-0.8147)；须选低 CV Poisson 样 spike-chaos 区，N≥128
+  - 比特提取：朴素脉冲索引编码因相对不应期失败；动态查找表 y_n=mod(y_{n−1}+s_n,N), b_n=L(y_n) 混合全网历史；Dieharder 短程相关用两遍 XOR 成对抽取白化消除
+  - 性能：与 LCG/BBS/Mersenne Twister 可比（~50% 比特流全过 15 项 NIST）；O(2^N²) 唯一实例可经抑制性偏置禁用神经元重配置；同一硬件块兼作储备池计算加速器；诚实定位为统计 RNG 而非 CSPRNG
+  - **Activation**: pseudo-random number generator, neuromorphic PRNG, balanced network chaos, spike chaos, rate chaos, NIST SP-800-22, entropy source hardware, FPGA SNN, stochastic computing, edge computing randomness
 
 ### Controllable Stochastic Quantization Encoding for Adversarially Robust Spiking Neural Networks
 - [[sqe-stochastic-quantization-snn-robust]] - 随机量化编码 SQE：单一量化尺度 N 在 Poisson 编码 (N=1) 与直接编码 (N→∞) 之间连续插值，Var≤1/(4N²) 精确控制编码随机性，输入层对抗防御与训练层防御可叠加 (arXiv: 2610.01558)
@@ -1271,3 +1444,35 @@
   - Production: prompt caching (up to 95% input discount), compaction for long context, parallelize independent tasks, Fast/Ultrafast modes
   - Long-running agents: steering, async tool calls, delegation; explicit decision boundaries replacing blanket "always ask" rules
   - **Activation**: GPT-6 model selection, reasoning effort tuning, prompt caching, AGENTS.md best practices
+
+## 2026-10-05 - Deep Learning Research (Cron Job)
+
+### CARM: Cancellation-Aware Response Masking for LLM Reinforcement Learning
+- [[carm-cancellation-aware-response-masking]] - LLM RL序列级off-policy掩码的符号对消缺陷与绝对值修正：几何均值log-ratio正负抵消掩盖双向漂移，|log-ratio|均值根除 (arXiv: 2610.02039)
+  - 带符号对数比可跨token位置抵消——策略某段大涨另一段大跌仍被判on-policy；CARM取绝对值后平均，接受响应满足带外token比例与带外平均对数距离的联合界
+  - 即插即用替换现有masking rule（TIS/GM），不改训练循环；AIME+BeyondAIME mean@16 +3.13pp，代码基准pass@1 +2.88pp
+  - **Activation**: response masking, off-policy RL, LLM reinforcement learning, sequence filtering, policy drift, importance ratio, PPO filtering, GRPO
+
+### Harnessing Domain Specialists in Multimodal Mixture-of-Experts for Efficient Adaptation
+- [[expertlens-moe-domain-specialist-adaptation]] - 多模态MoE专家自发语义专化：ExpertLens免数据从router权重解码专家领域标签，选择性微调仅更新21.7-47.0%参数 (arXiv: 2610.02123)
+  - 稀疏路由涌现语义modularity（数学/医学/遥感专家分化），router weights解码为词表token即得专家语义画像，无需前向数据
+  - 相关专家子集微调匹配或超全参数微调，平均4.0x训练加速，全面优于LoRA——"效率稀疏性→语义模块化→高效适配"因果链
+  - **Activation**: mixture-of-experts, expert specialization, router interpretation, efficient fine-tuning, selective expert tuning, MoE adaptation, semantic modularity
+
+### Decoding Looped Transformers Better for (Almost) Free
+- [[loopcd-contrastive-decoding-looped-transformers]] - Looped Transformer免训练对比解码：早期循环=弱模型、最终=强模型天然构成weak-strong对，对比引导解码可减半循环数 (arXiv: 2610.02185)
+  - LoopCD-Logits在logit空间p_final^(1+α)/p_early^α（一次额外输出pass）；LoopCD-Hidden在隐状态外推（零输出开销）；完全training-free
+  - Ouro-2.6B-Thinking AIME 2024 pass@1 61.88%→73.33%；Huginn HumanEval 22.56%→31.71%；剪半循环仍超全深度基线，前向FLOPs降22.5%-48.2%
+  - **Activation**: looped transformer, contrastive decoding, inference acceleration, recurrent depth, weak-strong pairs, training-free decoding, inference FLOPs reduction
+
+### Bellman Meets Lyapunov: Unsupervised Reinforcement Learning via Mastering Chaos
+- [[f-cip-controllable-information-production-unsupervised-rl]] - 无监督RL内在动机去变量选择：F-CIP仅由系统动力学定义CIP目标，无监督涌现平衡/可控性原语，配简单速度奖励即得协调步态 (arXiv: 2610.02012)
+  - 现有IM目标都要选信息变量（把专家知识从奖励转移到变量选择）；F-CIP的CIP目标只依赖dynamics，RL原生兼容，可与现有actor-critic直接组合
+  - 单独训练涌现balancing、controllability maintenance原语行为；+forward-velocity奖励产生hopping/running步态（通常需奖励工程）
+  - **Activation**: unsupervised RL, intrinsic motivation, controllable information, empowerment, reward-free exploration, primitive behavior discovery, forward CIP, robotics pretraining
+
+### Where-OPD: Spatially Guided On-Policy Self-Distillation of MLLMs with Synthetic Scenes
+- [[where-opd-spatially-guided-self-distillation]] - MLLM特权自蒸馏新形态：文本空间引导（物体身份+坐标）替代图像裁剪特权，程序化合成场景免标注post-training，合成到真实迁移+3.23pp (arXiv: 2610.02117)
+  - 教师收文本空间引导定位整合多区域证据，学生从图像+问题on-policy自蒸馏复现；合成场景特权标注自动免费，可扩展免标注
+  - 计数/文档/图表理解一致提升；仅合成场景训练迁移到CVBench/V*/ZoomBench/BLINK/HR-Bench/MME-RealWorld真实基准
+  - **Activation**: on-policy distillation, privileged information, MLLM perception, synthetic scenes, spatial grounding, annotation-free post-training, synthetic-to-real transfer, teacher guidance
