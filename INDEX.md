@@ -1,3 +1,22 @@
+## 2026-10-04 - Information Science / Quantum Cryptography (Cron Job)
+
+### Time-Space Lower Bounds for Breaking Quantum Cryptography
+- [[quantum-timespace-trace-moment]] - 迹矩方法证明 QROM 预处理攻击时间-空间下界：S 比特建议+T 查询破二进制相位态概率 O((T²+√ST)/N)，量子密码安全空间 N² vs 经典 N (arXiv: 2610.02101)
+  - 三步流水线：建议态成功概率 → PSD 矩阵 Y_R 的期望算子范数 → 迹矩 E Tr(Y_R^{2S}) → 压缩预言机纯化（度数=数据库增长，Ŷ^S 支撑 ≤2S 条目）
+  - 小数据库界 ⟨φ|Ŷ|φ⟩ ≤ O((1+T²+√ℓ)/K)：重行 ℓ/(Kh) + 命中库 ℓ/(KN) + h+1 相干历史 Cauchy–Schwarz，h=√ℓ；1OWS 紧于 S=0（Grover）与 T=0（√S 副本+对称子空间测试）
+  - 中心化矩阵技巧将 PRG 区分优势归入同一管线：ε ≤ O(T²/N+√(ST/N))，改进 Liu23 的 O(T/√N+(ST/N)^{1/3})；1PRS@T=0 紧界 O(√S/N)
+  - 可复用：建议=算子范数、矩阶=寄存器大小、度数=数据库增长、重采样/交换混合（综合问题 O((T²+(T+1)log 2M)/K)）
+  - **Activation**: time-space tradeoff, quantum random oracle model, compressed oracle, trace moment method, preprocessing attacks, one-way states, pseudorandom states, non-uniform security, operator norm random matrix
+
+## 2026-10-04 - Information Science / Quantum Pseudorandomness (Cron Job)
+
+### On the Pseudorandomness of Simple Quantum Processes
+- [[design-pseudorandom-separation]] - 反驳量子 HMMR 猜想并首次分离多项式阶酉设计与伪随机酉：矩匹配≠伪随机性，最大扰乱≠Haar 行为 (arXiv: 2610.02100)
+  - 掺杂 Clifford 局部行走：概率 1/m 非 Clifford Z 旋转，T=O_t(n²log²n) 步成自适应 t-design 误差 exp(−Ω(log²n))，但 O_t(log²n) 查询可区分——Clifford twirl 不动点空间维数与 n 无关 [GNW21]，常数维子空间用掺杂谱界
+  - FB 系综分离任意多项式阶（1≤t≤2^{n/4-4}）：U=F·B，F 植入 2t-wise 独立相位态于不变子空间 span(|+⟩^⊗n)，B 在正交补 Haar——PFC 置换插入 + CSBH25 正算子分析得无平方根损失 design 误差
+  - 区分器：重复查询产生同一相位态副本，ABDY23 导数测量每副本一条种子线性方程，Weil 特征和界 + 高斯消元 O(n^t) 查询定种子
+  - 物理警示：t=Θ(n) 最大扰乱（min-entropy 距最大 8 比特）仍可 O(n²) 查询区分；新猜想 6.1：局部系综 t=Θ(n) design 或为 PRU 真阈值
+  - **Activation**: unitary designs, pseudorandom unitaries, Gowers conjecture, quantum HMMR, doped Clifford circuits, phase state learning, derivative measurement, information scrambling, maximal scrambling, black hole physics
 ## 2026-10-04 - Neuroscience Research (Cron Job)
 
 ### NeuronDiscover: Agent-in-Twin for Mechanistic Discovery in Neuronal Microenvironments with World Action Models
