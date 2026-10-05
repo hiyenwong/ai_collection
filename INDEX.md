@@ -13,6 +13,18 @@
   - 模式提炼：两数字杀伤测试（机制争议前先跑不等式界）、几何自否证检查（提案自身的几何禁止其补救机制）、双侧持续窗口（可读+可重写双约束适用于任何静默记忆/突触权重/蛋白质态载体）
   - **Activation**: Q因子, 生物振荡子, 信息载体容量, 线宽, 相干时间, 微管, 内源性电磁场, 量子生物学, 神经信息载体, oscillator Q factor, label capacity, linewidth coherence, EM field brain theories, two-number kill test
 
+### Learning While Inferring: Local and Parallel Learning for Edge SNNs across Sensing Modalities
+- [[bsd-bidirectional-spike-distillation]] - 边缘SNN边推理边学习：BSD用互不相交的前向（刺激驱动）+反向（目标驱动）双网络，仅在中间表征处做局部对齐损失，前向推理/反向推理/分阶段更新三者并行，部署时只留前向分支 (arXiv: 2610.03149)
+  - 25个SOUL基准（5种感知模态）平均精度只落后匹配BP基线3.8pp；训练延迟0.72×、训练能耗0.36×；学到表征可免replay直接少样本类增量学习
+  - 设计规则：对齐点之前的图不相交是核心（任何跨阶段反向边都会重新引入串行化瓶颈）；反向分支可用特权输入教师；局部损失需对称避免向目标分支坍缩
+  - **Activation**: on-device learning, spiking neural network, local learning, bidirectional distillation, edge intelligence, learning while inferring, few-shot incremental, SNN边缘部署
+
+### Gaussian Fisher Information Is Superadditive
+- [[gaussian-fisher-superadditivity]] - 高斯测量的量子Fisher信息超可加：独立模式的联合读出优于分开测量——线性探测器只见半个相空间，两模式的"选哪一半"成为资源；Bell homodyne（50:50分束器+双homodyne）把heterodyne空端口的真空噪声换成第二个模式的信号 (arXiv: 2610.02625)
+  - 严格上界 (√2−1)²=17.157%；热模式同温增益"不可能"猜想被推翻：任意频率差打开温度窗口，频率比3.318处增益峰值12.699%（此时Bell homodyne为最优高斯测量）
+  - 硬件零门槛：两个耦合谐振器+双homodyne，或相位保持放大器的idler频带直接喂同一热源；适用微波测温/轴子搜寻等精度受限场景
+  - **Activation**: quantum Fisher information, Gaussian measurement, Bell homodyne, heterodyne, superadditivity, quantum metrology, thermal sensing, collective readout, idler port
+
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
 ### Neural Data Needs Semantic Tokenization: Behavioral Events as Boundaries of Session-Transferable Tokens
