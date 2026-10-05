@@ -1,4 +1,30 @@
 ## 2026-10-05 - Neuroscience Research (Cron Job)
+### NeuroLens: Learning Latent Embeddings of Neural Semantics from Chronic Recordings
+- [[neurolens-jepa-chronic-recordings]] - JEPA自监督框架从慢性神经记录学习去噪表征：潜空间预测分离表征可塑性与电极漂移，校准签名神经元身份支持零梯度跨session适配 (arXiv: 2610.02864)
+  - Day-adaptive cross-attention encoder：41维生理签名（FR stats+ACG+population coupling）经MLP生成neuron embedding注入token，替代固定ID实现未见神经元迁移；Utah array通道改用hypernetwork FiLM按天条件化
+  - SIGReg特征函数正则（匹配各向同性高斯）防坍缩，替代启发式stop-gradient；因果transformer AR predictor跨天共享参数强制稳定预测结构
+  - 实证：IBL 53天Neuropixels choice解码+6% vs causal NDT，latent effective rank跨天稳定（NDT随神经元丢失下降）；人类ALS语音sentence-embedding解码+38%，GF模式（64 calibration trials零梯度）仍超SPINT/POSSM
+  - **Activation**: JEPA, chronic recordings, representation drift, neural population nonstationarity, few-shot BCI, cross-attention encoder, effective rank, self-supervised neural decoding, calibration-based neuron identity
+
+### Parallel Time-Aligned Spiking Self-Attention for Consistent Integer-Valued Training and Spike-Driven Inference
+- [[pt-ssa-temporal-interaction-mismatch]] - SFA/I-LIF压缩训练与脉冲推理的算子级失配TIM：O_train含全部跨时间三元组Q_iK_j^TV_k而O_inference只保留对角项，SDT-V3在ImageNet掉27.78pp；PT-SSA重建D个虚拟脉冲切片按时间对齐并行计算注意力再求和，gap降至0.06pp (arXiv: 2610.03291)
+  - 脉冲重建X_d=1[C_X>d]全并行+单位STE梯度路由（D虚拟步梯度求和聚合到压缩激活）；Adaptive PT-SSA每块学一个标量θ_l=exp(clip(a,-8,8))等价调节SFA有效阈值，LSQ式1/√(MD)梯度缩放
+  - 算子级验证：D=4相对L2误差7.41→1.6e-4（SFA）；SSA gap随D恶化（D=8时26.99→15+pp）而PT-SSA全D稳定<0.3pp——发放计数守恒≠算子等价
+  - Triton-fused内核逐tile重建-计算-累加避免物化重建张量，吞吐仅比I-LIF SSA低5.4%（5797 sample/s），比recurrent LIF SSA快2.91×；ImageNet-1K 74.53% spike-driven Top-1
+  - **Activation**: spiking transformer, temporal interaction mismatch, train-inference consistency, SFA, I-LIF, spike-driven attention, virtual time step expansion, adaptive firing threshold, Triton kernel
+
+### A Distinct Communication Strategies Model of the Double Empathy Problem
+- [[double-empathy-dyadic-feedback-collapse]] - 首个 double empathy problem 机制模型：言语/非言语通道偏好差异经"感知缺口→防御性↑→共情输出↓"正反馈环即可复现共情崩溃；Jury 稳定性判据 L > (1−λ_A)(1−λ_NT)，环增益 L = 0.0072(ρ_A+1)(1−D_A/100)(1−D_NT/100)，ρ_A（言语输出衰减比）双重脆弱=更低激活阈值+更强耦合 (arXiv: 2602.02562)
+  - 核心要点：120 组仿真 16.7% 崩溃全部在 ρ_A≥1.0；双稳态（D*≈0 健康态 vs D*≈80 崩溃态）由 separatrix 分隔，稳定盆地大小近似反比于环增益（L 翻倍≈盆地减半）；ρ=0.5→+35.45% 盆地，ρ=2.0→−34.33%
+  - 核心要点：崩溃轨迹瞬态特征值超 1（λ_max=1.105@step8）驱动爆发增长后回落<1——崩溃态局部稳定不可逆；轨迹形似 Kindleberger 大萧条螺旋；4 个可证伪预测+测量协议（c_p 因子设计回归、ρ 压力诱导衰减比、D[0] 假反馈操纵、纵向三阶段 dyad 设计）
+  - **Activation**: double empathy problem, dyadic social coupling, empathy collapse, feedback loop, Jury stability, loop gain, separatrix, channel preference mismatch, autism, computational social neuroscience, 可证伪社会动力学模型
+
+### Reduced Hodgkin-Huxley models based on the correlation between sodium and potassium gating variables
+- [[reduced-hodgkin-huxley-gating-correlation]] - 用 h ≃ c(I)−n 门控相关（FitzHugh 1961 遗产，c 是电流依赖的修正）把 4D HH 降到 3D/2D 且保持 Bautin 余维2 分岔结构（I_SNLC/I₁/I₂ 三点对齐），并推导动作电位传播统一幂律 v = a/(C_m·R^b)，b=0.55/0.52/0.66 (4D/3D/2D) (arXiv: 2402.19185)
+  - 核心要点：消去方向性关键——快门控 m 可绝热消去（m→m_∞ 保有振荡），慢门控 n 不可（n→n_∞ 退化成无 Hopf 全稳态模型）；c_3D(I)=I^−0.0674、c_2D(I)=I^−0.078 幂律依赖刺激
+  - 核心要点：传播存在性区间 R∈[R_m0,R_M0]，内部更窄区间产生周期尖峰列、边缘区间只传单个孤波尖峰后回静息；轴突中段注入产生双向尖峰对撞湮灭——突触前信号可"诞生于中段"；周期幂律 per∝I^−0.35~−0.49
+  - **Activation**: Hodgkin-Huxley reduction, gating variable correlation, action potential propagation speed, cable equation, Bautin bifurcation, solitary spike, axon internal resistivity, neuron model simplification, HH 降维
+
 ## 2026-10-05 - 神经科学×量子力学 (Cron Job)
 
 ### Existence of an infinite family of IIT substrates with arbitrarily large Phi
