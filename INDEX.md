@@ -1,3 +1,12 @@
+## 2026-10-06 - Neuroscience Research (Cron Job)
+
+### Emergent Topology of Optimal Networks for Synchrony
+- [[synchrony-optimal-network-emergent-topology]] - 预算约束下同步最优网络的涌现拓扑：可微图优化发现稀疏/二部/细长/极端同邻性四大结构印记，构造性理论给出配对函数ν⁻(ω)与变分强度分配s(ω)，同步阈值消失+r~1-b⁻²幂律 (arXiv: 2509.18279, v4 2026-10-02)
+  - 预算映射Aij=Nb(Pij²+Pji²)/ΣP²kl保证对称非负精确预算，torchdiffeq全可微计算图对⟨r⟩做autodiff梯度上升——"用NN训练硬件做最优网络科学"；五大振子模型（Kuramoto/Sakaguchi/摆方程/Stuart-Landau/混沌Rössler）一致涌现四印记
+  - 构造性理论：ωg(ω)dω=±νg(ν)dν自洽方程的两个分支ν⁺(快配快,次优)与ν⁻(快负配慢正,全局最优)，梯度优化独占收敛ν⁻，统一了文献中冲突的数值观察；强耦合闭式解s(ω)∝b|ω|/(χ|ω−ν|^{1/3})首次解析解释"快振子分更多耦合资源"
+  - 临界预算bc=(2/max H)∫₀^∞ωg(ω)dω可计算，r=rc+κ(b−bc)^{1/2}方根临界标度，强耦合1−r=χ³/4b²；最优网络证明无同步阈值（预算集中于战略边，无需发散节点强度）
+  - 欧洲大陆电网实证：固定拓扑按长度成本σ重配权重，σ→1优化解收敛到经验配置（电网部分被同步优化解释）；同成本下Δr=0.164提升主要来自将耦合从短线路移向长线路——长距离输电相对其同步价值投资不足
+  - **Activation**: synchrony-optimal network, coupling budget allocation, differentiable network optimization, monophily, bipartite frequency pairing, Kuramoto optimal topology, power grid swing equations, emergent network design, optimal network science
 ## 2026-10-05 - 神经科学 + 量子纠错 (Cron Job)
 
 ### Dark Signals in the Brain: Augment Brain Network Dynamics to the Complex-valued Field
