@@ -15,6 +15,20 @@
   - 生物学意义：真实神经元兴奋性/阈值本质多样 → "大脑无需fine-tuning到临界点"的第二解释路径（结构异质性与动力学异质性互补维持扩展临界区间）
   - **Activation**: 混沌Griffiths相, 淬火无序, 参数异质性, 扩展临界性, Chialvo map, cluster size power law, Lyapunov subextensive scaling, chaotic Griffiths phase, quenched disorder, extended criticality
 
+### Clustering without clusters: the meta-criterion and centroid reliability mistake continuous dynamics for discrete states
+- [[eeg-microstate-cluster-illusion]] - EEG微状态"离散态"证据的证伪：meta-criterion在四个已知无簇的混沌吸引子(Lorenz/Rössler/Hindmarsh-Rose/Wilson-Cowan)上照样给出K*=4-8的伪最优簇数，LEMON静息态EEG的GFP峰经HDBSCAN+持久同调证实是单一连通结构而非簇 (arXiv: 2610.02220)
+  - 两大论证同时被证伪：K-means质心在连通吸引子上同样落入高度可复现区域（跨run最近邻z-score检验）；Cartool七判据meta-criterion（DB/DB导数/修改KL/Point-Biserial/PB导数/Silhouette/Silhouette导数，rank变换后取七峰中位数）对任何连续吸引子都报告4-8
+  - 决定性TDA管线（可复用）：HDBSCAN min-cluster-size扫描(0.25-12%n)+ε=0.35×中位距离；ripser Vietoris-Rips H0持久同调——真簇表现为β0平台、连续体为单调平滑衰减；61维合成高斯blob对照正确恢复K，LEMON 203被试EEG(2-20Hz, 61通道, 8.4k-13.7k GFP峰/被试)呈单簇0%噪声+平滑衰减
+  - 单一HDBSCAN簇质心反投影=微状态C/alpha拓扑（神经生理学有效，非伪影）；结论：微状态分析应重新定位为symbolic dynamics（对连续流的划分选择），"最优簇数"可能是ill-posed问题——任何新簇数判据都应先跑Lorenz/Rössler负对照证伪测试
+  - **Activation**: EEG微状态, 微状态聚类, meta-criterion, GFP峰, HDBSCAN, 持久同调, 拓扑数据分析, symbolic dynamics, 簇数选择, 负对照验证, LEMON dataset, centroid reproducibility, 混沌吸引子, Betti数
+
+### Structural-Functional Brain Connectivity Generation via Multimodal Hypergraph-based Flow Matching
+- [[hypergraph-flow-matching-connectome-generation]] - MHG-FM：首个超图+流匹配的SC-FC联合连接组生成/双向翻译框架——固定群体超边incidence矩阵做HGNN消息传递先验、Dual Cross-Attention双向SC↔FC融合、VAE潜空间条件流匹配替代扩散链，采样比匹配扩散骨干快8倍(32 vs 250 NFE, 106ms/样本) (arXiv: 2610.02722)
+  - 超图构建（确定性、训练中固定）：SC超边=群体均值>0.01的解剖连接；FC超边=4 motif组(triangle clique |r|>0.7、hub-spoke top80%度连k*=8最强相关、kNN k=5/10)+跨被试30%多数投票；生成目标始终是N×N邻接矩阵而非超图本身
+  - 模态dropout p=0.25使零填充输入成为in-distribution→推理时FC→SC/SC→FC翻译只需单次确定性前向（无需ODE重采样、无需重训练）；FC→SC r=0.941全指标最优，SC→FC r=0.573（结构约束但不唯一决定功能，不对称难度符合预期）
+  - 关键教训：扩散骨干MHG-DiT矩阵级SC指标更高但度/社区结构坍塌(Deg-W1 10.05 vs FM 0.498)——Pearson r单独评估生成连接组具有误导性，必须配Deg-W1/NMI/ARI(置换平均)/|ΔMI|耦合间隙等拓扑指标；消融证实HGNN>成对GNN(全指标)、DCA交叉注意力→更小耦合间隙、AdaLN>加性时间条件
+  - **Activation**: 连接组生成, SC-FC耦合, 超图神经网络, 流匹配, 跨模态翻译, 生成模型, HCP-YA, DTI tractography, rs-fMRI, Dual Cross-Attention, 变分自编码器, modality dropout, 拓扑保真度评估, connectome generation, hypergraph flow matching
+
 ## 2026-10-05 - Neuroscience + Quantum Research (Cron Job)
 
 ### Learning SYK Hamiltonians
