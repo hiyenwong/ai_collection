@@ -1,3 +1,17 @@
+## 2026-10-06 - Neuroscience Research (Cron Job)
+
+### Causal discovery identifies pathways linking physical activity to dementia risk in the UK BioBank
+- [[llm-guided-causal-discovery-dementia]] - LLM五阶段特征选择漏斗（预筛→4模型评分→专家agent复审→排序→人工策展）把UKB全字典压到39变量再做PC因果发现+SEM链式中介：抑郁是核心可调制通路 (arXiv: 2610.02221)
+  - 4个GPT系模型+多领域专家persona独立打分聚合（阈值0.60），配合背景知识结构约束（人口学变量强制无父、痴呆强制汇聚点）+非参数bootstrap报告每条边的结构稳定性
+  - MVPA→抑郁→痴呆中介15.06%（男19.31%/女12.27%）；5年排除窗后男性中介占比升至60.8%、直接效应消失；步行速度链仅3.13%；心血管/CKD长程通路bootstrap稳定性仅0.07-0.10被诚实标注为弱证据
+  - **Activation**: LLM feature selection, causal discovery, PC algorithm, chain mediation, UK Biobank, dementia pathways, epidemiology LLM agents
+
+### Embodied Neurocomputation: Interfacing Biological Neural Cultures with Scaled Task-Driven Validation
+- [[embodied-neurocomputation-framework]] - 生物神经培养皿的编码参数首个大规模优化：Optuna分布式HPO+26个CL1 MEA培养物筛1,300组合，12个可学习配置在同交互预算下击败调优DQN 1.18-1.25× (arXiv: 2605.13315)
+  - y_t=[d∘b∘e](x_t)四模块形式化；率编码6参数(F_min/F_max/幅度/脉宽/tick率/每步tick数)；SHAP显示最大刺激频率主导(40-60Hz最优)、高幅度2.5µA+短脉宽40µs+快交互
+  - 分布式练习>连续练习：5×30步+2分钟休息胜过1×150步，学习从第3集涌现；Permuted+Matched Media消融证实生物贡献(p<0.001)；CL1硬件功耗中位数22.7W
+  - **Activation**: BNN encoding optimization, bio-silicon hybrid, CL1 MEA, embodied neurocomputation, living neural computing, stimulation parameter search
+
 ## 2026-10-06 - 计算机科学 + 量子力学 (Cron Job)
 
 ### SpiderCSS: Scalable Fault-Tolerant CSS State Preparation
