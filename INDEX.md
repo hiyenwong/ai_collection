@@ -1,3 +1,20 @@
+## 2026-10-05 - Neuroscience Research (Cron Job)
+
+### Neural Data Needs Semantic Tokenization: Behavioral Events as Boundaries of Session-Transferable Tokens
+- [[tws-state-tokenization-neural-data]] - 神经数据需要语义token化：以行为事件间population流形状态为token单元（无neuron/session embedding），跨session零适配解码，冻结后跨物种迁移 (arXiv: 2610.03001)
+  - per-neuron token = 闭词汇表（跨session neuron overlap≈0 → POYO/CEBRA/NEDS在held-out session全部坍塌到chance）；TWS在53个IBL held-out session上movement MCC 0.565、RT R² 0.402，POYO预训练含这些session仍为0.000
+  - Algorithm 1: event-time soft sigmoid gates（2个全session共享可训练offset Δ）→ state加权population平均 → 共享标量编码器 + 无位置编码cross-attention（置换不变）→ Gram-Schmidt得Grassmannian Gr(2,256) token → 6 tokens小CNN混token；几何不关键（跳过GS差异<0.01），不变量才关键
+  - 冻结mice训练→macaque Utah array仅linear probe: reach direction MCC 0.232（event time本身仅0.011）；5个带标签session的probe超过全session训练的baseline 5×；1/4 units仍保留83%解码
+  - 边界消融：jitter σ=5bins→−7%，fixed/random边界→−62~70%，错误边界+40 epochs训练无法修复（<正确边界random init）；Type A（共享子空间）变量保留、Type B（per-session解码方向）变量不保证——设计代价
+  - **Activation**: 神经数据token化, 跨session解码, population manifold token, Grassmannian token, neuron-free tokenizer, cross-session generalization, neural foundation model, IBL, Utah array transfer, permutation invariance
+
+### Chaotic Griffiths phase in neuron map networks
+- [[chaotic-griffiths-phase-neuron-map-networks]] - 混沌Griffith斯相新机制：拓扑无序非必要，仅局部神经元参数淬火无序（Chialvo map的k∈[0.026,0.03]）即可在全局耦合网络产生扩展临界区间，与small-world叠加时相干态被完全抑制 (arXiv: 2610.03344)
+  - 三相判据管线（可复用）：排序+single-linkage识别瞬时cluster（阈值δ_N用D/S轨迹双条件标定，D轨迹p_t<0.10且S轨迹p_t>0.90达95%时间）→ p_t涨落σ(p)>0.12判混沌GP → cluster尺寸幂律P(s)~s^−α（α随ε单调）+ 正Lyapunov指数数N₊~N^β反常标度（β≈0，规则CML为线性）
+  - 同质极限A=0无混沌GP；A→1时ε区间单调加宽——内在动力学异质性是独立于结构连接的扩展临界性机制，与拓扑无序协同（small-world下GP延至ε∈[0.4,1.0]，S相完全消失）
+  - 生物学意义：真实神经元兴奋性/阈值本质多样 → "大脑无需fine-tuning到临界点"的第二解释路径（结构异质性与动力学异质性互补维持扩展临界区间）
+  - **Activation**: 混沌Griffiths相, 淬火无序, 参数异质性, 扩展临界性, Chialvo map, cluster size power law, Lyapunov subextensive scaling, chaotic Griffiths phase, quenched disorder, extended criticality
+
 ## 2026-10-05 - Neuroscience + Quantum Research (Cron Job)
 
 ### Learning SYK Hamiltonians
