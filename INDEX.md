@@ -1,5 +1,11 @@
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
+### Cup and Cap Topological Neural Network
+- [[cup-cap-topological-neural-network]] - 用代数拓扑的 cup（升）/cap（降）积替代 boundary operator+Hodge Laplacian，突破 ∂²=0 导致的"单层只能跨一维"限制：节点0-cochain 一步 cup 到三角形 2-cochain 再 cap 回节点，单层完成 node→triangle→node 信息往返 (arXiv: 2610.03169)
+  - 核心要点：cap(ξ̂⌢α¹) 退化为图 Laplacian 作用的标准 GNN 传播是 CCNN 特例；三角形消息项 T[r]=Σa_rsm·f(χ_sm)·(θ[s]+θ[m]−2θ[r]) 显式实现"节点被其所在团簇对面边调制"；Faskowitz 2020 脑 edge signals（ξ[rs]=θ[r]θ[s]）本质就是 cup product 特例
+  - 核心要点：TopoBench 20数据集（Clique Lifting）8/20 胜过 SCN/SCCN/SCCNN 全部 simplicial 基线、13/20 处于全域最优 1σ 内；Pubmed 89.74 超全域最优、MUTAG 82.55、ZINC 0.55 显著超 SCCNN 0.36；Amazon 上 simplicial 基线 OOM 而 CCNN 正常运行
+  - **Activation**: topological deep learning, cup product, cap product, Hodge Laplacian limitation, triangle message passing, simplicial complex neural network, higher-order brain network, 脑网络高阶结构, clique lifting
+
 ### Contrastive Neural Embeddings Reveal Individual Traits Beyond Conversational Role
 - [[contrastive-embedding-retraining-nulls]] - 分组数据对比嵌入必须用"重训练零假设"：组内恒定标签是组身份的粗粒化，冻结嵌入置换检验p=0.001而逐置换重训练编码器p=0.50——同一数据同一标签相差三个数量级；CEBRA流形按个体组织（说话/听话角色解码=0.474 vs 0.501 chance，同个体跨角色余弦相似度0.957），参与者级AQ从身份感知零假设中分离(p=0.0099)但仅"分级"而非"分区"流形(silhouette=-0.167) (arXiv: 2610.03410)
   - 核心要点：冻结嵌入置换只检验"学到的几何是否恰好包含标签分区"，编码器学到组身份时必然显著——它检验几何而非标签；重训练置换检验"任意重新分组能否产生可比几何"
