@@ -1,3 +1,18 @@
+## 2026-10-05 - 神经科学×量子力学 (Cron Job)
+
+### A Path Integral Model of Cognition
+- [[path-integral-cognition-projector-hamiltonian]] - 认知的路径积分模型：目标导向认知 = 投影哈密顿量下的虚时演化；双重括号流=GKSL耗散子(跳变算子=投影算子，实测验证恒等式 -[P,[P,ρ]]=2·L[P]ρ)；Wick旋转把非幺正下降映射为幺正演化+精确离散路径积分（oracle=势能、扩散投影=动能）；意识连续统=系统-探针耦合强度，弱耦合Markovian极限恢复Asano的GKSL模型、强耦合给投射性可报告态固定 (arXiv: 2607.24807)
+  - 实测发现（test_pathintegral_skill.py）：投影算子下的双重括号流是纯dephasing流——保持布居、杀死相干、对与P对易的态（如最大混合态）不动；目标导向的concentration需要归一化ITE项 dρ/dτ=-(Hρ+ρH)/2+⟨H⟩ρ（H=I-P_target），验证support→1.0
+  - 模式提炼：Pattern A 投影哈密顿目标编码（目标概念→子空间正交投影→交换子流优化）；Pattern B 交换子即梯度（谱约束流形上无需推导梯度）；Pattern C Wick旋转对偶（优化↔采样互转）；Pattern D 耦合强度连续统作现象学轴（离散范畴→连续参数的可测试模型）
+  - **Activation**: 认知路径积分, 投影哈密顿量, double-bracket flow, 虚时演化, GKSL, 量子认知, 意识建模, Wick rotation, Hilbert-Schmidt cost, spectrahedron optimization, path integral cognition, projector Hamiltonian
+
+### How many labels can a biological oscillator carry? A quality-factor screen for proposed information carriers
+- [[oscillator-q-factor-label-capacity-screen]] - 基质无关的Q因子筛查：谱可分辨性单独特地约束标签容量 M ≤ Q = 2πντ（线宽-相干时间关系），任何被提议的生物振荡子信息载体只需两个已发表数字即可评估——皮层30GHz微波场提案 Q=0.19（线宽超载波5倍，连1个标签都装不下），补救方案（驱动发射体需共振腔）被提案自身几何禁止，代谢功率超预算5-9个数量级 (arXiv: 2608.10560)
+  - 六项次级判据：双侧持续窗口（标签必须同时可读出AND可重写）、代谢预算、读出耦合、噪声底vs标签间隔、标签间串扰；决策规则：Q<2直接光谱层面否决（二进制需要2个标签），无需进入机制辩论
+  - 代码已实测（test_qfactor_skill.py）：30GHz案例复现Q=0.1998与论文一致；40Hz gamma振荡子(τ=100ms) Q≈25.1→25个标签可分辨
+  - 模式提炼：两数字杀伤测试（机制争议前先跑不等式界）、几何自否证检查（提案自身的几何禁止其补救机制）、双侧持续窗口（可读+可重写双约束适用于任何静默记忆/突触权重/蛋白质态载体）
+  - **Activation**: Q因子, 生物振荡子, 信息载体容量, 线宽, 相干时间, 微管, 内源性电磁场, 量子生物学, 神经信息载体, oscillator Q factor, label capacity, linewidth coherence, EM field brain theories, two-number kill test
+
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
 ### Neural Data Needs Semantic Tokenization: Behavioral Events as Boundaries of Session-Transferable Tokens
