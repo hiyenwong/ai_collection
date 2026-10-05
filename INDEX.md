@@ -1,3 +1,16 @@
+## 2026-10-05 - Neuroscience Research (Cron Job)
+
+### Contrastive Neural Embeddings Reveal Individual Traits Beyond Conversational Role
+- [[contrastive-embedding-retraining-nulls]] - 分组数据对比嵌入必须用"重训练零假设"：组内恒定标签是组身份的粗粒化，冻结嵌入置换检验p=0.001而逐置换重训练编码器p=0.50——同一数据同一标签相差三个数量级；CEBRA流形按个体组织（说话/听话角色解码=0.474 vs 0.501 chance，同个体跨角色余弦相似度0.957），参与者级AQ从身份感知零假设中分离(p=0.0099)但仅"分级"而非"分区"流形(silhouette=-0.167) (arXiv: 2610.03410)
+  - 核心要点：冻结嵌入置换只检验"学到的几何是否恰好包含标签分区"，编码器学到组身份时必然显著——它检验几何而非标签；重训练置换检验"任意重新分组能否产生可比几何"
+  - 核心要点：诊断工具=球面混合结构/类内散度追踪身份而非特质、球面KS统计量、跨条件余弦相似度；结论：dyadic标签设计无法独立于dyad身份识别神经相关物，需要组内变化标签的设计
+  - **Activation**: contrastive embedding permutation test, retraining null, CEBRA dyad decoding, group identity confound, hyperscanning inference, retrain-per-permutation control, 分组对比嵌入零假设
+
+### Aggregate accuracy conceals concentrated temporal vulnerability in a spiking speech classifier
+- [[snn-temporal-vulnerability-census]] - SNN时间脆弱性穷举普查：保留SpikeSCR冻结分类器725,070个相邻bin单计数扰动邻域的全部预测——均匀采样期望准确率反而从84.00%升到84.54%（净改善掩盖伤害），但13/84初始正确utterance存在adverse邻居且5个source承载93.21%的有害扰动；穷举普查揭示聚合指标无法区分的"发生率-浓度-内部变化-执行依赖"四维结构 (arXiv: 2610.03155)
+  - 核心要点：四分类结果taxonomy（class-preserved 96.44% / adverse 0.71% / corrective 0.63% / lateral 1.25%），flip rate混淆有害/有益/错→错转移；margin与adverse率负相关(ρ=-0.5688)但margin/梯度排序都漏掉不同稀有source，梯度前缀定位全部13个脆弱source仅需73.45%普查成本
+  - 核心要点：执行契约必报——batch-256 vs singleton差0.26pp但617/9,981标签翻转；padding改344个标签；批序反转改531个标签，机制=q/k路径将[B,h,T,d]重塑为[T,B,N]使不同source进入同一膜电位lane的时间轴（跨source耦合），联合q/k隔离恢复逐位序不变性；两个种子replica准确率几乎相同但类变化计数差5.21倍
+  - **Activation**: spiking network temporal robustness, spike retiming vulnerability, exhaustive perturbation census, batch-order dependence LIF, source-level bootstrap, 执行契约, adjacent-bin neighborhood, spiking speech commands
 ## 2026-10-05 - 神经科学×量子力学 (Cron Job)
 
 ### A Path Integral Model of Cognition
