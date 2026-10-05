@@ -1,3 +1,19 @@
+## 2026-10-06 - Neuroscience Research (Cron Job)
+
+### Self-Repairing Recurrent Ensembles for Real-Time Recovery from Distribution Shift
+- [[rtr-ftl-self-repairing-ensembles]] - 掩码RNN集成+Kalman融合共识自监督：传感器漂移/故障/噪声下的实时免专家自修复 (arXiv: 2610.03249)
+  - 每个成员只看随机掩码后的观测子集（可见率0.5-0.7）制造多样性；高斯输出经顺序Kalman增益融合，困惑成员报高方差自动降权；融合均值作为自监督标签，按 (1−k̄²) 权重把困惑成员拉回共识——TTRL从离散多数票转置到连续动作分布
+  - RFLO（RTRL的生物合理近似，去非局域Jacobian项+固定随机反馈B）每步出梯度，无BPTT回放缓冲，控制循环内实时更新；同一套机制换标签源即得RTR-IIL（专家在场时全在线EnsembleDAgger）
+  - 关键结论：鲁棒性来自掩码诱导的多样性而非集成或融合本身——全可见集成同样漂移下崩溃且无法恢复；传感器偏移/完全故障/渐增噪声三种shift均恢复至接近原性能（brax ant/halfcheetah/humanoid，10 seeds）
+  - **Activation**: recurrent policy self-repair, Kalman fusion ensemble, RFLO online gradient, distribution shift recovery, follow-the-leader consensus, random observation masking, RTR-IIL online imitation, test-time adaptation control
+
+### Toward Controlling Biology with Language: Offline Learning of Prompt-Conditioned Interventions for Cells, Organoids, and Biobots
+- [[offline-vlm-judged-language-to-intervention]] - 存档+VLM裁判离线学习语言→干预映射：xenobot自然语言接口80%留出准确率 vs 66.7% chance (arXiv: 2610.02247)
+  - 湿实验室配对数据太贵→固定存档(101批次真实电刺激时长×PRE/POST轨迹)当离线数据集；VLM零样本裁判打分(轨迹与prompt匹配度, 3333对一次性算完)，全程零新实验零人工标注
+  - 每prompt拟合logistic曲线 r̂_p(d) 化为可微目标 d†(p)，反向传播训练P2I网络(SBERT冻结编码→每行为类别一个sigmoid头，防止对立目标梯度干扰)；backprop/REINFORCE/CMA-ES三个优化器共享同一奖励表交叉验证最优
+  - VLM裁判必须看原始位置轨迹而非预计算速度（r=0.843 vs 0.49-0.66，逼真推断反而更可靠）；112配置网格搜索做了200次置换检验防p-hacking；数值替代目标训练loss相同但GT2崩到59.1%（低于chance）——VLM奖励非冗余
+  - **Activation**: language-controlled biology, VLM-as-judge reward, offline archive learning, prompt-to-intervention, xenobot bioelectric control, zero-shot reward validation, contextual bandit living systems
+
 ## 2026-10-06 - 计算机科学 + 量子力学 (Cron Job)
 
 ### All Work And No Play Makes Jack a Dull Boy: Understanding and Preventing Catastrophic Strategy Collapse in RLVR
