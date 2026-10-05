@@ -1,3 +1,19 @@
+## 2026-10-06 - Quantum QEC + CS (Cron Job)
+
+### Homological Thresholds in Randomly Monitored Quantum Error-Correcting Codes
+- [[homological-percolation-monitored-qec]] - 随机Pauli测量下QEC码逻辑存活阈值分两类：几何渗流(toric, ν=4/3) vs 同调渗流(color, ν=1.2073新普适类) (arXiv: 2610.02310)
+  - 逻辑支持判据：测量算符乘积（稳定子等价下）支撑非平凡逻辑Pauli ⟺ 逻辑信息丢失；色码弦在三叉结点分叉 → 非路径连通性
+  - 1.4M比特模拟引擎：face-syndrome F2二元消元(~32×存储节省) + 二项卷积技巧（逐比特加入 → 单次运行出全概率曲线）
+  - 阈值不等式：γc ≥ rc（渗流阈值下界弱测量学习阈值）；MW解码阈值 ≥ qP(μlog)；Wen/toric-Y 全 r 达最优 1/2
+  - **Activation**: homological percolation, monitored QEC codes, random Pauli measurements, coherent information, color code critical exponents, Nishimori thresholds, measurement-induced transitions
+
+### Fault-tolerant and Fully Addressable Unitary Logical Gates via Round-Robin Sparsification
+- [[round-robin-sparsification-addressable-gates]] - 2DTI qLDPC码可寻址容错横向逻辑CZ：RR电路+稳定子形变逐列稀疏化 → 深度3与码距无关 (arXiv: 2610.03594)
+  - Cylinder trick取O(d)不相交等权逻辑代表元（Z-对称性半格圆柱内稳定子乘积分解为两个等价逻辑）；交替α↔β逐列共轭消CZ²
+  - vs gross code surgery：~4×时空开销降低、~5×LER影响降低；memory-like O(p^d) 缩放 d=3..9 验证
+  - 实证教训：cHGP3 naive tCZ距离降d/2但LER与满d优化版几乎不可分（高权错误组合多重性主导）→ 渐近距离≠实际LER
+  - **Activation**: addressable logical gates, qLDPC transversal CZ, round-robin sparsification, cylinder trick, stabilizer deformations, gross code gates
+
 ## 2026-10-06 - Neuroscience Research (Cron Job)
 
 ### Self-Repairing Recurrent Ensembles for Real-Time Recovery from Distribution Shift
