@@ -1,3 +1,23 @@
+## 2026-10-06 - 计算机科学 + 量子力学 (Cron Job)
+
+### SpiderCSS: Scalable Fault-Tolerant CSS State Preparation
+- [[spidercss-fault-tolerant-css-state-preparation]] - ZX-calculus fault-equivalent rewrites compile FT CSS state-prep circuits by construction, no verification needed (arXiv: 2610.03714)
+  - 任意CSS码容错态制备多项式编译：理想化ZX图出发，仅用fault-equivalent重写（普通unfusion破坏FT性，Lemma II.18），FT由构造保证
+  - SpiderCat 3-ary分解给出可证最优CAT态CNOT数 + MDSF路由 + 4种目标可选调度（depth/width/lifetime）；vs FaO: CNOT −53.8%、深度~10×、LER −90%、接受率+9.5%，d≤15全多项式
+  - **Activation**: fault-tolerant state preparation, CSS codes, ZX-calculus, fault-equivalent rewrites, CAT states, SpiderCat
+
+### Prospective Hindsight: Self-Calibrating Reinforcement Learning via Prediction-Reality Gaps
+- [[prospective-hindsight-self-calibrating-rl]] - RL前自评与事后验证差距做surprise重加权(1+αξ)·loss，校准作为优化副产物涌现 (arXiv: 2610.02740)
+  - CS/OF/US/AF四格校准分类学：off-diagonal（过自信失败OF+欠自信成功US）= surprise；stop-gradient标量门控，唯一超参α，α=0精确退化为baseline
+  - 精确残差恒等式 R(θ)=c(θ)·M(θ)（surprise残差=误校准集平均损失×误校准率=Brier分数）；自熄灭退火机制；Science Q&A OFR 34.2%→20.9%，选择而非梯度质量驱动增益
+  - **Activation**: RLVR calibration, prediction-reality gap, surprise-weighted advantage, overconfident failure, LUPI, GRPO calibration
+
+### VenusRL: A Fully Disaggregated Agentic RL System
+- [[venusrl-disaggregated-agentic-rl-system]] - 按critical-group优先调度+模板键页共享池，端到端agentic RL训练加速4.24× (arXiv: 2610.03286)
+  - 训练步被完整GROUP阻塞而非GPU空闲：长度预测启发式识别最可能解锁下一步的组，优先级贯穿批准入/KV驻留/跨worker编排三层
+  - template-keyed页池按(模板,偏移)共享物理帧（免内容扫描），lazy CoW隔离；动态内存admission+迁移逃生舱；vs Slime/RollFlash/ThunderAgent 1.06-4.24×
+  - **Activation**: agentic RL training system, critical group scheduling, length-prediction heuristic, template-keyed page pool, KV cache residency, sandbox memory stranding
+
 ## 2026-10-06 - Neuroscience Research (Cron Job)
 
 ### Autoregressive Frontier Expansion: Growing Trees with Graph Machine Learning
