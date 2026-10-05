@@ -1,3 +1,17 @@
+## 2026-10-05 - 神经科学 + 量子纠错 (Cron Job)
+
+### Dark Signals in the Brain: Augment Brain Network Dynamics to the Complex-valued Field
+- [[complex-valued-dark-signals-brain-dynamics]] - Hilbert变换"暗信号"作为共轭动量，将脑动力学提升为复值哈密顿场，薛定谔样方程建模全脑活动 (arXiv: 2509.24715)
+  - 复值提升使线性短时程预测相关系数 0.12→0.82，非线性非平衡拟合 0.47→0.88
+  - 哈密顿量 H 给出有向有效连接、层级内禀时间尺度；静息→任务重构 = 全局缩放 + 定向重连
+  - **Activation**: complex-valued brain dynamics, Hilbert transform, Hamiltonian neural ODE, effective connectivity, fMRI/EEG generative model
+
+### What Must a Quantum-Memory Decoder Know About Temporally Correlated Noise?
+- [[temporal-noise-calibration-qec-decoder]] - 相同syndrome统计的两种时间相关噪声模型需要不同逻辑校正：解码器校准损失可达1/2，校准成本Θ(θ^-d_X) (arXiv: 2610.03545)
+  - frozen-sign vs redrawn-sign 对抗对：单interval统计相同但相干积累不同——噪声不可知解码器的单元测试
+  - 2个自由interval再提取可将校准成本从 Θ(θ^-d_X) 指数级降至 Θ(θ^-2)
+  - **Activation**: temporally correlated noise, QEC decoder calibration, coherent error accumulation, syndrome extraction scheduling, non-Markovian noise
+
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 ### NeuroLens: Learning Latent Embeddings of Neural Semantics from Chronic Recordings
 - [[neurolens-jepa-chronic-recordings]] - JEPA自监督框架从慢性神经记录学习去噪表征：潜空间预测分离表征可塑性与电极漂移，校准签名神经元身份支持零梯度跨session适配 (arXiv: 2610.02864)
