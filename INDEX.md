@@ -1,4 +1,20 @@
 ## 2026-10-05 - Neuroscience Research (Cron Job)
+## 2026-10-05 - 神经科学×量子力学 (Cron Job)
+
+### Existence of an infinite family of IIT substrates with arbitrarily large Phi
+- [[iit-infinite-family-exclusion]] - XOR 环基底：N≥8 且 3∤N 时每单元取自身+两个顺时针邻居的 XOR，在所有状态满足排他公理（complex，φ_s≥4），全 1 态 Φ≥2^⌊N²/8⌋·(1/2)^N/(2N)−1 即 log₂Φ=Ω(N²)——首个 Φ 增长的无限族；全部定理（除 Prop 6.2 外）Lean 4 内核认证，人类战略指导+LLM 逐文件证明 (arXiv: 2610.02219)
+  - 核心要点：损伤计数归约 φ_s(θ)=dmg(θ)——XOR 确定性动力学下排他性的嵌套优化精确归约为组合计数；屏蔽见证分区（删除单元移除活输入使弧头免于损伤）证明真子系统 φ_s<4；区分=恰好是弧（N(N−3)+1 个，41/71/89/131@N=8,10,11,13 穷举验证），公共单元的 |F|≥N²/8 个区分的子集全为 relation → Φ≥(2^|F|−1−|F|)·c
+  - 核心要点：F₂-循环矩阵 C=I+P+P² 可逆 ⟺ 3∤N（1+x+x² 的根为三次单位原根）；稀疏均匀局部规则即可产生天文级 Φ（N=40 时 1.8e46）——反驳"大 Φ 需要密集连接"；形式验证无法发现错误猜想（原双指数猜想被"不可约部分全是弧"推翻）——"主要风险是对无法支撑结论的对象做正确推理"
+  - 本地复现：循环矩阵可逆性 37/37 例吻合；区分计数与 Φ 下界数值（8.85/35.6/2.05e3/2.68e7/1.83e46）与论文全部精确一致
+  - **Activation**: integrated information theory, IIT 4.0, Phi lower bound, exclusion postulate, XOR cycle, circulant matrix F2, Lean 4 formal verification, AI-assisted proof, consciousness substrate, damage count reduction, shielded witness partition
+
+### Generalization of Transformer-Based Neural Quantum States via In-Context Learning
+- [[nqs-transformer-icl-generalization]] - Transformer NQS 的首个 ICL 泛化理论：逐点 MSE 随上下文样本数 N 与深度 L 双重反比下降，所需深度与系统规模线性相关（连续 nD / 离散 nd），秩一密度算符扩展到全量子态物理约束界；证明链=通用特征表示→Lasso 稀疏系数→Transformer 逐层实现非精确近端梯度→误差可加复合 (arXiv: 2610.03463)
+  - 核心要点：深度=优化迭代数、样本数=样本量，乘积驱动 MSE ∝ 1/(NL)；线性深度-规模关系来自系数空间稀疏性而非希尔伯特空间维度；sigmoid 注意力（非 softmax）对可证 ICL 泛化已足够
+  - 核心要点：ICL 即隐式优化——任何回归型 ICL 主张可通过"展示权重使 attention+FF 层执行已知收敛优化器（近端梯度）"证明；实/虚分解参数化的对称性诱导偏置是开放问题；架构预算规则 L=Θ(nD) 或 Θ(nd)
+  - **Activation**: neural quantum states, transformer ICL, generalization bound MSE, rank-one density operator, proximal gradient Lasso, depth linear scaling, quantum many-body ML, in-context learning theory, NQS architecture budget
+
+
 
 ### Cup and Cap Topological Neural Network
 - [[cup-cap-topological-neural-network]] - 用代数拓扑的 cup（升）/cap（降）积替代 boundary operator+Hodge Laplacian，突破 ∂²=0 导致的"单层只能跨一维"限制：节点0-cochain 一步 cup 到三角形 2-cochain 再 cap 回节点，单层完成 node→triangle→node 信息往返 (arXiv: 2610.03169)
