@@ -1641,3 +1641,47 @@
   - 教师收文本空间引导定位整合多区域证据，学生从图像+问题on-policy自蒸馏复现；合成场景特权标注自动免费，可扩展免标注
   - 计数/文档/图表理解一致提升；仅合成场景训练迁移到CVBench/V*/ZoomBench/BLINK/HR-Bench/MME-RealWorld真实基准
   - **Activation**: on-policy distillation, privileged information, MLLM perception, synthetic scenes, spatial grounding, annotation-free post-training, synthetic-to-real transfer, teacher guidance
+
+## 2026-10-06 - Deep Learning Research (Cron Job)
+
+### Pivot-SD: Efficient Self-Distillation for Masked Diffusion Language Models
+- [[pivot-sd-masked-diffusion-self-distillation]] - dLM后训练credit assignment：信息增益选出高影响力commitment(pivot)，成功轨迹pivot用CE、失败轨迹仅pivot施加定向unlikelihood，200题×4rollouts即超SFT/RL基线 (arXiv: 2610.03665)
+  - 少数commitment主导剩余mask不确定性，现有recipe不定位这些关键token
+  - 失败轨迹pivot级定向unlikelihood：不学错误也不浪费有效片段；LLaDA-8B数学/代码双超预算匹配RL基线
+  - **Activation**: masked diffusion LM, dLM post-training, self-distillation, credit assignment, denoising commitment, unlikelihood training, LLaDA
+
+### Learning from Repaired Reasoning: Root-Cause-Guided On-Policy Distillation
+- [[rc-opd-root-cause-repaired-distillation]] - OPSD指导信号重设计：用学生自身推理的修复版本（定位最早实质错误→局部修正→锚定有效前缀→迭代continue）替代参考解，解reasoning mismatch与蒸馏陷阱 (arXiv: 2610.03515)
+  - 参考解解释"如何正确"不解释"学生为何错"——学生借结论不走，自身错误未解决
+  - 双通道蒸馏：root-cause-guided监督错误段 + anchor-guided支撑有效前缀；修复预算内diagnosis-repair-continuation迭代
+  - **Activation**: on-policy distillation, reasoning repair, privileged hindsight, root cause analysis, distillation trap, intermediate anchor, OPSD
+
+### Page-EntroKV: Hardware-Aligned, Entropy-Weighted KV-Cache Eviction under GQA
+- [[page-entrokv-gqa-kv-eviction]] - GQA下KV驱逐按物理组而非per-head：sink隔离Rényi-2熵池化头权重+PagedAttention页对齐，UOR恒1.0（per-head并集最高4.75x膨胀），needle召回100% vs 均值池化0% (arXiv: 2610.03135)
+  - per-head独立选择迫使serving引擎保留并集，cache膨胀至组比率r；算术均值稀释retrieval head、sink head伪装13x
+  - 理论：两head组UOR-分歧精确恒等式+任意组比率双侧界；严格预算保持+needle保留界（均值池化可证违反）
+  - **Activation**: KV cache eviction, grouped-query attention, GQA serving, PagedAttention, long context, token importance, retrieval head, sink head, cache budget
+
+### Divergence controls entropy in distillation
+- [[divergence-entropy-distillation-control]] - 蒸馏散度=隐式熵正则器：前向KL膨胀学生熵（CE为特例，预训练/SFT定量验证）、反向KL压缩熵、插值训练平滑收敛突变；on-policy蒸馏低熵来自token级反向KL非采样方式 (arXiv: 2610.03529)
+  - 实践规则：要低熵确定学生→token级反向KL；要多样学生→前向KL
+  - 自蒸馏：条件化特权信息压缩熵→最优散度超参=补偿该压缩的选择；先诊断熵失衡再选散度
+  - **Activation**: knowledge distillation, forward KL, reverse KL, student entropy, cross-entropy, on-policy distillation, self-distillation, entropy regularization, distillation objective design
+
+### Contextual Flow Matching (COFLOW): Adaptive Step Selection
+- [[coflow-contextual-adaptive-step-flow-matching]] - Flow Matching推理时按prompt特征自适应步数：无监督奖励在线训练步数预测器，底层生成模型冻结即插即用，图像/视频2.5x加速保质，O(1/K)离散误差界 (arXiv: 2610.03202)
+  - 输入依赖难度差异被固定步数忽略——简单prompt不需要复杂prompt的步数
+  - 奖励=推理效率与生成保真平衡，免人工难度标注；免蒸馏免重训
+  - **Activation**: flow matching acceleration, adaptive NFE, step count selection, image generation efficiency, video generation, inference-time optimization
+
+### ZeroMAG: Zero-Shot Multimodal Adapter Generation for EEG Foundation Models
+- [[zeromag-zero-shot-multimodal-adapter]] - EEG FM零样本扩展异构多模态：冻结编码器，从无标签记录（模态-被试-任务条件）在函数约束潜空间生成adapter权重，免目标标签/目标侧优化，距监督适配仅0.50pp (arXiv: 2610.03546)
+  - 配置不变adapter容忍异构伴生模态组合；直接权重回归缺函数监督会退化，表征学习与条件生成双组件缺一不可
+  - 6个held-out数据集×3个EFM backbone：+7.22pp over EEG-only，+4.89pp over权重回归
+  - **Activation**: EEG foundation model, multimodal adapter, zero-shot adaptation, hypernetwork, adapter generation, physiological signals, cross-dataset generalization
+
+### Zephon: Elastic Determinism for Online, Stateful FM Data Loading
+- [[zephon-elastic-determinism-data-loader]] - 基础模型训练数据管线弹性确定性：拓扑无关lane划分+顺序决策串行化/无状态计算并行+有界in-flight状态checkpoint，GPU拓扑变化/resume/后端变化下全局batch序列恒定 (arXiv: 2610.03087)
+  - 在线tokenize/pack/mix是有状态n-to-m变换，破坏样本索引；离线物化对视频等模态不可行
+  - 恢复成本不随训练进度增长；ablation差异可归因参数而非数据顺序噪声
+  - **Activation**: deterministic data loading, foundation model training, data pipeline, checkpoint resume, GPU topology, sample packing, online tokenization, shuffle reproducibility
