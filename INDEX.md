@@ -1,3 +1,26 @@
+## 2026-10-05 - Neuroscience + Quantum Research (Cron Job)
+
+### Learning SYK Hamiltonians
+- [[syk-hamiltonian-learning-mean-field]] - 首个稠密随机平均场哈密顿量学习的常数温度保证：SYK每个四次相互作用重叠Θ(n³)个其他项、局域性工具全部失效，用平均场无序性替代局域性 (arXiv: 2610.02178)
+  - 样本高效算法（任意固定β>0，N=n^{O(1+β)}ε⁻²log(n/ζ)）: 最大熵约化→log配分函数在真实耦合处的强凸性（Hessian Lipschitz+边界论证，凸性只需在随机目标点成立）；BKM协方差恒等式替代准局域算子+局部旋转机制，局部淬火Petz Rényi比值Z_A/Z替代能量泄漏界
+  - 拟多项式时间算法（小常数β）: 一阶求逆——重标后期望映射线性阶为恒等，需消除Θ(n^{-1/2})二次偏差；低阶多项式代理（Taylor展开分母(1+Δ)⁻¹≈1−Δ，β展开截断度O(log n)）+加权矩估计‖Δ‖_{2,s}≤C_s n⁻¹（s=15→超收缩控制L¹⁶）+低度校准
+  - Wick展开+Kotecký–Preiss聚合物展开控制配分函数矩；退火→淬火通过交换指标+高斯集中论证；SYK被猜想无复本对称破缺相变（对比SK模型β=1相变），可学习性揭示了混沌模型的结构
+  - **Activation**: SYK, Hamiltonian learning, Gibbs state, mean-field, all-to-all interactions, strong convexity, log-partition function, Bogoliubov-Kubo-Mori, Kotecky-Preiss, Wick expansion, Petz Renyi power, quantum simulator calibration
+
+### Large-scale factor analysis shows machine intelligence is only partially interpretable
+- [[llm-benchmark-factor-analysis]] - 迄今最宽LLM智能心理测量学分析（13,251分数×1,618模型×456基准）：g因子最多解释70.8%方差（最佳插补器仅25.7%），内容相似基准不聚类，g与标准"推理"基准不同——机器智能仅部分可解释 (arXiv: 2609.36515)
+  - 超稀疏MNAR矩阵管道: 三种稠密化策略（C列优先保知名基准/R行优先保重测模型/S对称）+6种插补器（SoftImpute/kNN/missForest/单侧矩阵补全/USVT/相关矩阵恢复），R²≥0.2门控（列分层20%掩码）
+  - 分层因子分析: EFA(minres)+promax斜交旋转+Schmid-Leiman双因子变换→ω_h量化g方差占比；并行分析选因子数；标签凝聚分析用覆盖四分位分层零模型（2000次置换）+BH FDR检验"能力"标签是否真实聚类
+  - 反射模型（潜在g因果）不可支持；互惠主义（mutualist，能力互相因果的网络，无公共原因）是更好模型——若成立，"训练中瞄准g"不可行，泛化只能靠暴力覆盖任务空间
+  - **Activation**: LLM benchmark, factor analysis, g factor, omega hierarchical, Schmid-Leiman bifactor, MNAR imputation, label cohesion, mutualism, psychometrics, benchmark design, evaluation validity
+
+### Floquet-Universal Hamiltonian Simulation
+- [[floquet-universal-hamiltonian-simulation]] - Floquet模拟完整构造理论：周期驱动哈密顿量（有限Fourier级数、幅值比∈[1,2]）可合成Lie(S)中任意哈密顿量；S Floquet-通用⟺S生成完全李代数——与通用门集分类一致，受限带宽光滑驱动不损失计算能力 (arXiv: 2610.01878)
+  - 实用优势: 时不变合成的相互作用强度比多项式缩放且有no-go定理[CMP18]，Floquet只需频率缩放、强度全O(1)——周期驱动已被实验实现[Jot+14;Cho+20;Koy+25]
+  - 效率定理: k-局域格点哈密顿量（非对易图常数色数）以全幅值O(1)+全频率poly(n)模拟；机制=交换族内频率系数复用+常数相移（Lemma 55）
+  - 证明机器: 设计驱动使Magnus展开低阶项消失+最新尾部界[ACO25]+留数/代数几何归约到自由结合代数→李代数的规范投影；给定目标哈密顿量，驱动参数由线性代数计算导出；直接导出Floquet物理量的BQP完全性与QMA硬度
+  - **Activation**: Floquet, periodic driving, Hamiltonian simulation, Lie closure, Magnus expansion, quasienergy, lattice Hamiltonian, chromatic number, BQP-complete, QMA-hard, quantum simulator design
+
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
 ### Continual Reinforcement Learning with Neuroevolution
