@@ -1,3 +1,19 @@
+## 2026-10-06 - Neuroscience Research (Cron Job)
+
+### Autoregressive Frontier Expansion: Growing Trees with Graph Machine Learning
+- [[frontier-expansion-tree-generation]] - 迭代前沿扩展联合生成神经元/树形态的拓扑+几何：SO(2)-等变GNN+flow matching逐层生长，构造性100%有效树 (arXiv: 2609.38506)
+  - 每层两步：frontier expansion（预测每个活动叶节点分叉Γ∈{0,1}或终止）+ localisation（父相对偏移C），移位后合并为单一条件分布 pθ(Cℓ,Γℓ|T̃ℓ)；Γ∈{−1,+1}对称化使采样阈值=0；K=10 Euler步
+  - SO(2)-EGNN：不变边特征(轴向dᵢⱼ+垂直ρᵢⱼ+方位角ψ+倾角φ)+局部坐标系(fᵥ,sᵥ,û)由父分支方向继承、与输入共旋转⇒等变输出；树边消息传递+每两层induced-set attention跨深度传信息；soma根一次创建k≤23个初级树突（rank one-hot区分共享frame的兄弟）
+  - MICrONS 26,469皮层神经元+3,386棵植物树：构造性100%有效树 vs SemlaFlow 76.6%/12.5%；∆MMD²=0.0393 vs 0.2521/0.8436；密度0.876覆盖0.798；F=64仅1.57M参数仍胜22.3M基线；采样快20×（D20树0.617s vs 12.317s）；TMD持续同调条件化使生成跟随目标（91%比随机配对近）
+  - **Activation**: neuron morphology generation, dendritic arbor synthesis, frontier expansion, flow matching 3D, SO(2) equivariant GNN, TMD persistence conditioning, MICrONS, branching structure generator, connectome augmentation
+
+### Response Variability and Stability in Human Reasoning
+- [[reasoning-pattern-energy-geometry]] - 推理模式=度量空间间映射f:(X,dX)→(Y,dY)，p-energy(Dirichlet能量推广)量化个体响应变异性：高能量仅在初始错误时预测改进 (arXiv: 2610.03008)
+  - 任务编码入H₆：量词→(普遍性,极性)双比特嵌入atmosphere理论，格→(传递性,方向)嵌入TransSet；响应入H₄且NVC映射原点、O响应最近NVC（嵌入PHM O-heuristic）——理论驱动编码胜one-hot（ΔAIC=−25）
+  - 局部2-energy E²(f;x)=平均邻居响应距离²=个体×任务级变异性分数；k-means聚出3类推理者（正确低能量0.307/高能量0.471/方向偏好0.389），PC1↔能量PC2↔方向
+  - GLMM关键发现：C×E²交互β=−0.438***——高能量翻转效应：初始正确高能量→重测保留率降(OR 0.72，非系统化运气)；初始错误高能量→改进概率升(OR 1.41，不稳定态易修复)；"稳定错误"者难改进。模式稳定性：1_{i=j} LMM β=−2.44***，个体推理模式是跨时间稳定的指纹
+  - **Activation**: reasoning pattern distance, response variability metric, p-energy cognitive modeling, syllogism analysis, GLMM test-retest, metric geometry psychology, individual differences clustering, Dirichlet energy behavior
+
 ## 2026-10-06 - Quantum QEC + CS (Cron Job)
 
 ### Homological Thresholds in Randomly Monitored Quantum Error-Correcting Codes
