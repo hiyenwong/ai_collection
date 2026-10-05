@@ -1,5 +1,21 @@
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
+### NeuroLens: Learning Latent Embeddings of Neural Semantics from Chronic Recordings
+- [[neurolens-jepa-chronic-recordings]] - JEPA自监督框架从慢性神经记录学习去噪表征：潜空间预测分离表征可塑性与电极漂移，校准签名神经元身份支持零梯度跨session适配 (arXiv: 2610.02864)
+  - Day-adaptive cross-attention encoder：41维生理签名（FR stats+ACG+population coupling）经MLP生成neuron embedding注入token，替代固定ID实现未见神经元迁移；Utah array通道改用hypernetwork FiLM按天条件化
+  - SIGReg特征函数正则（匹配各向同性高斯）防坍缩，替代启发式stop-gradient；因果transformer AR predictor跨天共享参数强制稳定预测结构
+  - 实证：IBL 53天Neuropixels choice解码+6% vs causal NDT，latent effective rank跨天稳定（NDT随神经元丢失下降）；人类ALS语音sentence-embedding解码+38%，GF模式（64 calibration trials零梯度）仍超SPINT/POSSM
+  - **Activation**: JEPA, chronic recordings, representation drift, neural population nonstationarity, few-shot BCI, cross-attention encoder, effective rank, self-supervised neural decoding, calibration-based neuron identity
+
+### Parallel Time-Aligned Spiking Self-Attention for Consistent Integer-Valued Training and Spike-Driven Inference
+- [[pt-ssa-temporal-interaction-mismatch]] - SFA/I-LIF压缩训练与脉冲推理的算子级失配TIM：O_train含全部跨时间三元组Q_iK_j^TV_k而O_inference只保留对角项，SDT-V3在ImageNet掉27.78pp；PT-SSA重建D个虚拟脉冲切片按时间对齐并行计算注意力再求和，gap降至0.06pp (arXiv: 2610.03291)
+  - 脉冲重建X_d=1[C_X>d]全并行+单位STE梯度路由（D虚拟步梯度求和聚合到压缩激活）；Adaptive PT-SSA每块学一个标量θ_l=exp(clip(a,-8,8))等价调节SFA有效阈值，LSQ式1/√(MD)梯度缩放
+  - 算子级验证：D=4相对L2误差7.41→1.6e-4（SFA）；SSA gap随D恶化（D=8时26.99→15+pp）而PT-SSA全D稳定<0.3pp——发放计数守恒≠算子等价
+  - Triton-fused内核逐tile重建-计算-累加避免物化重建张量，吞吐仅比I-LIF SSA低5.4%（5797 sample/s），比recurrent LIF SSA快2.91×；ImageNet-1K 74.53% spike-driven Top-1
+  - **Activation**: spiking transformer, temporal interaction mismatch, train-inference consistency, SFA, I-LIF, spike-driven attention, virtual time step expansion, adaptive firing threshold, Triton kernel
+
+## 2026-10-05 - Neuroscience Research (Cron Job)
+
 ### Continual Reinforcement Learning with Neuroevolution
 - [[neuroevolution-continual-rl-stability-plasticity]] - 神经进化在持续RL中最优：ES最一致实现稳定-可塑性权衡，机制是参数空间探索偏向宽返回景观邻域，跨任务邻域重叠率预测LA−F权衡 (arXiv: 2610.01583)
   - ES在8/18设置中LA−F最佳，GA在10/18设置学习准确率最高；PPO及ReDo/TRAC/C-CHAIN变体要么失去可塑性要么以稳定性换可塑性
