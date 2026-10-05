@@ -1,5 +1,68 @@
 
 
+
+## 2026-10-05 - arXiv Paper Skills (Cron Job)
+
+### Multi-Agent RL
+
+- [[arxiv-2610-02554v1-scout-scalable-coordination-via-optimal-unified-transport]] - SCOUT: First offline MARL framework combining flow-matching behavioral prior with decomposed value function for test-time action refinement (NeurIPS 2026) (arXiv: 2610.02554v1) (utility=0.95)
+- [[arxiv-2610-02525v1-mira-meta-reasoning-for-iterative-research-agents]] - MIRA: Hierarchical architecture for long-horizon research agents with meta-reasoning over investigation allocation and generative actor-critic for credit assignment (arXiv: 2610.02525v1) (utility=0.92)
+- [[arxiv-2510-11062v3-stronger-mas-multi-agent-rl-for-collaborative-llms]] - AT-GRPO: Agent- and Turn-wise grouped RL for multi-agent LLM systems, boosting planning accuracy from 14-47% to 96-99.5% (arXiv: 2510.11062v3) (utility=0.93)
+- [[arxiv-2605-16757v1-neuromas-multi-agent-systems-as-neural-networks]] - NeuroMAS: Treats multi-agent language systems as trainable neural-network-like architectures with LLM agents as nodes and textual signals as edges (arXiv: 2605.16757v1) (utility=0.90)
+- [[arxiv-2602-08275v3-dr-mas-stable-rl-for-multi-agent-llm-systems]] - Dr. MAS: Identifies gradient-norm inflation as root cause of instability in MAS RL, proposes agent-wise advantage normalization for stable training (arXiv: 2602.08275v3) (utility=0.91)
+- [[arxiv-2610-01882v1-omaf-one-step-online-multi-agent-flow-policies]] - OMAF: One-step flow model for online MARL combining expressive generative policies with efficient single-step action generation (3.4x returns, 10.5x sample efficiency) (arXiv: 2610.01882v1) (utility=0.88)
+
+### Spiking Neuromorphic
+
+- [[arxiv-2610-01418v1-spikemoe-brain-inspired-competitive-routing]] - SpikeMoE: Brain-inspired k-WTA spike router for SNN Mixture-of-Experts with hippocampal competition-inhibition dynamics and missing-modality handling (arXiv: 2610.01418v1) (utility=0.88)
+- [[arxiv-2610-02129v1-snn-streaming-qubit-readout]] - SNN discriminators for superconducting qubit readout: streaming time-chunk processing on FPGA, outperforming matched-filter and approaching ANN accuracy (arXiv: 2610.02129v1) (utility=0.85)
+
+### Quantum
+
+- [[arxiv-2610-03682v1-low-overhead-qec-boundary-connected-planar-modules]] - Google QAI + DeepMind: Modular hyperbolic surface/color codes with boundary connections achieve 30x overhead reduction vs surface code (Oct 2026) (arXiv: 2610.03682v1) (utility=0.95)
+- [[arxiv-2610-02734v1-smp-syndrome-motif-projection-circuit-level-qec]] - SMP: General hyperedge-based framework for circuit-level QEC — linear-complexity preprocessing, 77.8% failure reduction for color codes, works with Google Willow data (arXiv: 2610.02734v1) (utility=0.87)
+- [[arxiv-2610-03684v1-single-shot-error-correction-optimal-spacetime-cost]] - Achieves optimal Omega(S(K+log(S/eps))) spacetime cost for QEC using quantum Tanner codes with single-shot syndrome extraction and parallel classical decoding (arXiv: 2610.03684v1) (utility=0.88)
+
+## 2026-10-04 - arXiv Paper Skills (Cron Job)
+
+
+### General Ml
+
+- [[arxiv-2610-02191v1-the-missing-primitive-diagnosing-and-repairing-mat]] - The Missing Primitive: Diagnosing and Repairing Mathematical Reasoning in Large Language Models (arXiv: 2610.02191v1) (utility=1.00)
+- [[arxiv-2610-02128v1-sample-complexity-bounds-for-categorical-markov-ra]] - Sample complexity bounds for categorical Markov random fields via Discrete Diffusions (arXiv: 2610.02128v1) (utility=0.87)
+
+### Multi Agent Rl
+
+- [[arxiv-2610-02074v1-homomorphic-advantage-operator-stabilizing-reinfor]] - Homomorphic Advantage Operator: Stabilizing Reinforcement Learning Under Fully Homomorphic Encryption Constraints (arXiv: 2610.02074v1) (utility=1.00)
+- [[arxiv-2609-38016v1-brain-sad-a-brain-inspired-safe-autonomous-driving]] - Brain-SAD: A Brain-Inspired Safe Autonomous Driving Control Framework with Dynamic Fear-Oriented Constraint on Dual-Policy (arXiv: 2609.38016v1) (utility=1.00)
+- [[arxiv-2609-38081v1-traversing-the-solution-space-of-neural-networks-w]] - Traversing the solution space of neural networks with Hessian Null Space Continuation (arXiv: 2609.38081v1) (utility=1.00)
+- [[arxiv-2610-02202v1-scholarcatalyst-a-benchmark-for-retrieving-papers]] - ScholarCatalyst: A Benchmark for Retrieving Papers That Inspire New Research (arXiv: 2610.02202v1) (utility=0.93)
+
+### Neuroscience
+
+- [[arxiv-2609-40258v1-large-language-model-guided-evolutionary-discovery]] - Large Language Model-Guided Evolutionary Discovery of Native Neural Architectures for Spiking Sequence Modeling (arXiv: 2609.40258v1) (utility=0.87)
+- [[arxiv-2610-01303v1-a-high-density-eeg-dataset-for-stimulus-driven-aud]] - A High-Density EEG Dataset for Stimulus-Driven Auditory Attention (arXiv: 2610.01303v1) (utility=0.87)
+
+### Nlp Llm
+
+- [[arxiv-2610-01887v1-trace-tackling-real-world-resource-assignment-prob]] - TRACE: Tackling Real-World Resource Assignment Problems via Agentic Heuristic Design (arXiv: 2610.01887v1) (utility=1.00)
+- [[arxiv-2609-38757v1-self-evolving-algorithm-design-agents-escaping-in]] - Self-Evolving Algorithm-Design Agents: Escaping In-Context Evolutionary Stagnation via Population-Curated Policy Optimization (arXiv: 2609.38757v1) (utility=1.00)
+- [[arxiv-2610-02206v1-kalibench-a-fine-grained-benchmark-for-cybersecuri]] - KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards (arXiv: 2610.02206v1) (utility=0.85)
+- [[arxiv-2610-02204v1-reconstruct-practice-go-real-guided-self-improveme]] - Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents (arXiv: 2610.02204v1) (utility=0.85)
+- [[arxiv-2610-02122v1-argo-bench-evaluating-data-agents-on-enterprise-sc]] - Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows (arXiv: 2610.02122v1) (utility=0.85)
+
+### Other
+
+- [[arxiv-2610-02066v1-external-observers-may-see-more-clearly-cross-mode]] - External Observers May See More Clearly: Cross-Model Span-Level Hallucination Detection in Large Language Models via Hidden State Probing (arXiv: 2610.02066v1) (utility=0.95)
+
+### Physics Math
+
+- [[arxiv-2610-02186v1-higher-order-molecular-grammars-for-generative-and]] - Higher-Order Molecular Grammars for Generative and Foundation Models in Chemistry (arXiv: 2610.02186v1) (utility=1.00)
+
+### Security Privacy
+
+- [[arxiv-2609-39272v1-an-island-based-parallel-biased-random-key-genetic]] - An Island-Based Parallel Biased Random-Key Genetic Algorithm for the Three-Dimensional Trailer Loading Problem (arXiv: 2609.39272v1) (utility=0.90)
+
 ## 2026-10-03 - arXiv Paper Skills (Cron Job)
 
 - **arxiv-2610-00746v1-meg-mamba-a-scalable-state-space-foundation-model-for-magnetoencephalography** [neuroscience]

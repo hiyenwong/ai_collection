@@ -1,5 +1,93 @@
 [
   {
+    "id": "2610.02554v1",
+    "title": "SCOUT: Scalable Coordination via Optimal Unified Transport",
+    "skill_name": "arxiv-2610-02554v1-scout-scalable-coordination-via-optimal-unified-transport",
+    "category": "multi-agent-rl",
+    "utility": 0.95,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2610.02525v1",
+    "title": "MIRA: Meta-reasoning for Iterative Research Agents",
+    "skill_name": "arxiv-2610-02525v1-mira-meta-reasoning-for-iterative-research-agents",
+    "category": "multi-agent-rl",
+    "utility": 0.92,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2510.11062v3",
+    "title": "Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs (AT-GRPO)",
+    "skill_name": "arxiv-2510-11062v3-stronger-mas-multi-agent-rl-for-collaborative-llms",
+    "category": "multi-agent-rl",
+    "utility": 0.93,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2605.16757v1",
+    "title": "NeuroMAS: Multi-Agent Systems as Neural Networks with Joint Reinforcement Learning",
+    "skill_name": "arxiv-2605-16757v1-neuromas-multi-agent-systems-as-neural-networks",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2602.08275v3",
+    "title": "Dr. MAS: Stable Reinforcement Learning for Multi-Agent LLM Systems",
+    "skill_name": "arxiv-2602-08275v3-dr-mas-stable-rl-for-multi-agent-llm-systems",
+    "category": "multi-agent-rl",
+    "utility": 0.91,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2610.01882v1",
+    "title": "OMAF: Flowing Faster to Coordinate - One-Step Online Multi-Agent Flow Policies",
+    "skill_name": "arxiv-2610-01882v1-omaf-one-step-online-multi-agent-flow-policies",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2610.01418v1",
+    "title": "SpikeMoE: Brain-Inspired Competitive Routing for Flexible Spiking Mixture-of-Experts",
+    "skill_name": "arxiv-2610-01418v1-spikemoe-brain-inspired-competitive-routing",
+    "category": "spiking-neuromorphic",
+    "utility": 0.88,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2610.02129v1",
+    "title": "Spiking Neural Networks for Streaming Qubit Readout",
+    "skill_name": "arxiv-2610-02129v1-snn-streaming-qubit-readout",
+    "category": "spiking-neuromorphic",
+    "utility": 0.85,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2610.03682v1",
+    "title": "Low-Overhead Quantum Error Correction with Boundary-Connected Planar Modules",
+    "skill_name": "arxiv-2610-03682v1-low-overhead-qec-boundary-connected-planar-modules",
+    "category": "quantum",
+    "utility": 0.95,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2610.02734v1",
+    "title": "SMP: Syndrome Motif Projection for Circuit-Level Quantum Error Correction",
+    "skill_name": "arxiv-2610-02734v1-smp-syndrome-motif-projection-circuit-level-qec",
+    "category": "quantum",
+    "utility": 0.87,
+    "date_added": "2026-10-05"
+  },
+  {
+    "id": "2610.03684v1",
+    "title": "Single-Shot Error Correction at Optimal Spacetime Cost",
+    "skill_name": "arxiv-2610-03684v1-single-shot-error-correction-optimal-spacetime-cost",
+    "category": "quantum",
+    "utility": 0.88,
+    "date_added": "2026-10-05"
+  },
+  {
     "id": "2610.00746v1",
     "title": "MEG-Mamba: A Scalable State-Space Foundation Model for Magnetoencephalography",
     "skill_name": "arxiv-2610-00746v1-meg-mamba-a-scalable-state-space-foundation-model-for-magnetoencephalography",
