@@ -1,3 +1,26 @@
+## 2026-10-06 - 计算机科学 + 量子力学 (Cron Job)
+
+### All Work And No Play Makes Jack a Dull Boy: Understanding and Preventing Catastrophic Strategy Collapse in RLVR
+- [[rlvr-strategy-collapse-mesh-learning]] - RLVR后训练的灾难性策略崩溃：策略容量收缩理论与Mesh Learning防护 (arXiv: 2610.02835)
+  - 策略=轨迹耦合核等价类（Fisher分数内积K_ij），与人类可识别解法对齐；Thm1非崩溃态下GRPO/DAPO/GSPO必然把概率质量集中到单策略，Thm2非平凡准确率需要最低策略容量（幂律），两者冲突=准确率悬崖的机制解释；Thm3固定KL/JS惩罚在ΔR/β≥C_D时必然失效
+  - Mirrored Entanglement Index（MEI=‖Σv_i‖²/Σ‖v_i‖²，纯前向logit梯度）在精度悬崖前提前越过3σ阈值(1.013)，轻量在线预警；Mesh Learning=Coach Prompting（离线教练LLM生成m=4策略前缀、loss-mask、推理时自提策略）+策略平衡正则（对冻结参考策略的softmax(z−z_ref)均匀JS，μ=1e-5，平移不变只控相对增长）
+  - AIME26上Qwen3-4B 43.3%→56.7%（+13.4pp）、Phi +11.5pp，AIME25/26、MATH-500、GPQA、LiveCodeBench全面胜过GRPO/DAPO/GSPO/+KL/+JS五个基线，Pass@k增益保持
+  - **Activation**: RLVR strategy collapse, GRPO late-stage collapse, MEI warning signal, mesh learning, coach prompting, strategy balancing regularization, LLM post-training stability, reasoning diversity
+
+### Efficient fidelity simulation of high-rate magic distillation circuits
+- [[affine-diagonal-fidelity-simulation]] - 仿射-对角电路（X/CNOT/T/CCZ层级门）的精确容错保真度模拟：反向传播使非Clifford演化从重叠中消去 (arXiv: 2610.03605)
+  - 基准测试比完全模拟容易：引理1传播Pauli错降一级（UPU†∈X·D^(ℓ−1)），引理2传播错交换子降两级，ℓ=3时交换子是Z型Pauli→syndrome分布在仿射空间s₀+V⊥上精确均匀采样（高斯消元），逻辑保真度退化为stabilizer态重叠
+  - O(n³T)每Monte Carlo样本且与逻辑量子比特数无关→解锁高码率：[[27,3,3]] tricycle三块深度2 CCZ幻态工厂优化，共享ancilla块Z-syndrome提取+metacheck修复最优（infidelity~1e-7量级），并验证Pauli-twirl近似无大偏差；ℓ=4给出无偏稳定子校验估计器
+  - 覆盖hypercube-IQP（[[8,3,2]]，预计算n^2.51）、transversal-T/常深CCZ的rainbow/GBP/sheaf qLDPC、魔态cultivation检验（H_XY、Steane H态的K=SH框架变换）与带前馈的传送门
+  - **Activation**: affine-diagonal circuits, Clifford hierarchy error propagation, syndrome sampling, magic state factory benchmarking, tricycle code, qLDPC CCZ, exact FT simulation, Pauli twirl validation, high-rate codes
+
+### Breaking the chain: geometry-native state preparation with ASPIRE
+- [[aspire-geometry-native-state-preparation]] - 按纠缠几何而非1D链序选门：RQMI评分+最大权匹配+Procrustes精修的MPS近似态制备 (arXiv: 2610.03528)
+  - 每对候选qubit做一次4×4本征分解同时得到最优解纠缠门与可移除互信息R_ij（门=把ρ_ij本征向量按序映射到计算基）；按路由成本归一化R̃=R/c（3 CNOT+每SWAP加3）后阈值过滤，Edmonds blossom最大权匹配并行层，重算迭代至预算B
+  - 理论保证：总关联T=ΣS(ρ_a)即到积态的相对熵距离，不相交门精确可加（Prop1贪心坐标下降）；残差单点marginal给出保真度证书ε*≤Λ/(2−Λ)≤T/2（系数Λ/4紧）；位置置换不变性免于snake-mapping病态
+  - 全连通ASPIRE在⌈log₂N⌉层精确制备GHZ_N（最优，staircase需N−1）；Bell对晶格比MPD少数量级门；heavy-hex原生门无SWAP网络仍胜MPD+路由；早期容错区以远低于精确制备的T数饱和到应用可用保真度（QPE guide state场景）
+  - **Activation**: MPS state preparation, matrix product disentangler, removable quantum mutual information, entanglement geometry, maximum weight matching, hardware-native compilation, QPE guide states, amplitude encoding, Procrustes optimization
+
 ## 2026-10-06 - Neuroscience Research (Cron Job)
 
 ### Emergent Topology of Optimal Networks for Synchrony
