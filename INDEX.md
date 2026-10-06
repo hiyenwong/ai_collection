@@ -1,4 +1,23 @@
+## 2026-10-07 - Deep Learning Research (Cron Job)
 
+### Base Models Can Reason By Taking a Cue From Training Data
+- [[token-cue-reasoning-base-models]] - 起始token线索解锁base模型推理：".\n\nOkay"让Olmo-3-7B MATH-500从42%→78%，"Alright,"让Qwen3-14B从72%→87%，RL增益大部分来自让线索更可能出现 (arXiv: 2610.06851)
+  - 三大机制发现：RL主要是让cues更可能出现（固定cues即恢复大部分增益）；causal data interventions可把任意词（如"chicken"）改造成有效推理线索或消除已有线索效果；不同cues的隐状态表征对应训练集不同文档类型
+  - 可复用模式：cued评估（固定起始token隔离能力与倾向）、cue搜索（约束解码枚举候选）、safety案例——不同cues触发不同refusal/compliance行为
+  - **Activation**: base model reasoning, token cues, reasoning elicitation, RL training data attribution, prompt prefix engineering, refusal behavior analysis
+
+### RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents
+- [[raised-prompt-injection-self-distillation]] - 自生成工具场景+自蒸馏（student匹配teacher在clean/injected双轨迹上的clean-context行为），防间接注入且保住良性utility (arXiv: 2610.06401)
+  - 识别既有防御两大缺陷机制：输出分布漂移（benign场景行为改变）+良性拒绝失效（拒绝执行工具输出指示的合法步骤）
+  - 关键设计：监督信号始终是clean轨迹的teacher分布，应用到clean+injected两种输入→对攻击不变但无行为漂移
+  - 防御评估三轴协议：攻击成功率、agentic基准utility、良性拒绝率（+分布漂移KL作早期预警）
+  - **Activation**: prompt injection defense, tool-use agent security, self-distillation robustness, output distribution drift, benign refusal failure mode
+
+### What Matters for Latent Reasoning with Flow Matching (FLaRe)
+- [[flare-latent-reasoning-flow-matching]] - 潜空间思考五要求框架（useful/diverse/explainable/refinable/efficient）+流匹配配方：97%显式CoT精度、1/4延迟；现有方法靠捷径/蒸馏/逐token模仿多不合格 (arXiv: 2610.06666)
+  - 五探针审计：反事实消融测useful、重采样熵测diverse、解码CoT忠实性测explainable、计算-scaling曲线测refinable、延迟-精度Pareto测efficient
+  - 配方四要素：潜空间编码内容与塑形、flow训练位置、答案readout、最终阶段用模型自己verified thoughts训练（替代外部CoT蒸馏）
+  - **Activation**: latent reasoning, flow matching LLM, continuous space reasoning, silent CoT, latent thought probes, refinable inference design
 
 ## 2026-10-06 - High-Utility arXiv Papers (Cron Job)
 
