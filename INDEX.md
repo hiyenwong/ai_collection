@@ -1,3 +1,87 @@
+
+
+## 2026-10-06 - High-Utility arXiv Papers (Cron Job)
+
+### Aligning Multimodal Patient Evidence with Biomedical Knowledge Graphs for Clinical LLMs
+- [[aligning-multimodal-patient-evidence-with-biomedical]] - Clinical questions often depend on linking a patient's multimodal evidence to external biomedical knowledge, yet existing predictive systems rarely represent such links explicitly, so they can neither... (arXiv: 2610.06685v1)
+  - Category: neuroscience
+
+### MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents
+- [[mempilot-orchestrating-on-demand-multimodal-memory-curation]] - Memory has become integral to the LLM agent ecosystem, supporting information retention and reuse across interactions. However, most existing agent memory systems construct memory in a query-agnostic ... (arXiv: 2610.06830v1)
+  - Category: multi-agent-rl
+
+### BazaarBench: Delegation Safety in Decentralized C2C Marketplaces Run by LLM Agents
+- [[bazaarbench-delegation-safety-in-decentralized-c2c]] - In decentralized consumer-to-consumer (C2C) marketplaces, people list goods, negotiate with strangers, and rate one another, so trust rests on reputation. Large language model (LLM) agents now act for... (arXiv: 2610.06748v1)
+  - Category: multi-agent-rl
+
+### BrainTRACE: Tracing Longitudinal, Multimodal, and Volumetric Evidence in Brain MRI Clinical Reasoning
+- [[braintrace-tracing-longitudinal-multimodal-and-volumetric]] - Brain MRI interpretation is a longitudinal clinical reasoning problem: radiologists compare serial studies, integrate information across MRI sequences, localize findings within volumetric anatomy, and... (arXiv: 2610.06571v1)
+  - Category: neuroscience
+
+### CLIFT: Conformal Self-Verification for Web Agent Training and Test-Time Scaling
+- [[clift-conformal-self-verification-for-web-agent]] - Open-source web agents are now strong enough to execute realistic browser tasks, but training them with reinforcement learning still depends on weak supervision: binary task success is too sparse for ... (arXiv: 2610.06829v1)
+  - Category: multi-agent-rl
+
+### FREA: A Multi-Source Expert Benchmark for Reaction Feasibility Verification
+- [[frea-a-multi-source-expert-benchmark-for]] - As generative models and AI agents propose chemical reactions at a scale beyond expert review, feasibility verifiers decide which proposals enter synthesis planning. But do their decisions agree with ... (arXiv: 2610.06614v1)
+  - Category: multi-agent-rl
+
+### Can Agent Harnesses and Inference Engines Hear Each Other? The HEAR Protocol for Agentic LLM Serving
+- [[can-agent-harnesses-and-inference-engines]] - LLM agents increasingly execute complex workflows involving multi-turn reasoning, tool use, and parallel agents. Efficient serving requires decisions that span two layers with complementary informatio... (arXiv: 2610.06597v1)
+  - Category: multi-agent-rl
+
+### SimForcing: Distilling Simulation Motion Priors into Real-Domain Robot World Models
+- [[simforcing-distilling-simulation-motion-priors-into]] - Action-conditioned robot world models must respond precisely to robot trajectories while preserving realistic visual dynamics, yet learning both from heterogeneous robot videos remains challenging. Si... (arXiv: 2610.06598v1)
+  - Category: multi-agent-rl
+
+### GCTAuto-encoder: A Cross modal Framework for Security Flaw Detection in IoT Networks
+- [[gctauto-encoder-a-cross-modal-framework-for]] - IoT encompasses diverse physical entities, from smart home devices to autonomous vehicles, creating a complex environment with heterogeneous security models. This heterogeneity makes IoT sub-systems v... (arXiv: 2610.06517v1)
+  - Category: neuroscience
+
+### Learning to Read the Contextual Tokens in Diffusion Transformers
+- [[learning-to-read-the-contextual-tokens]] - Multimodal Diffusion Transformers (MM-DiTs) jointly process visual and textual representations throughout generation. These models repeatedly update the text tokens through multimodal attention, formi... (arXiv: 2610.06844v1)
+  - Category: nlp-llm
+
+### Mind the Accent Gap: British Accent Robustness in Speech-Driven Financial Voice Assistants
+- [[mind-the-accent-gap-british-accent]] - AI voice assistants often use Automatic Speech Recognition (ASR) with LLM-based reasoning, yet existing systems struggle with regional British accents, including Scottish, Irish, and Welsh accents, si... (arXiv: 2610.06587v1)
+  - Category: nlp-llm
+
+### RealtimeWAM: One-Step Asynchronous World Action Models
+- [[realtimewam-one-step-asynchronous-world-action-models]] - World Action Models (WAMs) incorporate visual representations from video generation backbones to guide action prediction. Recent efficient WAMs adopt Mixture-of-Transformers (MoT) architectures and co... (arXiv: 2610.06617v1)
+  - Category: nlp-llm
+
+### SOL: Measuring Gaps between Text Distributions by Double Sliced Wasserstein Metrics
+- [[sol-measuring-gaps-between-text-distributions]] - Evaluating text generation requires measuring how well the generated distribution matches the data distribution. For autoregressive models, this is done by the perplexity. Diffusion and flow-based lan... (arXiv: 2610.06513v1)
+  - Category: nlp-llm
+
+### Topology-Informed Prompt-Conditioned Universal Segmentation of Uterine Structures from Ultrasound and MRI
+- [[topology-informed-prompt-conditioned-universal-segmentation-of-uterine]] - Multi-structure segmentation of the uterus is important for computer-assisted screening, diagnosis, and treatment planning of uterine diseases, where ultrasound and MRI provide complementary clinical ... (arXiv: 2610.06494v1)
+  - Category: multi-agent-rl
+
+### Back to the Future: Rethinking EDA Infrastructure for Agentic Systems in Chip Design Verification
+- [[back-to-the-future-rethinking-eda]] - The unprecedented computational scale of modern artificial intelligence depends on complex, multi-billion-transistor Systems-on-Chip, yet the workflows that verify these chips remain stubbornly manual... (arXiv: 2610.06790v1)
+  - Category: multi-agent-rl
+
+### Decoupling Time and Space: A Temporally Conditioned Refinement for EEG Source Imaging
+- [[decoupling-time-and-space-a-temporally]] - Electroencephalography (EEG) offers millisecond temporal resolution, but inferring underlying neural sources is a severely ill-posed spatial inverse problem. While deep learning has advanced spatial r... (arXiv: 2610.06726v1)
+  - Category: neuroscience
+
+### Reading the Mood: Emotion-Guided Book-to-Music Recommendation via CGANs and LLMs
+- [[reading-the-mood-emotion-guided-book-to-music-recommendation]] - Background music that matches the mood of a text has been shown to make readers feel more immersed and improve their reading experience, motivating recommender systems that pair books with mood-matche... (arXiv: 2610.06703v1)
+  - Category: neuroscience
+
+### Conditional Flow Matching for Single-Neuron Electrophysiology: Capturing Multimodal Responses Across Stimuli
+- [[conditional-flow-matching-for-single-neuron-electrophysiology]] - Neurons of the brain exhibit a rich repertoire of electrophysiology dynamics with the same repeated stimulus eliciting very different voltage responses from the same cell. One common approach in bioph... (arXiv: 2610.06520v1)
+  - Category: neuroscience
+
+### Recursive Video In-Context Learning for Agentic Robot
+- [[recursive-video-in-context-learning-for-agentic]] - LLM agents that orchestrate frozen vision-language-action (VLA) policies improve across episodes through text memory, which records what the agent did but not how the task is done. A demonstration vid... (arXiv: 2610.06843v1)
+  - Category: multi-agent-rl
+
+### Out-of-control Hamiltonian Learning
+- [[out-of-control-hamiltonian-learning]] - Learning the Hamiltonian of a many-body system from its dynamics is a central task in quantum science, yet the algorithms with the strongest provable guarantees assume some level of quantum control--f... (arXiv: 2610.06709v1)
+  - Category: quantum
+
 ## 2026-10-06 - Neuroscience Research (Cron Job)
 
 ### Causal discovery identifies pathways linking physical activity to dementia risk in the UK BioBank

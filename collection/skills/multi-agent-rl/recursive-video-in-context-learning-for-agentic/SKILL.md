@@ -1,0 +1,30 @@
+---
+name: recursive-video-in-context-learning-for-agentic
+description: "Recursive Video In-Context Learning for Agentic Ro..."
+tags: [cs.RO, cs.AI, cs.CL]
+source: arxiv
+arxiv_id: 2610.06843v1
+utility: 0.85
+published: 2026-10-05
+---
+
+# Recursive Video In-Context Learning for Agentic Robot
+
+**Authors:** Wenrui Bao, Xinxin Liu, Bingxin Xu, Yuzhang Shang
+**Published:** 2026-10-05
+**arXiv:** [2610.06843v1](https://arxiv.org/abs/2610.06843v1)
+**Categories:** cs.RO, cs.AI, cs.CL, cs.MA
+**Utility Score:** 0.85
+
+## Abstract
+
+LLM agents that orchestrate frozen vision-language-action (VLA) policies improve across episodes through text memory, which records what the agent did but not how the task is done. A demonstration video shows it, but fits poorly into an agent's context. The full video slows every turn, fixed keyframes lose the contact detail that decides whether a grasp holds, and what the agent needs shifts from the task's structure while planning to the frames around each contact. We introduce Recursive Video In-Context Learning (RV-ICL), a training-free method that turns a demonstration into a hierarchy the agent navigates rather than a prompt it receives. The hierarchy is built from the sub-events of the demonstration, such as grasps and releases. Its levels grow finer, from keyframes of the whole task to phases, moments and short clips, and are exposed through read-only tools. The agent reads the coarse levels before planning. During execution it re-enters the hierarchy whenever a step needs more detail and loads only the clip of its current sub-goal. One demonstration per task is enough. Built on RPent, RV-ICL raises success from 92.6% to 96.5% on LIBERO-PRO and from 86.7% to 95.8% on LIBERO-Plus.
+
+## Key Contributions
+
+- Novel research in cs.RO, cs.AI
+- Published 2026-10-05
+
+## Activation
+
+recursive, video, incontext, learning, agentic, robot
