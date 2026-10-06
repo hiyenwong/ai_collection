@@ -1,3 +1,15 @@
+## 2026-10-07 - Medicine + Quantum Mechanics Research (Cron Job)
+
+### Variational Quantum Attention for Molecular Graph Learning
+- [[edge-aware-quantum-attention-molecular-graphs]] - VQC 只替换 GATv2 的 attention scorer：原子+邻居+键加性融合后振幅编码进 6-7 qubit，Pauli-Z 期望×可学习缩放作为 logit，消息传递/读出保持经典 (arXiv: 2610.04588)
+  - BBBP 全部 6 个 ansatz 一致提升（AUC 0.6808→0.7157），5 个 scaffold-split 任务与 GATv2 竞争力相当且参数少 0.5-1.3%；无单一 ansatz 跨任务占优，深度最优 1-3 块（诚实负结果：更深反而退化）
+  - Verubecestat BACE1 系列：QGAT 活性排序 Spearman 0.8264 vs 0.7954，IG 归因与报道 SAR 方向一致（5-氟吡啶正贡献 vs GATv2 负贡献）；两模型均漏掉氟苯基氟效应（~5×效力）——归因分析协议 SME+IG+activity-cliff 可复用
+  - **Activation**: variational quantum attention, molecular graph, QGAT, GATv2, amplitude encoding, Pauli-Z logit, drug discovery, BACE1, BBBP, SAR attribution, integrated gradients, scaffold split, quantum machine learning
+
+### Anthropic: Claude-shaped science (BootLoops)
+- 知识图谱摄入（无新 skill）— Matthew Schwartz 提出"Claude 形状问题"方法论：寻找精确、重代码、可验证的计算问题而非阻抗失配的概念问题；BootLoops harness 完成 30 个 Feynman 椭圆积分（15 个首次计算）并跨域迁移至生态学（解决 Etienne 方程，BCI 岛树种周转率超中性理论 4.5×）与群体遗传学（1000 Genomes 57 亿突变对分析发现基因转换证据）；36 篇稿件/18 领域/19 合作者；专家雕塑循环：AI 技术正确→专家不满但重定向→共同雕塑成有意义的科学
+  - **Activation**: ai-for-science, impedance mismatch, semi-numerical bootstrap, expert sculpting loop, convex hull of science
+
 ## 2026-10-07 - Neuroscience Research (Cron Job)
 
 ### Efficiency and robustness partition the solution space for memory in recurrent networks
