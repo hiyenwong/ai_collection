@@ -1,3 +1,17 @@
+## 2026-10-07 - Neuroscience Research (Cron Job)
+
+### Efficiency and robustness partition the solution space for memory in recurrent networks
+- [[efficiency-robustness-rnn-solution-space]] - 权重效率选低秩线吸引子 vs 活动效率选高秩非规范链式暂态放大，噪声鲁棒性与活动效率根本对立；中间活动效率+噪声训练最佳复现ALM错位编码 (arXiv: 2610.04697)
+  - 最小刺激回忆任务双成本扫描：lambda->inf 选 W=alpha*c*cT 边缘稳定秩1解（与任务训练网络 simplicity bias 一致），lambda->0 选前馈链 A=-aI+kGamma 达活动下界 pi*tau/N；有效秩随 lambda->0 幂律增长（Arnoldi/Krylov 基验证）
+  - 活动高效解产生错位编码：方差最大模态与因果最大模态强解离（扰动响应量化），解释 ALM 低方差残差方向超比例行为影响；伴随范数积分预测噪声敏感度，非线性 RNN 定性复现同样权衡
+  - **Activation**: RNN solution space, weight efficiency, activity efficiency, noise robustness, low-rank dynamics, transient amplification, misaligned coding, ALM, Pareto frontier, nonnormal dynamics
+
+### Recurrent network dynamics explain the time course of perceptual grouping in natural scenes
+- [[gammanet-perceptual-grouping-recurrent]] - GammaNet（4层hGRU+C-RBP局部学习）在自然图像分割训练中涌现感知分组：增强活动从线索传播，动态未用RT训练即预测人类反应时间方差19.7%（噪声上限19.8%） (arXiv: 2610.05419)
+  - 两阶段分组：早期沿局部边界证据扩散（内部边缘近线索时延迟2.3 timesteps），后期高层语义反馈跨内部边缘建立全局物体表征；线索-边缘距离交互效应显著（p=0.048）
+  - IoU 0.74 vs SAM 0.81（参数8M vs 632M）；每训练样本隐式编码大量 same-different 配对监督；3层消融显著退化证明多尺度必要性
+  - **Activation**: perceptual grouping, GammaNet, hGRU, incremental grouping, object-based attention, C-RBP local learning, human RT prediction, natural scenes, recurrent processing, visual cortex feedback
+
 ## 2026-10-07 - Deep Learning Research (Cron Job)
 
 ### Base Models Can Reason By Taking a Cue From Training Data
