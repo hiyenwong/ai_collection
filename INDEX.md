@@ -23,6 +23,21 @@
 ### Anthropic: Claude-shaped science (BootLoops)
 - 知识图谱摄入（无新 skill）— Matthew Schwartz 提出"Claude 形状问题"方法论：寻找精确、重代码、可验证的计算问题而非阻抗失配的概念问题；BootLoops harness 完成 30 个 Feynman 椭圆积分（15 个首次计算）并跨域迁移至生态学（解决 Etienne 方程，BCI 岛树种周转率超中性理论 4.5×）与群体遗传学（1000 Genomes 57 亿突变对分析发现基因转换证据）；36 篇稿件/18 领域/19 合作者；专家雕塑循环：AI 技术正确→专家不满但重定向→共同雕塑成有意义的科学
   - **Activation**: ai-for-science, impedance mismatch, semi-numerical bootstrap, expert sculpting loop, convex hull of science
+### QuPID: Quantum Parameter-Efficient Input-Dependent Retrieval Adaptation for Medical RAG
+- [[qupid-quantum-retrieval-adaptation]] - 共享酉保真度检索不可训练（U†U=I 使排序与训练无关）；改用测量读出向量余弦相似度+数据重上传，60 参数击败 5.25M 参数 adapter/LoRA (arXiv: 2609.33351)
+  - 退化陷阱命题：任何对 query 和 archive 两侧施加同一输入无关酉的保真度检索设计均不可训练，与 ansatz 能力无关；修复=输入相关电路（重上传）或比较测量统计量而非态叠加
+  - 测量读出 z∈R^40（单比特+近邻 Pauli 期望）为输入调制二次特征图，60 参数共享指定 40 个满秩形式；重上传尺度 α 控制 Fourier 带宽=表达力旋钮；√(p/n) 泛化界激励小容量
+  - 无标签对比适配（SimCLR 式、病理保留增强、τ=0.07、参数移位精确梯度）；经典模拟训练+GPU 固定参数推理，无需量子硬件；ChestX-ray14 P@5 +0.116，512 样本时对 retuned adapter 领先最大（+0.040）；诚实框架：对同预算经典 rotation-plane head 仅 +0.023（512 时 CI 含零）——优势是容量效率而非量子计算
+  - **Activation**: quantum retrieval adaptation, medical RAG, fidelity degeneracy, data re-uploading, measurement readout retrieval, label-free contrastive adaptation, ChestX-ray14, MURA, LoRA alternative, low-data retrieval, amplitude encoding
+
+### SLT: Robust Quantum Neural Networks for Noisy-Label Medical Image Classification via Supermartingale-based Label Transition
+- [[supermartingale-label-transition-qnn]] - 将 QNN 预测分布熵减过程建模为上鞅，用单调性作为稳定性门控锚无关噪声转移矩阵更新——把 Born 规则导致的光滑性从缺陷转为稳定化归纳偏置 (arXiv: 2607.16293)
+  - 稳定性门控：只在熵减过程单调稳定处精炼转移矩阵 T，过滤噪声驱动振荡；前向损失校正 L=CE(T·p_θ(x),ỹ) 无需锚点；收敛到稳态有证明
+  - MedMNIST 5 数据集（Breast/Pneumonia/Retina/Derma/Blood）× 3 噪声类型 × 10/30/50% 比率，胜过 CE/Forward/6 个锚无关基线（T-Revision/Dual-T/VolMinNet/TVR/BLTM/CCR）；50% 噪声下 Breast 52.24%、Pneumonia 83.90% F1
+  - 消融：经典 NN 温度缩放部分复现 QNN 光滑性效果——证实光滑性是操作稳定器而非量子特有计算；可复用模式：把模型弱点变成调度信号
+  - **Activation**: noisy-label QNN, label noise correction, supermartingale, anchor-free transition matrix, medical image classification noise, small-data quantum, F1 robustness, MedMNIST, loss correction convergence, entropy reduction stabilization
+
+
 
 ## 2026-10-07 - Neuroscience Research (Cron Job)
 
