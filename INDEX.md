@@ -1,5 +1,20 @@
 # AI Collection Index
 
+## 2026-10-08 - Systems Engineering x Quantum (Cron Job)
+
+### Entanglement Swapping Scheduling for Quantum Repeater Chains under Decoherence during Classical Communications
+- [[repeater-swapping-scheduling-decoherence]] - Memory exposure model for heralding-induced decoherence; finds optimal repeater count and swapping schedule (arXiv: 2610.07991)
+  - Memory exposure Θ = cumulative storage-time sum (not wall-clock) governs Werner decay: w_final = w0^(N+1)·exp(-Θ/τ)
+  - Interior optimal repeater count exists (metro 60km: N=1-2; 500km: N≈10-11 at τ=100-150ms); repeater density is a design variable, not maximized
+  - Parallel scheduling wins short chains/high-rate region; hybrid block strategy wins long-distance; no single strategy optimal across regimes
+  - **Activation**: quantum repeater, entanglement swapping, swapping scheduling, memory decoherence, heralding delay, entanglement rate
+
+### Protecting bosonic codes from ancilla-induced errors with continuous-variable flags
+- [[cv-flags-bosonic-ancilla-errors]] - CV flag oscillator records continuous ancilla-decay errors in phase space for heterodyne-estimation + feedback correction (arXiv: 2610.07139)
+  - Record-don't-prevent: auxiliary oscillator phase-space position encodes jump-time error; feedback undoes it up to a code stabilizer, discretizing continuous errors
+  - CR(θ) all-orders with 1 flag; CD(β) all-orders with 2 χ-matched flags; flag driven by same dispersive toolbox as protected gates (zero new ingredients)
+  - Cat-code parity bit-flip 5e-7 at |ζ|²=100 (>3 orders suppression); sBs-GKP lifetime 4ms→450ms (within 1.5x of noiseless-ancilla bound); robust to η<1, flag loss, Kerr, finite pulses
+  - **Activation**: bosonic QEC, cat code, GKP code, ancilla decay, continuous-variable flag, heterodyne measurement, circuit QED
 ## 2026-10-08 - Systems Engineering + Quantum (Cron Job)
 
 ### Fault-tolerant resource estimation for ground-state preparation via Lindblad simulation
