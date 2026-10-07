@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
+### Replica Fragmentation and Glassy Dynamics in Parity Learning
+- [[replica-fragmentation-glassy-parity-learning]] - Replica-overlap observables (m, q_self, q_cross) diagnose glassy fragmentation of Transformer learning runs into memorization/retreat/recovery regimes (arXiv: 2610.08503)
+  - Self-cross gap chi_SG = q_self - q_cross = exact prediction variance across seeds sharing one training set; separates confident memorization (chi_SG large, tail acc at chance) from transient retreat-recovery cycles (brief Nishimori-gap lags)
+  - Residual geometry (anti-correlated obtuse pairs x near-ultrametricity) puts the three regimes in non-overlapping regions; retreat is a trajectory phenomenon invisible to gradient/Hessian endpoint diagnostics
+  - Learning-rate cosine decay after acquisition (matched pairs) cuts retreat from 29/84 to 5/84 and preserves high accuracy in 79/84 runs
+  - **Activation**: replica fragmentation, glassy learning dynamics, self-cross gap, Nishimori gap, memorization vs generalization, retreat-recovery, parity learning, ensemble disagreement, learning frontier
+
+### Classifications in modular restricted Boltzmann machines
+- [[modular-rbm-hopfield-dual-classification]] - HM-RBM duality extended to L coupled Hopfield modules = RBM assembly with coupled hidden layers; class-mean weights are a proven CD-1 fixed point (arXiv: 2610.08612)
+  - Theorem 1: planted empirical-mean weights are fixed point in mean of supervised CD-1 for any L, with residual drift split into 4 channels (thermal / dataset entropy / mini-batch / finite-size N^-1/2), margin condition lambda(L-1) < 1
+  - Planted weights are also an attractor: CD-1 from zero/random init converges to them; hard task = joint classification + disentanglement of mixtures, success region matches modular-HM theory, verified via Hungarian assignment
+  - **Activation**: modular RBM, HM-RBM duality, coupled hidden layers, anti-Hebbian competition, supervised contrastive divergence, planted weights, pattern disentanglement, memristor Boltzmann machines
+
+
 ## 2026-10-08 - Systems Engineering x Quantum (Cron Job)
 
 ### Entanglement Swapping Scheduling for Quantum Repeater Chains under Decoherence during Classical Communications
