@@ -1,3 +1,19 @@
+## 2026-10-07 - Neuroscience Research (Cron Job)
+
+### A Time-Resolved Framework for Quantifying Neuronal Network State Transitions
+- [[eiu-compositional-mea-state-transitions]] - EIU组合分析：电极×短时段三分法（兴奋/抑制/不变）+载体对照数据驱动阈值+2-simplex时间轨迹，放大MEFR等常规指标的细微药理/光遗传响应 (arXiv: 2610.08392)
+  - 归一化对比度Δξ=(ξj−ξb)/(ξj+ξb)配合载体对照5%/95%分位阈值，将每个电极-片段分类为E/I/U状态，组成向量落在单纯形上（R=E+I响应度，η=log(E/I)方向平衡）
+  - 4-AP预期兴奋实际表现为活动降低：初始短暂变化后进行性MFR下降（脱敏/稳态抑制样），24h洗脱后可逆——常规聚合指标完全掩盖该非单调时间剖面
+  - EIU变换显著提升mean ISI和MFR的Cohen's d；D_KL已具强判别力则无进一步增益（R有界饱和）；双环谷氨酸基准显示不同细胞组成培养收敛到不同响应平台
+  - **Activation**: MEA, electrophysiology, network state transitions, EIU, compositional analysis, firing rate, ISI distribution, in-vitro, 4-AP, optogenetic, drug screening
+
+### Sensor Geometry as a Flow-Matching Prior for Multi-Channel Brain Signals
+- [[graph-matern-flow-matching-eeg]] - 图-Matérn源先验：仅从传感器3D坐标建k-NN图取Laplacian特征向量，按(1+τλ)^−α配权作为flow matching源分布，零新增参数，PSD-KL降12-17%（密集导联最高40%） (arXiv: 2610.08355)
+  - 消融证明增益来自物理坐标图的稀疏局部特征向量本身：打乱位置/随机正交基/经验协方差特征向量全部劣于各向同性噪声——"错误方向集中方差比无结构更糟"
+  - 频谱只需平滑且满秩（热核谱保增益1.38，硬低通失败71.4因为可逆drift无法凭空创造缺失方差）；全连接图失效，图必须稀疏局部
+  - 同一构造不变应用于MEG(−6%)、患者特异ECoG网格(−34-40%)、交通传感器网络(−11%)；Mumtaz-MDD下游增强使平衡准确率60.8%→83.3%（少数类召回0.28→0.79）
+  - **Activation**: flow matching, EEG generation, graph Matérn, sensor geometry, source prior, volume conduction, data augmentation, SF2M, stochastic interpolants, PSD-KL
+
 ## 2026-10-07 - 医学×量子 (Cron Job)
 
 ### Linear Fitness Subspace in Protein Language Models Enables Sample-Efficient Directed Evolution
