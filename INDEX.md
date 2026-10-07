@@ -1,3 +1,19 @@
+## 2026-10-08 - 系统工程学×量子 (Cron Job)
+
+### Demonstration of Parallel Multi-QPU Execution for Fragment-Based Quantum Chemistry Using On-Premises Hardware
+- [[parallel-multi-qpu-fragment-quantum-chemistry]] - 首个真实多QPU硬件上的分片量子化学并行化演示：FMO2+QWFS在3台室温金刚石Quoll上，shot-parallel效率93.6%，fragment-parallel修正后95.2%，异构噪声下参数策略决定精度 (arXiv: 2610.07702)
+  - 负载均衡公式 N_i=N·R_i/ΣR_j 按设备实测采样率分配shots；SPAM校正后合并计数；He₂–He₁₄全簇化学精度内（1.4e-3 a.u.）
+  - 关键陷阱：单机优化的电路参数迁移到三QPU异构采样时dimer全部不收敛（误差>1 a.u.）；设备专属参数或联合优化可恢复——NISQ噪声补偿不跨设备迁移
+  - fragment-parallel原始效率75%源于原型接口缺作业取消（非硬件/方法缺陷），修正后95.17%；活动图逐作业诊断法可复用
+  - **Activation**: multi-QPU, parallel quantum, FMO, QWFS, distributed quantum, shot parallelism, heterogeneous NISQ, load balancing, quantum chemistry workflow, HPC-QPU
+
+### Model Predictive Control for Safety-Critical Systems Using Taylor's Theorem with Lagrange Remainder
+- [[mpc-taylor-lagrange-remainder-safety]] - MPC-TLR：用精确Taylor展开+Lagrange积分余项表达安全函数未来值，必要充分条件替代递归class-K链，m个调参压缩为1个裕度δ（δ≥近似误差ε_M保安全） (arXiv: 2610.06976)
+  - ZOH下用M+1中间态+数值求积近似余项；单轮unicycle避障实验中比DHOCBF/DC更安全、比HOCBF更不保守（可行性率更高）
+  - 控制输入覆盖度分析：TLR/HOCBF全部N个输入进约束 vs DC/DHOCBF仅N−m_d+1——短时域（N≈m_d）时是方法选型关键判据
+  - 诚实边界：TLR约束是数值近似，但四方法共享离散化误差软肋，无一对连续时间闭环提供无误差保证；inter-sampling安全是开放问题
+  - **Activation**: MPC safety, control barrier function, high-order CBF, Taylor-Lagrange remainder, safety-critical control, zero-order hold, safety margin tuning, receding horizon
+
 ## 2026-10-07 - Neuroscience Research (Cron Job)
 
 ### A Time-Resolved Framework for Quantifying Neuronal Network State Transitions
