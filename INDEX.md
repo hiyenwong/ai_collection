@@ -1,3 +1,14 @@
+# AI Collection Index
+
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job)
+
+### Fault-tolerant resource estimation for ground-state preparation via Lindblad simulation
+- [[lindblad-ground-state-resource-estimation]] - Lindblad基态制备的容错资源估算：严格误差界+小系统经验校准+Qualtran门级编译，经验参数比最坏情况界省6个数量级 (arXiv: 2610.08667)
+  - 36-site Hubbard模型一个时间单元需 7.7×10⁸ T门（经验参数）vs 3.3×10¹⁵（严格界）；能量滤波积分（H演化）主导成本，总成本 ∝ 混合时间²
+  - 弹性加权误差预算（可复用模式）：70%→Lindblad步长τ（线性成本）、15%→滤波积分求积（多项对数）、10%→H-Trotter、1%→跳算符Trotter、4%→旋转合成（指数抑制）
+  - 有效能隙替换：目标误差超过谱隙时用 Δ_eff=max(ε_target, Δ) 折叠标度指数；单辅助量子dilation+随机跳算符采样避免辅助比特开销
+  - 关键发现：Lindblad动力学的收缩性对设备噪声无保护作用（"算法级纠错"不成立）；Trotter在实践尺度上胜过QSVT（前置常数主导）
+  - **Activation**: Lindblad simulation, ground state preparation, resource estimation, fault-tolerant, T gate count, error budget, Qualtran, Hubbard model, Pauli-based computation, dissipative dynamics
 ## 2026-10-08 - Neuroscience Research (Cron Job)
 
 ### Neural Fields Encode Adaptation Geometry
