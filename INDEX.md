@@ -53,6 +53,18 @@
   - IoU 0.74 vs SAM 0.81（参数8M vs 632M）；每训练样本隐式编码大量 same-different 配对监督；3层消融显著退化证明多尺度必要性
   - **Activation**: perceptual grouping, GammaNet, hGRU, incremental grouping, object-based attention, C-RBP local learning, human RT prediction, natural scenes, recurrent processing, visual cortex feedback
 
+### From the Drosophila Visual Connectome to General-Purpose Computer Vision
+- [[connectome-informed-flyvision-general-vision]] - 果蝇视觉连接组计算基序（ON/OFF对偶stem+三阶段循环图混合+种群交互）作为CV归纳偏置，3.7M参数在ImageNet达66.53%、胸片超ResNet18（92.76% vs 91.56%，参数少3.8×） (arXiv: 2610.08418)
+  - 保守基序+容量缩放协议：Compact/Base/Large共享54张量checkpoint schema（strides与循环步数为执行超参而非状态张量）；BrainAGE扩展用共享2D编码器处理24张三轴切片+置信度调制高斯投票融合，MRI脑龄MAE 5.98年（R²=0.868）
+  - 诚实负结果：迁移效应架构依赖（MNIST→CIFAR对FlyVision无效P=0.664、对ResNet18有害P=0.034、对LeNet有益P<0.001）；皮肤病学基准先做SHA-256内容审计（306重复组/37矛盾标签/63泄漏隔离）
+  - **Activation**: connectomics, inductive bias, drosophila, ON/OFF pathways, recurrent graph mixing, parameter efficiency, brain-inspired architecture, medical imaging, multi-view MRI, transfer learning
+
+### Confidence-Ordering Reversal under Contextual Priors in Neural Decoding
+- [[confidence-ordering-reversal-contextual-priors]] - contextual prior融合后置信度排序反转：深排位（rank 21-50）残差误差获得更大fused margin（AUROC 0.39<0.5），46.6%的融合后误差位于反转区，重校准无法修复——需分离保留local/prior/fused三路分数 (arXiv: 2610.08229)
+  - margin形成机制：repair需先闭合初始赤字G⁰ₜ故被m(s̃ₜ)≤α·Δπₜ−G⁰ₜ上界约束，residual误差可在两个错误候选间自由拉开差距；因果干预（仅变α）验证提高融合权重将正排序推向更深排位，且word-level LM prior下在准确率增益达峰后仍持续移动
+  - 解法：prior自身margin在融合前读取于rank 21-50达AUROC 0.937；15特征全估计器correctness AUROC 0.954 vs 0.872，选择性输出emission 56.7%→74.5%（92%覆盖率，集合大小5.2）
+  - **Activation**: neural decoding, BCI confidence, shallow fusion, repair-separation AUROC, selective prediction, MEG, language model prior, confidence calibration, error identifiability
+
 ## 2026-10-07 - Deep Learning Research (Cron Job)
 
 ### Base Models Can Reason By Taking a Cue From Training Data
