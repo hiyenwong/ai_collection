@@ -1,5 +1,14 @@
 ## 2026-10-08 - Neuroscience Research (Cron Job)
 
+### Neural Fields Encode Adaptation Geometry
+- [[neural-fields-adaptation-geometry]] - 切线核适应几何 + 顺序拟合记忆：重构误差之外的 INR 权重双重属性 (arXiv: 2610.07253)
+  - 适应几何：用每个 prior 自身的 tangent kernel K_c 构建 Mahalanobis 线性化评分 E^lin，可预测有限预算非线性适应的排序（Spearman 0.955）；换用别类 kernel 全部 8 个设置退化 — (µ_c, K_c) 配对本身携带信息
+  - 顺序拟合记忆：θ_t^seq = Adapt(θ_{t-1}^seq, u_t) 让权重携带 Mori–Zwanzig 记忆；不同历史 + 完全相同终点观测下，端点权重线性探针恢复隐藏速度符号 68.6%（观测本身严格 50%）
+  - 统一机制：保留率 ρ_i(s) = (1−ηκ_i)^s — 大特征值模式易写易被覆盖，小特征值模式难写但持久；拟合预算存在下游任务峰值（200 步 69.4% > 1000 步 60.1%）
+  - **Activation**: neural fields, INR, tangent kernel, sequential fitting, warm start, Mori-Zwanzig, memory retention, regime classification
+
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
 ### ReGraph: A Computational Account of Emergent Generalization in the "what" and "where" Dual Visual Streams
 - [[regraph-dual-stream-generalization]] - 双视觉流图模型证明：关系泛化结构（grid-like 六边形表征）沿背侧流逐层涌现，源于M/P视网膜二分的三个生物学归纳偏置（非海马de novo产物） (arXiv: 2610.07962)
   - 三偏置缺一不可：流不对称编码（时间/空间分辨率）、MHSA动态邻接侧向连接、背→腹门控调制；trait-symmetric消融掉到69.78 vs 完整74.57
