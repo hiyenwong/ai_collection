@@ -1,3 +1,21 @@
+## 2026-10-07 - 医学×量子 (Cron Job)
+
+### Linear Fitness Subspace in Protein Language Models Enables Sample-Efficient Directed Evolution
+- [[linear-fitness-subspace-directed-evolution]] - LFS假设：突变引起的残基级表征变化中存在紧凑的、assay特异的线性子空间，SGES在子空间内做代理建模+不确定性估计+采集，样本高效定向进化 (arXiv: 2610.07607)
+  - 位点差分坐标(site-delta)比绝对嵌入更有效：PLM表征变化中恢复低维线性子空间，少量标注即可线性访问适应度
+  - 控制实验隔离增益来源：PCA/随机投影/标签打乱PLS/经典突变特征均逊于fitness-aligned site-delta坐标，证明子空间非任意降维
+  - 预算感知搜索循环：每条标注双重服务（拟合代理+锐化子空间），10²-10³ oracle预算下击败zero-shot PLM和ML引导基线
+  - **Activation**: directed evolution, protein language model, fitness landscape, sample-efficient optimization, oracle budget, surrogate model, drug discovery, PLM
+
+## 2026-10-07 - 医学×量子 (Cron Job)
+
+### Neural Petri flows for chemical reactions
+- [[neural-petri-flow-chemical-reactions]] - 对任意权重都保持Petri网语义的架构：守恒(射击形式m'=m+Cσ)与使能规则硬接线为无参数层，仅学习速率律，化学反应三任务统一为射击向量读出 (arXiv: 2610.08750)
+  - 硬接线不变量模式：守恒定律强制射击形式、非负性强制使能规则 → 理论强制部分做成无参数层，可学习容量只留给真正自由的部分(速率律)
+  - 最小射击向量零样本基线：未训练的min-‖σ‖₁就把atom mapping做到88.8%(Golden)/88.7%(EnzymeMap)，超过RXNMapper(85.6%/77.9%)
+  - 一个潜在对象多个读出：atom mapping、反应分类、正向预测统一为同一射击向量σ上的三个任务，跨任务一致性免费获得
+  - **Activation**: Petri net, chemical reaction, conservation law, rate law learning, atom mapping, reaction classification, forward prediction, valence
+
 ## 2026-10-07 - Neuroscience Research (Cron Job)
 
 ### Neural networks as decision trees: an analytical solution for learning and neural selectivity
