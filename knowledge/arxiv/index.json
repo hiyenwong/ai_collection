@@ -10299,5 +10299,181 @@
     "published": "2026-10-05",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/quantum/out-of-control-hamiltonian-learning",
     "skill_category": "quantum"
+  },
+  {
+    "arxiv_id": "2610.08780",
+    "title": "DepthWorld: 3D World Model for Robot Manipulation",
+    "utility": 1.0,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08780-depthworld-3d-world-model-for-robot-manipulation",
+    "added_date": "2026-10-07T22:02:49.487706"
+  },
+  {
+    "arxiv_id": "2610.08760",
+    "title": "WorldSonus: Bringing Sound to Worlds",
+    "utility": 1.0,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08760-worldsonus-bringing-sound-to-worlds",
+    "added_date": "2026-10-07T22:02:49.487714"
+  },
+  {
+    "arxiv_id": "2610.08761",
+    "title": "VeriFine: Scaling Verification for Self-Improvement in Embodied Reasoning",
+    "utility": 0.99,
+    "category": "other",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08761-verifine-scaling-verification-for-self-improvement-in-embodi",
+    "added_date": "2026-10-07T22:02:49.487716"
+  },
+  {
+    "arxiv_id": "2610.08452",
+    "title": "Agentic AutoRAG: RAG Pipeline Optimization through Reasoning-Driven Agents",
+    "utility": 0.97,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08452-agentic-autorag-rag-pipeline-optimization-through-reasoning",
+    "added_date": "2026-10-07T22:02:49.487717"
+  },
+  {
+    "arxiv_id": "2610.08388",
+    "title": "Foresight-over-Graph: Reasoning Beyond Local Horizons for Knowledge Base Question Answering",
+    "utility": 0.97,
+    "category": "other",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08388-foresight-over-graph-reasoning-beyond-local-horizons-for-kno",
+    "added_date": "2026-10-07T22:02:49.487719"
+  },
+  {
+    "arxiv_id": "2610.08720",
+    "title": "WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?",
+    "utility": 0.96,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08720-worldsolver-can-llm-agents-simulate-the-physical-dynamics-vi",
+    "added_date": "2026-10-07T22:02:49.487720"
+  },
+  {
+    "arxiv_id": "2610.08662",
+    "title": "ParanoiaEval: Benchmarking Unnecessary Defensive Work in Agentic Coding",
+    "utility": 0.96,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08662-paranoiaeval-benchmarking-unnecessary-defensive-work-in-agen",
+    "added_date": "2026-10-07T22:02:49.487721"
+  },
+  {
+    "arxiv_id": "2610.08642",
+    "title": "HygieneRoboBench: Benchmarking Hygiene-Aware Planning for Household Robots",
+    "utility": 0.96,
+    "category": "ai-safety-eval",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/ai-safety-eval/arxiv-2610-08642-hygienerobobench-benchmarking-hygiene-aware-planning-for-hou",
+    "added_date": "2026-10-07T22:02:49.487723"
+  },
+  {
+    "arxiv_id": "2610.08513",
+    "title": "Wiki-Talkie: Multilingual Benchmarking of Persona-Based Agents on Real-World Discussions",
+    "utility": 0.95,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08513-wiki-talkie-multilingual-benchmarking-of-persona-based-agent",
+    "added_date": "2026-10-07T22:02:49.487724"
+  },
+  {
+    "arxiv_id": "2610.08432",
+    "title": "EMHO: EMbodied Agent Harness Optimization via Experience Traces",
+    "utility": 0.95,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08432-emho-embodied-agent-harness-optimization-via-experience-trac",
+    "added_date": "2026-10-07T22:02:49.487725"
+  },
+  {
+    "arxiv_id": "2610.08680",
+    "title": "A Systematic Study of Small Language Models on Abstract Reasoning Tasks",
+    "utility": 0.94,
+    "category": "nlp-llm",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/arxiv-2610-08680-a-systematic-study-of-small-language-models-on-abstract-reas",
+    "added_date": "2026-10-07T22:02:49.487726"
+  },
+  {
+    "arxiv_id": "2610.08418",
+    "title": "From the Drosophila Visual Connectome to General-Purpose Computer Vision",
+    "utility": 0.92,
+    "category": "neuroscience",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/arxiv-2610-08418-from-the-drosophila-visual-connectome-to-general-purpose-com",
+    "added_date": "2026-10-07T22:02:49.487728"
+  },
+  {
+    "arxiv_id": "2610.08528",
+    "title": "MedCORE: Criteria-Grounded Clinical Reasoning for Interpretable Medical Image Diagnosis",
+    "utility": 0.9,
+    "category": "vision-generative",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/vision-generative/arxiv-2610-08528-medcore-criteria-grounded-clinical-reasoning-for-interpretab",
+    "added_date": "2026-10-07T22:02:49.487729"
+  },
+  {
+    "arxiv_id": "2610.08782",
+    "title": "4D-HOF: Hand-Object Flow Matching for Feed-Forward 4D Interaction Reconstruction",
+    "utility": 0.89,
+    "category": "other",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08782-4d-hof-hand-object-flow-matching-for-feed-forward-4d-interac",
+    "added_date": "2026-10-07T22:02:49.487730"
+  },
+  {
+    "arxiv_id": "2610.08541",
+    "title": "Micro Neural Policies for Safe Real-Time Robotic Control",
+    "utility": 0.89,
+    "category": "neuroscience",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/arxiv-2610-08541-micro-neural-policies-for-safe-real-time-robotic-control",
+    "added_date": "2026-10-07T22:02:49.487731"
+  },
+  {
+    "arxiv_id": "2610.08678",
+    "title": "Secure Speculative Decoding for Large Language Models",
+    "utility": 0.87,
+    "category": "nlp-llm",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/arxiv-2610-08678-secure-speculative-decoding-for-large-language-models",
+    "added_date": "2026-10-07T22:02:49.487732"
+  },
+  {
+    "arxiv_id": "2610.08659",
+    "title": "Selective Transfer of RL Updates for Visual Reasoning",
+    "utility": 0.87,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08659-selective-transfer-of-rl-updates-for-visual-reasoning",
+    "added_date": "2026-10-07T22:02:49.487734"
+  },
+  {
+    "arxiv_id": "2610.08595",
+    "title": "One for All, All for One: Coordinated Multi-Agent Diffusion Steering via Stochastic Optimal Control",
+    "utility": 0.87,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08595-one-for-all-all-for-one-coordinated-multi-agent-diffusion-st",
+    "added_date": "2026-10-07T22:02:49.487735"
+  },
+  {
+    "arxiv_id": "2610.08510",
+    "title": "Cylindrical Geodesic Flow Matching for Quasiperiodic Physiological Signal Transformation",
+    "utility": 0.87,
+    "category": "physics-math",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/physics-math/arxiv-2610-08510-cylindrical-geodesic-flow-matching-for-quasiperiodic-physiol",
+    "added_date": "2026-10-07T22:02:49.487736"
+  },
+  {
+    "arxiv_id": "2610.08413",
+    "title": "Knowing When Not to Answer: Cross-Domain and Multi-Turn Generalization of Latent Underspecification Signals",
+    "utility": 0.86,
+    "category": "other",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08413-knowing-when-not-to-answer-cross-domain-and-multi-turn-gener",
+    "added_date": "2026-10-07T22:02:49.487737"
+  },
+  {
+    "arxiv_id": "2610.08647",
+    "title": "SquidAgent: Parallelize Wisely, Coordinate Efficiently",
+    "utility": 0.85,
+    "category": "multi-agent-rl",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08647-squidagent-parallelize-wisely-coordinate-efficiently",
+    "added_date": "2026-10-07T22:02:49.487738"
+  },
+  {
+    "arxiv_id": "2610.08533",
+    "title": "Beyond Perturbation Magnitude: Direction-Dependent Responses in Multimodal Geometric Representations",
+    "utility": 0.85,
+    "category": "other",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08533-beyond-perturbation-magnitude-direction-dependent-responses",
+    "added_date": "2026-10-07T22:02:49.487739"
   }
 ]

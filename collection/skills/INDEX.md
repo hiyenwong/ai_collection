@@ -1,4 +1,109 @@
 
+## 2026-10-07 - arXiv Paper Skills (Cron Job)
+
+### ai-safety-eval
+
+- **arxiv-2610-08642-hygienerobobench-benchmarking-hygiene-aware-planning-for-hou** (Utility: 0.96)
+  - HygieneRoboBench: Benchmarking Hygiene-Aware Planning for Household Robots
+  - arXiv: 2610.08642
+
+### multi-agent-rl
+
+- **arxiv-2610-08780-depthworld-3d-world-model-for-robot-manipulation** (Utility: 1.00)
+  - DepthWorld: 3D World Model for Robot Manipulation
+  - arXiv: 2610.08780
+
+- **arxiv-2610-08760-worldsonus-bringing-sound-to-worlds** (Utility: 1.00)
+  - WorldSonus: Bringing Sound to Worlds
+  - arXiv: 2610.08760
+
+- **arxiv-2610-08452-agentic-autorag-rag-pipeline-optimization-through-reasoning** (Utility: 0.97)
+  - Agentic AutoRAG: RAG Pipeline Optimization through Reasoning-Driven Agents
+  - arXiv: 2610.08452
+
+- **arxiv-2610-08720-worldsolver-can-llm-agents-simulate-the-physical-dynamics-vi** (Utility: 0.96)
+  - WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?
+  - arXiv: 2610.08720
+
+- **arxiv-2610-08662-paranoiaeval-benchmarking-unnecessary-defensive-work-in-agen** (Utility: 0.96)
+  - ParanoiaEval: Benchmarking Unnecessary Defensive Work in Agentic Coding
+  - arXiv: 2610.08662
+
+- **arxiv-2610-08513-wiki-talkie-multilingual-benchmarking-of-persona-based-agent** (Utility: 0.95)
+  - Wiki-Talkie: Multilingual Benchmarking of Persona-Based Agents on Real-World Discussions
+  - arXiv: 2610.08513
+
+- **arxiv-2610-08432-emho-embodied-agent-harness-optimization-via-experience-trac** (Utility: 0.95)
+  - EMHO: EMbodied Agent Harness Optimization via Experience Traces
+  - arXiv: 2610.08432
+
+- **arxiv-2610-08659-selective-transfer-of-rl-updates-for-visual-reasoning** (Utility: 0.87)
+  - Selective Transfer of RL Updates for Visual Reasoning
+  - arXiv: 2610.08659
+
+- **arxiv-2610-08595-one-for-all-all-for-one-coordinated-multi-agent-diffusion-st** (Utility: 0.87)
+  - One for All, All for One: Coordinated Multi-Agent Diffusion Steering via Stochastic Optimal Control
+  - arXiv: 2610.08595
+
+- **arxiv-2610-08647-squidagent-parallelize-wisely-coordinate-efficiently** (Utility: 0.85)
+  - SquidAgent: Parallelize Wisely, Coordinate Efficiently
+  - arXiv: 2610.08647
+
+### neuroscience
+
+- **arxiv-2610-08418-from-the-drosophila-visual-connectome-to-general-purpose-com** (Utility: 0.92)
+  - From the Drosophila Visual Connectome to General-Purpose Computer Vision
+  - arXiv: 2610.08418
+
+- **arxiv-2610-08541-micro-neural-policies-for-safe-real-time-robotic-control** (Utility: 0.89)
+  - Micro Neural Policies for Safe Real-Time Robotic Control
+  - arXiv: 2610.08541
+
+### nlp-llm
+
+- **arxiv-2610-08680-a-systematic-study-of-small-language-models-on-abstract-reas** (Utility: 0.94)
+  - A Systematic Study of Small Language Models on Abstract Reasoning Tasks
+  - arXiv: 2610.08680
+
+- **arxiv-2610-08678-secure-speculative-decoding-for-large-language-models** (Utility: 0.87)
+  - Secure Speculative Decoding for Large Language Models
+  - arXiv: 2610.08678
+
+### other
+
+- **arxiv-2610-08761-verifine-scaling-verification-for-self-improvement-in-embodi** (Utility: 0.99)
+  - VeriFine: Scaling Verification for Self-Improvement in Embodied Reasoning
+  - arXiv: 2610.08761
+
+- **arxiv-2610-08388-foresight-over-graph-reasoning-beyond-local-horizons-for-kno** (Utility: 0.97)
+  - Foresight-over-Graph: Reasoning Beyond Local Horizons for Knowledge Base Question Answering
+  - arXiv: 2610.08388
+
+- **arxiv-2610-08782-4d-hof-hand-object-flow-matching-for-feed-forward-4d-interac** (Utility: 0.89)
+  - 4D-HOF: Hand-Object Flow Matching for Feed-Forward 4D Interaction Reconstruction
+  - arXiv: 2610.08782
+
+- **arxiv-2610-08413-knowing-when-not-to-answer-cross-domain-and-multi-turn-gener** (Utility: 0.86)
+  - Knowing When Not to Answer: Cross-Domain and Multi-Turn Generalization of Latent Underspecification Signals
+  - arXiv: 2610.08413
+
+- **arxiv-2610-08533-beyond-perturbation-magnitude-direction-dependent-responses** (Utility: 0.85)
+  - Beyond Perturbation Magnitude: Direction-Dependent Responses in Multimodal Geometric Representations
+  - arXiv: 2610.08533
+
+### physics-math
+
+- **arxiv-2610-08510-cylindrical-geodesic-flow-matching-for-quasiperiodic-physiol** (Utility: 0.87)
+  - Cylindrical Geodesic Flow Matching for Quasiperiodic Physiological Signal Transformation
+  - arXiv: 2610.08510
+
+### vision-generative
+
+- **arxiv-2610-08528-medcore-criteria-grounded-clinical-reasoning-for-interpretab** (Utility: 0.90)
+  - MedCORE: Criteria-Grounded Clinical Reasoning for Interpretable Medical Image Diagnosis
+  - arXiv: 2610.08528
+
+
 
 
 ## 2026-10-05 - arXiv Paper Skills (Cron Job)
