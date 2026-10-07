@@ -1,3 +1,17 @@
+## 2026-10-07 - Neuroscience Research (Cron Job)
+
+### Neural networks as decision trees: an analytical solution for learning and neural selectivity
+- [[activation-region-decision-tree-networks]] - ReLU网络在梯度学习不动点处分解为激活区域上的局部线性回归，低误差极限收敛到各区域最小二乘解——等价于一棵决策树（路由=激活模式划分，叶子=区域仿射变换） (arXiv: 2610.08228)
+  - MAP树（Main Activation Pattern trees）数值恢复隐路由结构：用决策树从输入预测主导激活模式；编码Gram矩阵按区域分块分解，导出神经选择性几何并组织成亚群体，预测与模拟网络+两套实证神经数据（Reinert/Hajnal）吻合
+  - 神经baseline调控激活模式多样性=学习分辨率旋钮：低baseline粗粒度泛化表征 ↔ 高baseline细粒度表达表征（泛化代价），连续权衡
+  - **Activation**: activation regions, piecewise-linear networks, decision tree interpretation, least-squares decomposition, neural selectivity, MAP trees, encoding model, ReLU, representational geometry, recurrent equilibrium
+
+### Common-Mode Errors Limit Low-Timestep Deep Spiking Q-Networks
+- [[common-mode-compensation-spiking-q-networks]] - 低时间步SNN的Q值误差跨动作共模分量占主导，经TD bootstrap的max操作自我强化——辅助ANN替换共模分量，推理时完全移除零开销 (arXiv: 2610.07808)
+  - 共模/差模误差分解：e_cm=跨动作均值误差、e_dm=相对差误差；CliffWalking精确Q*验证移除共模收益远大于差模；低T下共模RMSE≫差模（ANN则平衡）
+  - CMC-DSQN：Q_CMC = Q_SNN − mean_a(Q_SNN) + Q_ANN(s)，贪心选择对逐状态常数不变⇒推理只用SNN；MiniAtar/Atari T=2超SOTA DSQN约20%、T=4超ANN基线
+  - **Activation**: spiking Q-network, common-mode error, TD bootstrapping, low timestep, auxiliary ANN, energy-efficient RL, DQN, error decomposition, neuromorphic deployment
+
 ## 2026-10-07 - Medicine + Quantum Mechanics Research (Cron Job)
 
 ### Variational Quantum Attention for Molecular Graph Learning
