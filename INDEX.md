@@ -1,3 +1,19 @@
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
+### ReGraph: A Computational Account of Emergent Generalization in the "what" and "where" Dual Visual Streams
+- [[regraph-dual-stream-generalization]] - 双视觉流图模型证明：关系泛化结构（grid-like 六边形表征）沿背侧流逐层涌现，源于M/P视网膜二分的三个生物学归纳偏置（非海马de novo产物） (arXiv: 2610.07962)
+  - 三偏置缺一不可：流不对称编码（时间/空间分辨率）、MHSA动态邻接侧向连接、背→腹门控调制；trait-symmetric消融掉到69.78 vs 完整74.57
+  - Grid-like基仅在ReGraph背侧流单调涌现（L1→L4: 0→15.3%），标准基线（VideoMAE/TimeSformer/SlowFast）均无；基消融致OOD精度L3-4骤降（+7~14pp），证明其为可复用路由模板
+  - 腹侧流上下文不变性非独立计算而是经门控g开后从背侧流显式导入——跨流调制机制证据
+  - **Activation**: dual visual stream, grid-like representation, dorsal ventral, relational generalization, entorhinal cortex, MHSA dynamic adjacency, context-invariant, brain-inspired architecture, gridness, SSV2
+
+### CANDLE: Cortical Null-Space Decomposition for Noninvasive Brain Source Imaging
+- [[candle-null-space-source-imaging]] - 学习式EEG源成像：仅学习个体lead-field矩阵的零空间先验（range空间解析恢复），1113个个体化皮层几何+26k统计脑图Jansen-Rit仿真训练，零样本迁移到颅内刺激定位与致痫区估计 (arXiv: 2610.07824)
+  - 范围-零空间分解将病态逆问题学习自由度限制在测量不可定的子空间：x̂ = L⁺D(Y) + x̂_null，几何约束按构造保持
+  - 全脑仿真器：神经质量模型+结构连接耦合，NeuroVault 26,273统计图聚类为源先验调制兴奋增益——可复用的sim-to-real数据引擎
+  - Kimi Delta Attention骨干+GAU+时间倒归一化；模拟HD95 37.3mm超LCMV/sLORETA/ConvDip/DeepSIF/GBF；角色分离损失防止去噪/零空间估计器职责坍缩
+  - **Activation**: EEG source imaging, null space learning, ill-posed inverse problem, lead-field matrix, BEM, neural mass model, Jansen-Rit, sim-to-real, epilepsy localization, subject-specific geometry, ESI
+
 ## 2026-10-08 - 系统工程学×量子 (Cron Job)
 
 ### Demonstration of Parallel Multi-QPU Execution for Fragment-Based Quantum Chemistry Using On-Premises Hardware
