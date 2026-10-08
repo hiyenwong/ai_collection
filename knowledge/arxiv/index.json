@@ -10475,5 +10475,125 @@
     "category": "other",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08533-beyond-perturbation-magnitude-direction-dependent-responses",
     "added_date": "2026-10-07T22:02:49.487739"
+  },
+  {
+    "id": "2610.10536",
+    "title": "Decoupling Exploration from Optimization in RLVR",
+    "skill_name": "arxiv-2610-10536-decoupling-exploration-from-optimization-in-rlvr",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10507",
+    "title": "RECAST: Learning to Compute the Right Context through Adaptive Evidence Routing",
+    "skill_name": "arxiv-2610-10507-recast-learning-to-compute-the-right-context-through-adaptive-evidence-routing",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10498",
+    "title": "EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution",
+    "skill_name": "arxiv-2610-10498-embodiedrsi-active-continual-robot-learning-through-hypothesis-guided-co-evoluti",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10411",
+    "title": "Training Parallel Speculative Draft Models by Directly Minimizing Expected Decoding Rounds",
+    "skill_name": "arxiv-2610-10411-training-parallel-speculative-draft-models-by-directly-minimizing-expected-decod",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10381",
+    "title": "ResidualQuant: KV Cache Quantization for Looped Transformers with 2-Bit Residuals",
+    "skill_name": "arxiv-2610-10381-residualquant-kv-cache-quantization-for-looped-transformers-with-2-bit-residuals",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10374",
+    "title": "TaoD2C-Bench: Benchmarking MLLMs for Industrial UI Code Generation Beyond Visual Fidelity",
+    "skill_name": "arxiv-2610-10374-taod2c-bench-benchmarking-mllms-for-industrial-ui-code-generation-beyond-visual",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10304",
+    "title": "SemanticFold: Latent Sequence Compression SeparatesLanguage Modeling, Decodability, and Reasoning",
+    "skill_name": "arxiv-2610-10304-semanticfold-latent-sequence-compression-separateslanguage-modeling-decodability",
+    "category": "nlp-llm",
+    "utility": 1.0,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10394",
+    "title": "Kernel Autoresearch for Open-Ended Model Discovery",
+    "skill_name": "arxiv-2610-10394-kernel-autoresearch-for-open-ended-model-discovery",
+    "category": "multi-agent-rl",
+    "utility": 0.98,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10515",
+    "title": "RoboJEPA: Scaling Robotic Latent World Models",
+    "skill_name": "arxiv-2610-10515-robojepa-scaling-robotic-latent-world-models",
+    "category": "multi-agent-rl",
+    "utility": 0.95,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10358",
+    "title": "Open-MMUnlearning: Unifying Methods and Evaluation for MLLM Unlearning",
+    "skill_name": "arxiv-2610-10358-open-mmunlearning-unifying-methods-and-evaluation-for-mllm-unlearning",
+    "category": "multi-agent-rl",
+    "utility": 0.94,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10455",
+    "title": "PHRBench: A Behavioral Evaluation of Post-Hallucination Reasoning in LLMs",
+    "skill_name": "arxiv-2610-10455-phrbench-a-behavioral-evaluation-of-post-hallucination-reasoning-in-llms",
+    "category": "nlp-llm",
+    "utility": 0.89,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10258",
+    "title": "QuSema: Detecting Silent Bugs in Quantum Libraries via Quantum-knowledge-enhanced Agents",
+    "skill_name": "arxiv-2610-10258-qusema-detecting-silent-bugs-in-quantum-libraries-via-quantum-knowledge-enhanced",
+    "category": "quantum",
+    "utility": 0.89,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10311",
+    "title": "Fault-tolerant foundation models",
+    "skill_name": "arxiv-2610-10311-fault-tolerant-foundation-models",
+    "category": "neuroscience",
+    "utility": 0.88,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10447",
+    "title": "A Good Self-Teacher Meets the Student Where They Are: Joint On-Policy Learning and Teaching",
+    "skill_name": "arxiv-2610-10447-a-good-self-teacher-meets-the-student-where-they-are-joint-on-policy-learning-an",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.10302",
+    "title": "Continual Graph Multi-Agent Reinforcement Learning",
+    "skill_name": "arxiv-2610-10302-continual-graph-multi-agent-reinforcement-learning",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-08"
   }
 ]

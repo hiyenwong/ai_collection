@@ -1,4 +1,64 @@
 
+## 2026-10-08 - arXiv Paper Skills (Cron Job)
+
+### multi-agent-rl
+
+- **arxiv-2610-10536-decoupling-exploration-from-optimization-in-rlvr** (Utility: 1.00)
+  - Decoupling Exploration from Optimization in RLVR
+  - arXiv: 2610.10536
+- **arxiv-2610-10507-recast-learning-to-compute-the-right-context-through-adaptive-evidence-routing** (Utility: 1.00)
+  - RECAST: Learning to Compute the Right Context through Adaptive Evidence Routing
+  - arXiv: 2610.10507
+- **arxiv-2610-10498-embodiedrsi-active-continual-robot-learning-through-hypothesis-guided-co-evoluti** (Utility: 1.00)
+  - EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution
+  - arXiv: 2610.10498
+- **arxiv-2610-10411-training-parallel-speculative-draft-models-by-directly-minimizing-expected-decod** (Utility: 1.00)
+  - Training Parallel Speculative Draft Models by Directly Minimizing Expected Decoding Rounds
+  - arXiv: 2610.10411
+- **arxiv-2610-10381-residualquant-kv-cache-quantization-for-looped-transformers-with-2-bit-residuals** (Utility: 1.00)
+  - ResidualQuant: KV Cache Quantization for Looped Transformers with 2-Bit Residuals
+  - arXiv: 2610.10381
+- **arxiv-2610-10374-taod2c-bench-benchmarking-mllms-for-industrial-ui-code-generation-beyond-visual** (Utility: 1.00)
+  - TaoD2C-Bench: Benchmarking MLLMs for Industrial UI Code Generation Beyond Visual Fidelity
+  - arXiv: 2610.10374
+- **arxiv-2610-10394-kernel-autoresearch-for-open-ended-model-discovery** (Utility: 0.98)
+  - Kernel Autoresearch for Open-Ended Model Discovery
+  - arXiv: 2610.10394
+- **arxiv-2610-10515-robojepa-scaling-robotic-latent-world-models** (Utility: 0.95)
+  - RoboJEPA: Scaling Robotic Latent World Models
+  - arXiv: 2610.10515
+- **arxiv-2610-10358-open-mmunlearning-unifying-methods-and-evaluation-for-mllm-unlearning** (Utility: 0.94)
+  - Open-MMUnlearning: Unifying Methods and Evaluation for MLLM Unlearning
+  - arXiv: 2610.10358
+- **arxiv-2610-10447-a-good-self-teacher-meets-the-student-where-they-are-joint-on-policy-learning-an** (Utility: 0.86)
+  - A Good Self-Teacher Meets the Student Where They Are: Joint On-Policy Learning and Teaching
+  - arXiv: 2610.10447
+- **arxiv-2610-10302-continual-graph-multi-agent-reinforcement-learning** (Utility: 0.86)
+  - Continual Graph Multi-Agent Reinforcement Learning
+  - arXiv: 2610.10302
+
+### neuroscience
+
+- **arxiv-2610-10311-fault-tolerant-foundation-models** (Utility: 0.88)
+  - Fault-tolerant foundation models
+  - arXiv: 2610.10311
+
+### nlp-llm
+
+- **arxiv-2610-10304-semanticfold-latent-sequence-compression-separateslanguage-modeling-decodability** (Utility: 1.00)
+  - SemanticFold: Latent Sequence Compression SeparatesLanguage Modeling, Decodability, and Reasoning
+  - arXiv: 2610.10304
+- **arxiv-2610-10455-phrbench-a-behavioral-evaluation-of-post-hallucination-reasoning-in-llms** (Utility: 0.89)
+  - PHRBench: A Behavioral Evaluation of Post-Hallucination Reasoning in LLMs
+  - arXiv: 2610.10455
+
+### quantum
+
+- **arxiv-2610-10258-qusema-detecting-silent-bugs-in-quantum-libraries-via-quantum-knowledge-enhanced** (Utility: 0.89)
+  - QuSema: Detecting Silent Bugs in Quantum Libraries via Quantum-knowledge-enhanced Agents
+  - arXiv: 2610.10258
+
+
 ## 2026-10-07 - arXiv Paper Skills (Cron Job)
 
 ### ai-safety-eval
