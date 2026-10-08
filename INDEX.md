@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 2)
+
+### SAFESHIELD: A Decision-Organization Framework for Deployment-Time Safety of Small Language Models
+- [[safeshield-decision-organization-safety]] - Deployment safety as organized, auditable decision stages (admission/routing/evidence/release) with controlled coordination ablations (arXiv: 2610.07276)
+  - Responsibility-oriented decomposition at commit points; omitted decisions become implicit permissive defaults; coordination = gating + policy conditioning + evidence propagation, removable while mechanisms stay intact
+  - Coordination ablations: severing admission gating (reject recorded but not enforced) drops harmful interception 81.5%->54.0% (McNemar p=1.8e-11); withholding upstream evidence from release drops release accuracy 96.0%->69.5% (p=2.3e-14) while conditional faithfulness of released responses is unchanged -> evidence improves release-decision correctness, not response quality
+  - Decision Traces record PASS alongside interventions, localizing failures to the first visible decision point; HarmBench ASR 0.25% full vs 16.5% with both safety stages removed
+  - **Activation**: deployment-time safety, guardrail organization, safety decision stages, admission routing evidence release, decision trace audit, SLM safety, runtime guardrails, coordination ablation
+
+### Quantum Entangled Multimodal Fusion Networks (QEMFN): Resource-Aware Hybrid Vision-Language Fusion via Trainable Entanglement
+- [[qemfn-entangled-multimodal-fusion]] - Trainable paired cross-modal CZ entanglement as fusion inductive bias, beating parameter-matched classical baselines on COCO-5k (arXiv: 2610.08216)
+  - Frozen CLIP embeddings -> 6+6 qubit angle encoding -> L=4 layers of trainable rotations + intra-modal CZ + paired cross-modal CZ (V_i<->T_i, O(nq) gates not O(nq^2)) -> 24 local+correlator observables; 96 quantum params; R@1 68.9 vs dequantized paired-topology control 68.2
+  - Correlate-control-intervene evidence ladder: entanglement entropy vs R@1 raw Spearman 0.88, epoch-detrended partial 0.56, loss-controlled 0.49 (beats classical CKA 0.41); interventions (freeze/randomize/remove/regularize entangling gates) all reduce both entropy and performance
+  - Meyer-Wallach 0.61, expressibility 0.09, gradient variance tracks local-cost barren-plateau bound (local Pauli-Z observables, not global cost); real superconducting hardware 63.8 R@1 at 8192 shots, +ZNE 65.1; deployment = dual-encoder ANN + top-K quantum reranking
+  - **Activation**: quantum multimodal fusion, trainable entanglement, paired cross-modal CZ gates, meyer-wallach entangling capability, barren plateau local observables, quantum reranking, dequantized baseline comparison, vision-language retrieval
+
 ## 2026-10-08 - Neuroscience Research (Cron Job)
 
 ### Synapse Loss Estimation for the BrainScaleS Wafer-scale Neuromorphic System
