@@ -2,6 +2,20 @@
 
 ## 2026-10-08 - Neuroscience Research (Cron Job)
 
+### Synapse Loss Estimation for the BrainScaleS Wafer-scale Neuromorphic System
+- [[brainscales-synapse-loss-estimation]] - Binomial-cascade probability method predicts max lossless SNN size and synapse loss when mapping networks to crossbar neuromorphic hardware (arXiv: 2610.07321)
+  - Method 1 (bottom-up): per-target Binomial(n,p) → F^N all-targets product → max-synapse distribution → half-row demand convolution over 4 patterns → E[drivers] → capacity division (224 drivers × 59 usable addresses per HICANN)
+  - Method 2 (top-down): survival-function marginal gains ΔS(k) per half row, sorted-descending greedy allocation of 4D half rows; loss ν = S_lost/(S_realized+S_lost); driver limit (224/routing source) dominates over on-wafer routing
+  - Theory matches MappingTool reality >20K neurons; 6–16K actual loss is HIGHER due to synapse-driver switch sparsity (1 of 8); full 6-bit in-synapse decoding (BrainScaleS-2) supports larger lossless networks at silicon-area cost
+  - **Activation**: neuromorphic, synapse loss, BrainScaleS, crossbar, wafer-scale, SNN mapping, hardware-software codesign, address decoding, routing resource, binomial estimate
+
+### Time-multiplexed layer reuse for physical neural networks
+- [[tidal-net-time-multiplexed-pnn]] - TIDAL-Net: periodic cycling through L_W physical weight banks over L_T time steps builds deep effective networks on PNNs whose weights reprogram slowly (arXiv: 2511.00044)
+  - Intermediate regime between stateless RNN (L_W=1) and time-variable DNN (L_W=L_T); exploits timescale separation T_swt ≪ T_upd — fast bank switching vs slow weight programming; per-step latency T_MM + max(T_swt, T_state)
+  - L_W=2 already beats RNN limit on SVHN/NLP; pure repetition (fixed L_W, larger L_T) improves performance without adding parameters, until RNN-like degradation at excess depth
+  - Platform fit: MZI/MRR photonic (µs thermal tuning vs ps MVM) best; MTJ crossbar good; SLM (ms) poor — design rule: persistent banks + fast routing when parameter-setting is slower than inference dynamics
+  - **Activation**: physical neural network, PNN, time-multiplexing, weight sharing, weight tying, photonic neural network, MZI, MRR, MTJ, hardware scaling, timescale separation, TIDAL-Net
+
 ### Replica Fragmentation and Glassy Dynamics in Parity Learning
 - [[replica-fragmentation-glassy-parity-learning]] - Replica-overlap observables (m, q_self, q_cross) diagnose glassy fragmentation of Transformer learning runs into memorization/retreat/recovery regimes (arXiv: 2610.08503)
   - Self-cross gap chi_SG = q_self - q_cross = exact prediction variance across seeds sharing one training set; separates confident memorization (chi_SG large, tail acc at chance) from transient retreat-recovery cycles (brief Nishimori-gap lags)
