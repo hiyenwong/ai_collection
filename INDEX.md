@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-08 - Systems Engineering Research (Cron Job)
+
+### Byzantine-Tolerant Causal Unicast with Constant Message Space Overhead
+- [[byzantine-causal-unicast-constant-overhead]] - O(1) message overhead Byzantine causal ordering via SPS invariant + isolated per-peer queues + cascading evictions (arXiv: 2610.07368)
+  - Sender Permission to Send (SPS): causality enforced at sender, dependency vectors never transmitted -> O(1) network message size, trading O(n²) local space
+  - Isolated-Buffer Optimistic Model: per-peer U/Q queues confine Byzantine damage (ACK/PERMIT withholding, flooding, replay all neutralized by LD filter + capacity-triggered force-eviction)
+  - Congestion-Relaxed Causal Delivery (CRCD): quantified safety relaxation that reduces to Weak Safety when no evictions occur — deterministic liveness without crypto, impossible-trinity navigation pattern
+  - **Activation**: byzantine fault tolerance, causal ordering, distributed systems, message complexity, liveness, SPS invariant, protocol design
+
+### A Validated Dataset and Benchmark for Coherent Multi-Diagram SysML Models (SEMAADB)
+- [[sysml-coherent-multidiagram-benchmark]] - 15,000-diagram multi-view SysML coherence benchmark: shared-entity-anchored generation + typed-graph repair/update metrics (arXiv: 2610.07356)
+  - Shared entity model as consistency anchor: one canonical name/relation list drives all 5 views (Requirement/BD/Activity/StateMachine/Sequence); 5-step automatic validation + 100-context human-verified core
+  - Typed-graph evaluation: exact repair = adherence + preservation; cross-diagram update scored by tuple-level P/R/F1 — immune to formatting noise
+  - Key findings: syntax repair ~99.8% (solved) but semantic repair 64.3% max; remove-requirement only 8–9% (absence errors >> substitution errors); update Addition collapses to ~40% — set-level reasoning ≠ rendering
+  - **Activation**: MBSE, SysML, systems engineering, benchmark design, LLM evaluation, multi-view consistency, diagram repair, dataset construction
+
 ## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 2)
 
 ### SAFESHIELD: A Decision-Organization Framework for Deployment-Time Safety of Small Language Models
