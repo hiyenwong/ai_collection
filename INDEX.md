@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-08 - Systems Engineering x Quantum Research (Cron Job, Hour 5)
+
+### Simultaneous Circuit Tests for Finite Reversible Models of Quantum Control
+- [[simultaneous-circuit-tests-finite-reversible-control]] - 有限可逆量子控制模型的联合认证：一个共享控制器+制备律必须复现整族电路概率，共享表 MILP 精确可行性 + 逐电路拟合与联合拟合的严格分离 (arXiv: 2610.06984)
+  - R_ind ≤ R(W) 可严格分离：4-frame 例子每条电路单独都能以 <1/4 误差拟合，但任何单一允许表都无法同时拟合两条
+  - 464-frame 精确基准：证词控制器在阈值 1/3 下撑过 192 个重复块，第 193 块穷举排除全部允许控制器（概率带+单射+匹配可扩三重剪枝，41595 节点，Q(√2,√3,√5,√7,i) 精确算术）
+  - 有限窗口谱障碍：周期轨迹追不上无理频率振荡，窗口 D > (κ_M+C)/(a/2−δ) 即证差异；有限 shot 认证 r_N=√(log(2m/α)/2N)
+  - 浮点求解器失败不构成排除证明；排除证书是类相对的——放宽类即失效，证词在任何更大类中仍是证词
+  - **Activation**: simultaneous certification, finite reversible model, shared-table feasibility, exclusion certificate, certified horizon, finite-shot certification, quantum control memory bound
+
+### Resource-Aware Grover Search for Minimum Vertex Cover
+- [[resource-aware-grover-minimum-vertex-cover]] - 三种 Grover MVC oracle 设计按硬件约束选型：Dicke-Parallel（均衡）/ Edge-Counting（省 qubit）/ Edge-Centric（结构化稀疏图省深度省迭代）(arXiv: 2610.07252)
+  - 三瓶颈框架：搜索空间 2^n vs C(n,k)、oracle 宽度（DP 计数 O(n²) ancilla）、总深度 D_search ≈ R·D_iter 需联合优化
+  - Edge-Counting：⌈log₂(m+1)⌉ 可逆计数器替代 per-edge 标志位——紧 qubit 预算首选，代价是串行深度
+  - Edge-Centric：每边一 qubit 选端点，基态天然构成合法覆盖（可行性检查消失）；内部边产生编码多重性 μ(C*)=2^|Ein|，提高标记态分数 → 减少迭代
+  - 选型判据：稀疏核-外围结构→Edge-Centric（Σ2^|Ein|/2^m > C(n,k)/2^n）；稠密大 m→Dicke-Parallel；MCX 综合深度非单调（20-ctrl 4797 vs 24-ctrl 4405）是伪影不是负载属性
+  - **Activation**: Grover oracle design, minimum vertex cover, Dicke state, edge-centric encoding, qubit width reduction, reversible counting, Wallace tree, marked-state fraction
+
 ## 2026-10-08 - Neuroscience Research (Cron Job)
 
 ### SpecBraM: What Should an EEG Foundation Model Predict? Masked Band-Power Prediction versus Waveform Reconstruction
