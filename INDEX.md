@@ -1,5 +1,18 @@
 # AI Collection Index
 
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 7)
+
+### Cross-Validation of Open-Source Quantum Network Simulators
+- [[cross-validation-quantum-network-simulators]] - Cross-validation methodology for QuISP vs SeQUeNCe quantum network simulators (arXiv: 2610.09322)
+  - Discrepancy triage framework: real design difference / valid simplification / bug — this exercise produced numerous bug fixes in both simulators
+  - Constant timing ratio ~4.2x (three-way vs two-way handshake); fidelity agrees under identical error params; asymmetric MIM link shows BSA-placement-dependent divergence (QuISP) vs placement-insensitivity (SeQUeNCe)
+  - **Activation**: quantum network simulator, QuISP, SeQUeNCe, cross-validation, entanglement distribution benchmark
+
+### Numerically exact simulation of open quantum networks with strong system-bath couplings using comb tensor network path integrals
+- [[ctempo-comb-tensor-network-path-integrals]] - CTEMPO/CCTEMPO comb tensor network path integrals for non-Markovian quantum networks (arXiv: 2610.10259)
+  - Contraction-order insight: contracting system propagators row-by-row (causal + early) reduces bond dimension from hundreds-thousands to single/low-double digits, 10-100x faster than TEMPO/PT-MPO
+  - Comb topology: many-body density matrix MPO backbone + per-site CTEMPO teeth, cost linear in chi; solves 7-site FMO complex (62-peak spectral density, previously infeasible); N=20 quantum dot superradiance reveals novel intermediate scaling regime
+  - **Activation**: non-Markovian simulation, TEMPO, process tensor, path integral tensor network, bond dimension compression, FMO complex
 ## 2026-10-08 - Neuroscience Research (Cron Job, Hour 7)
 
 ### Connectome-Based Modeling of Mutation-Specific Amyloid-β Aggregation in Familial Alzheimer's Disease
