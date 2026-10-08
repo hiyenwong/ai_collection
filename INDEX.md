@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 10)
+
+### Automated reduction of fault-tolerant circuits
+- [[fault-equivalent-circuit-reduction]] - BFS over fault-equivalent rewrites cuts ancillas/CNOTs while FT properties are inherited by transitivity — no per-candidate re-verification (arXiv: 2610.09749)
+  - Enabling rules (restricted commutation / basis swap / target swap) only restructure to expose Bell-pair reductions; each composite transition removes exactly 1 ancilla + 1 CNOT → strictly decreasing cost bounds search depth
+  - Bell-pair reduction constraints: factorized U⊗V evolution of the pair + eliminated outcome feeds a parity only (classical record relabeling, not postselection)
+  - [[7,1,3]] Shor-style syndrome extraction: 30→18 ancilla preps, 54→42 CNOTs per round, logical error −21% @ p=1e-3 (−13…−23% over two decades); Steane dynamic SE: 391 candidates → sequential race (α=0.05) → 4 ancillas + 14 CNOTs, −15% under depol idle 3p/10
+  - Flags decoded via conditioned lookup tables (no shot rejection) → unconditional rates; near-quadratic log-log slopes 1.94–1.97 prove no first-order failure mode
+  - **Activation**: fault-equivalent rewrites, ZX-calculus edge-flip noise, Bell-pair reduction, syndrome extraction circuit optimization, Steane code, flag decoding, ancilla reduction, sequential race selection
+
+### Efficient Estimation of Logical Sensitivities Through Fault-Counting
+- [[fault-counting-logical-sensitivity]] - Score-function estimator extracts ALL logical sensitivities ν_i = ∂p_L/∂p_i from one Monte Carlo run at one noise point, 1-2 orders fewer shots than finite differences (arXiv: 2610.10531)
+  - ν_i = E[L(E)·∂log Pr_p(E)/∂p_i] — only failing shots contribute; per-fault components (s = 268/1526/4544 at d=3/5/7) enable post-hoc aggregation: error budgets, spatial heatmaps (bulk > boundary), per-round resolution
+  - Variance ratio Var(FD)/Var(Diff) ≈ 2s/(a²·E[M_i²|L]); advantage scales quadratically with error-type count; no step-size bias at all
+  - Free by-products: local effective distance d̂ = 2ν̂p/p_L − 1; sensitivity-guided Newton-Raphson traces threshold contours in s-dim noise space in O(K^(s−1)) points (factor K over grids), model-agnostic distance crossings
+  - Generic to any independently sampled mechanism: Pauli, leakage, erasure, correlated, non-Clifford; REINFORCE-style log-score transfers beyond QEC
+  - **Activation**: logical sensitivity, error budget analysis, threshold contour, surface code noise model, Monte Carlo gradient estimation, score function, Stim simulation, effective distance diagnostic
+
 ## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 9)
 
 ### Standard estimators cannot represent fault-tolerant workloads at measured error rates
