@@ -1,5 +1,16 @@
 # AI Collection Index
 
+## 2026-10-08 - Systems Engineering x Quantum Research (Cron Job, Hour 6)
+
+### Design-Time Conformance Checking for Pulse-Level Quantum Control
+- [[design-time-conformance-pulse-quantum-control]] - 设计时一致性检查器 qconform：脉冲程序在运行前对照"证据引用式能力描述符"判定可实现性，精确有理数算术 + 覆盖清单 + 修复预测 (arXiv: 2610.10427)
+  - 证据引用描述符：每条硬件约束都指向黑盒探测调查目录（605 QICK + 193 Qblox probes），gate 脚本拒绝证据不可解析的描述符——散文契约会漂移，机器契约不会
+  - 精确算术：时长=有理时间基的整数计数，频率/相位/幅度=精确分数；vendor 双精度混频器减法让正好在上限的请求变成 860.1600000000001 MHz 被拒——网格检查免疫浮点伪影；单通道双时钟（599.04 vs 430.08 MHz）必须双网格
+  - 修复即判决：silent mutation（频率折叠到 Nyquist 镜像偏 860 MHz、增益寄存器回绕、readout 半偶舍入）在运行前暴露为 pass-with-repairs；26 类覆盖清单区分 checked/unchecked——空泛通过 vs 已验证通过
+  - 差分测试：边界梯（远低于/恰低于/恰好/恰高于/远高于）+ 预算梯 + 间距梯 + 分辨率梯 + 随机组合，9 类裁决只有 unsound（检查器接受而 vendor 拒绝）计入健全性；1263 runs / 969 programs / 0 unsound passes；版本 pin 是健全性声明的一部分——最老 QICK release 产生 90 个 unsound pass
+  - 复发缺陷模式"解析但从未执行"（3 次）：post_mixer 标志被解析但检查器从不查询 → 构建期 tripwire 强制检查器读取解析器填充的每个描述符字段，首次运行又发现 3 个潜在实例
+  - **Activation**: pulse-level conformance checking, capability descriptor, evidence citation, exact rational arithmetic, coverage manifest, differential testing triage, silent repair detection, version-pinned soundness, QICK Qblox, design-time verification
+
 ## 2026-10-08 - Systems Engineering x Quantum Research (Cron Job, Hour 5)
 
 ### Simultaneous Circuit Tests for Finite Reversible Models of Quantum Control
