@@ -2139,3 +2139,18 @@
   - 在线tokenize/pack/mix是有状态n-to-m变换，破坏样本索引；离线物化对视频等模态不可行
   - 恢复成本不随训练进度增长；ablation差异可归因参数而非数据顺序噪声
   - **Activation**: deterministic data loading, foundation model training, data pipeline, checkpoint resume, GPU topology, sample packing, online tokenization, shuffle reproducibility
+
+## 2026-10-08 - OpenAI Research (Cron Job)
+
+### Advancing computer use with Ironclad
+- [[expert-rubric-computer-use-training]] - 把真实业务工作流变成 computer-use agent 的 RL 训练任务：领域专家定义细粒度 rubric（每任务 8–50 条二值标准）+ 厂商托管沙箱练习环境 + 围绕代表性工作流的合成任务变体，rubric 分数作为 RL 奖励
+  - 关键：endpoint-only 打分高估 agent 就绪度——单步全对≠产出的流程在设计场景内成立；细粒度标准给 partial credit、失败定位和稠密奖励
+  - GPT-6 Astra 首个用 Ironclad 任务训练的前沿模型：11 任务均分 55.0% vs GPT-5.6 Sol 41.6%，单次尝试 19.2min vs 37.0min（内部开发模型 63.7%）
+  - 合作模板：具体任务示例+失败证据、定义成功的领域专家、安全测试环境、可用于研究的数据
+  - **Activation**: computer-use agents, rubric evaluation, expert-defined criteria, hosted sandbox, synthetic task generation, RL from rubric feedback, partial credit scoring, SaaS workflow automation
+
+### Sharing AI progress in mathematics
+- (Obsidian only, no skill - release announcement) - 内部前沿模型的数学成果发布实践：GitHub 仓库+修订引用协议+Lean 形式化证明（机器可检验），10 份模型推理摘要、计算量估算（平均每成果 ≈3 小时 ChatGPT Pro thinking）、尝试题目统计
+  - 发布规范由 IAS 独立顾问组 AGMAI 的公开建议塑造；承诺未来改进论述与引用质量
+  - **Activation**: AI mathematics, Lean formalization, proof verification, scientific disclosure practices, AGMAI
+
