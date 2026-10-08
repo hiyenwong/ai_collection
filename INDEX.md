@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 7)
+
+### Connectome-Based Modeling of Mutation-Specific Amyloid-β Aggregation in Familial Alzheimer's Disease
+- [[mutation-specific-amyloid-connectome-diffusion]] - 突变感知 Aβ 聚集-碎裂模型耦合连接组图扩散：实验核酸化得分以 exp(NSμ) 乘子注入单一反应通道，在 540 节点 Budapest 连接组上分离分子动力学与拓扑贡献 (arXiv: 2610.09583)
+  - 动力学定时钟、拓扑定地图：20 个保度随机连接组全部保持突变排序（timing/peak/AUC ρ=1）但摧毁区域模式（空间 Spearman 仅 0.19–0.35）；距离-到达耦合 ρ≈0.92
+  - E22G (Arctic) 8.80 vs WT 110.67 模型时间单位跨界，累计寡聚体 AUC 最大；A2V 最慢——后果源于实验核酸化表型映射而非临床严重度排序
+  - 全局敏感性：时间由单体产生(-0.654)/转换(+0.601)/初级成核(-0.411)驱动，扩散尺度 ρ 对 timing≈0 但对空间传播 +0.317——报告 timing/AUC 排序（后验下稳定），峰值幅度排序不可信（仅 36% draw 复原）
+  - ABC-SMC 合成恢复验证 32 维摘要统计可复原生成值并暴露 k_sec↔k_conv 补偿性权衡；CLE 反应级噪声下 ensemble 中位数保序而单条轨迹重叠
+  - **Activation**: mutation-aware aggregation kinetics, connectome graph diffusion, network spreading model, familial AD variants, ABC-SMC parameter recovery, Chemical Langevin, degree-preserving null, wiring versus kinetics separation
+
+### Structure alone supports efficient visual computation in the Drosophila visual system
+- [[connectome-only-message-passing-fly-vision]] - 连接组独占模型：果蝇全脑接线 + 解剖眼前端固定，仅学有界突触增益，结构本身支持 Weber 比率数量判别等视觉计算 (arXiv: 2610.10023)
+  - 固定图+Voronoi 眼（R7 种子镶嵌，200nm 光谱移位映射 RGB）：色觉 100%（未训练 92%）、形状 64%、数量判别随 Weber 比率 64%→85%——近似数系统签名，与真实果蝇行为一致
+  - 四级接线约束 null 系综：非约束/剪枝到同预算/全局长度分箱/每神经元分箱；等接线预算下生物连接组始终最优——演化高效操作点，非约束重连以膨胀接线成本换取更高精度
+  - 传播动力学先于任务指标：非约束图第 2 步全脑饱和（含 Kenyon 细胞），生物与约束系综渐进传播（3 步 ~80%）——长程突触加速扩散解释精度差
+  - tanh(θ) 增益界定 ±突触计数内，等价 Hebbian 强度适应；只读 Kenyon 细胞均值→线性单元；PyG MessagePassing 骨架可直接复用
+  - **Activation**: connectome-only model, message passing, wiring economy, null ensemble at matched cost, approximate number system, Voronoi ommatidia, Kenyon cell readout, structure-function isolation
+
 ## 2026-10-08 - Systems Engineering x Quantum Research (Cron Job, Hour 6)
 
 ### Design-Time Conformance Checking for Pulse-Level Quantum Control
