@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 19)
+
+### Do Generative Priors Align with Human Naturalness Perception?
+- [[generative-priors-naturalness-alignment]] - Zero-shot paired directional loss differences of 25 image/video generators track human naturalness ratings (r=.84 faces, .64 scenes), beating encoders and IQA (arXiv: 2610.09928)
+  - Content-preserving relational interventions (Thatcher eye/mouth flips, Kubric shadow/reflection/light-direction mirroring) + paired subtraction u = L(mod)−L(orig) bypass the density confounds that kill raw single-image losses (correlation −.20 to .24)
+  - Sensitivity and human alignment dissociate along denoising schedules: alignment peaks EARLIER than violation sensitivity in 20/25 (Thatcher) and 25/25 (Illumination) models — human-like judgment resolves at intermediate noise levels, not clean ones
+  - Aligns with generation benchmarks (Elo ρ=.827, VBench ρ=.929) even after controlling for sensitivity; failure mode identified: reflection hue shifts (humans penalize, models don't; scaling amplifies sensitivity without fixing alignment)
+  - **Activation**: generative priors, naturalness perception, Thatcher effect, paired relational intervention, directional loss difference, denoising loss landscape, psychophysics of generative models
+
+### Brain alignment of reasoning and action representations from vision-language and action models during naturalistic gameplay
+- [[vlm-lam-gameplay-brain-alignment]] - First VLM/LAM brain-encoding study on interactive Atari fMRI: prompt gains concentrate 2-2.5x in frontal-parietal/motor cortex; variance partitioning reveals VLM prompt-symmetric vs LAM action-dominant organization (arXiv: 2605.19352)
+  - TR-aligned 4-frame trailing windows + action/reasoning prompts + per-layer last-token embeddings + ridge encoding (4 hemodynamic lags, LORO CV) — reusable protocol for aligning foundation-model internals with gameplay fMRI
+  - Equal whole-brain accuracy masks reorganization: LAM action-unique variance 25.6% vs reasoning −8.2% (redundant), strongest in SMA (u_A=34%); VLM balanced (12.4% vs 9.5%) — raw accuracy is blind to representational structure, variance decomposition is required
+  - VLMs/LAMs beat EMPA/DDQN RL baselines even at matched feature dimensionality (8/64/1024, saturation at 64); Qwen3.5 CoT-trace readouts align WORSE than final-answer (r=.012 vs .031) unless mean-pooled
+  - **Activation**: VLM brain alignment, large-action model, Atari gameplay fMRI, voxel-wise encoding, variance partitioning, action vs reasoning prompts, world models, naturalistic gameplay encoding
+
 ## 2026-10-08 - Neuroscience Research (Cron Job)
 
 ### CircuitATLAS: Agentic reasoning over a systems neuroscience knowledge graph for target discovery in circuitopathies
