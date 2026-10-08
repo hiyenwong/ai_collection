@@ -1,3 +1,26 @@
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 19)
+
+### QuSema: Detecting Silent Bugs in Quantum Libraries via Quantum-knowledge-enhanced Agents
+- [[qusema-semantic-oracle-bug-detection]] - Agentic testing that finds non-crash "silent bugs" in Qiskit/PennyLane using domain semantics + docs as a source-level semantic oracle; 40 new developer-confirmed bugs, 30 silent (arXiv: 2610.10258)
+  - All 20 historical silent bugs are API-local (localized to first API transforming valid input into invalid output) — justifies source-level semantic analysis instead of execution oracles
+  - Three-stage workflow: contextual unit prep (code segment + docs + call relations) → defect-hypothesis generation from quantum-semantic constraints with execution validation → valid-API triggering and bug qualification
+  - QuSema+DeepSeek (15.67/20 relocations, $162) beats Claude Code+Fable 5 (14.67, $425) and Codex+GPT-5.6-Sol (13.33, $117); Opus 5 config 16.00 at $1,603 — 98% of performance at 10% cost
+  - **Activation**: quantum library testing, silent bug, semantic oracle, agentic testing, Qiskit, PennyLane, defect hypothesis, API-local defect
+
+### Divide et Impera quantum neural networks for modular hybrid computing architectures
+- [[divide-et-impera-modular-qnn]] - Split a wide QNN circuit into k small sub-VQCs plus a classical stitching MLP — same parameter count, fits qubit limits, robust to noise on real EV-charging/air-quality tasks (arXiv: 2610.09623)
+  - z = concat of VQC_j(x_Ij) embeddings + shallow MLP stitching; parameter-neutral when regular ansatz partitions features; PCA + sliding-window auto-partitioning when no semantic grouping exists
+  - Temporal features in separate circuits beats unified-state processing; two-qubit gate error defines the noise cut-off region (noiseless 53.86 → depolarizing 60.8 → bit-flip 68)
+  - Design principle for modular quantum architectures interconnected via high-speed links — computation distributes across multiple cheap QPU calls
+  - **Activation**: quantum neural network, qubit limit, divide and conquer, modular hybrid QNN, VQC ensemble, PCA sliding window, distributed quantum computing
+
+### Large-scale Repository Engineering via Agent-Native Reusable Code Primitives
+- [[code-primitives-lego-repository-engineering]] - Code Primitives = reusable components with resident LLMs that self-assess relevance and ADAPT themselves; LEGO orchestrates them to build whole repositories (+61.4% over GPT-5.6-terra alone) (arXiv: 2610.09079)
+  - Primitive P=(impl, interface contract, dependency closure, carried validation tests, provenance, resident LLM); median 214 lines, 4 symbols, 9 tests; CodeFace library of 1,424 validated primitives
+  - Reuse by adaptation not invocation: primitives emit cross-component requirement propagation µ_i→j; LEGO's diagnosis loop localizes failures and reactivates only affected primitives
+  - Improves all 13 evaluated backbones (+0.1474 mean); beats OpenHands by 57.3% and Claude Code by 56.2% at matched backbones; GPT-OSS-20B adaptation retains 95.1% score at 24% lower cost
+  - **Activation**: repository-scale code generation, code reuse by adaptation, agent-native components, resident LLM, LEGO framework, primitive collaboration, requirement propagation
+
 # AI Collection Index
 
 ## 2026-10-08 - Neuroscience Research (Cron Job, Hour 19)
