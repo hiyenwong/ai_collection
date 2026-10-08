@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 9)
+
+### Standard estimators cannot represent fault-tolerant workloads at measured error rates
+- [[ft-resource-estimation-uncertainty-propagation]] - Evidence-based priors through 5 surface-code cost models: resource estimates must be intervals + censored fractions, not points (arXiv: 2610.10490)
+  - Measured 2Q error median 4e-3 (4x the 1e-3 planning convention) widens 90% physical-qubit interval ~40x, lifts median 4.6x
+  - 5 cost models disagree by stable factor 2.0; Azure QRE & Qualtran agree to ~10% but censor 80-100% of evidence space (distance cap 50 / fixed factory feasible only to ~1.7e-3)
+  - AES-256 T-count 6.07e43 overflows Azure's 64-bit counter outright; censoring measured as a headline result via missing-not-zero adapters
+  - Shapley effects under copula dependence (not Sobol); pre-registered 3-layer evaluation (OSF 3d9m2), sensitivity-weighted coverage ~99%
+  - **Activation**: fault-tolerant resource estimation, uncertainty quantification, surface code cost model, evidence-based prior, Shapley sensitivity, censoring envelope, post-quantum cryptography migration
+
+### Benchmarking Modular Optimization Strategies for Parameterized Quantum Circuits
+- [[modular-pqc-optimizer-benchmark]] - Factorize VQA optimization: search-direction estimators (PSR/SPSA/PGPE/OCP) x update rules (SGD/Adam/RMSprop) paired independently across 4 workloads (arXiv: 2610.10254)
+  - No component dominates: PGPE-SGD best mean MaxCut, FiniteDiff-RMSprop best mean VQE, OCP-RMSprop best mean classifier accuracy (seed consistency, not peaks)
+  - Update rule flips outcome at fixed estimator: Iris RMSprop 100% vs SGD 75-80% at matched 52,800 circuits; QCNN OCP 100% needs 404,800 circuits vs PGPE-Adam 97.5% at 17,600 (23x)
+  - Three-level cost accounting: objective eval != logical circuit != shots; equal step counts never mean equal budgets
+  - Terminal vs best-observed diverge on hardware in 3/4 runs; finite-shot VQE below FCI is selection bias, not physics
+  - **Activation**: parameterized quantum circuit optimization, search-direction estimator, SPSA, PGPE, observable curvature preconditioning, QAOA optimizer, VQE optimizer, finite-shot cost
 ## 2026-10-08 - Neuroscience Research (Cron Job, Hour 17)
 
 ### Many Brains, One Geometry: A Shared Visual-Semantic Space for Cross-Dataset fMRI Decoding
