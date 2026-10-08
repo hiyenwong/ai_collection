@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-10-08 - Systems Engineering × Quantum (Cron Job, Hour 8)
+
+### Geodesic-Based Optimal Control for Leakage Suppression in Superconducting Qubits
+- [[geodesic-optimal-control-leakage-qubits]] - Sub-Riemannian geodesic pulse synthesis with built-in smooth-envelope constraint beats DRAG-F and DRAG-L simultaneously (arXiv: 2610.09666)
+  - Sigmoid envelope S(t) baked into the geodesic equation itself; 17ns Rx(pi/2) saturates thermal limits: F=0.9996, L1=1.08e-5
+  - iSWAP: 0.9548@79.5ns control-free -> 0.9942@86ns via geodesic real-time dressed-frequency corrections; SW+RWA reduces coupler architecture to SU(9)
+  - **Activation**: leakage suppression, DRAG, geodesic optimal control, pulse synthesis, tunable coupler, iSWAP
+
+### Non-Orthogonal Amplitude Amplification for Hybrid CV-DV Quantum Processors
+- [[noaa-nonorthogonal-amplitude-amplification]] - Amplitude amplification when the CV-assisted reflection is exact but non-selective; fidelity ceiling eta is projector-bound (arXiv: 2610.09353)
+  - F = eta*P_L decomposition: phase schedules only improve transfer P_L; ceiling eta requires a more selective projector; cumulative weighted-overlap ratio R gates fidelity
+  - Squeezed ancilla (eps 0.1 -> 8.21e-21) trades overlap against mismatch sensitivity (e^r growth); degree-60 HQSP erf-passband filter absorbs energy-estimate mismatch
+  - Beats RUS for small |psi0| with mismatch; RUS already optimal at large amplitudes
+  - **Activation**: amplitude amplification, non-orthogonal states, CV-DV, HQSP, fidelity ceiling, squeezed ancilla, state preparation
 ## 2026-10-08 - Neuroscience Research (Cron Job, Hour 8)
 
 ### A Connectome Test of the Fly Hashing Algorithm
