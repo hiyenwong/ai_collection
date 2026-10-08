@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
+### CircuitATLAS: Agentic reasoning over a systems neuroscience knowledge graph for target discovery in circuitopathies
+- [[circuitatlas-agentic-kg-target-discovery]] - Circuit-first drug target discovery: 3.83M-node KG + evidence-gated multi-agent workflow + MCP lab-in-the-loop, validated in vivo on ATP1A3 (arXiv: 2610.09643)
+  - Anti-shortcut design: disease→gene/protein edges deliberately EXCLUDED from the discovery graph; molecular agent reasons from measurable phenotypes through circuits/cell types to control points that are unaltered in disease
+  - Deterministic narrowing (1701-term lexicon, 400-char co-occurrence, 57.7M candidates) with LLM as semantic VERIFIER only (quotation + confidence per edge); 17.8% Opus-5 audit disagreement → inference-time re-verification on edges a reasoning chain depends on
+  - Three evidence layers as typed quantitative edges: literature (5.31M LLM-extracted), Human Cell Atlas (~129k EXPRESSES edges with expression fraction/magnitude/specificity), in-house multimodal in vivo (EEG/ephys/pose/photometry with effect sizes + stats)
+  - ATP1A3 case: interneuron-restricted expression abolished 4-AP-evoked beta/gamma response (fold 11.16→1.33, Cliff's δ=−1.0); structure-guided campaign excluded cardiotonic steroid pocket as anti-target; docking predicts binding NOT polarity → thallium-flux polarity screen as next uncertainty-resolving experiment
+  - **Activation**: circuitopathies, target discovery, systems neuroscience knowledge graph, agentic reasoning, evidence-gated workflow, MCP lab-in-the-loop, anti-shortcut graph design, phenotype-to-circuit reasoning, ATP1A3
+
+### A Geometry-Based Capacity Theory for Finite-Feature Associative Memory
+- [[geometry-capacity-associative-memory]] - Retrieval interference splits into finite-feature noise ~(N−1)/R (fix: more features) vs structural interference Σ K_ij² (fix: change representation); fit-free capacity prediction from measured embedding geometry (arXiv: 2610.09056)
+  - Cosine law C_i(R) ≈ [1 + Σ_{j≠i} K_ij² + (N−1)/R]^(−1/2); infinite-R ceiling C_∞ exact for orthogonal values; correlated values require joint key-kernel + value-Gram analysis (a_i = Σ_j K_ij G_ji, b_i = Σ K_ij K_iℓ G_jℓ)
+  - PCA whitening REDUCES dimension 2048→256 while RAISING ceiling 0.65→1.0 — nominal dimension and effective rank are insufficient descriptors; kernel scale can reverse capacity rankings
+  - Capacity boundary R/N ≈ (1/C*² − 1)^(−1) (9.26 for C*=0.95) converts measured geometry into memory-sizing estimates; ceilings unreachable by increasing R alone are flagged
+  - Validated on synthetic + ResNet/ViT/DINOv2/CLIP embeddings + SynthRAD MRI–CT + 445 clinical NCCT–CTA; covariance-aware variant brackets empirical RAW↔WHITENED crossover in all 20 subsets (MAE −84.5%)
+  - **Activation**: associative memory capacity, Hebbian memory, kernel geometry, retrieval interference, fast-weight/linear-attention capacity, whitening intervention, memory sizing, cross-modal retrieval
 ## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 10)
 
 ### Automated reduction of fault-tolerant circuits
