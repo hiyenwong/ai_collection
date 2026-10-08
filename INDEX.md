@@ -1,3 +1,394 @@
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 19)
+
+### QuSema: Detecting Silent Bugs in Quantum Libraries via Quantum-knowledge-enhanced Agents
+- [[qusema-semantic-oracle-bug-detection]] - Agentic testing that finds non-crash "silent bugs" in Qiskit/PennyLane using domain semantics + docs as a source-level semantic oracle; 40 new developer-confirmed bugs, 30 silent (arXiv: 2610.10258)
+  - All 20 historical silent bugs are API-local (localized to first API transforming valid input into invalid output) — justifies source-level semantic analysis instead of execution oracles
+  - Three-stage workflow: contextual unit prep (code segment + docs + call relations) → defect-hypothesis generation from quantum-semantic constraints with execution validation → valid-API triggering and bug qualification
+  - QuSema+DeepSeek (15.67/20 relocations, $162) beats Claude Code+Fable 5 (14.67, $425) and Codex+GPT-5.6-Sol (13.33, $117); Opus 5 config 16.00 at $1,603 — 98% of performance at 10% cost
+  - **Activation**: quantum library testing, silent bug, semantic oracle, agentic testing, Qiskit, PennyLane, defect hypothesis, API-local defect
+
+### Divide et Impera quantum neural networks for modular hybrid computing architectures
+- [[divide-et-impera-modular-qnn]] - Split a wide QNN circuit into k small sub-VQCs plus a classical stitching MLP — same parameter count, fits qubit limits, robust to noise on real EV-charging/air-quality tasks (arXiv: 2610.09623)
+  - z = concat of VQC_j(x_Ij) embeddings + shallow MLP stitching; parameter-neutral when regular ansatz partitions features; PCA + sliding-window auto-partitioning when no semantic grouping exists
+  - Temporal features in separate circuits beats unified-state processing; two-qubit gate error defines the noise cut-off region (noiseless 53.86 → depolarizing 60.8 → bit-flip 68)
+  - Design principle for modular quantum architectures interconnected via high-speed links — computation distributes across multiple cheap QPU calls
+  - **Activation**: quantum neural network, qubit limit, divide and conquer, modular hybrid QNN, VQC ensemble, PCA sliding window, distributed quantum computing
+
+### Large-scale Repository Engineering via Agent-Native Reusable Code Primitives
+- [[code-primitives-lego-repository-engineering]] - Code Primitives = reusable components with resident LLMs that self-assess relevance and ADAPT themselves; LEGO orchestrates them to build whole repositories (+61.4% over GPT-5.6-terra alone) (arXiv: 2610.09079)
+  - Primitive P=(impl, interface contract, dependency closure, carried validation tests, provenance, resident LLM); median 214 lines, 4 symbols, 9 tests; CodeFace library of 1,424 validated primitives
+  - Reuse by adaptation not invocation: primitives emit cross-component requirement propagation µ_i→j; LEGO's diagnosis loop localizes failures and reactivates only affected primitives
+  - Improves all 13 evaluated backbones (+0.1474 mean); beats OpenHands by 57.3% and Claude Code by 56.2% at matched backbones; GPT-OSS-20B adaptation retains 95.1% score at 24% lower cost
+  - **Activation**: repository-scale code generation, code reuse by adaptation, agent-native components, resident LLM, LEGO framework, primitive collaboration, requirement propagation
+
+# AI Collection Index
+
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 19)
+
+### Do Generative Priors Align with Human Naturalness Perception?
+- [[generative-priors-naturalness-alignment]] - Zero-shot paired directional loss differences of 25 image/video generators track human naturalness ratings (r=.84 faces, .64 scenes), beating encoders and IQA (arXiv: 2610.09928)
+  - Content-preserving relational interventions (Thatcher eye/mouth flips, Kubric shadow/reflection/light-direction mirroring) + paired subtraction u = L(mod)−L(orig) bypass the density confounds that kill raw single-image losses (correlation −.20 to .24)
+  - Sensitivity and human alignment dissociate along denoising schedules: alignment peaks EARLIER than violation sensitivity in 20/25 (Thatcher) and 25/25 (Illumination) models — human-like judgment resolves at intermediate noise levels, not clean ones
+  - Aligns with generation benchmarks (Elo ρ=.827, VBench ρ=.929) even after controlling for sensitivity; failure mode identified: reflection hue shifts (humans penalize, models don't; scaling amplifies sensitivity without fixing alignment)
+  - **Activation**: generative priors, naturalness perception, Thatcher effect, paired relational intervention, directional loss difference, denoising loss landscape, psychophysics of generative models
+
+### Brain alignment of reasoning and action representations from vision-language and action models during naturalistic gameplay
+- [[vlm-lam-gameplay-brain-alignment]] - First VLM/LAM brain-encoding study on interactive Atari fMRI: prompt gains concentrate 2-2.5x in frontal-parietal/motor cortex; variance partitioning reveals VLM prompt-symmetric vs LAM action-dominant organization (arXiv: 2605.19352)
+  - TR-aligned 4-frame trailing windows + action/reasoning prompts + per-layer last-token embeddings + ridge encoding (4 hemodynamic lags, LORO CV) — reusable protocol for aligning foundation-model internals with gameplay fMRI
+  - Equal whole-brain accuracy masks reorganization: LAM action-unique variance 25.6% vs reasoning −8.2% (redundant), strongest in SMA (u_A=34%); VLM balanced (12.4% vs 9.5%) — raw accuracy is blind to representational structure, variance decomposition is required
+  - VLMs/LAMs beat EMPA/DDQN RL baselines even at matched feature dimensionality (8/64/1024, saturation at 64); Qwen3.5 CoT-trace readouts align WORSE than final-answer (r=.012 vs .031) unless mean-pooled
+  - **Activation**: VLM brain alignment, large-action model, Atari gameplay fMRI, voxel-wise encoding, variance partitioning, action vs reasoning prompts, world models, naturalistic gameplay encoding
+
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
+### CircuitATLAS: Agentic reasoning over a systems neuroscience knowledge graph for target discovery in circuitopathies
+- [[circuitatlas-agentic-kg-target-discovery]] - Circuit-first drug target discovery: 3.83M-node KG + evidence-gated multi-agent workflow + MCP lab-in-the-loop, validated in vivo on ATP1A3 (arXiv: 2610.09643)
+  - Anti-shortcut design: disease→gene/protein edges deliberately EXCLUDED from the discovery graph; molecular agent reasons from measurable phenotypes through circuits/cell types to control points that are unaltered in disease
+  - Deterministic narrowing (1701-term lexicon, 400-char co-occurrence, 57.7M candidates) with LLM as semantic VERIFIER only (quotation + confidence per edge); 17.8% Opus-5 audit disagreement → inference-time re-verification on edges a reasoning chain depends on
+  - Three evidence layers as typed quantitative edges: literature (5.31M LLM-extracted), Human Cell Atlas (~129k EXPRESSES edges with expression fraction/magnitude/specificity), in-house multimodal in vivo (EEG/ephys/pose/photometry with effect sizes + stats)
+  - ATP1A3 case: interneuron-restricted expression abolished 4-AP-evoked beta/gamma response (fold 11.16→1.33, Cliff's δ=−1.0); structure-guided campaign excluded cardiotonic steroid pocket as anti-target; docking predicts binding NOT polarity → thallium-flux polarity screen as next uncertainty-resolving experiment
+  - **Activation**: circuitopathies, target discovery, systems neuroscience knowledge graph, agentic reasoning, evidence-gated workflow, MCP lab-in-the-loop, anti-shortcut graph design, phenotype-to-circuit reasoning, ATP1A3
+
+### A Geometry-Based Capacity Theory for Finite-Feature Associative Memory
+- [[geometry-capacity-associative-memory]] - Retrieval interference splits into finite-feature noise ~(N−1)/R (fix: more features) vs structural interference Σ K_ij² (fix: change representation); fit-free capacity prediction from measured embedding geometry (arXiv: 2610.09056)
+  - Cosine law C_i(R) ≈ [1 + Σ_{j≠i} K_ij² + (N−1)/R]^(−1/2); infinite-R ceiling C_∞ exact for orthogonal values; correlated values require joint key-kernel + value-Gram analysis (a_i = Σ_j K_ij G_ji, b_i = Σ K_ij K_iℓ G_jℓ)
+  - PCA whitening REDUCES dimension 2048→256 while RAISING ceiling 0.65→1.0 — nominal dimension and effective rank are insufficient descriptors; kernel scale can reverse capacity rankings
+  - Capacity boundary R/N ≈ (1/C*² − 1)^(−1) (9.26 for C*=0.95) converts measured geometry into memory-sizing estimates; ceilings unreachable by increasing R alone are flagged
+  - Validated on synthetic + ResNet/ViT/DINOv2/CLIP embeddings + SynthRAD MRI–CT + 445 clinical NCCT–CTA; covariance-aware variant brackets empirical RAW↔WHITENED crossover in all 20 subsets (MAE −84.5%)
+  - **Activation**: associative memory capacity, Hebbian memory, kernel geometry, retrieval interference, fast-weight/linear-attention capacity, whitening intervention, memory sizing, cross-modal retrieval
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 10)
+
+### Automated reduction of fault-tolerant circuits
+- [[fault-equivalent-circuit-reduction]] - BFS over fault-equivalent rewrites cuts ancillas/CNOTs while FT properties are inherited by transitivity — no per-candidate re-verification (arXiv: 2610.09749)
+  - Enabling rules (restricted commutation / basis swap / target swap) only restructure to expose Bell-pair reductions; each composite transition removes exactly 1 ancilla + 1 CNOT → strictly decreasing cost bounds search depth
+  - Bell-pair reduction constraints: factorized U⊗V evolution of the pair + eliminated outcome feeds a parity only (classical record relabeling, not postselection)
+  - [[7,1,3]] Shor-style syndrome extraction: 30→18 ancilla preps, 54→42 CNOTs per round, logical error −21% @ p=1e-3 (−13…−23% over two decades); Steane dynamic SE: 391 candidates → sequential race (α=0.05) → 4 ancillas + 14 CNOTs, −15% under depol idle 3p/10
+  - Flags decoded via conditioned lookup tables (no shot rejection) → unconditional rates; near-quadratic log-log slopes 1.94–1.97 prove no first-order failure mode
+  - **Activation**: fault-equivalent rewrites, ZX-calculus edge-flip noise, Bell-pair reduction, syndrome extraction circuit optimization, Steane code, flag decoding, ancilla reduction, sequential race selection
+
+### Efficient Estimation of Logical Sensitivities Through Fault-Counting
+- [[fault-counting-logical-sensitivity]] - Score-function estimator extracts ALL logical sensitivities ν_i = ∂p_L/∂p_i from one Monte Carlo run at one noise point, 1-2 orders fewer shots than finite differences (arXiv: 2610.10531)
+  - ν_i = E[L(E)·∂log Pr_p(E)/∂p_i] — only failing shots contribute; per-fault components (s = 268/1526/4544 at d=3/5/7) enable post-hoc aggregation: error budgets, spatial heatmaps (bulk > boundary), per-round resolution
+  - Variance ratio Var(FD)/Var(Diff) ≈ 2s/(a²·E[M_i²|L]); advantage scales quadratically with error-type count; no step-size bias at all
+  - Free by-products: local effective distance d̂ = 2ν̂p/p_L − 1; sensitivity-guided Newton-Raphson traces threshold contours in s-dim noise space in O(K^(s−1)) points (factor K over grids), model-agnostic distance crossings
+  - Generic to any independently sampled mechanism: Pauli, leakage, erasure, correlated, non-Clifford; REINFORCE-style log-score transfers beyond QEC
+  - **Activation**: logical sensitivity, error budget analysis, threshold contour, surface code noise model, Monte Carlo gradient estimation, score function, Stim simulation, effective distance diagnostic
+
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 9)
+
+### Standard estimators cannot represent fault-tolerant workloads at measured error rates
+- [[ft-resource-estimation-uncertainty-propagation]] - Evidence-based priors through 5 surface-code cost models: resource estimates must be intervals + censored fractions, not points (arXiv: 2610.10490)
+  - Measured 2Q error median 4e-3 (4x the 1e-3 planning convention) widens 90% physical-qubit interval ~40x, lifts median 4.6x
+  - 5 cost models disagree by stable factor 2.0; Azure QRE & Qualtran agree to ~10% but censor 80-100% of evidence space (distance cap 50 / fixed factory feasible only to ~1.7e-3)
+  - AES-256 T-count 6.07e43 overflows Azure's 64-bit counter outright; censoring measured as a headline result via missing-not-zero adapters
+  - Shapley effects under copula dependence (not Sobol); pre-registered 3-layer evaluation (OSF 3d9m2), sensitivity-weighted coverage ~99%
+  - **Activation**: fault-tolerant resource estimation, uncertainty quantification, surface code cost model, evidence-based prior, Shapley sensitivity, censoring envelope, post-quantum cryptography migration
+
+### Benchmarking Modular Optimization Strategies for Parameterized Quantum Circuits
+- [[modular-pqc-optimizer-benchmark]] - Factorize VQA optimization: search-direction estimators (PSR/SPSA/PGPE/OCP) x update rules (SGD/Adam/RMSprop) paired independently across 4 workloads (arXiv: 2610.10254)
+  - No component dominates: PGPE-SGD best mean MaxCut, FiniteDiff-RMSprop best mean VQE, OCP-RMSprop best mean classifier accuracy (seed consistency, not peaks)
+  - Update rule flips outcome at fixed estimator: Iris RMSprop 100% vs SGD 75-80% at matched 52,800 circuits; QCNN OCP 100% needs 404,800 circuits vs PGPE-Adam 97.5% at 17,600 (23x)
+  - Three-level cost accounting: objective eval != logical circuit != shots; equal step counts never mean equal budgets
+  - Terminal vs best-observed diverge on hardware in 3/4 runs; finite-shot VQE below FCI is selection bias, not physics
+  - **Activation**: parameterized quantum circuit optimization, search-direction estimator, SPSA, PGPE, observable curvature preconditioning, QAOA optimizer, VQE optimizer, finite-shot cost
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 17)
+
+### Many Brains, One Geometry: A Shared Visual-Semantic Space for Cross-Dataset fMRI Decoding
+- [[braid-fmri-cross-dataset-clip-decoding]] - 单一 ROI-token Transformer 联合训练 8 个 fMRI 数据集（MOSAIC 93 被试、43 万试次），映射到共享 CLIP ViT-B/32 空间，零样本迁移 +92.1% (arXiv: 2610.09352)
+  - 379 个 ROI 各配独立 2 层 MLP tokenizer（吸收各 ROI 维度差异）+ ROI 身份嵌入 + 可选被试嵌入 S_i——共享 4 层 Transformer，被试条件化只是单个加性向量，禁用即得 participant-agnostic 编码器
+  - Multi-positive InfoNCE：同一刺激跨被试/数据集重复出现时按同刺激集合均匀目标做对称交叉熵，杜绝 false-negative 互斥；logit scale 学习（init 1/0.07, cap 15）
+  - 零样本协议：整个目标数据集+全部被试留出，participant embedding 全程禁用，源池累积扩充——7/7 目标数据集正增益（NSD +92.1%）
+  - 几何验证超越检索精度：matched > same-cluster (+0.094) > different-cluster (+0.043) 相似度层级跨数据集保持；语义簇质心 RDM 跨数据集 Spearman 0.61–0.88
+  - 消融：腹侧视觉 −4.8pp、早期视觉 −3.5pp 主导；人物肖像依赖腹侧、网球动作依赖腹侧+顶叶+早期、火车依赖早期视觉——类别特异贡献
+  - **Activation**: cross-dataset fMRI decoding, ROI tokenization, CLIP alignment, multi-positive contrastive, participant embedding, zero-shot transfer, MOSAIC, semantic geometry RDM
+
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 16)
+
+### Feedback to the primary visual cortex is highly concentrated on the central visual field representation
+- [[v1-feedback-eccentricity-magnification]] - CPD 理论首个直接解剖证据：狨猴 12 个 V1 逆行示踪位点显示反馈/前馈比随离心度幂律下降（V2 α=1.5、腹侧流 α=1.6、背侧流 α=0.6），叠加皮层放大因子后中央视野反馈优势达 ~1000× (arXiv: 2610.09983)
+  - N̂(E)=N_region/N_LGN 示踪剂归一化：以同一注射的 LGN 前馈计数为基准归一，消除注射扩散/摄取差异——将受混杂的绝对计数转为稳健的反馈放大因子 M_feedback(E)
+  - 腹侧流主导中央视野反馈、背侧流主导外周（N_ventral/N_dorsal α=0.96）——与"what/where"分工在反馈环路中同样成立；非视觉皮层反馈 α≈0（负控制）
+  - 推翻"V1 表面计算均匀"经典观点：细胞密度/柱尺寸/LGN 传入密度跨 V1 近似均匀，唯反馈环路例外——视觉皮层需沿层级 × 中央-外周二轴组织
+  - 解释外周视觉错觉（反转深度、翻转倾斜）：外周因缺乏反馈查询而可见，中央在 backward masking 干扰反馈后才显现
+  - **Activation**: feedback magnification factor, central-peripheral dichotomy, retrograde tracer normalization, eccentricity power law, ventral stream feedback, cortical magnification, V1, marmoset connectome
+
+### MovieSTAGE: Scene, Transition, and Global Encoding for Movie-fMRI ADHD Classification
+- [[moviestage-scene-transition-global-fmri]] - 事件对齐多尺度 movie-fMRI 分类：场景级超图 + 相邻场景无符号 ∆FC 重构 + 全片 FC 三分支融合，CMI-HBN 260 被试三任务 AUROC 0.69/0.73/0.75 全超基线；人工标注叙事分区胜过时长匹配随机分区与 GSBS 固定数分段 (arXiv: 2610.09306)
+  - 短窗 FC 必用 Ledoit–Wolf 收缩；超边由 FC-profile 余弦相似度 top-K 锚点构造（K=6），可学习超边权重 Softplus 保证正值
+  - 关键设计：转换分支用 |∆FC| 无符号幅值——不假设跨被试/ROI 对的符号方向一致，只编码重构幅度（可移植到睡眠分期/任务切换/癫痫起搏任何"重构幅度即信号"场景）
+  - 评估协议金标准：10×5 折完整 OOF + 被试级聚类 bootstrap/置换检验（每被试重复预测为一簇）+ Holm 逐族校正——杜绝跨折伪重复
+  - 消融：全局分支单独最强（0.68），三分支融合 0.75 且全胜两分支组合——条件性互补而非冗余；最强组间差异在 T5 情绪转换处（ADHD 的 FPN–DMN/DMN–DMN 重构幅度更大，FDR q<0.05）
+  - **Activation**: movie-fMRI, event-aligned representation, hypergraph neural network, unsigned FC reconfiguration, narrative segmentation, ADHD classification, CMI-HBN, out-of-fold prediction, subject-cluster bootstrap
+
+## 2026-10-08 - Systems Engineering × Quantum (Cron Job, Hour 8)
+
+### Geodesic-Based Optimal Control for Leakage Suppression in Superconducting Qubits
+- [[geodesic-optimal-control-leakage-qubits]] - Sub-Riemannian geodesic pulse synthesis with built-in smooth-envelope constraint beats DRAG-F and DRAG-L simultaneously (arXiv: 2610.09666)
+  - Sigmoid envelope S(t) baked into the geodesic equation itself; 17ns Rx(pi/2) saturates thermal limits: F=0.9996, L1=1.08e-5
+  - iSWAP: 0.9548@79.5ns control-free -> 0.9942@86ns via geodesic real-time dressed-frequency corrections; SW+RWA reduces coupler architecture to SU(9)
+  - **Activation**: leakage suppression, DRAG, geodesic optimal control, pulse synthesis, tunable coupler, iSWAP
+
+### Non-Orthogonal Amplitude Amplification for Hybrid CV-DV Quantum Processors
+- [[noaa-nonorthogonal-amplitude-amplification]] - Amplitude amplification when the CV-assisted reflection is exact but non-selective; fidelity ceiling eta is projector-bound (arXiv: 2610.09353)
+  - F = eta*P_L decomposition: phase schedules only improve transfer P_L; ceiling eta requires a more selective projector; cumulative weighted-overlap ratio R gates fidelity
+  - Squeezed ancilla (eps 0.1 -> 8.21e-21) trades overlap against mismatch sensitivity (e^r growth); degree-60 HQSP erf-passband filter absorbs energy-estimate mismatch
+  - Beats RUS for small |psi0| with mismatch; RUS already optimal at large amplitudes
+  - **Activation**: amplitude amplification, non-orthogonal states, CV-DV, HQSP, fidelity ceiling, squeezed ancilla, state preparation
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 8)
+
+### A Connectome Test of the Fly Hashing Algorithm
+- [[flyhash-connectome-lsh-test]] - 果蝇哈希算法连接组实测：四个电镜连接组 + 保度重接线 null，实测配对无一致检索优势（中位 -1.6%），优势本质是"每激活单元"而非"每操作" (arXiv: 2610.09114)
+  - 2017 Science 模式可复现（MNIST k=4 时 3.1× AP@200），但等投影算力下实值高斯 LSH 在所有数据集/维度上更优——fly hash 的适用场景是激活单元昂贵（神经形态/稀疏硬件）而非算力昂贵
+  - Curveball 保度 null：7 半球中 6 个配对结构显著偏离 null（Qz 最高 17.8）但结构不带来检索收益；hemibrain 的"例外"源于弱连接（≥2 突触阈值后 Q 也超 null）
+  - 均衡 fan-out 在全部 7 半球提升检索（+3.9%~+6.4%）而均衡每细胞输入降低之；但 fan-out 偏斜跨四动物保守（ρ 中位 0.86，跨度 17×）且突触计数放大而非抵消偏斜——生物学代价换其他功能（先天效价/新异性检测）
+  - 方法学金矿：per-active-cell vs per-operation 预算核算、AP@n 必须计入 miss、协议溯源表、非预注册的 null 集规模诚实标注
+  - **Activation**: fly hash, locality-sensitive hashing, connectome null model, degree-preserving rewiring, Kenyon cell fan-out, curveball randomization, sparse binary projection, winner-take-all hash
+
+### Scaling subjects in cross-modal alignment: video decoding with EEG foundation model
+- [[eeg-video-subject-scaling-law]] - EEG 视频解码被试规模律：S≈50 起始点之上对数线性增长无饱和（每翻倍 +0.0244 r），此前"扩被试无用"结论是范围限制而非矛盾 (arXiv: 2610.09287)
+  - HBN 10→1863 被试阶梯（超先前文献一个数量级）：S<50 时无任何 arm 显著超过未训练编码器（1.4×阈值）——先前文献恰好全部位于该区间（最大队列 48）
+  - 预训练初始化（REVE）比容量更关键：每翻倍增速 1.5–1.7× 于随机初始化两深度，唯一在 S>701 仍转化被试为检索精度的 arm，且以 1/2.4 算力达更优 optimum（26.6 vs 63.3 PFLOPs）
+  - 未训练 floor 高达 r=0.105（最佳值的 1/3）——绝对分数必须相对 floor 解读；跨任务零样本检索全程贴 chance（负控制成立），失效的是 EEG 投影头而非编码器表征
+  - soft-target CLIP（冻结 V-JEPA-2 教师窗-窗相似度定义梯度目标）优于硬目标 CLIP 与场景掩码损失；随机初始化 arm 的"饱和"属于协议（optimum 撞预算上界）而非被试轴
+  - **Activation**: EEG foundation model, subject scaling, cross-modal contrastive, movie decoding, scaling law onset, REVE, V-JEPA-2, naturalistic stimuli, pretraining initialisation
+
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 7)
+
+### Cross-Validation of Open-Source Quantum Network Simulators
+- [[cross-validation-quantum-network-simulators]] - Cross-validation methodology for QuISP vs SeQUeNCe quantum network simulators (arXiv: 2610.09322)
+  - Discrepancy triage framework: real design difference / valid simplification / bug — this exercise produced numerous bug fixes in both simulators
+  - Constant timing ratio ~4.2x (three-way vs two-way handshake); fidelity agrees under identical error params; asymmetric MIM link shows BSA-placement-dependent divergence (QuISP) vs placement-insensitivity (SeQUeNCe)
+  - **Activation**: quantum network simulator, QuISP, SeQUeNCe, cross-validation, entanglement distribution benchmark
+
+### Numerically exact simulation of open quantum networks with strong system-bath couplings using comb tensor network path integrals
+- [[ctempo-comb-tensor-network-path-integrals]] - CTEMPO/CCTEMPO comb tensor network path integrals for non-Markovian quantum networks (arXiv: 2610.10259)
+  - Contraction-order insight: contracting system propagators row-by-row (causal + early) reduces bond dimension from hundreds-thousands to single/low-double digits, 10-100x faster than TEMPO/PT-MPO
+  - Comb topology: many-body density matrix MPO backbone + per-site CTEMPO teeth, cost linear in chi; solves 7-site FMO complex (62-peak spectral density, previously infeasible); N=20 quantum dot superradiance reveals novel intermediate scaling regime
+  - **Activation**: non-Markovian simulation, TEMPO, process tensor, path integral tensor network, bond dimension compression, FMO complex
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 7)
+
+### Connectome-Based Modeling of Mutation-Specific Amyloid-β Aggregation in Familial Alzheimer's Disease
+- [[mutation-specific-amyloid-connectome-diffusion]] - 突变感知 Aβ 聚集-碎裂模型耦合连接组图扩散：实验核酸化得分以 exp(NSμ) 乘子注入单一反应通道，在 540 节点 Budapest 连接组上分离分子动力学与拓扑贡献 (arXiv: 2610.09583)
+  - 动力学定时钟、拓扑定地图：20 个保度随机连接组全部保持突变排序（timing/peak/AUC ρ=1）但摧毁区域模式（空间 Spearman 仅 0.19–0.35）；距离-到达耦合 ρ≈0.92
+  - E22G (Arctic) 8.80 vs WT 110.67 模型时间单位跨界，累计寡聚体 AUC 最大；A2V 最慢——后果源于实验核酸化表型映射而非临床严重度排序
+  - 全局敏感性：时间由单体产生(-0.654)/转换(+0.601)/初级成核(-0.411)驱动，扩散尺度 ρ 对 timing≈0 但对空间传播 +0.317——报告 timing/AUC 排序（后验下稳定），峰值幅度排序不可信（仅 36% draw 复原）
+  - ABC-SMC 合成恢复验证 32 维摘要统计可复原生成值并暴露 k_sec↔k_conv 补偿性权衡；CLE 反应级噪声下 ensemble 中位数保序而单条轨迹重叠
+  - **Activation**: mutation-aware aggregation kinetics, connectome graph diffusion, network spreading model, familial AD variants, ABC-SMC parameter recovery, Chemical Langevin, degree-preserving null, wiring versus kinetics separation
+
+### Structure alone supports efficient visual computation in the Drosophila visual system
+- [[connectome-only-message-passing-fly-vision]] - 连接组独占模型：果蝇全脑接线 + 解剖眼前端固定，仅学有界突触增益，结构本身支持 Weber 比率数量判别等视觉计算 (arXiv: 2610.10023)
+  - 固定图+Voronoi 眼（R7 种子镶嵌，200nm 光谱移位映射 RGB）：色觉 100%（未训练 92%）、形状 64%、数量判别随 Weber 比率 64%→85%——近似数系统签名，与真实果蝇行为一致
+  - 四级接线约束 null 系综：非约束/剪枝到同预算/全局长度分箱/每神经元分箱；等接线预算下生物连接组始终最优——演化高效操作点，非约束重连以膨胀接线成本换取更高精度
+  - 传播动力学先于任务指标：非约束图第 2 步全脑饱和（含 Kenyon 细胞），生物与约束系综渐进传播（3 步 ~80%）——长程突触加速扩散解释精度差
+  - tanh(θ) 增益界定 ±突触计数内，等价 Hebbian 强度适应；只读 Kenyon 细胞均值→线性单元；PyG MessagePassing 骨架可直接复用
+  - **Activation**: connectome-only model, message passing, wiring economy, null ensemble at matched cost, approximate number system, Voronoi ommatidia, Kenyon cell readout, structure-function isolation
+
+## 2026-10-08 - Systems Engineering x Quantum Research (Cron Job, Hour 6)
+
+### Design-Time Conformance Checking for Pulse-Level Quantum Control
+- [[design-time-conformance-pulse-quantum-control]] - 设计时一致性检查器 qconform：脉冲程序在运行前对照"证据引用式能力描述符"判定可实现性，精确有理数算术 + 覆盖清单 + 修复预测 (arXiv: 2610.10427)
+  - 证据引用描述符：每条硬件约束都指向黑盒探测调查目录（605 QICK + 193 Qblox probes），gate 脚本拒绝证据不可解析的描述符——散文契约会漂移，机器契约不会
+  - 精确算术：时长=有理时间基的整数计数，频率/相位/幅度=精确分数；vendor 双精度混频器减法让正好在上限的请求变成 860.1600000000001 MHz 被拒——网格检查免疫浮点伪影；单通道双时钟（599.04 vs 430.08 MHz）必须双网格
+  - 修复即判决：silent mutation（频率折叠到 Nyquist 镜像偏 860 MHz、增益寄存器回绕、readout 半偶舍入）在运行前暴露为 pass-with-repairs；26 类覆盖清单区分 checked/unchecked——空泛通过 vs 已验证通过
+  - 差分测试：边界梯（远低于/恰低于/恰好/恰高于/远高于）+ 预算梯 + 间距梯 + 分辨率梯 + 随机组合，9 类裁决只有 unsound（检查器接受而 vendor 拒绝）计入健全性；1263 runs / 969 programs / 0 unsound passes；版本 pin 是健全性声明的一部分——最老 QICK release 产生 90 个 unsound pass
+  - 复发缺陷模式"解析但从未执行"（3 次）：post_mixer 标志被解析但检查器从不查询 → 构建期 tripwire 强制检查器读取解析器填充的每个描述符字段，首次运行又发现 3 个潜在实例
+  - **Activation**: pulse-level conformance checking, capability descriptor, evidence citation, exact rational arithmetic, coverage manifest, differential testing triage, silent repair detection, version-pinned soundness, QICK Qblox, design-time verification
+
+## 2026-10-08 - Systems Engineering x Quantum Research (Cron Job, Hour 5)
+
+### Simultaneous Circuit Tests for Finite Reversible Models of Quantum Control
+- [[simultaneous-circuit-tests-finite-reversible-control]] - 有限可逆量子控制模型的联合认证：一个共享控制器+制备律必须复现整族电路概率，共享表 MILP 精确可行性 + 逐电路拟合与联合拟合的严格分离 (arXiv: 2610.06984)
+  - R_ind ≤ R(W) 可严格分离：4-frame 例子每条电路单独都能以 <1/4 误差拟合，但任何单一允许表都无法同时拟合两条
+  - 464-frame 精确基准：证词控制器在阈值 1/3 下撑过 192 个重复块，第 193 块穷举排除全部允许控制器（概率带+单射+匹配可扩三重剪枝，41595 节点，Q(√2,√3,√5,√7,i) 精确算术）
+  - 有限窗口谱障碍：周期轨迹追不上无理频率振荡，窗口 D > (κ_M+C)/(a/2−δ) 即证差异；有限 shot 认证 r_N=√(log(2m/α)/2N)
+  - 浮点求解器失败不构成排除证明；排除证书是类相对的——放宽类即失效，证词在任何更大类中仍是证词
+  - **Activation**: simultaneous certification, finite reversible model, shared-table feasibility, exclusion certificate, certified horizon, finite-shot certification, quantum control memory bound
+
+### Resource-Aware Grover Search for Minimum Vertex Cover
+- [[resource-aware-grover-minimum-vertex-cover]] - 三种 Grover MVC oracle 设计按硬件约束选型：Dicke-Parallel（均衡）/ Edge-Counting（省 qubit）/ Edge-Centric（结构化稀疏图省深度省迭代）(arXiv: 2610.07252)
+  - 三瓶颈框架：搜索空间 2^n vs C(n,k)、oracle 宽度（DP 计数 O(n²) ancilla）、总深度 D_search ≈ R·D_iter 需联合优化
+  - Edge-Counting：⌈log₂(m+1)⌉ 可逆计数器替代 per-edge 标志位——紧 qubit 预算首选，代价是串行深度
+  - Edge-Centric：每边一 qubit 选端点，基态天然构成合法覆盖（可行性检查消失）；内部边产生编码多重性 μ(C*)=2^|Ein|，提高标记态分数 → 减少迭代
+  - 选型判据：稀疏核-外围结构→Edge-Centric（Σ2^|Ein|/2^m > C(n,k)/2^n）；稠密大 m→Dicke-Parallel；MCX 综合深度非单调（20-ctrl 4797 vs 24-ctrl 4405）是伪影不是负载属性
+  - **Activation**: Grover oracle design, minimum vertex cover, Dicke state, edge-centric encoding, qubit width reduction, reversible counting, Wallace tree, marked-state fraction
+
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
+### SpecBraM: What Should an EEG Foundation Model Predict? Masked Band-Power Prediction versus Waveform Reconstruction
+- [[specbram-band-power-eeg-fm]] - EEG FM pretext target should be band power, not waveform: phase is ancillary, spectral energy is what sleep labels depend on (arXiv: 2610.07484)
+  - Controlled 2×2 tokenizer×target study (2,388h TUEG, 3 seeds): band-power target beats raw/band-waveform reconstruction by +1.6–2.8 BA pts (strict linear probe), +4.7–7.3 pts with 1% labels, on every seed; target effect > tokenizer effect
+  - Theory: stationary-Gaussian analysis — periodogram sufficient, phase ancillary; Var[log P]≈1/m state-independent; Bayes risk splits into reducible state uncertainty + irreducible patch innovation (waveform loss wastes gradient on the latter)
+  - Fixed-target anti-collapse: learnable target filters shrink to zero (loss→4e-4, features dead) — never co-learn the target extractor
+  - Honest negatives: no gain on motor imagery (spatially-localized µ/β), vigilance (ocular artifact dominates low bands; 4Hz high-pass restores lead), gap vanishes after full fine-tuning — target matters most for frozen/low-label deployment
+  - **Activation**: EEG pretraining objective, masked prediction target, band power pretext, sleep staging foundation model, phase ancillarity, LaBraM CBraMod alternative
+
+### Neuromotor Hierarchy Network: Physiological Inductive Biases for Robust Generalization in sEMG Decoding
+- [[neuromotor-hierarchy-network-semg]] - Physiology-guided hierarchy infers a 32-primitive latent neuromotor state from wrist sEMG, factoring out recording variability (arXiv: 2610.07713)
+  - Four-stage causal pipeline: partial whitening without PCA rotation (measurement adapter) → TDS encoder with multi-timescale adaptive gain → non-negative drives + geometric-kernel FIR integration → Henneman-graded allocation softmax((d+β)/θ)⊙d
+  - emg2pose: −0.52% to −2.84% angular error vs Hadidi et al. best with 48.4% fewer params; emg2qwerty: −19.4% zero-shot / −30.4% fine-tuned beam CER vs SplashNet-Upscale with 65.9% fewer params (0.88M vs 5.06M)
+  - Mechanistic findings: pose = distributed multi-primitive composites; typing = recurring key-specific primitive combinations; uniform-allocation ablation costs +3.94° AE / +42 CER pts → decoding reads relative allocation, not total drive
+  - **Activation**: sEMG decoding, hand pose estimation, motor primitives, muscle synergy, cross-user generalization, Henneman size principle, emg2pose, emg2qwerty
+
+## 2026-10-08 - Quantum Computing Research (Cron Job)
+
+### Quantum Algorithms for Multivariable Polynomial Transformations
+- [[multivariable-polynomial-quantum-synthesis]] - 多变量非对易矩阵多项式的完整合成理论：紧凑系数递归 → 残差坐标 → SDP 缺陷证书 → Douglas 因子 → 量子电路，QSP/SVT 的多变量推广 (arXiv: 2610.08714)
+  - 联合块访问模型（diagonal/row/column 布局）下，任意度 D 压缩多项式以 O(D/√τ) 次查询、β ≤ (1+τ)‖p‖ 归一化合成；row 输入恰好 D 次查询达下界
+  - 残差坐标（r ≤ s+1 维）压缩指数级词表：hereditary positivity 分离论证证明该空间内 SDP 证书完备（β²E†E − P†P = S + Φ(T)），ellipsoid 发现多项式位复杂度
+  - 通道级提升：coherent Kraus 上的多项式映射允许 Kraus 历史间相干干涉；causal Choi 数据可编译为固定阶量子 comb
+  - Worked example (1+x₁x₂)/4 全数值验证 17/17 PASS：证书恒等式、四个块 vs 论文 Eq. 3.20 逐位匹配、严格压缩性、范数界
+  - **Activation**: multivariable QSP, noncommuting polynomial synthesis, Schur-Agler certificate, joint block encoding, quantum channel transformation, 多变量量子信号处理
+
+## 2026-10-08 - Reinforcement Learning Research (Cron Job)
+
+### BoT-GRPO: Efficient Process-Reward RL for Reasoning via Bag-of-Token Aggregation
+- [[bot-grpo-bag-of-token-aggregation]] - GRPO 扩展到 token 级奖励：跨 rollout 收集全部 token rewards，按来源序列长度倒数加权后做组统计，per-token advantage 免 critic，drop-in 替换 GRPO (arXiv: 2610.09804)
+  - 长度不变聚合消除长序列统计主导；per-token 优势只需跨 rollout 聚合统计"中心化"，无需逐位置 value network
+  - React 代码生成 80% compile 达速 1.9× faster；AIME Pass@k 最高 +8.1pp 且步数减半；收敛快于 GSPO/DAPO/PURE
+  - 奖励模型配方：稳定性 > 丰富性——clean, bounded, stable 细粒度信号一致加速，noisy 信号使训练停滞
+  - **Activation**: process reward model, token-level reward, GRPO variant, critic-free RL, PRM integration, LLM reasoning RL
+
+### COPC: Coupled Off-Policy Correction for Asynchronous LLM Reinforcement Learning
+- [[copc-coupled-off-policy-correction]] - 异步 LLM RL 双通道修正：policy 侧 token 级 ratio masking + advantage 侧对 TD residual 双侧 clipped-ratio 加权，修正被忽视的 advantage staleness (arXiv: 2610.09597)
+  - 理论：两通道误差不可分离——交互项产生乘性偏差，平方 policy weight 放大 advantage 不确定性；单侧修正参数最优值随另一侧反转
+  - Tool-integrated 数学推理与搜索超最强异步基线；搜索任务全程稳定而多数异步基线后期 collapse；64-step staleness 下增益保持
+  - 开销低：相对异步 PPO 几乎无 step-time 额外开销，保留对同步 PPO 1.7× 加速
+  - **Activation**: asynchronous RL, stale trajectories, advantage staleness, off-policy correction, async PPO, training collapse
+
+### DARS: Dependency-Aware Reward Shaping for Agentic Reinforcement Learning
+- [[dars-dependency-aware-reward-shaping]] - 终局奖励下 step 级信用：谓词+前置依赖图上势能塑形，verify/invalidate/repair 标注产生带符号 per-step reward，与 GiGPO/ARPO/AEPO 即插即用 (arXiv: 2610.01207)
+  - 折扣规则：已验证谓词按到最近被破坏前置的图距离折扣（依赖损坏上游贬值，独立分支不受影响）；invalidated 需重新验证恢复信用
+  - Potential-based 塑形不改最优策略；失败 episode 不再零信号，中间进度产生塑形奖励
+  - ALFWorld +10pp over GiGPO（同预算同 harness）；WebShop/Search-R1 提升；蒸馏 8B 标注器 ≈ API 标注器，可脱离 frontier judge
+  - **Activation**: reward shaping, step-level credit, agentic RL, dependency graph, potential-based shaping, sparse reward
+
+## 2026-10-08 - Systems Engineering Research (Cron Job)
+
+### Byzantine-Tolerant Causal Unicast with Constant Message Space Overhead
+- [[byzantine-causal-unicast-constant-overhead]] - O(1) message overhead Byzantine causal ordering via SPS invariant + isolated per-peer queues + cascading evictions (arXiv: 2610.07368)
+  - Sender Permission to Send (SPS): causality enforced at sender, dependency vectors never transmitted -> O(1) network message size, trading O(n²) local space
+  - Isolated-Buffer Optimistic Model: per-peer U/Q queues confine Byzantine damage (ACK/PERMIT withholding, flooding, replay all neutralized by LD filter + capacity-triggered force-eviction)
+  - Congestion-Relaxed Causal Delivery (CRCD): quantified safety relaxation that reduces to Weak Safety when no evictions occur — deterministic liveness without crypto, impossible-trinity navigation pattern
+  - **Activation**: byzantine fault tolerance, causal ordering, distributed systems, message complexity, liveness, SPS invariant, protocol design
+
+### A Validated Dataset and Benchmark for Coherent Multi-Diagram SysML Models (SEMAADB)
+- [[sysml-coherent-multidiagram-benchmark]] - 15,000-diagram multi-view SysML coherence benchmark: shared-entity-anchored generation + typed-graph repair/update metrics (arXiv: 2610.07356)
+  - Shared entity model as consistency anchor: one canonical name/relation list drives all 5 views (Requirement/BD/Activity/StateMachine/Sequence); 5-step automatic validation + 100-context human-verified core
+  - Typed-graph evaluation: exact repair = adherence + preservation; cross-diagram update scored by tuple-level P/R/F1 — immune to formatting noise
+  - Key findings: syntax repair ~99.8% (solved) but semantic repair 64.3% max; remove-requirement only 8–9% (absence errors >> substitution errors); update Addition collapses to ~40% — set-level reasoning ≠ rendering
+  - **Activation**: MBSE, SysML, systems engineering, benchmark design, LLM evaluation, multi-view consistency, diagram repair, dataset construction
+
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 2)
+
+### SAFESHIELD: A Decision-Organization Framework for Deployment-Time Safety of Small Language Models
+- [[safeshield-decision-organization-safety]] - Deployment safety as organized, auditable decision stages (admission/routing/evidence/release) with controlled coordination ablations (arXiv: 2610.07276)
+  - Responsibility-oriented decomposition at commit points; omitted decisions become implicit permissive defaults; coordination = gating + policy conditioning + evidence propagation, removable while mechanisms stay intact
+  - Coordination ablations: severing admission gating (reject recorded but not enforced) drops harmful interception 81.5%->54.0% (McNemar p=1.8e-11); withholding upstream evidence from release drops release accuracy 96.0%->69.5% (p=2.3e-14) while conditional faithfulness of released responses is unchanged -> evidence improves release-decision correctness, not response quality
+  - Decision Traces record PASS alongside interventions, localizing failures to the first visible decision point; HarmBench ASR 0.25% full vs 16.5% with both safety stages removed
+  - **Activation**: deployment-time safety, guardrail organization, safety decision stages, admission routing evidence release, decision trace audit, SLM safety, runtime guardrails, coordination ablation
+
+### Quantum Entangled Multimodal Fusion Networks (QEMFN): Resource-Aware Hybrid Vision-Language Fusion via Trainable Entanglement
+- [[qemfn-entangled-multimodal-fusion]] - Trainable paired cross-modal CZ entanglement as fusion inductive bias, beating parameter-matched classical baselines on COCO-5k (arXiv: 2610.08216)
+  - Frozen CLIP embeddings -> 6+6 qubit angle encoding -> L=4 layers of trainable rotations + intra-modal CZ + paired cross-modal CZ (V_i<->T_i, O(nq) gates not O(nq^2)) -> 24 local+correlator observables; 96 quantum params; R@1 68.9 vs dequantized paired-topology control 68.2
+  - Correlate-control-intervene evidence ladder: entanglement entropy vs R@1 raw Spearman 0.88, epoch-detrended partial 0.56, loss-controlled 0.49 (beats classical CKA 0.41); interventions (freeze/randomize/remove/regularize entangling gates) all reduce both entropy and performance
+  - Meyer-Wallach 0.61, expressibility 0.09, gradient variance tracks local-cost barren-plateau bound (local Pauli-Z observables, not global cost); real superconducting hardware 63.8 R@1 at 8192 shots, +ZNE 65.1; deployment = dual-encoder ANN + top-K quantum reranking
+  - **Activation**: quantum multimodal fusion, trainable entanglement, paired cross-modal CZ gates, meyer-wallach entangling capability, barren plateau local observables, quantum reranking, dequantized baseline comparison, vision-language retrieval
+
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
+### Synapse Loss Estimation for the BrainScaleS Wafer-scale Neuromorphic System
+- [[brainscales-synapse-loss-estimation]] - Binomial-cascade probability method predicts max lossless SNN size and synapse loss when mapping networks to crossbar neuromorphic hardware (arXiv: 2610.07321)
+  - Method 1 (bottom-up): per-target Binomial(n,p) → F^N all-targets product → max-synapse distribution → half-row demand convolution over 4 patterns → E[drivers] → capacity division (224 drivers × 59 usable addresses per HICANN)
+  - Method 2 (top-down): survival-function marginal gains ΔS(k) per half row, sorted-descending greedy allocation of 4D half rows; loss ν = S_lost/(S_realized+S_lost); driver limit (224/routing source) dominates over on-wafer routing
+  - Theory matches MappingTool reality >20K neurons; 6–16K actual loss is HIGHER due to synapse-driver switch sparsity (1 of 8); full 6-bit in-synapse decoding (BrainScaleS-2) supports larger lossless networks at silicon-area cost
+  - **Activation**: neuromorphic, synapse loss, BrainScaleS, crossbar, wafer-scale, SNN mapping, hardware-software codesign, address decoding, routing resource, binomial estimate
+
+### Time-multiplexed layer reuse for physical neural networks
+- [[tidal-net-time-multiplexed-pnn]] - TIDAL-Net: periodic cycling through L_W physical weight banks over L_T time steps builds deep effective networks on PNNs whose weights reprogram slowly (arXiv: 2511.00044)
+  - Intermediate regime between stateless RNN (L_W=1) and time-variable DNN (L_W=L_T); exploits timescale separation T_swt ≪ T_upd — fast bank switching vs slow weight programming; per-step latency T_MM + max(T_swt, T_state)
+  - L_W=2 already beats RNN limit on SVHN/NLP; pure repetition (fixed L_W, larger L_T) improves performance without adding parameters, until RNN-like degradation at excess depth
+  - Platform fit: MZI/MRR photonic (µs thermal tuning vs ps MVM) best; MTJ crossbar good; SLM (ms) poor — design rule: persistent banks + fast routing when parameter-setting is slower than inference dynamics
+  - **Activation**: physical neural network, PNN, time-multiplexing, weight sharing, weight tying, photonic neural network, MZI, MRR, MTJ, hardware scaling, timescale separation, TIDAL-Net
+
+### Replica Fragmentation and Glassy Dynamics in Parity Learning
+- [[replica-fragmentation-glassy-parity-learning]] - Replica-overlap observables (m, q_self, q_cross) diagnose glassy fragmentation of Transformer learning runs into memorization/retreat/recovery regimes (arXiv: 2610.08503)
+  - Self-cross gap chi_SG = q_self - q_cross = exact prediction variance across seeds sharing one training set; separates confident memorization (chi_SG large, tail acc at chance) from transient retreat-recovery cycles (brief Nishimori-gap lags)
+  - Residual geometry (anti-correlated obtuse pairs x near-ultrametricity) puts the three regimes in non-overlapping regions; retreat is a trajectory phenomenon invisible to gradient/Hessian endpoint diagnostics
+  - Learning-rate cosine decay after acquisition (matched pairs) cuts retreat from 29/84 to 5/84 and preserves high accuracy in 79/84 runs
+  - **Activation**: replica fragmentation, glassy learning dynamics, self-cross gap, Nishimori gap, memorization vs generalization, retreat-recovery, parity learning, ensemble disagreement, learning frontier
+
+### Classifications in modular restricted Boltzmann machines
+- [[modular-rbm-hopfield-dual-classification]] - HM-RBM duality extended to L coupled Hopfield modules = RBM assembly with coupled hidden layers; class-mean weights are a proven CD-1 fixed point (arXiv: 2610.08612)
+  - Theorem 1: planted empirical-mean weights are fixed point in mean of supervised CD-1 for any L, with residual drift split into 4 channels (thermal / dataset entropy / mini-batch / finite-size N^-1/2), margin condition lambda(L-1) < 1
+  - Planted weights are also an attractor: CD-1 from zero/random init converges to them; hard task = joint classification + disentanglement of mixtures, success region matches modular-HM theory, verified via Hungarian assignment
+  - **Activation**: modular RBM, HM-RBM duality, coupled hidden layers, anti-Hebbian competition, supervised contrastive divergence, planted weights, pattern disentanglement, memristor Boltzmann machines
+
+
+## 2026-10-08 - Systems Engineering x Quantum (Cron Job)
+
+### Entanglement Swapping Scheduling for Quantum Repeater Chains under Decoherence during Classical Communications
+- [[repeater-swapping-scheduling-decoherence]] - Memory exposure model for heralding-induced decoherence; finds optimal repeater count and swapping schedule (arXiv: 2610.07991)
+  - Memory exposure Θ = cumulative storage-time sum (not wall-clock) governs Werner decay: w_final = w0^(N+1)·exp(-Θ/τ)
+  - Interior optimal repeater count exists (metro 60km: N=1-2; 500km: N≈10-11 at τ=100-150ms); repeater density is a design variable, not maximized
+  - Parallel scheduling wins short chains/high-rate region; hybrid block strategy wins long-distance; no single strategy optimal across regimes
+  - **Activation**: quantum repeater, entanglement swapping, swapping scheduling, memory decoherence, heralding delay, entanglement rate
+
+### Protecting bosonic codes from ancilla-induced errors with continuous-variable flags
+- [[cv-flags-bosonic-ancilla-errors]] - CV flag oscillator records continuous ancilla-decay errors in phase space for heterodyne-estimation + feedback correction (arXiv: 2610.07139)
+  - Record-don't-prevent: auxiliary oscillator phase-space position encodes jump-time error; feedback undoes it up to a code stabilizer, discretizing continuous errors
+  - CR(θ) all-orders with 1 flag; CD(β) all-orders with 2 χ-matched flags; flag driven by same dispersive toolbox as protected gates (zero new ingredients)
+  - Cat-code parity bit-flip 5e-7 at |ζ|²=100 (>3 orders suppression); sBs-GKP lifetime 4ms→450ms (within 1.5x of noiseless-ancilla bound); robust to η<1, flag loss, Kerr, finite pulses
+  - **Activation**: bosonic QEC, cat code, GKP code, ancilla decay, continuous-variable flag, heterodyne measurement, circuit QED
+## 2026-10-08 - Systems Engineering + Quantum (Cron Job)
+
+### Fault-tolerant resource estimation for ground-state preparation via Lindblad simulation
+- [[lindblad-ground-state-resource-estimation]] - Lindblad基态制备的容错资源估算：严格误差界+小系统经验校准+Qualtran门级编译，经验参数比最坏情况界省6个数量级 (arXiv: 2610.08667)
+  - 36-site Hubbard模型一个时间单元需 7.7×10⁸ T门（经验参数）vs 3.3×10¹⁵（严格界）；能量滤波积分（H演化）主导成本，总成本 ∝ 混合时间²
+  - 弹性加权误差预算（可复用模式）：70%→Lindblad步长τ（线性成本）、15%→滤波积分求积（多项对数）、10%→H-Trotter、1%→跳算符Trotter、4%→旋转合成（指数抑制）
+  - 有效能隙替换：目标误差超过谱隙时用 Δ_eff=max(ε_target, Δ) 折叠标度指数；单辅助量子dilation+随机跳算符采样避免辅助比特开销
+  - 关键发现：Lindblad动力学的收缩性对设备噪声无保护作用（"算法级纠错"不成立）；Trotter在实践尺度上胜过QSVT（前置常数主导）
+  - **Activation**: Lindblad simulation, ground state preparation, resource estimation, fault-tolerant, T gate count, error budget, Qualtran, Hubbard model, Pauli-based computation, dissipative dynamics
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
+### Neural Fields Encode Adaptation Geometry
+- [[neural-fields-adaptation-geometry]] - 切线核适应几何 + 顺序拟合记忆：重构误差之外的 INR 权重双重属性 (arXiv: 2610.07253)
+  - 适应几何：用每个 prior 自身的 tangent kernel K_c 构建 Mahalanobis 线性化评分 E^lin，可预测有限预算非线性适应的排序（Spearman 0.955）；换用别类 kernel 全部 8 个设置退化 — (µ_c, K_c) 配对本身携带信息
+  - 顺序拟合记忆：θ_t^seq = Adapt(θ_{t-1}^seq, u_t) 让权重携带 Mori–Zwanzig 记忆；不同历史 + 完全相同终点观测下，端点权重线性探针恢复隐藏速度符号 68.6%（观测本身严格 50%）
+  - 统一机制：保留率 ρ_i(s) = (1−ηκ_i)^s — 大特征值模式易写易被覆盖，小特征值模式难写但持久；拟合预算存在下游任务峰值（200 步 69.4% > 1000 步 60.1%）
+  - **Activation**: neural fields, INR, tangent kernel, sequential fitting, warm start, Mori-Zwanzig, memory retention, regime classification
+
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
+### ReGraph: A Computational Account of Emergent Generalization in the "what" and "where" Dual Visual Streams
+- [[regraph-dual-stream-generalization]] - 双视觉流图模型证明：关系泛化结构（grid-like 六边形表征）沿背侧流逐层涌现，源于M/P视网膜二分的三个生物学归纳偏置（非海马de novo产物） (arXiv: 2610.07962)
+  - 三偏置缺一不可：流不对称编码（时间/空间分辨率）、MHSA动态邻接侧向连接、背→腹门控调制；trait-symmetric消融掉到69.78 vs 完整74.57
+  - Grid-like基仅在ReGraph背侧流单调涌现（L1→L4: 0→15.3%），标准基线（VideoMAE/TimeSformer/SlowFast）均无；基消融致OOD精度L3-4骤降（+7~14pp），证明其为可复用路由模板
+  - 腹侧流上下文不变性非独立计算而是经门控g开后从背侧流显式导入——跨流调制机制证据
+  - **Activation**: dual visual stream, grid-like representation, dorsal ventral, relational generalization, entorhinal cortex, MHSA dynamic adjacency, context-invariant, brain-inspired architecture, gridness, SSV2
+
+### CANDLE: Cortical Null-Space Decomposition for Noninvasive Brain Source Imaging
+- [[candle-null-space-source-imaging]] - 学习式EEG源成像：仅学习个体lead-field矩阵的零空间先验（range空间解析恢复），1113个个体化皮层几何+26k统计脑图Jansen-Rit仿真训练，零样本迁移到颅内刺激定位与致痫区估计 (arXiv: 2610.07824)
+  - 范围-零空间分解将病态逆问题学习自由度限制在测量不可定的子空间：x̂ = L⁺D(Y) + x̂_null，几何约束按构造保持
+  - 全脑仿真器：神经质量模型+结构连接耦合，NeuroVault 26,273统计图聚类为源先验调制兴奋增益——可复用的sim-to-real数据引擎
+  - Kimi Delta Attention骨干+GAU+时间倒归一化；模拟HD95 37.3mm超LCMV/sLORETA/ConvDip/DeepSIF/GBF；角色分离损失防止去噪/零空间估计器职责坍缩
+  - **Activation**: EEG source imaging, null space learning, ill-posed inverse problem, lead-field matrix, BEM, neural mass model, Jansen-Rit, sim-to-real, epilepsy localization, subject-specific geometry, ESI
+
+## 2026-10-08 - 系统工程学×量子 (Cron Job)
+
+### Demonstration of Parallel Multi-QPU Execution for Fragment-Based Quantum Chemistry Using On-Premises Hardware
+- [[parallel-multi-qpu-fragment-quantum-chemistry]] - 首个真实多QPU硬件上的分片量子化学并行化演示：FMO2+QWFS在3台室温金刚石Quoll上，shot-parallel效率93.6%，fragment-parallel修正后95.2%，异构噪声下参数策略决定精度 (arXiv: 2610.07702)
+  - 负载均衡公式 N_i=N·R_i/ΣR_j 按设备实测采样率分配shots；SPAM校正后合并计数；He₂–He₁₄全簇化学精度内（1.4e-3 a.u.）
+  - 关键陷阱：单机优化的电路参数迁移到三QPU异构采样时dimer全部不收敛（误差>1 a.u.）；设备专属参数或联合优化可恢复——NISQ噪声补偿不跨设备迁移
+  - fragment-parallel原始效率75%源于原型接口缺作业取消（非硬件/方法缺陷），修正后95.17%；活动图逐作业诊断法可复用
+  - **Activation**: multi-QPU, parallel quantum, FMO, QWFS, distributed quantum, shot parallelism, heterogeneous NISQ, load balancing, quantum chemistry workflow, HPC-QPU
+
+### Model Predictive Control for Safety-Critical Systems Using Taylor's Theorem with Lagrange Remainder
+- [[mpc-taylor-lagrange-remainder-safety]] - MPC-TLR：用精确Taylor展开+Lagrange积分余项表达安全函数未来值，必要充分条件替代递归class-K链，m个调参压缩为1个裕度δ（δ≥近似误差ε_M保安全） (arXiv: 2610.06976)
+  - ZOH下用M+1中间态+数值求积近似余项；单轮unicycle避障实验中比DHOCBF/DC更安全、比HOCBF更不保守（可行性率更高）
+  - 控制输入覆盖度分析：TLR/HOCBF全部N个输入进约束 vs DC/DHOCBF仅N−m_d+1——短时域（N≈m_d）时是方法选型关键判据
+  - 诚实边界：TLR约束是数值近似，但四方法共享离散化误差软肋，无一对连续时间闭环提供无误差保证；inter-sampling安全是开放问题
+  - **Activation**: MPC safety, control barrier function, high-order CBF, Taylor-Lagrange remainder, safety-critical control, zero-order hold, safety margin tuning, receding horizon
+
 ## 2026-10-07 - Neuroscience Research (Cron Job)
 
 ### A Time-Resolved Framework for Quantifying Neuronal Network State Transitions
@@ -2010,3 +2401,18 @@
   - 在线tokenize/pack/mix是有状态n-to-m变换，破坏样本索引；离线物化对视频等模态不可行
   - 恢复成本不随训练进度增长；ablation差异可归因参数而非数据顺序噪声
   - **Activation**: deterministic data loading, foundation model training, data pipeline, checkpoint resume, GPU topology, sample packing, online tokenization, shuffle reproducibility
+
+## 2026-10-08 - OpenAI Research (Cron Job)
+
+### Advancing computer use with Ironclad
+- [[expert-rubric-computer-use-training]] - 把真实业务工作流变成 computer-use agent 的 RL 训练任务：领域专家定义细粒度 rubric（每任务 8–50 条二值标准）+ 厂商托管沙箱练习环境 + 围绕代表性工作流的合成任务变体，rubric 分数作为 RL 奖励
+  - 关键：endpoint-only 打分高估 agent 就绪度——单步全对≠产出的流程在设计场景内成立；细粒度标准给 partial credit、失败定位和稠密奖励
+  - GPT-6 Astra 首个用 Ironclad 任务训练的前沿模型：11 任务均分 55.0% vs GPT-5.6 Sol 41.6%，单次尝试 19.2min vs 37.0min（内部开发模型 63.7%）
+  - 合作模板：具体任务示例+失败证据、定义成功的领域专家、安全测试环境、可用于研究的数据
+  - **Activation**: computer-use agents, rubric evaluation, expert-defined criteria, hosted sandbox, synthetic task generation, RL from rubric feedback, partial credit scoring, SaaS workflow automation
+
+### Sharing AI progress in mathematics
+- (Obsidian only, no skill - release announcement) - 内部前沿模型的数学成果发布实践：GitHub 仓库+修订引用协议+Lean 形式化证明（机器可检验），10 份模型推理摘要、计算量估算（平均每成果 ≈3 小时 ChatGPT Pro thinking）、尝试题目统计
+  - 发布规范由 IAS 独立顾问组 AGMAI 的公开建议塑造；承诺未来改进论述与引用质量
+  - **Activation**: AI mathematics, Lean formalization, proof verification, scientific disclosure practices, AGMAI
+
