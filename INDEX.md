@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 16)
+
+### Feedback to the primary visual cortex is highly concentrated on the central visual field representation
+- [[v1-feedback-eccentricity-magnification]] - CPD 理论首个直接解剖证据：狨猴 12 个 V1 逆行示踪位点显示反馈/前馈比随离心度幂律下降（V2 α=1.5、腹侧流 α=1.6、背侧流 α=0.6），叠加皮层放大因子后中央视野反馈优势达 ~1000× (arXiv: 2610.09983)
+  - N̂(E)=N_region/N_LGN 示踪剂归一化：以同一注射的 LGN 前馈计数为基准归一，消除注射扩散/摄取差异——将受混杂的绝对计数转为稳健的反馈放大因子 M_feedback(E)
+  - 腹侧流主导中央视野反馈、背侧流主导外周（N_ventral/N_dorsal α=0.96）——与"what/where"分工在反馈环路中同样成立；非视觉皮层反馈 α≈0（负控制）
+  - 推翻"V1 表面计算均匀"经典观点：细胞密度/柱尺寸/LGN 传入密度跨 V1 近似均匀，唯反馈环路例外——视觉皮层需沿层级 × 中央-外周二轴组织
+  - 解释外周视觉错觉（反转深度、翻转倾斜）：外周因缺乏反馈查询而可见，中央在 backward masking 干扰反馈后才显现
+  - **Activation**: feedback magnification factor, central-peripheral dichotomy, retrograde tracer normalization, eccentricity power law, ventral stream feedback, cortical magnification, V1, marmoset connectome
+
+### MovieSTAGE: Scene, Transition, and Global Encoding for Movie-fMRI ADHD Classification
+- [[moviestage-scene-transition-global-fmri]] - 事件对齐多尺度 movie-fMRI 分类：场景级超图 + 相邻场景无符号 ∆FC 重构 + 全片 FC 三分支融合，CMI-HBN 260 被试三任务 AUROC 0.69/0.73/0.75 全超基线；人工标注叙事分区胜过时长匹配随机分区与 GSBS 固定数分段 (arXiv: 2610.09306)
+  - 短窗 FC 必用 Ledoit–Wolf 收缩；超边由 FC-profile 余弦相似度 top-K 锚点构造（K=6），可学习超边权重 Softplus 保证正值
+  - 关键设计：转换分支用 |∆FC| 无符号幅值——不假设跨被试/ROI 对的符号方向一致，只编码重构幅度（可移植到睡眠分期/任务切换/癫痫起搏任何"重构幅度即信号"场景）
+  - 评估协议金标准：10×5 折完整 OOF + 被试级聚类 bootstrap/置换检验（每被试重复预测为一簇）+ Holm 逐族校正——杜绝跨折伪重复
+  - 消融：全局分支单独最强（0.68），三分支融合 0.75 且全胜两分支组合——条件性互补而非冗余；最强组间差异在 T5 情绪转换处（ADHD 的 FPN–DMN/DMN–DMN 重构幅度更大，FDR q<0.05）
+  - **Activation**: movie-fMRI, event-aligned representation, hypergraph neural network, unsigned FC reconfiguration, narrative segmentation, ADHD classification, CMI-HBN, out-of-fold prediction, subject-cluster bootstrap
+
 ## 2026-10-08 - Systems Engineering × Quantum (Cron Job, Hour 8)
 
 ### Geodesic-Based Optimal Control for Leakage Suppression in Superconducting Qubits
