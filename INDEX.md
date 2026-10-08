@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 8)
+
+### A Connectome Test of the Fly Hashing Algorithm
+- [[flyhash-connectome-lsh-test]] - 果蝇哈希算法连接组实测：四个电镜连接组 + 保度重接线 null，实测配对无一致检索优势（中位 -1.6%），优势本质是"每激活单元"而非"每操作" (arXiv: 2610.09114)
+  - 2017 Science 模式可复现（MNIST k=4 时 3.1× AP@200），但等投影算力下实值高斯 LSH 在所有数据集/维度上更优——fly hash 的适用场景是激活单元昂贵（神经形态/稀疏硬件）而非算力昂贵
+  - Curveball 保度 null：7 半球中 6 个配对结构显著偏离 null（Qz 最高 17.8）但结构不带来检索收益；hemibrain 的"例外"源于弱连接（≥2 突触阈值后 Q 也超 null）
+  - 均衡 fan-out 在全部 7 半球提升检索（+3.9%~+6.4%）而均衡每细胞输入降低之；但 fan-out 偏斜跨四动物保守（ρ 中位 0.86，跨度 17×）且突触计数放大而非抵消偏斜——生物学代价换其他功能（先天效价/新异性检测）
+  - 方法学金矿：per-active-cell vs per-operation 预算核算、AP@n 必须计入 miss、协议溯源表、非预注册的 null 集规模诚实标注
+  - **Activation**: fly hash, locality-sensitive hashing, connectome null model, degree-preserving rewiring, Kenyon cell fan-out, curveball randomization, sparse binary projection, winner-take-all hash
+
+### Scaling subjects in cross-modal alignment: video decoding with EEG foundation model
+- [[eeg-video-subject-scaling-law]] - EEG 视频解码被试规模律：S≈50 起始点之上对数线性增长无饱和（每翻倍 +0.0244 r），此前"扩被试无用"结论是范围限制而非矛盾 (arXiv: 2610.09287)
+  - HBN 10→1863 被试阶梯（超先前文献一个数量级）：S<50 时无任何 arm 显著超过未训练编码器（1.4×阈值）——先前文献恰好全部位于该区间（最大队列 48）
+  - 预训练初始化（REVE）比容量更关键：每翻倍增速 1.5–1.7× 于随机初始化两深度，唯一在 S>701 仍转化被试为检索精度的 arm，且以 1/2.4 算力达更优 optimum（26.6 vs 63.3 PFLOPs）
+  - 未训练 floor 高达 r=0.105（最佳值的 1/3）——绝对分数必须相对 floor 解读；跨任务零样本检索全程贴 chance（负控制成立），失效的是 EEG 投影头而非编码器表征
+  - soft-target CLIP（冻结 V-JEPA-2 教师窗-窗相似度定义梯度目标）优于硬目标 CLIP 与场景掩码损失；随机初始化 arm 的"饱和"属于协议（optimum 撞预算上界）而非被试轴
+  - **Activation**: EEG foundation model, subject scaling, cross-modal contrastive, movie decoding, scaling law onset, REVE, V-JEPA-2, naturalistic stimuli, pretraining initialisation
+
 ## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 7)
 
 ### Cross-Validation of Open-Source Quantum Network Simulators
