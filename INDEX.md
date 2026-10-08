@@ -1,5 +1,16 @@
 # AI Collection Index
 
+## 2026-10-08 - Neuroscience Research (Cron Job, Hour 17)
+
+### Many Brains, One Geometry: A Shared Visual-Semantic Space for Cross-Dataset fMRI Decoding
+- [[braid-fmri-cross-dataset-clip-decoding]] - 单一 ROI-token Transformer 联合训练 8 个 fMRI 数据集（MOSAIC 93 被试、43 万试次），映射到共享 CLIP ViT-B/32 空间，零样本迁移 +92.1% (arXiv: 2610.09352)
+  - 379 个 ROI 各配独立 2 层 MLP tokenizer（吸收各 ROI 维度差异）+ ROI 身份嵌入 + 可选被试嵌入 S_i——共享 4 层 Transformer，被试条件化只是单个加性向量，禁用即得 participant-agnostic 编码器
+  - Multi-positive InfoNCE：同一刺激跨被试/数据集重复出现时按同刺激集合均匀目标做对称交叉熵，杜绝 false-negative 互斥；logit scale 学习（init 1/0.07, cap 15）
+  - 零样本协议：整个目标数据集+全部被试留出，participant embedding 全程禁用，源池累积扩充——7/7 目标数据集正增益（NSD +92.1%）
+  - 几何验证超越检索精度：matched > same-cluster (+0.094) > different-cluster (+0.043) 相似度层级跨数据集保持；语义簇质心 RDM 跨数据集 Spearman 0.61–0.88
+  - 消融：腹侧视觉 −4.8pp、早期视觉 −3.5pp 主导；人物肖像依赖腹侧、网球动作依赖腹侧+顶叶+早期、火车依赖早期视觉——类别特异贡献
+  - **Activation**: cross-dataset fMRI decoding, ROI tokenization, CLIP alignment, multi-positive contrastive, participant embedding, zero-shot transfer, MOSAIC, semantic geometry RDM
+
 ## 2026-10-08 - Neuroscience Research (Cron Job, Hour 16)
 
 ### Feedback to the primary visual cortex is highly concentrated on the central visual field representation
