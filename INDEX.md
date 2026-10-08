@@ -1,5 +1,32 @@
 # AI Collection Index
 
+## 2026-10-08 - Neuroscience Research (Cron Job)
+
+### SpecBraM: What Should an EEG Foundation Model Predict? Masked Band-Power Prediction versus Waveform Reconstruction
+- [[specbram-band-power-eeg-fm]] - EEG FM pretext target should be band power, not waveform: phase is ancillary, spectral energy is what sleep labels depend on (arXiv: 2610.07484)
+  - Controlled 2×2 tokenizer×target study (2,388h TUEG, 3 seeds): band-power target beats raw/band-waveform reconstruction by +1.6–2.8 BA pts (strict linear probe), +4.7–7.3 pts with 1% labels, on every seed; target effect > tokenizer effect
+  - Theory: stationary-Gaussian analysis — periodogram sufficient, phase ancillary; Var[log P]≈1/m state-independent; Bayes risk splits into reducible state uncertainty + irreducible patch innovation (waveform loss wastes gradient on the latter)
+  - Fixed-target anti-collapse: learnable target filters shrink to zero (loss→4e-4, features dead) — never co-learn the target extractor
+  - Honest negatives: no gain on motor imagery (spatially-localized µ/β), vigilance (ocular artifact dominates low bands; 4Hz high-pass restores lead), gap vanishes after full fine-tuning — target matters most for frozen/low-label deployment
+  - **Activation**: EEG pretraining objective, masked prediction target, band power pretext, sleep staging foundation model, phase ancillarity, LaBraM CBraMod alternative
+
+### Neuromotor Hierarchy Network: Physiological Inductive Biases for Robust Generalization in sEMG Decoding
+- [[neuromotor-hierarchy-network-semg]] - Physiology-guided hierarchy infers a 32-primitive latent neuromotor state from wrist sEMG, factoring out recording variability (arXiv: 2610.07713)
+  - Four-stage causal pipeline: partial whitening without PCA rotation (measurement adapter) → TDS encoder with multi-timescale adaptive gain → non-negative drives + geometric-kernel FIR integration → Henneman-graded allocation softmax((d+β)/θ)⊙d
+  - emg2pose: −0.52% to −2.84% angular error vs Hadidi et al. best with 48.4% fewer params; emg2qwerty: −19.4% zero-shot / −30.4% fine-tuned beam CER vs SplashNet-Upscale with 65.9% fewer params (0.88M vs 5.06M)
+  - Mechanistic findings: pose = distributed multi-primitive composites; typing = recurring key-specific primitive combinations; uniform-allocation ablation costs +3.94° AE / +42 CER pts → decoding reads relative allocation, not total drive
+  - **Activation**: sEMG decoding, hand pose estimation, motor primitives, muscle synergy, cross-user generalization, Henneman size principle, emg2pose, emg2qwerty
+
+## 2026-10-08 - Quantum Computing Research (Cron Job)
+
+### Quantum Algorithms for Multivariable Polynomial Transformations
+- [[multivariable-polynomial-quantum-synthesis]] - 多变量非对易矩阵多项式的完整合成理论：紧凑系数递归 → 残差坐标 → SDP 缺陷证书 → Douglas 因子 → 量子电路，QSP/SVT 的多变量推广 (arXiv: 2610.08714)
+  - 联合块访问模型（diagonal/row/column 布局）下，任意度 D 压缩多项式以 O(D/√τ) 次查询、β ≤ (1+τ)‖p‖ 归一化合成；row 输入恰好 D 次查询达下界
+  - 残差坐标（r ≤ s+1 维）压缩指数级词表：hereditary positivity 分离论证证明该空间内 SDP 证书完备（β²E†E − P†P = S + Φ(T)），ellipsoid 发现多项式位复杂度
+  - 通道级提升：coherent Kraus 上的多项式映射允许 Kraus 历史间相干干涉；causal Choi 数据可编译为固定阶量子 comb
+  - Worked example (1+x₁x₂)/4 全数值验证 17/17 PASS：证书恒等式、四个块 vs 论文 Eq. 3.20 逐位匹配、严格压缩性、范数界
+  - **Activation**: multivariable QSP, noncommuting polynomial synthesis, Schur-Agler certificate, joint block encoding, quantum channel transformation, 多变量量子信号处理
+
 ## 2026-10-08 - Reinforcement Learning Research (Cron Job)
 
 ### BoT-GRPO: Efficient Process-Reward RL for Reasoning via Bag-of-Token Aggregation
