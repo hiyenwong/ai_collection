@@ -1,5 +1,28 @@
 # AI Collection Index
 
+## 2026-10-08 - Reinforcement Learning Research (Cron Job)
+
+### BoT-GRPO: Efficient Process-Reward RL for Reasoning via Bag-of-Token Aggregation
+- [[bot-grpo-bag-of-token-aggregation]] - GRPO 扩展到 token 级奖励：跨 rollout 收集全部 token rewards，按来源序列长度倒数加权后做组统计，per-token advantage 免 critic，drop-in 替换 GRPO (arXiv: 2610.09804)
+  - 长度不变聚合消除长序列统计主导；per-token 优势只需跨 rollout 聚合统计"中心化"，无需逐位置 value network
+  - React 代码生成 80% compile 达速 1.9× faster；AIME Pass@k 最高 +8.1pp 且步数减半；收敛快于 GSPO/DAPO/PURE
+  - 奖励模型配方：稳定性 > 丰富性——clean, bounded, stable 细粒度信号一致加速，noisy 信号使训练停滞
+  - **Activation**: process reward model, token-level reward, GRPO variant, critic-free RL, PRM integration, LLM reasoning RL
+
+### COPC: Coupled Off-Policy Correction for Asynchronous LLM Reinforcement Learning
+- [[copc-coupled-off-policy-correction]] - 异步 LLM RL 双通道修正：policy 侧 token 级 ratio masking + advantage 侧对 TD residual 双侧 clipped-ratio 加权，修正被忽视的 advantage staleness (arXiv: 2610.09597)
+  - 理论：两通道误差不可分离——交互项产生乘性偏差，平方 policy weight 放大 advantage 不确定性；单侧修正参数最优值随另一侧反转
+  - Tool-integrated 数学推理与搜索超最强异步基线；搜索任务全程稳定而多数异步基线后期 collapse；64-step staleness 下增益保持
+  - 开销低：相对异步 PPO 几乎无 step-time 额外开销，保留对同步 PPO 1.7× 加速
+  - **Activation**: asynchronous RL, stale trajectories, advantage staleness, off-policy correction, async PPO, training collapse
+
+### DARS: Dependency-Aware Reward Shaping for Agentic Reinforcement Learning
+- [[dars-dependency-aware-reward-shaping]] - 终局奖励下 step 级信用：谓词+前置依赖图上势能塑形，verify/invalidate/repair 标注产生带符号 per-step reward，与 GiGPO/ARPO/AEPO 即插即用 (arXiv: 2610.01207)
+  - 折扣规则：已验证谓词按到最近被破坏前置的图距离折扣（依赖损坏上游贬值，独立分支不受影响）；invalidated 需重新验证恢复信用
+  - Potential-based 塑形不改最优策略；失败 episode 不再零信号，中间进度产生塑形奖励
+  - ALFWorld +10pp over GiGPO（同预算同 harness）；WebShop/Search-R1 提升；蒸馏 8B 标注器 ≈ API 标注器，可脱离 frontier judge
+  - **Activation**: reward shaping, step-level credit, agentic RL, dependency graph, potential-based shaping, sparse reward
+
 ## 2026-10-08 - Systems Engineering Research (Cron Job)
 
 ### Byzantine-Tolerant Causal Unicast with Constant Message Space Overhead
