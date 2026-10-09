@@ -1,3 +1,19 @@
+## 2026-10-09 - Neuroscience Research (Cron Job)
+
+### Rethinking the Tradeoff Between Temporal Encoding and Nonlinear Computation in Spiking Language Models (Spora)
+- [[spora-binary-temporal-spiking-attention]] - 二进制位值脉冲编码 UBS/BBS：T 个脉冲携带 T bits 容量（vs 计数读出 O(log₂T)），全注意力运算化为移位+累加 (arXiv: 2610.10933)
+  - 核心分离：读出权重固定为 2 的幂（保算术结构），阈值+条件衰减 α 拟合输入分区（差分进化+局部细化）；BBS 符号分离+可学尺度 s 可融合进线性权重
+  - exp(x/√d) = 2^(x/(√d·ln2)) → UBS 整数指数码 + 幂移位近似 Softmax；核心注意力能耗 116.3→1.71 µJ/层（−98.53%），全模型 11.17 vs 51.41 mJ（4.6×）
+  - GLUE：T=4 达 80.9 avg / 44.1 CoLA MCC（超 SpikeLM +1.2/+6.2），T=6 达 82.3/47.4；等预算对比 Static-QAT（同 15 符号态）+6.43 MCC——时间码胜过同字母大小静态量化器
+  - **Activation**: spiking language model, binary spike encoding, UBS, BBS, shift-based attention, temporal encoding capacity, accumulation-and-shift
+
+### SPD-MetaFormer is what you need for small-data brain decoding
+- [[spd-metaformer-uniform-frechet-brain-decoding]] - 诊断发现 MAtt/GBWAtt 流形注意力学到的权重近均匀（熵≥0.998），证明短序列小数据下均匀 Fréchet 混合即可，注意力可整体移除 (arXiv: 2610.10952)
+  - 三重证据：归一化分配熵 H/log m ≥ 0.9988；锁定均匀权重（训练+评估全程）均值差 ≤0.36 分且所有配对 CI 含零；逆对数得分 s=1/(1+log(1+d)) 有界 → 单位温度下任意权重比 ≤ e（结构性限制对比度）
+  - 架构：局部协方差记忆 token + 单摘要态角色分离；均匀 LE Fréchet 均值混合器（闭式 exp(Σlog/m)）→ 门控测地线更新 S#_αU → 共享单参数谱收缩 Φ_ρ(M)=M+ρ(tr(M)/d)I（条件数不增，学到版 Ledoit-Wolf）
+  - MI 75.44 / SSVEP 70.79 / ERN 82.53 AUC / ABIDE fMRI 79.14，全面超 GBWAtt 等已发表基线；全路径对照证明几何处理链（而非卷积前端或均匀混合本身）贡献性能
+  - **Activation**: SPD manifold, Fréchet mean, MetaFormer, EEG decoding, covariance token, manifold attention audit, spectral shrinkage
+
 ## 2026-10-09 - Mathematics + Quantum (Cron Job)
 
 ### Quantum-Enhanced Inference of Conditional Future Probabilities with Reduced Memory Cost
