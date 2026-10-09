@@ -1,3 +1,18 @@
+## 2026-10-09 - Neuroscience Research (Cron Job)
+
+### Lyapunov Spectrum of Random Neural Networks
+- [[lyapunov-spectrum-random-neural-networks]] - Full N→∞ Lyapunov spectrum of the Sompolinsky chaotic random rate network via minimum-norm tangent response + cavity method, solving the 1988 open problem (arXiv: 2610.12426)
+  - Finite-N identity: cumulative exponent distribution F(s) = trace of one-step response of the minimum-norm solution of shifted tangent dynamics (dichotomy projector), then cavity/DMFT reduces to a self-consistent single-site problem over gain trajectories
+  - Establishes extensive chaos analytically: D_KY/N = 1 − F(s_KY), h_KS/N = ∫₀^∞ sF'(s)ds are O(1); recovers circular-law spectrum at fixed point and Sompolinsky/Molgedey λ_max as limits
+  - Validated against QR simulations (N=4096, g=3/5, δ=0.05–0.5); first frontier-AI-derived long-open physics result (GPT-6 Astra 100-min autonomous derivation + Claude Opus 5.5 code/text, full prompt published)
+  - **Activation**: Lyapunov spectrum, random neural network, Sompolinsky model, attractor dimension, Kaplan-Yorke, entropy rate, extensive chaos, cavity method, dichotomy projector, tangent dynamics
+
+### Mean Field Theory Based on the Spike Time Response Curve for Synchronization Within and Between Two Alternating Populations of Neural Oscillators with Delays
+- [[strc-mean-field-alternating-populations]] - STRC mean-field theory extended to two alternating E-I oscillator populations with delayed biexponential synapses; drops phase, uses tonic/phasic decomposition to predict 1:1 locking existence and stability at gamma/ripple frequencies (arXiv: 2610.10977)
+  - Tonic (infinite-train minimum conductance) + phasic single-cycle decomposition replaces instantaneous phase-resetting when synaptic duration exceeds network period and pulses summate across cycles
+  - Two-eigenvalue stability criteria in pure time units: λ₁ = (1−M'_{A,B})·(within-cluster term), λ₂ = cross-population product; positive MRC slope stabilizes, negative destabilizes — selects which of two intersections survives
+  - Key mechanism: shunted I-clusters that cannot self-synchronize (eigenvalue 1.511) are stabilized by reciprocal E coupling (factor ~0.5) — explains E-I generation of ~190 Hz ripples with precisely-timed interneuron assemblies (Huang 2024 optogenetics)
+  - **Activation**: spike time response curve, STRC mean field, biexponential synapse, gamma oscillation, ripple oscillation, E-I population locking, conduction delay, synchrony stability, interval response curve
 ## 2026-10-09 - Mathematics + Quantum (Cron Job, Friday)
 
 ### Quantum codes in the Lee metric
