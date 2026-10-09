@@ -44,6 +44,13 @@
   - **Activation**: qudit, qudit qec, many-hypercube, concatenated quantum code, llmd decoder, q-ary entropy, waterfall regime, qudit ftqc
 ## 2026-10-09 - Neuroscience Research (Cron Job)
 
+### If the Brain Were So Simple: Information Enthalpy and the IEP Metric
+- [[information-enthalpy-potential]] - 信息焓理论：结构化信息资源最大化作为与 FEP 自由能最小化互补的神经驱动器，IEP 复合度量（熵加权 shuffled-LZC 冗余 + 多尺度统计复杂度）可从脉冲 raster 量化结构化信息供给，直接解决 dark-room 问题 (arXiv: 2610.11142)
+  - 信息焓 H_I = κ·Φ_π(C_r, C_st, Γ)：预测资源超曲面（吞吐/存储/结构可用性三重约束下的预测信息上确界），κ 取 Landauer 极限 k_B·T·ln2；存储容量漏斗动力学 C_st,t=(1−α_t)C_st,t−1+C_r,t−1，保留窗口 T_cap=1/α_t 限定预测视界
+  - IEP(X) = (1−β)·R^(α)(S̃) + β·C_MS(S̃)：R 为 LZC 短语数对 shuffle 替代子的冗余得分、H_sym^α 熵权惩罚平凡重复，C_MS 为 block-permutation 替代子按 log₂B 积分的尺度持久性 AUC；PSC 权重复制高结构 epoch
+  - 验证：Mandelbrot/Julia/Dragon 分形 raster 与 SSC 语音 cochlea 脉冲的 IEP 高于三种随机化对照（permute-time/Bernoulli/permute-all）；n-body 驱动器交互框架给出五态临界景观（亚临界/超临界/超同步/去耦噪声/近临界），高 IEP 输入推动系统趋向临界
+  - **Activation**: information enthalpy, IEP, structured information, free energy principle, dark-room problem, neural criticality, lempel-ziv complexity, permutation statistical complexity, intrinsic motivation, dishbrain, closed-loop stimulation
+
 ### Learning Infinite Context Windows in Recurrent Architectures via Spatial Neural Computing
 - [[spatial-neural-computing-pde-rnn]] - SpatialRNN: PDE-medium (wave-equation) recurrence proven equivalent to a structured ∞-order RNN with robust marginal stability, eliminating vanishing/exploding gradients at fixed parameter count (arXiv: 2610.10690)
   - Medium state ψ_t exactly equals convolution over entire hidden history (W_k = W·W_{k-1} + W̃·W_{k-2} impulse response); O(1) inference memory, 4 fixed matrices
