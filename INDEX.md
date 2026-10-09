@@ -1,3 +1,20 @@
+## 2026-10-09 - Mathematics + Quantum (Cron Job, Friday)
+
+### Quantum codes in the Lee metric
+- [[quantum-codes-lee-metric]] - Qudit stabilizer codes for small-shift noise: Lee weight = clock distance min(x, q-x), [[9,1,5]] corrects two X/Z errors where Hamming needs 11 qubits (arXiv: 2610.04834)
+  - Joint metric counts Y as weight 2 (bit/phase flips independent); perfect Golomb-Welch CSS families; Eastin-Knill FAILS in Lee metric (perfect Z_10 2-qudit code has continuous transversal gates)
+  - Exact Z_q-CSS = multimode GKP correspondence (1 Lee weight = elementary displacement); Clifford Lee-spread = max symplectic column norm; Gray map qubitization sends Z4 Cliffords to level-3 hierarchy (smallest = CLY [[4,1,2]])
+  - Lee-LDPC obstruction: energy barrier + noncommuting witnesses O(n) uniformly in q (geometry-of-numbers transference) — large qudit Hilbert space buys no LDPC distance
+  - Helical repetition codes (a·x_j = b·x_{j+1}): Lee distance exponential in n; exponentially long memory at any fixed T via energetic confinement (evades Peierls 1D no-SSB, q grows with n) and entropic flat-logical-direction bottlenecks; HGP → 2D local CSS self-correcting for Z errors
+  - **Activation**: Lee metric, qudit codes, small-shift noise, Lee-LDPC, helical repetition code, GKP discretization, Gray map qubitization, high-temperature quantum memory
+
+### Quartic Certificates for Pure-State Tomography with Pauli Measurements
+- [[quartic-certificate-pure-state-tomography]] - Omitted Pauli support with no commuting zero-sum four-set certifies universal UDA via quartic e4 positivity — finite combinatorial test replaces state-space optimization; exact 3-qubit characterization with 945 minimal failing sets (arXiv: 2610.12320)
+  - Kernel criterion: UDP fails iff rank-2 kernel element; UDA fails iff inertia (1,*); e4(A) > 0 forces ≥2 positive AND ≥2 negative eigenvalues → cannot be a pure-vs-anything difference
+  - Theorem 1: four-set-free ⇒ e4 ≥ [d(d-2)/8]·Σa_u⁴ > 0 — certification by binary addition + symplectic commutation only; Theorem 2 (n=3): also necessary, all failing sets one Clifford orbit of {IIZ, IZI, ZII, ZZZ} hiding |000⟩ vs |111⟩
+  - Theorem 3: commuting omitted supports ⇒ UDP ≡ UDA for any n (Clifford-diagonalize; criterion span_F2 S_Z = F_2^n); n≥4 separation requires noncommuting set containing a four-set
+  - **Activation**: UDP, UDA, pure-state tomography, Pauli measurement design, quartic certificate, four-set-free, measurement kernel, Clifford orbit
+
 ## 2026-10-08 - Systems Engineering + Quantum (Cron Job, Hour 19)
 
 ### QuSema: Detecting Silent Bugs in Quantum Libraries via Quantum-knowledge-enhanced Agents
