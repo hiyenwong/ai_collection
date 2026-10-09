@@ -1,3 +1,21 @@
+## 2026-10-09 - Mathematics + Quantum (Cron Job)
+
+### On PPT entanglement distillation
+- [[ppt-entanglement-distillation]] - PPT 信道纠缠蒸馏的正则化公式与两个单字母逆界，证明 E_d,PPT 可严格小于正则化 Rains 界 (arXiv: 2610.12454)
+  - 正则化 POVM 泛函 L∞(ρ)=sup_n L(ρ^⊗n)/n 给出精确可达率；限制到投影测量即回收 Rans 原始界
+  - 3×3 Werner 态（反对称权重 25/26）认证分离：0.5836 ≤ E_d,PPT ≤ 0.6211 < R∞=0.64766，否定 Regula et al. (NJP 2019) 猜想
+  - 两个逆界技术：算子二次型（张量稳定假设 + little noncommutative Grothendieck 整体应用只损失 1/(2n) 比特）vs 解析族（Hirschman 强化 Hadamard 三线定理 + 环面调和测度边界权）
+  - 忠实负性下界 E_d,PPT(ρ) ≥ 1 − h₂(N(ρ)/(1/2+1/(d+1)))，量化"每个 NPT 态皆可 PPT 蒸馏"
+  - **Activation**: PPT channels, entanglement distillation, Rains bound, negativity, strong converse, Werner states
+
+### Exact value and rigidity of the 2×3 magic rectangle
+- [[magic-rectangle-rigidity]] - 2×3 魔术矩形非定域博弈精确值 (1+√(2/3))/2 与全刚性分类，SoS 证书+会议矩阵自测试 (arXiv: 2610.12001)
+  - 精确平方和分解 2rI−S：正系数残差之和给出所有交换算子表示的上界，等式条件确定测量代数
+  - 刚性：每个最优策略含 4 维最大纠缠对，会议矩阵（MMᵀ=3I）构造两正交基；NPA 1+AB 层（almost-quantum）已精确
+  - 完美预测阈值 β₀=(2+√(2/3))/3：超出 δ 时猜测概率/最小熵/von Neumann 熵皆 Θ(δ) 线性阶
+  - 等价于隐藏全输入宇称的 3 比特随机存取码，解决 Chailloux–Kerenidis–Kundu–Sikora 三比特公开问题（1/2+1/√6≈0.908248，修正 Roy–Pan 预印本 0.902369）
+  - **Activation**: nonlocal games, rigidity, self-testing, sum-of-squares, conference matrix, random access codes, quantum side information
+
 ## 2026-10-09 - Neuroscience Research (Cron Job)
 
 ### Learning Infinite Context Windows in Recurrent Architectures via Spatial Neural Computing
