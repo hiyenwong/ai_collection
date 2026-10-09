@@ -1,3 +1,18 @@
+## 2026-10-09 - Mathematics + Quantum (Cron Job)
+
+### Geometry-optimized hyperbolic codes for modular fault-tolerant quantum architectures
+- [[hyperbolic-surface-code-geometry-optimization]] - 自对偶素域 {p,p} 双曲表面码穷举搜索：优选周期边识别在固定资源下倍增码距（η×4），拓扑感知模块化编译满足 RSB/KaHyPar 全部违反的几何约束 (arXiv: 2610.10948)
+  - PSL(2,q) 商群构造 + 面顶点对合自对偶，p∈{5,6,7,8}×q<60 穷举 2,304 生成对 → 全局最优 {6,6} [[51330,17112,10]] η≈33.34（vs toric η=1 ×33、vs 双曲 Floquet ×6.65）
+  - 核心规则：码距是紧致化（商群生成轨道）的属性而非仅局部镶嵌——{7,7} q=41 不同周期识别给 d=4/6/8，零成本倍增 d、四倍 η；{5,5}/{7,7} 有限序列实现 Delfosse log² 标度（R²>0.996）
+  - 拓扑感知编译：对偶图最远播种 + 圆盘条件拒绝 → ≤80 qubit 平面模块；RSB 连通率仅 1.8–11.2%、Mt-KaHyPar 全部违反几何约束；αp 远程门噪声模型下三倍远程错误仅将阈值 0.22%→0.17–0.18%
+  - **Activation**: hyperbolic surface code, periodic identification, PSL(2,q), systole optimization, modular compilation, topological disk partitioning, remote gate noise, circuit-level threshold
+
+### Moment Optimization in the Navascues-Pironio-Acin Hierarchy
+- [[npa-moment-selection-synergy]] - NPA 矩选择重构为预算感知组合子集选择：边际协同诊断 Δ(S_k) 零成本监测饱和，RBM+REINFORCE（Gumbel top-k）在硬过渡区比 PT 近 5 个数量级 (arXiv: 2607.14755)
+  - I3322 暴力真值：改进集中在尖锐过渡窗 5<k≤19，最优 k 子集不能由 (k−1) 最优扩张——贪心全程卡 NPA1 平台；Δ 峰值= 真饱和点（k=8），边际成本平台是陷阱
+  - 171 条 (4,4,2,2) Bell 不等式：过渡起始 k≈9–33，"NPA2 bound" 混淆不同收敛体制 → 矩选择式优于层级式；SDP 评估成本低于暴力两个数量级
+  - Heisenberg 链：物理局域基对能量可压缩（p=0.3 分数已胜全 NPA2）但对长程关联量不可压缩；NPA4 扩池+局域解暖启动将 C_N/2 认证间隙 7.13e-5→≈1e-6（~100×）
+  - **Activation**: NPA hierarchy, moment selection, SDP relaxation budget, synergy diagnostic, RBM REINFORCE, parallel tempering warm start, Bell inequality convergence, ground-state certification
 ## 2026-10-09 - Neuroscience Research (Cron Job)
 
 ### Rethinking the Tradeoff Between Temporal Encoding and Nonlinear Computation in Spiking Language Models (Spora)
