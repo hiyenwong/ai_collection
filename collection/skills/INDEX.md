@@ -1,4 +1,53 @@
 
+## 2026-10-09 - arXiv Paper Skills (Cron Job)
+
+### ai-safety-eval
+
+- **probes-detect-sabotage** (Utility: 0.95)
+  - Caught in the Act: Probes Effectively Detect Sabotage and Catch Unverbalized Deception
+  - arXiv: 2610.12445
+- **ontrack-agent-monitoring** (Utility: 0.90)
+  - OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories
+  - arXiv: 2610.12375
+- **epistemic-humility-agents** (Utility: 0.87)
+  - Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents
+  - arXiv: 2610.12360
+- **swe-journey-eval** (Utility: 0.88)
+  - SWE-Journey: Towards More Realistic Evaluation of Coding Assistants
+  - arXiv: 2610.11559
+
+### multi-agent-rl
+
+- **mental-models-mas** (Utility: 0.90)
+  - Mental-Models for Multi-Agent Systems
+  - arXiv: 2610.12453
+- **ecology-ai-agents** (Utility: 0.88)
+  - Ecology of AI Agents: Collaboration Creates a Population Threshold for Takeoff
+  - arXiv: 2610.12436
+- **spatial-pattern-marl** (Utility: 0.85)
+  - Spatial Pattern Formation from Multi-Agent Learning in Public Goods Dilemmas
+  - arXiv: 2610.12321
+- **multi-agent-egocentric-world** (Utility: 0.87)
+  - Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction
+  - arXiv: 2610.12299
+- **conventionplay-adhoc** (Utility: 0.86)
+  - ConventionPlay: Capability-Limited Training for Robust Ad-Hoc Collaboration
+  - arXiv: 2610.11842
+- **society-researchers-institutions** (Utility: 0.88)
+  - A Society of Researchers: Designing Institutions for Populations of Autonomous Research Agents
+  - arXiv: 2610.10468
+- **topology-diagnosis-mas** (Utility: 0.87)
+  - Know the Shape, Find the Fault: Topology-Conditioned Diagnosis of Multi-Agent LLM Failures
+  - arXiv: 2610.10126
+
+### security-privacy
+
+- **proactive-agent-assurance** (Utility: 0.92)
+  - From Reactive Containment to Proactive Assurance: Lessons from Agent Security Incidents
+  - arXiv: 2610.12463
+
+---
+
 ## 2026-10-08 - arXiv Paper Skills (Cron Job)
 
 ### multi-agent-rl

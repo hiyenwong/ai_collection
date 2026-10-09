@@ -1,5 +1,101 @@
 [
   {
+    "id": "2610.12463",
+    "title": "From Reactive Containment to Proactive Assurance",
+    "skill_name": "proactive-agent-assurance",
+    "category": "security-privacy",
+    "utility": 0.92,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.12453",
+    "title": "Mental-Models for Multi-Agent Systems",
+    "skill_name": "mental-models-mas",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.12445",
+    "title": "Caught in the Act: Probes Detect Sabotage and Unverbalized Deception",
+    "skill_name": "probes-detect-sabotage",
+    "category": "ai-safety-eval",
+    "utility": 0.95,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.12436",
+    "title": "Ecology of AI Agents: Collaboration Creates a Population Threshold",
+    "skill_name": "ecology-ai-agents",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.12375",
+    "title": "OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories",
+    "skill_name": "ontrack-agent-monitoring",
+    "category": "ai-safety-eval",
+    "utility": 0.9,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.12360",
+    "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents",
+    "skill_name": "epistemic-humility-agents",
+    "category": "ai-safety-eval",
+    "utility": 0.87,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.12321",
+    "title": "Spatial Pattern Formation from Multi-Agent Learning in Public Goods Dilemmas",
+    "skill_name": "spatial-pattern-marl",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.12299",
+    "title": "Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction",
+    "skill_name": "multi-agent-egocentric-world",
+    "category": "multi-agent-rl",
+    "utility": 0.87,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.11842",
+    "title": "ConventionPlay: Capability-Limited Training for Robust Ad-Hoc Collaboration",
+    "skill_name": "conventionplay-adhoc",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.11559",
+    "title": "SWE-Journey: Towards More Realistic Evaluation of Coding Assistants",
+    "skill_name": "swe-journey-eval",
+    "category": "ai-safety-eval",
+    "utility": 0.88,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.10468",
+    "title": "A Society of Researchers: Designing Institutions for Populations of Autonomous Research Agents",
+    "skill_name": "society-researchers-institutions",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-09"
+  },
+  {
+    "id": "2610.10126",
+    "title": "Know the Shape, Find the Fault: Topology-Conditioned Diagnosis of Multi-Agent LLM Failures",
+    "skill_name": "topology-diagnosis-mas",
+    "category": "multi-agent-rl",
+    "utility": 0.87,
+    "date_added": "2026-10-09"
+  },
+  {
     "id": "2610.02554v1",
     "title": "SCOUT: Scalable Coordination via Optimal Unified Transport",
     "skill_name": "arxiv-2610-02554v1-scout-scalable-coordination-via-optimal-unified-transport",
