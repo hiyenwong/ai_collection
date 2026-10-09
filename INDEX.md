@@ -16,6 +16,20 @@
   - 等价于隐藏全输入宇称的 3 比特随机存取码，解决 Chailloux–Kerenidis–Kundu–Sikora 三比特公开问题（1/2+1/√6≈0.908248，修正 Roy–Pan 预印本 0.902369）
   - **Activation**: nonlocal games, rigidity, self-testing, sum-of-squares, conference matrix, random access codes, quantum side information
 
+
+### Entanglement entropy and magic of ZX-diagrams
+- [[zx-diagram-entanglement-magic-bounds]] - Flow 驱动的 ZX-图范式分解，无需张量缩并即可给出纠缠熵双向界与 stabilizer extent 上界 (arXiv: 2610.12447)
+  - 范式 |ψ⟩ = U_N···U_1|G⟩ 将图态骨架（F₂ 秩纠缠，可广延）与非 Clifford Pauli gadget（加性有界贡献）分离
+  - S ≤/≥ rank_F2(Γ_AB) ± Σ h₂(sin²(φᵢ/2))；魔法界 M ≤ 2Σ log₂(√(1−|sinφᵢ|)+√(1−|cosφᵢ|))，Clifford 极限精确
+  - 四步预处理（gadget 融合/stabilizer 融合/Clifford 拆分/单侧排除）；随机电路 300 实现零违例，Trotter 电路 64 步首违例
+  - **Activation**: zx-calculus, entanglement entropy bound, magic estimation, stabilizer extent, pauli gadget, graph state, pyzx
+
+### High-Rate Concatenated Quantum Error-Correcting Codes for Qudits
+- [[qudit-many-hypercube-qec-codes]] - MHC 码推广到素数维 qudit，LLMD 阈值随 q 单调翻倍至 10.0%（q=13），q-ary 熵竞争分析 (arXiv: 2610.11225)
+  - [[6^L, 4^L, 2^L]]_q 级联构造（F_q ≅ Z_q 限素数 q）；逻辑错误率对信道熵 H_q 作图时 level-2 曲线坍缩为单曲线
+  - syndrome 丰富度（error-floor 区 +）vs 典型错误权重 ξ=n·ε/(d/2)（waterfall 区 −）的熵竞争解释阈值增强
+  - q ≥ 5 出现 waterfall 区（指数>4 超码距估计），q=13 阈值 10.0% vs qubit 5.1%
+  - **Activation**: qudit, qudit qec, many-hypercube, concatenated quantum code, llmd decoder, q-ary entropy, waterfall regime, qudit ftqc
 ## 2026-10-09 - Neuroscience Research (Cron Job)
 
 ### Learning Infinite Context Windows in Recurrent Architectures via Spatial Neural Computing
