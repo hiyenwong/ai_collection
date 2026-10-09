@@ -1,5 +1,19 @@
 ## 2026-10-09 - Neuroscience Research (Cron Job)
 
+### Learning Infinite Context Windows in Recurrent Architectures via Spatial Neural Computing
+- [[spatial-neural-computing-pde-rnn]] - SpatialRNN: PDE-medium (wave-equation) recurrence proven equivalent to a structured ∞-order RNN with robust marginal stability, eliminating vanishing/exploding gradients at fixed parameter count (arXiv: 2610.10690)
+  - Medium state ψ_t exactly equals convolution over entire hidden history (W_k = W·W_{k-1} + W̃·W_{k-2} impulse response); O(1) inference memory, 4 fixed matrices
+  - Key theorem: block-triangular W/W̃ + symmetric blocks + norm bound ‖W_i‖² + Φ̄‖B_i‖²‖W_ψ,i‖² < 2α_i² locks gradient eigenvalues to circles |λ|=α_i for ALL input-dependent nonlinearities — structurally impossible for any finite-order RNN/HORNN (incl. orthogonal/LSTM/GRU)
+  - psMNIST 96.3% with 4-10× fewer params than LSTM/GRU/coRNN; copy task ~99% at all lengths; symplectic α=1 blocks allow exact backward state reconstruction → O(1) BPTT memory
+  - **Activation**: spatial neural computing, PDE recurrence, infinite-order RNN, marginal stability, vanishing gradient, traveling waves, wave equation, Störmer-Verlet, selective forgetting, recurrent architecture design
+
+### Cross-Species Representation Learning Aligns Mouse and Human Neural Dynamics and Tracks Clinical Drug Efficacy
+- [[cross-species-contrastive-biomarker]] - Dual-rule contrastive learning builds a mouse↔human latent space organized by biological state; frozen geometry retrospectively ranks clinical drug efficacy (ρ=0.87) from mouse EEG drug-response alone (arXiv: 2610.11222)
+  - Alignment rule (same biological state pulled together across species, gradient-reversal species suppression) + separation rule (different states pushed apart regardless of species); hierarchy preserves disease-model heterogeneity rather than collapsing it
+  - Drug effect = displacement along conserved disease→healthy axis in frozen space: valproate/ganaxolone rescue, failed drugs don't; tiagabine moves AWAY from rescue in absence-like AY9944 (matching known clinical aggravation) while rescuing PTZ
+  - Generalizes across modality + aetiology: Fmr1-KO mouse electrophysiology ↔ human 16p11.2 CNV scalp EEG recovers shared hyperexcitability dimension (duplication > deletion > control)
+  - **Activation**: cross-species translation, dual-rule contrastive, EEG biomarker, preclinical drug efficacy, translational neurophysiology, supervised contrastive learning, disease manifold, patient affinity, frozen representation
+
 ### Lyapunov Spectrum of Random Neural Networks
 - [[lyapunov-spectrum-random-neural-networks]] - Full N→∞ Lyapunov spectrum of the Sompolinsky chaotic random rate network via minimum-norm tangent response + cavity method, solving the 1988 open problem (arXiv: 2610.12426)
   - Finite-N identity: cumulative exponent distribution F(s) = trace of one-step response of the minimum-norm solution of shifted tangent dynamics (dichotomy projector), then cavity/DMFT reduces to a self-consistent single-site problem over gain trajectories
