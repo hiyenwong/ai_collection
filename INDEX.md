@@ -59,6 +59,20 @@
   - Two-eigenvalue stability criteria in pure time units: λ₁ = (1−M'_{A,B})·(within-cluster term), λ₂ = cross-population product; positive MRC slope stabilizes, negative destabilizes — selects which of two intersections survives
   - Key mechanism: shunted I-clusters that cannot self-synchronize (eigenvalue 1.511) are stabilized by reciprocal E coupling (factor ~0.5) — explains E-I generation of ~190 Hz ripples with precisely-timed interneuron assemblies (Huang 2024 optogenetics)
   - **Activation**: spike time response curve, STRC mean field, biexponential synapse, gamma oscillation, ripple oscillation, E-I population locking, conduction delay, synchrony stability, interval response curve
+
+### Neural Decoding as Cognitive Inference
+- [[cognitive-inference-neural-decoding]] - 将神经解码重构为受脑内禀先验约束的认知推断：温度缩放 PoE 融合观测表征 o 与皮层几何本征模态先验 u 得到 meta-neural 语义表征 z，在 208 天神经漂移下保持稳定解码 (arXiv: 2610.11923)
+  - 推断公式 p(z|o,u) ∝ p(o|z)^(1/To)·p(z|u)^(1/Tu)，z = ω_o·o + ω_u·u 精度加权融合；先验=HCP 32k 表面 Laplace–Beltrami 本征模态（每半球 1000 阶），独立于认知内容构造，按模态（BEM 前向/ECoG 触点最近顶点/fNIRS 通道中点）映射到传感器空间
+  - 核心实证：跨会话表征相似度 0.393→0.803 (ECoG 208 天)，位移降低 3–5 倍；语义归因集中于 ~84mm 长波长模态 (ρ=−0.82)；零样本跨被试解码超过 LaBraM/BrainOmni/CBraMod
+  - 扩展到内部心理状态：OPM-MEG 想象言语语义相关 0.567 (3 类 48% vs 33%)；自发思维清晰度/生动度/效价预测全超 NeuroSTORM；共享影片去共享成分后残余个体主观相关仍 5/5 维度显著
+  - **Activation**: neural decoding, Bayesian brain, cognitive inference, meta-neural semantic representation, cortical geometric eigenmode, neural drift, cross-session decoding, product of experts, imagined speech, internal mentation
+
+### Similar Predictive Fit but Different Latent Dynamics
+- [[fit-structure-dissociation-latent-dynamics]] - 个性化 mLTD 潜动态模型揭示拟合-结构解离：癫痫与非癫痫组 held-out 似然完全一致 (−0.991 vs −0.992, p=0.95) 但学习到的转移依赖图密度 62.6% vs 35.4% (p=1.1e-7) (arXiv: 2610.10850)
+  - 管线：冻结 CNN–Transformer EEG 基础模型 (TUEG 18,800h 预训练) → 全局 k-means 共享潜状态 (k=4/6) → 每被试独立 mLTD (group-lasso 跨滞后稀疏化, L≤10) → 有向转移依赖图 W_n；W_n 是预测依赖强度非马尔可夫转移概率
+  - 双轴评估方法论：预测有效性 (held-out CV LL + next-state AUROC) 与学习动态结构 (依赖密度/自依赖/图特征) 必须分开报告与检验——每滞后拟合均匹配 (p≥0.37) 而结构差异稳健
+  - 临床信号：W_n 标量特征分类 AUROC 0.697 (k=4)/0.677 (k=6)；k=4 零模型 29/99 vs 8/99 部分贡献密度差但排除零模型后仍显著 (0.665/0.722)
+  - **Activation**: personalized latent dynamics, mLTD, transition-dependency graph, fit-structure dissociation, patient world model, EEG foundation model, epilepsy, TUEP
 ## 2026-10-09 - Mathematics + Quantum (Cron Job, Friday)
 
 ### Quantum codes in the Lee metric
