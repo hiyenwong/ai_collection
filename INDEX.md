@@ -1,5 +1,17 @@
 ## 2026-10-09 - Mathematics + Quantum (Cron Job)
 
+### Quantum-Enhanced Inference of Conditional Future Probabilities with Reduced Memory Cost
+- [[mrqpe-memory-reduced-quantum-probability]] - 同维度下截断量子模型偏差远低于经典模型，联合 QAE 采样加速实现稀有事件概率估计双优势 (arXiv: 2610.10756)
+  - 量子记忆态无需线性独立（D_q < D_c），截断量子模型而非经典模型：偏差地板从不可逾越降为可穿越；纠缠尾 Grover 构造（S_χ 仅作用输出，A/A†/S₀ 须含记忆全寄存器）
+  - 8-state 环上游走 D̃=4：经典地板 ~1e-6（N→∞），量子 N≈2e4 穿越地板；16-state 时 ~3000 样本穿越 8e-4 地板；Quantinuum 级噪声下 2-qubit 截断模型胜过精确 3-qubit（门少噪声少）
+  - **Activation**: amplitude estimation, state preparation, memory bias variance, rare event, quantum Monte Carlo, model compression
+
+### Quantum non-Markovian response spectra
+- [[quantum-nonmarkovian-response-spectra]] - 响应矩阵 R[h,y] 仅凭可访问系统干预即可揭示环境记忆时间结构，介于因果断裂检测与指数代价 process tensor 断层之间 (arXiv: 2610.10684)
+  - Markovian ⇒ 秩 1 基线；秩>1 与奇异谱暴露记忆结构/时间位置/reset 存活性；恢复条件下秩与谱匹配 process tensor 无需完整断层
+  - 负见证值（SDP 于可分过程上搜索）排除经典前馈记忆模型；条目独立评估 → 并行组装；Ising 基准响应熵跟踪 MPO 键熵
+  - **Activation**: non-Markovian memory, process tensor, causal break, response matrix, witness SDP, correlated noise, tomography-free
+
 ### On PPT entanglement distillation
 - [[ppt-entanglement-distillation]] - PPT 信道纠缠蒸馏的正则化公式与两个单字母逆界，证明 E_d,PPT 可严格小于正则化 Rains 界 (arXiv: 2610.12454)
   - 正则化 POVM 泛函 L∞(ρ)=sup_n L(ρ^⊗n)/n 给出精确可达率；限制到投影测量即回收 Rans 原始界
