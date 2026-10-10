@@ -11,6 +11,23 @@
   - 工业瞬态噪声 SPICE（65nm, 4-fJ/spike, V_DD=200mV）复现 Mainen-Sejnowski 1995：恒定阈上激励 → 振荡 regime，jitter 线性累积；时变阈下激励 → 兴奋性 regime，受控状态转移大幅抑制 jitter
   - TUR 刻画可靠性-耗散权衡：rate-coding 受热力学下界物理约束，temporal/event coding 规避 TUR 获得噪声免疫——神经形态芯片可靠性预算=能耗预算
   - **Activation**: cmos analog neuron, spike timing jitter, excitability regime, thermodynamic uncertainty relation, neuromorphic noise, mainen sejnowski, transient noise simulation, rate vs temporal coding
+## 2026-10-10 - Neuroscience Research (Cron Job, afternoon)
+
+### Heterarchy in the Brain: Control as a Spectrum, Not a Chain of Command
+- [[heterarchy-brain-control-spectrum]] - 层级控制是把"时间有限的配置"误读为"架构"；控制是关系性、过程特异的，环（cycle）使任何等级分配失效 (arXiv: 2610.04643)
+  - 组合失败论证：控制器地位只相对特定过程成立（前提1）；每个元素同时参与多个过程（前提2）；关系成环（前提3）——单个环即击败一切 level assignment。互惠布线≠异层级，需要的是互惠约束（结构彼此塑造对方学什么/表达什么）
+  - 控制光谱 = 动态解耦度（行为依赖历史/内部状态/预期后果的程度）；无仲裁者选择：可用时间内率先进入承诺态的回路主导——紧迫性偏好短路径弱解耦回路；约束反应窗到几百毫秒 → 被试表达明知错误的练习反应
+  - 方法论批判：模块度最大化预设近可分解性（循环论证）；杏仁核直连 40% PFC 但一步间接达 90%，FC 由 communicability 而非直连预测；会话平均 FC 可能对应系统从未处于的配置
+  - 可测试签名：(a) 成对主导影响跨情境反转 (b) 互惠约束（塑造对方学习/表达）(c) 跨情境关系成环——一次可靠反转即否证稳定成对排序
+  - **Activation**: heterarchy, brain control hierarchy, cortico-subcortical, dynamical decoupling, effective connectivity reversal, communicability, reciprocal constraint, control spectrum urgency
+
+### Stability of Phase-locked States of Weakly Coupled Izhikevich Neurons
+- [[izhikevich-weak-coupling-phase-model]] - 首个化学突触耦合 Izhikevich 神经元的相位模型：discontinuous SNIC / 同宿 / 亚临界 Hopf 三条起始路径 + Class/Type 解离带 (arXiv: 2610.04025)
+  - 三条 spiking 起始路径按 b 分层：b<b_dSNH≈1.51 discontinuous SNIC（Class I）；1.51<b<3 重置诱导的鞍-同宿产生双稳带（E₂+大振幅环共存，Class II）；b>3 亚临界 Hopf——平滑子系统无稳定极限环，全部环都由 reset 再注入产生
+  - 关键解离：Type I→II iPRC 转换的 b 值远低于 Class I→II 激发性转换 → 存在显著解离带（Class I 激发性 + Type II iPRC）——同步性质由 iPRC 决定而非 F-I 曲线；远离起始点时 iPRC 负叶收缩
+  - 锁相结果：b<0.5 仅 in-phase 稳定；b≥0.6 且近起始电流 → in-phase 与 anti-phase 双稳共存；更大 I_app 反相位失稳。降低 β（慢突触衰减）→ |H| 增大收敛加快；小 d 扩展反相位稳定域。全网络仿真全部与相位模型预测一致
+  - 实现要点：伴随方程在 reset 面必须加 saltation 跳变条件，否则 iPRC 负叶被静默破坏 → 一切稳定性结论失效
+  - **Activation**: izhikevich phase model, weakly coupled oscillators, iPRC discontinuous, phase locking anti-phase, saltation condition reset, bogdanov takens, saddle homoclinic spiking onset, adaptation synchronization
 ## 2026-10-10 - Economics & Investment (Cron Job)
 
 ### Who Leads and Who Collects: Algorithmic Collusion in Markets of Heterogeneous Language Models
