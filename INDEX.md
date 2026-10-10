@@ -1,3 +1,19 @@
+## 2026-10-10 - Neuroscience Research (Cron Job)
+
+### CoHyFuse: Condition-wise Hypergraph Fusion with Global Connectome in Task-fMRI
+- [[cohyfuse-condition-hypergraph-taskfmri]] - 任务态决定超图关联结构本身：每个任务条件独立构建 top-K_q 超图（同一 ROI 在不同条件加入不同 ROI-集超边），注意力融合 + 全session FC 双分支 (arXiv: 2610.05913)
+  - 条件级 FC（跨 block 池化 TR 后 Pearson+Fisher-z）→ FC-profile 行向量编码 → 以负欧氏距离的 top-K_q 邻域定义超边（E=V，锚点自隶属=1，其余 K_q·softmax(s/τ_q)，τ_q 可学习）；K_q 按条件独立搜索，最优 (ENC,DISC,REC)=(50,45,5)——编码/分心需宽邻域、回忆需窄邻域，任何共享 K 都显著劣化
+  - AABC N=1074：FACENAME 流体认知 FCC 预测 7.83±0.10 MAE / R²=0.439（超 TA-GAT，bootstrap p=0.004）；VISMOTOR 年龄预测 R²=0.592；CMI-HBN ADHD 三分类 72.0% mAUC（+4.0 pts 超 STNAGNN）；操作子对照证明超图关联聚合本身有价值（同输入 GCN 8.13/GAT 8.07 vs HGNN 7.83）
+  - 遮挡归因定位 DIST 条件为预测主驱动（SAN–FPN 与 within-SAN 动机），DIST 子网络强度–FCC 关联最强 r=0.36 且经年龄/运动校正存活（FDR q≤0.018）；混淆对照：age/sex/FD-only 模型 R²=0.25
+  - **Activation**: task-fMRI, hypergraph neural network, condition-wise FC, incidence matrix, brain-behavior prediction, ADHD classification, K_q neighborhood, SAN-FPN, brain network, Yeo-7
+
+### Sedima: Cross-Run Hierarchical Insight Memory for Evolutionary Search Agents
+- [[sedima-hierarchical-insight-memory-evolutionary-search]] - LLM 进化搜索的持久三层洞察记忆：原始轨迹→蒸馏洞察→语义聚类（注意力加权质心），写后读前两个 hook 即插即用，不改任何搜索算子 (arXiv: 2610.02361)
+  - Level 1 原始轨迹（step/适应度差/评估报告，不解释）→ Level 2 LLM 蒸馏为问题级（首次评估）与变更级（每次父→子）洞察并回链证据 → Level 3 余弦≥0.80 入簇否则新建；质心用非参数注意力权重 w_i=softmax(s_i/τ)（s_i 为成员间平均余弦中心性，τ=0.10，τ→∞ 退化为均值池化）
+  - 检索：查询嵌入→top-3 簇（余弦≥0.60）→每簇 top-3 洞察→保留簇级与洞察级分数→附最多 2 条原始轨迹→LLM 合成 3 条建议（2500 token 封顶）；无簇过阈值则回退原始 prompt（记忆严格可加性）
+  - 20/20 模型-harness-基准组合全部胜出（符号检验 p=1.9e-6；GPT-5.4/DeepSeek V4 Pro/Gemini 3 Pro/Qwen 3.7 Max/Qwen 3 Coder × OpenEvolve/ShinkaEvolve）；AlgoTune +5.5%、ALE-Bench LITE +6.6%（固定 100 候选预算），平均节省 32.3% 迭代达基线最优；弱模型获益最大（Qwen 3 Coder +11.0%）
+  - 冷 vs 同域热 vs 跨域热记忆（1.67/1.75/1.70）分离地证明持久性与跨问题家族迁移；随机检索对照≈无记忆（1.62 vs 1.61）证明增益来自相关检索而非 prompt 填充
+  - **Activation**: evolutionary search, LLM agent memory, insight distillation, cross-run transfer, semantic clustering, OpenEvolve, program synthesis, experience reuse, attention-weighted centroid
 ## 2026-10-10 - Economics & Investment (Cron Job, evening)
 
 ### Robust distortion riskmetrics under Wasserstein ambiguity
