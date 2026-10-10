@@ -6,51 +6,8 @@
   - All modules released as Jupyter notebooks for local/Colab execution with IEEE course integration
   - Addresses 92% barrier rate reported by researchers before running AI models in power systems
   - **Activation**: engineering-grounded ai, power systems ai education, egai framework, ai power systems modules
+
 ## 2026-08-05 - Neuroscience Research (Cron Job)
-
-### The Transformer Revolution, Part 1: Dynamic Processing through Output-Weight Interconnections
-- [[transformer-revolution-sidpp-dynamic-processing]] - Framework for interpreting Transformers as Sequence-level Interactive Dynamic Parallel Processing (SIDPP) systems that construct prompt-dependent transformations during inference, with potential neural correlates in cerebral cortex processing (arXiv: 2608.03921)
-  - Proposes SIDPP (Sequence-level Interactive Dynamic Parallel Processing) as novel interpretation challenging "stochastic parrot" view
-  - Identifies output-weight interconnections as Transformer's true architectural innovation enabling dynamic transformation construction
-  - Demonstrates strong prompt sensitivity where dynamic processing can exceed static processing contribution
-  - Argues for biological plausibility with potential cortical implementation of similar mechanisms
-  - **Activation**: transformer revolution sidpp, dynamic processing transformers, output-weight interconnections, strong prompt sensitivity, concept transformation framework, transformer cortical processing
-
-### Persistent homology broadens the controllable subspace in human structural connectomes
-- [[persistent-homology-brain-network-control]] - Methodology for applying persistent homology to brain network control theory, revealing how topological features broaden the controllable subspace beyond what scalar energy measures capture (arXiv: 2608.03181)
-  - Demonstrates dissociation between scalar control energy (~0.2% difference) and control geometry (substantially different controllable subspaces) when comparing degree-based vs topology-based driver selection
-  - Topology-informed driver sets yield better-conditioned controllability matrices and access different target state classes despite similar energy costs
-  - Provides framework for integrating topological data analysis with network control theory in neuroscience applications
-  - **Activation**: persistent homology brain network, topological brain control, controllable subspace topology, brain network control geometry, mesoscale integration connectome, persistent cycles brain network
-### scikit-covtest: Covariance Matrix Hypothesis Testing in Python
-- [[scikit-covtest-covariance-hypothesis-testing]] - Comprehensive Python package for covariance matrix hypothesis testing across four categories (identity, sphericity, proportionality, two-sample equality) with SciPy-style API, enabling statistical inference for brain connectivity and neural population analysis (arXiv: 2608.01510)
-  - Provides well-tested implementations previously only available in R packages
-  - Supports neuroscience applications including connectivity inference, dimensionality reduction validation, and group comparisons
-  - Includes multiple testing correction, synthetic data generation, and diagnostic evaluation tools
-  - **Activation**: scikit-covtest, covariance hypothesis testing, brain connectivity inference, neural covariance analysis, statistical testing covariance
-
-### SeekBrain: An Autonomous Multi-Agent System for Accelerating Neuroscience Discovery
-- [[seekbrain-autonomous-neuroscience-discovery]] - Autonomous multi-agent framework for accelerating neuroscience discovery through domain-grounded hierarchical planning and cross-modal data analysis, dynamically constructing analysis recipes from code-paper pairs to generate hypotheses and analytical pipelines on demand (arXiv: 2607.29347)
-  - Substantially outperforms state-of-the-art agent baselines on BrainArena benchmark across various analysis tasks
-  - Successfully integrated behavioral, neural, and anatomical data to reveal structured neural representations in zebrafish and shared decoding axis in mouse decision-making
-  - Provides scalable solution for heterogeneous, multi-scale, multimodal neuroscience dataset integration challenges
-  - **Activation**: seekbrain, autonomous neuroscience discovery, multi-agent neuroscience, cross-modal analysis, hypothesis generation, brainarena benchmark
-
-### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
-- [[rdnn-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with robust low-rank slow manifolds. Use when implementing or analyzing neural networks that need to maintain and update continuous variables without manifold shattering, particularly in computational neuroscience, working memory modeling, or RNN architecture design. (arXiv: 2608.01947)
-  - Addresses fragility of classical continuous attractor networks and discretization problems of standard RNNs
-  - Implements dynamic division as minimal, algebraically isolated model converging to robust slow manifolds  
-  - Introduces activity-dependent local gradient scaling during BPTT leading to self-compression of effective rank
-  - Demonstrates divisive normalization is mathematically essential to prevent manifold shattering under time-varying inputs
-  - **Activation**: rdnn, divisive normalization, continuous working memory, slow manifolds, recurrent neural networks, neural dynamics, attractor networks, low-rank dynamics
-
-### NeuroWorld: A Latent Brain World Model for Stimulus-Conditioned Human Brain Dynamics
-- [[neuroworld-latent-brain-world-model]] - NeuroWorld framework for causal forecasting of human brain activity using stimulus-conditioned evolution in learned latent brain-state space, separating endogenous states from exogenous multimodal stimuli. First brain world model enabling strictly causal multi-step fMRI prediction without future stimulus leakage. (arXiv: 2608.01773)
-  - Two-stage architecture: Latent Dynamics Learning (LDL) for transition-sufficient representation and Latent Rollout Decoding (LRD) for autoregressive prediction
-  - Enforces strict causality preventing future stimuli from leaking into current predictions
-  - Achieves state-of-the-art multi-step rollout performance with greater robustness to long-horizon autoregressive drift
-  - Validated on SG-MIND dataset (20 participants, 8,519 clips, 140.7 person-hours) and three naturalistic benchmarks
-  - **Activation**: neuroworld, brain world model, latent dynamics, stimulus-conditioned, fMRI prediction, causal forecasting, naturalistic experience, autoregressive rollout
 
 ### SMM Transformer: Leveraging Spiking Neural Networks for Multimodal Tasks
 - [[smm-transformer-spiking-multimodal]] - SMM Transformer methodology leveraging Spiking Neural Networks (SNNs) for multimodal tasks by integrating spiking mechanisms into transformer architectures to achieve energy efficiency while maintaining performance across diverse modalities (arXiv: 2608.01622)
@@ -59,6 +16,14 @@
   - Achieves sparse computation through event-driven processing, reducing energy consumption
   - Maintains temporal information inherent in spiking representations for better sequence modeling
   - **Activation**: smm transformer, spiking multimodal, snn transformer, energy efficient multimodal, spiking neural networks multimodal
+
+### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
+- [[rdnn-low-rank-manifolds-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with low-rank slow manifolds. Provides implementation guidance for stable continuous manifold learning in RNNs using divisive normalization to prevent state space shattering into discretized point attractors. (arXiv: 2608.01947)
+  - Integrates divisive normalization directly into RNN architecture to enable stable learning of continuous manifolds
+  - Prevents state space fragmentation that plagues standard RNNs like GRUs and LSTMs
+  - Enables robust maintenance and updating of continuous variables over time
+  - Based on biologically observed divisive normalization mechanisms across sensory systems
+  - **Activation**: rdnn, divisive normalization, continuous working memory, neural manifolds, low-rank manifolds, recurrent neural networks, stable RNN dynamics
 
 ### SpikeRestormer: Towards Energy-Efficient All-in-One Image Restoration via Unified Event Reasoning
 - [[spikerestormer-unified-event-reasoning]] - Energy-efficient SNN for all-in-one image restoration using unified event reasoning (arXiv: 2608.02290)
@@ -76,35 +41,8 @@
   - Reveals key stimulus drivers: silence, sound intensity, vowels, and acoustic onsets
   - Demonstrates narrative structure carries more recoverable information than random word lists
   - **Activation**: interpretable meg decoding, perceived speech, spherical harmonics meg, source-space mapping, speech perception network, neural retrieval, stimulus feature analysis
-### NeuroInspector: A Local-First Environment for Inspecting and Annotating Hierarchical Neuroscience Datasets
-- [[neuroinspector-hierarchical-dataset-inspection]] - NeuroInspector framework for local-first inspection and annotation of hierarchical neuroscience datasets (HDF5/NWB files) using browser-based WebAssembly HDF5 parsing. Provides structural navigation, metadata inspection, sampled data previews, and path-level annotation into portable project packs without modifying original files. (arXiv: 2608.02465)
-  - Lightweight, browser-based environment running entirely client-side with no file upload endpoints
-  - Uses h5wasm WebAssembly library for HDF5 parsing directly from local disk
-  - Creates portable, fingerprinted "project packs" that preserve inspection decisions
-  - Dedicated to inspection stage that precedes formal analysis in research workflow
-  - **Activation**: neuroinspector, dataset inspection, hdf5, nwb, webassembly, h5wasm
 
-### AS-FedBridge: Pseudo-Spike Bridge Distillation for Heterogeneous ANN-SNN Federated Learning
-- [[as-fedbridge-ann-snn-federated-learning]] - AS-FedBridge framework for heterogeneous ANN-SNN federated learning using pseudo-spike bridge distillation to overcome representational misalignment between continuous activations and discrete spikes (arXiv: 2608.03324)
-  - Introduces lightweight Bridge with Pseudo-Spike Interface that projects continuous signals into spike-compatible space
-  - Demonstrates advanced accuracy across four datasets while mitigating extreme scale, architecture, and client heterogeneity challenges
-  - Enables highly controllable trade-off between model performance and resource efficiency with only marginal computational overhead
-  - **Activation**: fedbridge, ann-snn federated learning, pseudo-spike bridge, heterogeneous federated learning, spiking neural networks federated
-
-### Persistent Homology Broadens the Controllable Subspace in Human Structural Connectomes
-- [[persistent-homology-brain-connectome-control]] - Persistent homology methodology for brain network control that broadens controllable subspace by capturing mesoscale integration beyond local connectivity, revealing dissociation between control cost and geometry (arXiv: 2608.03181)
-  - Uses persistent topological cycles rather than structural connectivity strength for selecting driver nodes
-  - Achieves nearly identical scalar control energy (~0.2% difference) but better-conditioned controllability matrices
-  - Geometric advantage preserved even when high-degree hub nodes are removed
-  - Reveals dissociation between control cost and control geometry through functional signatures of different cortical territories
-  - **Activation**: persistent homology brain control, topological brain networks, controllable subspace geometry, mesoscale integration neuroscience, network control theory connectomes
-
-### MIMIC-MJX: Neuromechanical Emulation of Animal Behavior
-- [[mimic-mjx-neuromechanical-emulation]] - MIMIC-MJX framework for learning biomechanically grounded neural control policies from kinematics by training neural controllers that actuate biomechanical animal models in physics simulation to reproduce real kinematic trajectories. Demonstrates accurate, fast, and generalizable implementation across diverse animal body models with modest motion data requirements. (arXiv: 2511.20532)
-  - Provides platform for modeling generative process of motor control through physics-based simulation
-  - Enables simulation of behavioral experiments and analysis of neural control policies  
-  - Integrates neuroscience, biomechanics, and machine learning for comprehensive behavior modeling
-  - **Activation**: mimic-mjx, neuromechanical emulation, animal behavior, motor control, biomechanics, physics simulation## 2026-08-04 - Neuroscience Research (Cron Job)
+## 2026-08-04 - Neuroscience Research (Cron Job)
 
 ### CORTIVA: Candidate-Score Fusion of Complementary Visual Teachers for EEG- and MEG-to-Image Retrieval
 - [[cortiva-candidate-score-fusion]] - Framework for decoding visual experience from non-invasive brain activity through candidate-score fusion that preserves complementary evidence by aligning three decoding routes to heterogeneous visual targets, scoring candidates independently, and combining only temperature-scaled score vectors before ranking. (arXiv: 2608.01355)
