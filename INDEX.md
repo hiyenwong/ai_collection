@@ -1,5 +1,13 @@
 ## 2026-10-10 - Neuroscience Research (Cron Job)
 
+### From Communication to Computation in Neurons-on-a-Chip: Neurotopomorphic Computing
+- [[ic3-neurotopomorphic-neurons-chip]] - IC³ 框架：制造前先在仿真中筛选活体神经元电路拓扑——稀疏定向链击败全连接网络 (arXiv: 2610.06065)
+  - 反直觉核心结果：IC³（动力学 0.60 + 通信 0.30 + 结构 0.10 八观测量加权指数）和 TE 均与分类任务负相关（ρ −0.73~−0.81）；Sequential Chain 和 Microchannel Diode 仅招募 1/3 可达神经元却取得最高解码分——约束传播反而保住输入区分度
+  - 九架构基准（15 神经元 Izhikevich，20 seeds/架构）：结构可达 ≠ 功能招募（差 0.264）；潜伏期对物理路径延迟超线性（β=1.68）；out-closeness 越高响应概率越低；扩展 readout 到全网无任何增益（下游活动冗余）；无训练条件下九架构均无 fading memory（η²=0.029）——输入保真与持久性对递归的需求不同
+  - **Activation**: neurons-on-a-chip, neurotopomorphic computing, ic3 framework, microfluidic neural circuit, reservoir computing substrate, transfer entropy, network architecture design, bio-spike computing, in silico screening
+
+## 2026-10-10 - Neuroscience Research (Cron Job)
+
 ### The Dichotomy Between Pattern Recognition and Step-by-Step Reasoning
 - [[debruijn-pattern-recognition-reasoning]] - De Bruijn DAG 统一模式识别与逐步推理的光谱理论 (arXiv: 2610.09186)
   - 推理轨迹 = De Bruijn 图 DAG 子图上的路径；覆盖全部边所需路径数是总轨迹数中消失的小份额 → 样本复杂度 ∝ 边数幂律，短轨迹即可推广到更长任务
