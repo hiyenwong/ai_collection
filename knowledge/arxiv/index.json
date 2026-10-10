@@ -7305,7 +7305,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,
@@ -10326,7 +10326,7 @@
   {
     "id": "2610.06726v1",
     "title": "Decoupling Time and Space: A Temporally Conditioned Refinement for EEG Source Imaging",
-    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert M\u00fcller, Shinichi Nakajima",
+    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert Müller, Shinichi Nakajima",
     "url": "https://arxiv.org/abs/2610.06726v1",
     "utility": 0.87,
     "categories": [
@@ -10691,5 +10691,285 @@
     "category": "multi-agent-rl",
     "utility": 0.86,
     "date_added": "2026-10-08"
+  },
+  {
+    "id": "2610.12452",
+    "title": "BrickBench: Evaluating Agentic Brick Design",
+    "skill_name": "brickbench-agentic-design",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12432",
+    "title": "FAITH: Feasibility-Aware Safety-Filtered RL for High-Dimensional Systems",
+    "skill_name": "faith-safety-filtered-rl",
+    "category": "signal-control-systems",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12427",
+    "title": "FastBench: Can Streaming VLMs Perceive High-Dynamic Real-World Streams?",
+    "skill_name": "fastbench-streaming-vlms",
+    "category": "vision-generative",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12424",
+    "title": "RoboRSI: Stable, efficient, and reusable robot self-evolution in complex real-world environments",
+    "skill_name": "roborsi-robot-self-evolution",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12420",
+    "title": "A Unified Bellman Operator for Safety-Critical Reinforcement Learning",
+    "skill_name": "unified-bellman-safety-rl",
+    "category": "signal-control-systems",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12417",
+    "title": "WOVEN: Weaving Visual World Modeling into Multimodal LLMs",
+    "skill_name": "woven-visual-world-modeling",
+    "category": "vision-generative",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12410",
+    "title": "Predicting Alignment Generalization with Value Representations",
+    "skill_name": "alignment-generalization-prediction",
+    "category": "ai-safety-eval",
+    "utility": 0.89,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12409",
+    "title": "Searching for \"Harmful Refusal\": A Psychometric Audit of an AI Safety Benchmark",
+    "skill_name": "psychometric-audit-safety-benchmark",
+    "category": "ai-safety-eval",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12407",
+    "title": "LeWAM: A JEPA World Action Model with Diffusion-Steering-Based MPC",
+    "skill_name": "lewam-jepa-world-action",
+    "category": "vision-generative",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12403",
+    "title": "ViSkill: Reinforcing VLM Agents with Evolving Visual-Native Skills",
+    "skill_name": "viskill-vlm-visual-skills",
+    "category": "multi-agent-rl",
+    "utility": 0.89,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12402",
+    "title": "SpaceCast-Bench: Evaluating Predictive Spatial Reasoning in Vision-Language Models",
+    "skill_name": "spacecast-spatial-reasoning",
+    "category": "vision-generative",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12386",
+    "title": "ARC: A Reasoning Recipe for Robot Foundation Models",
+    "skill_name": "arc-robot-reasoning-recipe",
+    "category": "multi-agent-rl",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12367",
+    "title": "Which Skill to Distill? SGUID: Selecting a Compact Skill Bank for Model-Skill Co-Evolution",
+    "skill_name": "sguid-skill-selection-distillation",
+    "category": "nlp-llm",
+    "utility": 0.88,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12361",
+    "title": "Cited but Not Consulted: A Counterfactual Audit of Legal Chain-of-Thought Faithfulness",
+    "skill_name": "legal-cot-faithfulness-audit",
+    "category": "ai-safety-eval",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12349",
+    "title": "SplitJEPA: Learning Invariant and Variant Latent Worlds without Reconstruction",
+    "skill_name": "splitjepa-latent-worlds",
+    "category": "general-ml",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12341",
+    "title": "Can AI Agents Learn Their Way to the Top? Evaluating Heuristic Learning in a Long-Running Game Agent Competition",
+    "skill_name": "ai-agents-heuristic-learning-games",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12338",
+    "title": "VFold: Symmetry-Aware Cross-Layer Value Cache Compression",
+    "skill_name": "vfold-value-cache-compression",
+    "category": "nlp-llm",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12327",
+    "title": "SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference",
+    "skill_name": "sparsedecoding-llm-pruning",
+    "category": "nlp-llm",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12313",
+    "title": "Verdict Without the Rule: Diagnosing and Auditing Regulatory Rule Sensitivity in LLM Compliance Systems",
+    "skill_name": "regulatory-rule-sensitivity-audit",
+    "category": "ai-safety-eval",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12304",
+    "title": "Looking Inside LLMs: Small-World Connectivity as a Signature of Reasoning Performance",
+    "skill_name": "small-world-connectivity-llms",
+    "category": "nlp-llm",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12274",
+    "title": "HarnessSQL: Harness-Native Training for SQL Agents in Realistic Database Environments",
+    "skill_name": "harnesssql-sql-agent-training",
+    "category": "tools-frameworks",
+    "utility": 0.88,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12242",
+    "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
+    "skill_name": "tokenrouter-llm-routing",
+    "category": "nlp-llm",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12235",
+    "title": "Language Models as AI Research World Models",
+    "skill_name": "lms-ai-research-world-models",
+    "category": "nlp-llm",
+    "utility": 0.88,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12183",
+    "title": "A Closer Look at Agentic BBO: Benchmarking LLM Agents for Black-Box Optimization",
+    "skill_name": "agentic-bbo-benchmark",
+    "category": "multi-agent-rl",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12133",
+    "title": "Rehearse Everything, Remember Nothing: Attic-KV Rehearses What Will Be Read",
+    "skill_name": "attic-kv-cache-rehearsal",
+    "category": "nlp-llm",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12083",
+    "title": "All Verdicts are Not Equal: Rethinking LLM Judge Reliability",
+    "skill_name": "llm-judge-reliability-audit",
+    "category": "ai-safety-eval",
+    "utility": 0.88,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.12028",
+    "title": "Policy Synthesis for Finite Populations of MDP Agents under Aggregate Reach-Avoid Chance Constraints",
+    "skill_name": "policy-synthesis-mdp-populations",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.11966",
+    "title": "MindFlow: Mind Supernet Powered Thinking Flows for Research Idea Innovation",
+    "skill_name": "mindflow-research-idea-innovation",
+    "category": "nlp-llm",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.11923",
+    "title": "Neural Decoding as Cognitive Inference",
+    "skill_name": "neural-decoding-cognitive-inference",
+    "category": "neuroscience",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.11434",
+    "title": "An Embodied Multiagent Framework Based on Token Communications for Cooperative ISAC",
+    "skill_name": "embodied-multiagent-isac",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.11375",
+    "title": "Personalization Matters: Long-Horizon Conversation Agent with User-Centric Information in Online Shopping Interactions",
+    "skill_name": "personalization-shopping-conversation",
+    "category": "multi-agent-rl",
+    "utility": 0.87,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.11222",
+    "title": "Cross-species representation learning aligns mouse and human neural dynamics and tracks clinical drug efficacy",
+    "skill_name": "cross-species-neural-dynamics",
+    "category": "neuroscience",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.11142",
+    "title": "If the brain were so simple: Information-based drivers of intelligence and their interaction through an n-body-inspired framework",
+    "skill_name": "information-enthalpy-intelligence",
+    "category": "neuroscience",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.10906",
+    "title": "Reading the Room: Foundations, Design, and Challenges of Normative Competence in LLMs",
+    "skill_name": "normative-competence-llms",
+    "category": "ai-safety-eval",
+    "utility": 0.88,
+    "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.10882",
+    "title": "Decentralized collaborative continual learning: A multi-objective minimization-based technique",
+    "skill_name": "decentralized-collaborative-continual",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-10"
   }
 ]
