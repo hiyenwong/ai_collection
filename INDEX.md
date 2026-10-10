@@ -1,4 +1,29 @@
+## 2026-10-10 - Economics & Investment (Cron Job, late night)
+
+### Agentic AI Systems and Financial Stability: From Model Risk to Systemic Risk
+- [[agentic-ai-systemic-risk-monograph]] - Fed 专著六章数学框架：从单 agent 模型风险到 agentic AI 宏观审慎系统性风险——共同基础模型=不可分散共同暴露，只有事前结构预防移动系统性-不可逆下限 (arXiv: 2610.08806)
+  - 期望伤害恒等式 PHA×SGH×BR 重构 PD/LGD/EAD（严重度≈可逆性×blast radius，无资本类比物→集合值 containment-risk 度量）；杠杆分配公理 A3 下非预防控制对不可逆伤害不可行（检测/可逆不只是贵，是不可能）
+  - 舰队层四结果：单一文化不可分散（相干度量全额计价共同冲击与规模无关）；渗流临界（分割+异质性是建筑杠杆）；社会乘数 1/(1−λ)；**内生共同因子 Thm 2.18——λ(s) 压力下从众使零共享基底的纯特质冲击舰队仍产生不可分散下限**（基底多样性疗法关不上此通道）；技术+说服双通道加性合并为单分支比（只审计技术耦合=对错误数字审计）
+  - 连续时间：Hawkes 谱半径临界；鲁棒压力问题 ≡ 时间一致熵风险度量（Thm 3.6，robustness 与 dynamic consistency 是同一对象）；预防杠杆=跳测度截断且是使鲁棒博弈有限的东西
+  - 运行时不可能性：可观测性三分法（intent-observable / state-only / 零空间不可观测）；Nyquist 条件 E[D]+τ_react<T_esc；对不可逆跳跃每个运行时策略承担 1−e^(−ΛcT)（detect-then-react 不能在零时长事件前开火）→ pre-trade 硬限制/撤销凭证/移除支付权限的结构性理由
+  - 攻击者博弈：单一文化随规模成为吸引目标（基础模型提供者满足关键第三方指定标准）；检测偏转固定努力到不可逆核心；传染耦合群体预防投资不足差额∝系统性触达（预防=公共品→宏观审慎网络监管的激励理论）；事件历史校准对尾部有偏→reverse stress testing 才是正确方法论
+  - **Activation**: agentic AI, systemic risk, financial stability, macroprudential, monoculture, non-diversifiable, percolation threshold, Hawkes, entropic risk measure, guardrails impossibility, observability trichotomy, Stackelberg cyber, prevention lever, social multiplier, fleet contagion
+
 ## 2026-10-10 - Neuroscience Research (Cron Job)
+
+### Small-World Connectivity as a Signature of LLM Reasoning Performance
+- [[small-world-attention-head-connectivity]] - 脑科学"智力↔小世界功能组织"结论迁移到 LLM：以注意力头为节点、SVCCA(Fisher-z 聚合典型相关)为边权建功能图，SWI 在模型间与训练 checkpoint 间都与流体推理性能一致相关 (arXiv: 2610.12304)
+  - 关键操作：answer-token 处收集 query 激活→每头按题平均成 X_m∈R^(N×d)→SVD 保留 99% 方差→CCA→S_ij=Σ atanh(ρ̃_q)；固定边密度 δ 取 top-K 成图；SWI=C/C_rand·E/E_rand（度保持边交换零模型）
+  - 重要头结构签名：高 core（社区内连接权重占比大）+低 bridge（加权参与系数低）——Llama-3.2-3B top-25% 重要头中低 bridge 占比 89.3% vs 36.9%（p=3.6e-34）；重要头是"社区专家"而非连接器
+  - SWA 剪枝验证：p_i=B̃_i·(1−C̃_i) 层级分配稀疏度（层分数为主、头分数精修），6 个 LLM 上 WikiText PPL 最多降 20%（Llama-3-8B 70% SparseGPT：55.94→38.93），剪枝后 SWI 保留也最好；图构建数据集可换（GSM8K/ARC-C/MMLU 均有效）
+  - **Activation**: small-world index, attention head functional graph, SVCCA, fluid intelligence, LLM pruning, core score, bridge score, participation coefficient, Louvain community, degree-preserving null, training checkpoints
+
+### SDPAD: Fully Spike-Driven End-to-End Autonomous Driving
+- [[sdpad-spike-driven-autonomous-driving]] - 首个全脉冲驱动的端到端自动驾驶规划器：整数 ANN2SNN 转换消除时间仿真循环（单次前向），Spike-3D-Lift 用 spike-driven-max 替换 softmax 深度分布，Spike-QFormer 无 softmax 查询解码；nuScenes L2 0.40m/碰撞 0.12%，NAVSIM PDMS 86.3（超 SAD 4.3 点），能耗 69.9 mJ（<2% ANN 基线） (arXiv: 2610.11583)
+  - 并行化转换核心：累计膜电位 U^l 使全部 T 步发放退化为 S^l[t]=θ(U^l−V_th·t) 一次性比较——T 成为量化超参而非仿真循环；量化步 2→8 时 L2 5.32→0.64m 且能耗反而降（粗量化→更密脉冲，细量化→更稀疏发放）
+  - SDM 深度分布：D̂=⌊clip(D)⌉ + 指数映射 M=D̂·2^(D̂−Dmax) + 可学习归一化 N=Dmax+softplus(α)；视锥构造退化为 spike-gated 累加，FLOPs 降 23.6%；对照 SparseMax/裸 I-LIF 感知保真度崩塌（17.48% mIoU）传播到规划安全
+  - Spike-QFormer：SA=SN(Q̃K̃ᵀṼ·2v_scale)W_o 全整数脉冲注意力（softmax 彻底移除）；ego(1)+agent(30)+map 三查询组从 10×10 BEV+status token（CAN-bus⊕one-hot 命令）蒸馏，waypoint 查询单层交叉注意力融合，Deformable SCA 以预测轨迹为锚精修
+  - **Activation**: spiking neural network, autonomous driving, BEV lifting, spike-driven attention, ANN-to-SNN conversion, quantized-clip activation, neuromorphic hardware, NAVSIM, PDMS, deformable attention, edge deployment, single-pass inference
 
 ### CoHyFuse: Condition-wise Hypergraph Fusion with Global Connectome in Task-fMRI
 - [[cohyfuse-condition-hypergraph-taskfmri]] - 任务态决定超图关联结构本身：每个任务条件独立构建 top-K_q 超图（同一 ROI 在不同条件加入不同 ROI-集超边），注意力融合 + 全session FC 双分支 (arXiv: 2610.05913)
