@@ -14,6 +14,15 @@
   - 20/20 模型-harness-基准组合全部胜出（符号检验 p=1.9e-6；GPT-5.4/DeepSeek V4 Pro/Gemini 3 Pro/Qwen 3.7 Max/Qwen 3 Coder × OpenEvolve/ShinkaEvolve）；AlgoTune +5.5%、ALE-Bench LITE +6.6%（固定 100 候选预算），平均节省 32.3% 迭代达基线最优；弱模型获益最大（Qwen 3 Coder +11.0%）
   - 冷 vs 同域热 vs 跨域热记忆（1.67/1.75/1.70）分离地证明持久性与跨问题家族迁移；随机检索对照≈无记忆（1.62 vs 1.61）证明增益来自相关检索而非 prompt 填充
   - **Activation**: evolutionary search, LLM agent memory, insight distillation, cross-run transfer, semantic clustering, OpenEvolve, program synthesis, experience reuse, attention-weighted centroid
+## 2026-10-10 - Economics & Investment (Cron Job, night)
+
+### SOTA: Stock Options Trading Agents Guided by Option-Implied Return Distributions
+- [[sota-strategy-selection-option-agents]] - LLM 期权交易升维到策略级抽象：policy 选 9 策略族+参数，确定性 resolver 落地合约/规模/对冲；SFT(前沿蒸馏)→GRPO 后训练 Qwen3.8-27B，6 个月 OOS +18.32%/Sharpe 1.60，全部基线为负 (arXiv: 2610.10407)
+  - 三层分离：LLM 只选 (标的, 策略族, 多空, 期限桶∈{5,14,45,120}d, delta) + open/close/roll/hold 动词；contract resolver（最近期限锚+最近Δ）、size resolver（二阶 Taylor 风险等价 R=|Δ|σ̂+Γ(Sσ̂)²/2+|ν|σκ+|Θ|）、hedge resolver（Whalley–Wilmott 无对冲带）；两级候选机制（≤6 候选/标的，只对候选定价）避免全链入上下文；resolver 回执返回 realized coordinate（请求≠成交不静默假设）
+  - 训练纪律：教师轨迹先匿名化（屏蔽股票身份/绝对价格/日历时间）防泄漏，按 Sharpe 过滤后 SFT（414 episodes）；GRPO group 8/lr 5e-7/KL 0.01，奖励=扣成本 log NAV 变化；SFT/RL/test 时间窗严格不相交（2024-09→11 / 2024-12→2025-02 / 2025-03→08）
+  - **关键负结果（news 不对称角色）**：新闻提升前沿教师轨迹（利于 SFT），但 RL 阶段保留 news 使 OOS 从 +18.32% 崩到 −2.72%、MDD 8.96%→31.69%——"用于构造专家监督的信息未必在策略优化阶段同样有用"，RL 信息集必须与 SFT 语料独立消融
+  - **Activation**: option trading agent, strategy-level action space, deterministic resolvers, GRPO, frontier distillation, SFT, asymmetric news role, Qwen post-training, structured action space, LLM trading, Whalley-Wilmott, delta hedging
+
 ## 2026-10-10 - Economics & Investment (Cron Job, evening)
 
 ### Robust distortion riskmetrics under Wasserstein ambiguity
