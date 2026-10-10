@@ -1,3 +1,17 @@
+## 2026-10-10 - Neuroscience Research (Cron Job, evening)
+
+### Understanding Latent-Dimension Scaling in Dynamical-System Learning through Spectral Reliability
+- [[koopman-spectral-residual-scaling]] - Koopman autoencoder 用 spectral-residual loss（ResDMD 相对残差）替代 latent-prediction loss，使 latent dimension 扩展可靠地降低 rollout 误差 (arXiv: 2610.11866)
+  - 谱污染诊断：一步预测误差下降但 rollout 失败，源于伪特征对散布在高残差区；spectral-residual loss 用 held-out 批评估候选特征对的相对残差，强制特征值落位低残差区（谱可靠性）
+  - 6 个混沌系统 30/30 案例中位 VRMSE 更低（N₀→16N₀ 降幅 10%–76% vs 2%–52%），VPT 全系统全维度更长（1.06–5.21×）且随维度非降；理论：有界 Koopman 算子下学习字典空间最小残差逐点收敛到全空间下确界
+  - **Activation**: koopman autoencoder, spectral reliability, relative residual, resdmd, spectral pollution, latent dimension scaling, rollout error, pseudospectrum, spurious eigenpair, neural latent dynamics
+
+### Stochastic resonance in adaptive dynamical networks
+- [[adaptive-coupling-stochastic-resonance]] - 自适应耦合（含 memristive 实现）作为随机共振的柔性控制旋钮：γ 可增强/抑制 SR 并将最优噪声强度平移约 2 个数量级 (arXiv: 2610.11367)
+  - 三种耦合族统一框架（现象学局部×2、全局、三次 memristor）：增强-抑制对 γ 呈共振式（局部 γ≈10⁻²、全局 γ≈0.2 最优）；机制 = ⟨σ⟩ 随 γ/D 单调升而振荡幅度不变 → 自适应动力学等效于强度 ⟨σ⟩ 的静耦合
+  - 拓扑权衡：全局耦合峰值 SNR 更高但过峰后抑制更陡；memristive b 参数效应随总强度 s 翻转（弱 s 增强SR、强 s 抑制SR）；σ 的衰减项 −ασ 不可或缺（否则耦合无界增长+极端多稳态）
+  - **Activation**: stochastic resonance, adaptive coupling, memristive coupling, bistability, snr curve, optimal noise intensity, coupling topology, noise-induced dynamics, short-term plasticity mapping
+
 ## 2026-10-10 - Neuroscience Research (Cron Job)
 
 ### From Communication to Computation in Neurons-on-a-Chip: Neurotopomorphic Computing
