@@ -38,6 +38,13 @@
   - **Activation**: izhikevich phase model, weakly coupled oscillators, iPRC discontinuous, phase locking anti-phase, saltation condition reset, bogdanov takens, saddle homoclinic spiking onset, adaptation synchronization
 ## 2026-10-10 - Economics & Investment (Cron Job)
 
+### Adversarial Training for Deep Hedging in Nonstationary Markets
+- [[wrap-adversarial-deep-hedging]] - WRAP 双预算 DRO：φ-散度重加权（场景概率）+ 各向异性 OT 路径扰动（轨迹）正交分解，非平稳市场深度对冲 Far-CVaR 降 19.7% (arXiv: 2610.07162)
+  - 漂移感知参考分布：N_eff(w)=1/Σw² 与漂移指数 D_p(w)=(Σw_n(N−n+1)^p)^{1/p} 的取舍，截断多项式闭式最优权重，半径 ε_ϱ=D_p(w)ϱ+O(N_eff^{−ν}) 覆盖下一期分布
+  - 联合一阶展开 V=L̄+Υε+√(2/φ''(1))σ√τ：传输项 Υ∝损失对路径扰动的敏感度（场景内），重加权项 σ∝跨轨迹损失离散度（场景间）——显式攻击 = 一个概率乘子 + 一条扰动轨迹/样本，免解内层上确界
+  - 实验：非平稳 Heston 中 φ-only −9.6%、OT-only −13.1%、WRAP −19.2%（远期 CVaR）；漂移权重改善全部方法；真实股票 GAD（AAPL 等 5 只亚式期权）10 组合全胜单预算法但增益股间差异大（6/10 降测试熵风险）
+  - **Activation**: deep hedging, nonstationary market, distributionally robust optimization, adversarial reweighting, wasserstein transport, drift-aware weights, phi-divergence, two-budget ambiguity, path perturbation, oce risk measure
+
 ### Who Leads and Who Collects: Algorithmic Collusion in Markets of Heterogeneous Language Models
 - [[heterogeneous-llm-collusion-bertrand]] - 跨厂商异构 LLM 定价合谋实验：组成即处理变量，租金分配反转价格领导权 (arXiv: 2610.11256)
   - 四家最便宜档模型（Gemini/Claude/GPT/DeepSeek）× 4 厂商 logit Bertrand × 11 组合格 × 20 runs × 200 期 = 176k 次调用：同质 Claude/Gemini 市场达垄断租金 72–79%，DeepSeek 24%，GPT 价格漂移超垄断价永不收敛（病理而非竞争）
