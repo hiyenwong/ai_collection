@@ -1,3 +1,26 @@
+## 2026-10-10 - Economics & Investment (Cron Job, evening)
+
+### Robust distortion riskmetrics under Wasserstein ambiguity
+- [[distortion-riskmetric-wasserstein-dro]] - 解决公开问题：仅用 Wasserstein 球作模糊集、对无凸性/单调性/连续性假设的 distortion riskmetric 类做 DRO，给出三层求解序列 (arXiv: 2610.09622)
+  - 层级1 凸化精确性判据（Thm 1）：把非凹 distortion 换成凹包络保持最坏值 ⟺ 参考分位数 G0⁻¹ 在包络间隙区 I_h 上平坦（p>1）；不平坦时现有凸方法是严格上界，"额外保守性"是方法伪影
+  - 层级2 正则化序列（Thm 2）：S_h(ε)=lim_{η↓0} S_{h_η}(ε)，最坏分布子列弱收敛到 F*（h≠h* 时 sup 可不取到，left-VaR 为典例）；层级3 显式近似+可计算误差界（Thm 3）：零优化构造 P_ε，误差界 O(ε^−min{p−1,1})，绝对连续 h 时 O(ε)
+  - 鲁棒性价格线性于半径：S_{h*}(ε)=ρ_{h*}(G0)+ε·‖ψ_{h*}‖_{p'}（分位密度对偶范数定价）；投资组合应用：椭球基准下 d 维问题坍缩为 1-D 最坏值评估 + SOCP 外层（每个组合面对同一 1-D 问题、不同有效半径 ε‖ω‖_{r'}/s_ω）
+  - **Activation**: distortion riskmetric, wasserstein ambiguity, distributionally robust optimization, nonconvex risk measure, concave envelope, convexification exactness, signed choquet integral, VaR, RVaR, prospect theory distortion, deviation measure, robust portfolio selection, SOCP, regularization sequence, error bounds
+
+## 2026-10-10 - Neuroscience Research (Cron Job, night)
+
+### Multimodal Physiological Decoding Reveals Individualized Arousal Dynamics in Closed-Loop Neurofeedback
+- [[peripheral-arousal-decoder-yerkes-dodson]] - 外周生理信号（HR/HRV/呼吸/EDA/瞳孔）解码唤醒优于 EEG（93.0% vs 85.2% vs FBCSP 79.8% AUC），且唯一恢复 Yerkes-Dodson 倒 U 曲线——提出"效度先于精度"的闭环解码器标准 (arXiv: 2610.04113)
+  - LC-NE 系统直接驱动自主神经输出，外周信号是其原生效器读出；EEG 叠加仅 +1.2 AUC 点，Integrated Gradients 显示 EEG 归因近零（还规避 gamma 频段 EMG 混淆）；FBCSP 解码器学的是任务难度而非分级唤醒（optimum 随难度漂移 62→76，闭环控制变量失准）
+  - 闭环重新框架化：BCI/sham/silence 条件的唤醒轨迹无差异（p>0.10）但 Faller 实验有 +7s 性能收益 → 反馈机制是"关键时刻定点调节"而非持续水平位移；时变最优轨迹 â(t)（随任务难度上升）+ 偏离指标预测性能（r=−0.28~-0.24）；基线 HRV+gamma 表型分层个性化控制带宽（敏感组 ×1.5 SD、耐受组 ×2.5 SD，Cohen's d 1.21→1.32 / 0.85→1.10）；驻留时间中位数 6s 为反应式 tVNS 干预（2–5s 起效）提供可行性
+  - **Activation**: arousal decoding, peripheral physiological signals, yerkes-dodson, closed-loop neurofeedback, heart rate variability, lc-ne, tvns, personalized control band, bci, neurofeedback mechanism
+
+### The Score Is Not the Structure: Brain Alignment and Cross-Lingual Transfer
+- [[correspondence-score-audit-alignment]] - 表征相似度分数的三重审计：内容消融（打乱目标恢复 83–92% 的脑对齐 CKA 分数）、仪器检查（探针精度随类型学距离 r=−074 共变）、推理单位（Mantel 实体置换 p=0.0006→0.155）(arXiv: 2610.03827)
+  - k/n 基线定律：两个 rank-k 子空间在 n 句子上的 CKA ≈ k/n（实测 rank 32/64/128/256 处 0.051/0.102/0.204/0.409，误差<1%）——任何对 rank-k 目标的 CKA 必须随附 k/n 基线，rank 256 时零对齐基线即 0.41；脑特异增量仅 +0.03~0.07（可分离地真实但极小）
+  - 跨语言案例：探针在 4/17 语言处于随机水平（Hindi/Urkish/Turkish/Arabic——恰为最远端语言），仪器与预测变量构造性共线 → 梯度不可辨识；语言内 steering +6.21 nats 证明干预有效，但按语言（而非 272 对）作单位时距离梯度效应消失（p=0.155）；审计后脑对齐在 BLiMP 上无增益（等价界 [−0.4,+1.4]），四个 null 解释（噪声/调参/规模/惰性）全部被排除
+  - **Activation**: cka, brain alignment audit, representational similarity, probe reliability, mantel test, cross-lingual transfer, shuffled target control, rank-k baseline, alignment training objective, correspondence validity
+
 ## 2026-10-10 - Neuroscience Research (Cron Job, evening)
 
 ### Understanding Latent-Dimension Scaling in Dynamical-System Learning through Spectral Reliability
