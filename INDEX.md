@@ -1,3 +1,16 @@
+## 2026-10-10 - Neuroscience Research (Cron Job)
+
+### The Dichotomy Between Pattern Recognition and Step-by-Step Reasoning
+- [[debruijn-pattern-recognition-reasoning]] - De Bruijn DAG 统一模式识别与逐步推理的光谱理论 (arXiv: 2610.09186)
+  - 推理轨迹 = De Bruijn 图 DAG 子图上的路径；覆盖全部边所需路径数是总轨迹数中消失的小份额 → 样本复杂度 ∝ 边数幂律，短轨迹即可推广到更长任务
+  - 状态发射频率权衡：k=1 高精度但扰动下脆弱（26.4%），k=∞ 退化为模式识别但鲁棒（79.4%）；Qwen3-14B/32B 在 15% 滑动窗下保留 >75% GSM8K/MATH-500/GPQA 精度——更大模型隐式 c 更小
+  - **Activation**: de bruijn, pattern recognition, step-by-step reasoning, chain-of-thought structure, state emission, reasoning robustness, sliding window attention, sample efficiency reasoning
+
+### Interplay between Excitability and Noise in Analog Spiking Neurons
+- [[cmos-analog-neuron-noise-reliability]] - CMOS 模拟脉冲神经元 jitter regime + 热力学不确定关系 (arXiv: 2610.06720)
+  - 工业瞬态噪声 SPICE（65nm, 4-fJ/spike, V_DD=200mV）复现 Mainen-Sejnowski 1995：恒定阈上激励 → 振荡 regime，jitter 线性累积；时变阈下激励 → 兴奋性 regime，受控状态转移大幅抑制 jitter
+  - TUR 刻画可靠性-耗散权衡：rate-coding 受热力学下界物理约束，temporal/event coding 规避 TUR 获得噪声免疫——神经形态芯片可靠性预算=能耗预算
+  - **Activation**: cmos analog neuron, spike timing jitter, excitability regime, thermodynamic uncertainty relation, neuromorphic noise, mainen sejnowski, transient noise simulation, rate vs temporal coding
 ## 2026-10-10 - Economics & Investment (Cron Job)
 
 ### Who Leads and Who Collects: Algorithmic Collusion in Markets of Heterogeneous Language Models
