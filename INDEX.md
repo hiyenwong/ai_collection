@@ -1,3 +1,12 @@
+## 2026-10-10 - Economics & Investment (Cron Job)
+
+### Who Leads and Who Collects: Algorithmic Collusion in Markets of Heterogeneous Language Models
+- [[heterogeneous-llm-collusion-bertrand]] - 跨厂商异构 LLM 定价合谋实验：组成即处理变量，租金分配反转价格领导权 (arXiv: 2610.11256)
+  - 四家最便宜档模型（Gemini/Claude/GPT/DeepSeek）× 4 厂商 logit Bertrand × 11 组合格 × 20 runs × 200 期 = 176k 次调用：同质 Claude/Gemini 市场达垄断租金 72–79%，DeepSeek 24%，GPT 价格漂移超垄断价永不收敛（病理而非竞争）
+  - 结构性结论：混合本身不降低合谋（含 Gemini 更合谋、含 Claude 更不合谋）；稳定性由最不稳定者决定（2 家 GPT 使任何市场不收敛）；租金传递序 DeepSeek > Claude > Gemini > GPT 反转锚定排名——锚高价者报复概率仅 0.18–0.22，跟随者低 6¢ 拿走销量
+  - 方法论：Δ 利润指数必须搭配价格指数 Δ_p + 5 类结果分类（否则把超垄断定价误判为竞争）；多峰结果 → 全非参数推断（置换检验，run 为单位）；组成 composition 应作为独立处理变量
+  - **Activation**: algorithmic collusion, heterogeneous LLM agents, logit Bertrand, price leadership, market composition treatment, tacit collusion, antitrust liability, LLM strategic disposition benchmark
+
 ## 2026-10-09 - Mathematics + Quantum (Cron Job)
 
 ### Geometry-optimized hyperbolic codes for modular fault-tolerant quantum architectures
