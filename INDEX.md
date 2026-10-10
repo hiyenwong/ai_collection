@@ -66,6 +66,21 @@
   - 同调间隙谱标度：gapped（解耦 CSS 解码）C*-1=O(p^{(d-1)/2}) 差、gapless（Y 耦合联合解码/gauge 码）C*-1=O(p_L) 最优 η→1（vs logical PEC η≈4、单解码器 η=2）；syndrome 傅里叶保真度 + Jensen 修正收缩估计器 + 对称群参数绑定实现免标定噪声学习
   - **Activation**: logical error mitigation, virtual error cancellation, syndrome records, dual decoder, coarse-grained sectors, homological gap, sampling overhead, postselection bias
 
+### FactorBench: A Portfolio-Aware Benchmark for Automated Factor Mining
+- [[factorbench-portfolio-aware-factor-mining]] - 9 种自动因子挖掘方法 × 5 市场 × ~5000 因子：搜索范式的进步不转化为下游价值 (arXiv: 2610.06947)
+  - 三层次评估契约：因子层（执行契约→可评分性→日度截面 IC→训练期定向冻结→风格中性化残差 IC）；池层（池内冗余/跨方法趋同/Alpha101 相似度）；组合层（统一选择→等权/验证IC/ridge 组合→多头+美元中性多空含成本回测）
+  - 核心诊断：原始 IC ≠ alpha——风格中性化后 R&D-Agent 残差 IC 从 0.0253 崩塌至 0.0011（"风格租借"）；AlphaQCM 保留最多（0.0191→0.0175）且换手最低；LLM 因子池比非 LLM 更接近已发表 Alpha101；Alpha101 本身成本后仍有竞争力
+  - 判别规则：long-only CAGR 22-31% 对所有方法都好看（弱判别）；long-short Sharpe（−0.087 至 0.679）才是区分性测试；GP 从与控制变量同源的价量变量中"重新发现"风格
+  - **Activation**: factor mining benchmark, residual IC, style exposure neutralization, factor pool distinctness, Alpha101, LLM factor agents, after-cost long-short portfolio, temporal generalization
+
+### When Does Interference Help Learning? Kernel Geometry as a Pre-Experimental Test for Photonic Reservoir Computing
+- [[photonic-reservoir-kernel-geometry]] - 几何界定可学什么，对齐决定学到什么：任务无关 kernel 双指标（g + alignment）预实验协议调和四项矛盾实验 (arXiv: 2610.11360)
+  - 光谱展宽机制：干涉的带符号振幅相消→涨落去相关→同一方差散布到约 2 倍维度（90% trace：K_Q 61 维 vs K_C 33 维）；g>1 只证明资源存在，不保证具体任务受益
+  - g(V) 超线性旋钮（N=2 精确线性 g−1=(s/2)V）；硬件典型可见度 V=0.864 保留 80.3%；S=3×10⁴ shots 即达精确算术；g·λ_min(K_C)≈常数 → 只能在匹配 n 下比较 g（任务级优势免疫：g 降 5.6× 优势不变）
+  - 凸性定理排除内部最优：s_K(V) 对任意标记凸（Cauchy-Schwarz 交叉项 s_X≤√(s_Q s_C)）→ 任何报告的可区分性内部最优必是 readout 效应或噪声
+  - 盲预测复现 Joly null（预测 +0.015 < 涨落 ±0.017，与发表值差 <10%）；决策规则：g 大且 A_Q>A_C 才值得上硬件
+  - **Activation**: photonic reservoir computing, kernel geometry, geometric difference, kernel-target alignment, boson sampling feature maps, HOM visibility, pre-experimental protocol, quantum advantage reconciliation
+
 ## 2026-10-09 - Mathematics + Quantum (Cron Job)
 
 ### Geometry-optimized hyperbolic codes for modular fault-tolerant quantum architectures
