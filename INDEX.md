@@ -20,6 +20,27 @@
   - 方法论：Δ 利润指数必须搭配价格指数 Δ_p + 5 类结果分类（否则把超垄断定价误判为竞争）；多峰结果 → 全非参数推断（置换检验，run 为单位）；组成 composition 应作为独立处理变量
   - **Activation**: algorithmic collusion, heterogeneous LLM agents, logit Bertrand, price leadership, market composition treatment, tacit collusion, antitrust liability, LLM strategic disposition benchmark
 
+### Multi-period Mean-Expectile Portfolio Optimization under Wasserstein Ambiguity
+- [[mean-expectile-wasserstein-dro-portfolio]] - Envelope 定理把最坏 expectile 化为不动点根 → Wasserstein DRO 多期组合精确重构为 4 个 LP (arXiv: 2610.11917)
+  - Expectile 是唯一 coherent + elicitable 的风险度量但缺 RU 表示：包络定理 Psi(q)=sup_F[E_F[L]+kappa*E_F(L-q)+]-q 唯一根 + 两段仿射被积函数（斜率差 Delta=kappa_tau 内生）→ 标准对偶 4 个 O(N) 约束 LP
+  - 四结构性质：内生阻尼鲁棒性价格（CVaR 固定 1/(1-alpha)，expectile 随超出频率 m/N 衰减）；决策依赖退化阈值 rho_crit(x)；零半径精确恢复；ground metric 选隐式正则——l_inf→集中、l_1→促分散、l_2→SOCP
+  - FTSE 90 成分股 3341 样本外日：expectile 在全部 9 参数格 Sharpe 胜过完全匹配 CVaR（rho≥0.005 显著）
+  - **Activation**: expectile, wasserstein ambiguity, distributionally robust portfolio, elicitable risk measure, ground metric, price of robustness, degeneracy threshold
+
+### Risk Ceilings and Development Deadlines: Pacing AI under Uncertain Safety Productivity
+- [[risk-ceiling-dev-deadline-ai-pacing]] - AI 监管经济学：风险上限与开发期限的可联合承诺性 = 安全生产率门槛 + 客户服务成本 (arXiv: 2610.11093)
+  - 危害 lambda=[h(F)+k(F)Fdot]e^{-S} 分解状态/步危害，安全知识 S 以 log-降幅计价；紧 ceiling 要求 takeoff 末端知识存量下界 → 两承诺相容仅当排除弱研究（生产率 bound）
+  - learn-then-replay 近最优：常数产出+纯状态风险下仅比必要 bound 多 3.3% 生产率；保证由客户服务支付（7.5 月学习 = 5 年服务价值 4.1%，2 年口径 52%）
+  - 固定配置规则（floors/pauses/lag）定日期不定风险，效应随生产率变号——quarter-yield 时 ceiling 反而提高灾难概率 20.1 点；Weitzman 工具选择类比：ceiling=数量工具，配置=价格工具
+  - **Activation**: ai regulation, pacing frontier ai, hazard ceiling, development deadline, safety research productivity, learn-then-replay, instrument choice, catastrophic risk
+
+### Measure Now, Mitigate Later: Virtual Error Cancellation for Logical Quantum Circuits
+- [[virtual-error-cancellation-logical-circuits]] - 逻辑误差消除 VEC：纯经典后处理 + 双解码器扇区签名权重，免噪声层析免改电路，d=7 抑制 >3 个数量级 (arXiv: 2610.12400)
+  - 无偏条件 E[w(s)]=1 + E[w(s)p_alpha(s)]=0 强制负权重；最优滤波器 w*=1-pbar^T Sigma^-1(p(s)-pbar)，开销 C*=1+pbar^T Sigma^-1 pbar；粗粒化下界 K>=M+1 扇区且质心构成非退化单纯形
+  - 双解码器划分：实时 MWPM × 离线 MPS 一致→consensus（份额 1-O(p_L)）、分歧→4^n-1 方向扇区；对比矩阵 V 对角占优 → Lévy-Desplanques 闭式权重（w_I>1 放大共识、w_Q<0 抵消争议 shot）
+  - 同调间隙谱标度：gapped（解耦 CSS 解码）C*-1=O(p^{(d-1)/2}) 差、gapless（Y 耦合联合解码/gauge 码）C*-1=O(p_L) 最优 η→1（vs logical PEC η≈4、单解码器 η=2）；syndrome 傅里叶保真度 + Jensen 修正收缩估计器 + 对称群参数绑定实现免标定噪声学习
+  - **Activation**: logical error mitigation, virtual error cancellation, syndrome records, dual decoder, coarse-grained sectors, homological gap, sampling overhead, postselection bias
+
 ## 2026-10-09 - Mathematics + Quantum (Cron Job)
 
 ### Geometry-optimized hyperbolic codes for modular fault-tolerant quantum architectures
