@@ -1,3 +1,13 @@
+## 2026-10-11 - Informatics × Quantum (Cron Job)
+
+### Energy-constrained two-way capacities of the pure-loss channel
+- [[energy-constrained-two-way-pure-loss-capacities]] - Last missing capacity formula for the pure-loss bosonic channel: Q2=K=g(N)-g((1-n)N), matching TMSV reverse coherent information (arXiv: 2610.12365)
+  - Two-way quantum and secret-key capacities under photon budget N collapse to the single-letter thermal-entropy expression g(N)-g((1-eta)N); recovers the PLOB bound -log2(1-eta) as N->infty
+  - Converse toolkit: irreducible-covariance LOCC simulation from Choi states, photon-number sector decomposition with explicit separable witnesses, non-lockability dephasing cost bounded by H(K), amortized ER regularization, shield-dimension-independent tensor-power privacy test
+  - Two-way assistance rescues the strong-loss regime: Q2=K stays positive at eta<=1/2 where unassisted Q=P vanishes (eta=1/2, N=1 gives ~0.6226)
+  - Main result obtained with a single ChatGPT Astra prompt (2026-09-17), independently confirmed by [Pir26a] - AI-assisted theorem discovery in quantum Shannon theory
+  - **Activation**: two-way capacity, secret-key capacity, pure-loss channel, energy-constrained quantum Shannon theory, bosonic channel converse, reverse coherent information
+
 ## 2026-10-11 - Neuroscience Research (Cron Job)
 
 ### Prospective Prediction of OOD Degradation from Source-Side Training Dynamics
@@ -1200,20 +1210,6 @@
 
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
-### NeuroLens: Learning Latent Embeddings of Neural Semantics from Chronic Recordings
-- [[neurolens-jepa-chronic-recordings]] - JEPA自监督框架从慢性神经记录学习去噪表征：潜空间预测分离表征可塑性与电极漂移，校准签名神经元身份支持零梯度跨session适配 (arXiv: 2610.02864)
-  - Day-adaptive cross-attention encoder：41维生理签名（FR stats+ACG+population coupling）经MLP生成neuron embedding注入token，替代固定ID实现未见神经元迁移；Utah array通道改用hypernetwork FiLM按天条件化
-  - SIGReg特征函数正则（匹配各向同性高斯）防坍缩，替代启发式stop-gradient；因果transformer AR predictor跨天共享参数强制稳定预测结构
-  - 实证：IBL 53天Neuropixels choice解码+6% vs causal NDT，latent effective rank跨天稳定（NDT随神经元丢失下降）；人类ALS语音sentence-embedding解码+38%，GF模式（64 calibration trials零梯度）仍超SPINT/POSSM
-  - **Activation**: JEPA, chronic recordings, representation drift, neural population nonstationarity, few-shot BCI, cross-attention encoder, effective rank, self-supervised neural decoding, calibration-based neuron identity
-
-### Parallel Time-Aligned Spiking Self-Attention for Consistent Integer-Valued Training and Spike-Driven Inference
-- [[pt-ssa-temporal-interaction-mismatch]] - SFA/I-LIF压缩训练与脉冲推理的算子级失配TIM：O_train含全部跨时间三元组Q_iK_j^TV_k而O_inference只保留对角项，SDT-V3在ImageNet掉27.78pp；PT-SSA重建D个虚拟脉冲切片按时间对齐并行计算注意力再求和，gap降至0.06pp (arXiv: 2610.03291)
-  - 脉冲重建X_d=1[C_X>d]全并行+单位STE梯度路由（D虚拟步梯度求和聚合到压缩激活）；Adaptive PT-SSA每块学一个标量θ_l=exp(clip(a,-8,8))等价调节SFA有效阈值，LSQ式1/√(MD)梯度缩放
-  - 算子级验证：D=4相对L2误差7.41→1.6e-4（SFA）；SSA gap随D恶化（D=8时26.99→15+pp）而PT-SSA全D稳定<0.3pp——发放计数守恒≠算子等价
-  - Triton-fused内核逐tile重建-计算-累加避免物化重建张量，吞吐仅比I-LIF SSA低5.4%（5797 sample/s），比recurrent LIF SSA快2.91×；ImageNet-1K 74.53% spike-driven Top-1
-  - **Activation**: spiking transformer, temporal interaction mismatch, train-inference consistency, SFA, I-LIF, spike-driven attention, virtual time step expansion, adaptive firing threshold, Triton kernel
-
 ## 2026-10-05 - Neuroscience Research (Cron Job)
 
 ### Continual Reinforcement Learning with Neuroevolution
@@ -1553,12 +1549,6 @@
   - 诚实局限：一阶+有限视界，约简必丢信息；任务级组织跨模型不稳定；DMC/DNMC 谱相同但响应方向大异；控制任务方差后与梯度对齐相关性不再唯一 → 不声称预测迁移
   - **Activation**: Green's operator, multitask RNN, perturbation routing, task reuse, matrix-free randomized SVD, adjoint recurrence, response geometry, Lyapunov complement, NeurReps 2026
 
-### How much of fly walking is written in the wiring?
-- [[connectome-wiring-specificity-null-models]] - 果蝇连接组固定权重模型的预注册嵌套重连零模型检验：节律是泛化的（重连网络更节律），拮抗肌协调才是布线特异的——Sherrington 交互神经支配直接写入连接组 (arXiv: 2609.38665)
-  - 核心发现：真实 MaleCNS 拮抗分数 S=0.312 超过全部 40 个重连网络（最高 0.144），MANC 0.173/0.128 vs ≤0.084，两个独立连接组同向复制；交互神经支配指数真实 0.48/0.38 vs 所有重连 <0；跨池重分配 premotor 输入（强度中位变化 <4%）即废除协调
-  - 方法论模式：①嵌套零模型族（density→cell role→degree→leg block→lineage block→leg×lineage，每族 5 网）逐级保留结构；②仅 3 个全局参数扫描后冻结，解剖学接口（DNg100 输入/运动神经元池输出）；③预注册声明水平+60s 新噪声 20 次确认+精确再生验证（4,692 记录）；④协调集中位于 thorax–coxa 关节且持续数分钟
-  - 可迁移教训：连接组模型产生某行为 ≠ 布线特异；测布线特异性要看协调（模式形成）而非节律；修剪充分性测试与重连特异性测试回答不同问题
-  - **Activation**: connectome null models, rewired networks, wiring specificity, reciprocal innervation, antagonist coordination, Drosophila walking, pre-registered criteria, fixed-weight rate model, MaleCNS, MANC
 ## 2026-10-02 - Number Theory × Quantum (Cron Job)
 
 ### The twisted convolution identity and ghost r-SICs from finite quantum dilogarithms
@@ -2934,22 +2924,6 @@
   - Demonstrates advanced accuracy across four datasets while mitigating extreme scale, architecture, and client heterogeneity challenges
   - Enables highly controllable trade-off between model performance and resource efficiency with only marginal computational overhead
   - **Activation**: fedbridge, ann-snn federated learning, pseudo-spike bridge, heterogeneous federated learning, spiking neural networks federated
-
-### An off switch for dual-use knowledge in AI models
-- [[an-off-switch-for-dual-use-knowledge-in-ai-models]] - GRAM (Gradient-Routed Auxiliary Modules) methodology for creating removable compartments for dual-use knowledge in AI models. Enables surgical control over model capabilities without affecting general performance.
-  - Adds auxiliary modules per dual-use category with gradient routing during training
-  - Only relevant modules update when processing dual-use data, isolating knowledge
-  - Modules can be surgically removed post-training to eliminate specific capabilities
-  - **Activation**: GRAM, gradient-routed auxiliary modules, dual-use knowledge control, capability removal
-
-
-### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
-- [[rdnn-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with robust low-rank slow manifolds. Use when implementing or analyzing neural networks that need to maintain and update continuous variables without manifold shattering, particularly in computational neuroscience, working memory modeling, or RNN architecture design. (arXiv: 2608.01947)
-  - Addresses fragility of classical continuous attractor networks and discretization problems of standard RNNs
-  - Implements dynamic division as minimal, algebraically isolated model converging to robust slow manifolds  
-  - Introduces activity-dependent local gradient scaling during BPTT leading to self-compression of effective rank
-  - Demonstrates divisive normalization is mathematically essential to prevent manifold shattering under time-varying inputs
-  - **Activation**: rdnn, divisive normalization, continuous working memory, slow manifolds, recurrent neural networks, neural dynamics, attractor networks, low-rank dynamics
 
 ### CORTIVA: Candidate-Score Fusion of Complementary Visual Teachers for EEG- and MEG-to-Image Retrieval
 - [[cortiva-candidate-score-fusion]] - Framework for decoding visual experience from non-invasive brain activity through candidate-score fusion that preserves complementary evidence by aligning three decoding routes to heterogeneous visual targets, scoring candidates independently, and combining only temperature-scaled score vectors before ranking. (arXiv: 2608.01355)
