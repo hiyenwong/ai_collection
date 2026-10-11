@@ -1,3 +1,21 @@
+## 2026-10-12 - Neuroscience + Quantum Research (Cron Job)
+
+### Heisenberg Echo Symmetrization for Gate-Insertion Error Mitigation
+- [[heisenberg-echo-symmetrization-qem]] - 数字ZNE(gate insertion)在非对易噪声下的一阶偏差修复：前向演化+Heisenberg回波对称化平均，消除±[U,χ]首阶项 (arXiv: 2610.11372)
+  - GI缺陷：K^(2j+1)=U·e^((2j+1)(χ+χ̄)/2+(χ−χ̄)/2)，非缩放项[U,χ]/2使GI变成噪声失真协议，高阶缓解仍不收敛
+  - HES协议：Ã=g(A−λ_min·I)作为初态、ρ₀作为可观测量做反向回波，回波中换向子项符号翻转→平均后精确抵消，残余−⅛U[U,χ]²+跨层项
+  - 7-qubit随机CZ电路：保真度误差较GI改善80×(弱噪声)/30×(强噪声)，接近脉冲逆KIK精度但只需电路级访问
+  - rank-one可观测量零额外采样开销（高rank方差爆炸~2^n）；免表征→抗噪声漂移（每batch须含前向+回波）
+  - **Activation**: gate insertion, digital ZNE, quantum error mitigation, Heisenberg echo, non-commuting noise, noise amplification, drift-resilient QEM
+
+### Language-model ratings of depression reflect the rater more than the patient
+- [[llm-rater-multiplicity-audit]] - 880个LLM评分者预注册multiverse审计：模型选择解释30%分数方差(被试仅10.5%)，AUC≥0.70的评分者对40%被试给出相反筛查决定 (arXiv: 2610.08501)
+  - 偏移(而非AUC)决定标记率：normal-ogive曲线R²=0.91且跨确认集稳定；同AUC模型(0.81/0.80)标记24% vs 80%
+  - 琐碎选择移动阈值：答案字母顺序反转中位数21pp(最高85pp)、仅证据措辞−27pp、4-bit量化+推理库改变21%决定
+  - Cronbach α=0.91但与效度相关仅0.02——内部一致性≠效度；40标签重校准60%→75%精度、减半分歧，仍1/5个体决定不同
+  - 审计协议：rater facet multiverse→方差分解→决策翻转率→offset-精度分离→锁定确认→重校准上限测试
+  - **Activation**: LLM-as-rater, predictive multiplicity, generalizability theory, PHQ-8 screening, rater variance, calibration audit, multiverse analysis
+
 ## 2026-10-12 - Neuroscience Research (Cron Job)
 
 ### The Polytopal Neural Network
