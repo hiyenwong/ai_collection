@@ -1,3 +1,17 @@
+## 2026-10-12 - Neuroscience + Quantum (Cron Job)
+
+### Interpretable Memory Models for Spaced Repetition
+- [[sbd-spaced-repetition-memory-model]] - 三状态(稳定性/脆性/难度)7参数可解释记忆模型，比 FSRS-7 少 80% 权重、近同精度；Gamma frailty 生存曲线 + Kijima 虚拟年龄 + Whittle 索引调度 (arXiv: 2610.10548)
+  - Lucas 批判调度版：复习日志全由现有调度器产生，新调度器必须外推到数据带之外——测试精度是必要非充分条件，简约性+机制解释才是响应
+  - 可复用公式：遗忘生存函数 R(a)=(1+(a/s)^α)^(-1/α)；失败伤害按意外缩放 s'·(1-R)^w3（预期失败损失小）；每日预算下 restless bandit → Whittle 索引 = 使复习/等待无差异的成本
+  - **Activation**: spaced repetition, memory model, forgetting curve, survival analysis, restless bandit, Whittle index, FSRS, interpretability, scheduling
+
+### Q-Capsule: A Localized Capsule-Based Quantum Neural Architecture for Barren Plateau Mitigation
+- [[qcapsule-localized-quantum-neural-architecture]] - 胶囊化量子神经网络抗 barren plateau：寄存器分区+局部 Z 读出使梯度方差 Ω(2^-csize) 与总宽度 N 无关；稀疏耦合=纠缠预算 O(L/k)；QFIM 表达性分数门控每胶囊自适应深度 (arXiv: 2610.11261)
+  - 实测：N=20 时比全局基线（−ln2/qubit 指数抑制）高 5 个数量级梯度方差；互信息不与耦合门数成正比（k=2 用 5 个边界 CNOT 得 3.06 bits > k=1 用 9 个得 2.29 bits，monogamy 效应）；自适应深度 [2,2] 省 73% 两比特门仍达 98.1% 精度
+  - 可复用模式：局部性预算化（用门数构造性约束纠缠而非 penalty）；饱和门控增长（Fisher 有效维度停止上升才加层）；去掉数据重上传精度崩到随机但梯度方差反而升高——梯度健康≠精度健康
+  - **Activation**: barren plateaus, capsule network, QFIM, adaptive depth, entanglement budget, sparse coupling, quantum neural networks, data re-uploading
+
 ## 2026-10-12 - Deep Learning Research (Cron Job)
 
 ### SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference
