@@ -47,6 +47,22 @@
   - 语义组织：k-means WCSS 三模型都在 k=4 出肘部 → 轻量编码器学到与大模型一致的内聚类结构；PCA/t-SNE 显示潜空间组织相当——有效跨疾病表征不必然需要巨大架构
   - **Activation**: EEG foundation model, lightweight encoder, frozen-encoder transfer, cross-disorder EEG, TUAB, TUEP, semantic EEG representations, self-supervised reconstruction, clinical screening sensitivity
 
+### Nonequivalence of Expected Free Energy and Revised System Integrated Information in Noisy Permutation Networks
+- [[efe-iit-nonequivalence-permutation-networks]] - EFE与IIT非等价性定理：相同EFE下φs可不同，不存在标量映射φs=f(G) (arXiv: 2610.03735)
+  - 局部对应成立：2026 IIT的intrinsic-differentiation(idiff=−log₂p纯surprisal)、intrinsic-specification(ispec=p(FU−FI))、partition irreducibility(φe(θ)=p(FPθ−FI))在精确推断下均可表示为optimized VFE坐标
+  - 全局非等价：noisy permutation网络（Yi=Xσ(i)⊕Ni）在homogeneous state下所有σ给出完全相同的one-step预测分布与state-risk EFE，但multicycle排列φs=0（无强连通）而single noisy cycle在1/2<η<1时φs>0——反事实因果信息（干预/分割下的行为）是预测分布不可见的
+  - 闭式解：φs(n)(η)=min{2ηⁿlog₂(2η), −n·log₂η}，MIP恰好切断k=2条实际边、M=⌊4n²/7⌋（组合定理，n=2..8穷举验证）；大n极限η*n→1−(ln2)/n、(η*)ⁿ→1/2、φs,max→1 ibit——2026 refinement使φs在随机(η=1/2)与确定(η=1)两端均为零，非单调内部最大
+  - PyPhi 2026验证至1.55e-15浮点精度；组合放大：n!排列中single-cycle仅占1/n，预测退化且φs=0的架构比例随n→1
+  - **Activation**: EFE, IIT 4.0, integrated information, free energy principle, active inference, noisy permutation network, minimum information partition, PyPhi, consciousness theory, counterfactual causal equivalence, intrinsic differentiation
+
+### Broken Scale Symmetries in Undercomplete Linear Autoencoders
+- [[broken-scale-symmetries-undercomplete-autoencoders]] - 欠完备线性自编码器的SGD定向标度漂移：GL(k)对称破缺偏向decoder-heavy权重，直至稳定性边缘 (arXiv: 2610.03640)
+  - Noether荷Q=WᵀW−UUᵀ在梯度流下守恒，但有限步长minibatch SGD破坏之；欠完备（k<d，完美重建不可能）时不存在noise-balanced均衡——解几何选择漂移的**符号**：decoder权重增长、encoder收缩（流形上乘积不变、函数等价）
+  - 有效动力学可解析：双时间尺度分离T_slow~B/η² vs T_fast~1/η；尺度自由度S=AᵀA满足∂τS+S⁻¹(∂τS)S⁻¹=S^(−1/2)CS^(−1/2)，预测各向异性尺度增长s_i速率不同，与模拟高度吻合
+  - Edge of stability终点：曲率随scale增长直至ηλmax≈2——**progressive sharpening可在函数已收敛后纯流形漂移发生，不反映任何继续学习**；批尖锐度BS∝1/s（齐次度−1）与population λmax反向运动——sharpness度量依赖性警告
+  - ReLU（齐次激活）把GL(k)降为per-neuron对角标度对称，欠完备ReLU自编码器显示同样的decoder-heavy定向漂移（初步结果）
+  - **Activation**: scale symmetry breaking, GL(k) symmetry, Noether charge, undercomplete autoencoder, PCA manifold, edge of stability, progressive sharpening, batch sharpness, implicit bias, minibatch SGD, decoder-heavy weights, sharpness measures
+
 ## 2026-10-10 - Economics & Investment (Cron Job, late night)
 
 ### Agentic AI Systems and Financial Stability: From Model Risk to Systemic Risk
