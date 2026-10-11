@@ -1,3 +1,20 @@
+## 2026-10-12 - Neuroscience Research (Cron Job)
+
+### The Polytopal Neural Network
+- [[polytopal-neural-network-archetypal-layers]] - 每层强制表示为学习polytope上K个archetype的凸组合：解释坐标=前向计算坐标（内生可解释），corpus流式更新+摊销simplex推理扩展到深度网络；one-hot特例=免STE/commitment/EMA的VQ训练 (arXiv: 2610.12004)
+  - 层算子 Δ_C^ℓ：archetype A^ℓ=C^ℓZ^ℓ（row-stochastic softmax参数化端到端训练），投影 R^ℓ=S^ℓA^ℓ 进下一层
+  - Theorem 1：polytope投影 Φ(h)=sparsemax(f_θ(h)) 可由有限ReLU网络精确表示（G=AA^T正定⇔K≤d）
+  - ConvNeXt-T ImageNet-1k 保留96.9%精度（81.2→78.6%），token级变体给每token精确加性归因
+  - **Activation**: polytopal representation, archetypal analysis, intrinsic interpretability, VQ without STE, corpus streaming
+
+### DADP: Dynamic Activity-Dependent Pruning
+- [[dadp-reverse-hebbian-structural-pruning]] - 反向Hebbian结构剪枝：重要性=|前突触激活×后突触误差梯度|的期望，单一全局阈值τ让各层稀疏度自然涌现——ResNet-18@99.35%稀疏72.28%胜SNIP/RigL/Magnitude (arXiv: 2610.11853)
+  - Theorem 1：I_ij=一阶Taylor零化损失的每单位权值幅值；静默前激活或误差不敏感后目标⇔剪除
+  - 涌现式结构死亡：神经元全入边或全出边被剪→自动级联删除+物理收缩filter/BN（ResNet skip路径保留60-80%）
+  - 域自适应分配：视觉网络早期层锁定不剪、深层98-99%；序列模型倒置（BERT嵌入层95%剪、决策头密集）
+  - Gram谱验证：S_norm>0.85@97%稀疏，中层EffRank超dense基线（剪掉相关噪声）
+  - **Activation**: reverse Hebbian pruning, global threshold sparsity, emergent structured pruning, activation-gradient saliency, effective rank QA
+
 ## 2026-10-12 - Neuroscience + Quantum (Cron Job)
 
 ### Interpretable Memory Models for Spaced Repetition
