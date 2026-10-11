@@ -2956,3 +2956,27 @@
   - Uses Subtractive Degradation Event Attention (SDEA), Hierarchical Bayesian Skip Masking (HBSM), and Additive Restoration Event Attention (AREA)
   - Achieves competitive performance with significantly lower energy consumption
   - **Activation**: SpikeRestormer, unified event reasoning, SNN image restoration, energy-efficient SNN
+
+## 2026-10-11 - Duplicate-variant entries restored (dedupe safety net)
+
+### How much of fly walking is written in the wiring?
+- [[connectome-wiring-specificity-null-models]] - 果蝇连接组固定权重模型的预注册嵌套重连零模型检验：节律是泛化的（重连网络更节律），拮抗肌协调才是布线特异的——Sherrington 交互神经支配直接写入连接组 (arXiv: 2609.38665)
+  - 核心发现：真实 MaleCNS 拮抗分数 S=0.312 超过全部 40 个重连网络（最高 0.144），MANC 0.173/0.128 vs ≤0.084，两个独立连接组同向复制；交互神经支配指数真实 0.48/0.38 vs 所有重连 <0；跨池重分配 premotor 输入（强度中位变化 <4%）即废除协调
+  - 方法论模式：①嵌套零模型族（density→cell role→degree→leg block→lineage block→leg×lineage，每族 5 网）逐级保留结构；②仅 3 个全局参数扫描后冻结，解剖学接口（DNg100 输入/运动神经元池输出）；③预注册声明水平+60s 新噪声 20 次确认+精确再生验证（4,692 记录）；④协调集中位于 thorax–coxa 关节且持续数分钟
+  - 可迁移教训：连接组模型产生某行为 ≠ 布线特异；测布线特异性要看协调（模式形成）而非节律；修剪充分性测试与重连特异性测试回答不同问题
+  - **Activation**: connectome null models, rewired networks, wiring specificity, reciprocal innervation, antagonist coordination, Drosophila walking, pre-registered criteria, fixed-weight rate model, MaleCNS, MANC
+
+### An off switch for dual-use knowledge in AI models
+- [[an-off-switch-for-dual-use-knowledge-in-ai-models]] - GRAM (Gradient-Routed Auxiliary Modules) methodology for creating removable compartments for dual-use knowledge in AI models. Enables surgical control over model capabilities without affecting general performance.
+  - Adds auxiliary modules per dual-use category with gradient routing during training
+  - Only relevant modules update when processing dual-use data, isolating knowledge
+  - Modules can be surgically removed post-training to eliminate specific capabilities
+  - **Activation**: GRAM, gradient-routed auxiliary modules, dual-use knowledge control, capability removal
+
+### Divisive Normalization Shapes Low-Rank Slow Manifolds for Continuous Working Memory
+- [[rdnn-divisive-normalization-working-memory]] - Recurrent Divisive Normalization Network (RDNN) framework for continuous working memory with robust low-rank slow manifolds. Use when implementing or analyzing neural networks that need to maintain and update continuous variables without manifold shattering, particularly in computational neuroscience, working memory modeling, or RNN architecture design. (arXiv: 2608.01947)
+  - Addresses fragility of classical continuous attractor networks and discretization problems of standard RNNs
+  - Implements dynamic division as minimal, algebraically isolated model converging to robust slow manifolds  
+  - Introduces activity-dependent local gradient scaling during BPTT leading to self-compression of effective rank
+  - Demonstrates divisive normalization is mathematically essential to prevent manifold shattering under time-varying inputs
+  - **Activation**: rdnn, divisive normalization, continuous working memory, slow manifolds, recurrent neural networks, neural dynamics, attractor networks, low-rank dynamics
