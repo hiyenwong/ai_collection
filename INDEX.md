@@ -1,3 +1,26 @@
+## 2026-10-11 - Informatics × Quantum (Cron Job, evening)
+
+### Who can sample forever? Shot noise effects in quantum linear regression
+- [[shot-noise-quantum-linear-regression]] - 有限采样使量子线性回归（QELM/核/储备池）必然病态：理想特征矩阵秩亏 rank=d²，经验估计满秩 → 伪逆发散；偏差 ~N⁻²、方差 ~(N·n_tr)⁻¹，n_tr>N 后加数据无用；含噪声标签时 γ²NC/M 项导致"量子过拟合"——训练 shots 越多测试误差越大 (arXiv: 2610.12015)
+  - 秩不连续机制：shot noise 以 N^(-1/2) 尺度填充 n_out−d² 个噪声方向，训练拟合无穷统计下消失的方向；放大系数 C=(n_out−d²)/(n_tr−n_out−1) 恰是经典 ridgeless 最小二乘方差因子 p/(n−p−1)
+  - 资源法则两体制：N≳n_tr 波动主导（类经典）；N≲n_tr 偏差主导且对数据量不敏感——总实验预算必须在 n_tr 与 N 间联合分配，平衡点 N~n_tr
+  - 量子过拟合：噪声标签下 N/M 交叉项使 MSE 在有限 N* 处取最小，之后线性增长——增加训练 shots 必须同步增加测试 shots；正则化（ridge/截断 SVD/早停）切除虚假方向是自然解法
+  - **Activation**: shot noise, quantum linear regression, QELM, quantum kernel, ill-conditioning, rank discontinuity, quantum overfitting, shot budget allocation, pseudoinverse divergence
+
+### Retromorphic Testing of Quantum Compiler Passes
+- [[retromorphic-quantum-compiler-testing]] - RetroQ 用回溯形态测试+Hadamard 检验自动验证量子编译器 pass：Stage 1 adjoint 恒等式（ζ(F†)、ζ(F)† 须返回 |0⟩ 且满足门数预期），Stage 2 受控 adjoint 恒等式（辅助比特须 ⟨Z⟩=+1，抓全局相位 bug）——发现/复现 6 个 bug (arXiv: 2610.11195)
+  - 测试现状审计（AST 分析 200 文件）：断言以 program-content（40-62%）和 metrics 为主，95%+ 测试电路深度 1-10、多在 50 qubit 以下；Qiskit 输出等价性断言仅 0.06%——几乎无人验证编译后输出等价
+  - 五类逃逸 bug：符号推理（ry(d*0) 不删除）、抽象鸿沟（QubitUnitary adjoint 崩溃）、结构逻辑（SWAP 被错误换位过 CRZ 后消掉）、全局相位（受控上下文 ⟨Z⟩ 翻转到 −1）、adjoint 逻辑（自伴门序列 H†Z†H† 不匹配 HZH 模式）
+  - 可复用协议：仅需 F、F†、ζ 三要素、后端无关 → 可推广到量子算术模块、uncomputation 子程序、QEC 编码电路及硬件统计验证；已知盲区：Identity 初始化下门重排不可见，需非平凡初始化态
+  - **Activation**: retromorphic testing, quantum compiler verification, Hadamard test, adjoint identity, global phase in controlled operations, test oracle problem, PennyLane, Qiskit, compiler pass QA
+
+### Settling the Sample Complexity of Rényi Entropy Estimation
+- [[renyi-entropy-sample-complexity]] - 补全非整数阶 Rényi 熵估计样本复杂度：Θ(d^max{1/α,1}/(ε^{1/α}·log d) + d^|1−1/α|/ε²)，ε 依赖在 α=1/2 和 α=1 处变号；上界用精化最佳多项式逼近估计器，下界用有界支撑 [0,K²] 上的构造性矩匹配 (arXiv: 2610.10389)
+  - 估计器模式（可复用）：Poisson 化后按计数阈值 Y≤10L 分流——小计数用 x^α 的最佳逼近多项式（‖Q_K−x^α‖∞ ≤ c_α·K^(-2α)）压偏置，大计数用双二项式和的无偏估计器，最后对 F̂ 做 clip 再取 log 控制方差
+  - 下界原语（独立价值）：K 阶矩匹配对 (ν0,ν1) 在 [0,K²] 上低阶矩全等（配合 Wu–Yang Poisson TV 界愚弄一切 ≤K 阶多项式统计量）但 α 阶矩保持固定比率 e^{8|1−α|ε}；双块分布 + Chebyshev/Markov 双杀
+  - 实践要点：非整数 α ≠ 整数阶直觉（无 d^{1−1/α}/ε² 单项），d/(ε log d) 稀疏发现项永远存在；多项式逼近+阈值分流是幂和泛函 Σp_i^α 估计的通用模式
+  - **Activation**: Rényi entropy, sample complexity, property estimation, polynomial approximation estimator, moment matching, Poissonization, minimax lower bounds, information theory
+
 ## 2026-10-11 - Informatics × Quantum (Cron Job)
 
 ### Energy-constrained two-way capacities of the pure-loss channel
