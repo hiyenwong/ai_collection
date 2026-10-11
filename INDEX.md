@@ -1,3 +1,47 @@
+## 2026-10-12 - Deep Learning Research (Cron Job)
+
+### SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference
+- [[sparsedecoding-decoding-aware-pruning]] - 解码感知剪枝：Hessian 校准改用模型自生成 token（排除 prefill）消除自然文本→自生成分布漂移；N:M 稀疏 SpMV 内核（bitmask 索引+定步遍历）让解码获得真实 wall-clock 加速 (arXiv: 2610.12327)
+  - 分布漂移诊断：自然文本校准的 Hessian 误估解码时权重重要性，长生成下误差随 rollout 累积——短 PPL 基准测不出
+  - 双轴修复：算法轴（自生成激活收集校准）+ 系统轴（解码是 memory-bound SpMV 而非 SpMM，需专用内核）；Llama-3.1-8B/3.3-70B、Qwen3-14B/32B 上 A100 端到端解码提速至 1.48×
+  - **Activation**: LLM pruning, N:M sparsity, Hessian calibration, decoding latency, SpMV kernel, memory-bound inference, generation distribution shift
+
+### When Should Agents Think? Adaptive Reasoning via Cross-Turn Estimation (RACE)
+- [[race-adaptive-agent-reasoning]] - Agent 何时该思考：用"删除推理回合后后续动作似然降幅"作廉价反事实信号（LoGiC 渐进覆盖检测），蒸馏进 SFT/RL 让策略学会按需推理 (arXiv: 2610.12061)
+  - 核心机制：reasoning 回合只有改变后续动作可达性才有价值——似然消融 Δ≈0 即冗余；训练期估计、推理期免费
+  - 可复用模式：似然消融作廉价反事实，推广到跳过冗余检索、剪 CoT 前缀、决定何时重规划；4 个 agent 基准上大幅降推理成本且性能不降
+  - **Activation**: adaptive reasoning, when to think, reasoning budget, cross-turn reasoning, likelihood ablation, agentic RL, token cost reduction
+
+### Which Skill to Distill? SGUID: Selecting a Compact Skill Bank for Model-Skill Co-Evolution
+- [[sguid-skill-bank-distillation]] - OPD 技能蒸馏中 <25% 检索技能产生有效学习信号；SGUID 只保留训练全程一致产生信号的技能，6 个精选技能匹配/超过 11× 大全库，支撑稳定模型-技能共进化循环 (arXiv: 2610.12367)
+  - 检索按语义相关≠学习有用；未过滤技能更新可致退化（Qwen3-4B HMMT25 −0.3pt），SGUID 两轮 +0.5→+1.1pt，Qwen3-8B 64.3%→66.3%
+  - 共进化循环：模型更新→新 rollout 策展候选库→再选择→蒸馏——课程由模型自身失败模式生成
+  - **Activation**: skill distillation, skill bank selection, on-policy distillation, model-skill co-evolution, utility-first retrieval, curriculum from rollouts
+
+### DIAL-OPD: Learning More from Fewer Tokens in On-Policy Distillation
+- [[dial-opd-token-selection]] - OPD 中"低-低 token"（师生概率都≈0）获大 log-ratio 奖励却无学习价值；用师生概率对数均值^β 加权奖励幅值后取 top-40%，40% token 胜过全 token 监督 (arXiv: 2610.11659)
+  - 尺度修正：score=|reward|·L_mean(p_T,p_S)^β，适度 β 平衡压制低-低与保留有效分歧；7 数学基准均值 +5.25pt，AIME25 Pass@16 翻倍
+  - 4B 教师+DIAL 超过 8B 教师全 token 基线——监督分配可胜过教师缩放
+  - **Activation**: on-policy distillation, token selection, log-ratio reward, low-low tokens, probability scale weighting, supervision budget
+
+### A Unified Bellman Operator for Safety-Critical Reinforcement Learning
+- [[unified-bellman-safe-rl]] - 单一 Bellman 算子统一任务回报与硬安全约束：双时间尺度逼近（安全值快尺度、联合值慢尺度）+ 占据平均微分包含收敛证明，无需先验 filter 也非平均约束 (arXiv: 2610.12420)
+  - 收敛策略可复用：冻结快尺度→极限动力学为集合值微分包含（可行性项在约束边界产生 kink）→Lyapunov 收敛到极限最优安全约束值函数集→双时间尺度定理提升
+  - 连续控制+神经近似下稳定收敛、测试时安全违例近零；模板适用于任意"性能+持续可行性"决策问题（能耗预算/延迟 SLA）
+  - **Activation**: safe RL, constrained MDP, Bellman operator, two-timescale stochastic approximation, differential inclusion, hard constraints at all times
+
+### One Block, Multiple Depths: Recurrent Vision Transformers with Depth-Programmed Experts (reViT)
+- [[revit-depth-programmed-experts]] - 单块循环 ViT 匹配全深度编码器：FFN 按连续归一化深度坐标编程为小共享专家库凸组合，权重空间合并胜过 token 路由；~70% 更少存储参数达 DeiT III 精度 (arXiv: 2610.12448)
+  - 受控发现：匹配逐深度一 FFN 预算下 weight-space merging > token-dispatch > output-mixture——连续条件变量（深度/时间/尺度）下优先权重空间凸组合
+  - 弹性深度：同一 checkpoint 重采样坐标区间即多深度部署；固定深度可物化为稠密图去在线路由；DINOv2 仅输出特征蒸馏即保留近全部 linear-probe 精度并跨分类/分割/深度迁移
+  - **Activation**: recurrent transformer, parameter sharing, depth-conditional FFN, weight-space MoE, elastic depth, parameter-efficient encoder
+
+### Ambient Discrete Diffusion: RefineMix
+- [[refinemix-ambient-discrete-diffusion]] - 离散扩散的数据稀缺解法：OOD 数据只注入低噪声时段——掩码噪声保留域信息使高噪声注入有害，但低噪声下域支撑不相交使 OOD 数据成为不偏采样器的免费增益 (arXiv: 2610.12340)
+  - 连续→离散技巧迁移必须按噪声算子信息几何重审：Gaussian 擦除域身份、masking 保留——为 Gaussian 推导的规则常在 masking 下反转
+  - 蛋白序列生成：仅 197 个域内样本微调，同时新颖/可折叠/同族蛋白比例较标准微调近翻倍；OOD 数据是"按噪声时段调度的资源"
+  - **Activation**: discrete diffusion, data scarcity, OOD data usage, masking noise, protein sequence generation, data-efficient generative modeling
+
 ## 2026-10-11 - Informatics × Quantum (Cron Job, evening)
 
 ### Who can sample forever? Shot noise effects in quantum linear regression
@@ -62,6 +106,20 @@
   - Edge of stability终点：曲率随scale增长直至ηλmax≈2——**progressive sharpening可在函数已收敛后纯流形漂移发生，不反映任何继续学习**；批尖锐度BS∝1/s（齐次度−1）与population λmax反向运动——sharpness度量依赖性警告
   - ReLU（齐次激活）把GL(k)降为per-neuron对角标度对称，欠完备ReLU自编码器显示同样的decoder-heavy定向漂移（初步结果）
   - **Activation**: scale symmetry breaking, GL(k) symmetry, Noether charge, undercomplete autoencoder, PCA manifold, edge of stability, progressive sharpening, batch sharpness, implicit bias, minibatch SGD, decoder-heavy weights, sharpness measures
+
+### NeuroCBIR: Multi-Positive Ranking Contrastive Learning for Brain MRI Retrieval
+- [[neurocbir-brain-mri-retrieval]] - 两阶段VAE-GAN+MPRCL：whole-brain与103区域级MRI检索mAP@5达98-99.6，零样本年龄估计/AD分层 (arXiv: 2610.06502)
+  - MPRCL三方关系：hard positives（同subject）拉近最小相似度至1、soft negatives（VAE潜空间近邻不同subject）与hard negatives（远邻）分别用排序损失分离，margin按anchor相似度范围Δi自适应缩放；负样本挖掘用冻结VAE cosine相似度（非训练信号）
+  - 双层级标签设计：whole-brain→subject身份；region→(subject, region)对；纵向扫描为hard positives；每迭代随机采样10/103区域独立计算loss后平均
+  - 零任务标签下涌现临床结构：top-500检索聚合年龄MAE 4.3yr（r=0.54）；CN/MCI/AD BAcc 56.3%（chance 33%）；AD查询检索到平均大6岁的CN——疾病信号无监督浮现；CPU嵌入18.7s/scan，检索<0.01s
+  - **Activation**: brain MRI retrieval, CBIR, MPRCL, contrastive learning, VAE-GAN, region-specific retrieval, ADNI, OASIS3, zero-shot age estimation, Alzheimer stratification
+
+### MEM as an Extension of Recurrent Processing Theory: Toward a Motivational Account of Consciousness
+- [[mem-motivated-emotional-mind-consciousness]] - MEM动机意识理论：仅当循环重建受体锚定的感知/内感受地图（secondary perception）时产生现象性，RPT是A_int=A_ctx=0的特例 (arXiv: 2610.04057)
+  - 递归性≠意识：纯调节性循环（无主导感觉重建）保持无意识；操作性判据χ_SP(t)=1 iff W(t)≠∅ ∧ ‖ĥ_sens‖≥Θ_rec ∧ ‖h_int^act‖≥Θ_int；感知-意象-幻觉连续体由重建权重λ控制（Eq.14）
+  - Semblions（半层次跨模态联合体）S_m=(μ_m, ρ_m, v_m)：匹配分数u_m含感觉相似+身体/动机上下文+效价共三分量（Eq.6）；TopK→候选集C(t)内软竞争（侧向联想启动+softmax温度+优势阈值），多semblion可共主导，WTA只是尖锐极限
+  - 情绪=对allostasis的知觉解读（James/Lange/Prinz谱系）：单侧违规Δn_r±、全局情感A(t)=tanh(...)有界调节信号；被阻断的动作激活经多轮循环模拟→重建关联感受→预测后果→再竞争——深思熟虑=动态模拟而非小矮人决策
+  - **Activation**: consciousness theory, recurrent processing theory, secondary perception, semblions, allostasis, affect, interoception, motivational account, perception-imagery-hallucination continuum, deliberation cycles
 
 ## 2026-10-10 - Economics & Investment (Cron Job, late night)
 
