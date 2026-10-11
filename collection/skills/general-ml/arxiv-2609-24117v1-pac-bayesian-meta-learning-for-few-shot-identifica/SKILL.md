@@ -1,31 +1,26 @@
---
+---
 name: arxiv-2609-24117v1-pac-bayesian-meta-learning-for-few-shot-identifica
-description: 'PAC-Bayesian Meta-Learning for Few-Shot Identification of Linear Dynamical Systems (arXiv: 2609.24117v1)'
-metadata:
-  {
-    "arxiv_id": "2609.24117v1",
-    "utility": 1.0,
-    "title": "PAC-Bayesian Meta-Learning for Few-Shot Identification of Linear Dynamical Systems",
-    "authors": "Chenfeng Huang, George Michailidis",
-    "url": "http://arxiv.org/abs/2609.24117v1"
-  }
---
+description: "PAC-Bayesian Meta-Learning for Few-Shot Identification of..."
+tags: [arxiv, general-ml, utility-1.0]
+source: arxiv
+utility_score: 1.0
+---
 
 # PAC-Bayesian Meta-Learning for Few-Shot Identification of Linear Dynamical Systems
 
 **arXiv ID:** 2609.24117v1
-**Authors:** Chenfeng Huang, George Michailidis
-**URL:** http://arxiv.org/abs/2609.24117v1
-**Utility Score:** 1.00
+**Utility Score:** 1.0
+**Category:** general-ml
 
-## Summary
+## Abstract
 
-This skill was automatically generated from the arXiv paper titled "PAC-Bayesian Meta-Learning for Few-Shot Identification of Linear Dynamical Systems" (ID: 2609.24117v1).
+*Abstract to be retrieved from arXiv.*
 
-## Usage
+## Key Contributions
 
-This skill can be used to reference the paper's concepts, methodologies, or findings in agent workflows.
+- High-utility paper (score: 1.0) in general-ml
+- Identified through automated paper selection pipeline
 
-## References
+## Implications
 
-- arXiv: http://arxiv.org/abs/2609.24117v1
+This paper addresses important problems in general ml with potential applications in research and development.

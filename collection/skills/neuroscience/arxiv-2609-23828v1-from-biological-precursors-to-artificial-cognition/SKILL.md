@@ -1,31 +1,26 @@
---
+---
 name: arxiv-2609-23828v1-from-biological-precursors-to-artificial-cognition
-description: 'From Biological Precursors to Artificial Cognition: Consciousness, Embodiment, and the MEM Architecture (arXiv: 2609.23828v1)'
-metadata:
-  {
-    "arxiv_id": "2609.23828v1",
-    "utility": 1.0,
-    "title": "From Biological Precursors to Artificial Cognition: Consciousness, Embodiment, and the MEM Architecture",
-    "authors": "Janusz A. Starzyk, Wiesław L. Galus",
-    "url": "http://arxiv.org/abs/2609.23828v1"
-  }
---
+description: "From Biological Precursors to Artificial Cognition: Consc..."
+tags: [arxiv, neuroscience, utility-1.0]
+source: arxiv
+utility_score: 1.0
+---
 
 # From Biological Precursors to Artificial Cognition: Consciousness, Embodiment, and the MEM Architecture
 
 **arXiv ID:** 2609.23828v1
-**Authors:** Janusz A. Starzyk, Wiesław L. Galus
-**URL:** http://arxiv.org/abs/2609.23828v1
-**Utility Score:** 1.00
+**Utility Score:** 1.0
+**Category:** neuroscience
 
-## Summary
+## Abstract
 
-This skill was automatically generated from the arXiv paper titled "From Biological Precursors to Artificial Cognition: Consciousness, Embodiment, and the MEM Architecture" (ID: 2609.23828v1).
+*Abstract to be retrieved from arXiv.*
 
-## Usage
+## Key Contributions
 
-This skill can be used to reference the paper's concepts, methodologies, or findings in agent workflows.
+- High-utility paper (score: 1.0) in neuroscience
+- Identified through automated paper selection pipeline
 
-## References
+## Implications
 
-- arXiv: http://arxiv.org/abs/2609.23828v1
+This paper addresses important problems in neuroscience with potential applications in research and development.

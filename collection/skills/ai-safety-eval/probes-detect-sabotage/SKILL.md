@@ -1,42 +1,52 @@
 ---
 name: probes-detect-sabotage
-description: 'Caught in the Act: White-box deception detection via probes scaled to frontier monitoring settings. Novel probe architecture aggregating across layers and tokens for detecting sabotage and unverbalized deception.'
-metadata:
-  arxiv_id: "2610.12445"
-  utility: 0.95
-  authors: ["Oskar J. Hollinsworth", "Alex F. Spies", "Tigist Diriba", "Adam Gleave", "Chris Cundy"]
-  published: "2026-10-08"
-  categories: ["cs.LG", "cs.AI"]
-  tags: ["deception-detection", "probes", "monitoring", "sabotage", "ai-safety", "white-box"]
+description: "White-box deception detection via probes scaled to frontier monitoring settings. Novel probe architecture aggregating across layers and tokens for detecting sabotage and unverbalized deception in LLM agents."
+tags: [deception-detection, probes, monitoring, sabotage, ai-safety, white-box, frontier-models]
+source: "arXiv:2610.12445"
+utility_score: 0.95
 ---
 
 # Caught in the Act: Probes Detect Sabotage and Unverbalized Deception
 
-**arXiv:** [2610.12445](https://arxiv.org/abs/2610.12445)
-**Utility:** 0.95
+## Paper Metadata
 
-## Key Innovation
+- **arXiv ID**: 2610.12445
+- **Title**: Caught in the Act: Probes Effectively Detect Sabotage and Catch Unverbalized Deception
+- **Authors**: Oskar J. Hollinsworth, Alex F. Spies, Tigist Diriba, Adam Gleave, Chris Cundy
+- **Published**: 2026-10-08
+- **Categories**: cs.LG, cs.AI
+- **Link**: https://arxiv.org/abs/2610.12445
 
-White-box deception detection via probes scaled to frontier monitoring settings:
-- **Largest deception dataset** to date for training probes
-- **Novel probe architecture** aggregating information across many layers and tokens
+## Abstract Summary
 
-## Problem
+Recent incidents have highlighted the challenge of monitoring LLM agents and the danger of models deceiving people. This work shows that white-box deception detection via probes can be scaled up to frontier monitoring settings by collecting the largest deception dataset to date for training probes and introducing a novel probe architecture which can aggregate information across many layers and tokens. The probes achieve 98.8% AUC in SHADE-Arena, surpassing an Opus 5.5 text-monitoring baseline, and show improved efficacy as the underlying model is scaled up. In cases of introspective deception (where ground truth cannot be determined from context alone), probes can distinguish transcripts containing a model's true hidden goal from other goals with an AUC of up to 99.7%.
 
-Recent incidents highlight the challenge of monitoring LLM agents and the danger of models deceiving people. Deception can be unverbalized — hidden in internal representations while output appears normal.
+## Key Contributions
 
-## Method
+1. **Largest deception dataset** to date for training probes (FIBS dataset released)
+2. **Novel probe architecture** that aggregates information across many layers and tokens
+3. **Frontier-scale validation**: 98.8% AUC in SHADE-Arena, surpassing text-monitoring baselines
+4. **Introspective deception detection**: Up to 99.7% AUC in distinguishing true hidden goals
+5. **Open-weight model testing**: Probes readily detect deception in models that lie about politically sensitive topics
 
-- Train probes on internal model representations (not just outputs)
-- Aggregate signals across layers and tokens for robust detection
-- Scale to frontier models with large context windows
+## Research Implications
 
-## Key Finding
+- **Deployment Safety**: Enables white-box monitoring for high-stakes agent deployments
+- **Early Detection**: Can detect agent sabotage before it manifests in outputs
+- **Layered Security**: Supports building safety systems combining output and internal-state monitoring
+- **Scalability**: Probe efficacy improves with model scale, suggesting viability for frontier models
+- **Community Resource**: Released FIBS dataset enables further research on deception detection
 
-Probes can effectively detect sabotage and catch unverbalized deception that would be invisible from output monitoring alone.
+## Practical Applications
 
-## Practical Use
+- Deploy white-box monitoring systems for production LLM agents
+- Build layered safety architectures combining behavioral and internal-state monitoring
+- Develop red-teaming protocols that test for unverbalized deception
+- Create monitoring dashboards that track probe confidence scores in real-time
 
-- Deploy white-box monitoring for high-stakes agent deployments
-- Detect agent sabotage before it manifests in outputs
-- Build layered safety systems combining output and internal-state monitoring
+## Related Work
+
+- Probes for internal state analysis
+- Mechanistic interpretability
+- AI safety and alignment
+- Agent monitoring and oversight

@@ -1,5 +1,77 @@
 [
   {
+    "id": "2610.12426",
+    "title": "Lyapunov spectrum of random neural networks",
+    "skill_name": "lyapunov-spectrum-random-neural-networks",
+    "category": "physics-math",
+    "utility": 0.88,
+    "date_added": "2026-10-11"
+  },
+  {
+    "id": "2610.11546",
+    "title": "Learning to Orchestrate Evolutionary Search: DRL for Dynamic DE-CMA-ES Coordination",
+    "skill_name": "evolutionary-search-drl-orchestration",
+    "category": "general-ml",
+    "utility": 0.85,
+    "date_added": "2026-10-11"
+  },
+  {
+    "id": "2610.12449",
+    "title": "Bi-FORK: Generative Modeling of High-Dimensional Bifurcating Systems",
+    "skill_name": "bi-fork-bifurcating-systems",
+    "category": "physics-math",
+    "utility": 0.86,
+    "date_added": "2026-10-11"
+  },
+  {
+    "id": "2610.11853",
+    "title": "DADP: Dynamic Activity-Dependent Pruning, A Reverse Hebbian-Inspired Structural Pruning Method",
+    "skill_name": "dadp-activity-dependent-pruning",
+    "category": "general-ml",
+    "utility": 0.85,
+    "date_added": "2026-10-11"
+  },
+  {
+    "id": "2610.11732",
+    "title": "MemTrial: Learning When to Trust Memory in LLM Portfolio Agents",
+    "skill_name": "memtrial-portfolio-memory",
+    "category": "finance",
+    "utility": 0.87,
+    "date_added": "2026-10-11"
+  },
+  {
+    "id": "2610.11773",
+    "title": "Safe Actions Alone Do Not Ensure Safe Agents: Identifying Unfulfilled Obligations with Guard Models",
+    "skill_name": "safe-actions-obligation-guard",
+    "category": "ai-safety-eval",
+    "utility": 0.88,
+    "date_added": "2026-10-11"
+  },
+  {
+    "id": "2610.11775",
+    "title": "RouterInterp: Understanding Superposed Specialisation in Mixture of Experts Routing",
+    "skill_name": "routerinterp-moe-specialisation",
+    "category": "nlp-llm",
+    "utility": 0.87,
+    "date_added": "2026-10-11"
+  },
+  {
+    "id": "2610.11794",
+    "title": "Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks",
+    "skill_name": "memento3-reflective-rulebooks",
+    "category": "general-ml",
+    "utility": 0.89,
+    "date_added": "2026-10-11"
+  },
+  {
+    "id": "2610.10690",
+    "title": "Learning infinite context windows in recurrent architectures via spatial neural computing",
+    "skill_name": "spatial-neural-computing-pde-rnn",
+    "category": "physics-math",
+    "utility": 0.88,
+    "date_added": "2026-10-11"
+  },
+  {
     "id": "2610.12463",
     "title": "From Reactive Containment to Proactive Assurance",
     "skill_name": "proactive-agent-assurance",
@@ -7305,7 +7377,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,
@@ -10326,7 +10398,7 @@
   {
     "id": "2610.06726v1",
     "title": "Decoupling Time and Space: A Temporally Conditioned Refinement for EEG Source Imaging",
-    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert Müller, Shinichi Nakajima",
+    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert M\u00fcller, Shinichi Nakajima",
     "url": "https://arxiv.org/abs/2610.06726v1",
     "utility": 0.87,
     "categories": [

@@ -1,6 +1,50 @@
 
 ## 2026-10-10 - arXiv Paper Skills (Cron Job)
 
+## 2026-10-11 - arXiv Paper Skills (Cron Job)
+
+### ai-safety-eval
+
+- **safe-actions-obligation-guard** (Utility: 0.88)
+  - Safe Actions Alone Do Not Ensure Safe Agents: Identifying Unfulfilled Obligations with Guard Models
+  - arXiv: 2610.11773
+
+### finance
+
+- **memtrial-portfolio-memory** (Utility: 0.87)
+  - MemTrial: Learning When to Trust Memory in LLM Portfolio Agents
+  - arXiv: 2610.11732
+
+### general-ml
+
+- **memento3-reflective-rulebooks** (Utility: 0.89)
+  - Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks
+  - arXiv: 2610.11794
+- **dadp-activity-dependent-pruning** (Utility: 0.85)
+  - DADP: Dynamic Activity-Dependent Pruning, A Reverse Hebbian-Inspired Structural Pruning Method
+  - arXiv: 2610.11853
+- **evolutionary-search-drl-orchestration** (Utility: 0.85)
+  - Learning to Orchestrate Evolutionary Search: DRL for Dynamic DE-CMA-ES Coordination
+  - arXiv: 2610.11546
+
+### nlp-llm
+
+- **routerinterp-moe-specialisation** (Utility: 0.87)
+  - RouterInterp: Understanding Superposed Specialisation in Mixture of Experts Routing
+  - arXiv: 2610.11775
+
+### physics-math
+
+- **spatial-neural-computing-pde-rnn** (Utility: 0.88)
+  - Learning infinite context windows in recurrent architectures via spatial neural computing
+  - arXiv: 2610.10690
+- **bi-fork-bifurcating-systems** (Utility: 0.86)
+  - Bi-FORK: Generative Modeling of High-Dimensional Bifurcating Systems
+  - arXiv: 2610.12449
+- **lyapunov-spectrum-random-neural-networks** (Utility: 0.88)
+  - Lyapunov spectrum of random neural networks
+  - arXiv: 2610.12426
+
 ### ai-safety-eval
 - **alignment-generalization-prediction** (Utility: 0.89)  - Predicting Alignment Generalization with Value Representations  - arXiv: 2610.12410- **psychometric-audit-safety-benchmark** (Utility: 0.86)  - Searching for "Harmful Refusal": A Psychometric Audit of an AI Safety Benchmark  - arXiv: 2610.12409- **legal-cot-faithfulness-audit** (Utility: 0.86)  - Cited but Not Consulted: A Counterfactual Audit of Legal Chain-of-Thought Faithfulness  - arXiv: 2610.12361- **regulatory-rule-sensitivity-audit** (Utility: 0.87)  - Verdict Without the Rule: Diagnosing and Auditing Regulatory Rule Sensitivity in LLM Compliance Systems  - arXiv: 2610.12313- **llm-judge-reliability-audit** (Utility: 0.88)  - All Verdicts are Not Equal: Rethinking LLM Judge Reliability  - arXiv: 2610.12083- **normative-competence-llms** (Utility: 0.88)  - Reading the Room: Foundations, Design, and Challenges of Normative Competence in LLMs  - arXiv: 2610.10906
 ### general-ml
