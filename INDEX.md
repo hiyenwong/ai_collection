@@ -1,3 +1,20 @@
+## 2026-10-13 - Neuroscience Research (Cron Job)
+
+### An all-transistor physical-learning transformer can be trained to perform in-context learning
+- [[physical-learning-transformer-dyadic-circuits]] - 全晶体管物理学习Transformer：dyadic双电路让非互易元件（乘法器/attention）也能在模拟电路中本地反传梯度 (arXiv: 2610.12571)
+  - 核心：复制每个节点后，前向信号=均值(va+va')/2、误差信号=差va-va'∝β，自由/受扰两态同时运行；每个电阻本地读出梯度 [(∆v)²-(∆v')²]/4β
+  - 逆向元件实现每个前向元件的pullback（与自动微分同构）：Gilbert乘法器只需3前向+1后向即可让误差穿过乘法；双电路仅O(1)倍组件开销（1155→3217）
+  - 亚阈值MOSFET指数律构建attention三件套：bump电路(Bahdanau型sech²相似度)、bank电路(硬件softmax)、差分对(数值混合)；损失函数做成浮动电路元件，LCE损失必需（MSE失败）
+  - Lion优化器=每参数一个电容存梯度记忆；444个可训练电阻学到ICL任务；**核心猜想：任何互易（能量最小化）物理系统都无法高效学习ICL**——ICL是非互易相互作用的诊断标志
+  - **Activation**: physical learning, equilibrium propagation, dyadic circuit, analog transformer, in-context learning hardware, subthreshold MOSFET, non-reciprocal
+
+### Neural expectation-maximization and meta-models
+- [[transformer-lbp-em-metamodels]] - Transformer=动态结构MRF上的max-product环面信念传播+EM：自注意力权重=可学习结构亲和度，层深度=EM迭代，元模型范式统一attention/MoE/门控/LSTM/Mamba (arXiv: 2610.12741)
+  - 推导链：max-product消息→对数信念最大化→二阶Taylor展开+各向同性Hessian→信念最大化器=精度加权平均→σ·α=exp(qᵀk)即attention权重、value=每消息最大化器
+  - EM对应：层l前向=E步（一次近似BP估计潜变量），θ(l)→θ(l+1)层间参数变化=隐式M步；解释ResNet（层只学潜变量增量）与深度网络低过拟合（各层权重是同一参数的重复估计）
+  - 元模型范式：θ=F_Θ(z)先由输入生成参数、z'=f_θ(z)再前向——ICL的机制根源；Meta-Linear层θ=Θᵀσ(z)在σ=Softmax(Rz)时严格等价于MoE；广义metaⁿ参数量d'·d·kⁿ指数增长=可控表达力旋钮
+  - 实验：4个HF模型末层特征聚类树状图中复合词/指代/根因(<s>/[CLS])结构涌现；多GMM数据上Meta-Linear(SwiGLU门控)显著超越vanilla linear（M=8时0.68 vs 0.52），ground-truth MoE为上界
+  - **Activation**: transformer theory, belief propagation, expectation maximization, meta-model, hypernetwork, mixture of experts, in-context learning mechanism, MRF
 ## 2026-10-13 - Computer Science + Quantum (Cron Job)
 
 ### Controlled-Minimax: Stabilizing Adversarial Optimization via Control Theory
