@@ -1,5 +1,157 @@
 [
   {
+    "id": "2610.09832",
+    "title": "SkillForge: Co-Evolving Skills and Agents via Dynamic Skill Lifecycles",
+    "skill_name": "arxiv-2610-09832-skillforge-co-evolving-skills-and-agents-via-dynamic-skill-l",
+    "category": "multi-agent-rl",
+    "utility": 0.91,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.13157",
+    "title": "SOAR: Source-Aware Reinforcement Learning with Precise Credit Assignment for Search Agents",
+    "skill_name": "arxiv-2610-13157-soar-source-aware-reinforcement-learning-with-precise-credit",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.10091",
+    "title": "ExperienceIndex: Artifact-Grounded Memory",
+    "skill_name": "arxiv-2610-10091-experienceindex-artifact-grounded-memory",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.11561",
+    "title": "Workerville: Towards an Organizational Behavior Account of Agent Safety",
+    "skill_name": "arxiv-2610-11561-workerville-towards-an-organizational-behavior-account-of-ag",
+    "category": "ai-safety-eval",
+    "utility": 0.89,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.11030",
+    "title": "NOMOS: Compiling Written Policies into Statically Verified Tool-Call Gates for LLM Agents",
+    "skill_name": "arxiv-2610-11030-nomos-compiling-written-policies-into-statically-verified-to",
+    "category": "security-privacy",
+    "utility": 0.89,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.07118",
+    "title": "AMBER: Training Long-Horizon Web Agents through Append-Only Memory",
+    "skill_name": "arxiv-2610-07118-amber-training-long-horizon-web-agents-through-append-only-m",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.08048",
+    "title": "DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks",
+    "skill_name": "arxiv-2610-08048-daedalus-bootstrapping-agent-memory-from-self-generated-task",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.13020",
+    "title": "Trajectory-Aware Policy Optimization: Closing the State Distribution Gap in Long-Horizon LLM RL",
+    "skill_name": "arxiv-2610-13020-trajectory-aware-policy-optimization-closing-the-state-distr",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.13870",
+    "title": "Ask Your Advisor: Learning When to Consult Stronger Models in Agentic Systems",
+    "skill_name": "arxiv-2610-13870-ask-your-advisor-learning-when-to-consult-stronger-models-in",
+    "category": "multi-agent-rl",
+    "utility": 0.87,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.11128",
+    "title": "Balancing Reference Guidance and Free Generation in Trajectory Rollouts for Reasoning RL",
+    "skill_name": "arxiv-2610-11128-balancing-reference-guidance-and-free-generation-in-trajecto",
+    "category": "multi-agent-rl",
+    "utility": 0.87,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.09294",
+    "title": "RT-SAFE: Benchmarking Agent Safety in Real-Time Embodied Environment",
+    "skill_name": "arxiv-2610-09294-rt-safe-benchmarking-agent-safety-in-real-time-embodied-envi",
+    "category": "ai-safety-eval",
+    "utility": 0.87,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.08561",
+    "title": "Reinforcement Learning for Hierarchical Reasoning Rewards: Minimax-Optimal Rates with Transformers",
+    "skill_name": "arxiv-2610-08561-reinforcement-learning-for-hierarchical-reasoning-rewards-mi",
+    "category": "multi-agent-rl",
+    "utility": 0.87,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.01349",
+    "title": "PACE: Provenance-Aware Capability Enforcement for Tool-Using LLM Agents",
+    "skill_name": "arxiv-2610-01349-pace-provenance-aware-capability-enforcement-for-tool-using-",
+    "category": "security-privacy",
+    "utility": 0.87,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.03153",
+    "title": "EvoRiskBench: An Evolving Benchmark for Runtime Security Risks in Workspace Agents",
+    "skill_name": "arxiv-2610-03153-evoriskbench-an-evolving-benchmark-for-runtime-security-risk",
+    "category": "security-privacy",
+    "utility": 0.87,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.13663",
+    "title": "A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models",
+    "skill_name": "arxiv-2610-13663-a-multi-agent-llm-system-for-automated-tuning-of-specialized",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.06361",
+    "title": "Capability-Driven Self-Evolution of Agent Memory",
+    "skill_name": "arxiv-2610-06361-capability-driven-self-evolution-of-agent-memory",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.06191",
+    "title": "Judged Useless, Queried Anyway: Tool-Using Agents Rarely Turn Their Own Evidence Judgments into Stopping Decisions",
+    "skill_name": "arxiv-2610-06191-judged-useless-queried-anyway-tool-using-agents-rarely-turn-",
+    "category": "nlp-llm",
+    "utility": 0.86,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.02425",
+    "title": "XiangqiBench: Finding the Move Is Not Winning the Game - Closed-Loop Evaluation of LLM Agents",
+    "skill_name": "arxiv-2610-02425-xiangqibench-finding-the-move-is-not-winning-the-game-closed",
+    "category": "ai-safety-eval",
+    "utility": 0.86,
+    "date_added": "2026-10-12"
+  },
+  {
+    "id": "2610.01508",
+    "title": "OverAct: Measuring and Mitigating Proactive Over-Authorization in LLM Tool-Calling Agents",
+    "skill_name": "arxiv-2610-01508-overact-measuring-and-mitigating-proactive-over-authorizatio",
+    "category": "security-privacy",
+    "utility": 0.86,
+    "date_added": "2026-10-12"
+  },
+  {
     "id": "2610.12426",
     "title": "Lyapunov spectrum of random neural networks",
     "skill_name": "lyapunov-spectrum-random-neural-networks",

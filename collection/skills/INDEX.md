@@ -1,3 +1,92 @@
+## 2026-10-12 - arXiv Paper Skills (Cron Job)
+
+### ai-safety-eval
+
+- **arxiv-2610-11561-workerville-towards-an-organizational-behavior-account-of-ag** (Utility: 0.89)
+  - Workerville: Towards an Organizational Behavior Account of Agent Safety
+  - arXiv: 2610.11561
+
+- **arxiv-2610-09294-rt-safe-benchmarking-agent-safety-in-real-time-embodied-envi** (Utility: 0.87)
+  - RT-SAFE: Benchmarking Agent Safety in Real-Time Embodied Environment
+  - arXiv: 2610.09294
+
+- **arxiv-2610-02425-xiangqibench-finding-the-move-is-not-winning-the-game-closed** (Utility: 0.86)
+  - XiangqiBench: Finding the Move Is Not Winning the Game - Closed-Loop Evaluation of LLM Agents
+  - arXiv: 2610.02425
+
+
+### multi-agent-rl
+
+- **arxiv-2610-09832-skillforge-co-evolving-skills-and-agents-via-dynamic-skill-l** (Utility: 0.91)
+  - SkillForge: Co-Evolving Skills and Agents via Dynamic Skill Lifecycles
+  - arXiv: 2610.09832
+
+- **arxiv-2610-13157-soar-source-aware-reinforcement-learning-with-precise-credit** (Utility: 0.9)
+  - SOAR: Source-Aware Reinforcement Learning with Precise Credit Assignment for Search Agents
+  - arXiv: 2610.13157
+
+- **arxiv-2610-10091-experienceindex-artifact-grounded-memory** (Utility: 0.9)
+  - ExperienceIndex: Artifact-Grounded Memory
+  - arXiv: 2610.10091
+
+- **arxiv-2610-07118-amber-training-long-horizon-web-agents-through-append-only-m** (Utility: 0.88)
+  - AMBER: Training Long-Horizon Web Agents through Append-Only Memory
+  - arXiv: 2610.07118
+
+- **arxiv-2610-08048-daedalus-bootstrapping-agent-memory-from-self-generated-task** (Utility: 0.88)
+  - DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks
+  - arXiv: 2610.08048
+
+- **arxiv-2610-13020-trajectory-aware-policy-optimization-closing-the-state-distr** (Utility: 0.88)
+  - Trajectory-Aware Policy Optimization: Closing the State Distribution Gap in Long-Horizon LLM RL
+  - arXiv: 2610.13020
+
+- **arxiv-2610-13870-ask-your-advisor-learning-when-to-consult-stronger-models-in** (Utility: 0.87)
+  - Ask Your Advisor: Learning When to Consult Stronger Models in Agentic Systems
+  - arXiv: 2610.13870
+
+- **arxiv-2610-11128-balancing-reference-guidance-and-free-generation-in-trajecto** (Utility: 0.87)
+  - Balancing Reference Guidance and Free Generation in Trajectory Rollouts for Reasoning RL
+  - arXiv: 2610.11128
+
+- **arxiv-2610-08561-reinforcement-learning-for-hierarchical-reasoning-rewards-mi** (Utility: 0.87)
+  - Reinforcement Learning for Hierarchical Reasoning Rewards: Minimax-Optimal Rates with Transformers
+  - arXiv: 2610.08561
+
+- **arxiv-2610-13663-a-multi-agent-llm-system-for-automated-tuning-of-specialized** (Utility: 0.86)
+  - A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models
+  - arXiv: 2610.13663
+
+- **arxiv-2610-06361-capability-driven-self-evolution-of-agent-memory** (Utility: 0.86)
+  - Capability-Driven Self-Evolution of Agent Memory
+  - arXiv: 2610.06361
+
+
+### nlp-llm
+
+- **arxiv-2610-06191-judged-useless-queried-anyway-tool-using-agents-rarely-turn-** (Utility: 0.86)
+  - Judged Useless, Queried Anyway: Tool-Using Agents Rarely Turn Their Own Evidence Judgments into Stopping Decisions
+  - arXiv: 2610.06191
+
+
+### security-privacy
+
+- **arxiv-2610-11030-nomos-compiling-written-policies-into-statically-verified-to** (Utility: 0.89)
+  - NOMOS: Compiling Written Policies into Statically Verified Tool-Call Gates for LLM Agents
+  - arXiv: 2610.11030
+
+- **arxiv-2610-01349-pace-provenance-aware-capability-enforcement-for-tool-using-** (Utility: 0.87)
+  - PACE: Provenance-Aware Capability Enforcement for Tool-Using LLM Agents
+  - arXiv: 2610.01349
+
+- **arxiv-2610-03153-evoriskbench-an-evolving-benchmark-for-runtime-security-risk** (Utility: 0.87)
+  - EvoRiskBench: An Evolving Benchmark for Runtime Security Risks in Workspace Agents
+  - arXiv: 2610.03153
+
+- **arxiv-2610-01508-overact-measuring-and-mitigating-proactive-over-authorizatio** (Utility: 0.86)
+  - OverAct: Measuring and Mitigating Proactive Over-Authorization in LLM Tool-Calling Agents
+  - arXiv: 2610.01508
+
 
 ## 2026-10-10 - arXiv Paper Skills (Cron Job)
 
