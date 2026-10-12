@@ -1,3 +1,22 @@
+## 2026-10-13 - Neuroscience Research (Cron Job)
+
+### A small cognitive core explains human behavior at scale
+- [[core-contextual-retrieval-encoding-cognitive-model]] - CORE认知核心：层级情景记忆+预测误差写入+上下文遗忘，45万参数拟合703万人类选择击败Transformer与Centaur (arXiv: 2610.13603)
+  - 6层关联记忆(每层4头)：H_t = H_{t-1}diag(α_t) + diag(β_t)v_t k_t^T，key/遗忘/学习率全部由当前输入计算，除记忆读写外无任何其他计算
+  - 写入的是预测误差v_t = x_t − H_{t-1}diag(α_t)k_t而非原始输入（Rescorla-Wagner式），音素编码优于BPE(嵌入参数11K vs 1.75M)
+  - 消融排序：层级(ΔNLML 859,990) > 遗忘(131,706) > 音素(110,303) > 预测误差(68,874)
+  - 潜变量自发涌现：学习率随证据累积下降(Kalman式贝叶斯签名,15/17实验)、记忆时间尺度在事件边界坍塌80%(事件分段,17/17)
+  - 再现75%(50/67)行为学效应；弱点=无planning机制、无实验室外世界知识
+  - **Activation**: cognitive architecture, associative memory, 情景记忆, prediction error, linear attention, fast weights, 心理学统一理论, behavioral modeling
+
+### DyssomniaNN: Multi-Scale Spiking Neural Modeling of Human Sleep Disorders and Perceived Restedness
+- [[dyssomniann-multiscale-sleep-disorder-snn]] - 多尺度睡眠SNN：Borbély双过程+Saper翻转开关+皮层LIF网络，72h五队列仿真解耦TST与恢复感 (arXiv: 2610.13918)
+  - 三层架构：双过程ODE(τ_r=18.2h/τ_d=4.2h) → Wilson-Cowan翻转开关(双稳判据w_av·w_va>4/β=0.8，正常4.2≫0.8宽滞回) → 100神经元LIF(80E/20I, LogNormal权重)
+  - 合成LFP=尖峰×alpha树突核卷积(τ=4ms，电流偶极子主导)→Hann FFT→AASM五频段，vs PhysioNet Sleep-EDF谱MAE仅0.33-0.35
+  - 疾病参数映射：矛盾失眠=皮层γ_inh 0.25(GABA降20-30%)→N3期间β功率0.70不被压制→TST正常21.15h但Well-Rested仅37.6%；嗜睡症=Ω_tone 0.05→失滞回→WASO 781min+SOREMP 35
+  - Well-Rested Index: R=100·Φ_homeo·Φ_quota·Φ_arch·Φ_circ·Φ_hyper（睡眠压清除×配额×深睡架构×时相×β侵入惩罚）——TST是不完整代理
+  - in silico药理：DORA降Ω_tone、orexin激动剂0.05→0.80恢复双稳、GABA_A正调恢复γ_inh；可穿戴参数拟合→患者数字孪生
+  - **Activation**: sleep modeling, spiking neural network, Wilson-Cowan, flip-flop bistability, circadian, virtual pharmacology, digital twin, LIF, 虚拟神经药理
 
 ## 2026-10-12 - Neuroscience + Quantum (Cron Job)
 
