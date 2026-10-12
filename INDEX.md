@@ -1,3 +1,40 @@
+## 2026-10-13 - Deep Learning Research (Cron Job)
+
+### A Privileged Teacher That Only Scores Cannot Search: Critique-Conditioned On-Policy Self-Distillation for Reasoning
+- [[critique-conditioned-self-distillation]] - 评分型特权教师信号(KL/log-ratio)既不定位也不纠正错误——先生成critique执行搜索，再条件化评分得到密集修正信号 (arXiv: 2610.13744)
+  - 结构性诊断：推理trace中定位错误本身是搜索问题，纯评分pass从未被要求执行该搜索；同模型同特权信息下，生成critique可大幅提升错误定位
+  - 方法：critique为逐句引用+原因对{(q_j, ρ_j)}；修正log-ratio仅以权重3施加于被引用句子+其后50 token；只critique含≥1正确rollout组中的错误rollout(128中16-18条)，代价仅6%步时
+  - 评估协议：error-span Z读数(错误后窗口vs干净span匹配窗,基线归一化+随机句校准)+placebo对照(他题参考解/他rollout的critique)分离"solution形前导"效应
+  - 自我critique(学生评自己)恢复oracle增益大部分：OOD 0.593 vs 0.606(oracle) vs 0.567(base)；GRPO上加critique项+5.5 OOD分，与RLCSD增益可叠加
+  - **Activation**: self-distillation error localization, privileged teacher scoring, on-policy distillation critique, GRPO cold-start advantage, reasoning rollout credit assignment
+
+### BoundaryEvo: Data-Model Co-Evolution at the Capability Boundary for Long-Chain Reasoning Distillation
+- [[capability-boundary-data-evolution]] - 两阶段数据-模型协同演化：先无判官能力底定，后在能力边界迭代选数据，1000样本IMO-AnswerBench 62.9→75.3 (arXiv: 2610.13285)
+  - 核心原则：样本有用性随学生演化而变；已掌握样本无新监督、超能力样本学不动；但学生弱时边界估计不可靠→先prime后select
+  - Stage1无判官直接蒸馏(~100条,仅基本有效性检查)保留教师探索/失败尝试等多样行为，为Stage2提供可靠边界估计基础
+  - Stage2硬过滤五条件：专家分≥τ_e、学生分<τ_s、能力差g_i≥τ_g、质量q_i≥τ_q、问题有效性(清晰/可答/上下文支持)——歧义问题不得误判为学生局限
+  - Replay-first预算(K=300/轮,2K候选池重扫)：未解决且有效的旧样本优先保留，余量按质量排序补新样本；每轮学生更新后边界重估
+  - 分离"学哪些问题"(专家rollout定边界)与"模仿哪些解"(新鲜教师rollout L≥2,参考答案验证后蒸馏)；token归一化交叉熵只算响应token
+  - **Activation**: reasoning distillation data selection, capability boundary active learning, student-expert gap filtering, small-budget distillation, replay-first data budget, curriculum co-evolution
+
+### Specialists Learn Faster: Knowledge Organization in Pre-training Shapes Knowledge Update Efficiency
+- [[specialist-generalist-knowledge-ordering]] - 时序排序预训练产生专家模型，新知识微调步数减半；更新代价定律N≈b·D₀/(η·A·‖g₀‖₁) (arXiv: 2610.13835)
+  - 惊人发现：按时间顺序训练的specialist比同数据随机打乱的generalist学习新知识步数约减半——优势主要来自更大初始梯度‖g₀‖₁而非更小知识差距D₀
+  - 更新代价定律：更新停止条件D_N=log P_old(θ_N)−log P_new(θ_N)<0；A为跨所有设置的单一校准常数；中间层贡献大部分初始梯度增幅
+  - Mix-C语料配方：历史记录(带时间戳)保持时间乱序(泛化保持)+长近期窗口按人内时间序排列(专家化)，混合两部分
+  - Gemma-2-9B-it持续预训练验证：当前知识无日期查询准确率42%→98%，overwrite更新比base省1.3×、比全乱序省1.8×步；Mix-C比Mix-S省16-44%步且遗忘少5-57%
+  - 效益迁移到已发布知识编辑器(AlphaEdit、ENCORE)——语料组织是模型编辑成本的先验杠杆
+  - **Activation**: knowledge update efficiency, pre-training data ordering, chronological corpus, continual pre-training schedule, model editing cost, specialist vs generalist, update cost law
+
+### Transformer-based In-Context Score Operator Learning for Diffusion Models
+- [[in-context-score-operator-diffusion]] - 学习映射经验上下文集到任务条件扩散score的算子，未见分布零样本采样无需重训练；NW核回归↔查询依赖attention精确对应 (arXiv: 2610.13690)
+  - 核心思想：把"哪个分布"作为任务输入而非训练选择——元分布μ上摊销去噪score匹配训练算子T: ρ̂↦S_ρ，推理时新任务仅由n个样本的上下文集指定
+  - 理论桥梁：任务条件score有高斯核条件均值表示，其经验Nadaraya-Watson估计可被构造的transformer类精确表示——从定理而非启发式动机化查询依赖attention架构
+  - 四级离散化损失：population→semi-discretized(任务=经验上下文集)→task-discretized(K个训练任务)→episode离散化(J episodes×N_T扩散时刻)
+  - 泛化界显式涵盖：上下文规模n、训练任务数K、任务内episode数J、模型复杂度、本征维d* vs环境维D——in-context扩散欠佳时的 Scaling 检查清单
+  - 诚实局限(作者自报)：简单任务族(Navier-Stokes/ERA5/QuickDraw/Food-101)表现好，任务复杂度升高时退化——勿过度外推到高复杂生成任务
+  - **Activation**: in-context diffusion, score operator learning, Nadaraya-Watson attention, amortized denoising score matching, zero-shot distribution adaptation, meta-distribution task sampling
+
 ## 2026-10-13 - Computer Science + Quantum (Cron Job)
 
 ### QTestBench: A Test Framework for Evaluating LLM-Generated Quantum Code
