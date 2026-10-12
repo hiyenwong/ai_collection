@@ -1,3 +1,34 @@
+
+## 2026-10-12 - Neuroscience + Quantum (Cron Job)
+
+### Trainable Quantum-Native Language Models: Dissipative Memory, Capacity Limits, and Hardware Validation
+- [[quantum-native-dissipative-language-models]] - Quantum-native byte-LM with learned dissipative CPTP memory and Born-rule readout, hardware-validated on IBM Heron (arXiv: 2610.12806)
+  - 量子原生自回归LM：隐状态为n-qubit密度矩阵，CPTP信道转移+Born规则POVM读出，无softmax经典投影
+  - 酉循环结构性无法遗忘（trace-distance不变）→学习型耗散UMW-D/UMW-G恢复记忆价值(+0.20 nats)；K-V回忆阶梯K*=1→2(4-7 qubits)与Holevo/Nayak界一致
+  - IBM Heron 156-qubit三层硬件验证：line entangler拓扑3.7×省门决定成败；task-aware蒸馏10-17×压缩（统计结构depth-cheap，锐利记忆depth-hungry）
+  - **Activation**: quantum-native LM, dissipative memory
+
+### Understanding Mamba-3 Through Oscillatory Dynamics
+- [[mamba3-underdamped-oscillatory-dynamics]] - Mamba-3 rotations interpreted as underdamped 2nd-order dynamics; oscillation drives state tracking and long-context (arXiv: 2610.13341)
+  - Mamba-3输入依赖旋转=欠阻尼二阶动力学：ζ=a/√(a²+ν²)<1，HemuḦ+2aḦ+(a²+ν²)H=0精确归约
+  - 欠阻尼在state-tracking碾压过/临界阻尼(Parity 100% vs 0.58/3.27)；64K上下文相位移除造成74×困惑度损失
+  - 相位调节建设性积累（cosine 0.29→0.43、范数7.6→8.9）防状态爆炸；写-读相位一致性（移除B或C单侧9-12×，双侧仅2×）
+  - **Activation**: mamba, oscillation, phase intervention
+
+## 2026-10-12 - Neuroscience Research (Cron Job)
+
+### FlyHack: Stress-Testing Mechanistic Claims in a Connectome-Constrained Visual Model
+- [[flyhack-connectome-claim-stress-test]] - 连接组约束模型(flyvis)机制声明的四轴压力测试框架：模型族/干预语义/电路表征/集成成员 (arXiv: 2610.13018)
+  - 归因必须匹配干预语义：zero-aligned EAP 对 held-out 真值 Spearman 仅 0.126，matched EAP 达 0.872（同方法 7 倍差距）
+  - 贪心细胞类型搜索仅 25/50 模型通过 T4/T5 调谐标准；类型集展开后连接可再剪 74–91%；同刺激均值消融泄漏刺激信息产生虚假紧凑电路
+  - **Activation**: connectome-constrained, flyvis, attribution matching, circuit discovery, intervention semantics
+
+### Excitability across scales: a unifying EI model
+- [[memristive-ei-multiscale-excitability]] - 通过 memductance 统一 Hodgkin-Huxley 细胞兴奋性与 Amari 神经场的混合反馈 EI 模型 (arXiv: 2610.13275)
+  - 尺度不变架构：时间兴奋性=快E慢I反馈，空间兴奋性=短程E长程I侧抑制，σE/σI 小 ⟺ τe/τi 小
+  - ±40% 异质群体仍产生时空双定域的 population spike；两反馈环缺一不可；异质性作为连续调频旋钮（神经调质候选机制）
+  - **Activation**: excitability, memductance, mixed feedback, population spike, neural field, multiscale
+
 ## 2026-10-12 - Neuroscience + Quantum Research (Cron Job)
 
 ### Heisenberg Echo Symmetrization for Gate-Insertion Error Mitigation
