@@ -1,3 +1,22 @@
+## 2026-10-13 - Computer Science + Quantum (Cron Job)
+
+### QTestBench: A Test Framework for Evaluating LLM-Generated Quantum Code
+- [[qtestbench-llm-quantum-test-quality]] - Oracle接地评估LLM生成的量子测试套件：可执行性≠测试质量，最佳模型TQS仅0.71/0.34 (arXiv: 2610.13811)
+  - 两阶段管线：Stage1生成syntactic/semantic/behavioral三类pytest（temp 0.8无修复循环，参考解对模型保密）；Stage2运行时注入候选解+官方checker独立标注correct/wrong
+  - 判别指标：ES(可执行)×CS(接受正确)×BDS(拒绝错误)=TQS；|Sw|=0时BDS/TQS报告n/a而非0（避免惩罚无错解可拒的套件）；CQ=TQS×Cin(checker字面量覆盖率)
+  - 三验证队列：A(仅可信参考)隔离可执行性；B(自然LLM错误队列)测真实bug检出(BDS 0.45-0.60)；C(oracle验证合成变异体)在3/10 Qiskit任务零自然错解时恢复可测性
+  - 6类确定性变异：return None/==→!=/删measure_all/首个CX或H→X/数值字面量扰动/强制check()失败——只保留oracle确认错误的变异体（防等效程序污染）
+  - 两大失败模式：过弱(语法检查通过但错电路值照样Pass) vs 过严(allclose atol=1e-4拒绝数值微差的人类参考解)
+  - **Activation**: quantum software testing, LLM test generation, oracle-grounded evaluation, mutation testing, Qiskit, PennyLane, test quality metrics, benchmark trustworthiness
+
+### Decoder- and Noise-Aware Optimization Framework for Clifford-Deformed Quantum Error-Correcting Codes
+- [[ebbi-clifford-deformed-qec-optimization]] - EBBI演化式最佳臂识别：Beta后验+可信域剪枝+邻相关变异，d=3比随机搜索省~1100×shots，发现新B-XZZX码 (arXiv: 2610.13589)
+  - 核心观察：相邻CD逻辑错误率强相关(单qubit变形邻居Pearson ρ=0.83, 随距离增大)→一次模拟信息引导指数空间(6^n/3^n)搜索
+  - 三步算法：初始化K个随机CD+warmup至W次逻辑错误(Beta(α,β)后验)；采样最大σ候选×1.5σ缩减(1.25S增量shots)；剪枝(γ=2.5%分位数下界>他者1-γ上界)+变异当前最优CD重填(Thompson式)
+  - 终止返回min(μ+σ)而非min(μ)——偏向统计充分候选，显著降低假阳性；黑盒对待decoder(兼容ML decoder)
+  - 结果：d=5目标错误率下中位运行收敛而随机搜索永不收敛；B-XZZX与XZZX仅差O(d^-1)比例qubit，相对优势5%(d=3)→12%(d=11)随距离增长
+  - P_L估计技巧：同噪声seed下X/Z基双模拟对比解码，一次shot=两次种子运行，分离P_LX/P_LY/P_LZ
+  - **Activation**: Clifford deformation, quantum error correction, best-arm identification, Thompson sampling, beta posterior, surface code, biased noise, shot-efficient optimization, QEC code search
 ## 2026-10-13 - Neuroscience Research (Cron Job)
 
 ### A small cognitive core explains human behavior at scale
