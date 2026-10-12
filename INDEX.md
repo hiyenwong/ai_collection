@@ -1,3 +1,22 @@
+## 2026-10-13 - Neuroscience Research (Cron Job)
+
+### Convex Optimization of Spiking Neural Networks with Global and Approximation Guarantees
+- [[convex-snn-training-duality]] - SNN训练首个凸刻画：weight-decay正则下并行threshold RNN/LIF-SNN零对偶间隙，最优值=可实现spike pattern字典上的有限凸规划；采样字典高概率逼近保证 (arXiv: 2605.08022)
+  - 三步重构：尺度不变性σ(cx)=σ(x)移除隐藏权重惩罚→凸对偶得pattern字典上凸规划→由支撑集重构ε-最优网络(原始最小值一般不可达)；支撑稀疏(2-22个子网络，低于Carathéodory界n+1)
+  - 采样保证(Theorem 3.6)：浅层网络高概率以宽度poly(n, 1/λmin(K), log 1/δ)逼近完整最优；reservoir调参只通过kernel影响界(E.17)，临界性调谐使kernel→漏积分输入的arc-cosine kernel
+  - SG-CVX混合训练：surrogate-gradient预训练SNN仅作pattern源，再凸求解——base-2加法0.954 vs SG的0.542；first-last-XOR T=6达1.000 vs SG 0.737
+  - 诚实结论：无witness源全面占优——base-3/5加法凸变体超SG但逊于reservoir ridge基线；T=14全体接近随机；诊断价值(分离优化器失败vs架构极限)大于刷SOTA
+  - **Activation**: SNN global optimality, convex duality spike patterns, surrogate gradient guarantee, LIF threshold network convex reformulation, sampled dictionary bound, Caratheodory sparsity
+
+### Neuromorphic Satellite Intelligence: Event-Driven Architectures, Spike-Based Algorithms, and Energy-Accuracy Trade-offs
+- [[neuromorphic-satellite-snn-energy-model]] - 卫星在轨SNN形式化框架：闭式能量模型E=N·r·T·F·(εSOP+εread)+Pleak·T，O(αNF)稀疏性主导；SKCF/TCAD/SAMC三算法+漂移有界STDP (arXiv: 2610.12471)
+  - 能量∝总脉冲数rT而非模型规模：卫星负载r≈2-5 spikes/s vs皮层50-200Hz，活动率α是首要效率杠杆；α=0.02/N=64k/F=50/180nm rad-hard→1.54µJ/推理
+  - 四类辐射感知架构(Rad-Neu/NeuHybrid/DEC-Node/NeuroSoC)；NeuHybrid分区规则s(task)>0.15∧延迟<硬实时→SNN否则CPU；DEC-Node星座spike多数共识O(log Nsat)轮，星间链路降15-40×
+  - SKCF事件驱动姿态估计：静默期~200×计算削减；TCAD遥测异常检测无脉冲零能耗；SAMC 512神经元echo-state reservoir自适应编码调制(hold-last-valid)
+  - 约束STDP漂移界E[|dw/dt|]≤(A+τ++A-τ-)·rpre·rpost，监督门在关键机动或SoC<30%时冻结学习
+  - 质量警示：标题倍数内部不一致(摘要8-47× vs 表~3700-4000× vs 正文7751×)，公式与架构可靠但倍数需自行用工艺参数重推导
+  - **Activation**: neuromorphic satellite, SNN energy budget, onboard inference, event-driven attitude estimation, telemetry anomaly detection SNN, EAL trade-off surface, radiation-aware neuromorphic architecture, bounded-drift STDP
+
 ## 2026-10-13 - Deep Learning Research (Cron Job)
 
 ### A Privileged Teacher That Only Scores Cannot Search: Critique-Conditioned On-Policy Self-Distillation for Reasoning
