@@ -1,3 +1,21 @@
+## 2026-10-13 - Computer Science + Quantum (Cron Job)
+
+### Controlled-Minimax: Stabilizing Adversarial Optimization via Control Theory
+- [[controlled-minimax-feedback-stabilization]] - 二阶ODE诊断minimax极限环根源（平衡点Hessian交互矩阵特征结构），反馈控制器（阻尼λ+斜对称交叉耦合βAc）保证局部指数稳定，StyleGAN2-ada FID全面提升 (arXiv: 2610.12915)
+  - 诊断：对梯度流微分得二阶ODE，稳定性由交互矩阵 M=[-Hθθ, -Hθφ; Hφθ, Hφφ] 谱决定——零和博弈典型纯虚特征值→极限环，GDA任何步长都不收敛
+  - 控制器双机制：耗散阻尼-λI消动能 + 交叉耦合βAc注入对手梯度中和旋转分量；稳定条件γ=min(λθ,λφ)-2C>0，对任意β鲁棒
+  - Algorithm 1离散化：梯度代速度的控制律=每步一次梯度混合，无辅助损失/无Hessian计算/无额外反向传播，GDA直接替换
+  - 实验：Dirac-GAN极限环→螺旋收敛；8-Gaussian消模式崩溃；StyleGAN2-ada CIFAR-10 FID 3.37→2.91、LSUN Cat 10.48→8.18、FFHQ 7.81→5.46，收敛末期24h振荡方差显著降低
+  - **Activation**: minimax oscillation, GAN limit cycle, adversarial training instability, gradient descent-ascent divergence, feedback controller optimizer, Lyapunov exponential stability
+
+### Coset Lifted Product Codes: Constructing Quantum LDPC Codes from Non-Normal Subgroup Actions
+- [[coset-lifted-product-qldpc]] - 结合protograph lifted product与非正规子群coset作用：A∈F₂[G]左作用于陪集空间G/H、B∈F₂[N_G(H)]右作用，两作用交换→CSS正交自动成立；奇数阶群维数=不可约表示上超图积维数之和 (arXiv: 2610.12782)
+  - 搜索空间收缩定理（Prop III.4）：等价类只需core-free的 H<N<G 严格链——H正规退化为商群lifted product，N=H右作用平凡
+  - 维数公式（Thm III.7）：k=Σ_ρ κ(A_ρ)κ(B_ρ^T)+κ(A_ρ^T)κ(B_ρ)，重数μ_ρ=dim ρ^H（Frobenius reciprocity），Maschke+Schur分块对角化快速计算
+  - 距离认证：按陪集平移类分sector的Gurobi ILP（cutoff d_ub−½），全部sector终止于cutoff⟹d≥d_ub，n=400可扩展
+  - 14843对(G,H)搜索记录：[[360,20,20]] w=6 (Q=22.2)、[[360,24,20]] w=7 (Q=26.67)、[[288,16,20]] w=9 (Q=22.22)，全部超过已发表最优Q=kd²/n；w=10候选Q≤40.5
+  - **Activation**: quantum LDPC, lifted product, coset action, non-normal subgroup, two-block group algebra, bivariate bicycle generalization, certified distance ILP, record Q factor
+
 ## 2026-10-13 - Neuroscience Research (Cron Job)
 
 ### Convex Optimization of Spiking Neural Networks with Global and Approximation Guarantees
