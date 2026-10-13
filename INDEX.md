@@ -1,5 +1,24 @@
 # AI Collection Index
 
+## 2026-10-14 - Neuroscience Research (Cron Job)
+
+### A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models
+- [[llm-analyst-coder-recorder-module-tuning]] - Analyst-Coder-Recorder三角色LLM框架自动调优神经网络固定管线中的可编辑模块 (arXiv: 2610.13663)
+  - 核心设计：LLM只生成指定功能块代码（受软件契约约束：依赖/类名/签名/形状），其余管线冻结；实验日志作为外置记忆仅向Analyst展示成功记录；Docker沙箱先功能测试再全量评估，代码错误≤10次不消耗实验预算
+  - 覆盖地图(coverage map)是弱模型的关键组件：Sonar简单prompt十次全在基线79.88%，加taxonomy+CoT+覆盖地图后91.76%（0/10→10/10过90%）；移除地图Sonar跌9.42pp、Qwen跌回基线——强模型(Claude)只损失1.14pp
+  - 五任务同框架不改内部结构：SNN解码器MNIST 79.88→92.83%(+13pp)，GNLSE单孤子误差2491×，孤子+高斯扰动守恒误差325×（无解析解时agent自创SPM/XPM特征+分裂尺度化），KS方程质量漂移14×
+  - 成本：Claude $98/run但k_min=2-43即达最优（到最优$0.37）；随机目录采样便宜40-84×但封顶89.93%——框架仅在Analyst足够强时优于采样
+  - **Activation**: multi-agent LLM, automated ML tuning, spiking neural network decoder, PINN, experiment log, coverage map, software contract, MLE-bench
+
+### Energy-Efficient Spiking Neural Networks for Sensing-Aided Beam Prediction
+- [[snn-ann-energy-tradeoff-beam-prediction]] - SNN vs ANN宽度扫描揭示精度-能耗权衡由模态规模决定，二元发放是精度上限 (arXiv: 2610.12507)
+  - 能耗模型E=n_MAC·4.6pJ+n_SOP·0.9pJ，首层计MAC、后续二值脉冲层计AC，SOP随发放率缩放；实测发放率position 0.24-0.36 / vision 0.13-0.17 / multimodal 0.11-0.14全宽度稳定
+  - 位置-only小网络ANN全能耗区间碾压（54.56% vs 44.89%，且更省能）——小MLP的二值层太少，AC节省无意义；vision/multimodal大网络SNN同能耗高8-18pp，ANN要同精度需~10×能耗
+  - 瓶颈隔离实验：换sigmoid替代梯度反而更差(46.47%)排除代理梯度嫌疑；二元脉冲→连续sigmoid输出恢复9pp(67.01%)但失去AC能耗优势——spiking的能耗优势与精度上限是同一机制的两面
+  - 工程要点：BatchNorm在LIF前稳定固定阈值下的激活范围；直接编码(每步重复输入)优于速率编码；多模态脉冲特征拼接+单融合层比VisionSNN参数更少
+  - **Activation**: spiking neural network, SNN vs ANN, energy efficiency, multimodal sensing, beam prediction, firing rate, surrogate gradient, BPTT, DeepSense 6G
+
+
 ## 2026-10-13 - arXiv Daily Meditation (High-Utility Papers >= 0.85)
 ### Optimization Geometry of QAOA and Variational Quantum Algorithms
 - [[vqa-basin-quality-optimizer-selection]] - Basin-quality diagnostics decide local vs global optimizers in VQA/QAOA (arXiv: 2610.05524)
