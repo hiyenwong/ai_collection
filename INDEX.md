@@ -18,6 +18,20 @@
 
 ## 2026-10-14 - Neuroscience Research (Cron Job)
 
+### Evolve on the Host, Predict on the Edge: Online Neuroevolutionary NAS for Cross-sectional Stock Return Prediction
+- [[online-neuroevolution-island-ensemble-edge]] - 岛屿冠军rank-mean集成读取演化群体+主机/边缘端部署管线 (arXiv: 2610.10038)
+  - 关键发现：同一批ONE-NAS运行，单冠军读取仅+4.5%（跑输所有基线），岛屿冠军rank-mean集成+27.5%（配对增益+23.0pp, t=18.2）——弱成员(rank IC~0.0065)弱相关(ρ~0.16)，等相关平均公式N/(1+(N-1)ρ)预测集成IC误差<3%；16/16配置全部为正
+  - 在线协议防泄漏：W=5日窗口一代，最近V=5窗口作验证块，更早为训练池；预测先于标签揭示；host(128核)搜索+树莓派4B端点推理，单冠军24.6ms/40成员集成556ms，端点对搜索无状态（host不可用则沿用上次基因组）
+  - 工程要点：warm-start关键（2020年起演化+26.5% vs 2022年冷启+12.3%，超过一半收益来自评估期前的演化）；岛屿数>20后收益持平但一致性上升(种子Sharpe SD 0.227→0.11)；规模控制=能耗控制(88%单冠军能耗是板级空闲)
+  - **Activation**: online neuroevolution, ONE-NAS, island ensemble, rank-mean aggregation, edge forecasting, non-stationary streams, Raspberry Pi inference, NAS time series
+
+### Studying Oscillation Death in Cylinder-Airfoil Interactions with Synchronization-Theoretic Autoencoder
+- [[sync-autoencoder-oscillation-death]] - 同步理论自编码器把耦合系统可观测映射到Stuart-Landau潜在空间，线性稳定性分析预测振荡死亡 (arXiv: 2610.05762)
+  - 四损失结构约束：L_recon重建+L_shape单位圆(Σ[(RSD)ᵢ²-1])+L_dyn潜空间旋转(可学ω)+L_mass椭圆中心归零——L_mass缺失时L_shape存在离心局部解，给耦合方程注入非物理常数项
+  - 潜空间识别耦合Stuart-Landau对：ξ̇c=fc(ξc)+Tcξw，孤立特征值1.00±1.31i(圆柱)/±2.03i(翼)从数据恢复；耦合以‖Tc‖,‖Tw‖可解释量化——α=30°时特征值实部→0即振荡死亡(涡脱抑制)，α=40°为过渡态
+  - 可迁移配方：任何通过标量可观测量观测的耦合极限环振荡器（神经元群体、VCO阵列、电网摇摆方程、生物化学振荡器）→ 先DMD/FFT分区确认周期性 → 每体独立AE → 离线扫T矩阵做参数化淬灭筛查（对应病理振荡的抑制性刺激优化）
+  - **Activation**: oscillation death, synchronization theory, Stuart-Landau identification, phase reduction autoencoder, coupled oscillators, linear stability latent space, vortex suppression, amplitude death
+
 ### A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models
 - [[llm-analyst-coder-recorder-module-tuning]] - Analyst-Coder-Recorder三角色LLM框架自动调优神经网络固定管线中的可编辑模块 (arXiv: 2610.13663)
   - 核心设计：LLM只生成指定功能块代码（受软件契约约束：依赖/类名/签名/形状），其余管线冻结；实验日志作为外置记忆仅向Analyst展示成功记录；Docker沙箱先功能测试再全量评估，代码错误≤10次不消耗实验预算
