@@ -1,6 +1,18 @@
 # AI Collection Index
 
 ## 2026-10-13 - arXiv Daily Meditation (High-Utility Papers >= 0.85)
+### Optimization Geometry of QAOA and Variational Quantum Algorithms
+- [[vqa-basin-quality-optimizer-selection]] - Basin-quality diagnostics decide local vs global optimizers in VQA/QAOA (arXiv: 2610.05524)
+  - 四指标诊断（p_near/g_med/p_poor/minima-per-line）解耦"极小值数量"与"终点质量差异"——数量不决定全局搜索价值，质量异质性才决定
+  - 参数绑定 r=6 使 g_med 跳至 16.74pp（vs 标准 p=3 的 2.01pp），FE 匹配下自适应 DE (jSO) 首次显著胜过 multistart BFGS (+1.88pp)；独立深度只增加极小值计数而 jSO 反而落后 4.63pp
+  - **Activation**: QAOA, VQE, optimization geometry, basin quality, parameter tying, multistart BFGS, jSO, differential evolution
+
+### Attention Sees, MLP Refuses: Tracing the Attention-to-MLP Safety Pathway in LLMs
+- [[attention-mlp-safety-pathway-llm]] - Attention perceives harmfulness, MLP writes refusal; P/D dual-score routing (arXiv: 2610.13078)
+  - 残差流通路分解：危害识别从 attention 更新解码（早层、基座已有），拒绝写入由 MLP 承载（深层、后训练增强）——18 对 Base-Instruct 全部成立，因果干预确认方向
+  - Sentinel 双分数：P高D低=越狱（决策被抑制）、P低D高=过度拒绝；双信号条件路由在 8 模型上错误率低于单信号与固定 reminder
+  - **Activation**: LLM safety, jailbreak, over-refusal, attention MLP pathway, refusal writing, residual stream, Sentinel routing, mechanistic interpretability
+
 
 ### MCGPO: Matched-Context Group Policy Optimization for LLM Agent Training
 - [[matched-context-grpo]] - 从已有轨迹构建加权动作偏好，解决长horizon LLM agent稀疏终端反馈的信用分配问题 (arXiv: 2610.13755, utility: 0.88)
