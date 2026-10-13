@@ -1,5 +1,94 @@
 # AI Collection Index
 
+## 2026-10-13 - arXiv Daily Meditation (High-Utility Papers >= 0.85)
+
+### MCGPO: Matched-Context Group Policy Optimization for LLM Agent Training
+- [[matched-context-grpo]] - 从已有轨迹构建加权动作偏好，解决长horizon LLM agent稀疏终端反馈的信用分配问题 (arXiv: 2610.13755, utility: 0.88)
+  - 定义pre-action state window作为比较上下文
+  - 从sibling rollouts构建加权动作偏好
+  - 比标准GRPO更好的样本效率和训练稳定性
+  - **Activation**: credit assignment, GRPO, long-horizon agents, sparse rewards
+
+### Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers
+- [[orthros-phase-aware-attention]] - 相位感知解耦：prefill线性复杂度+decode全注意力，21.9x prefill加速，128K NITAH近完美 (arXiv: 2610.13735, utility: 0.87)
+  - 从结构分配到相位解耦的效率范式转变
+  - 数据高效Transformer→Orthros转换，甚至超越原Transformer
+  - **Activation**: efficient attention, long-context, phase-aware, prefill optimization
+
+### AI Models Can Provably Hide Arbitrary Capabilities
+- [[ai-models-hide-capabilities]] - 数字锁柜将加密神经网络嵌入模型权重，可证明抵抗标准引出审计 (arXiv: 2610.13928, utility: 0.86)
+  - 触发词解密后执行隐藏电路，标准评估无法引出
+  - 挑战能力评估的基本假设：隐藏能力可被引出
+  - **Activation**: capability hiding, backdoor, elicitation limits, AI safety
+
+### Returning to Development States: Full Sandbox Snapshots for Coding Agents
+- [[returning-to-dev-states]] - Go-Explore式搜索在完整sandbox快照上分支，利用中间状态的部分进展 (arXiv: 2610.13841, utility: 0.85)
+  - 编码agent失败前已有进展，从头重试浪费中间状态
+  - 完整sandbox快照（不仅是代码diff）保留环境状态
+  - **Activation**: coding agents, failure recovery, sandbox, go-explore
+
+### Inject a Turn, Not a Token: Learning Where to Redirect LLM Reasoning
+- [[inject-turn-self-correction]] - 130K参数MLP头学习在失败rollout中干预位置和重定向方式 (arXiv: 2610.13672, utility: 0.86)
+  - 冻结编码器+轻量干预头，仅用最终答案正确性信号
+  - turn级干预比token级内联注入更有效
+  - **Activation**: self-correction, intervention point, LLM reasoning, error recovery
+
+### Humanize Olympiad Agents: Multi-Session Workflow
+- [[humanize-olympiad-agents]] - Solve-Review-Wiki-Verify多session工作流克服单session脆弱性 (arXiv: 2610.13632, utility: 0.87)
+  - 早期错误传播、知识缺失停滞→多session协作解决
+  - 跨session知识持久化和错误恢复机制
+  - **Activation**: multi-session, olympiad, scientific agents, workflow robustness
+
+### MENTOR: Learning from Failure with On-Policy Pedagogical Intervention
+- [[mentor-learning-from-failure]] - 防止RLVR零奖励崩溃：从失败轨迹提取诊断信号进行教学干预 (arXiv: 2610.13594, utility: 0.88)
+  - 零奖励崩溃：任务难度突增导致学习信号消失
+  - 失败轨迹包含认知缺口诊断信息，不应丢弃
+  - **Activation**: RLVR, zero-reward collapse, pedagogical intervention, training stability
+
+### Pareto Frontiers of Optimal Reasoning Termination
+- [[pareto-overthinking-termination]] - Step-wise Truncation Probing刻画模型-任务级overthinking，构建Pareto前沿 (arXiv: 2610.13570, utility: 0.85)
+  - 推理模型受益于test-time scaling但持续推理可能有害(overthinking)
+  - STP从多个保留前缀生成答案，量化overthinking严重程度
+  - **Activation**: overthinking, reasoning termination, test-time scaling, Pareto frontier
+
+### MAGMA-Bench: Long-Horizon Embodied Agent Evaluation
+- [[magma-bench-embodied]] - 架构无关benchmark评估动态多机器人环境中持续任务推理 (arXiv: 2610.13534, utility: 0.86)
+  - 递增任务horizon + 受控在线扰动（执行失败/任务中断/使命更新）
+  - 填补动态任务执行与多机器人协调交叉评估空白
+  - **Activation**: embodied agents, multi-robot, benchmark, dynamic tasks, execution failures
+
+### X-AgentRed: Red-Teaming Personal Agents in Multi-Service Ecosystems
+- [[x-agentred-cross-service]] - 系统探索跨服务路径识别良性请求的组合失败 (arXiv: 2610.13886, utility: 0.85)
+  - 个人agent跨服务行动累积交互产生意外有害结果
+  - 现有red-teaming无法捕获跨服务组合失败
+  - **Activation**: red-teaming, personal agents, cross-service, compositional failures
+
+### Curriculum Difficulty Progression in GRPO
+- [[curriculum-grpo-difficulty]] - GRPO中持续选择中等难度样本不一定最优，向更难样本渐进可提升最终性能 (arXiv: 2610.13669, utility: 0.85)
+  - 中等难度样本产生信息丰富的GRPO信号，但固定难度估计随策略演化失准
+  - 训练效率vs最终能力的权衡
+  - **Activation**: curriculum learning, GRPO, difficulty progression, dynamic difficulty
+
+### RATED: Reliability-Aware AI Agent Tool Retrieval
+- [[rated-tool-retrieval]] - 双编码器语义匹配+上下文赌博机动态可靠性适应 (arXiv: 2610.13889, utility: 0.86)
+  - 现有工具检索优化语义相关性但忽略执行时可用性
+  - 轻量赌博机模块基于实时执行反馈重排候选
+  - **Activation**: tool retrieval, reliability, execution dynamics, contextual bandit
+
+### MASTIF: Baseline Assessment for the Agentic Web Technology Stack
+- [[mastif-agentic-web-stack]] - 系统评估agent协议/框架/库如何组合成agentic web解决方案 (arXiv: 2610.13703, utility: 0.85)
+  - 快速迭代的agent技术生态缺乏系统性评估
+  - 多Agent系统测试框架评估协议组合、框架互操作、库集成
+  - **Activation**: agentic web, evaluation framework, protocols, technology assessment
+
+### Adaptive DHiSparse: Speculative Decoding over Load-Adaptive KV Hierarchy
+- [[adaptive-dhisparse-speculative]] - 长上下文serving在KV内存耗尽前达到有用吞吐：负载自适应分层稀疏KV+推测解码 (arXiv: 2610.13708, utility: 0.86)
+  - 保护工作集+GPU空闲时保留额外历史+精确融合检索恢复
+  - 兼容DSpark和DFlash2推测解码
+  - **Activation**: speculative decoding, KV cache, long-context serving, load-adaptive
+
+---
+
 ## 2026-10-13 - Computer Science + Quantum Mechanics (Cron Job)
 
 ### AI Models Can Provably Hide Arbitrary Capabilities

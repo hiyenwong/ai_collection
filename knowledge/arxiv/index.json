@@ -7529,7 +7529,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,
@@ -10550,7 +10550,7 @@
   {
     "id": "2610.06726v1",
     "title": "Decoupling Time and Space: A Temporally Conditioned Refinement for EEG Source Imaging",
-    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert M\u00fcller, Shinichi Nakajima",
+    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert Müller, Shinichi Nakajima",
     "url": "https://arxiv.org/abs/2610.06726v1",
     "utility": 0.87,
     "categories": [
@@ -11195,5 +11195,117 @@
     "category": "multi-agent-rl",
     "utility": 0.86,
     "date_added": "2026-10-10"
+  },
+  {
+    "id": "2610.13755",
+    "title": "Matched-Context Group Policy Optimization for LLM Agent Training",
+    "skill_name": "matched-context-grpo",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13735",
+    "title": "Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers",
+    "skill_name": "orthros-phase-aware-attention",
+    "category": "nlp-llm",
+    "utility": 0.87,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13928",
+    "title": "AI Models Can Provably Hide Arbitrary Capabilities",
+    "skill_name": "ai-models-hide-capabilities",
+    "category": "ai-safety-eval",
+    "utility": 0.86,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13841",
+    "title": "Returning to Development States: When Full Sandbox Snapshots Help Coding Agents",
+    "skill_name": "returning-to-dev-states",
+    "category": "tools-frameworks",
+    "utility": 0.85,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13672",
+    "title": "Inject a Turn, Not a Token: Learning Where to Redirect LLM Reasoning for Self-Correction",
+    "skill_name": "inject-turn-self-correction",
+    "category": "nlp-llm",
+    "utility": 0.86,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13632",
+    "title": "Humanize Olympiad Agents: A Multi-Session Workflow for Olympiad Problem Solving",
+    "skill_name": "humanize-olympiad-agents",
+    "category": "multi-agent-rl",
+    "utility": 0.87,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13594",
+    "title": "MENTOR: Learning from Failure with On-Policy Pedagogical Intervention",
+    "skill_name": "mentor-learning-from-failure",
+    "category": "general-ml",
+    "utility": 0.88,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13570",
+    "title": "Constructing Pareto Frontiers of Optimal Reasoning Termination Methods for Overthinking",
+    "skill_name": "pareto-overthinking-termination",
+    "category": "nlp-llm",
+    "utility": 0.85,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13534",
+    "title": "MAGMA-Bench: Evaluating Long-Horizon Embodied Agents under Dynamic Tasks and Execution Failures",
+    "skill_name": "magma-bench-embodied",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13886",
+    "title": "X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems",
+    "skill_name": "x-agentred-cross-service",
+    "category": "ai-safety-eval",
+    "utility": 0.85,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13669",
+    "title": "A Step Harder, Not a Step Too Far: The Benefits and Limits of Curriculum Difficulty Progression in GRPO",
+    "skill_name": "curriculum-grpo-difficulty",
+    "category": "general-ml",
+    "utility": 0.85,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13889",
+    "title": "RATED: Reliability-Aware AI Agent Tool Retrieval via Execution Dynamics",
+    "skill_name": "rated-tool-retrieval",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13703",
+    "title": "A Baseline Assessment for the Agentic Web Technology Stack",
+    "skill_name": "mastif-agentic-web-stack",
+    "category": "tools-frameworks",
+    "utility": 0.85,
+    "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.13708",
+    "title": "Adaptive DHiSparse: Speculative Decoding over a Load-Adaptive KV Hierarchy",
+    "skill_name": "adaptive-dhisparse-speculative",
+    "category": "nlp-llm",
+    "utility": 0.86,
+    "date_added": "2026-10-13"
   }
 ]
