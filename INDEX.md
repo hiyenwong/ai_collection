@@ -91,6 +91,23 @@
 
 ## 2026-10-13 - Computer Science + Quantum Mechanics (Cron Job)
 
+### Prediction Is Not a Sufficient Memory State
+- [[prediction-not-sufficient-memory-state]] - 记忆状态与预测器可分性理论：复现所有当前预测的状态仍可能丢失继续学习的能力 (arXiv: 2610.13881)
+  - 精确状态维度分类：ridge 回归需 dp + d(d+1)/2（RLS 的 C,M 统计量），度-D 多项式损失需 C(d+D,D)−1，非多项式损失在固定最优点族上维度无界
+  - 有限比特定律：B 比特压缩的平均一次更新误差 Θ(2^(−2B/s_d))，s_d=d(d+1)/2——二次维度误差指数，随机化编码无法绕过
+  - 注意力闭包：单 token 继续等价于未归一化 (B,Z) 统计量相等——线性注意力存储的分子分母被证明是对非线性压缩的必要性下界
+  - DeltaNet 警示：原始 delta 递归 S+ = S + β(y−Sk)k^T 在任何标量 β 下合并不可区分历史；隐藏证据必须用额外通道计数
+  - **Activation**: prediction-memory separation, recurrent state dimension, test-time learning, DeltaNet, linear attention state, polynomial closure, finite-bit compression law
+
+### Universal Construction and Exact Self-Reproduction in Ternary McCulloch-Pitts Networks
+- [[mcpitts-ternary-self-reproduction]] - 固定 {−1,0,1} 权重阈值网络精确自复制：von Neumann 通用构造在 McCulloch-Pitts 基底上的完整实现 (arXiv: 2610.12251)
+  - 环形机：K banks × S records 状态持有其他网络为数据，固定深度 19 三元 netlist 每步执行一条 record；143-record 构造器读描述→建网络→复制描述→移交控制
+  - SUBLEQ 通用计算机家族：8-bit 成员 17,598 单元 / 36,080 records，27 指令程序分离构造与复制，发出自身权重/内存/带的序列化（quine 方案）
+  - 噪声二分法：预激活噪声有 1/2 margin（r 倍复制线性放大，抗任意高斯噪声）；输出翻转仅 ε < 1/(2e·k*) 可靠，k*=最大扇入
+  - 全部结果 Rocq 机器证明（各字长/环/尺寸），OCaml 提取生成已发表文件
+  - **Activation**: self-reproduction, universal construction, von Neumann, McCulloch-Pitts, threshold network, ternary weights, SUBLEQ, quine, Rocq, fault tolerance
+
+
 ### AI Models Can Provably Hide Arbitrary Capabilities
 - [[digital-locker-unelicitable-capabilities]] - 数字锁柜把加密可执行网络嵌入宿主权重，可证明抵抗白盒引出审计 (arXiv: 2610.13928)
   - 构造：算法→SLP→LTC→GLU 编译管线以 Keccak 数字锁柜加密隐藏网络权重，触发词解密后经 SwiGLU 执行单元乘以任务输入；触发词与载荷在随机预言机模型下多项式时间不可恢复
