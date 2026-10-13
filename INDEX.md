@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-14 - Medicine (Cron Job)
+
+### The Predictability Bias of Joint-Embedding Predictive Learning in Medical Imaging
+- [[tap-jepa-predictability-bias-medical-ssl]] - JEPA预测式SSL的"可预测性偏差"审计：点预测丢失上下文无法解析的病理变异 (arXiv: 2610.13237)
+  - 定义predictability bias：点预测坍缩条件目标分布，复发性解剖(可预测)被保留而偶发病理(不可预测)被丢弃；重放训练masking/teacher/predictor审计：病理Skill损失31.8-36.7% vs 解剖6.2-11.2%
+  - 五步审计协议：遮蔽暴露(61.5-81.4%病理事件被完全遮蔽)→Skill短板(归一化Q_short，几何基线对照)→病理-对照位移(Actr分解，随机轴校准)→可见上下文干预→下游token删除(4/7探针margin仅降≤0.45%)
+  - SOTA级竞争编码器(RAD-ChestCT AUPRC 0.5268最高)仍存在偏差——迁移基准无法察觉；医学SSL需显式保留不可预测诊断变异；Skill=(AP-π)/(1-π)标准化稀有类探针
+  - **Activation**: predictability bias, JEPA audit, masked predictive pretraining, medical SSL failure modes, pathology representation loss, Skill prevalence normalization
+
+### EchoTab: Learning Measurement-Grounded Representations for Echocardiographic Diagnosis through Tabular Reconstruction
+- [[echotab-measurement-grounded-representation]] - 测量token因子化表示：临床"视图→测量→诊断"层级显式建模，表格重建训练 (arXiv: 2610.13599)
+  - 每个临床测量一个可学习query token，交叉注意力只聚合估计该测量所需视图；测量token间无自注意力保持因子化；下游诊断按需平均相关测量token子集
+  - 部分共享预测头最优：共享MLP基座+超网络以q_m为条件生成LoRA式低秩修正——兼顾测量专属灵活性与跨测量对齐(0.748/0.778 AUC vs 独立头0.709/共享头0.732)
+  - 掩码方差归一化MSE仅对观测(研究,测量)对计算——免插补处理测量稀疏；无负样本无大batch(单A100 vs 对比基线8×A40)；MIMIC 9诊断AUC 0.659→0.748(+13.5%)；测量-视图注意力与心脏病专家16/20一致
+  - **Activation**: measurement-grounded representation, tabular reconstruction pretraining, multi-view echo, measurement tokens, hypernetwork LoRA head, factorized clinical representation
+
 ## 2026-10-14 - Neuroscience Research (Cron Job)
 
 ### A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models
