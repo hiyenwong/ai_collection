@@ -1,5 +1,20 @@
 ## 2026-10-13 - Neuroscience Research (Cron Job)
 
+### Simulating Training Spikes of Deep Neural Networks by Layer-wise Random Feature Models
+- [[plrf-training-spikes-random-feature-simulation]] - PLRF二次模型复现LLM训练loss spike：重尾幂律数据+二阶梯度噪声打破集中度量；层向仿真从checkpoint以CPU 5秒预测spike并推导β₂ schedule (arXiv: 2610.13524)
+  - 机制：SGD更新分解为可预测分量+噪声随机游走r^t；正常波动靠高维集中只依赖数据shuffle，重尾谱（α>0.5）下r^t随机指向大特征值方向即产生对init种子敏感的spike——spike≠单个outlier数据点
+  - 仿真：从checkpoint测4个量（E(h_t h_t^T)特征谱/平均梯度/batch梯度二阶矩/Hessian迹）合成高斯伪梯度，不跑反传，成本CPU 5秒 vs 训练40小时TPUv4×32；成功预测Spiky配置bump
+  - 配方：β₂ ≈ 1 − η_t·sqrt(T/N)（T=归一化Hessian迹，N=梯度均方）——lr衰减→β₂递增schedule，实证val loss 2.4404 < 常数β₂ 2.4421/2.4502
+  - **Activation**: training spikes, loss spike, PLRF, power-law random features, Adam beta2 schedule, concentration of measure, layer-wise simulation, training dynamics
+
+### Calibration in One Go: Jointly Learning Accurate and Calibrated Neural Networks
+- [[cog-bilevel-stackelberg-calibration]] - COG把post-hoc校准重构为bilevel Stackelberg联训：校准器(leader, λc<λf)与主干(follower)同batch同CE损失联合更新，COG-FC零额外参数即达SOTA校准 (arXiv: 2610.13693)
+  - 理论：post-hoc校准=bilevel问题的解耦近似，仅当follower解唯一时最优；NN多等价局部最优→让校准器参与选择学到哪个解；λc<λf保Stackelberg层级保证收敛
+  - 实现：单次forward+backward、无需校准集/校准损失，唯一新超参λc（典型比λf慢10-100×）；COG-FC用最后分类层本身当校准器，PyTorch只需两个参数组不同lr
+  - 实验：ResNet-101三数据集COG变体整体匹配/超越post-hoc对应版（post-hoc MS在CIFAR-100不收敛而COG-MS稳定）；MTL CelebA 40任务COG-FC全胜Label Smoothing(100%)、胜Temp.Scaling 80%，NLL 0.21 vs LS 0.35
+  - **Activation**: neural network calibration, bilevel optimization, Stackelberg, temperature scaling alternative, multi-task calibration, ECE, Brier score, end-to-end calibration
+
+
 ### An all-transistor physical-learning transformer can be trained to perform in-context learning
 - [[physical-learning-transformer-dyadic-circuits]] - 全晶体管物理学习Transformer：dyadic双电路让非互易元件（乘法器/attention）也能在模拟电路中本地反传梯度 (arXiv: 2610.12571)
   - 核心：复制每个节点后，前向信号=均值(va+va')/2、误差信号=差va-va'∝β，自由/受扰两态同时运行；每个电阻本地读出梯度 [(∆v)²-(∆v')²]/4β
