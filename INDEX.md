@@ -21,6 +21,15 @@
   - **Activation**: chain-of-thought expressivity, autoregressive model, Sidon set, additive combinatorics, parameter sharing, next-token predictor, CoT supervision learnability, reasoning distillation, time-invariant generation
 ## 2026-10-15 - Systems Engineering + Quantum (Cron Job)
 
+### Below-threshold Execution of Fault-tolerant Ripple-carry Addition on a Trapped-ion Quantum Computer
+- [[algorithmic-check-ftqc-ripple-carry]] - 纯距离2纠错码实现below-threshold加法器：算法级检查（uncomputed carry qubit）把有效容错距离2→4，1-bit逻辑失效率比物理版低50倍+ (arXiv: 2610.14202)
+  - 算法-架构协同设计：Cuccaro RCA 的 c₀ 进位比特 uncomputation 不变量 = 免费 QEC 检错器；逻辑 Z 错误经 H–CCZ–H 共轭成 X 后传播到 c₀ 被捕获；Takahashi 删 c₀ 的"优化"反而摧毁此机制
+  - 距离不对称工程：[[8,3,2]] 色码 X-距离=4，终端 Z 基测量 → 输出失效由 X-距离主导；[[4,2,2]] iceberg 码 transversal H + [[8,3,2]] transversal CCZ(T/T†) code-switching 通用门集，phantom code intra-block CNOT=免费重标记
+  - 系统工程模式：代理 Clifford 仿真（CCZ→2×CZ, Helios-1E 噪声模型）选实现；burst 错误按作业级存活率异常整批剔除；空闲逻辑比特故意不纠错（后选择产率指数衰减 vs O(m²) 未检 idle 恒等式）；三级资源账本 algorithmic 2m+2 / logical 3m+4 / physical ≥8m+10 qubits
+  - 诚实报告：m=4 编码略差于物理版（归因未检 idling）；m=5 数据偏离 m=1-4 外推且无完整理论；1-bit 失效率 (6.0±5.9)e-5 vs 物理 (3.5±1.3)e-3
+  - **Activation**: algorithmic check, EFTQC, fault-tolerant arithmetic, ripple-carry adder, error-detecting code, below threshold, code-switching, post-selection yield, burst error filtering, algorithm-architecture codesign
+
+
 ### Quantum Ordinal Optimization under a Fixed Comparison Budget
 - [[quantum-ordinal-optimization-fixed-budget]] - 固定比较预算下最大化对齐概率的精确经典/量子最优值：经典=q+1盲抽+淘汰赛不可超越，量子秩律多项式度数翻倍 (arXiv: 2610.15791)
   - 经典最优（Thm 1）：任何自适应比较树都打不过"盲抽 q+1 个设计 + 锦标赛"，C_q(n,r) = 1 − C(n−r,q+1)/C(n,q+1)；证明用叶条件化+秩集均匀性+随机占优
