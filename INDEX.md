@@ -1,5 +1,24 @@
 # AI Collection Index
 
+## 2026-10-15 - Neuroscience Research (Cron Job)
+
+### FidLIF: Parallel Training of High-Fidelity Spiking Neurons with Exact BPTT
+- [[fidlif-parallel-exact-bptt-lif]] - Newton迭代+associative scan并行恢复hard-reset LIF轨迹，反向单次reverse scan精确等价BPTT，内存与迭代数K无关，同一神经元支持并行训练+逐步推理 (arXiv: 2610.16924)
+  - 核心机制：把全序列膜电位轨迹视为 G(v)=v−P((1−s)⊙v+v_rest·s)−q=0 的求根问题；Heaviside门仅在迭代求解期间用sigmoid松弛，收敛后用原始Heaviside门发放二值脉冲，保真度无损
+  - 关键结构：LIF局部递归使Jacobian为下双对角 (JG=I−A)，Newton更新化为仿射递归 vi(m+1)=ai−1(m)vi−1(m+1)+bi(m)，仿射复合可结合 → O(log T)深度associative scan并行计算；理论保证K≤T次迭代精确恢复（归纳法每轮修正一个前缀步），实测K=3足够
+  - 反向传播：不做through-iterations反传，在收敛轨迹v*做隐式微分 JG(v*)ᵀy=g（上双对角）→单次reverse scan即BPTT等价梯度（误差<10⁻⁶）；伴随扫描只需(v*,{ai*})，前向可关梯度追踪 → 峰值内存近常数（FPT随K线性增长）
+  - 输入依赖参数：因果小生成器从近n步窗口生成(τi,Ri)，sigmoid约束ρ∈(0,1)保持泄漏特性，求解前生成并在K次迭代内固定 → 不引入新时间依赖，保持部署时逐步推理；消融：去掉后Seq-CIFAR10 91.25%→80.66%
+  - 结果：Seq-CIFAR10 91.25%（超PSN 88.45/FPT 89.53）、Seq-CIFAR100 66.42%、CIFAR10-DVS 84.13%、SHD 94.38%；并行训练→串行推理精度一致（90.99→90.69）；Triton实现长序列延迟优势随T扩大
+  - **Activation**: spiking neural network, LIF neuron, parallel training, exact BPTT, associative scan, Newton iteration, fixed-point implicit differentiation, Triton, step-by-step inference, long sequence training
+
+### The Surprising Expressivity of a Single Neuron with Autoregressive Chain-of-Thought
+- [[single-neuron-ar-cot-sidon]] - 单个时不变自回归神经元 σ(⟨w,x⟩+b) 经CoT生成可模拟任意size-s前馈电路：d=O(ns+s²)、T=O(s²)均与深度无关（Sidon set无碰撞序列化编码，改进COLT'25指数深度界） (arXiv: 2610.17283)
+  - 核心机制：每个电路节点vi分配生成步ti，边(vi→vj)权重编码进共享参数向量的 w[−(tj−ti)] 坐标——Cj(x)在计算第tj步时恰为第(tj−ti)近上下文token，贡献 w(vi,vj)·Cj(x) 精确匹配电路定义
+  - 碰撞问题与Sidon解：两条边冲突当且仅当 tj−ti=tl−tk（同一w坐标需存两个权重）；Erdős–Turán构造的size-s Sidon集（最大元素O(s²)）保证所有 pairwise difference 唯一 → 无碰撞编码，T=O(s²)且深度无关
+  - 可学习性：完整CoT轨迹=T个 prefix→next-token 监督样本（同一共享神经元）；threshold激活下线性规划多项式时间可解 → 单神经元可从CoT监督高效学习模拟任意多项式时间图灵机（Cor 2）；无中间token的E2E学习在单向函数存在假设下即不可解（Cor 4，弱化先前密码学假设）
+  - 紧致性：d=O(ns+s²)匹配最坏情况电路权重数；"直接边对齐"限制下 T=Ω(L²) 即使width-1电路（Thm 4）→ 界紧
+  - 实验：单个共享AR ReLU神经元（稀疏w+Adam）在4000条CNN教师激活轨迹上训练5分钟（L40S），CIFAR-10测试精度72.106%≈教师72.150%，教师预测一致率99.48%，全程不接触教师权重
+  - **Activation**: chain-of-thought expressivity, autoregressive model, Sidon set, additive combinatorics, parameter sharing, next-token predictor, CoT supervision learnability, reasoning distillation, time-invariant generation
 ## 2026-10-15 - Systems Engineering + Quantum (Cron Job)
 
 ### Quantum Ordinal Optimization under a Fixed Comparison Budget
