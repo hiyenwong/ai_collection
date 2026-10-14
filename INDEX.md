@@ -2,6 +2,21 @@
 
 ## 2026-10-15 - Systems Engineering + Quantum (Cron Job)
 
+### Rewiring of Adult Neural Networks: Structural Plasticity Across Multiple Scales
+- [[adult-structural-plasticity-multiscale]] - 成体神经网络结构可塑性多尺度研究议程：突触形成/消除的调节因素、计算功能与临床/神经形态转化 (arXiv: 2610.18024)
+  - 调节规则全景：稳态结构可塑性（钙离子介导的负反馈，失神经→代偿性棘突生长）与Hebbian结构可塑性（LTP数分钟内诱导新棘突，正反馈需资源边界约束）共存；权重-尺寸-稳定性紧耦合、自发actin动力学引入内在随机性、年龄效应→稳定骨干子群、µm级簇状可塑性、SER/线粒体局部供给、潜在突触形态约束、neurexin-neuroligin启动突触发生、胶质/ECM/小胶质细胞参与消除
+  - 计算功能三解"不稳定突触如何承载稳定记忆"：稳定核心（不足）、等功能成对连接（Hebbian动力学平衡，快学习慢遗忘 Deger/Fauth）、等功能网络/细胞集群（纯稳态重连线也能隐式评估相关性形成集群 Gallinaro）；结构重排提升联想记忆容量并复现分级遗忘/间隔效应/抗灾难遗忘（Knoblauch）；权重依赖聚类+树突非线性子单元提升模式识别容量（Limbacher & Legenstein）；重连线同时引发表征漂移（采样简并配置 Kappel）并缓解其功能影响
+  - 临床+工具链：MSP模型预测卒中后代偿与刺激干预（亚阈值分段时间tDCS优于连续长时程、效果依赖脑状态）；NEST完整集成稳态规则、GeNN GPU灵活重连线、BrainScaleS-2/SpiNNaker片上rewiring；DEEP R稀疏训练=结构可塑性算法，彩票假设=寻找winning tickets
+  - **Activation**: structural plasticity, synaptic turnover, spine dynamics, homeostatic rewiring, equifunctional memory, cell assembly formation, neuromorphic sparse training
+
+### DeltaNet-PC: Test-Time Memory Without Backpropagation Through Time
+- [[deltanet-pc-test-time-memory]] - 把快速权重记忆更新ΔS_t当latent variable，从预测编码能量函数原生推导出RLS写规则：无BPTT、固定D²内存的测试时序列记忆 (arXiv: 2610.15185)
+  - 推导链（可复用模式）：PC高斯生成模型→负对数=ridge回归能量→Taylor展开用(S_{t-1}, C_{t-1})总结历史→∂E/∂Δ=0完全settling得RLS写规则 S_t = S_{t-1} + g_t·r_t·(P_{t-1}k_t)^T；外积/DeltaNet delta规则/Mesa-RLS全部统一为"每步最小化多少能量"的光谱
+  - 实证锚点：写入规则对比训练后外积0.66/NLMS 0.26（干扰病理学——比训练增益还差）/RLS 1.00；L≤D完美召回、L=D=1024仍100%；MQAR 32条训练流即100%（DeltaNet需1024条），训练内存恒定0.25GB vs DeltaNet L=131k时OOM
+  - 上下文推断用settling深度替代前馈层数：记忆反向运行提出假设+前向验证，追踪ideal observer上界（"bank(river) vs bank(money)"消歧）；RoPE频率自学习（顺序任务加速、绑定任务减速）；模拟硬件上Kirchhoff/Ohm物理并行瞬时settling→in-memory计算定位
+  - **Activation**: predictive coding memory, test-time memorization, RLS fast weights, linear attention derivation, BPTT-free online learning, fixed-size memory
+
+
 ### Entanglement-Capability-Aware Finite-Bond Circuit Cutting for Distributed Quantum Computing
 - [[entanglement-capability-circuit-cutting]] - Entanglement-capability-aware two-stage circuit cutting for distributed QPUs (arXiv: 2610.14580)
   - EP-Cost gate-level screen: eta_g = sin^2(theta/2) for CP, sin^2(theta) for RZZ, 1 for CX/CZ, 0 for SWAP; C_EP = (E_cut + I_cut)/2 — QPD overhead Omega_g = (1+2*sqrt(eta))^2 is monotone in eta, so the proxy IS an overhead predictor
@@ -6104,7 +6119,6 @@
   - Key challenges: adversarial susceptibility, identity crisis, discount vulnerability
   - Lessons: gap between capable and robust remains wide; multi-agent helps but introduces new failure modes
   - **Activation**: autonomous agent, real-world deployment, multi-agent coordination, business automation, AI shopkeeper, Claudius, project vend, agent robustness, adversarial testing
-=======
 
 ## 2026-06-12 - Number Theory, Statistics, Advanced Mathematics (Cron Job + Daily Quantum)
 
