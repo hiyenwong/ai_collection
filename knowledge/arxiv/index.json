@@ -1,5 +1,117 @@
 [
   {
+    "id": "2610.14382",
+    "title": "ANASSA: From High-Level Framework to Low-Level Architecture for Spatial Agentic AI",
+    "skill_name": "arxiv-2610-14382-anassa-from-high-level-framework-to-low-level-architecture-f",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.16921",
+    "title": "Time Window Optimization for Motor Imagery Classification via Temporal Structure Embedded Reinforcement Learning",
+    "skill_name": "arxiv-2610-16921-time-window-optimization-for-motor-imagery-classification-vi",
+    "category": "neuroscience",
+    "utility": 1.0,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.17998",
+    "title": "Saliency-Guided Replay for Continual Learning in Deep Spiking Neural Networks",
+    "skill_name": "arxiv-2610-17998-saliency-guided-replay-for-continual-learning-in-deep-spikin",
+    "category": "spiking-neuromorphic",
+    "utility": 1.0,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.14635",
+    "title": "PVFH-Bench: Benchmarking Premise-Induced Visual Fixation Hallucinations in Vision-Language Models",
+    "skill_name": "arxiv-2610-14635-pvfh-bench-benchmarking-premise-induced-visual-fixation-hall",
+    "category": "neuroscience",
+    "utility": 1.0,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.14515",
+    "title": "SEPM: Self-Evolving Procedural Memory Grounded in Task Graphs for Multi-Agent Collaboration",
+    "skill_name": "arxiv-2610-14515-sepm-self-evolving-procedural-memory-grounded-in-task-graphs",
+    "category": "multi-agent-rl",
+    "utility": 1.0,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.15146",
+    "title": "Compute-Optimal Scaling Laws for Spiking Language Models",
+    "skill_name": "arxiv-2610-15146-compute-optimal-scaling-laws-for-spiking-language-models",
+    "category": "spiking-neuromorphic",
+    "utility": 0.96,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.13982",
+    "title": "PRIME: Frequency-Aware Unified Pruning and Merging for MoE Compression",
+    "skill_name": "arxiv-2610-13982-prime-frequency-aware-unified-pruning-and-merging-for-moe-co",
+    "category": "nlp-llm",
+    "utility": 0.96,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.14423",
+    "title": "Scaling Laws for Multimodal Data Mixtures",
+    "skill_name": "arxiv-2610-14423-scaling-laws-for-multimodal-data-mixtures",
+    "category": "nlp-llm",
+    "utility": 0.96,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.16959",
+    "title": "DiTSG: Context-Aware Air Traffic Scene Generation with Multi-Agent Diffusion Transformers",
+    "skill_name": "arxiv-2610-16959-ditsg-context-aware-air-traffic-scene-generation-with-multi",
+    "category": "multi-agent-rl",
+    "utility": 0.96,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.14883",
+    "title": "MARL-BattleGrounds: A Novel JAX-native Benchmark for Heterogeneous and Competitive Multi-agent RL",
+    "skill_name": "arxiv-2610-14883-marl-battlegrounds-a-novel-jax-native-benchmark-for-heteroge",
+    "category": "multi-agent-rl",
+    "utility": 0.96,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.14903",
+    "title": "Conflict-Aware Autonomous Resource Orchestration for 5G Edge Slicing Using Multi-Agent Systems and LLMs",
+    "skill_name": "arxiv-2610-14903-conflict-aware-autonomous-resource-orchestration-for-5g-edge",
+    "category": "multi-agent-rl",
+    "utility": 0.96,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2512.00557",
+    "title": "NeuroVolve: Evolving Visual Stimuli toward Programmable Neural Objectives",
+    "skill_name": "arxiv-2512-00557-neurovolve-evolving-visual-stimuli-toward-programmable-neura",
+    "category": "neuroscience",
+    "utility": 0.96,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.15450",
+    "title": "CoFlu-Brain: An fMRI Connectivity Foundation Model with Cofluctuation-Based Pretraining",
+    "skill_name": "arxiv-2610-15450-coflu-brain-an-fmri-connectivity-foundation-model-with-coflu",
+    "category": "neuroscience",
+    "utility": 0.86,
+    "date_added": "2026-10-14"
+  },
+  {
+    "id": "2610.17488",
+    "title": "Origin Attribution for Unsafe Behavior in Self-Evolving Multi-Agent Coding Systems",
+    "skill_name": "arxiv-2610-17488-origin-attribution-for-unsafe-behavior-in-self-evolving-mult",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-14"
+  },
+  {
     "id": "2610.09832",
     "title": "SkillForge: Co-Evolving Skills and Agents via Dynamic Skill Lifecycles",
     "skill_name": "arxiv-2610-09832-skillforge-co-evolving-skills-and-agents-via-dynamic-skill-l",

@@ -1,3 +1,73 @@
+## 2026-10-14 - arXiv Paper Skills (Cron Job)
+
+
+### multi-agent-rl
+
+- **arxiv-2610-14382-anassa-from-high-level-framework-to-low-level-architecture-f** (Utility: 1.00)
+  - ANASSA: From High-Level Framework to Low-Level Architecture for Spatial Agentic AI
+  - arXiv: 2610.14382
+
+- **arxiv-2610-14515-sepm-self-evolving-procedural-memory-grounded-in-task-graphs** (Utility: 1.00)
+  - SEPM: Self-Evolving Procedural Memory Grounded in Task Graphs for Multi-Agent Collaboration
+  - arXiv: 2610.14515
+
+- **arxiv-2610-16959-ditsg-context-aware-air-traffic-scene-generation-with-multi** (Utility: 0.96)
+  - DiTSG: Context-Aware Air Traffic Scene Generation with Multi-Agent Diffusion Transformers
+  - arXiv: 2610.16959
+
+- **arxiv-2610-14883-marl-battlegrounds-a-novel-jax-native-benchmark-for-heteroge** (Utility: 0.96)
+  - MARL-BattleGrounds: A Novel JAX-native Benchmark for Heterogeneous and Competitive Multi-agent RL
+  - arXiv: 2610.14883
+
+- **arxiv-2610-14903-conflict-aware-autonomous-resource-orchestration-for-5g-edge** (Utility: 0.96)
+  - Conflict-Aware Autonomous Resource Orchestration for 5G Edge Slicing Using Multi-Agent Systems and LLMs
+  - arXiv: 2610.14903
+
+- **arxiv-2610-17488-origin-attribution-for-unsafe-behavior-in-self-evolving-mult** (Utility: 0.86)
+  - Origin Attribution for Unsafe Behavior in Self-Evolving Multi-Agent Coding Systems
+  - arXiv: 2610.17488
+
+
+### neuroscience
+
+- **arxiv-2610-16921-time-window-optimization-for-motor-imagery-classification-vi** (Utility: 1.00)
+  - Time Window Optimization for Motor Imagery Classification via Temporal Structure Embedded Reinforcement Learning
+  - arXiv: 2610.16921
+
+- **arxiv-2610-14635-pvfh-bench-benchmarking-premise-induced-visual-fixation-hall** (Utility: 1.00)
+  - PVFH-Bench: Benchmarking Premise-Induced Visual Fixation Hallucinations in Vision-Language Models
+  - arXiv: 2610.14635
+
+- **arxiv-2512-00557-neurovolve-evolving-visual-stimuli-toward-programmable-neura** (Utility: 0.96)
+  - NeuroVolve: Evolving Visual Stimuli toward Programmable Neural Objectives
+  - arXiv: 2512.00557
+
+- **arxiv-2610-15450-coflu-brain-an-fmri-connectivity-foundation-model-with-coflu** (Utility: 0.86)
+  - CoFlu-Brain: An fMRI Connectivity Foundation Model with Cofluctuation-Based Pretraining
+  - arXiv: 2610.15450
+
+
+### nlp-llm
+
+- **arxiv-2610-13982-prime-frequency-aware-unified-pruning-and-merging-for-moe-co** (Utility: 0.96)
+  - PRIME: Frequency-Aware Unified Pruning and Merging for MoE Compression
+  - arXiv: 2610.13982
+
+- **arxiv-2610-14423-scaling-laws-for-multimodal-data-mixtures** (Utility: 0.96)
+  - Scaling Laws for Multimodal Data Mixtures
+  - arXiv: 2610.14423
+
+
+### spiking-neuromorphic
+
+- **arxiv-2610-17998-saliency-guided-replay-for-continual-learning-in-deep-spikin** (Utility: 1.00)
+  - Saliency-Guided Replay for Continual Learning in Deep Spiking Neural Networks
+  - arXiv: 2610.17998
+
+- **arxiv-2610-15146-compute-optimal-scaling-laws-for-spiking-language-models** (Utility: 0.96)
+  - Compute-Optimal Scaling Laws for Spiking Language Models
+  - arXiv: 2610.15146
+
 ## 2026-10-12 - arXiv Paper Skills (Cron Job)
 
 ### ai-safety-eval
