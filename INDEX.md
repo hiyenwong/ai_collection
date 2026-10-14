@@ -1,7 +1,6 @@
 # AI Collection Index
 
 ## 2026-10-15 - Neuroscience Research (Cron Job)
-
 ### HyBRA-EEG: Hyperbolic Global-Local Brain-Region Aggregation for Self-Supervised EEG Representation Learning
 - [[hybra-eeg-hyperbolic-region-aggregation]] - 蒙太奇不变EEG自监督框架：通道观测映射到固定K=11区域token空间，Poincaré球内先验约束+特征依赖双曲距离匹配，通道证据注入保细粒度波形线索，1.45M参数全6数据集第一 (arXiv: 2610.16589)
   - 核心问题：通道token设计（BIOT/LaBraM/CSBrain）把空间语义绑定在通道身份上，跨蒙太奇无对应物；HyBRA先映射到所有数据集共享的固定区域轴，区域token形状对任何蒙太奇一致
@@ -12,11 +11,13 @@
   - 可解释性：手运动想象IG归因集中左右中央区token(~30%)与Pfurtscheller感觉运动节律空间一致；token扰动验证忠实性（替换最高归因token BAcc 0.812→0.725，最低归因无损）
   - **Activation**: EEG foundation model, montage invariance, hyperbolic space, Poincaré ball, region tokenization, channel-to-region matching, self-supervised pretraining, channel evidence injection, EEG transfer, brain-computer interface, 蒙太奇不变性, 区域token
 
+
 ### Predicting Cognitive Tasks from Single-Channel EEG through Task-Semantic Alignment
 - [[hybra-eeg-hyperbolic-region-aggregation]] (相关记录) - 单通道前-后差分EEG编码器对齐任务语义向量（指令/刺激/反应需求的语义嵌入），零样本10类认知任务30.13%(chance 10%)，few-shot 16例/类34.47% (arXiv: 2610.15104)
   - 探索性发现：多任务/人的数据集有用，但加入单任务数据集有时反而降低既有性能——EEG基础模型预训练数据需要同一受试者跨天/设备/研究重复多样任务
   - kg.db已记录，本篇为次选论文（HyBRA-EEG为主要skill）
   - **Activation**: single-channel EEG, task-semantic alignment, zero-shot cognitive decoding, wearable EEG, data scaling
+
 
 ### FidLIF: Parallel Training of High-Fidelity Spiking Neurons with Exact BPTT
 - [[fidlif-parallel-exact-bptt-lif]] - Newton迭代+associative scan并行恢复hard-reset LIF轨迹，反向单次reverse scan精确等价BPTT，内存与迭代数K无关，同一神经元支持并行训练+逐步推理 (arXiv: 2610.16924)
@@ -27,6 +28,7 @@
   - 结果：Seq-CIFAR10 91.25%（超PSN 88.45/FPT 89.53）、Seq-CIFAR100 66.42%、CIFAR10-DVS 84.13%、SHD 94.38%；并行训练→串行推理精度一致（90.99→90.69）；Triton实现长序列延迟优势随T扩大
   - **Activation**: spiking neural network, LIF neuron, parallel training, exact BPTT, associative scan, Newton iteration, fixed-point implicit differentiation, Triton, step-by-step inference, long sequence training
 
+
 ### The Surprising Expressivity of a Single Neuron with Autoregressive Chain-of-Thought
 - [[single-neuron-ar-cot-sidon]] - 单个时不变自回归神经元 σ(⟨w,x⟩+b) 经CoT生成可模拟任意size-s前馈电路：d=O(ns+s²)、T=O(s²)均与深度无关（Sidon set无碰撞序列化编码，改进COLT'25指数深度界） (arXiv: 2610.17283)
   - 核心机制：每个电路节点vi分配生成步ti，边(vi→vj)权重编码进共享参数向量的 w[−(tj−ti)] 坐标——Cj(x)在计算第tj步时恰为第(tj−ti)近上下文token，贡献 w(vi,vj)·Cj(x) 精确匹配电路定义
@@ -36,6 +38,15 @@
   - 实验：单个共享AR ReLU神经元（稀疏w+Adam）在4000条CNN教师激活轨迹上训练5分钟（L40S），CIFAR-10测试精度72.106%≈教师72.150%，教师预测一致率99.48%，全程不接触教师权重
   - **Activation**: chain-of-thought expressivity, autoregressive model, Sidon set, additive combinatorics, parameter sharing, next-token predictor, CoT supervision learnability, reasoning distillation, time-invariant generation
 ## 2026-10-15 - Systems Engineering + Quantum (Cron Job)
+### Architecting Instruction Execution for Scalable FTQC (ARIES QISA)
+- [[aries-qisa-ftqc-instruction-hierarchy]] - 五级QISA抽象层次与FTQC控制栈热预算量化评估，Level 4本地逻辑操作为最优平衡 (arXiv: 2610.17058)
+  - 物理级QISA超出稀释制冷机冷却预算4000×；隐式闲置(L2→L3)带来490×回传带宽改善
+  - Level 4比Level 3再降2.6×回传带宽+内核加速1.3-1.4×，且QEC无关（一套引擎服务surface/Hastings-Haah/未来码）
+  - 引擎成本：4096逻辑比特L4≈40k LUT (22nm cryo-CMOS ~10-20mW) vs L5≈260k LUT路由拥塞
+  - **Activation**: QISA, quantum instruction set architecture, FTQC control stack, cryogenic thermal budget, issue bandwidth, lattice surgery
+
+
+
 
 ### Below-threshold Execution of Fault-tolerant Ripple-carry Addition on a Trapped-ion Quantum Computer
 - [[algorithmic-check-ftqc-ripple-carry]] - 纯距离2纠错码实现below-threshold加法器：算法级检查（uncomputed carry qubit）把有效容错距离2→4，1-bit逻辑失效率比物理版低50倍+ (arXiv: 2610.14202)
@@ -46,12 +57,14 @@
   - **Activation**: algorithmic check, EFTQC, fault-tolerant arithmetic, ripple-carry adder, error-detecting code, below threshold, code-switching, post-selection yield, burst error filtering, algorithm-architecture codesign
 
 
+
 ### Quantum Ordinal Optimization under a Fixed Comparison Budget
 - [[quantum-ordinal-optimization-fixed-budget]] - 固定比较预算下最大化对齐概率的精确经典/量子最优值：经典=q+1盲抽+淘汰赛不可超越，量子秩律多项式度数翻倍 (arXiv: 2610.15791)
   - 经典最优（Thm 1）：任何自适应比较树都打不过"盲抽 q+1 个设计 + 锦标赛"，C_q(n,r) = 1 − C(n−r,q+1)/C(n,q+1)；证明用叶条件化+秩集均匀性+随机占优
   - 量子机制（Thm 2/3）：输出秩律是比较符号 sgn(x_a−x_b) 的 ≤2q 次多项式（经典仅 q 次）；一次比较精确最优 = 显式三次方程最小正根，SDP moment-matrix 对偶+标签对称性证明
   - OO 结论：等效盲抽数一次量子比较 → (3+√13)/2 ≈ 3.30 vs 经典 2；n>9 时一次量子胜两次经典；宽松目标（top half）优势消失；预算按比较计（相干比较≈4次评估）
   - **Activation**: ordinal optimization, alignment probability, comparison oracle, knockout tournament, polynomial method, fixed-budget selection, quantum query complexity, equivalent blind-pick size
+
 
 ### Controller-Agnostic Runtime Safety Certificates for Tool-Using AI Agents
 - [[runtime-safety-certificates-tool-ai-agents]] - LLM agent 的运行时安全盾：谓词抽象+日志估计 Markov kernel+Weissman L1 置信域+鲁棒 reach-avoid 值迭代，PAC 证书对所有合规 controller 一致成立、换模型免重算 (arXiv: 2610.16865)
@@ -60,12 +73,14 @@
   - 实证：7 个 LLM controller（Qwen2.5 1.5B/3B/7B）× 1050 episodes、30% prompt-injection 攻击下零不安全结果；7B 劫持率 79.5%→0；3B 成功率反升 3.3%→38.7%（block-and-ask-again 优于立即 HALT）
   - **Activation**: runtime safety certificate, shield synthesis, reach-avoid value iteration, robust Markov chain, LLM agent safety, Weissman bound, predicate abstraction, supervisory control, PAC guarantee
 
+
 ### Rewiring of Adult Neural Networks: Structural Plasticity Across Multiple Scales
 - [[adult-structural-plasticity-multiscale]] - 成体神经网络结构可塑性多尺度研究议程：突触形成/消除的调节因素、计算功能与临床/神经形态转化 (arXiv: 2610.18024)
   - 调节规则全景：稳态结构可塑性（钙离子介导的负反馈，失神经→代偿性棘突生长）与Hebbian结构可塑性（LTP数分钟内诱导新棘突，正反馈需资源边界约束）共存；权重-尺寸-稳定性紧耦合、自发actin动力学引入内在随机性、年龄效应→稳定骨干子群、µm级簇状可塑性、SER/线粒体局部供给、潜在突触形态约束、neurexin-neuroligin启动突触发生、胶质/ECM/小胶质细胞参与消除
   - 计算功能三解"不稳定突触如何承载稳定记忆"：稳定核心（不足）、等功能成对连接（Hebbian动力学平衡，快学习慢遗忘 Deger/Fauth）、等功能网络/细胞集群（纯稳态重连线也能隐式评估相关性形成集群 Gallinaro）；结构重排提升联想记忆容量并复现分级遗忘/间隔效应/抗灾难遗忘（Knoblauch）；权重依赖聚类+树突非线性子单元提升模式识别容量（Limbacher & Legenstein）；重连线同时引发表征漂移（采样简并配置 Kappel）并缓解其功能影响
   - 临床+工具链：MSP模型预测卒中后代偿与刺激干预（亚阈值分段时间tDCS优于连续长时程、效果依赖脑状态）；NEST完整集成稳态规则、GeNN GPU灵活重连线、BrainScaleS-2/SpiNNaker片上rewiring；DEEP R稀疏训练=结构可塑性算法，彩票假设=寻找winning tickets
   - **Activation**: structural plasticity, synaptic turnover, spine dynamics, homeostatic rewiring, equifunctional memory, cell assembly formation, neuromorphic sparse training
+
 
 ### DeltaNet-PC: Test-Time Memory Without Backpropagation Through Time
 - [[deltanet-pc-test-time-memory]] - 把快速权重记忆更新ΔS_t当latent variable，从预测编码能量函数原生推导出RLS写规则：无BPTT、固定D²内存的测试时序列记忆 (arXiv: 2610.15185)
@@ -75,17 +90,20 @@
   - **Activation**: predictive coding memory, test-time memorization, RLS fast weights, linear attention derivation, BPTT-free online learning, fixed-size memory
 
 
+
 ### Entanglement-Capability-Aware Finite-Bond Circuit Cutting for Distributed Quantum Computing
 - [[entanglement-capability-circuit-cutting]] - Entanglement-capability-aware two-stage circuit cutting for distributed QPUs (arXiv: 2610.14580)
   - EP-Cost gate-level screen: eta_g = sin^2(theta/2) for CP, sin^2(theta) for RZZ, 1 for CX/CZ, 0 for SWAP; C_EP = (E_cut + I_cut)/2 — QPD overhead Omega_g = (1+2*sqrt(eta))^2 is monotone in eta, so the proxy IS an overhead predictor
   - Finite-bond refinement: TopM=32 panel, worst-subcircuit MPS overlap discrepancy at bond chi vs 2chi, lexicographic argmin(R_multi, C_EP, id); QPD budgets are external feasibility constraints, never ranking terms
   - Results: QPD overhead down 25.20x/16.89x on 8/9-qubit QFT; beats Kernighan-Lin + spectral baselines in all 30 24-qubit conditions; EP-Cost<->QPD Spearman 0.9965
   - **Activation**: circuit cutting, distributed quantum computing, QPU partitioning, QPD overhead, MPS bond dimension, quantum-HPC workflow
+
 ### Compute-Optimal Scaling Laws for Spiking Language Models
 - [[spiking-lm-compute-optimal-scaling]] - 首个脉冲语言模型Chinchilla式IsoFLOP扩展研究：N_opt∝C^0.556 (arXiv: 2610.15146)
   - SpikeGPT家族(RWKV骨干+LIF脉冲神经元)宽度384→1536，算力3×10^17→10^19 FLOPs；计算最优前沿接近稠密Transformer的0.5，脉冲化不改变算力分配法则
   - 损耗分解：骨干成本~0.16 nats恒定 + 脉冲成本0.34→0.23 nats趋平（首次量化二值激活的精度代价）；α指数0.75→0.56随参数计数惯例变化（Kaplan-Chinchilla争论实为计数产物）
   - **Activation**: spiking language model scaling, IsoFLOP, compute-optimal, Chinchilla, SpikeGPT scaling
+
 
 ### CoFlu-Brain: An fMRI Connectivity Foundation Model with Cofluctuation-Based Pretraining
 - [[coflu-brain-fmri-connectivity-foundation]] - 基于共波动分解的fMRI连接基础模型：FC是有限样本估计而非固定脑图 (arXiv: 2610.15450)
@@ -93,64 +111,7 @@
   - 13,444被试8数据集预训练，9个下游任务中8个领先BrainGFM/BrainMASS/BrainLM/LCM（平均rank 1.14）；消融显示随机帧采样优于连续分块(p=0.016)、4分支最优
   - **Activation**: fMRI foundation model, functional connectivity pretraining, cofluctuation, retained-dropped FC views, self-supervised fMRI
 
-## 2026-10-14 - Medicine × Quantum (Cron Job)
 
-### Architectural Robustness to Label Noise Using Variational Quantum Circuits for Medical Image Classification
-- [[vqc-restricted-spectrum-label-noise]] - 受限频谱VQC头实现架构级标签噪声鲁棒性：无需任何噪声处理组件 (arXiv: 2610.16153)
-  - 理论核心：单次角度编码VQC输出=多线性三角多项式，每坐标频率支撑{−1,0,+1}，参数无关Jacobian界‖J‖_F≤√2·N；训练只重加权固定低频基底、无法引入高次谐波——决策函数结构性无法表达标签翻转所需的锐利边界
-  - 关键对照实验：与共享backbone/瓶颈/参数量/优化器的ReLU头对照，干净标签无差别(90.94 vs 90.92)，50%噪声下差距单调扩大至10.8pp(PathMNIST 89.75% vs 78.96%)——因果隔离了归纳偏置贡献
-  - 记忆化动力学直测(60 epochs无早停)：量子头并非拟合不了损坏标签(随机标签容量测试达经典头89%)——贡献是延长训练下的稳定性(峰值→末期损失2.5pp vs 6.5pp)；灵敏度比0.71-0.88 vs ReLU 1.71-2.89
-  - 诚实边界：实例依赖噪声(IDN)不受强抑制(腐蚀部分落在可表达光滑频带内)；数据重上传会拓宽频谱并侵蚀优势(可证伪预测)；噪声全模拟、未上真机
-  - **Activation**: label noise robustness, restricted spectrum function class, VQC trigonometric polynomial, parameter-shift Lipschitz, memorization dynamics, frozen backbone bottleneck, MedMNIST, hybrid quantum-classical medical imaging
-
-## 2026-10-14 - Medicine (Cron Job)
-
-### The Predictability Bias of Joint-Embedding Predictive Learning in Medical Imaging
-- [[tap-jepa-predictability-bias-medical-ssl]] - JEPA预测式SSL的"可预测性偏差"审计：点预测丢失上下文无法解析的病理变异 (arXiv: 2610.13237)
-  - 定义predictability bias：点预测坍缩条件目标分布，复发性解剖(可预测)被保留而偶发病理(不可预测)被丢弃；重放训练masking/teacher/predictor审计：病理Skill损失31.8-36.7% vs 解剖6.2-11.2%
-  - 五步审计协议：遮蔽暴露(61.5-81.4%病理事件被完全遮蔽)→Skill短板(归一化Q_short，几何基线对照)→病理-对照位移(Actr分解，随机轴校准)→可见上下文干预→下游token删除(4/7探针margin仅降≤0.45%)
-  - SOTA级竞争编码器(RAD-ChestCT AUPRC 0.5268最高)仍存在偏差——迁移基准无法察觉；医学SSL需显式保留不可预测诊断变异；Skill=(AP-π)/(1-π)标准化稀有类探针
-  - **Activation**: predictability bias, JEPA audit, masked predictive pretraining, medical SSL failure modes, pathology representation loss, Skill prevalence normalization
-
-### EchoTab: Learning Measurement-Grounded Representations for Echocardiographic Diagnosis through Tabular Reconstruction
-- [[echotab-measurement-grounded-representation]] - 测量token因子化表示：临床"视图→测量→诊断"层级显式建模，表格重建训练 (arXiv: 2610.13599)
-  - 每个临床测量一个可学习query token，交叉注意力只聚合估计该测量所需视图；测量token间无自注意力保持因子化；下游诊断按需平均相关测量token子集
-  - 部分共享预测头最优：共享MLP基座+超网络以q_m为条件生成LoRA式低秩修正——兼顾测量专属灵活性与跨测量对齐(0.748/0.778 AUC vs 独立头0.709/共享头0.732)
-  - 掩码方差归一化MSE仅对观测(研究,测量)对计算——免插补处理测量稀疏；无负样本无大batch(单A100 vs 对比基线8×A40)；MIMIC 9诊断AUC 0.659→0.748(+13.5%)；测量-视图注意力与心脏病专家16/20一致
-  - **Activation**: measurement-grounded representation, tabular reconstruction pretraining, multi-view echo, measurement tokens, hypernetwork LoRA head, factorized clinical representation
-
-## 2026-10-14 - Neuroscience Research (Cron Job)
-
-### Softmax-Free Attention in Spiking Transformers as the Zero-Temperature Limit of Two-Level Systems
-- [[spiking-attention-zero-temperature-limit]] - Spiking注意力=独立二能级系统乘积的零温极限：系综替换理论恢复热力学框架 (arXiv: 2610.15968)
-  - 删softmax不是降温而是换系综：1个耦合N态categorical系统→N个解耦二能级系统，gap Δ_ij=θ-γs_ij，占位p_ij=σ(β_s(γs_ij-θ))≡Fermi-Dirac；硬阈值spike a_ij=Θ(γs_ij-θ)恰为其β_s→∞极限，前向T=0/反向T_eff=1/α
-  - 有序相钉扎：φ⁽²⁾→1、逐输入熵归零对所有输入成立——同时解释稀疏高效（冻结{0,1}免乘法）与代理梯度消失（梯度仅存于|γs-θ|<1/α窄带）；训练网络主动撤离可训练带（active-band比例α^-1.51幂律 vs 几何预期α^-1.00）
-  - Landauer地板迁移：逐输入熵冻结使softmax热项坍缩，代价转移到全数据集spike模式熵S_spk，能量地板E_attn≥C_AP·n̄由动作电位成本决定；CIFAR-10验证Schottky反常峰（二能级指纹）+S_spk与loss同步下降+α作为物理温度预测可训练性（中温最优）
-  - **Activation**: spiking attention, zero-temperature limit, two-level systems, ordered-phase pinning, surrogate gradient vanishing, backward temperature, Schottky anomaly, Landauer bound, thermodynamics of attention
-
-### Simple model of neurogliovascular unit activity with noradrenaline leading force
-- [[neurogliovascular-unit-noradrenaline-model]] - NGVU五组分耦合模型：HH神经元+星形胶质细胞钙动力学+AA级联+血流半径+NA调制 (arXiv: 2610.15263)
-  - 海马CA1比例50锥体:10 PV中间神经元:1星形胶质细胞:1血管；V_revK动态依赖胞外钾直接耦合兴奋性；锥体AP同时释放K⁺与谷氨酸；GAT-3转运体纳入胞外GABA环路
-  - 去甲肾上腺素主导路径：d[NA]/dt=J_NA(tonic r_NA+谷氨酸耦合r_NG)+环境浓度弛豫；NA经Hill型饱和通量注入IP3生成块(J_NA项)→星形胶质细胞钙→AA衍生物(HETE)→血管半径→r²供氧-CMRO₂消耗→反馈神经元
-  - 动力学验证：周期振荡模式中钙与血管半径对每个谷氨酸/钾峰呈加倍响应（ER-胞浆双室滤波签名）；60神经元全系统呈伪随机多时间尺度叠加，谷氨酸快/NA慢可分辨；Brian 2仿真，参数取自Hippocampome.org；适用睡眠-觉醒转换与病理活动控制研究
-  - **Activation**: neurogliovascular unit, noradrenaline neuromodulation, astrocyte calcium, IP3 dynamics, arachidonic acid cascade, vascular tone, extracellular potassium, Brian 2, hippocampus CA1
-
-### Evolve on the Host, Predict on the Edge: Online Neuroevolutionary NAS for Cross-sectional Stock Return Prediction
-- [[online-neuroevolution-island-ensemble-edge]] - 岛屿冠军rank-mean集成读取演化群体+主机/边缘端部署管线 (arXiv: 2610.10038)
-  - 关键发现：同一批ONE-NAS运行，单冠军读取仅+4.5%（跑输所有基线），岛屿冠军rank-mean集成+27.5%（配对增益+23.0pp, t=18.2）——弱成员(rank IC~0.0065)弱相关(ρ~0.16)，等相关平均公式N/(1+(N-1)ρ)预测集成IC误差<3%；16/16配置全部为正
-  - 在线协议防泄漏：W=5日窗口一代，最近V=5窗口作验证块，更早为训练池；预测先于标签揭示；host(128核)搜索+树莓派4B端点推理，单冠军24.6ms/40成员集成556ms，端点对搜索无状态（host不可用则沿用上次基因组）
-  - 工程要点：warm-start关键（2020年起演化+26.5% vs 2022年冷启+12.3%，超过一半收益来自评估期前的演化）；岛屿数>20后收益持平但一致性上升(种子Sharpe SD 0.227→0.11)；规模控制=能耗控制(88%单冠军能耗是板级空闲)
-  - **Activation**: online neuroevolution, ONE-NAS, island ensemble, rank-mean aggregation, edge forecasting, non-stationary streams, Raspberry Pi inference, NAS time series
-
-### Studying Oscillation Death in Cylinder-Airfoil Interactions with Synchronization-Theoretic Autoencoder
-- [[sync-autoencoder-oscillation-death]] - 同步理论自编码器把耦合系统可观测映射到Stuart-Landau潜在空间，线性稳定性分析预测振荡死亡 (arXiv: 2610.05762)
-  - 四损失结构约束：L_recon重建+L_shape单位圆(Σ[(RSD)ᵢ²-1])+L_dyn潜空间旋转(可学ω)+L_mass椭圆中心归零——L_mass缺失时L_shape存在离心局部解，给耦合方程注入非物理常数项
-  - 潜空间识别耦合Stuart-Landau对：ξ̇c=fc(ξc)+Tcξw，孤立特征值1.00±1.31i(圆柱)/±2.03i(翼)从数据恢复；耦合以‖Tc‖,‖Tw‖可解释量化——α=30°时特征值实部→0即振荡死亡(涡脱抑制)，α=40°为过渡态
-  - 可迁移配方：任何通过标量可观测量观测的耦合极限环振荡器（神经元群体、VCO阵列、电网摇摆方程、生物化学振荡器）→ 先DMD/FFT分区确认周期性 → 每体独立AE → 离线扫T矩阵做参数化淬灭筛查（对应病理振荡的抑制性刺激优化）
-  - **Activation**: oscillation death, synchronization theory, Stuart-Landau identification, phase reduction autoencoder, coupled oscillators, linear stability latent space, vortex suppression, amplitude death
-
-### A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models
-- [[llm-analyst-coder-recorder-module-tuning]] - Analyst-Coder-Recorder三角色LLM框架自动调优神经网络固定管线中的可编辑模块 (arXiv: 2610.13663)
   - 核心设计：LLM只生成指定功能块代码（受软件契约约束：依赖/类名/签名/形状），其余管线冻结；实验日志作为外置记忆仅向Analyst展示成功记录；Docker沙箱先功能测试再全量评估，代码错误≤10次不消耗实验预算
   - 覆盖地图(coverage map)是弱模型的关键组件：Sonar简单prompt十次全在基线79.88%，加taxonomy+CoT+覆盖地图后91.76%（0/10→10/10过90%）；移除地图Sonar跌9.42pp、Qwen跌回基线——强模型(Claude)只损失1.14pp
   - 五任务同框架不改内部结构：SNN解码器MNIST 79.88→92.83%(+13pp)，GNLSE单孤子误差2491×，孤子+高斯扰动守恒误差325×（无解析解时agent自创SPM/XPM特征+分裂尺度化），KS方程质量漂移14×
