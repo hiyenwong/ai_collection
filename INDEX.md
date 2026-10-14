@@ -1,6 +1,22 @@
 # AI Collection Index
 
 ## 2026-10-15 - Neuroscience Research (Cron Job)
+### Two Routes to Interoceptive Prioritisation: Dissociating Likelihood Precision and Preference Reweighting in Active Inference
+- [[interoceptive-prioritisation-precision-preference]] - 主动推理双路径内感受优先级：κ-routing改似然精度（进入推理+规划+Dirichlet学习），dynamic-C改偏好（只进pragmatic项）；二者行为上退化等价但内部效应可分离 (arXiv: 2610.18617)
+  - 核心解离：精度降低后验熵(-1.37×10⁻³ nats)锐化感知；偏好提升最小裕量(+0.05)保持需求远离致命边界；偏好改变agent访问的状态分布→学到的身体模型覆盖更少需求层级，全层级质量更低但访问层级质量略高（更窄经验而非更差学习）
+  - 结果：κ-routing +0.27生存(Holm p=.018)、combined +0.38(p=.018)、dynamic-C单独+0.11(n.s.)；72个预注册layout上精度+0.111、偏好+0.080、交互+0.114(p=.002)互补性成立；但"偏好在困难layout受益"的预测未获证实(p=.58)——诚实负结果
+  - 方法论教训：生存率单独无法区分机制（退化性）——必须配对内部观测量：后验熵、真值算的最小裕量、访问状态熵、visited-vs-all学习模型质量拆分
+  - **Activation**: active inference, interoception, likelihood precision, prior preferences, expected free energy, Dirichlet learning, homeostasis, 内感受优先级, 精度路由, 偏好重加权, body model learning, mechanism degeneracy
+
+
+### Collective Benefits and Efficiency in Coupled Echo State Networks
+- [[coupled-esn-collective-intelligence]] - pooled-feedback逐步耦合ESN读出层=零均值编码下的自动加权置信度共享，复现Bahrami dyadic advantage且超越wisdom-of-crowds统计聚合；固定预算下16×20单元交互ensemble效率1.86× (arXiv: 2610.17506)
+  - 核心机制：self-feedback网络读出轨迹随时间发散跑飞（储备池↔读出正反馈）；pooled-feedback平均读出引入跨agent负反馈稳定轨迹（散度β=-0.13, p<.0001）；收益只在个体不稳定的储备池上出现（强teacher forcing下β≈0, p=.15消失）——匹配输入噪声下不稳定储备池收益仍在→稳定的是内在动力学而非只平均噪声
+  - Dyadic结果：匹配成员时pooled EMM=0.57 vs self 0.21；Bahrami交叉点0.42人类数据，pooled拟合0.55优于self 0.79；72% self-feedback对偶输给最佳成员 vs pooled 53%（人类32%）
+  - 效率实验：E∈{1,2,4,8,16}、固定总单元+总连接（k_out=10匹配），每个预算档更大ensemble小网络>更小ensemble大网络；16 ESN比单ESN +~20pts；即使交互成本翻倍结论仍成立；储备池不可扩展→耦合是另一条扩展轴（演化简单个体间的复杂交互可能比演化复杂个体便宜）
+  - **Activation**: collective intelligence, dyadic advantage, echo state network, pooled-feedback, confidence sharing, ensemble efficiency, interaction vs aggregation, 集体智能, 耦合储备池, edge of chaos, positive feedback stabilization, computational budget matching
+
+
 ### HyBRA-EEG: Hyperbolic Global-Local Brain-Region Aggregation for Self-Supervised EEG Representation Learning
 - [[hybra-eeg-hyperbolic-region-aggregation]] - 蒙太奇不变EEG自监督框架：通道观测映射到固定K=11区域token空间，Poincaré球内先验约束+特征依赖双曲距离匹配，通道证据注入保细粒度波形线索，1.45M参数全6数据集第一 (arXiv: 2610.16589)
   - 核心问题：通道token设计（BIOT/LaBraM/CSBrain）把空间语义绑定在通道身份上，跨蒙太奇无对应物；HyBRA先映射到所有数据集共享的固定区域轴，区域token形状对任何蒙太奇一致
