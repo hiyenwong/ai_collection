@@ -2,6 +2,20 @@
 
 ## 2026-10-15 - Systems Engineering + Quantum (Cron Job)
 
+### Quantum Ordinal Optimization under a Fixed Comparison Budget
+- [[quantum-ordinal-optimization-fixed-budget]] - 固定比较预算下最大化对齐概率的精确经典/量子最优值：经典=q+1盲抽+淘汰赛不可超越，量子秩律多项式度数翻倍 (arXiv: 2610.15791)
+  - 经典最优（Thm 1）：任何自适应比较树都打不过"盲抽 q+1 个设计 + 锦标赛"，C_q(n,r) = 1 − C(n−r,q+1)/C(n,q+1)；证明用叶条件化+秩集均匀性+随机占优
+  - 量子机制（Thm 2/3）：输出秩律是比较符号 sgn(x_a−x_b) 的 ≤2q 次多项式（经典仅 q 次）；一次比较精确最优 = 显式三次方程最小正根，SDP moment-matrix 对偶+标签对称性证明
+  - OO 结论：等效盲抽数一次量子比较 → (3+√13)/2 ≈ 3.30 vs 经典 2；n>9 时一次量子胜两次经典；宽松目标（top half）优势消失；预算按比较计（相干比较≈4次评估）
+  - **Activation**: ordinal optimization, alignment probability, comparison oracle, knockout tournament, polynomial method, fixed-budget selection, quantum query complexity, equivalent blind-pick size
+
+### Controller-Agnostic Runtime Safety Certificates for Tool-Using AI Agents
+- [[runtime-safety-certificates-tool-ai-agents]] - LLM agent 的运行时安全盾：谓词抽象+日志估计 Markov kernel+Weissman L1 置信域+鲁棒 reach-avoid 值迭代，PAC 证书对所有合规 controller 一致成立、换模型免重算 (arXiv: 2610.16865)
+  - 五步证书链：谓词抽象（transcript→布尔状态）→ 承诺预算核估计（闭环日志 Azuma 鞑论证，欠覆盖行取空泛集只放宽不破坏）→ 分布无关 L1 球 → 双重最坏值迭代（controller+kernel，内层闭式质量转移）→ PAC 定理
+  - 最小限制合成：按任务占用加权删动作（"fence the hazard, not moat the agent"）；plug-in MDP 基线零风险证书却每 seed 失败，鲁棒盾只禁 4.2% vs 计数阈值 80.2%
+  - 实证：7 个 LLM controller（Qwen2.5 1.5B/3B/7B）× 1050 episodes、30% prompt-injection 攻击下零不安全结果；7B 劫持率 79.5%→0；3B 成功率反升 3.3%→38.7%（block-and-ask-again 优于立即 HALT）
+  - **Activation**: runtime safety certificate, shield synthesis, reach-avoid value iteration, robust Markov chain, LLM agent safety, Weissman bound, predicate abstraction, supervisory control, PAC guarantee
+
 ### Rewiring of Adult Neural Networks: Structural Plasticity Across Multiple Scales
 - [[adult-structural-plasticity-multiscale]] - 成体神经网络结构可塑性多尺度研究议程：突触形成/消除的调节因素、计算功能与临床/神经形态转化 (arXiv: 2610.18024)
   - 调节规则全景：稳态结构可塑性（钙离子介导的负反馈，失神经→代偿性棘突生长）与Hebbian结构可塑性（LTP数分钟内诱导新棘突，正反馈需资源边界约束）共存；权重-尺寸-稳定性紧耦合、自发actin动力学引入内在随机性、年龄效应→稳定骨干子群、µm级簇状可塑性、SER/线粒体局部供给、潜在突触形态约束、neurexin-neuroligin启动突触发生、胶质/ECM/小胶质细胞参与消除
