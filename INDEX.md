@@ -1,5 +1,13 @@
 # AI Collection Index
 
+## 2026-10-15 - Systems Engineering + Quantum (Cron Job)
+
+### Entanglement-Capability-Aware Finite-Bond Circuit Cutting for Distributed Quantum Computing
+- [[entanglement-capability-circuit-cutting]] - Entanglement-capability-aware two-stage circuit cutting for distributed QPUs (arXiv: 2610.14580)
+  - EP-Cost gate-level screen: eta_g = sin^2(theta/2) for CP, sin^2(theta) for RZZ, 1 for CX/CZ, 0 for SWAP; C_EP = (E_cut + I_cut)/2 — QPD overhead Omega_g = (1+2*sqrt(eta))^2 is monotone in eta, so the proxy IS an overhead predictor
+  - Finite-bond refinement: TopM=32 panel, worst-subcircuit MPS overlap discrepancy at bond chi vs 2chi, lexicographic argmin(R_multi, C_EP, id); QPD budgets are external feasibility constraints, never ranking terms
+  - Results: QPD overhead down 25.20x/16.89x on 8/9-qubit QFT; beats Kernighan-Lin + spectral baselines in all 30 24-qubit conditions; EP-Cost<->QPD Spearman 0.9965
+  - **Activation**: circuit cutting, distributed quantum computing, QPU partitioning, QPD overhead, MPS bond dimension, quantum-HPC workflow
 ## 2026-10-14 - Medicine × Quantum (Cron Job)
 
 ### Architectural Robustness to Label Noise Using Variational Quantum Circuits for Medical Image Classification
