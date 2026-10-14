@@ -18,6 +18,20 @@
 
 ## 2026-10-14 - Neuroscience Research (Cron Job)
 
+### Softmax-Free Attention in Spiking Transformers as the Zero-Temperature Limit of Two-Level Systems
+- [[spiking-attention-zero-temperature-limit]] - Spiking注意力=独立二能级系统乘积的零温极限：系综替换理论恢复热力学框架 (arXiv: 2610.15968)
+  - 删softmax不是降温而是换系综：1个耦合N态categorical系统→N个解耦二能级系统，gap Δ_ij=θ-γs_ij，占位p_ij=σ(β_s(γs_ij-θ))≡Fermi-Dirac；硬阈值spike a_ij=Θ(γs_ij-θ)恰为其β_s→∞极限，前向T=0/反向T_eff=1/α
+  - 有序相钉扎：φ⁽²⁾→1、逐输入熵归零对所有输入成立——同时解释稀疏高效（冻结{0,1}免乘法）与代理梯度消失（梯度仅存于|γs-θ|<1/α窄带）；训练网络主动撤离可训练带（active-band比例α^-1.51幂律 vs 几何预期α^-1.00）
+  - Landauer地板迁移：逐输入熵冻结使softmax热项坍缩，代价转移到全数据集spike模式熵S_spk，能量地板E_attn≥C_AP·n̄由动作电位成本决定；CIFAR-10验证Schottky反常峰（二能级指纹）+S_spk与loss同步下降+α作为物理温度预测可训练性（中温最优）
+  - **Activation**: spiking attention, zero-temperature limit, two-level systems, ordered-phase pinning, surrogate gradient vanishing, backward temperature, Schottky anomaly, Landauer bound, thermodynamics of attention
+
+### Simple model of neurogliovascular unit activity with noradrenaline leading force
+- [[neurogliovascular-unit-noradrenaline-model]] - NGVU五组分耦合模型：HH神经元+星形胶质细胞钙动力学+AA级联+血流半径+NA调制 (arXiv: 2610.15263)
+  - 海马CA1比例50锥体:10 PV中间神经元:1星形胶质细胞:1血管；V_revK动态依赖胞外钾直接耦合兴奋性；锥体AP同时释放K⁺与谷氨酸；GAT-3转运体纳入胞外GABA环路
+  - 去甲肾上腺素主导路径：d[NA]/dt=J_NA(tonic r_NA+谷氨酸耦合r_NG)+环境浓度弛豫；NA经Hill型饱和通量注入IP3生成块(J_NA项)→星形胶质细胞钙→AA衍生物(HETE)→血管半径→r²供氧-CMRO₂消耗→反馈神经元
+  - 动力学验证：周期振荡模式中钙与血管半径对每个谷氨酸/钾峰呈加倍响应（ER-胞浆双室滤波签名）；60神经元全系统呈伪随机多时间尺度叠加，谷氨酸快/NA慢可分辨；Brian 2仿真，参数取自Hippocampome.org；适用睡眠-觉醒转换与病理活动控制研究
+  - **Activation**: neurogliovascular unit, noradrenaline neuromodulation, astrocyte calcium, IP3 dynamics, arachidonic acid cascade, vascular tone, extracellular potassium, Brian 2, hippocampus CA1
+
 ### Evolve on the Host, Predict on the Edge: Online Neuroevolutionary NAS for Cross-sectional Stock Return Prediction
 - [[online-neuroevolution-island-ensemble-edge]] - 岛屿冠军rank-mean集成读取演化群体+主机/边缘端部署管线 (arXiv: 2610.10038)
   - 关键发现：同一批ONE-NAS运行，单冠军读取仅+4.5%（跑输所有基线），岛屿冠军rank-mean集成+27.5%（配对增益+23.0pp, t=18.2）——弱成员(rank IC~0.0065)弱相关(ρ~0.16)，等相关平均公式N/(1+(N-1)ρ)预测集成IC误差<3%；16/16配置全部为正
