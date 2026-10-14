@@ -2,6 +2,22 @@
 
 ## 2026-10-15 - Neuroscience Research (Cron Job)
 
+### HyBRA-EEG: Hyperbolic Global-Local Brain-Region Aggregation for Self-Supervised EEG Representation Learning
+- [[hybra-eeg-hyperbolic-region-aggregation]] - 蒙太奇不变EEG自监督框架：通道观测映射到固定K=11区域token空间，Poincaré球内先验约束+特征依赖双曲距离匹配，通道证据注入保细粒度波形线索，1.45M参数全6数据集第一 (arXiv: 2610.16589)
+  - 核心问题：通道token设计（BIOT/LaBraM/CSBrain）把空间语义绑定在通道身份上，跨蒙太奇无对应物；HyBRA先映射到所有数据集共享的固定区域轴，区域token形状对任何蒙太奇一致
+  - 双曲区域混合器：α=softmax(ℓ_c,k − λ·d_B^κ(z,ρ_k))，先验logit ℓ=log A定初始权重，特征依赖双曲距离自适应调整；切空间聚合回固定轴；参数匹配对照下双曲匹配>欧氏/余弦（TUAB/TUEV均验证）
+  - 通道证据注入：区域特定打分器+softmax权重+特征维门控σ(γ_k)注入聚合前token——消融去此项TUEV −6.72pts（事件/波形分类任务最受益，多对一聚合会抹掉棘波纺锤）
+  - 结果：宏平均BAcc 0.7278全6数据集第一；vs CSBrain/LaBraM/BIOT/EEGPT +5.03/+8.48/+15.29/+18.29%；OpenBMI-MI 81.17%≈CSBrain但+1.84 AUROC+5.23 AUPRC且参数少96.8%；TUEV 71.40(+2.37)、MentalArithmetic 76.63(+6.99)
+  - 区域粒度：11区（双侧脑叶+z电极专用中线token）>10区双侧>5区脑叶；半球分离单独+8.65pts；SSL目标L_feat(cosine)+λ_raw·L_raw(区域信号重建)，去后者TUEV −9.8pts最强
+  - 可解释性：手运动想象IG归因集中左右中央区token(~30%)与Pfurtscheller感觉运动节律空间一致；token扰动验证忠实性（替换最高归因token BAcc 0.812→0.725，最低归因无损）
+  - **Activation**: EEG foundation model, montage invariance, hyperbolic space, Poincaré ball, region tokenization, channel-to-region matching, self-supervised pretraining, channel evidence injection, EEG transfer, brain-computer interface, 蒙太奇不变性, 区域token
+
+### Predicting Cognitive Tasks from Single-Channel EEG through Task-Semantic Alignment
+- [[hybra-eeg-hyperbolic-region-aggregation]] (相关记录) - 单通道前-后差分EEG编码器对齐任务语义向量（指令/刺激/反应需求的语义嵌入），零样本10类认知任务30.13%(chance 10%)，few-shot 16例/类34.47% (arXiv: 2610.15104)
+  - 探索性发现：多任务/人的数据集有用，但加入单任务数据集有时反而降低既有性能——EEG基础模型预训练数据需要同一受试者跨天/设备/研究重复多样任务
+  - kg.db已记录，本篇为次选论文（HyBRA-EEG为主要skill）
+  - **Activation**: single-channel EEG, task-semantic alignment, zero-shot cognitive decoding, wearable EEG, data scaling
+
 ### FidLIF: Parallel Training of High-Fidelity Spiking Neurons with Exact BPTT
 - [[fidlif-parallel-exact-bptt-lif]] - Newton迭代+associative scan并行恢复hard-reset LIF轨迹，反向单次reverse scan精确等价BPTT，内存与迭代数K无关，同一神经元支持并行训练+逐步推理 (arXiv: 2610.16924)
   - 核心机制：把全序列膜电位轨迹视为 G(v)=v−P((1−s)⊙v+v_rest·s)−q=0 的求根问题；Heaviside门仅在迭代求解期间用sigmoid松弛，收敛后用原始Heaviside门发放二值脉冲，保真度无损
