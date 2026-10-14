@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-10-14 - Medicine × Quantum (Cron Job)
+
+### Architectural Robustness to Label Noise Using Variational Quantum Circuits for Medical Image Classification
+- [[vqc-restricted-spectrum-label-noise]] - 受限频谱VQC头实现架构级标签噪声鲁棒性：无需任何噪声处理组件 (arXiv: 2610.16153)
+  - 理论核心：单次角度编码VQC输出=多线性三角多项式，每坐标频率支撑{−1,0,+1}，参数无关Jacobian界‖J‖_F≤√2·N；训练只重加权固定低频基底、无法引入高次谐波——决策函数结构性无法表达标签翻转所需的锐利边界
+  - 关键对照实验：与共享backbone/瓶颈/参数量/优化器的ReLU头对照，干净标签无差别(90.94 vs 90.92)，50%噪声下差距单调扩大至10.8pp(PathMNIST 89.75% vs 78.96%)——因果隔离了归纳偏置贡献
+  - 记忆化动力学直测(60 epochs无早停)：量子头并非拟合不了损坏标签(随机标签容量测试达经典头89%)——贡献是延长训练下的稳定性(峰值→末期损失2.5pp vs 6.5pp)；灵敏度比0.71-0.88 vs ReLU 1.71-2.89
+  - 诚实边界：实例依赖噪声(IDN)不受强抑制(腐蚀部分落在可表达光滑频带内)；数据重上传会拓宽频谱并侵蚀优势(可证伪预测)；噪声全模拟、未上真机
+  - **Activation**: label noise robustness, restricted spectrum function class, VQC trigonometric polynomial, parameter-shift Lipschitz, memorization dynamics, frozen backbone bottleneck, MedMNIST, hybrid quantum-classical medical imaging
+
 ## 2026-10-14 - Medicine (Cron Job)
 
 ### The Predictability Bias of Joint-Embedding Predictive Learning in Medical Imaging
