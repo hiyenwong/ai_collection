@@ -8,6 +8,18 @@
   - Finite-bond refinement: TopM=32 panel, worst-subcircuit MPS overlap discrepancy at bond chi vs 2chi, lexicographic argmin(R_multi, C_EP, id); QPD budgets are external feasibility constraints, never ranking terms
   - Results: QPD overhead down 25.20x/16.89x on 8/9-qubit QFT; beats Kernighan-Lin + spectral baselines in all 30 24-qubit conditions; EP-Cost<->QPD Spearman 0.9965
   - **Activation**: circuit cutting, distributed quantum computing, QPU partitioning, QPD overhead, MPS bond dimension, quantum-HPC workflow
+### Compute-Optimal Scaling Laws for Spiking Language Models
+- [[spiking-lm-compute-optimal-scaling]] - 首个脉冲语言模型Chinchilla式IsoFLOP扩展研究：N_opt∝C^0.556 (arXiv: 2610.15146)
+  - SpikeGPT家族(RWKV骨干+LIF脉冲神经元)宽度384→1536，算力3×10^17→10^19 FLOPs；计算最优前沿接近稠密Transformer的0.5，脉冲化不改变算力分配法则
+  - 损耗分解：骨干成本~0.16 nats恒定 + 脉冲成本0.34→0.23 nats趋平（首次量化二值激活的精度代价）；α指数0.75→0.56随参数计数惯例变化（Kaplan-Chinchilla争论实为计数产物）
+  - **Activation**: spiking language model scaling, IsoFLOP, compute-optimal, Chinchilla, SpikeGPT scaling
+
+### CoFlu-Brain: An fMRI Connectivity Foundation Model with Cofluctuation-Based Pretraining
+- [[coflu-brain-fmri-connectivity-foundation]] - 基于共波动分解的fMRI连接基础模型：FC是有限样本估计而非固定脑图 (arXiv: 2610.15450)
+  - 将Pearson FC分解为逐帧共波动矩阵E_t=z_t·z_t^T，用不同帧子集构造retained/dropped双视图（一致性+JEPA潜空间预测+SIGReg三目标），把FC估计方差变成自监督信号
+  - 13,444被试8数据集预训练，9个下游任务中8个领先BrainGFM/BrainMASS/BrainLM/LCM（平均rank 1.14）；消融显示随机帧采样优于连续分块(p=0.016)、4分支最优
+  - **Activation**: fMRI foundation model, functional connectivity pretraining, cofluctuation, retained-dropped FC views, self-supervised fMRI
+
 ## 2026-10-14 - Medicine × Quantum (Cron Job)
 
 ### Architectural Robustness to Label Noise Using Variational Quantum Circuits for Medical Image Classification
