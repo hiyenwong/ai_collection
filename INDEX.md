@@ -1,6 +1,22 @@
 # AI Collection Index
 
 ## 2026-10-16 - Neuroscience Research (Cron Job)
+### Neural Wasserstein Splines: Representation-Invariant Second-Order Priors for Trajectory Inference
+- [[neural-wasserstein-spline-trajectory-inference]] - 样条生成器+微分投影实现表征不变的Wasserstein加速度先验，用于非配对快照轨迹推断 (arXiv: 2610.19878)
+  - B-spline生成器解析给出位置/速度/加速度，无需跨时间OT耦合或数值积分；速度经势场梯度字典ridge投影
+  - 关键纠错项−Ȧc（moving-Gram correction）：省略后偏差收敛到Π_{ρt}(∂_tρ_t/ρ_t)v_t，加宽字典无法修复（误差0.577 vs ~7e-14）
+  - Prop 1固定字典下惩罚仅依赖边缘曲线（粒子表示不变性）；NWSP-N学习势函数使d=2加速度相对误差0.705→0.062
+  - 16个基准中11个top-2（W1），13/16优于纯样条；Circular Gaussian 0.427 vs最强基线0.886
+  - **Activation**: trajectory inference, unpaired snapshots, single-cell dynamics, Wasserstein spline, population acceleration
+
+### Effects of cortisol time-scales in a model of emotion regulation
+- [[cortisol-timescale-emotion-regulation-wilson-cowan]] - 皮质醇作为历史依赖耦合调制的Wilson-Cowan皮层-边缘模型，时间记忆形状（而非仅时间尺度）决定分岔结构 (arXiv: 2610.19282)
+  - 4节点PFC-BLA Wilson-Cowan；快/慢Gamma分布延迟核调制w_CB（内源性大麻素去抑制）与w_PP（结构重塑）
+  - 弱(n=1)与强(n=2)Gamma核固定均值延迟下分岔图几乎重合——全局动力学对核形状中等变化鲁棒
+  - 离散延迟极限产生Neimark-Sacker边界+稳定不变环面准周期活动：记忆是否分布比Gamma阶数更关键
+  - 记忆存在性与记忆形状是可分离的两轴；时间整合形状可能是功能性的，其改变或为病理性节律的路径
+  - **Activation**: cortisol, emotion regulation, distributed delay, Gamma kernel, bifurcation, infra-slow oscillation
+
 
 ### What Information Buys in Active Inference
 - [[calibrated-aif-information-gain-regret]] - AIF与Bayes-UCBVI平等对比：novelty按N^-1衰减但有效置信宽度需N^-1/2——校准(√novelty×span(V))后成为奖励无关ℓ1置信集，自适应目标下达到√(S·K)下界，固定奖励下仍差Γφ因子 (arXiv: 2610.19046)
@@ -14,7 +30,6 @@
   - 可移植模式：密度引导稀疏注意力、逐级量化"相对父级残差"的金字塔VQ、通道混合前的解剖学分组、门控融合慢启动(g=0.02)
   - **Activation**: asynchronous EEG, event detection, vector quantization, DETR set prediction, sparse attention routing, BCI, spatial pyramid, onset offset localization
 
-## 2026-10-16 - Deep Learning Research (Cron Job)
 
 ### Efficient Test-Time Adaptation For Robot Policies
 - [[tempo-entropy-memory-test-time-adaptation]] - RL策略部署后免奖励在线自适应：冻结预训练critic当性能代理，熵正则抑制critic外推过置信+score-based memory按难度优先采样，算力聚焦最informative部署条件；Go1/Go2/G1四类shift最高+80%，真机Go2挂载负载实测提升 (arXiv: 2610.20318)
@@ -22,11 +37,13 @@
   - 预算受限TTA三段流水线：代理信号→置信校正→信息样本聚焦，分别对应无奖励/外推失效/算力浪费三类失败模式
   - **Activation**: test-time adaptation, robot policy adaptation, frozen critic surrogate, reward-free adaptation, entropy regularization overconfidence, score-based memory, deployment shift
 
+
 ### Your Transformer Is Secretly Elastic
 - [[elastic-transformer-joint-neuron-head-ranking]] - 免重训把单一checkpoint"弹性化"：可微松弛把每个MLP神经元与attention head放到同一尺度联合排序（一次soft pruning同时优化多稀疏度目标），任意算力预算在线取top-ranked单元；27个22M-8B模型60%稀疏内平滑退化 (arXiv: 2610.20588)
   - DINOv3 ViT-H+/16剪50%省427M参数仅掉0.8% linear-probe精度，无需权重修正或重训；AugReg ViT-B/16@60%稀疏达1.80×吞吐
   - 可复用模式：异构单元(MLP神经元vs头vs块)删除决策统一到共同重要性尺度；多预算联合求解优于每目标单独训练；弹性模型替代模型家族
   - **Activation**: elastic transformer, joint neuron head ranking, differentiable relaxation, soft pruning, compute budget continuum, retraining-free pruning, heterogeneous deployment
+
 
 ### VASPO: Self-Distillation with Privileged Value Estimation
 - [[vaspo-value-augmented-self-distillation]] - 特权信息+自蒸馏融进PPO的位置动力学：critic价值预测在response末尾最强、teacher指导开头强中段跌末尾反弹——按位置分配信号主导权；teacher与critic在学生rollout前缀评估相同特权信息，critic出token级PPO优势、teacher用有界概率比对正向优势做调制；6个数学基准Qwen3-4B +2.59pt (arXiv: 2610.20516)
@@ -35,11 +52,13 @@
   - 有界调制而非替换：次级信号只在主算法已认可集合(正向优势)内做ratio-capped重加权，防teacher漂移破坏价值学习
   - **Activation**: VASPO, privileged value estimation, self-distillation PPO, positional dynamics, token-level advantage, teacher signal modulation, reasoning RL
 
+
 ### RM-OPD: On-Policy Distillation for Generative Reward Models
 - [[rm-opd-routed-onpolicy-distillation-reward-models]] - 通用生成式奖励模型两阶段范式：先单域GRPO把专家教师练到各自天花板(隔离无干扰)，再 routed on-policy distillation整合——学生自生成critique上的稠密有符号token监督+域贡献重加权(防单域统治)+可选criteria context；涌现"学生超教师"效应 (arXiv: 2610.20174)
   - Mix-RL双瓶颈诊断：outcome reward稀疏性+异构能力联合优化的跨域干扰→能力失衡+普遍reward hacking
   - 可复用模式：能力获取与能力整合分离——多域联合训练相互干扰时先练专家再蒸馏整合；多教师合并必配域份额归一化
   - **Activation**: generative reward model, on-policy distillation, domain specialization, cross-domain interference, reward hacking, teacher consolidation, token-level supervision
+
 
 ### When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?
 - [[ema-momentum-coefficient-rlvr]] - RLVR动量系数理论：精确梯度下β增大严格加速；采样梯度下固定β的期望增益随η减小比波动消失更快——应联动增β保持η/(1-β)在安全域；Qwen2.5-32B AdamW单纯调大β1即+2pt (arXiv: 2610.20413)
@@ -48,17 +67,20 @@
   - bandit化RLVR做优化器理论实验室：可证可仿真，再上全量LLM RL验证
   - **Activation**: momentum RL, EMA beta, RLVR optimizer, eta-beta coupling, AdamW beta1 tuning, sampling fluctuation, LLM post-training
 
+
 ### STP-GUI: Spatially-Aware Token Pruning for Efficient Web-GUI Agents
 - [[stp-gui-spatially-aware-token-pruning]] - GUI agent视觉token剪枝：独立按分数选token会打碎小控件(按钮/图标/链接)所需局部结构——评分保持细粒度指令条件化，但选择改为空间连贯的窗口级；轻量selector用策略学习训练、VLM backbone冻结；21%保留率下保77.7%性能、-31%延迟-57% FLOPs，迁移到Android (arXiv: 2610.20390)
   - 评分粒度与选择粒度解耦：per-token语义分数+窗口级保留决策，适用于任何被消费结构是局部性的剪枝任务(GUI元素/文本行/表格单元格)
   - 冻结大模型+端任务奖励训练轻量决策模块，代理损失易骗、任务成功率不会
   - **Activation**: GUI agent token pruning, spatial coherence, window-level selection, frozen VLM policy learning, screenshot efficiency, query-guided retention
 
+
 ### MolLean: A Process-Verifiable Language for Chemical Reasoning
 - [[mollen-process-verifiable-chemical-reasoning]] - 化学推理的过程可验证语言：显式分子状态+Lean内核检查状态转移与分子readout断言；typed witness协议区分内部结构检查与外部测量事实；MolLean-MCP生成中暴露转移/检查/readout、被拒动作不改变状态(事务语义)；整trace refinement在12任务全胜直接CoT，交互式MCP在反应类任务更强 (arXiv: 2610.20459)
   - 可复用模式：有可验结构性的领域推理一律ground到类型化状态机而非自由文本；每个谓词按"内部可判定/需外部证据"分类，防止验证器默默信任无根据输入
   - 事务型工具协议：拒绝的动作不得污染状态→失败步骤零成本、逐步交互验证安全；批量refine普适、交互反馈在步骤间有依赖时(反应路径)胜出
   - **Activation**: MolLean, Lean kernel, chemical reasoning verification, process supervision, witness protocol, MCP stateful tool, transactional state, trace refinement
+
 
 ### Learning by Examples: Power Grid Steady State Analysis with a Tabular Foundation Model
 - [[tabpfn-power-grid-neural-solver]] - 零样本电网稳态分析：无任何电力系统预训练、无微调的TabPFN直接当通用神经求解器——118节点潮流1e-3 pu电压误差胜全部专用基线、数百万未见N-2预想事故筛选AUC 0.92-0.95、2000节点电压稳定裕度少标签也准 (arXiv: 2610.20462)
@@ -67,13 +89,13 @@
   - 枚举规模场景(N-2事故数百万)是零样本法价值最大处——每拓扑训专用模型不现实
   - **Activation**: tabular foundation model, TabPFN, power flow, contingency screening, voltage stability margin, zero-shot scientific solver, in-context learning engineering
 
+
 ### OrionMoE-v1.0: A Mixture-of-Experts Foundation Model for Tabular In-Context Learning
 - [[orionmoe-tabular-sparse-moe-foundation]] - 紧凑表格基础模型：双轴Transformer+沿特征轴的稀疏MoE(路由同时看单特征表征与数据集全局上下文)+结构因果先验合成的预训练数据，全程无梯度适配即下游预测；小上下文/高维数据集上胜更大稠密表格FM，类不平衡下相对表现也佳 (arXiv: 2610.20418)
   - 特征轴专家路由：输入是异构属性集合(表格/多模态传感器束/配置空间)时按特征路由算力且以数据集级上下文为条件，不是只按样本路由
   - 合成因果先验预训练替代爬取数据：可控多样性、无泄漏、无限支撑集
   - **Activation**: OrionMoE, tabular foundation model, feature-axis routing, dataset-conditioned MoE, synthetic causal pretraining, in-context tabular, class imbalance
 
-## 2026-10-16 - 数论、统计学、高等数学 + 量子力学 (Cron Job)
 
 ### Optimal Disorder Strength for Approximate Unitary k-Designs in Spin Chains
 - [[optimal-disorder-unitary-k-designs]] - 无序自旋链生成 Haar 幺正系综的最优无序强度微扰理论 (arXiv: 2610.18954)
@@ -81,6 +103,7 @@
   - multi-quench 协议：独立无序实现的动量算符因子化 → Δ_q ≤ (Δ)^(q+1) 指数抑制；q≈4 次淬灭后 classical shadow 保真度估计偏差消失（2.1-3.6× → 1.00±0.02）
   - 强无序通过共同的多体局域化机制同时阻断热化与 unitary design 形成；k≥2 design 需要相互作用（自由费米子点 Δ=1）
   - **Activation**: unitary k-design, disorder strength optimization, moment gap, multi-quench protocol, classical shadow tomography, Haar ensemble, XXZ chain
+
 
 ### A subquadratic upper bound for the mixing time of the Thorp shuffle
 - [[thorp-shuffle-subquadratic-mixing]] - Thorp 洗牌混合时间首次全牌指数改进 O(d³)→d^(5/3) (arXiv: 2610.18884)
