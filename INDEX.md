@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-10-15 - Quantum Federated Unlearning (Cron Job)
+
+### Federated Unlearning of Quantum Data via Classical Shadows
+- [[shade-quantum-federated-unlearning]] - SHADE：训练时在测量可观测量的后向光锥上记录经典影子快照，遗忘时从影子无偏估计任意后期参数下的QNN梯度/曲率，联邦牛顿一步修正擦除量子数据——绕开"量子态测量即消耗+不可克隆→无法重放"的死锁 (arXiv: 2610.19077)
+  - 光锥剪裁：只存后向光锥Λ内比特数据（3|Λ|S比特/状态），S = ⌈α·4^|Λ|/ε²·log(|D|(P+1)²/δ)⌉ 不依赖量子比特数n；每层brickwork电路S×16，电路深度而非宽度决定记录成本
+  - 关键洞察：QNN梯度/曲率=可观测量期望（对态线性），参数位移规则把∂f/∂θ写成⟨ψ|A_j(θ)|ψ⟩，位移不改门布局→A_j只作用在Λ上；∇f∇fᵀ两因子取自不相交快照半区保误差独立
+  - 修正公式：θᵘ = θ* + (Ĥ^r)^{-1}ĝ^f（θ*处保留集梯度=−g^f，在保留曲率上一步牛顿撤销遗忘拉力）；误差界 M‖g^f‖²/2κ³ + ε^g/(κ−ε^H) + ε^H‖g^f‖/κ(κ−ε^H)，牛顿地板不随S缩小
+  - 实证：50节点n=8 Ising基态相分类，三种删除（节点/窗口/样本）遗忘精度匹配重训0.5分内、修正<0.2s vs CR精确牛顿3226s、零重放（基线均被授予新鲜副本仍输）；影子即状态的经典描述→擦除必须连影子一起删
+  - **Activation**: quantum federated unlearning, classical shadows, machine unlearning, QNN, backward light cone, federated Newton correction, no-cloning, 量子联邦遗忘, 影子快照, 传感器漂移删除
+
 ## 2026-10-15 - Neuroscience Research (Cron Job)
 ### Two Routes to Interoceptive Prioritisation: Dissociating Likelihood Precision and Preference Reweighting in Active Inference
 - [[interoceptive-prioritisation-precision-preference]] - 主动推理双路径内感受优先级：κ-routing改似然精度（进入推理+规划+Dirichlet学习），dynamic-C改偏好（只进pragmatic项）；二者行为上退化等价但内部效应可分离 (arXiv: 2610.18617)
