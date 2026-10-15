@@ -93,6 +93,22 @@
   - 实验：单个共享AR ReLU神经元（稀疏w+Adam）在4000条CNN教师激活轨迹上训练5分钟（L40S），CIFAR-10测试精度72.106%≈教师72.150%，教师预测一致率99.48%，全程不接触教师权重
   - **Activation**: chain-of-thought expressivity, autoregressive model, Sidon set, additive combinatorics, parameter sharing, next-token predictor, CoT supervision learnability, reasoning distillation, time-invariant generation
 ## 2026-10-15 - Systems Engineering + Quantum (Cron Job)
+### PPVM: A Circuit Simulation Framework for Digital Twins of Quantum Processors
+- [[ppvm-quantum-digital-twin]] - 量子处理器数字孪生：QPU+噪声+经典控制联合字节码VM，统一Pauli传播与广义tableau双后端 (arXiv: 2610.18225)
+  - 核心架构：栈桥接经典控制流与量子指令——feed-forward就是CPU对栈上测量值分支；原子损失编码为独立测量结果m=2；断点暂停可检查全机状态
+  - 中性原子损失信道理论：扩展Pauli基{I,X,Y,Z,L}，门矩阵≠基元素(Z-gate=diag(1,-1,1))；独立损失(态依赖p0,p1)+相关损失(pLL/pLQ/pLN伙伴已失时动力学不同)+复位信道；Heisenberg象下E†[P]=(1−p)P无分支、E†[L]=L+pI
+  - 守恒量保护集：截断中豁免的Pauli词集，使Heisenberg自旋关联m(t)在截断下精确守恒=1；损失加权m(t)=(1−p)^k(t)复现解析标度
+  - 结果：损失感知5-to-1 BK幻态蒸馏在三角4.8.8色码上扩展到1435物理量子比特(d=23, ~0.1s/shot M4)；Bloqade QEC Studio+deq解码器闭环——量子态跨gadget持续存在
+  - SE教训(harness engineering)：人类参考实现+AI代理写基准/测试+autotune循环=5.04×混合构造加速（最大赢家：延迟tableau克隆到分支合并之后）
+  - **Activation**: quantum digital twin, pauli propagation, generalized tableau, atom loss, correlated loss, measurement feed-forward, bytecode virtual machine, neutral atom QEC
+
+### Scalable Exact Non-Pauli Noise Simulation for Fault-Tolerant Quantum Circuits
+- [[quasistim-nonpauli-qec-simulation]] - QuasiStim：QPD精确非Pauli噪声QEC仿真恢复Stim级吞吐，QuasiFold降shot数+DeltaFrame参考预计算，首次系统量化PTA偏差 (arXiv: 2610.15975)
+  - 两个QPD瓶颈分治：shot数∝Γ²(信道一范数乘积)——QuasiFold三遍贪心(相干融合同轴角相消/可观测性剪枝整删Γ因子/噪声折叠负权重相消)，BB码>100×shot削减；每shot一次tableau——DeltaFrame预计算参考基r₀+逐位点偏移+pair sweep冲突块(≤5位点，热弛豫零冲突)，采样全O(1)帧操作
+  - 性能：surface码d=5→35相干R_Z下166×–1331×/trajectory；阻尼下297×–3702×(非Pauli分支=reset→基线O(n²) vs 帧更新O(1))；mispredict率比LER低数个量级，silent error随d递减，热弛豫下精确为零
+  - PTA偏差系统研究(系统工程教训)：偏差符号和幅度都依赖decoder/调度/码/噪声混合——PyMatching下PTA系统性低估LER；BB码相干串扰幅度级 constructive 积累→PTA完全错过的超线性LER增长；色码+Tesseract下PTA反向高估；热弛豫噪声越弱gap越大；幻态培育最低噪声~6×；lattice surgery合并段偏差最集中
+  - FTQC设计结论：twirl精度无法预先判断→精确仿真 是资源估算的系统需求而非可选优化
+  - **Activation**: non-Pauli noise, Pauli twirling bias, quasiprobability decomposition, QEC simulation, shot count reduction, logical error rate, bivariate bicycle, magic state cultivation
 ### Architecting Instruction Execution for Scalable FTQC (ARIES QISA)
 - [[aries-qisa-ftqc-instruction-hierarchy]] - 五级QISA抽象层次与FTQC控制栈热预算量化评估，Level 4本地逻辑操作为最优平衡 (arXiv: 2610.17058)
   - 物理级QISA超出稀释制冷机冷却预算4000×；隐式闲置(L2→L3)带来490×回传带宽改善
