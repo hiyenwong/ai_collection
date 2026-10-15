@@ -48,6 +48,23 @@
 
 # AI Collection Index
 
+### Simulating Alzheimer's amyloid-like pathology on a fly central nervous system connectome
+- [[amyloid-lesion-fly-cns-connectome]] - MaleCNS全脑LIF仿真上按Aβ果蝇三规则（阈值↓/突触丢失/神经元丢失）做分级损伤：同样12%神经元丢失，落点hub/shuffled/antihub使全脑活动为31%/47%/93%——突触接触数才是损伤的正确度量 (arXiv: 2610.19153)
+  - 1,424只仿真果蝇（166,700神经元/120M突触接触），引擎对Brian2验证r=0.9997；严重度以KC 17%丢失锚定，无任何规则参数被拟合
+  - Within-fly反事实恢复：只恢复幸存神经元丢失的突触挽回62%全脑缺陷，恢复被删神经元39%；神经元丢失的缺陷一半来自8个气味输入PN和giant fibre指令神经元（66/66丢失者GF<100Hz vs 保留者1/254）
+  - 阈值偏移单独是保护性的（全脑148%、MBON 139%）——与Kv4缺失损害学习的果蝇数据相悖，反映模型无兴奋性毒性耦合；诚实声明contact-matched后hub/其他图差异是否由"落点"引起未被确立（阈值偏移与输入损失混杂）
+  - 早期检测原理：AUC随严重度遵循|变化量|÷试次间变异（ρ=0.74）而非变化量本身——全脑活动/侧角在s=0.10即达AUC 0.80，学习指数因spread 32.8%垫底
+  - **Activation**: connectome disease model, drosophila lesion simulation, hub vulnerability, synapse loss vs neuron loss, within-fly restoration, discrete phenotype, early biomarker AUC, MaleCNS, 果蝇连接组损伤
+
+### Design and Analysis of Temporal Representations in Neural Networks
+- [[temporal-representation-degree-neural-networks]] - 时间表示度分类学：函数级判定（编码/激活/解码/学习是否显式操纵时间变量）——SNN二值脉冲激活本身非时间性，ANN与SNN可同度；度单调升→GSC性能与能效单调升，DeNN(度4) 98.94%超AST transformer且参数少30倍 (arXiv: 2610.19730)
+  - 核心机制：DeNN用可学习符号延迟d=c·exp(−d_s)替代权重，前向用到达时刻t_i+d_ij（o_j=Σsgn(d_s)[e^{−(z+d)}−e^{−(z+c)}]），时间softmin解码偏快响应
+  - 理论：恒等初始化下ANN与DeNN输出完全相同，但标准化后差异有界非零（Υ→1.009）且随训练单调发散——可映射的函数族≠等价学习系统；仅首步梯度成比例，此后ANN在空间维度学习、DeNN在时间维度学习
+  - 梯度分裂：延迟参数由短期动态驱动（proxy梯度cosine高）、记忆参数α由长期动态驱动→按参数类型分配时间尺度而非加循环；DeNN→IF网络零损失转换（−0.00375），反向用surrogate梯度直接训练则失败（42-74%）
+  - GSC 10类度单调：DeNN 91.90>ANN 90.26>adLIF 63.66>LIF 42.34；诚实声明adLIF文献bench更高因用mel-spectrogram编码（数据表示混杂）；N-MNIST上ANN≈DeNN（时间度只在真时间数据上付费）
+  - **Activation**: degree of temporal representation, temporal vs spatial gradient, delay neural network, DeNN, synaptic delay learning, TTFS coding, spiking vs ANN taxonomy, zero-loss SNN conversion, 时间表示度
+
+
 ## 2026-10-15 - Quantum Federated Unlearning (Cron Job)
 
 ### Federated Unlearning of Quantum Data via Classical Shadows
