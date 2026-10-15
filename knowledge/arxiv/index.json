@@ -1,5 +1,77 @@
 [
   {
+    "id": "2610.19581",
+    "title": "XferAgent: Cross-Agent Experience Transfer for Self-Improving LLM Agents",
+    "skill_name": "xferagent-cross-agent-experience-transfer",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "2610.14449",
+    "title": "Jevolution: A Framework for Studying Communication and Collective Dynamics in AI Agents",
+    "skill_name": "jevolution-agent-communication-collective-dynamics",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "2610.19698",
+    "title": "RuleTrek: Benchmarking Agentic Rule Reasoning in Complex Scenarios",
+    "skill_name": "ruletrek-benchmarking-agentic-rule-reasoning",
+    "category": "ai-safety-eval",
+    "utility": 0.99,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "2610.17751",
+    "title": "Degrees of Freedom in Multi-Agent Coordination: Between Centralized and Decentralized Regimes",
+    "skill_name": "degrees-of-freedom-multi-agent-coordination",
+    "category": "multi-agent-rl",
+    "utility": 0.92,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "2610.15224",
+    "title": "Persistent LLM Orchestration of Heterogeneous Robot Teams via Partial Delegation to Multi-Agent Protocols",
+    "skill_name": "persistent-llm-orchestration-heterogeneous-robot-teams",
+    "category": "multi-agent-rl",
+    "utility": 0.92,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "2610.18425",
+    "title": "CALM: Decentralized Control of Cooperative Aerial Manipulation with Multi-Agent Reinforcement Learning",
+    "skill_name": "calm-decentralized-control-cooperative-aerial-manipulation",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "2610.19005",
+    "title": "CyberArena: Benchmarking AI Agents in Live Symmetric Attack-and-Defense Combat",
+    "skill_name": "cyberarena-benchmarking-ai-agents-attack-defense",
+    "category": "ai-safety-eval",
+    "utility": 0.92,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "2610.20437",
+    "title": "From Training to Escalation: Forensic Analysis and Local Recreation of RL/RLHF-Induced Privilege Escalation in LLM Agents",
+    "skill_name": "from-training-to-escalation-rl-rlhf-privilege",
+    "category": "ai-safety-eval",
+    "utility": 0.85,
+    "date_added": "2026-10-15"
+  },
+  {
+    "id": "2610.16281",
+    "title": "RelLedger: Relational Information Governance for LLM Agent Organizations",
+    "skill_name": "relledger-relational-information-governance-llm-agents",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-15"
+  },
+  {
     "id": "2610.14382",
     "title": "ANASSA: From High-Level Framework to Low-Level Architecture for Spatial Agentic AI",
     "skill_name": "arxiv-2610-14382-anassa-from-high-level-framework-to-low-level-architecture-f",
@@ -7641,7 +7713,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,
@@ -10662,7 +10734,7 @@
   {
     "id": "2610.06726v1",
     "title": "Decoupling Time and Space: A Temporally Conditioned Refinement for EEG Source Imaging",
-    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert Müller, Shinichi Nakajima",
+    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert M\u00fcller, Shinichi Nakajima",
     "url": "https://arxiv.org/abs/2610.06726v1",
     "utility": 0.87,
     "categories": [

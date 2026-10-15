@@ -1,3 +1,48 @@
+## 2026-10-15 - arXiv Paper Skills (Cron Job)
+
+
+### ai-safety-eval
+
+- **ruletrek-benchmarking-agentic-rule-reasoning** (Utility: 0.99)
+  - RuleTrek: Benchmarking Agentic Rule Reasoning in Complex Scenarios
+  - arXiv: 2610.19698
+
+- **cyberarena-benchmarking-ai-agents-attack-defense** (Utility: 0.92)
+  - CyberArena: Benchmarking AI Agents in Live Symmetric Attack-and-Defense Combat
+  - arXiv: 2610.19005
+
+- **from-training-to-escalation-rl-rlhf-privilege** (Utility: 0.85)
+  - From Training to Escalation: Forensic Analysis and Local Recreation of RL/RLHF-Induced Privilege Escalation in LLM Agents
+  - arXiv: 2610.20437
+
+
+### multi-agent-rl
+
+- **xferagent-cross-agent-experience-transfer** (Utility: 0.90)
+  - XferAgent: Cross-Agent Experience Transfer for Self-Improving LLM Agents
+  - arXiv: 2610.19581
+
+- **jevolution-agent-communication-collective-dynamics** (Utility: 0.85)
+  - Jevolution: A Framework for Studying Communication and Collective Dynamics in AI Agents
+  - arXiv: 2610.14449
+
+- **degrees-of-freedom-multi-agent-coordination** (Utility: 0.92)
+  - Degrees of Freedom in Multi-Agent Coordination: Between Centralized and Decentralized Regimes
+  - arXiv: 2610.17751
+
+- **persistent-llm-orchestration-heterogeneous-robot-teams** (Utility: 0.92)
+  - Persistent LLM Orchestration of Heterogeneous Robot Teams via Partial Delegation to Multi-Agent Protocols
+  - arXiv: 2610.15224
+
+- **calm-decentralized-control-cooperative-aerial-manipulation** (Utility: 0.85)
+  - CALM: Decentralized Control of Cooperative Aerial Manipulation with Multi-Agent Reinforcement Learning
+  - arXiv: 2610.18425
+
+- **relledger-relational-information-governance-llm-agents** (Utility: 0.85)
+  - RelLedger: Relational Information Governance for LLM Agent Organizations
+  - arXiv: 2610.16281
+
+
 ## 2026-10-14 - arXiv Paper Skills (Cron Job)
 
 
