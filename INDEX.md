@@ -1,5 +1,34 @@
 # AI Collection Index
 
+## 2026-10-15 - Neuroscience Research (Cron Job)
+
+### PotentialEP: Backprop-Free Training of CIFAR-Scale Generative Models via Equilibrium Propagation
+- [[potential-ep-backprop-free-generation]] - PCN标量输出节点注入线性项γαh_N，弛豫平衡态自算Energy Matching速度场−∇xV（误差O(γ)）——"PCN误差单元就是反向传播"；首个EP训练的CIFAR-10生成模型FID 3.64 vs 反传3.54 (arXiv: 2610.14409)
+  - 推理等价：e*_N=γα恰是autograd反传种子，内部递归e*_k=J^T e*_{k+1}沿转置Jacobian下行=backprop；推导与权重无关→反传模型原样载入纯弛豫采样，速度场cosine=1到九位小数，FID差≤0.04（CIFAR-10与ImageNet-32均验证）
+  - 训练等价：GradEP弹簧夹持λ/2‖x−x_t‖²把"损失是能量梯度"转为"损失是平衡位置"；线性化nudge（冻结g取Clin=g^T v(x)）使±β位移严格∝β、平衡点对称，cos≥0.99窗口从单点β=1扩到β=3→10³；γ–β联合窗口为对角带（位移∝γβ，约束β·γ·|g|≪λ²）
+  - 硬件存在性证明：去group norm+attention（非analog crossbar原生）→weight standardisation+1/√depth残差缩放+线性头，只剩Ohm/Kirchhoff原生定点加权和与逐点非线性，FID 3.51≈3.54
+  - **Activation**: equilibrium propagation, predictive coding, energy matching, backprop-free training, analog crossbar, flow matching potential, relaxation sampling, GradEP, linearised nudge, 线性注入项, 弛豫生成
+
+### Energy, Information, and the Limits of Neuropsychiatric Classification
+- [[energy-information-neuropsychiatric-classification]] - 精神疾病对共享神经活动景观产生能量受限形变——占有率重分配但snapshot分布重叠依旧；FOR2107 1952人MDD/HC能量景观与分类器r=0.996，三井模型演示"形变≠可分" (arXiv: 2610.14095)
+  - 假说链：物理资源约束→景观形变→分布分离→可达分类；代谢非全局标量——认知控制/努力决策回路能耗最高使景观不均匀倾斜，外周内感受信号节点特异调制能量状态（repertoire与机体稳态耦合）
+  - 实证：FOR2107双中心复现+SRPBS 900人跨多诊断；合成数据显示分类精度随分布分离度提升并逼近likelihood-ratio最优上界；三井模型中统计能量=物理势能×逆温度
+  - 诚实边界：人类代谢约束环节文献无可比证据可检验（作者明确声明untested）；检验需脑活动+身体生理+代谢联合测量——把biomarker失败从工程问题提升为表征信息容量上界问题
+  - **Activation**: computational psychiatry, neuroimaging biomarker limits, energy landscape, major depressive disorder, statistical thermodynamics, classification upper bound, resting-state fMRI, shared neural repertoire, 能量景观形变
+
+### Full Lyapunov Spectra of Random Neural Networks, Part I: Finite-Time and Asymptotic Theory
+- [[finite-time-lyapunov-mde-rnn]] - 随机RNN完整有限时间+平稳渐进Lyapunov谱的动力学均场框架：切向传播子奇异值的精确log-行列式表示→闭合围道矩阵Dyson方程刻画平滑谱尾 (arXiv: 2610.14922)
+  - （本session补齐kg.db导入与repo同步；skill由同期session创建）
+  - **Activation**: Lyapunov spectrum, random recurrent neural network, matrix Dyson equation, tangent propagator, dynamical mean-field theory, log-determinant, Hermitization
+
+### The RNN Homunculus: Learning to Gate Long-Term Memory
+- [[rnn-homunculus-gate-learning]] - 门控RNN"加性复制路径"解释不完整：有用的门值本身须经同一梯度消失递归学出；用短依赖课程教长程行为 (arXiv: 2610.14279)
+  - （本session补齐kg.db导入与repo同步；skill由同期session创建）
+  - **Activation**: gated RNN, gate learning, vanishing gradient, LSTM, GRU, minGRU, curriculum, temporal XOR
+
+
+# AI Collection Index
+
 ## 2026-10-15 - Quantum Federated Unlearning (Cron Job)
 
 ### Federated Unlearning of Quantum Data via Classical Shadows
