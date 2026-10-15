@@ -1,6 +1,6 @@
 ---
 name: cortisol-timescale-emotion-regulation-wilson-cowan
-description: Cortisol delay-kernel effects on cortico-limbic Wilson-Cowan dynamics.
+description: Cortisol delay-kernel effects on cortico-limbic dynamics.
 trigger_words: cortisol, emotion regulation, distributed delay, Gamma kernel, bifurcation, infra-slow oscillation
 category: ai_collection
 ---
