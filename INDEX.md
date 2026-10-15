@@ -40,6 +40,24 @@
   - **Activation**: optimal transport, distributed MPC, swarm control, Wasserstein metric, density flow, multiscale separation, distributional ISS, terminal penalty, time-varying targets
 
 ## 2026-10-15 - Neuroscience Research (Cron Job)
+### Riding the Fixed-Point Curve: Image Classification in the Continuous Thought Machine
+- [[ctm-fixed-point-curve-non-normal-thought]] - CTM"思考"机制首解释：每tick映射谱收缩(ρ(J)=0.15)但强非正规(σmax=3.2,达74)→Banach定理给出局部唯一吸引不动点，随记忆更新逐tick移动——思想轨迹=移动不动点曲线，滞后恰好一步 (arXiv: 2610.19220)
+  - 平衡放大签名（Murphy-Miller）：Schur前馈占比0.99、特征值仅带2%‖J‖²_F能量、反对称部分在随机矩阵水平；吸引是架构自带（未训练ρ=0.05），训练大幅提升非正规性（σmax/ρ 7→23）
+  - 注意是共享程序非图像搜索：跨图像query交换仅−7%、冻结query−34%、压平−80%；群体平均query以cosine 0.936复现图像注意力，query+共享增量以0.996预测下一步注视
+  - 行波=移动不动点显形：按不动点相位排序神经元复现CTM作者报告的行波(Spearman 0.82)；Schur级联解释被证伪(级联位置vs峰值tick相关−0.08)；行波与注意力解耦(p=0.17)
+  - 类身份从tick 1起"侧骑"同一曲线：共享曲线0.66方差、类偏移0.105、几乎完全在曲线前2D平面外(0.5%)；熵下降全由读出记忆项贡献(111-159%)——是增益增长而非证据累积；冻结态→自信但错(0.73→0.28)
+  - 尺度分离：吸引曲线普适(MNIST/CIFAR也有ρ<1)，瞬态放大+注意力程序仅ImageNet规模出现（σmax: 0.49/0.36/3.2）
+  - **Activation**: continuous thought machine, CTM, fixed-point curve, non-normal dynamics, balanced amplification, moving attractor, traveling wave, synchronization memory, one-tick lag, balanced amplification, 非正规动力学
+
+### State Space Models Naturally Produce Time Cell and Oscillatory Behaviors and Scale to Abstract Cognitive Functions
+- [[hippo-ssm-time-cell-emergence]] - HiPPO初始化对角SSM训练前即自然产生time cell/ramping/振荡——多时间尺度复旋转基是结构先验；学习只改输入矩阵B与读出C，状态转移Λ几乎不动(塑性差12.4×)，复现脑类器官预配置动力学 (arXiv: 2507.13638)
+  - 统一机制：time cell与ramping cell非不同生物实体，而是复平面旋转在实轴投影的不同相位——|λ_i|=1纯旋转，跨正实轴=时间细胞，半转=爬坡细胞
+  - 关键实验：随机初始化即使充分训练也只产生无结构高熵动态；冻结Λ+B只训读出，HiPPO保持50.4% vs 随机坍缩34.1%——基底质量而非可塑性承载可解码时间信息
+  - 重定时重映射：30步训练→100步测试全参数冻结，振荡模式继续旋转铺满区间且单元索引非一一对应——匹配海马remapping(Taxidis)而非拉伸；仅重训线性读出即恢复精度
+  - 抽象认知扩展：圈数计数100%准确、编辑距离0.999；每圈time cell级联重置但圈身份在状态空间线性可分（线性SVC近完美）——旋转动态把重复输入展开到不同状态空间位置，抽象计数只需线性读出
+  - 生物学锚点：复值状态=共轭实数对满足振荡最小2D要求（HH约化1D过阻尼不能共振）；演化视角=meta-learned initialization
+  - **Activation**: state space model, HiPPO, time cells, ramping cells, complex rotation, preconfigured dynamics, remapping, lap counting, hippocampus, structural prior, 时间细胞, 复旋转基底
+
 
 ### Reciprocity Coordinates a Three-Way Trade-off in Recurrent Neural Circuits
 - [[reciprocity-three-way-tradeoff-recurrent-circuits]] - 互易性ρ协调表征容量-局部稳定性-任务态可分性三方权衡：低ρ赢驱动任务（SSV 428→−151 nats），高ρ赢延迟记忆（DMS 0.81→0.98），机制在于噪声抑制与cue间隔压缩的对抗 (arXiv: 2610.19949)
