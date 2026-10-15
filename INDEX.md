@@ -2,6 +2,25 @@
 
 ## 2026-10-15 - Neuroscience Research (Cron Job)
 
+### Reciprocity Coordinates a Three-Way Trade-off in Recurrent Neural Circuits
+- [[reciprocity-three-way-tradeoff-recurrent-circuits]] - 互易性ρ协调表征容量-局部稳定性-任务态可分性三方权衡：低ρ赢驱动任务（SSV 428→−151 nats），高ρ赢延迟记忆（DMS 0.81→0.98），机制在于噪声抑制与cue间隔压缩的对抗 (arXiv: 2610.19949)
+  - 固定有向边预算下21级ρ扫描：SSV/四驱动任务单调降（r=−0.88~−0.99）；三个延迟记忆任务全部反向（r=+0.69~−0.94）——同一参数下任务依赖的聚合反转
+  - 共享210矩阵库测量三元组：容量C降(4.32→3.22)/恢复S升(0.929→0.958)/cue间隔D降(9.6→2.8 ×10⁻⁴)；行为鲁棒性追踪m²_clean/G_emp比值（Spearman 0.722）而非任一单独指标
+  - 结构解释精确恒等式 U=c_r(2−ρ_r)：互易性把边从新伙伴覆盖重分配给反馈闭合；非正规性δ_rel随ρ降（0.083→0.059）但仅是集成级关联非因果中介
+  - 诚实边界：恢复趋势在配对最大模0.95归一化下消失（仅max-real工作点成立）；400步长延迟DMS全ρ近随机水平；无spiking/速率模型对照
+  - 连接组背景：5物种7数据集占据中间互易带（ρ̂≈0.12–0.59），相对ER零模型互易motif超表达8.3×~1677×；果蝇脑区内ALIN/TuBu全单向 vs 视觉0.38双向
+  - **Activation**: reciprocity, echo state network, recurrent circuit topology, three-way trade-off, task-state separability, non-normal dynamics, connectome reciprocity, state-space volume, 互易性, 三方权衡
+
+### How Long Is the Coast of a Neuron? Resolution-Dependent Interaction Order and Computational Capacity
+- [[neuron-coastline-resolution-interaction-order]] - 神经科学版海岸线悖论：尺度索引分解证明表观交互阶不是投影不变量——纯三阶依赖经投影可变普通成对依赖；直接分数F升至100%同时可用信息坍缩85%（分母陷阱） (arXiv: 2610.19487)
+  - 精确分解：I_avail=I_dir+I_higher（条件KL残差）；R=I_dir/S_tot与F=I_dir/I_avail回答不同问题，R≤F恒成立；闭包条件下KL收缩保证I_higher单调收缩
+  - 三自旋构造：P∝exp(K·s₁s₂s₃)在原生坐标无任何成对依赖，XNOR投影z=1[s₂=s₃]下0.823 bits三阶信息全数转为成对MI——观测者改变表观交互阶
+  - 分支到胞体级联（NMDA样三重符合检测器64态精确枚举）：F沿55.0%→96.1%→100%上升而I_avail坍缩0.157→0.024 bits；不对称混合控制（0.6/0.4电紧张衰减）使线性族F从98.9%跌至78.4%——直接性是(分布,坐标,模型族,投影)联合属性
+  - 解剖直接性≠信息直接性：A_ij=1不蕴含I_higher=0（γx_jn反事实：同一突触边贡献随局部去极化状态改变）；稀疏度也是尺度属性（ρ_ε/ρ_cell=χ/s̄精确关系）
+  - 反方向：嵌套sigma-pi细化中I(Y;Φ_n)=I(Y;x)不变、假设类H_n⊆H_{n+1}扩张——MSE降∝n^0.31，参与率r_eff升∝n^0.24；3个对齐子单元≈40个随机sigmoid特征
+  - 对Lynn 2026 Nature Physics（>90%小鼠熵由直接依赖解释）的定位：预测充分性≠机制可识别性；高R只约束同分布下未观测变量的边际增益≤(1−R)S_tot
+  - **Activation**: scale-dependent measurement, interaction order, coarse-graining, pairwise maximum entropy, dendritic computation, denominator trap, feature leakage, observational sufficiency, 海岸线悖论, 尺度依赖
+
 ### PotentialEP: Backprop-Free Training of CIFAR-Scale Generative Models via Equilibrium Propagation
 - [[potential-ep-backprop-free-generation]] - PCN标量输出节点注入线性项γαh_N，弛豫平衡态自算Energy Matching速度场−∇xV（误差O(γ)）——"PCN误差单元就是反向传播"；首个EP训练的CIFAR-10生成模型FID 3.64 vs 反传3.54 (arXiv: 2610.14409)
   - 推理等价：e*_N=γα恰是autograd反传种子，内部递归e*_k=J^T e*_{k+1}沿转置Jacobian下行=backprop；推导与权重无关→反传模型原样载入纯弛豫采样，速度场cosine=1到九位小数，FID差≤0.04（CIFAR-10与ImageNet-32均验证）
@@ -93,6 +112,21 @@
   - 实验：单个共享AR ReLU神经元（稀疏w+Adam）在4000条CNN教师激活轨迹上训练5分钟（L40S），CIFAR-10测试精度72.106%≈教师72.150%，教师预测一致率99.48%，全程不接触教师权重
   - **Activation**: chain-of-thought expressivity, autoregressive model, Sidon set, additive combinatorics, parameter sharing, next-token predictor, CoT supervision learnability, reasoning distillation, time-invariant generation
 ## 2026-10-15 - Systems Engineering + Quantum (Cron Job)
+### Cryogenic Multiplexing Control Chip for Superconducting Quantum Processor
+- [[mcc-cryogenic-qubit-multiplexing]] - 20mK低温多路复用控制芯片：SQUID可调电感隔离器实现非互易解复用，1根微波线控制4个量子比特XY控制，破解稀释制冷机互连瓶颈 (arXiv: 2610.19599)
+  - 架构：功分器→带通滤波器(BPF, 4-8GHz同带宽不同中心频)→可调隔离器(SQUID电感桥+cos/sin偏置线)；真实隔离器=理想隔离器+Bessel特征BPF级联(有限带宽建模)；1:4解复用比可级联
+  - 非互易性：理想S矩阵仅首列非零(端口1→i单向，通道间零串扰)；实测~20dB隔离度、SWR 1.2；反转隔离器方向=闲置量子比特免受驱动泄漏(通道选择靠隔离器方向而非源切换)
+  - 时域：IQ混频器SSB生成(IF 100/300/500/700MHz, V7=(KM/2)cos((ωLO+ωIF)t))；功分器把响应时间9.961→5.959ns(更快量子门)；Gaussian burst每通道频偏仅±4MHz；DEMUX输出5-16MHz红移需源端幅频预补偿
+  - **Activation**: superconducting qubit control wiring, cryogenic multiplexing, dilution refrigerator interconnect, non-reciprocal isolator, qubit XY control lines, frequency-domain demultiplexing
+
+### Identifiability-Guided Composite Load Modeling of AI Data Centers
+- [[identifiability-guided-load-modeling]] - 先判定哪些参数数据可辨识再标定：干扰投影Fisher准则I_ρ|η=‖(I−J_ηJ_η†)j_ρ‖²给出DOL/VFD冷却份额局部可辨识充要条件(j_ρ∉col(J_η))，端点精度≠物理恢复 (arXiv: 2610.19565)
+  - 定理1：白化敏感块投影形式F_ρρ−F_ρηF_ηη†F_ηρ在F_ηη秩亏时仍有效(Moore-Penrose伪逆)；可辨识iff目标参数敏感方向存在无法被干扰参数扰动模拟的分量；CRB var(ρ̂)≥I_ρ|η^-1；信息量=DOL与VFD响应差的对比度Σ C_k²(ΔP_k²/σ_P²+ΔQ_k²/σ_Q²)
+  - 命题2(工作负载非等价)：相同电压/频率轨迹下不同负载场景无法被任何纯电压模型族同时拟合(误差下界∝S_IT²·g(w)积分差)→纯电压重校准对工作负载依赖型负荷数学上不充分，负载遥测必为输入
+  - 灰箱估计器：单变量KAN工作负载律+分支级监督(仅聚合监督保端点精度但冷却分支恢复失败——核心负结果)+两阶段训练+符号蒸馏闭式；UPS保护门按物理规律固定、重连坡时长外部锚定(估计/固定/锚定三分决策模式)
+  - 实证：300k MIT Supercloud GPU样本+12,600个IEEE 39-bus故障场景；聚合有功R²=0.948(LSTM 0.856, RMSE降39%)；OOD深电压骤降暂态R²=0.750 vs LSTM 0.033；与PERC1聚合模型24/27故障一致，3例冷却保护边界分歧(电压偏差至0.36 p.u.)
+  - **Activation**: composite load model calibration, parameter identifiability, nuisance-projected Fisher information, grey-box estimator, data center load modeling, transient stability, weakly identified parameters
+
 ### PPVM: A Circuit Simulation Framework for Digital Twins of Quantum Processors
 - [[ppvm-quantum-digital-twin]] - 量子处理器数字孪生：QPU+噪声+经典控制联合字节码VM，统一Pauli传播与广义tableau双后端 (arXiv: 2610.18225)
   - 核心架构：栈桥接经典控制流与量子指令——feed-forward就是CPU对栈上测量值分支；原子损失编码为独立测量结果m=2；断点暂停可检查全机状态
