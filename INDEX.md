@@ -112,6 +112,24 @@
   - 指数启发：熵准备 ~s² 与平滑 ~d/s 平衡 → s~d^(1/3)，物理时间 ~d^(5/3)；信息论下界仍为线性 d，间隙开放
   - **Activation**: Thorp shuffle, mixing time bounds, card shuffling Markov chain, collision graph, entropy method, symmetric group representations, random permutation sampling
 
+
+### Stabilizer Rényi Entropy Without a Phase Reference
+- [[sre-phase-averaged-magic-invariant]] - 无相位参考系的 magic 度量：对 U(1)^k 轨道先平均 Pauli 矩再取对数，稀疏支撑下退化为纯布居闭式 M̃₂=−ln(6(Σ|c|⁴)²−5Σ|c|⁸) (arXiv: 2610.18955)
+  - 规范不变性 + 消失判据（每个相位约定下都是 stabilizer 态）；flip-pattern 两两 XOR 互异时相位完全积出 → 单基测量布居即可定 magic
+  - 通道天花板 ln(n³/(6n−5))（n≥3 等概率）；n=2 例外：等概率是局部极小，最优 p=(1±√(3/7))/2 → ln(7/5)
+  - 胶子散射三惊奇：2→2 触顶二通道天花板 ln(7/5)；软极限下软胶子单独携带全部不变 magic（反直觉 soft floor ln(8/7)）；颜色依赖精确相消（magic 由运动学决定）
+  - 数值验证（本 session）：MC 相位平均 20k 样本 = ln(8/7) 精确吻合；pdftotext 丢平方陷阱已修正（6(Σ|c|⁴)² 不是 6Σ|c|⁴）
+  - **Activation**: magic without phase reference, stabilizer Rényi entropy, gauge invariance, gluon scattering helicity, Pauli frame, channel ceiling, quantum reference frames, superselection
+
+
+### Beyond the lemon: Spectra of random Lindblad operators with a Hamiltonian component
+- [[quenched-a-lindblad-spectral-boundary]] - 含哈密顿分量随机 Lindbladian 的谱支撑：张量因子非自由(m₄=5/8 vs 1/2)使标量自由概率失效，quenched-A 矩阵 Dyson 方程首次闭包张量结构谱边界 (arXiv: 2610.19261)
+  - 关键洞察：向量化 Lindblad 的 K_A⊗K_B 两因子不自由——每因子内 planar 配对在标量递归中缺失，O(1) 失配；blue function 同样失效
+  - Quenching 程序：冻结 A 腿(W_A=½C+iαH)+条件期望平均 B 因子+hermitization 解算子值 MDE+外层顺序平均；边界方程用 Legendre 生成函数化成 Φ(ζ)=[(ζ+v−t)²−4ζv]^{−1/2}
+  - 谱挤压：α→∞ 时 ymax~α、xmax~α⁻¹、面积保持饱和 π→2π（类量子光学压缩态）；α=1/2 平衡点圆盘半径 1+√2；三系综对照（独立拷贝无压缩 vs 单 GUE/独立随机 H 面积饱和）
+  - 应用：NISQ Lindblad 噪声层析的"典型谱"基线、耗散量子混沌基础块；quench-then-average 模式可迁移到均值场无法闭包的双随机系统
+  - **Activation**: random Lindblad operators, spectral support, operator-valued free probability, matrix Dyson equation, quenched average, spectral squeezing, dissipative quantum chaos, NISQ noise modeling
+
 ## 2026-10-15 - 系统工程学 (Cron Job)
 
 ### A modular quantum computer based on Cornucopia codes
