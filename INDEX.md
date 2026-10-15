@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-15 - 系统工程学 (Cron Job)
+
+### A modular quantum computer based on Cornucopia codes
+- [[cornucopia-modular-quantum-architecture]] - 把[[2844,1426,18]]超高码率qLDPC块变成通用逻辑处理器：平移对称轨道标准形让54个种子gadget复用覆盖1,422个可独立寻址逻辑量子比特，匹配桥(b≥d)统一双比特测量/模块互连/魔态注入，全套通用指令集只需4.1物理比特/逻辑比特(vs bicycle 61.2) (arXiv: 2610.19073)
+  - 对称适应标准形：Gottesman标准形作用于整条平移轨道→18个79比特循环寄存器；基重优化三板斧(分区模拟退火11,580→4,060、辛剪切17步→3,740、稳定子修饰)把种子重量压到62-231
+  - 认证图手术gadget：顶点检查+老检查形变到骨架边+完全圈基每圈一检查；距离保持⟺λ₂>2拉普拉斯谱条件，固定抽取器按79个傅里叶块(40个不等价54×54)逐一精确认证(λ₂=2.501)
+  - 负载感知圈基：圈检查的任意可逆变换不改变合并稳定子群→用这个自由度平衡物理度(≤9检查/辅助比特，替代生成树圈基的度256)
+  - 三层指令集：basic(最小workspace)/high-throughput(直接和并行，19.3指令/层≈20×逻辑深度缩减)/fixed-extractor(21,330辅助比特测任意Pauli积，一次傅里叶块认证覆盖4^1426−1个目标)
+  - **Activation**: qLDPC, fault-tolerant quantum computing, modular architecture, logical instruction set, code surgery, symmetry-adapted standard form, lattice surgery, matching bridge, high-rate codes
+
+### Gap-Priced |T⟩-States: Dynamic |T⟩ Post-Selection and Budget-Aware Factory Provisioning
+- [[gap-priced-t-states-factory-provisioning]] - 把T误差预算当可消耗资源：互补gap作为每个cultivated态的保真度报价，调度器动态放宽gap截断把预算冗余换成速度，DP在工厂目录(尺寸-产率-保真度耦合元组)上做Pareto前沿分配，16基准32对全胜——5.5×周期加速+3.4×时空体积缩减 (arXiv: 2610.19299)
+  - 后缀聚合可行性：gap→LER曲线非单调(有限shot起伏)时，截断G可行⟺整个接受后缀的聚合LER满足预算，随G移动递归重估——拒绝逐点选择
+  - 工厂目录破除35p³黑箱：跨尺寸输出不保真度跨5个数量级(小工厂被自身逻辑错误支配)，必须记录(size→{q, r, p_out})耦合元组；培养工厂把cultivation嵌入路由通道，单级footprint达两级蒸馏保真度(2.14e-14)
+  - 精确DP vs 松弛分配器：EXTEND/MERGE+支配剪枝的环放置有界背包；Heis-16上30.4s→23ms(1,326×)、Heis-36上281s→44ms(6,445×)，时间差<0.5%但空间过配~12.8k比特
+  - **Activation**: magic state cultivation, distillation factory, error budget scheduling, lattice surgery scheduler, dynamic programming, Pareto front, resource allocation, T-states
+
+
 ## 2026-10-15 - Neuroscience Research (Cron Job)
 
 ### Reciprocity Coordinates a Three-Way Trade-off in Recurrent Neural Circuits
