@@ -18,6 +18,27 @@
   - **Activation**: magic state cultivation, distillation factory, error budget scheduling, lattice surgery scheduler, dynamic programming, Pareto front, resource allocation, T-states
 
 
+### Logical gate set tomography
+- [[logical-gate-set-tomography]] - QEC之后必须审计逻辑噪声的"形式"而非只看幅度：把GST从物理门提升到逻辑门，自洽重建Steane码通用单比特逻辑门集的完整噪声模型(H1离子阱)，逻辑误差以Pauli随机为主、硬件数据无逻辑非马尔可夫证据、发现弱相干逻辑误差信号；模拟器高shot数据才能定位非马尔可夫机制+强相干证据——单一硬件数据会漏检 (arXiv: 2610.19034)
+  - 逻辑级GST流程：对编码门集(含QEC周期)跑长序列GST电路→pyGSTi式自洽拟合逻辑误差信道→模型违背即标记逻辑非马尔可夫性/相干误差
+  - 派生指标：逻辑门保真度、diamond distance(相干分量主导，等保真度下距离差数个量级)、Pauli随机vs相干分解；误差归因把物理错误源映射到逻辑误差机制
+  - 实践要点：RB给尺度、logical GST给结构；Markovianity测试兼作解码器验证(解码器与真实误差结构失配→模型违背)
+  - **Activation**: logical gate set tomography, logical GST, QEC noise characterization, Steane code, non-Markovian error, coherent logical error, error attribution, diamond distance, pyGSTi
+
+### The Cost of Executability: Temporal Margins for Continuous-Time MAPF under Closed-Loop Control
+- [[mapf-temporal-margin-executability]] - MAPF求解器按调度评估而非按可执行性评估：连续时间最优调度靠近零时空分离压成本，真实MPC闭环跟踪下只有少数实例能完整执行(21-40 agent拥挤MovingAI)；加最小时间间隔τ_margin+空间足迹膨胀(T-robustness)后执行成功率显著上升而sum-of-costs代价很小——"可执行性成本"很便宜 (arXiv: 2610.20118)
+  - 两种裕度效果不同：时间裕度降跟踪偏差(给控制器留在调度上的余量)，空间裕度主要防物理冲突——按故障模式选裕度类型
+  - 方法：AOC-CBS最优解→重解加共享位置|t_i−t_j|≥τ约束+足迹膨胀→MPC跟踪→扫τ画成本-可执行性前沿取膝点
+  - 反直觉点：图越连通最优调度越激进(分离越紧)，裕度越重要；成本-only基准对可执行性完全盲
+  - **Activation**: multi-agent path finding, MAPF, temporal margin, executability, T-robustness, MPC tracking, fleet coordination, schedule robustness, sum-of-costs, warehouse robotics
+
+### Multiscale distributed MPC for Optimal Transport
+- [[multiscale-ot-mpc-swarm-transport]] - 大规模蜂群控制按尺度分离：顶层最优传输(带终端惩罚处理时变目标密度，等价于分布式可解的正则化静态对偶)规划密度流，底层每个agent用MPC跟踪名义速度场+抗扰；关键证书是1-Wasserstein度量下的分布式ISS——微观跟踪误差对宏观密度流的扰动有界可算，两层分离是可靠的 (arXiv: 2610.19390)
+  - 终端惩罚动态OT：标准静态OT无法处理时变目标密度，终端惩罚形式把它化为各agent分布式求解的正则化对偶
+  - 底层控制仿射动力学MPC：短时域跟踪||v_i−v*(x_i,t)||²+输入能量，实时可行
+  - W₁-ISS设计规则：先预算跟踪误差界γ，宏观计划即容忍该量级的密度偏差；与D²OC对比(单层密度MPC覆盖控制)——本方法分层+带时变目标+ISS证书
+  - **Activation**: optimal transport, distributed MPC, swarm control, Wasserstein metric, density flow, multiscale separation, distributional ISS, terminal penalty, time-varying targets
+
 ## 2026-10-15 - Neuroscience Research (Cron Job)
 
 ### Reciprocity Coordinates a Three-Way Trade-off in Recurrent Neural Circuits
