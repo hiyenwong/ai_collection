@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-16 - 数论、统计学、高等数学 + 量子力学 (Cron Job)
+
+### Optimal Disorder Strength for Approximate Unitary k-Designs in Spin Chains
+- [[optimal-disorder-unitary-k-designs]] - 无序自旋链生成 Haar 幺正系综的最优无序强度微扰理论 (arXiv: 2610.18954)
+  - 弱无序 ln Δ ~ −σ²、强无序 ln Δ ~ −1/σ 两端渐近缩放，交叉点给出最优无序强度 σ_c ~ Jxy（数值 ≈1.76），推翻"无序越强随机性越好"的经验直觉
+  - multi-quench 协议：独立无序实现的动量算符因子化 → Δ_q ≤ (Δ)^(q+1) 指数抑制；q≈4 次淬灭后 classical shadow 保真度估计偏差消失（2.1-3.6× → 1.00±0.02）
+  - 强无序通过共同的多体局域化机制同时阻断热化与 unitary design 形成；k≥2 design 需要相互作用（自由费米子点 Δ=1）
+  - **Activation**: unitary k-design, disorder strength optimization, moment gap, multi-quench protocol, classical shadow tomography, Haar ensemble, XXZ chain
+
+### A subquadratic upper bound for the mixing time of the Thorp shuffle
+- [[thorp-shuffle-subquadratic-mixing]] - Thorp 洗牌混合时间首次全牌指数改进 O(d³)→d^(5/3) (arXiv: 2610.18884)
+  - 旋转坐标系技巧：d 次物理洗牌 = 超立方体全部 d 个坐标方向各一次独立随机交换层（sweep）；单张牌一次 sweep 后严格均匀，难点全在牌间依赖
+  - 五模块证明架构可复用：碰撞图+强 Rayleigh 负相关（标记牌平滑）→ 临界指数 β_c=log₂(3/2) 处熵时钟 → 有序元组 S_n 表示精确重数放大（局部→全局）→ 熵截断 → 非对称三块调度
+  - 指数启发：熵准备 ~s² 与平滑 ~d/s 平衡 → s~d^(1/3)，物理时间 ~d^(5/3)；信息论下界仍为线性 d，间隙开放
+  - **Activation**: Thorp shuffle, mixing time bounds, card shuffling Markov chain, collision graph, entropy method, symmetric group representations, random permutation sampling
+
 ## 2026-10-15 - 系统工程学 (Cron Job)
 
 ### A modular quantum computer based on Cornucopia codes
