@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-10-16 - Neuroscience Research (Cron Job)
+
+### What Information Buys in Active Inference
+- [[calibrated-aif-information-gain-regret]] - AIF与Bayes-UCBVI平等对比：novelty按N^-1衰减但有效置信宽度需N^-1/2——校准(√novelty×span(V))后成为奖励无关ℓ1置信集，自适应目标下达到√(S·K)下界，固定奖励下仍差Γφ因子 (arXiv: 2610.19046)
+  - 负结果：softmax AIF/常数精度β/贪婪novelty^q(q>1/2)全部线性遗憾；JEPA式自指潜预测被粗抽象自确认锁定(Prop.11)
+  - 正结果：目标从agent数据自适应产生(homeostatic/autotelic)时，校准信息增益是唯一对所有奖励同时乐观的探索货币
+  - **Activation**: active inference, regret theory, calibrated novelty, information gain exploration, adaptive adversary goals, state abstraction, ℓ1 confidence set
+
+### NeuroDETR: Multiscale Discrete Spatiotemporal Tokenization for Asynchronous EEG Event Detection
+- [[neurodetr-eeg-event-detection-vq]] - 连续EEG免触发事件检测：FOCAL事件引导稀疏注意力(密度头路由+轴向跨窗)+多尺度时间VQ+空间金字塔残差VQ(1/5/12电极层级)→DETR集合预测，8个EEG数据集(P300/MI/ME/语音/癫痫)F1_event全面第一(46.70, +4.29 vs DANCE) (arXiv: 2610.20349)
+  - 关键消融：低占空比数据集(TUSZ 3.18%)去掉事件引导掉17pp——稀疏路由是稀有事件检测的决定性组件；量化×引导正交互补(引导使量化收益+0.91→+2.97pp)
+  - 可移植模式：密度引导稀疏注意力、逐级量化"相对父级残差"的金字塔VQ、通道混合前的解剖学分组、门控融合慢启动(g=0.02)
+  - **Activation**: asynchronous EEG, event detection, vector quantization, DETR set prediction, sparse attention routing, BCI, spatial pyramid, onset offset localization
+
 ## 2026-10-16 - Deep Learning Research (Cron Job)
 
 ### Efficient Test-Time Adaptation For Robot Policies
