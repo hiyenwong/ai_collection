@@ -1,5 +1,64 @@
 # AI Collection Index
 
+## 2026-10-16 - Deep Learning Research (Cron Job)
+
+### Efficient Test-Time Adaptation For Robot Policies
+- [[tempo-entropy-memory-test-time-adaptation]] - RL策略部署后免奖励在线自适应：冻结预训练critic当性能代理，熵正则抑制critic外推过置信+score-based memory按难度优先采样，算力聚焦最informative部署条件；Go1/Go2/G1四类shift最高+80%，真机Go2挂载负载实测提升 (arXiv: 2610.20318)
+  - 可复用模式：无奖励部署→用预训练值函数当密集自监督信号，但必须先修置信度(熵正则)再非均匀分配更新(困难样本重要性采样)
+  - 预算受限TTA三段流水线：代理信号→置信校正→信息样本聚焦，分别对应无奖励/外推失效/算力浪费三类失败模式
+  - **Activation**: test-time adaptation, robot policy adaptation, frozen critic surrogate, reward-free adaptation, entropy regularization overconfidence, score-based memory, deployment shift
+
+### Your Transformer Is Secretly Elastic
+- [[elastic-transformer-joint-neuron-head-ranking]] - 免重训把单一checkpoint"弹性化"：可微松弛把每个MLP神经元与attention head放到同一尺度联合排序（一次soft pruning同时优化多稀疏度目标），任意算力预算在线取top-ranked单元；27个22M-8B模型60%稀疏内平滑退化 (arXiv: 2610.20588)
+  - DINOv3 ViT-H+/16剪50%省427M参数仅掉0.8% linear-probe精度，无需权重修正或重训；AugReg ViT-B/16@60%稀疏达1.80×吞吐
+  - 可复用模式：异构单元(MLP神经元vs头vs块)删除决策统一到共同重要性尺度；多预算联合求解优于每目标单独训练；弹性模型替代模型家族
+  - **Activation**: elastic transformer, joint neuron head ranking, differentiable relaxation, soft pruning, compute budget continuum, retraining-free pruning, heterogeneous deployment
+
+### VASPO: Self-Distillation with Privileged Value Estimation
+- [[vaspo-value-augmented-self-distillation]] - 特权信息+自蒸馏融进PPO的位置动力学：critic价值预测在response末尾最强、teacher指导开头强中段跌末尾反弹——按位置分配信号主导权；teacher与critic在学生rollout前缀评估相同特权信息，critic出token级PPO优势、teacher用有界概率比对正向优势做调制；6个数学基准Qwen3-4B +2.59pt (arXiv: 2610.20516)
+  - 融合前先沿轨迹profiling各信号强度分布（此处=按response位置），按区域分配主导权
+  - 特权信息对等原则：teacher与critic喂相同特权视图、在相同学生状态评估，分歧才可归因
+  - 有界调制而非替换：次级信号只在主算法已认可集合(正向优势)内做ratio-capped重加权，防teacher漂移破坏价值学习
+  - **Activation**: VASPO, privileged value estimation, self-distillation PPO, positional dynamics, token-level advantage, teacher signal modulation, reasoning RL
+
+### RM-OPD: On-Policy Distillation for Generative Reward Models
+- [[rm-opd-routed-onpolicy-distillation-reward-models]] - 通用生成式奖励模型两阶段范式：先单域GRPO把专家教师练到各自天花板(隔离无干扰)，再 routed on-policy distillation整合——学生自生成critique上的稠密有符号token监督+域贡献重加权(防单域统治)+可选criteria context；涌现"学生超教师"效应 (arXiv: 2610.20174)
+  - Mix-RL双瓶颈诊断：outcome reward稀疏性+异构能力联合优化的跨域干扰→能力失衡+普遍reward hacking
+  - 可复用模式：能力获取与能力整合分离——多域联合训练相互干扰时先练专家再蒸馏整合；多教师合并必配域份额归一化
+  - **Activation**: generative reward model, on-policy distillation, domain specialization, cross-domain interference, reward hacking, teacher consolidation, token-level supervision
+
+### When Does Momentum Help in Reinforcement Learning with Verifiable Rewards?
+- [[ema-momentum-coefficient-rlvr]] - RLVR动量系数理论：精确梯度下β增大严格加速；采样梯度下固定β的期望增益随η减小比波动消失更快——应联动增β保持η/(1-β)在安全域；Qwen2.5-32B AdamW单纯调大β1即+2pt (arXiv: 2610.20413)
+  - 核心法则：β与η是经有效步长η/(1-β)耦合的一对，降学习率必须同步升动量系数，"RL动量没用"是解耦调参的伪象
+  - 信号vs涨落分析模板：优化技巧"不奏效"时检查其期望增益是否在你的annealing下比梯度估计噪声衰减更快
+  - bandit化RLVR做优化器理论实验室：可证可仿真，再上全量LLM RL验证
+  - **Activation**: momentum RL, EMA beta, RLVR optimizer, eta-beta coupling, AdamW beta1 tuning, sampling fluctuation, LLM post-training
+
+### STP-GUI: Spatially-Aware Token Pruning for Efficient Web-GUI Agents
+- [[stp-gui-spatially-aware-token-pruning]] - GUI agent视觉token剪枝：独立按分数选token会打碎小控件(按钮/图标/链接)所需局部结构——评分保持细粒度指令条件化，但选择改为空间连贯的窗口级；轻量selector用策略学习训练、VLM backbone冻结；21%保留率下保77.7%性能、-31%延迟-57% FLOPs，迁移到Android (arXiv: 2610.20390)
+  - 评分粒度与选择粒度解耦：per-token语义分数+窗口级保留决策，适用于任何被消费结构是局部性的剪枝任务(GUI元素/文本行/表格单元格)
+  - 冻结大模型+端任务奖励训练轻量决策模块，代理损失易骗、任务成功率不会
+  - **Activation**: GUI agent token pruning, spatial coherence, window-level selection, frozen VLM policy learning, screenshot efficiency, query-guided retention
+
+### MolLean: A Process-Verifiable Language for Chemical Reasoning
+- [[mollen-process-verifiable-chemical-reasoning]] - 化学推理的过程可验证语言：显式分子状态+Lean内核检查状态转移与分子readout断言；typed witness协议区分内部结构检查与外部测量事实；MolLean-MCP生成中暴露转移/检查/readout、被拒动作不改变状态(事务语义)；整trace refinement在12任务全胜直接CoT，交互式MCP在反应类任务更强 (arXiv: 2610.20459)
+  - 可复用模式：有可验结构性的领域推理一律ground到类型化状态机而非自由文本；每个谓词按"内部可判定/需外部证据"分类，防止验证器默默信任无根据输入
+  - 事务型工具协议：拒绝的动作不得污染状态→失败步骤零成本、逐步交互验证安全；批量refine普适、交互反馈在步骤间有依赖时(反应路径)胜出
+  - **Activation**: MolLean, Lean kernel, chemical reasoning verification, process supervision, witness protocol, MCP stateful tool, transactional state, trace refinement
+
+### Learning by Examples: Power Grid Steady State Analysis with a Tabular Foundation Model
+- [[tabpfn-power-grid-neural-solver]] - 零样本电网稳态分析：无任何电力系统预训练、无微调的TabPFN直接当通用神经求解器——118节点潮流1e-3 pu电压误差胜全部专用基线、数百万未见N-2预想事故筛选AUC 0.92-0.95、2000节点电压稳定裕度少标签也准 (arXiv: 2610.20462)
+  - TFM当科学域零样本求解器：问题能cast成中小规模(特征→标签)表格就先试现成表格基础模型，预训练通用性可跨到电力系统这么远的域
+  - in-context示例替代微调：喂已解算例(运行点/已解事故)当support set；仿真器能廉价标注support时即得免求解器全流程
+  - 枚举规模场景(N-2事故数百万)是零样本法价值最大处——每拓扑训专用模型不现实
+  - **Activation**: tabular foundation model, TabPFN, power flow, contingency screening, voltage stability margin, zero-shot scientific solver, in-context learning engineering
+
+### OrionMoE-v1.0: A Mixture-of-Experts Foundation Model for Tabular In-Context Learning
+- [[orionmoe-tabular-sparse-moe-foundation]] - 紧凑表格基础模型：双轴Transformer+沿特征轴的稀疏MoE(路由同时看单特征表征与数据集全局上下文)+结构因果先验合成的预训练数据，全程无梯度适配即下游预测；小上下文/高维数据集上胜更大稠密表格FM，类不平衡下相对表现也佳 (arXiv: 2610.20418)
+  - 特征轴专家路由：输入是异构属性集合(表格/多模态传感器束/配置空间)时按特征路由算力且以数据集级上下文为条件，不是只按样本路由
+  - 合成因果先验预训练替代爬取数据：可控多样性、无泄漏、无限支撑集
+  - **Activation**: OrionMoE, tabular foundation model, feature-axis routing, dataset-conditioned MoE, synthetic causal pretraining, in-context tabular, class imbalance
+
 ## 2026-10-16 - 数论、统计学、高等数学 + 量子力学 (Cron Job)
 
 ### Optimal Disorder Strength for Approximate Unitary k-Designs in Spin Chains
