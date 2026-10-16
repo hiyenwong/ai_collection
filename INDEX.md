@@ -78,6 +78,27 @@
   - 通用模式"单侧充分性"：只有一尾重要时只在该侧加结构，对侧承载重尾质量
   - **Activation**: McDiarmid inequality, heavy tails, reverse KL tensorization, concentration, median-of-means, conditional moment, one-sided bound
 
+### A constructive solution to the n-representability problem
+- [[weighted-sos-fermionic-representability]] - 费米子量子边际问题构造性完全解：wSOS层级每级生成全部二体见证完备族，Gram矩阵PSD×零空间截断系统化取代ad-hoc可表示性条件 (arXiv: 2610.20737)
+  - A_trunc(d)vec(G)=0捕获每个度-d SOS二体算子（双向包含完备性）；六次SOS项与乘子项联合相消是关键SDP结构
+  - 加权修正：非加权SOS全Fock空间非负过强，W_N(f)=f·r+r·f†（r=N−η）解锁仅固定粒子扇区非负的见证；度-2乘子充分性定理E*_{3,2}=E*_{3,4}（配方吸收，高阶乘子永不需要）
+  - CAR正规序恒等式把粒子数约束转为RDM一致性收缩——乘子恰好补上v2RDM DQGT1T2'缺失的2RDM↔3RDM映射；Richardson哈密顿量3粒子扇区恢复精确基态能（DQG/T1T2'均失败处）
+  - **Activation**: n-representability, fermionic quantum marginal, 2-RDM, weighted sum-of-squares, SDP, Gram matrix, nullspace constraints, particle-number multiplier, v2RDM, NPA hierarchy
+
+### Region bounds, error margins and certified positivity in the numerical conformal bootstrap
+- [[certified-bernstein-conformal-bootstrap]] - 关闭数值共形bootstrap全部四个严格性缺口，给出3d Ising临界指数首个数学严格双侧界η∈(0.011,0.080)、ν∈(177/290,200/290) (arXiv: 2610.20701)
+  - 四缺口修复：区域泛函（闭合排除环无视岛形）+认证截断误差包络+自旋尾巴单Bernstein方向+Q(√2)精确算术（一切符号测试为精确整数比较）
+  - Bernstein基正性证书：正性在系数中可见，内置反例检测；区间算术与数值SOS+有理化皆失败处Bernstein成功；搜索/证书分离使TCB极小
+  - 边际最大化不可省——每个无边际泛函都在大有限自旋或ℓ=∞面认证失败；区域界把岛映射降为少量一维二分（最优性类改变）
+  - **Activation**: conformal bootstrap, certified numerics, Bernstein basis, positivity certificate, region bounds, exact arithmetic, 3d Ising, critical exponents, machine-checkable proof
+
+### The Lovász number is not alone: a continuum of Rényi points in the entanglement-assisted spectrum of graphs
+- [[renyi-spectrum-entanglement-assisted-graphs]] - 纠缠辅助图渐近谱中Lovász数不再是唯一元素：Petz-Rényi信息半径族ϑα(α∈[0,2])给出连续统个新谱点，证明Duan-Winter五边形猜想 (arXiv: 2610.20775)
+  - 三量一族：ϑ0=ϑ（Lovász）、ϑ1=2^C_min（Holevo min-max）、ϑ2=Σ（无信令模拟成本）；Duan-Winter链是同一单调族的采样链
+  - 塔恒等式K_s(K_s(σ,Q),P)=K_s(σ,P)证明乘性无需乘积表示分解为张量积——权重拆分"行×行内"；α>2数据处理失效是族封顶在2的真正原因
+  - C5上[√5,5/2]连续统分离；32顶点Mermin-Peres魔方图精确有理算术认证2C_min<Σ（阶1≠阶2）；另证图级无信令模拟率恒等于单字母值
+  - **Activation**: Lovász number, asymptotic spectrum, entanglement-assisted capacity, Rényi divergence, information radius, tower identity, zero-error, multiplicativity, magic square
+
 ## 2026-10-16 - Neuroscience Research (Cron Job)
 
 ### Statistical Mechanics of Spike Trains: Self-Consistent Activity Ensembles and Phase Transitions
