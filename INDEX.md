@@ -89,6 +89,20 @@
   - Behavioral anchor: both axes selectively track the FFMQ Acting-with-Awareness facet (ρ≈+0.47–0.48); healthy and clinical participants share a single regression slope
   - **Activation**: temporal irreversibility index, non-equilibrium brain dynamics, mindfulness, MBSR, PTSS, HMM microstate, hierarchical dynamics, EEG trajectory descriptors, intervention plasticity
 
+### Neural Dimensional Analysis: Foundations of Dimensionless and Scale-Consistent Computation
+- [[neural-dimensional-analysis]] - All Transformer scale-control mechanisms (norm, residual scaling, attention temperature, loss weighting, optimizer) unified as one unit-consistency rule: added quantities must share units, exp/sigmoid inputs must be dimensionless (arXiv: 2610.17969)
+  - UVI diagnostics: dimensionless log-deviations (residual step target 1/√(2L), logit-variance target 1) locate scale-mismatch interfaces on small batches; weight-space audit predictions hit 54/54 (124M) and 34/34 (1B)
+  - Gauge-Canonical Transformer: every block computes on RMS-1 canonical coordinates; orthogonalized residual addition permits Θ(L^{-1/2}) steps (first-order scale growth removed); P⊥ ported to nGPT cuts its L=48 loss by 0.275 nats
+  - Empirics: stable across 16× LR range; depth-transfer L=8→48 hyperparams unchanged reaches 3.903 vs nGPT 4.243; PTQ residual stream at 1B: int8 +0.009 nats vs up to +5.51 baselines (per-token RMS=1 sets κ_scale=1, erasing log₂κ bit loss)
+  - **Activation**: transformer scale, normalization design, attention temperature, residual scaling, unit consistency, quantization robustness, learning-rate transfer, UVI, nGPT, muP
+
+### Do Artificial Neural Networks Need Dendritic Nanotubes? Two Reasons for Shrinking Importance Estimates in Continual Learning
+- [[importance-shrinkage-continual-learning]] - Random transient links diffusing importance tags = linear shrinkage toward the layer mean in expectation (Prop 3.1); all activity-dependent link rules (co-activity/Jaccard/correlation) do worse — the biological mechanism failed, the statistical correction it implements succeeded (arXiv: 2610.14258)
+  - Two mechanisms separated by sample-size slope: EWC gain is variance (+19.6 pts at n=10 → −0.4 at n=1000, −10 pts/decade); MAS gain persists ~1.1 pt at n=1000 — a bias (MAS≈√Fisher miscalibrated for retention), fixed β=0.25 adds a groupwise L2 floor
+  - Prop 3.2: Fisher-type sampling variance grows with F², so heteroscedastic empirical Bayes shrinks the LARGEST estimates most — strips protection from the most important parameters; log-scale power transform m^(1-B)·m̄_geo^B is the proposed fix
+  - Boundary conditions: helps when forgetting is the bottleneck (P-MNIST shared head, BWT −8 to −13); hurts when plasticity is (task-incremental Split CIFAR-100, −0.8 to −2.3); full shrinkage β=1 worse than tag-only
+  - **Activation**: continual learning, catastrophic forgetting, EWC, SI, MAS, importance estimation, shrinkage, empirical Bayes, James-Stein, dendritic nanotubes, plasticity-stability
+
 ## 2026-10-17 - Deep Learning Research (Cron Job)
 
 ### Training-Free On-Policy Distillation
