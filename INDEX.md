@@ -2,6 +2,14 @@
 
 ## 2026-10-16 - Neuroscience Research (Cron Job)
 
+### Attention over noisy examples: generalization and memorization in the exponential Hopfield network
+- [[attention-entropy-hopfield-generalization]] - Closed-form phase diagram of when softmax attention over noisy training examples generalizes vs memorizes (arXiv: 2610.22191)
+  - One attention step = exponential Hopfield update with examples as keys; one-step magnetization m(1)=erf(1/sqrt(2*rho_eff)) with attention entropy rho_eff built from softmax weight statistics W and participation ratio M_eff
+  - Generalization window widens as sqrt(N): crosstalk edge beta_lo~1/N, condensation edge beta_hi~1/sqrt(N); load drops out inside window so learnable archetypes grow exp(c*sqrt(N)) — labels unneeded, softmax finds the correct class by itself
+  - Overfitting = REM freezing transition (1-RSB) at beta*sqrt(N(1-r^2))=sqrt(2 ln M) vs full-RSB spin glass in pairwise model; memorization measurable as participation ratio of attention weights dropping to O(1), diagnostic validated on MNIST (follows REM curve) vs fashion-MNIST (detects sub-clusters)
+  - On structured data best accuracy lies BEYOND the condensation edge (softmax reads out local sub-prototype); first gradient steps are Hebbian, later steps fit noise, weight decay restores prototypes
+  - **Activation**: attention entropy, exponential Hopfield, REM freezing, memorization diagnostic, softmax temperature, participation ratio, Hebbian learning from examples
+
 ### Phase Kernel Lifts Capacity of Dense Associative Memory
 - [[phase-kernel-dense-associative-memory]] - 非线性phase kernel重塑MHN能量景观解除线性核的窄吸引盆瓶颈：可分离强凸相位势 h(φ)=2φ+½sech²φ 使CCCP更新逐坐标可解，保持指数容量+单调能量下降，S-Hop在ImageNet 224²实现≥50×检索负载增益 (arXiv: 2610.21493, NeurIPS 2026)
   - 核心条件：½‖F(φ)‖²=Σq(φₖ)可分离强凸(µ=2−2/3√3≈1.615)+收缩条件ρ₀<1+记忆间隔Δᵢ下界 ⇒ 不变收缩球两两不交；容量N≤exp(γd)与MHN同阶(Lucibello–Mézard)
