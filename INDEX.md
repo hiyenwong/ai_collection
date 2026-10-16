@@ -38,6 +38,20 @@
 
 ## 2026-10-16 - Neuroscience Research (Cron Job)
 
+### Statistical Mechanics of Spike Trains: Self-Consistent Activity Ensembles and Phase Transitions
+- [[spike-train-statistical-mechanics-ensembles]] - 完整spike train作为微观态的Boltzmann轨迹系综：能量度量spike与网络自身激活场的自洽性，延迟分布CV决定uniform/振荡/崩塌三相 (arXiv: 2610.20971)
+  - 能量泛函 E(s)=-Σⱼ∫sⱼ(t)T[Vⱼ^int(t)]dt，β⁻¹=外部驱动强度；canonical固定spike数+不应期分离活动水平与温度
+  - 平均场自由能 F_MF[ρ]=-Q[ρ]-H[ρ]/β_MF；窄延迟→振荡相，宽延迟（指数）→崩塌相——延迟分布形状是集体活动的基本组织变量
+  - MC采样三相定性重现且自发涌现Izhikevich式structured activity groups；可反演：Ω*(t)∝exp[β_inf·R_ρρ(t)]从population自相关推断延迟核
+  - **Activation**: spike train ensemble, trajectory statistical mechanics, phase transition neural, delay-induced oscillation, bursting free energy, connectivity inference spike
+
+### Beyond the Hamming Cliff: Compact Spatial Encodings Preserving Semantic Distance in Spiking Neural Networks
+- [[snn-spatial-encoding-hamming-cliff]] - SNN空间编码码几何决定STDP稳态容差：消除cliff必要不充分，Gray去cliff却丢全局结构(ρₛ=0.374)，hybrid粗细场编码以1/8宽度恢复0.98+ (arXiv: 2610.22083)
+  - 容差定律 h(m)=⌊W(1-1/m)/2⌋ 在238/256硬件条件精确预测接受集；编码独自决定容差的语义含义（连续区间vs散射）
+  - 多模式homeostatic因子仅从训练码字两两Hamming距离可预测（Eq.12内积，40条件偏差≤0.03）；Binary@1024值接受125无关值
+  - 检测邻域尺度不变律 r≈N/2(1-1/m)与码宽无关；SpiNNaker 255/SpiNNaker2 512输入事件上限及静默截断首次系统测量
+  - **Activation**: hamming cliff, spatial encoding SNN, thermometer encoding, Johnson code, SpiNNaker, homeostatic scaling STDP, semantic distance code, coarse-fine hybrid code
+
 ### Empirical Boundaries of Reservoir Computing for Few-Shot Sequence Pattern Tasks
 - [[esn-empirical-boundaries-fewshot-patterns]] - ESN能力边界系统图谱：正交ON初始化保准线性tanh域使copy误差0.400→0.000超SOTA；G-ESN数据依赖门控(随机Wgate+仅调bias)是随机版attention，唯一解bracket matching(0.040)与adding(0.006) (arXiv: 2610.19997)
   - 任务二分法：状态跟踪任务(copy/postcasting/pattern completion)ESN胜，关系路由任务(selective copy/sorting/SMNIST)S6与Transformer胜——架构归纳偏置分界线
