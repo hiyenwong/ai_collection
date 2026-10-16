@@ -2,6 +2,23 @@
 
 ## 2026-10-16 - Neuroscience Research (Cron Job)
 
+### Mutual Information in High-Dimensional Neural Coding
+- [[monte-carlo-mutual-information-neural-coding]] - Monte Carlo MI estimation for 10^2-10^4 neuron populations with exponential conditional-entropy decay law (arXiv: 2610.22206)
+  - Conditionally independent model (N x K firing probabilities) + Monte Carlo log-ratio sampling makes K*2^N response space tractable; converges at 1/sqrt(Ts)
+  - Finite-data bias correction via subsample-fraction linear extrapolation (bias ~ K(N+1)/(2Tf))
+  - Conditional entropy decays as H[s|x] ~ e^(-lambda*N) with lambda = Chernoff distance = -log(<sqrt(rho)>^2 + <sqrt(1-rho)>^2); validated on mouse V1 (63 neurons halve uncertainty), CA1 place fields, salamander retina
+  - **Activation**: mutual information, neural population coding, monte carlo estimator, conditional entropy, chernoff distance, high-dimensional neural coding
+
+### Neural Computation Runs on Dissipative Structures Under Cyclic Calibration: A Systems Perspective on Sleep
+- [[dissipative-structures-sleep-recalibration]] - Sleep reframed as thermodynamic recalibration counterbalancing entropic drift in neural signaling parameters (arXiv: 2610.21486)
+  - Wakefulness = dissipative computation consuming its own low-entropy substrate; slow anabolism vs fast discharge asymmetry drives parameter drift (gain, threshold, integration time, release probability P_r)
+  - Sleep must be SYSTEMIC because tightly coupled analog circuits need coordinated global recalibration; VLPO flip-flop is executive trigger, not primary driver
+  - Unifies SHY, waste-clearance, energy, and consolidation theories as partial views of one synthesis-function-degradation-recalibration cycle; neural computation is fundamentally self-limiting
+  - **Activation**: sleep homeostasis, synaptic fatigue, dissipative structures, parameter drift, process S, thermodynamics of computation, release probability
+
+
+## 2026-10-16 - Neuroscience Research (Cron Job)
+
 ### The Dormant Spiking Neuron: A State-Driven Mechanism for Efficient Spiking Neural Networks
 - [[dormant-spiking-neuron]] - SNN postsynaptic状态稀疏范式：不可逆休眠门 D_t = D_{t-1}·Θ(V_{t-1}−D_th) 在膜电位跌破负阈值时永久跳过该样本内该神经元全部积分/泄漏计算（ImageNet ResNet-18中44%神经元深抑制态），与输入驱动稀疏正交相乘 (arXiv: 2610.21748, NeurIPS 2026)
   - 双Heaviside（发放+休眠门）均用sigmoid代理梯度(α=4.0)端到端BPTT训练，δ_D跨时间步递归使网络学会"哪些神经元可安全休眠"的鲁棒策略——后置阈值化(ITO)在非平稳流上会不可逆丢失晚到特征，BPTT是关键
