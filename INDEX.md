@@ -2,6 +2,13 @@
 
 ## 2026-10-16 - Neuroscience Research (Cron Job)
 
+### Empirical Boundaries of Reservoir Computing for Few-Shot Sequence Pattern Tasks
+- [[esn-empirical-boundaries-fewshot-patterns]] - ESN能力边界系统图谱：正交ON初始化保准线性tanh域使copy误差0.400→0.000超SOTA；G-ESN数据依赖门控(随机Wgate+仅调bias)是随机版attention，唯一解bracket matching(0.040)与adding(0.006) (arXiv: 2610.19997)
+  - 任务二分法：状态跟踪任务(copy/postcasting/pattern completion)ESN胜，关系路由任务(selective copy/sorting/SMNIST)S6与Transformer胜——架构归纳偏置分界线
+  - 记忆容量锚定Krylov理论：零误差readout存在iff rank(Kt^Δ)=t·di即dr≥t·di；正交Wres延缓Krylov共线挤压(Gram病态)
+  - Deep ESN共享readout(跨层不变Wout+λ∈[1,10])优于拼接readout：SMNIST 0.684→0.458，结构正则强制任务不变流形
+  - **Activation**: echo state network, reservoir computing, STREAM benchmark, orthonormal initialization, G-ESN gated leaky integrator, Krylov memory capacity, deep ESN shared readout, few-shot sequence, bracket matching, adding problem
+
 ### Online training of Echo State Networks to predict chaotic dynamical systems
 - [[esn-online-training-percolation-reservoir]] - ESN最优reservoir密度由渗流理论而非经验值决定：ER reservoir最优p紧邻键渗流阈值pc=1/(N−1)上方，WS reservoir最优耦合范围2≤R≤5 (arXiv: 2610.20147)
   - 在线LMS训练（r~1/N，Rössler类多尺度动力学需除以3）+ tanh激活+αleaky=0.9；Lorenz NRMSE最优0.04-0.13
