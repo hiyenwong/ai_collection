@@ -1,5 +1,41 @@
 # AI Collection Index
 
+## 2026-10-16 - Mathematics Research (Cron Job)
+
+### Dimension-Free PAC-Bayes Generalization for Deep Neural Networks via Dirichlet Processes
+- [[dp-pac-bayes-dirichlet-process]] - 把PAC-Bayes先验从参数空间移到数据分布空间（Dirichlet Process），经DPI用闭式DP散度约束参数KL，泛化证书与网络维度D无关 (arXiv: 2610.21340)
+  - θ=A(data)为push-forward，数据处理不等式给出 KL(Q‖P) ≤ KL_dp(Q_data‖DP(α,F₀))，Digamma闭式，O(n)无D
+  - 内在d*维流形上达minimax率 O(n^{-1/(d*+2)}√ln n)；MNIST D=7,850→4.2M全程证书稳定8.8%-9.4%（权重空间基线>940%失效）
+  - **Activation**: PAC-Bayes, Dirichlet process, dimension-free, data processing inequality, generalization certificate, non-parametric prior, minimax rate
+
+### Magic in quantum trajectory unravelings of noisy random quantum circuits
+- [[quantum-trajectory-magic-unraveling]] - 噪声电路每条Kraus表示定义不同轨迹解缠：轨迹平均magic可被弱测量Kraus选择压低，但高magic尾部轨迹控制稳定子模拟代价 (arXiv: 2610.22318)
+  - Pauli-jump规范解缠对Clifford电路保magic不变；最优解缠是双输出弱测量而非投影测量
+  - 平均magic可降但分布极宽——模拟成本∝exp(magic)由尾部决定，"降均值"不能降模拟代价（Jensen尾部主导）
+  - 轨迹级资源量是Kraus规范协变的：任何"演化magic"结论必须声明规范选择
+  - **Activation**: magic, stabilizer Renyi entropy, quantum trajectory, unraveling, Kraus representation, dephasing, classical simulation cost, tail control
+
+### Magna: simulating magic state factories as cheaply as Clifford circuits
+- [[magna-magic-factory-tensor-network]] - 把magic态工厂的接受率/输出保真度直接编译成张量网络，利用与码上横向门的结构对应全局缩并，以Clifford级代价模拟蒸馏/培育/码切换全流程 (arXiv: 2610.22315)
+  - 支持对中间测量的任意函数（含解码器输出）条件化的前馈；Bravyi-Haah 100个输出态代价不随输出数指数增长
+  - d=5培育在color code与RP² surface code均达SOTA采样时间；15轮解码器依赖前馈的逻辑级协议已验证
+  - 通用模式：指标即网络（merit-functional tensorization）——把"先模拟再测量"折叠为单次缩并
+  - **Activation**: magic state factory, distillation, cultivation, tensor network contraction, transversal gates, decoder feedforward, Bravyi-Haah, resource estimation
+
+### On Minimum Divergence for Distribution Reconstruction
+- [[kl-minimality-distribution-reconstruction]] - 唯一性定理：光滑f-散度中只有KL是熵自适应的——矩匹配与信息投影重合当且仅当散度为KL (arXiv: 2610.21872)
+  - 换任何光滑f-散度（reverse-KL/Hellinger/χ²）重构仍存在但最佳逼近性质失效
+  - 指数族几何（Legendre对偶、Bregman结构）被KL独占；DRO中χ²球丢失最坏分布的矩匹配解释
+  - 散度选择审计：存在性/唯一性通常保留，投影解释性是KL专属——换散度前先问继承的是哪条保证
+  - **Activation**: KL divergence, f-divergence, maximum entropy, moment problem, exponential family, information projection, DRO, divergence selection
+
+### A One-Sided McDiarmid-Type Inequality for Heavy Tails via Reverse KL Tensorization
+- [[reverse-kl-tensorization-mcdiarmid]] - 只需上有界+条件p阶矩(p∈(1,2])即可得上尾指数衰减：逆向KL张量化按条件矩而非有界差给每个坐标充电 (arXiv: 2610.21103)
+  - p<2时允许无穷方差；指数从有界差的线性退化为矩充电的p/(p-1)型——重尾的代价是变慢而非失效
+  - 应用：样本均值、median-of-means集中、无界损失的单侧一致风险界（ERM重尾分析直接可用）
+  - 通用模式"单侧充分性"：只有一尾重要时只在该侧加结构，对侧承载重尾质量
+  - **Activation**: McDiarmid inequality, heavy tails, reverse KL tensorization, concentration, median-of-means, conditional moment, one-sided bound
+
 ## 2026-10-16 - Neuroscience Research (Cron Job)
 
 ### Empirical Boundaries of Reservoir Computing for Few-Shot Sequence Pattern Tasks
