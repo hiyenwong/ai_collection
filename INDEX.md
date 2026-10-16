@@ -2,6 +2,13 @@
 
 ## 2026-10-16 - Neuroscience Research (Cron Job)
 
+### Phase Kernel Lifts Capacity of Dense Associative Memory
+- [[phase-kernel-dense-associative-memory]] - 非线性phase kernel重塑MHN能量景观解除线性核的窄吸引盆瓶颈：可分离强凸相位势 h(φ)=2φ+½sech²φ 使CCCP更新逐坐标可解，保持指数容量+单调能量下降，S-Hop在ImageNet 224²实现≥50×检索负载增益 (arXiv: 2610.21493, NeurIPS 2026)
+  - 核心条件：½‖F(φ)‖²=Σq(φₖ)可分离强凸(µ=2−2/3√3≈1.615)+收缩条件ρ₀<1+记忆间隔Δᵢ下界 ⇒ 不变收缩球两两不交；容量N≤exp(γd)与MHN同阶(Lucibello–Mézard)
+  - CCCP更新 φₜ₊₁=h⁻¹(R(φₜ)X softmax(βXᵀF(φₜ))) 是 Legendre等距 primal→dual→primal 轨迹 ∇Q*∘∇E2，条件数κ≈1.477统一控制度量畸变/Bregman不对称性/逆场敏感度
+  - 实验：CIFAR-10 N=500下92.07% vs U-Hop 48.40%（消融证明非线性嵌入与Jacobian逆场更新缺一不可：线性退化到N=60，去R(φ)在N=10失败）；检索免训练1.5ms/query
+  - **Activation**: dense associative memory, phase kernel, modern hopfield network, CCCP, strong convexity, attractor basin, exponential capacity, legendre duality, energy landscape
+
 ### Mutual Information in High-Dimensional Neural Coding
 - [[monte-carlo-mutual-information-neural-coding]] - Monte Carlo MI estimation for 10^2-10^4 neuron populations with exponential conditional-entropy decay law (arXiv: 2610.22206)
   - Conditionally independent model (N x K firing probabilities) + Monte Carlo log-ratio sampling makes K*2^N response space tractable; converges at 1/sqrt(Ts)
