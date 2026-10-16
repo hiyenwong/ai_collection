@@ -51,6 +51,14 @@
 
 ## 2026-10-16 - Mathematics Research (Cron Job)
 
+### A complete classification of perfect state transfer in Grover walks on abelian Cayley graphs
+- [[grover-walk-pst-abelian-cayley-classification]] - Grover游走完美态传输(PST)在阿贝尔Cayley图上的完全代数分类：任意群上PST只能valency∈{1,2,4}，valency-4 iff S={a,-a,a+h,-a+h}(ord(h)=2, 4∤|G|/2)，五类等价表示+最小传输时间闭式 (arXiv: 2610.21946)
+  - Chebyshev判别式桥 N U^τ N* = T_τ(P) 把DTQW压缩到顶点空间；PST ⟺ T_τ(P)为无不动点对合置换矩阵，且相位γ被√deg加权向量强制为+1
+  - 代数整数筛：PST谱值µ满足2µ∈Z̄且dµ∈Z̄，奇数valency下µ∈{-1,0,1}(Kronecker式引理)；trace(M²)≥rank(M)+3的秩不等式杀死全部valency≥8
+  - 对合块分解 A=[[C,D],[D,C]] → B_-谱被逼入{0} → C=D → S+h=S：PST连接集必然是h-对称陪集并——结构指纹
+  - 数值验证6/6：Z6×Z2/Z6(val-4)τ_min=6、Z10环τ_min=5精确匹配；Z8(4|m)/valency-6/K4,4反例全部无PST
+  - **Activation**: perfect state transfer, Grover walk, Cayley graph, abelian group, algebraic integer, Chebyshev polynomial, connection set, circulant graph, quantum state routing, discrete-time quantum walk
+
 ### Dimension-Free PAC-Bayes Generalization for Deep Neural Networks via Dirichlet Processes
 - [[dp-pac-bayes-dirichlet-process]] - 把PAC-Bayes先验从参数空间移到数据分布空间（Dirichlet Process），经DPI用闭式DP散度约束参数KL，泛化证书与网络维度D无关 (arXiv: 2610.21340)
   - θ=A(data)为push-forward，数据处理不等式给出 KL(Q‖P) ≤ KL_dp(Q_data‖DP(α,F₀))，Digamma闭式，O(n)无D
