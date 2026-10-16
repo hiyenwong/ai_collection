@@ -1,5 +1,24 @@
 # AI Collection Index
 
+## 2026-10-17 - Neuroscience Research (Cron Job)
+
+### How large an effect would we have seen? Positive controls, detection floors and dataset pitfalls in scalp-EEG speech decoding
+- [[eeg-speech-decoding-detection-floor-audit]] - Inject effects of known amplitude into real EEG to measure what a decoder could have detected; audit positive controls for EMG contamination (arXiv: 2610.20942)
+  - Overt-speech positive controls are myogenic: 2 lip electrodes (0.7430) beat the 128-channel montage (0.4231) on ds003626; accuracy rises monotonically with frequency into the muscle band on all 3 corpora
+  - Detection floors are decoder×effect-type specific: band-power detects 0.54 µV mu/beta ERD; EEGNet detects nothing within subject up to 4.31 µV (ELU+avg-pool destroys amplitude modulation); amplitude/covariance decoders are blind to phase effects entirely
+  - ds003626 silent traps: reversed condition codes (0=pronounced, not inner), class encoding changed between releases, condition collinear with time (trial-index threshold = 1.0000 accuracy)
+  - KaraOne: first "speaking" annotation is actually pre-imagery; without subset re-referencing, EMG channel alone carries 98.3% of imagery-vs-rest accuracy (0.9802)
+  - **Activation**: eeg speech decoding, detection floor, positive control, myogenic artifact, imagined speech, ds003626, karaone
+
+### Rethinking World Models for Biosignals
+- [[biosignal-world-model-validation]] - Three physiological bottlenecks (Temporal Latency, System Openness, Endogenous Dynamics) separate genuine intervention-capable biosignal world models from conditional forecasters, with a validation checklist (arXiv: 2610.17510)
+  - Two requirements for intervention use: a genuine selectable action + evidence of its causal effect; diagnosis-label changes are not actions
+  - Endogenous dynamics evidence: pre-stimulus brain state predicts response to identical stimulation (>10,000 single-pulse stims, 36 patients) — accurate forecasting can use little action information
+  - Intervention-Effect Validation Checklist: predict WHEN effects appear / separate effects from confounders including the condition prompting treatment / show action improves prediction beyond signal history alone at matched horizons
+  - Remediation: continuous-time latency modeling, co-intervention recording, matched-history action-vs-no-action comparison; switched-linear models with ~300ms causal history suffice for evoked dynamics
+  - **Activation**: biosignal world model, intervention simulation, physiological forecasting, ecg world model, causal effect, temporal latency, endogenous dynamics
+
+
 ## 2026-10-17 - Deep Learning Research (Cron Job)
 
 ### Training-Free On-Policy Distillation
