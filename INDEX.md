@@ -1,6 +1,21 @@
 # AI Collection Index
 
 ## 2026-10-16 - Neuroscience Research (Cron Job)
+
+### Online training of Echo State Networks to predict chaotic dynamical systems
+- [[esn-online-training-percolation-reservoir]] - ESN最优reservoir密度由渗流理论而非经验值决定：ER reservoir最优p紧邻键渗流阈值pc=1/(N−1)上方，WS reservoir最优耦合范围2≤R≤5 (arXiv: 2610.20147)
+  - 在线LMS训练（r~1/N，Rössler类多尺度动力学需除以3）+ tanh激活+αleaky=0.9；Lorenz NRMSE最优0.04-0.13
+  - 50/50兴奋/抑制混合权重 > 纯抑制 > 纯兴奋；对称reservoir(w_ij=w_ji)性能显著更差——方向性随机性是结构需求
+  - FHN(2D极限环)容忍低于pc的连接度——低维吸引子需要更少耦合节点，渗流约束对高维混沌吸引子约束最强
+  - **Activation**: echo state network, reservoir computing, percolation threshold, online training, LMS, Lorenz, Rössler, FitzHugh-Nagumo, Watts Strogatz, Erdős-Rényi
+
+### Controlling the latency in temporal coded spiking models for neuromorphic datasets
+- [[denn-latency-controlled-ttfs]] - DeNN闭式脉冲时间实现设计时SNN延迟保证：定理给出逐层延迟界，训练后用单超参R∈[0,1]夹紧突触参数即可指定目标延迟 (arXiv: 2610.19732)
+  - event2time预处理：窗口化平均ISI编码将事件流转化为TTFS兼容单脉冲时间（频率编码无法区分周期spiker与高信息burst，ISI编码可以）
+  - GSC 10类子集：逐层R调优(0.11,0.044,0.103,0.0091)达94.25%精度/1477ms延迟；置信度早退θ=0.7再降至1248ms
+  - 长期记忆集中分配到每层少数神经元(|m·α|/Δt重要性度量)；定理仅逐层成立，深层堆叠下网络级延迟-精度权衡非单调
+  - **Activation**: TTFS, time-to-first-spike, spiking neural network latency, delay neural network, synaptic delay learning, ISI encoding, Google Speech Commands
+
 ### Neural Wasserstein Splines: Representation-Invariant Second-Order Priors for Trajectory Inference
 - [[neural-wasserstein-spline-trajectory-inference]] - 样条生成器+微分投影实现表征不变的Wasserstein加速度先验，用于非配对快照轨迹推断 (arXiv: 2610.19878)
   - B-spline生成器解析给出位置/速度/加速度，无需跨时间OT耦合或数值积分；速度经势场梯度字典ridge投影
