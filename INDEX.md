@@ -2,6 +2,7 @@
 
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job)
 
+
 ### Where Backtests and Live Trading Part Ways: Six Defects from One Intraday System
 - [[backtest-live-parity-defects]] - Post-mortem of six implementation defects that bias a backtest before any statistics run, all found by replaying live days (arXiv: 2610.21846)
   - Defect classes: wrong default data feed (IEX vs consolidated SIP, open-minute volume 0.1-2% of true), dividend-adjusted history vs unadjusted live fills (-0.68% to -1.65% on 37/98 symbols), sizing step scaling past the buying-power limit (20/61 fills ~18% too large), UTC timestamps read as New York time (30% of sample mis-keyed in winter), replay missing data live downloads (silent zero fallback for 4 months, 1-in-20 decisions changed), config enabled but not wired into the order path (53 undeclared keys)
@@ -18,6 +19,22 @@
   - **Activation**: parallel repetition, entangled game, MIP*, threshold repetition, conditional relative entropy, information charge, correlated sampling, quantum game theory, postselection
 
 ## 2026-10-17 - Neuroscience Research (Cron Job)
+
+### Fisher information and the geometry of memorization in neural networks
+- [[fisher-memorization-geometry]] - Projecting per-layer weights onto top Fisher eigenvectors de-memorizes networks: memorized content lives in low-eigenvalue Fisher modes, generalizing features on top (arXiv: 2610.16161)
+  - Layer-dependent: first layer separates at k≈45 (CIFAR near-max while Gaussian memorization <30%); last layer shows NO separation — memorization is diffuse yet localizable to early layers
+  - Fisher data-dependence: clean-data Fisher separates label-noise memorization; full-training-set Fisher mixes tasks — compute the Fisher on denoised data
+  - ICL transformers: projecting block-2 MLP top Fisher subspace restores ~half the gap to early-stopped task generalization without retraining (attention-layer projection hurts everything)
+  - Barcode linear model closed form: post-hoc deletion of uninformative features cuts risk by Tr(Σξ)·d/(n−r−d−1); interior-optimal rank emerges when signal variance falls below spectral threshold 1+d/(n−r)
+  - **Activation**: fisher information, memorization, de-memorization, fisher eigenspectrum projection, label noise recovery, in-context learning overfitting, participation ratio, benign overfitting
+
+### Transferable conditional brain charts link cortico-subcortical structure to Alzheimer's disease progression
+- [[conditional-brain-charts-transferable-norms]] - Conditional normative models (cortical thickness given subcortical volume) transfer to unseen sites with ~20 age-stratified controls via intercept-only refit (arXiv: 2610.21660)
+  - Conditioning improves out-of-sample log-score for ALL 10 subcortical structures across 21,351 healthy / 216 sites; amygdala & hippocampus strongest (73% of 679 structure×region combos positive); hippocampus→right parahippocampal largest single gain Δ=0.032
+  - Site transfer: ~20 age-stratified healthy individuals suffice (+1.0% to +12.3% log-score, 84-87% of repeated draws positive); site effects are location-dominated (pre-transfer mean z −0.19 to −0.89, SD already ≈1); location-only refit best below ~30 individuals
+  - ADNI: whole-brain z + structural dissociation beat CDR-SB in all 20 structure×transition combos (MCI→AD concordance 0.697→0.740; log-rank P=3.6×10⁻²³); separation strongest in the mildest clinical bins where cognitive scores are least informative
+  - Caveat: conditioning is not a more sensitive thinning detector — it absorbs part of the disease effect (nearly all in dementia, partial in MCI); CN→MCI gain did not survive within-fold structure selection
+  - **Activation**: normative model, brain chart, GAMLSS, site transfer, cortical thickness, structural dissociation, Alzheimer conversion, hippocampus, harmonization, SHASH
 
 ### How large an effect would we have seen? Positive controls, detection floors and dataset pitfalls in scalp-EEG speech decoding
 - [[eeg-speech-decoding-detection-floor-audit]] - Inject effects of known amplitude into real EEG to measure what a decoder could have detected; audit positive controls for EMG contamination (arXiv: 2610.20942)
