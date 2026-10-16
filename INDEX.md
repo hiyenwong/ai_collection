@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-10-17 - Economics & Investment + Quantum (Cron Job)
+
+### Real-time identification of the onset of financial rogue waves
+- [[financial-rogue-waves-nlse-eigenvalue-early-warning]] - VIX rogue-wave onset detection via NLSE min-eigenvalue gradient (arXiv: 2606.31475)
+  - Squared Hilbert envelope of volatility as Kerr potential U=-|psi|^2 in linear Schrodinger operator; Anderson localization narrows min-eigenvector before extreme peaks
+  - Eigenvalue-gradient warning detects 7/8 major peaks out-of-sample on VXO and VSTOXX (87.5%), precision 84-94% on VIX; no information leakage in real-time mode
+  - **Activation**: rogue waves, extreme events, VIX, volatility early warning, eigenvalue gradient, Anderson localization, econophysics
+
+### Neural Estimation of Irreversibility in Real and Simulated Limit Order Book Paths
+- [[lob-path-irreversibility-simulator-benchmark]] - Ordering increment of LOB path irreversibility as a within-path simulator benchmark (arXiv: 2610.16151)
+  - Antisymmetric neural density-ratio score s0(W)=g(W)-g(RW) measures forward-vs-reverse log-density per event; physical reversal flips odd features and exchanges paired roles
+  - Order-sensitive vs order-invariant network gap = 0.018 nats/event for real books but 0.0006 for calibrated queue-reactive simulator: simulators match the rate but build asymmetry from block composition, not block order
+  - **Activation**: limit order book, time irreversibility, simulator benchmark, density ratio estimation, arrow of time, market microstructure
+
+### How Much Screening Buys a Second? Speed, Selection, and the Maker's Spread
+- [[maker-spread-screening-vs-cadence-threshold]] - Exact screening threshold equating informed-flow screening with repricing cadence (arXiv: 2610.21510)
+  - Break-even s* = r*A_h(s*) with truncated excess loss A_h(s)=E[(|Z_h|-s)+]; exact threshold eta_crit = 1 - A_h0(s0)/A_hP(s0) requires only integrable innovations (jumps/atoms OK)
+  - Empirically a 12s AMM maker must screen >=84.5% of informed flow to match a 1s venue (vs 71.1% Gaussian); 73.4% of seconds show zero mid-change; with-trend fills picked off by 11.1 bps
+  - **Activation**: market making, adverse selection, screening, cadence, AMM, spread, stale quotes, crypto, microstructure
+
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job)
 
 
@@ -52,6 +72,22 @@
   - Remediation: continuous-time latency modeling, co-intervention recording, matched-history action-vs-no-action comparison; switched-linear models with ~300ms causal history suffice for evoked dynamics
   - **Activation**: biosignal world model, intervention simulation, physiological forecasting, ecg world model, causal effect, temporal latency, endogenous dynamics
 
+
+### Cross-subject decoding of imagined speech from scalp EEG: a leakage-controlled evaluation on three public corpora
+- [[imagined-speech-cross-subject-null]] - Across 482 participant pairs on 3 public corpora, imagined-speech content did not transfer between any two people; state-vs-content diagnostic shows the one generalizing contrast is a post-stimulus state, not imagery (arXiv: 2610.20954)
+  - Leakage-controlled protocol: split integrity by assertion (run halts on trial leakage/test-subject contamination), four statistics per cell (exact binomial threshold + Wilcoxon + BCa bootstrap CI + BH-FDR), shuffle-label control for every positive result; within-subject shuffle nulls fall BELOW chance (anti-conservative)
+  - State-vs-content rule: before attributing a state-vs-rest result to mental content, decode a matched post-stimulus interval with no imagery from the same trials — the KaraOne imagery-vs-rest decoder (0.61 LOSO) labelled the pre-imagery interval as imagery as often as imagery itself
+  - Five-hypothesis strong-inference exclusion of the within-subject ceiling: dimensionality reduction, 23 Riemannian configurations, sliding windows, and published deep nets (EEGNet/ShallowFBCSPNet/Conformer) all fail to beat the linear band-power reference; trial count per class (12→80) is the only variable that orders the corpora
+  - Audit triggers for inflated accuracies: segment-wise splitting, selection outside CV, block-design drift, KaraOne prompt-type confound (word-vs-phoneme alone decodes 0.8371; phoneme-only control kills the effect)
+  - **Activation**: imagined speech, cross-subject transfer, leakage control, EEG decoding audit, state vs content, LOSO, trial count, negative result, BCI calibration-free
+
+### Two dissociable axes of brain hierarchical dynamics track universal and population-specific effects of mindfulness
+- [[tii-hierarchical-brain-dynamics-mindfulness]] - Sliding-window Temporal Irreversibility Index trajectories decompose into depth/breadth/persistence; meditation dose-dependently shrinks exploratory breadth, while temporal persistence is bidirectionally tuned by clinical baseline (arXiv: 2610.20854)
+  - Method: source-reconstructed EEG (MNE, Schaefer-100/Yeo-7) → bivariate TII in 5M-sample windows (90% overlap) at 6 lags (40–600 ms) → 28 inter-network couplings → three orthogonal descriptors: temporal mean (hierarchical depth), variance (exploratory breadth), lag-1 autocorrelation (temporal persistence)
+  - Three-part decomposition (n=141, 3 cohorts): depth = invariant setpoint (triple null); breadth = universal trait axis, dose-dependent with log lifetime hours (ρ≈−0.3), pan-cerebral; persistence = population-specific attractor axis — decreased in healthy MBSR (q=0.002) but increased in trauma-exposed CoMET, converging toward a balanced regime
+  - Joint 5-state HMM: breadth is a fractional-occupancy phenomenon (State 3 FO ρ≈+0.60, anchor States 2/4 ρ≈−0.60); depth/persistence are NOT in static occupancy — they live in dwell-time/transition dynamics; interventions reorganize only low-occupancy States 1↔2 in opposite directions by clinical status
+  - Behavioral anchor: both axes selectively track the FFMQ Acting-with-Awareness facet (ρ≈+0.47–0.48); healthy and clinical participants share a single regression slope
+  - **Activation**: temporal irreversibility index, non-equilibrium brain dynamics, mindfulness, MBSR, PTSS, HMM microstate, hierarchical dynamics, EEG trajectory descriptors, intervention plasticity
 
 ## 2026-10-17 - Deep Learning Research (Cron Job)
 
