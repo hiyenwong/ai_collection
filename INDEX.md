@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-16 - Neuroscience Research (Cron Job)
+
+### The Dormant Spiking Neuron: A State-Driven Mechanism for Efficient Spiking Neural Networks
+- [[dormant-spiking-neuron]] - SNN postsynaptic状态稀疏范式：不可逆休眠门 D_t = D_{t-1}·Θ(V_{t-1}−D_th) 在膜电位跌破负阈值时永久跳过该样本内该神经元全部积分/泄漏计算（ImageNet ResNet-18中44%神经元深抑制态），与输入驱动稀疏正交相乘 (arXiv: 2610.21748, NeurIPS 2026)
+  - 双Heaviside（发放+休眠门）均用sigmoid代理梯度(α=4.0)端到端BPTT训练，δ_D跨时间步递归使网络学会"哪些神经元可安全休眠"的鲁棒策略——后置阈值化(ITO)在非平稳流上会不可逆丢失晚到特征，BPTT是关键
+  - 两稀疏正交相乘：SOPs = MACs·Σ_t(R̄_t·D̄_t)，行(突触前)×列(突触后)联合跳过；层间休眠mask Jaccard<0.2证明是实例级瞬态冗余（静态剪枝恒为1无法捕捉）
+  - ImageNet ResNet-18 ↓~73%能耗@64.44%(+1.34)胜过SOTA静态剪枝(AT-LIF ↓77%@59.61)；DVS-Gesture ↓42%零精度损失；硬件侧1-bit门掩码可跳过32-bit权重访存
+  - **Activation**: spiking neural network efficiency, dormant neuron, state-driven sparsity, membrane potential threshold, surrogate gradient BPTT, neuromorphic energy, postsynaptic gating, dynamic pruning
+
+### Language Models Share a Readout Bottleneck in Working Memory
+- [[llm-readout-interference-bottleneck]] - 15个LLM(Pythia/GPT-2/Qwen2.5, 70M-14B)的N-back工作记忆瓶颈在"读出受干扰"而非"注意不精确"：任务头在多数错误试次上注意已锁定目标，但干扰项内容渗入决策变量 (arXiv: 2610.21176)
+  - 三重证据链：miss试次注意偏离目标仅16%/7%/8%(N=2/3/4)；残差流线性探针AUC≈1.0区分match/lure而模型自身决策仅0.63（信息已算出但未被使用）；因果干预——锐化注意仅+0.05 d'，抑制干扰项字母身份子空间42/43格提升(中位+0.60)
+  - Proposition 1给出何时什么有效：d′=(2γw⊤e+(1−α)β)/√((1−α)²σ_D²+σ_z²)——干扰项抑制作用于全部干扰内容无论哪个头写入，而单头锐化被ε·off-target份额上界约束
+  - 尺度效应：头消融大模型代价更小(ρ=0.74,任务分布化)而干扰抑制收益更大(ρ=0.57)；Qwen2.5-14B抑制后3-back超过未辅助2-back。最小transformer证明：softmax精度界只约束单层网络，两层+残差流+绝对/旋转位置码即解除(Prop 4)；ALiBi在所有N上失败
+  - **Activation**: working memory, N-back, readout bottleneck, interference account, attention precision, lure errors, activation patching, linear probe, residual stream, distractor suppression
+
 ## 2026-10-16 - Anthropic Research (Cron Job)
 
 ### Investigating unintended model actions in our evaluations and internal use
