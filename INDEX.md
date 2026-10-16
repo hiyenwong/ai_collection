@@ -1,7 +1,83 @@
 # AI Collection Index
 
+## 2026-10-17 - Deep Learning Research (Cron Job)
+
+### Training-Free On-Policy Distillation
+- [[training-free-on-policy-distillation]] - Shared-base specialists fused into one generalist with forward passes only: per-layer least-squares on second moments of rollout inputs (arXiv: 2610.22236)
+  - Self-consistency condition: each fused linear layer must reproduce every specialist's output on its own inputs while reading its own answers — not a weight average
+  - Rollout curation beats solver: filtering repetition-loop answers lifts AIME25 from task-arithmetic level to specialist level
+  - **Activation**: model merging, specialist fusion, on-policy distillation, training-free, least-squares, second moments
+
+### Query-Efficient Rejection Sampling for Parallel Masked Diffusion
+- [[sirs-query-efficient-rejection-sampling]] - SIRS: unbiased parallel masked-diffusion sampling via single-increment estimator + Bernoulli factory + Rao-Blackwellization (arXiv: 2610.22238)
+  - One score query per block instead of per-token; Poisson number of clipped estimates converted to exact accept/reject
+  - KL bound: output bias ≤ clipping term + model training error; pays only dependence beyond clipping range
+  - **Activation**: masked diffusion, parallel decoding, rejection sampling, bernoulli factory, unbiased estimation
+
+### Twice Upon a Time: Complementary Representations for Time-Series Reasoning
+- [[complementary-representations-time-series]] - TSLM design principle: pair faithful view (line plots) with invariant view (delay embeddings), verified by intervention (arXiv: 2610.22327)
+  - Line plots preserve absolute measurements; normalized delay embeddings factor out amplitude/offset — distinct invariance profiles
+  - TSRBench 44.5% → 53.2% vs 36.7% best dedicated baseline; gains concentrate in reasoning, not perception
+  - **Activation**: time-series language model, complementary representations, delay embedding, invariance, multimodal fusion
+
+### Training Reasoning Models to Generate Diverse Scientific Ideas
+- [[set-level-diversity-rl-ideation]] - Set-level RL: each idea's quality weighted by distance from prior ideas in the same generation — diversity as marginal novelty (arXiv: 2610.22324)
+  - 8B model beats Claude Opus 4.8 / GPT-6 Astra on creative utility; diversity costs no executability (success@k comparable)
+  - No external diversity metric needed — weighting is internal to the set
+  - **Activation**: scientific ideation, set-level RL, diversity reward, marginal novelty, idea generation
+
+### Attention over Noisy Examples (Exponential Hopfield)
+- [[softmax-attention-memorization-diagnostic]] - Softmax attention over unlabelled examples = exponential Hopfield: generalization-to-memorization transition is random-energy freezing, measurable via weight-spread (arXiv: 2610.22191)
+  - Closed-form overlap m⁽¹⁾=erf(1/√(2ρ_eff)); load drops out in a √N β-window, capacity grows exp(c√N)
+  - Memorization threshold β√(N(1−r²))≃√(2ln M); diagnostic = number of examples carrying attention weight
+  - **Activation**: hopfield network, softmax attention, memorization diagnostic, random energy model, weight spread
+
+### ABNAT: Attention-Based Noise-Aware Training
+- [[abnat-attention-route-preservation]] - Robust transformers on analog CIM: distill clean teacher's headwise attention routes, not just answers (arXiv: 2610.22065)
+  - Clean-vs-noisy attention divergence grows in deeper layers; conventional NAT stays overconfident while routes drift
+  - Up to +11.28% noise-degraded accuracy, −85.77% attention deviation vs NAT, zero inference overhead
+  - **Activation**: noise-aware training, analog compute-in-memory, attention distillation, route preservation, hardware robustness
+
+### Learning Lean Feedback for Efficient Proof-Candidate Evaluation
+- [[hybrid-verifier-accelerated-rl-reward]] - Neural pre-screen + exact Lean oracle hybrid reward: 4.2× verifier throughput, ~31% shorter GRPO steps at equal miniF2F (arXiv: 2610.21881)
+  - Two-stage: validity classifier screens, feedback model annotates goal states/errors on survivors (87.8% verdict accuracy)
+  - Evaluation moves onto GPU — fixes GPU-idle bottleneck of slow exact verifiers
+  - **Activation**: theorem proving, lean verifier, neural reward, hybrid verifier, GRPO acceleration
+
+### Mosaic: Multi-Session Agentic Reinforcement Learning
+- [[mosaic-multi-session-agentic-rl]] - Credit assignment for multi-session trajectories (compaction/subagent forking): shape each session's advantage by estimated marginal contribution (arXiv: 2610.22174)
+  - Broadcast baseline conflates session contributions and gives no allocation signal; Mosaic is critic-free hierarchical
+  - BrowseComp/Qwen3.5-4B: beats broadcasting in both scenarios with fewer sessions on average
+  - **Activation**: agentic RL, multi-session, credit assignment, context compaction, subagent forking, advantage shaping
+
+### Speculative Forcing for Efficient Autoregressive Video Generation
+- [[speculative-forcing-video-generation]] - Draft-then-verify inside the denoising loop: accept tokens early via verifier, freeze them but keep KV context (arXiv: 2610.22347)
+  - Training-free verifier (similarity + stability) or learned gap-predictor reading frozen generator features
+  - LongLive: ~1.7 steps/token at 41.7/37.8 fps (>1.5× faster), quality preserved
+  - **Activation**: video generation, speculative decoding, token freezing, early exit, denoising steps, verifier
+
+### Which Tokens to Merge? (DaTMe)
+- [[datme-dynamics-aware-token-merging]] - Training-free diffusion token merging from Tweedie denoised-estimate dynamics: temporal stability × structural content decides anchor vs merge (arXiv: 2610.22370)
+  - Prompt-relevance criteria destroy unmentioned-but-important regions; dynamics-based map is prompt-agnostic
+  - PixArt-α and FLUX: visual fidelity maintained across the entire image; code released
+  - **Activation**: token merging, diffusion models, tweedie estimate, training-free acceleration, importance map
+
+### SurvICL: Foundation Model for In-context Survival Analysis
+- [[survicl-synthetic-pretraining-survival]] - Synthetic pretraining with oracle (uncensored) quantile losses: first TFM to beat the Cox model on survival (arXiv: 2610.22242)
+  - Proportional-odds synthetic prior enables plain quantile regression — no censoring-aware surrogate loss
+  - Wins 82.9% pairwise IBS comparisons vs 71.3% for Cox across 103-dataset benchmark, zero tuning
+  - **Activation**: survival analysis, synthetic pretraining, censored data, quantile regression, tabular foundation model
+
 ## 2026-10-16 - Neuroscience Research (Cron Job)
 
+**Mathematics + Quantum Mechanics (Cron Job — evening run)**
+
+### Regret Lower Bound for Online Learning of Quantum States with Logarithmic Loss
+- [[olqs-regret-lower-bound-quantum-tomography]] - OLQS regret lower bound and sample-optimal online quantum tomography (arXiv: 2610.21273)
+  - No algorithm achieves O(d^γ log T) regret for γ<2 in online learning of quantum states with log loss — Exponential Weights and Q-VB-FTRL have optimal dimension dependence
+  - Regret→sample-complexity reduction: exp-concave online-to-batch + shrinkage to maximally mixed state + Haah et al. Ω(d³/ε²) tomography lower bound
+  - Blum-Kalai-style EW regret bound (1/η)log C(T+p,p) on affine-hull dimension p; matrix-mean confidence sequences via Ville's inequality, membership testable by convex optimization (verified: beats Howard et al. 2021 and Wang-Ramdas 2025 on covariance estimation, d=8)
+  - **Activation**: online learning quantum states, regret lower bound, quantum state tomography, confidence sequences, exp-concave, exponential weights, online portfolio selection, Ville inequality
 ### Attention over noisy examples: generalization and memorization in the exponential Hopfield network
 - [[attention-entropy-hopfield-generalization]] - Closed-form phase diagram of when softmax attention over noisy training examples generalizes vs memorizes (arXiv: 2610.22191)
   - One attention step = exponential Hopfield update with examples as keys; one-step magnetization m(1)=erf(1/sqrt(2*rho_eff)) with attention entropy rho_eff built from softmax weight statistics W and participation ratio M_eff
