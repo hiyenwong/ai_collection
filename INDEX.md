@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job)
+
+### Where Backtests and Live Trading Part Ways: Six Defects from One Intraday System
+- [[backtest-live-parity-defects]] - Post-mortem of six implementation defects that bias a backtest before any statistics run, all found by replaying live days (arXiv: 2610.21846)
+  - Defect classes: wrong default data feed (IEX vs consolidated SIP, open-minute volume 0.1-2% of true), dividend-adjusted history vs unadjusted live fills (-0.68% to -1.65% on 37/98 symbols), sizing step scaling past the buying-power limit (20/61 fills ~18% too large), UTC timestamps read as New York time (30% of sample mis-keyed in winter), replay missing data live downloads (silent zero fallback for 4 months, 1-in-20 decisions changed), config enabled but not wired into the order path (53 undeclared keys)
+  - Methodology: parity-first testing (replay live trades, match decisions/prices/sizes, pre-registered slippage bar), request-recording tests (record the request not the response, assert pinned feed/adjustment params), narrow concrete looks beat summary-stat review, error-cancellation produces false passes, written lessons do not stop recurrence — convert to tests
+  - Ten-point checklist traceable to each defect; matching decisions is necessary not sufficient (retired harness matched 7/8 real-money dates while dropping the trades that moved the total most)
+  - **Activation**: backtest parity, slippage test, paper account, execution simulation, market data feed, dividend adjustment, timestamp timezone, config wiring, request-recording test
+
+### Parallel Repetition for Entangled Games via Conditional Relative Entropy
+- [[conditional-entropy-parallel-repetition-entangled]] - Cubic parallel-repetition bound exp[-Omega(eps^3 n/L)] for arbitrary-question entangled games via quantum conditional relative entropy (arXiv: 2610.21410)
+  - Key novelty: mu-conditional comparison states (Def 2.6) that preserve the original conditional question law — fixes JPY charge taxing prior correlations and Raz-Holenstein charge missing phase dependence (phase-CHSH counterexample)
+  - Charge = decrease in relative entropy when a question reference is discarded; chain rule telescopes coordinate charges into parent budget log(1/p_C) + |C|L
+  - Lemma 4.1: local pure descriptions + one Uhlmann correction W_y per coherent slice → preparation error O(sqrt(charge)); exponents: eps^2 information threshold x eps rejection threshold = eps^3
+  - Threshold repetition: Pr[N >= (1-eps+delta)n] <= exp[-Omega(delta^5 n/(eps^2 L))], improving OpenAI's universal rate by 1/eps^2
+  - **Activation**: parallel repetition, entangled game, MIP*, threshold repetition, conditional relative entropy, information charge, correlated sampling, quantum game theory, postselection
+
 ## 2026-10-17 - Neuroscience Research (Cron Job)
 
 ### How large an effect would we have seen? Positive controls, detection floors and dataset pitfalls in scalp-EEG speech decoding
