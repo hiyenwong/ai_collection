@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-17 - Quantum Mechanics Daily (Cron Job)
+
+### Diffusion Language Models as Open Quantum Systems
+- [[diffusion-lm-open-quantum-systems]] - Lindblad embedding of discrete diffusion LMs enabling SoP/SoT superposition sampling and QIR confidence-based remasking (arXiv: 2610.21672)
+  - Theorems 3.1/3.2: masked/uniform diffusion = Lindblad dynamics with H=0 and token-position jump operators L_{m,n}=√Q(m,n)|m><n|; reverse-time tilded jumps carry score ratio p_t(k_{p→n})/p_t(k) estimated by the pretrained model
+  - τ-leaping unraveling updates multiple token positions per step (quantum analogue of τ-leaping sampler); ensemble of pure-state trajectories reproduces density-matrix dynamics; final Born-rule measurement = classical sampling probabilities
+  - SoP/SoT: superpose sentence states conditioned on different prompts/thoughts (√p_t(1)|Prompt1,...>+√p_t(2)|Prompt2,...>), unravel, measure — output retains significant similarity to the unselected condition (semantic blending validated with MiniLM embeddings + β-regularization against collapse)
+  - QIR: perturbation jump L_{i,0}=√γ|i><0| (γ≈0.02) makes remasking rate ∝ reciprocal reconstruction confidence; middle-of-generation schedule wins Qwen3-32B preference 62.0%/62.4%/61.8% (SEDD/RADD/iLLaDA-8B) with no retraining; early remasking lowers GenPPL 33.12→12.24 but increases repetition — lower perplexity ≠ better text
+  - **Activation**: diffusion language model, masked diffusion, SoP, SoT, QIR, Lindblad, open quantum system, stochastic unraveling, remasking
+
+### One generation of the Standard Model as a quantum error-correcting code
+- [[standard-model-triorthogonal-qec]] - SM fermion generation + ν^c is a triorthogonal code: anomaly cancellation = vanishing cubic form, giving [[15,1,3]]_p for all primes p (arXiv: 2610.21879)
+  - Dictionary: 15 quarks/leptons = physical qudits, removed ν^c = logical qudit, gauge-singlet symmetries = X-stabilizers (exactly gauge charges for p≥5), remaining SO(10) charge = logical X, its would-be cubic anomaly = transversal logical gate phase
+  - Cubic form τ_c(x,y,z)=Σ c_ℓ x_ℓ y_ℓ z_ℓ vanishing on charge lattice Λ ⟺ anomaly freedom ⟺ triorthogonality mod p; p=2 recovers Bravyi–Kitaev 15-qubit code, odd p gives new qudit codes
+  - Qutrit result: [[15,1,3]]_3 is the unique shortest distance-3 triorthogonal qutrit code (exhaustive search; previous best 19 qutrits) — new candidate primitive for qudit magic state distillation
+  - Transversal gate ⊗U^{c_ℓ} with U=Σω^{j³}|j><j| (p≥5), T for p=2, diag(1,ζ,ζ^{-1}) for p=3; logical action = U^{-c_0}, literally "the anomaly the removed fermion would cancel"; min-weight logical errors = Dirac-mass 4-fermion operators (νν^c)(ee^c)
+  - **Activation**: triorthogonal, anomaly cancellation, Standard Model QEC, Bravyi-Kitaev 15-qubit, qutrit code, magic state distillation, charge lattice, transversal non-Clifford gate
+
 ## 2026-10-17 - Economics & Investment + Quantum (Cron Job)
 
 ### Real-time identification of the onset of financial rogue waves
