@@ -2,6 +2,15 @@
 
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 11)
 
+### When Does "Post-Call" Begin? An Availability Contract for Earnings-Call NLP Benchmarks
+- [[availability-contract-earnings-nlp]] - 事件NLP基准的标签时钟审计：L/S/A 三时钟配对审计显示 15分钟完成度对齐单独翻转 9.4% 收益符号、28.3% 分位数重排；DEC冻结重打分 MSE +18.1–21.4% 而排名不变 (arXiv: 2610.21659)
+  - 9字段可用性契约：许可声明 q、输入边界 B、完成代理 G、宽限 l、检查点 K、推理证据 M、价格锚 A、端点 E、样本规则 S；标签起点 = A(G(B)+l)——把"估计什么"从默认值变成必须声明的模式
+  - 声明阶梯（证据分级）：事件窗口关联 → 代理对齐关联 → 验证后输入 → 可部署性；chronological split 无法修复事件内部泄漏（表示边界 vs 标签起点错位）
+  - 可复用方法：log收益相邻区间精确可加 → 同设计 OLS 恒等式 β_L−β_S=β_LS 把关联"去向"变成加性分解；bar-close 锚（非瞬时价）+ 收盘后调用 S=A 折叠作为内置证伪检查；宽限 0–120min 敏感性包络必须报告
+  - 核心发现：Qwen 答案情感 β_L=+1.122 → β_S=−0.135 → β_A=−0.233 pp/SD，L→A 全部偏移 +1.355 中 +1.256 位于 source-start 锚之前——关联主要活在事件前；排名稳定 ≠ 目标稳定
+  - **Activation**: availability contract, earnings call NLP, label clock, event window leakage, claim ladder, three-clock audit, log return decomposition, point-in-time evaluation, benchmark validity, target reassignment, quintile reassignment, DEC benchmark, ICAIF
+
+
 ### Loss-versus-rebalancing with external proportional transaction costs
 - [[lvr-transaction-cost-amm]] - AMM 零 LVR 带理论：池费或外部价差任一为正时，纯套利把内部价格反射在 γ=(1−τ)(1−λ) 带边界，库存变为有限变差，Itô 修正消失 → 交易成本版 LVR 恒为零；(τ,λ)=(0,0) 是奇异点 (arXiv: 2610.21057)
   - 主定理 Thm 3.2：池清算财富 = 持同库存在外部 bid/ask 交易的自融资策略财富（τ+λ>0 即可，池费可为零）
