@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 17)
+
+### The end-of-month option in futures contracts and the Gittins index of holding the underlying
+- [[eom-gittins-index-futures-delivery]] - 期货交割时机期权 = 持有标的的 Gittins index：Bank–El Karoui 表示给出模型无关刻画，Dinkelbach 迭代化为序列标准停时问题 (arXiv: 2610.21196)
+  - 期货空头 EOM 窗口自主择时交割（交割价固定）→ "继续持有+收集便利收益"建模为可退休项目，期货价 = 使项目价值等于现货的退休回报
+  - 显式压缩界保证 Dinkelbach 收敛，每步复用任意 optimal stopping 求解器（PDE/binomial/Longstaff-Schwartz）
+  - GBM：期货价=现货价条件 + square-root 边界渐近；Gibson–Schwartz：临界便利收益 δ* 以下立即交割
+  - **Activation**: Gittins index, delivery option, end-of-month option, futures, convenience yield, optimal stopping, Bank-El Karoui, Dinkelbach, real options, retirement problem
+
+### Infinite magic and the emergence of the continuum
+- [[infinite-magic-type-iii-continuum]] - type III 因子 ⇔ magic 发散：stabilizer 态的 GNS 局部代数只含 type I/II 因子（原理上排除 QFT 涌现），Araki–Woods–Powers 因子 type III 当且仅当局部优化 min-relative entropy of magic 发散 (arXiv: 2610.20790)
+  - 双向定理：无 magic ⇒ 无 type III（短程 stabilizer 系统 = hyperfinite I/II 张量积）；type III ⇒ 需无穷大 magic 生成连续谱
+  - GNS 构造作为审计工具：检查态能否支撑局域 QFT 的硬件无关判据
+  - 资源-结构等价模板可迁移：entanglement/non-Gaussianity/contextularity 发散 ⇔ 代数 type 跃迁
+  - **Activation**: magic, nonstabilizerness, type III factor, von Neumann algebra, GNS construction, min-relative entropy, QFT emergence, lattice continuum limit, stabilizer simulation limits
+
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 11)
 
 ### CorrFlow: Exact and Permutation-Equivariant Flow Matching on the Correlation Elliptope
