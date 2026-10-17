@@ -2,6 +2,13 @@
 
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 11)
 
+### CorrFlow: Exact and Permutation-Equivariant Flow Matching on the Correlation Elliptope
+- [[corrflow-permutation-equivariant-gft]] - GFT双射坐标+置换等变图流匹配生成相关矩阵，100%有效无需修复 (arXiv: 2610.13606)
+  - 分解两问题: 有效性由Archakov-Hansen广义Fisher变换γ(C)=vecl(log C)双射保证（逆由对角不动点迭代恢复，n=2退化为atanh），分布学习由图流匹配网络承担
+  - 置换等变链: Γ(PSP^T)=PΓ(S)P^T坐标协变 + 共享标量标准化对共轭可交换 + 等变向量场 + ODE唯一性 ⇒ 流映射精确等变，无特权资产序（Cholesky坐标做不到）
+  - 台湾80×80实测: F-SWD .712 vs CorrGAN 4.339/image DDPM 4.610（修复后仍AUC 1.000可分离）；修复本身是诊断信号（RMS .018/条目=学错了空间）
+  - **Activation**: correlation matrix generation, permutation equivariance, elliptope sampling, correlation stress testing, GFT parametrization
+
 ### When Does "Post-Call" Begin? An Availability Contract for Earnings-Call NLP Benchmarks
 - [[availability-contract-earnings-nlp]] - 事件NLP基准的标签时钟审计：L/S/A 三时钟配对审计显示 15分钟完成度对齐单独翻转 9.4% 收益符号、28.3% 分位数重排；DEC冻结重打分 MSE +18.1–21.4% 而排名不变 (arXiv: 2610.21659)
   - 9字段可用性契约：许可声明 q、输入边界 B、完成代理 G、宽限 l、检查点 K、推理证据 M、价格锚 A、端点 E、样本规则 S；标签起点 = A(G(B)+l)——把"估计什么"从默认值变成必须声明的模式
