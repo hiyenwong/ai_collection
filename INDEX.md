@@ -25,6 +25,13 @@
   - 局限与教训：奖励信号质量受制于 backbone 窗级置信度（TSLANet 唯一下降）；非真实闭环（输出未反馈用户）；FSM 掩码模式可迁移到癫痫 pre-ictal/ictal/post-ictal 等已知事件结构流式检测
   - **Activation**: motor imagery BCI, time window optimization, FSM action masking, constrained MDP, PPO, ERD/ERS, transformer history encoder, MOABB, safe RL action masking, semantic action alignment
 
+### On the Statistical Mechanics of Attention
+- [[hopfield-free-energy-attention-phases]] - Transformer 注意力 = modern Hopfield 自由能景观的运动方程；稀疏注意力(α>1)存在 glassy↔robust 一级相变与滞后回线，softmax(α=1)则连续无相变 (arXiv: 2610.17347)
+  - 自由能 Γ_α(x)=(β/2)‖x‖²−Ω*_α[βz]：Tsallis 熵的 Fenchel 共轭 Ω*_α 生成整个注意力家族（α→∞ hardmax / α=2 sparsemax p=(β/2)[z−θ]₊ / 1<α<2 entmax / α→1 softmax），注意力即 EOM ∇_zΓ=−βp
+  - 相变判据（well-separated keys）：coexistence 与 spinodal 重合于 β*=2/(1−ε)；一般 spinodal β_jump=2/λ_max(PGP)；k=2 分支沿反对称方向 Hessian λ(β)=β−(β²/2)(1−ε) 在 β* 恰过零（已数值验证至 1e-5）
+  - 记忆负载 κ=log(M)/d：M 增大 → z_max 阶梯下降（delocalization）→ capacity-reliability trade-off；稀疏情形 κ 扫描同样有滞后窗口
+  - 实测 Transformer（G.2/G.3）：selective retrieval 任务 sparsemax 精度最高且 support 最省，uniform-aggregation 任务 softmax 最佳；β_train≠β_inf 会造成选择性失配；升温/降温方向不同检索到不同记忆（路径依赖）
+  - **Activation**: attention free energy, statistical mechanics of attention, modern hopfield, phase transition, hysteresis, sparsemax, tsallis entropy, spinodal, coexistence, glassy phase
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 09)
 
 ### Common Signals, Spurious Cross-Excitation, and Identification in Multivariate Hawkes Processes
