@@ -1,3 +1,280 @@
+## 2026-10-17 - arXiv Paper Skills (Cron Job)
+
+
+### multi-agent-rl
+
+- **mlexpert-towards-generalist-agentic-model** (Utility: 0.99)
+  - MLExpert: Towards a Generalist Agentic Model for Autonomous Machine Learning Engineering
+  - arXiv: 2610.22344
+
+- **dexterity-supervised-play** (Utility: 0.99)
+  - Dexterity from Supervised Play
+  - arXiv: 2610.22340
+
+- **knowgpo-knowledge-grouped-policy-optimization-search** (Utility: 0.99)
+  - KnowGPO: Knowledge-Grouped Policy Optimization for Search Agents
+  - arXiv: 2610.22331
+
+- **learning-self-orchestration-decentralized-agent-swarms** (Utility: 0.99)
+  - Learning Self-Orchestration in Decentralized Agent Swarms
+  - arXiv: 2610.22322
+
+- **team-gemini-argon-agents-beats** (Utility: 0.99)
+  - A team of Gemini 4 Argon agents beats Minecraft
+  - arXiv: 2610.22319
+
+- **learning-steer-llm-agents-multi-agent** (Utility: 0.99)
+  - Learning to Steer LLM Agents and Multi-Agent Systems
+  - arXiv: 2610.22316
+
+- **towards-continual-learning-mitigating-forgetting** (Utility: 0.99)
+  - Towards Continual Learning: Mitigating Forgetting With Subspace Tuning
+  - arXiv: 2610.22293
+
+- **cat-alyzing-honesty-continuous-adversarial-training** (Utility: 0.99)
+  - CAT-alyzing Honesty: Continuous Adversarial Training for Transferable LLM Honesty
+  - arXiv: 2610.22292
+
+- **librarian-agents-training-llms-curate** (Utility: 0.99)
+  - Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries
+  - arXiv: 2610.22273
+
+- **x-ric-agentic-ran-intelligent-controller-benchmark** (Utility: 0.99)
+  - X-RIC: An Agentic RAN-Intelligent Controller Benchmark for Enhancing Reinforcement Learning
+  - arXiv: 2610.22269
+
+- **skill-decoupled-on-policy-expert-distillation-unified** (Utility: 0.99)
+  - Skill-Decoupled On-Policy Expert Distillation for Unified Vision-Language Models
+  - arXiv: 2610.22217
+
+- **beyond-downstream-qa-rethinking-how** (Utility: 0.99)
+  - Beyond Downstream QA: Rethinking How We Evaluate Agent Memory
+  - arXiv: 2610.22209
+
+- **robust-multi-agent-pursuit-preemptive-communication** (Utility: 0.99)
+  - Robust Multi-Agent Pursuit with Preemptive Communication via Reachability-Based Control Barrier Functions
+  - arXiv: 2610.22198
+
+- **htn-orchestrate-hierarchical-task-network-framework** (Utility: 0.99)
+  - HTN-Orchestrate: A Hierarchical Task Network Framework for Multi-Agent Orchestration
+  - arXiv: 2610.22195
+
+- **mosaic-multi-session-agentic-reinforcement-learning** (Utility: 0.99)
+  - Mosaic: Multi-Session Agentic Reinforcement Learning
+  - arXiv: 2610.22174
+
+- **probe-learning-audit-policy-compliance** (Utility: 0.99)
+  - PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents
+  - arXiv: 2610.22124
+
+- **tips-tiny-inference-time-policy-scaling** (Utility: 0.99)
+  - TIPS: A Tiny Inference-time Policy for Scaling in Diffusion Language Models
+  - arXiv: 2610.22099
+
+- **progress-reward-model-reinforcement-learning** (Utility: 0.99)
+  - Progress Reward Model for Reinforcement Learning via Large Language Models
+  - arXiv: 2610.22056
+
+- **3dcodeverse-exploring-3d-worlds-code** (Utility: 0.98)
+  - 3DCodeVerse: Exploring 3D Worlds as Code
+  - arXiv: 2610.22341
+
+- **libero-perm-benchmarking-personalized-robotic-manipulation** (Utility: 0.97)
+  - LIBERO-PeRM: Benchmarking Personalized Robotic Manipulation
+  - arXiv: 2610.22372
+
+- **decentralized-llm-workflows-sequential-auctions** (Utility: 0.97)
+  - Decentralized LLM Workflows via Sequential Auctions
+  - arXiv: 2610.22201
+
+- **autosft-agentic-system-automated-data** (Utility: 0.97)
+  - AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning
+  - arXiv: 2610.22194
+
+- **auditable-deployable-multi-agent-motion-planning** (Utility: 0.96)
+  - Auditable and Deployable Multi-Agent Motion Planning via Posetal Games from Legal Guidelines
+  - arXiv: 2610.22277
+
+- **learning-unverified-peers-shared-residual** (Utility: 0.94)
+  - Learning from Unverified Peers via Shared Residual Distillation
+  - arXiv: 2610.22080
+
+- **lean-graph-search-formal-theorem** (Utility: 0.93)
+  - Lean Graph Search for Formal Theorem Proving
+  - arXiv: 2610.22339
+
+- **you-sure-your-llm-sure** (Utility: 0.93)
+  - Are You Sure Your LLM Is Sure? Repairing and Auditing Confidence
+  - arXiv: 2610.22139
+
+- **evaluation-awareness-beyond-english-do** (Utility: 0.92)
+  - Evaluation Awareness Beyond English: Do LLMs Act Differently When Tested in Indic Languages?
+  - arXiv: 2610.22333
+
+- **learning-rational-strategies-temporal-objectives** (Utility: 0.92)
+  - Learning Rational Strategies for Temporal Objectives in Multi-Agent Systems
+  - arXiv: 2610.22287
+
+- **multi-sourced-ai-tutor-non-native-english** (Utility: 0.89)
+  - Multi-sourced AI Tutor for Non-Native English Speaker Students
+  - arXiv: 2610.22163
+
+- **believed-but-not-said-measuring** (Utility: 0.89)
+  - Believed but Not Said: Measuring Hidden Belief Collapse in Multi-Agent LLM Discussions
+  - arXiv: 2610.22138
+
+- **avc-reward-event-centric-audio-video-consistency-evaluation** (Utility: 0.88)
+  - AVC-Reward: Event-Centric Audio-Video Consistency Evaluation
+  - arXiv: 2610.22321
+
+- **bitsparse-compact-activation-storage-relu** (Utility: 0.88)
+  - BitSparse: Compact Activation Storage for ReLU Feed-Forward Networks
+  - arXiv: 2610.22256
+
+- **shortcut-sensitivity-agent-safety-evaluations** (Utility: 0.88)
+  - Shortcut Sensitivity in Agent-Safety Evaluations
+  - arXiv: 2610.22243
+
+- **geostate-learning-view-decoupled-geometry-states** (Utility: 0.86)
+  - GeoState: Learning View-Decoupled Geometry States for 3D World Modeling
+  - arXiv: 2610.22343
+
+- **memory-weights-internalizing-long-term-history** (Utility: 0.86)
+  - Memory as Weights: Internalizing Long-Term History for Streaming Videos
+  - arXiv: 2610.22070
+
+- **knowledge-that-linear-before-fine-tuning** (Utility: 0.85)
+  - Knowledge That Is Linear Before Fine-Tuning Generalizes After It
+  - arXiv: 2610.22300
+
+- **language-security-surface-agent-guards** (Utility: 0.85)
+  - Language Is a Security Surface for Agent Guards
+  - arXiv: 2610.22244
+
+- **os-helix-unifying-gui-interaction-code** (Utility: 0.85)
+  - OS-Helix: Unifying GUI Interaction and Code Execution in Native Computer-Using Agents
+  - arXiv: 2610.22234
+
+
+### neuroscience
+
+- **explaining-roles-experts-mixture-of-experts-llms** (Utility: 0.87)
+  - Explaining the Roles of Experts in Mixture-of-Experts LLMs for Personalization
+  - arXiv: 2610.22127
+
+
+### nlp-llm
+
+- **dropkv-decoupling-residual-output-perturbation-near-optimal** (Utility: 0.99)
+  - DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction
+  - arXiv: 2610.22130
+
+- **when-reasoning-not-enough-proactive** (Utility: 0.99)
+  - When Reasoning Is Not Enough: Proactive Inquiry for Cross-Modal Safety in Multimodal Large Language Models
+  - arXiv: 2610.22068
+
+- **reki-registering-knowledge-vlas** (Utility: 0.96)
+  - REKI: Registering Knowledge in VLAs
+  - arXiv: 2610.22178
+
+- **prism-1-position--rival-independent-scoring-system** (Utility: 0.96)
+  - Prism-1: Position- and Rival-Independent Scoring for System One Models
+  - arXiv: 2610.22066
+
+- **designing-transformers-continuous-diffusion-language** (Utility: 0.95)
+  - Designing Transformers for Continuous Diffusion Language Models
+  - arXiv: 2610.22330
+
+- **ai-consilium-benchmark-llm-clinical** (Utility: 0.93)
+  - AI Consilium: a Benchmark of LLM Clinical Multidisciplinary Second Opinions
+  - arXiv: 2610.22298
+
+- **private-retrieval-augmented-generation-random** (Utility: 0.91)
+  - Private Retrieval Augmented Generation via Random Projection
+  - arXiv: 2610.22297
+
+- **emo-closed-loop-test-time-computation-framework** (Utility: 0.9)
+  - EMO: A Closed-Loop Test-Time Computation Framework via Alternating Context Optimization and Logits Steering
+  - arXiv: 2610.22160
+
+- **twice-upon-time-complementary-representations** (Utility: 0.89)
+  - Twice Upon a Time: Complementary Representations for Time-Series Reasoning
+  - arXiv: 2610.22327
+
+- **coda-co-evolution-data-engines-action** (Utility: 0.85)
+  - CoDA: Co-Evolution of Data Engines and Action Policies
+  - arXiv: 2610.22362
+
+
+### quantum
+
+- **discovering-state-of-the-art-quantum-circuits-large** (Utility: 0.97)
+  - Discovering state-of-the-art quantum circuits with large language models
+  - arXiv: 2610.22367
+
+
+### signal-control-systems
+
+- **t2-z-test-time-optimization-environment-latents** (Utility: 0.93)
+  - T2-z: Test-Time Optimization of Environment Latents for Robotic World Models
+  - arXiv: 2610.22364
+
+
+## 2026-10-16 - arXiv Paper Skills (Cron Job)
+
+
+### ai-safety-eval
+
+- **athanor-agent-native-autonomous-post-training** (Utility: 0.92)
+  - Athanor: An Agent-Native System for Autonomous Post-Training Research
+  - arXiv: 2610.21055
+
+
+### multi-agent-rl
+
+- **aria-runtime-inspection-amendment-multi-agent** (Utility: 0.92)
+  - ARIA: Runtime Inspection and Amendment for Multi-Agent Systems
+  - arXiv: 2610.20780
+
+- **evolvingbrain-adaptive-skill-system-agent-evolution** (Utility: 0.90)
+  - EvolvingBrain: An Adaptive Skill System for Multi-modal Agents Self-Evolution in Open Worlds
+  - arXiv: 2610.20786
+
+- **memcomposer-rl-memory-assembly-llm-agents** (Utility: 0.90)
+  - MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning
+  - arXiv: 2610.21091
+
+- **skillneo-non-elitist-evolutionary-agent-skills** (Utility: 0.88)
+  - SkillNEO: Non-Elitist Evolutionary Optimization of Agent Skills
+  - arXiv: 2610.20926
+
+- **memscope-evolving-agent-memory-code-repair** (Utility: 0.88)
+  - MemScope: Evolving Agent Memory Architectures through Localized Code Repair
+  - arXiv: 2610.21170
+
+- **constrained-marl-imagination-model-based** (Utility: 0.88)
+  - Constrained Multi-Agent Reinforcement Learning in Imagination
+  - arXiv: 2610.21319
+
+- **fedskillgit-federated-skill-evolution-version-control** (Utility: 0.85)
+  - FedSkillGit: Federated Skill Evolution via Version Control
+  - arXiv: 2610.21348
+
+
+### neuroscience
+
+- **brain-to-language-decoding-survey** (Utility: 0.90)
+  - Brain-to-Language Decoding: Tasks, Signals, Methods, Evaluation, Practical Use and Beyond
+  - arXiv: 2609.27650
+
+
+### spiking-neuromorphic
+
+- **beyond-hamming-cliff-spatial-encodings-snn** (Utility: 0.85)
+  - Beyond the Hamming Cliff: Compact Spatial Encodings Preserving Semantic Distance in Spiking Neural Networks
+  - arXiv: 2610.22083
+
+
 ## 2026-10-15 - arXiv Paper Skills (Cron Job)
 
 

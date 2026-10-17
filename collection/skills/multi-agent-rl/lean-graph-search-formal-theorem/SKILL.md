@@ -1,0 +1,33 @@
+---
+name: lean-graph-search-formal-theorem
+description: "Lean Graph Search for Formal Theorem Proving"
+tags: [arxiv, paper, multi-agent-rl]
+arxiv_id: "2610.22339"
+utility: 0.93
+date: "2026-10-17"
+---
+
+# Lean Graph Search for Formal Theorem Proving
+
+**arXiv:** [2610.22339](https://arxiv.org/abs/2610.22339)
+**Authors:** Yihan Xu, Jia-Chen Gu, Junyi Zhang, Di Wu, Haikang Deng...
+**Published:** 2026-10-15
+**Categories:** cs.LG
+**Utility Score:** 0.93
+
+## Abstract
+
+Retrieving relevant lemmas is crucial for formal theorem proving, enabling provers to build machine-checkable proofs from established mathematical results. Recent retrieval systems match library declarations to a target theorem or its intermediate proof steps, but make limited use of multi-hop dependencies among declarations. These dependencies can reveal supporting lemmas that are not necessarily lexically similar to the target theorem but recur in proofs of related problems. To this end, we propose LeanGraphSearch, a graph-based retrieval method for Lean 4 that constructs a graph from Mathlib's forward dependencies and traverses it to uncover supporting lemmas through multi-hop dependency chains. Specifically, LeanGraphSearch links each declaration to the premises it depends on, uses a graph-based ranking algorithm to propagate relevance from semantically matched declarations to their dependencies, and reranks the expanded candidates against the original query. Across two mathematical retrieval benchmarks, LeanGraphSearch improves recall by up to 12% over the strongest baseline, LeanSearch v2, on MathlibQR and increases coverage of complete annotated proof routes on MathlibMPR, covering up to 3.7% of extra groups. More importantly, we evaluate whether these retrieval gains translate into improved end-to-end theorem proving by integrating LeanGraphSearch into an iterative proving loop guided by Lean feedback. Across three theorem proving benchmarks, LeanGraphSearch improves pass rate at {8, 16, 32} reflection turns by as much as 40% compared to vanilla prover and at most 10% compared to LeanSearch v2, showing higher accuracy-cost efficiency. These findings highlight the value of dependency graph search for theorem proving and motivate further research on structure-aware search for proof discovery.
+
+## Key Contributions
+
+- Novel research in cs.LG
+- High utility score (0.93) indicating significant research value
+
+## Activation
+
+lean, graph, search, formal, theorem, proving
+
+## Notes
+
+Added by arXiv cron job on 2026-10-17.

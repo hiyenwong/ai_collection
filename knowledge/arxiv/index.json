@@ -1,5 +1,85 @@
 [
   {
+    "id": "2610.20780",
+    "title": "ARIA: Runtime Inspection and Amendment for Multi-Agent Systems",
+    "skill_name": "aria-runtime-inspection-amendment-multi-agent",
+    "category": "multi-agent-rl",
+    "utility": 0.92,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "2610.20786",
+    "title": "EvolvingBrain: An Adaptive Skill System for Multi-modal Agents Self-Evolution in Open Worlds",
+    "skill_name": "evolvingbrain-adaptive-skill-system-agent-evolution",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "2610.20926",
+    "title": "SkillNEO: Non-Elitist Evolutionary Optimization of Agent Skills",
+    "skill_name": "skillneo-non-elitist-evolutionary-agent-skills",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "2610.21091",
+    "title": "MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning",
+    "skill_name": "memcomposer-rl-memory-assembly-llm-agents",
+    "category": "multi-agent-rl",
+    "utility": 0.9,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "2610.21170",
+    "title": "MemScope: Evolving Agent Memory Architectures through Localized Code Repair",
+    "skill_name": "memscope-evolving-agent-memory-code-repair",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "2610.21055",
+    "title": "Athanor: An Agent-Native System for Autonomous Post-Training Research",
+    "skill_name": "athanor-agent-native-autonomous-post-training",
+    "category": "ai-safety-eval",
+    "utility": 0.92,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "2610.21319",
+    "title": "Constrained Multi-Agent Reinforcement Learning in Imagination",
+    "skill_name": "constrained-marl-imagination-model-based",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "2610.21348",
+    "title": "FedSkillGit: Federated Skill Evolution via Version Control",
+    "skill_name": "fedskillgit-federated-skill-evolution-version-control",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "2610.22083",
+    "title": "Beyond the Hamming Cliff: Compact Spatial Encodings Preserving Semantic Distance in Spiking Neural Networks",
+    "skill_name": "beyond-hamming-cliff-spatial-encodings-snn",
+    "category": "spiking-neuromorphic",
+    "utility": 0.85,
+    "date_added": "2026-10-16"
+  },
+  {
+    "id": "2609.27650",
+    "title": "Brain-to-Language Decoding: Tasks, Signals, Methods, Evaluation, Practical Use and Beyond",
+    "skill_name": "brain-to-language-decoding-survey",
+    "category": "neuroscience",
+    "utility": 0.9,
+    "date_added": "2026-10-16"
+  },
+  {
     "id": "2610.19581",
     "title": "XferAgent: Cross-Agent Experience Transfer for Self-Improving LLM Agents",
     "skill_name": "xferagent-cross-agent-experience-transfer",
@@ -11491,5 +11571,413 @@
     "category": "nlp-llm",
     "utility": 0.86,
     "date_added": "2026-10-13"
+  },
+  {
+    "id": "2610.22344",
+    "title": "MLExpert: Towards a Generalist Agentic Model for Autonomous Machine Learning Engineering",
+    "skill_name": "mlexpert-towards-generalist-agentic-model",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22340",
+    "title": "Dexterity from Supervised Play",
+    "skill_name": "dexterity-supervised-play",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22331",
+    "title": "KnowGPO: Knowledge-Grouped Policy Optimization for Search Agents",
+    "skill_name": "knowgpo-knowledge-grouped-policy-optimization-search",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22322",
+    "title": "Learning Self-Orchestration in Decentralized Agent Swarms",
+    "skill_name": "learning-self-orchestration-decentralized-agent-swarms",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22319",
+    "title": "A team of Gemini 4 Argon agents beats Minecraft",
+    "skill_name": "team-gemini-argon-agents-beats",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22316",
+    "title": "Learning to Steer LLM Agents and Multi-Agent Systems",
+    "skill_name": "learning-steer-llm-agents-multi-agent",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22293",
+    "title": "Towards Continual Learning: Mitigating Forgetting With Subspace Tuning",
+    "skill_name": "towards-continual-learning-mitigating-forgetting",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22292",
+    "title": "CAT-alyzing Honesty: Continuous Adversarial Training for Transferable LLM Honesty",
+    "skill_name": "cat-alyzing-honesty-continuous-adversarial-training",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22273",
+    "title": "Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries",
+    "skill_name": "librarian-agents-training-llms-curate",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22269",
+    "title": "X-RIC: An Agentic RAN-Intelligent Controller Benchmark for Enhancing Reinforcement Learning",
+    "skill_name": "x-ric-agentic-ran-intelligent-controller-benchmark",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22217",
+    "title": "Skill-Decoupled On-Policy Expert Distillation for Unified Vision-Language Models",
+    "skill_name": "skill-decoupled-on-policy-expert-distillation-unified",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22209",
+    "title": "Beyond Downstream QA: Rethinking How We Evaluate Agent Memory",
+    "skill_name": "beyond-downstream-qa-rethinking-how",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22198",
+    "title": "Robust Multi-Agent Pursuit with Preemptive Communication via Reachability-Based Control Barrier Functions",
+    "skill_name": "robust-multi-agent-pursuit-preemptive-communication",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22195",
+    "title": "HTN-Orchestrate: A Hierarchical Task Network Framework for Multi-Agent Orchestration",
+    "skill_name": "htn-orchestrate-hierarchical-task-network-framework",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22174",
+    "title": "Mosaic: Multi-Session Agentic Reinforcement Learning",
+    "skill_name": "mosaic-multi-session-agentic-reinforcement-learning",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22130",
+    "title": "DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction",
+    "skill_name": "dropkv-decoupling-residual-output-perturbation-near-optimal",
+    "category": "nlp-llm",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22124",
+    "title": "PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents",
+    "skill_name": "probe-learning-audit-policy-compliance",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22099",
+    "title": "TIPS: A Tiny Inference-time Policy for Scaling in Diffusion Language Models",
+    "skill_name": "tips-tiny-inference-time-policy-scaling",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22068",
+    "title": "When Reasoning Is Not Enough: Proactive Inquiry for Cross-Modal Safety in Multimodal Large Language Models",
+    "skill_name": "when-reasoning-not-enough-proactive",
+    "category": "nlp-llm",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22056",
+    "title": "Progress Reward Model for Reinforcement Learning via Large Language Models",
+    "skill_name": "progress-reward-model-reinforcement-learning",
+    "category": "multi-agent-rl",
+    "utility": 0.99,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22341",
+    "title": "3DCodeVerse: Exploring 3D Worlds as Code",
+    "skill_name": "3dcodeverse-exploring-3d-worlds-code",
+    "category": "multi-agent-rl",
+    "utility": 0.98,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22372",
+    "title": "LIBERO-PeRM: Benchmarking Personalized Robotic Manipulation",
+    "skill_name": "libero-perm-benchmarking-personalized-robotic-manipulation",
+    "category": "multi-agent-rl",
+    "utility": 0.97,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22367",
+    "title": "Discovering state-of-the-art quantum circuits with large language models",
+    "skill_name": "discovering-state-of-the-art-quantum-circuits-large",
+    "category": "quantum",
+    "utility": 0.97,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22201",
+    "title": "Decentralized LLM Workflows via Sequential Auctions",
+    "skill_name": "decentralized-llm-workflows-sequential-auctions",
+    "category": "multi-agent-rl",
+    "utility": 0.97,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22194",
+    "title": "AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning",
+    "skill_name": "autosft-agentic-system-automated-data",
+    "category": "multi-agent-rl",
+    "utility": 0.97,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22277",
+    "title": "Auditable and Deployable Multi-Agent Motion Planning via Posetal Games from Legal Guidelines",
+    "skill_name": "auditable-deployable-multi-agent-motion-planning",
+    "category": "multi-agent-rl",
+    "utility": 0.96,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22178",
+    "title": "REKI: Registering Knowledge in VLAs",
+    "skill_name": "reki-registering-knowledge-vlas",
+    "category": "nlp-llm",
+    "utility": 0.96,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22066",
+    "title": "Prism-1: Position- and Rival-Independent Scoring for System One Models",
+    "skill_name": "prism-1-position--rival-independent-scoring-system",
+    "category": "nlp-llm",
+    "utility": 0.96,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22330",
+    "title": "Designing Transformers for Continuous Diffusion Language Models",
+    "skill_name": "designing-transformers-continuous-diffusion-language",
+    "category": "nlp-llm",
+    "utility": 0.95,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22080",
+    "title": "Learning from Unverified Peers via Shared Residual Distillation",
+    "skill_name": "learning-unverified-peers-shared-residual",
+    "category": "multi-agent-rl",
+    "utility": 0.94,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22364",
+    "title": "T2-z: Test-Time Optimization of Environment Latents for Robotic World Models",
+    "skill_name": "t2-z-test-time-optimization-environment-latents",
+    "category": "signal-control-systems",
+    "utility": 0.93,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22339",
+    "title": "Lean Graph Search for Formal Theorem Proving",
+    "skill_name": "lean-graph-search-formal-theorem",
+    "category": "multi-agent-rl",
+    "utility": 0.93,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22298",
+    "title": "AI Consilium: a Benchmark of LLM Clinical Multidisciplinary Second Opinions",
+    "skill_name": "ai-consilium-benchmark-llm-clinical",
+    "category": "nlp-llm",
+    "utility": 0.93,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22139",
+    "title": "Are You Sure Your LLM Is Sure? Repairing and Auditing Confidence",
+    "skill_name": "you-sure-your-llm-sure",
+    "category": "multi-agent-rl",
+    "utility": 0.93,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22333",
+    "title": "Evaluation Awareness Beyond English: Do LLMs Act Differently When Tested in Indic Languages?",
+    "skill_name": "evaluation-awareness-beyond-english-do",
+    "category": "multi-agent-rl",
+    "utility": 0.92,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22287",
+    "title": "Learning Rational Strategies for Temporal Objectives in Multi-Agent Systems",
+    "skill_name": "learning-rational-strategies-temporal-objectives",
+    "category": "multi-agent-rl",
+    "utility": 0.92,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22297",
+    "title": "Private Retrieval Augmented Generation via Random Projection",
+    "skill_name": "private-retrieval-augmented-generation-random",
+    "category": "nlp-llm",
+    "utility": 0.91,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22160",
+    "title": "EMO: A Closed-Loop Test-Time Computation Framework via Alternating Context Optimization and Logits Steering",
+    "skill_name": "emo-closed-loop-test-time-computation-framework",
+    "category": "nlp-llm",
+    "utility": 0.9,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22327",
+    "title": "Twice Upon a Time: Complementary Representations for Time-Series Reasoning",
+    "skill_name": "twice-upon-time-complementary-representations",
+    "category": "nlp-llm",
+    "utility": 0.89,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22163",
+    "title": "Multi-sourced AI Tutor for Non-Native English Speaker Students",
+    "skill_name": "multi-sourced-ai-tutor-non-native-english",
+    "category": "multi-agent-rl",
+    "utility": 0.89,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22138",
+    "title": "Believed but Not Said: Measuring Hidden Belief Collapse in Multi-Agent LLM Discussions",
+    "skill_name": "believed-but-not-said-measuring",
+    "category": "multi-agent-rl",
+    "utility": 0.89,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22321",
+    "title": "AVC-Reward: Event-Centric Audio-Video Consistency Evaluation",
+    "skill_name": "avc-reward-event-centric-audio-video-consistency-evaluation",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22256",
+    "title": "BitSparse: Compact Activation Storage for ReLU Feed-Forward Networks",
+    "skill_name": "bitsparse-compact-activation-storage-relu",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22243",
+    "title": "Shortcut Sensitivity in Agent-Safety Evaluations",
+    "skill_name": "shortcut-sensitivity-agent-safety-evaluations",
+    "category": "multi-agent-rl",
+    "utility": 0.88,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22127",
+    "title": "Explaining the Roles of Experts in Mixture-of-Experts LLMs for Personalization",
+    "skill_name": "explaining-roles-experts-mixture-of-experts-llms",
+    "category": "neuroscience",
+    "utility": 0.87,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22343",
+    "title": "GeoState: Learning View-Decoupled Geometry States for 3D World Modeling",
+    "skill_name": "geostate-learning-view-decoupled-geometry-states",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22070",
+    "title": "Memory as Weights: Internalizing Long-Term History for Streaming Videos",
+    "skill_name": "memory-weights-internalizing-long-term-history",
+    "category": "multi-agent-rl",
+    "utility": 0.86,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22362",
+    "title": "CoDA: Co-Evolution of Data Engines and Action Policies",
+    "skill_name": "coda-co-evolution-data-engines-action",
+    "category": "nlp-llm",
+    "utility": 0.85,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22300",
+    "title": "Knowledge That Is Linear Before Fine-Tuning Generalizes After It",
+    "skill_name": "knowledge-that-linear-before-fine-tuning",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22244",
+    "title": "Language Is a Security Surface for Agent Guards",
+    "skill_name": "language-security-surface-agent-guards",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22234",
+    "title": "OS-Helix: Unifying GUI Interaction and Code Execution in Native Computer-Using Agents",
+    "skill_name": "os-helix-unifying-gui-interaction-code",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-17"
   }
 ]

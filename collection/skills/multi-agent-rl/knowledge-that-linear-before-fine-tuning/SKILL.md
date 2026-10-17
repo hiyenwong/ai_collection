@@ -1,0 +1,33 @@
+---
+name: knowledge-that-linear-before-fine-tuning
+description: "Knowledge That Is Linear Before Fine-Tuning Generalizes After It"
+tags: [arxiv, paper, multi-agent-rl]
+arxiv_id: "2610.22300"
+utility: 0.85
+date: "2026-10-17"
+---
+
+# Knowledge That Is Linear Before Fine-Tuning Generalizes After It
+
+**arXiv:** [2610.22300](https://arxiv.org/abs/2610.22300)
+**Authors:** Faridoun Mehri, Hinrich Schütze
+**Published:** 2026-10-15
+**Categories:** cs.CL, cs.AI, cs.LG
+**Utility Score:** 0.85
+
+## Abstract
+
+Not all facts a language model can recall support further learning equally well. We distinguish active facts, which support generalization beyond their own recall, from inert facts, which can be recalled but do not support such generalization in a given task. We study this distinction by constructing new relations from existing ones. Take the relation that maps a place to its continent (Paris -> Europe) and assign each of its answers an arbitrary new label (Europe -> crab, Asia -> zebra). The new relation then maps Paris -> crab. We fine-tune the model on the new relation for a subset of subjects, without telling it the original relation or the relabeling rule, and test whether it assigns the corresponding labels to held-out subjects that share an answer in the original relation. Having learned Paris -> crab, does it answer Munich -> crab? Across eleven language models and 70 relations, how linearly readable the original relation is in pretrained representations strongly predicts this generalization. Within each model, the two correlate across relations at Pearson r = 0.87 to 0.92. This association persists when controlling, separately and jointly, for the number of fine-tuning subjects and answers, the model's accuracy on the original relation, and how often the subjects occur in pretraining text. It is also robust to re-randomizing the label assignment and fine-tuning seed, and to replacing the animal labels with labels from thirteen other semantic categories. When we map a fine-tuned model's wrong label back to the original answer it was assigned to, Munich -> zebra becomes Munich -> Asia. Answers recovered this way are more often among the linear probe's top answers for the subject than among the pretrained model's own. Whether a new relation generalizes depends less on whether its facts can be recalled than on how readily their shared structure can be read out linearly.
+
+## Key Contributions
+
+- Novel research in cs.CL, cs.AI
+- High utility score (0.85) indicating significant research value
+
+## Activation
+
+knowledge, linear, before, finetuning, generalizes, after
+
+## Notes
+
+Added by arXiv cron job on 2026-10-17.
