@@ -40,6 +40,20 @@
 
 ## 2026-10-17 - Neuroscience Research (Cron Job)
 
+### Learning Perceptual Geometry of Natural Odor Mixtures from LLM-Derived Descriptors
+- [[llm-odor-mixture-perceptual-geometry]] - LLM smell descriptions of 1,240 food mixtures supervise a low-rank molecular kernel predicting perceptual similarity from composition, generalizing to zero-overlap pairs (arXiv: 2610.17164)
+  - Low-rank kernel K=EE^T (k~141, validation-selected) beats identity (r=0.292→0.545 held-out RSA) because cross-molecular terms let mixtures with NO shared molecules be similar (r=0.432 on zero-overlap pairs); diagonal-kernel ablation shows per-molecule weighting alone insufficient
+  - Learned molecule geometry aligns with independent GS-LF human odor annotations WITHOUT single-molecule supervision; alignment strengthens to r≈0.69 restricted to best-conditioned composition subspaces; chemosensory prompts beat visual/texture/object-identity prompts on odor alignment despite lower effective dimensionality
+  - External features (MolFormer/Mordred/OpenPOM) are inductive-bias value only: help in low-supervision regimes, add nothing at full data; k matches order of human odorant-receptor count (biological bottleneck analogy)
+  - **Activation**: odor mixture, olfactory perception, LLM sensory surrogate, low-rank molecular embedding, RSA alignment, zero-overlap generalization, VCF database, GS-LF
+
+### Bayesian adaptive design for neural recruitment curves
+- [[bayesian-adaptive-recruitment-curves]] - EIG-driven sequential TMS stimulus selection over a rectified-logistic MEP model recovers BOTH threshold and curve in <40 stimuli, <5s per proposal (arXiv: 2610.15000)
+  - Rectified-logistic F(x)=g+max(0,−v+(h+v)/(1+v·e^(−b(x−a)))) with gamma likelihood makes threshold an explicit parameter — smooth 4/5-param logistics cannot represent sharp baseline deflection
+  - EIG matches ML-PEST on threshold (−0.67 %MSO error) AND uniform on curve (±0.5 equivalence); beats both jointly; 80% power for threshold-shift detection needs only 11 participants vs 16 (uniform), 10 with hierarchical Bayesian estimation
+  - Multi-muscle theorem: under independent priors/likelihoods, EIG, focused EIG, and EVR all decompose as sums over muscles → GPU-parallel per-muscle acquisition; 3-muscle total time <4s (NUTS update on CPU + JAX proposal on GPU)
+  - **Activation**: motor threshold, recruitment curve, TMS, expected information gain, adaptive design, onMEP, rectified logistic, NUTS, dose-response
+
 ### Fisher information and the geometry of memorization in neural networks
 - [[fisher-memorization-geometry]] - Projecting per-layer weights onto top Fisher eigenvectors de-memorizes networks: memorized content lives in low-eigenvalue Fisher modes, generalizing features on top (arXiv: 2610.16161)
   - Layer-dependent: first layer separates at k≈45 (CIFAR near-max while Gaussian memorization <30%); last layer shows NO separation — memorization is diffuse yet localizable to early layers
