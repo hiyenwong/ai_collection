@@ -24,6 +24,23 @@
   - 构造性设计：任意递减库存计划 q(S) 经 f(q(p))=η+∫₀^p q−pq(p)、u=−exp{f−y} 精确实现；GMM 池实现权重带 (π₋,π₊)，k=√(π₋π₊/((1−π₋)(1−π₊)))，τ=1−γ/(1−λ)，可行 iff γ≤1−λ；对冲成本 dW=−(Sa−Sb)dTV(Q)
   - **Activation**: LVR, loss-versus-rebalancing, AMM, automated market maker, CFMM, transaction costs, bid-ask spread, no-arbitrage band, Uniswap, liquidity provision, impermanent loss, inventory schedule, no-trade boundary, Skorokhod reflection, DeFi pool design
 ## 2026-10-17 - Neuroscience Research (Cron Job)
+### Beyond Successful Play: Diagnosing Opponent Modeling in Large Language Models
+- [[opponent-modeling-diagnosis-llm]] - LLMToM评估诊断框架：二元重复hide-and-seek中区分自适应博弈/动作预测/信念追踪三层能力，"更好博弈≠心智理论" (arXiv: 2610.17310)
+  - 关键机制：二元博弈中0.5同侧的所有预测给出相同最优响应→payoff改善不能证明信念追踪；用tomsup算法对手(k-ToM/WSLS/Q-learning)的ground-truth信念做固定历史+信息干预评分
+  - 核心发现：use-vs-inference差距——GPT-5.4拿到真实模拟器信念后best-action agreement 66.7%→96.3%、regret−0.187，但自主信念报告MSE(0.02717)仍劣于常数基线(0.01258)；Qwen2.5-7B移除对手规格后预测MSE恶化4.3倍
+  - 训练教训：混合暴露SFT(半数样本省略规格)使history-only MSE降31.65%但ToM0变差；GRPO RL对简单启发式对手过拟合(+38 vs WSLS但−17.5 vs GPT-5.4)；概率奖励RL输出一致性>99%但预测MSE超常数基线(分布漂移)
+  - 可迁移审计清单：反应式对照能否复现headline payoff？预测是否对ground-truth生成模型评分？增益是否在信息必须被推断(而非供给)时保持？true-vs-shuffled信念干预需同时验证field敏感性与content特异性收益
+  - **Activation**: theory of mind evaluation, LLM mentalizing audit, opponent modeling, belief tracking, k-ToM, tomsup, repeated games, use vs inference, ground-truth opponents, agent evaluation rigor
+
+### Sense-Making phase transition framework for Affect
+- [[affect-sensemaking-landau-phase-transition]] - 情感从Landau sense-making势能景观中读出：valence=极小值位置、arousal=势阱深度、混合情感=双稳态，V形关系是T扫描定理而非输入 (arXiv: 2610.18115)
+  - 构造：F(φ)=−h_ext·φ+(a/2)φ²+(h_int/3)φ³+(b/4)φ⁴；valence强度|φ̄|与arousal=−F(φ̄)被同一景观决定故不独立；桥接Barrett异态平衡与enactive sense-making两个情感理论
+  - 相结构：对称情形T₀处pitchfork二级相变(简并双极小值)；h_int诱导敏感化(T₁潜势阱出现)→巩固(T_c一阶接管，φ̄=−2h_int/3b零唤醒)→混合效价(T₀次级反向势阱)；h_ext无相变但换号时一级切换+滞后(placebo/nocebo持续性候选机制)
+  - 涌现V形：A(φ̄)=(h_ext/2)φ̄+(h_int/6)φ̄³+(b/4)φ̄⁴；对称情形A=(b/4)φ̄⁴平滑上开口；实证V形跨研究/个体/文化的变异性=参数空间不同轨迹而非不同规律
+  - 可检验预测：τ_φ=χ/Γφ——扰动恢复时间与外源信息敏感度协变(临界慢化)；参数特异性操纵：变T(情境信息量)、h_int(习得评价)、h_ext(社会信息)分别预测效价/唤醒/分支不对称/曲率变化
+  - 临床语言：负性偏向=不愉快分支反复占优；跨情境刚性化=情感病理学候选形式化；情绪=时变景观上的动态吸引子(Lewis神经动力学纲领)
+  - **Activation**: affect modeling, valence arousal V-shape, mixed affect, emotion dynamics, Landau theory psychology, sense-making, sensitization consolidation, critical slowing down mood, placebo nocebo, allostatic enactive bridge
+
 
 ### FENAS: A Few-Shot Meta-Ensembling Framework for Efficient Neural Architecture Search with Synergized Zero-Cost Proxies
 - [[fewshot-zcp-copula-fusion-nas]] - 弱信号融合模式：CAST(经验copula/ECDF对齐+协同特征变换)把异构零成本代理(NASWOT/Fisher/SynFlow/#Params)映射到[0,1]百分位流形，浅层元学习器(RF/XGB/线性)以≤1%标签产出稳健架构排名 (arXiv: 2610.15307)
