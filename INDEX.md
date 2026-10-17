@@ -1,5 +1,12 @@
 # AI Collection Index
 
+## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 11)
+
+### Loss-versus-rebalancing with external proportional transaction costs
+- [[lvr-transaction-cost-amm]] - AMM 零 LVR 带理论：池费或外部价差任一为正时，纯套利把内部价格反射在 γ=(1−τ)(1−λ) 带边界，库存变为有限变差，Itô 修正消失 → 交易成本版 LVR 恒为零；(τ,λ)=(0,0) 是奇异点 (arXiv: 2610.21057)
+  - 主定理 Thm 3.2：池清算财富 = 持同库存在外部 bid/ask 交易的自融资策略财富（τ+λ>0 即可，池费可为零）
+  - 构造性设计：任意递减库存计划 q(S) 经 f(q(p))=η+∫₀^p q−pq(p)、u=−exp{f−y} 精确实现；GMM 池实现权重带 (π₋,π₊)，k=√(π₋π₊/((1−π₋)(1−π₊)))，τ=1−γ/(1−λ)，可行 iff γ≤1−λ；对冲成本 dW=−(Sa−Sb)dTV(Q)
+  - **Activation**: LVR, loss-versus-rebalancing, AMM, automated market maker, CFMM, transaction costs, bid-ask spread, no-arbitrage band, Uniswap, liquidity provision, impermanent loss, inventory schedule, no-trade boundary, Skorokhod reflection, DeFi pool design
 ## 2026-10-17 - Neuroscience Research (Cron Job)
 
 ### Beyond 11/16: dense Kuramoto networks that resist synchrony
