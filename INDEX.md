@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-17 - Neuroscience Research (Cron Job)
+
+### Beyond 11/16: dense Kuramoto networks that resist synchrony
+- [[kuramoto-sync-resistance-split-cluster]] - Kuramoto 同步阈值下界从 11/16 提升到 μ0=(4+2q*)/(7+q*)=0.6929077，q* 为 8 次多项式根；S7 分裂簇模板+区间算术认证 (arXiv: 2610.21271)
+  - 模板框架：聚类级三元组 (x,φ,P) 三条件（相位锁定 F=0、抗分裂 c>0、簇模式 L(y)>0）对密度 P 线性 → 最稠密严格模板是凸问题/SDP，任何稳定不动点分组都给模板 → 搜索无损失
+  - S7 机制：四簇 splay 态 C4（μ=3/4, cos(π/2)=0 使 L≡0 退化）三相邻簇各裂两半（±h，中间簇宽 w*≈1.398），倾斜最大交叉链接疏化到 q*≈0.6506；两个中性偶极条件给出封闭方程组定 (q*,w*,a*=1/(7+q))
+  - 认证管线：Krawczyk 区间牛顿（不动点存在）+ 区间 Cholesky（正定）+ 循环群 blow-up（Hoeffding+Gershgorin 控制非均匀模）；认证成员距中性仅 6.2×10^-19 → 有理分母 D≈3×10^42，网络 n≥9×10^84
+  - 可迁移教训：带稳定裕度 ε 的数值搜索会系统性错过脆弱态（代价 ~ε^(1/3) 陡峭），150 次 CMA-ES 重启全部错过；正确路径是簇分裂/合并 ansatz + 在退化点附近重标度提取极限模型；论文由 LLM agents 协同发现但独立 agent 拿同样问题未找到 — ansatz 空间设计 > 搜索算力
+  - **Activation**: Kuramoto model, synchronization threshold, critical connectivity, cluster template, interval arithmetic, Krawczyk, split cluster, razor's edge degeneracy, fragile metastable states, numerical search pitfalls
+
+### Time Window Optimization for MI-BCI via Temporal Structure Embedded RL
+- [[tserl-fsm-temporal-window-bci]] - TSE-RL 把在线 MI-BCI 窗口优化重构为受约束 MDP：窗口标记 Discard/Onset/Sustain/Offset 语义角色，FSM 硬掩码强制 Planning→Execution→Recovery 生理序 (arXiv: 2610.16921)
+  - 三机制：FSM 相位掩码（非法动作采样前置零优于奖励软约束）+ Transformer 历史编码器（1 层 4 头，替代 RNN 梯度不稳定）+ 即插即用 B(X)=D(F(X)) 分解（8 backbone 全适配）
+  - 三阶段训练：监督预训练 F/D → 冻结表征 PPO 只学策略（防表征漂移）→ 解冻 F 尾层小学习率微调；奖励 = 窗级置信度 rdisc + 连续性 rcont + 终分类 ±5α(N)，全部来自冻结判别器 pn
+  - 结果：MOABB 四数据集跨会话多数 backbone +2–3pp（EEGNet 70.15→72.34, CSPNet 75.89→78.47），跨被试 LOSO 也显著；学得策略 Onset/Sustain 集中于 0.8–2.5s 与对侧 μ/β ERD 峰值一致；单窗推理 ≤16.7ms 远低于 0.1s 步长
+  - 局限与教训：奖励信号质量受制于 backbone 窗级置信度（TSLANet 唯一下降）；非真实闭环（输出未反馈用户）；FSM 掩码模式可迁移到癫痫 pre-ictal/ictal/post-ictal 等已知事件结构流式检测
+  - **Activation**: motor imagery BCI, time window optimization, FSM action masking, constrained MDP, PPO, ERD/ERS, transformer history encoder, MOABB, safe RL action masking, semantic action alignment
+
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 09)
 
 ### Common Signals, Spurious Cross-Excitation, and Identification in Multivariate Hawkes Processes
