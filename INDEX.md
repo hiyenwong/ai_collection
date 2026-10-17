@@ -2,12 +2,6 @@
 
 ## 2026-10-18 - 信息学 (Informatics) + Quantum Mechanics (Cron Job)
 
-### Do Artificial Neural Networks Need Dendritic Nanotubes? Two Reasons for Shrinking Importance Estimates in Continual Learning
-- [[importance-shrinkage-continual]] - Random links in continual learning are James-Stein shrinkage of noisy importance in disguise; fixed shrinkage (β≈0.25) helps EWC via variance and MAS via bias (arXiv: 2610.14258)
-  - Biological mechanism (dendritic-nanotube-inspired transient links) only works when links are RANDOM — in expectation they implement linear shrinkage toward the layer mean (Prop 3.1); every activity-dependent rule did worse
-  - Two-mechanism diagnostic: vary importance samples n — EWC gain vanishes with n (variance, slope −10pts/decade), MAS gain persists at n=1000 (bias); heteroscedastic EB shrinks the largest Fisher estimates most (multiplicative noise, Prop 3.2) — log-scale power transform is the fix
-  - **Activation**: continual learning, EWC, SI, MAS, importance estimate, shrinkage, empirical Bayes, catastrophic forgetting
-
 ### NeuroVolve: Evolving Visual Stimuli toward Programmable Neural Objectives
 - [[neurovolve-brain-objective-image-synthesis]] - Optimize a programmable neural objective in BLIP-2 Q-Former embedding space, render with frozen BLIP-Diffusion; predicted activations exceed top natural stimuli (arXiv: 2512.00557)
   - Loss library over voxelwise fMRI encoder predictions: maximize/suppress single ROI, co-activate pairs, activate-one-suppress-other — reveals cooperative vs antagonistic tuning and subject-specific preferences (S1 FFA baby faces, S5 group scenes)
