@@ -40,6 +40,20 @@
   - 构造性设计：任意递减库存计划 q(S) 经 f(q(p))=η+∫₀^p q−pq(p)、u=−exp{f−y} 精确实现；GMM 池实现权重带 (π₋,π₊)，k=√(π₋π₊/((1−π₋)(1−π₊)))，τ=1−γ/(1−λ)，可行 iff γ≤1−λ；对冲成本 dW=−(Sa−Sb)dTV(Q)
   - **Activation**: LVR, loss-versus-rebalancing, AMM, automated market maker, CFMM, transaction costs, bid-ask spread, no-arbitrage band, Uniswap, liquidity provision, impermanent loss, inventory schedule, no-trade boundary, Skorokhod reflection, DeFi pool design
 ## 2026-10-17 - Neuroscience Research (Cron Job)
+### Saliency-Guided Replay for Continual Learning in Deep Spiking Neural Networks
+- [[sam-guided-epr-snn-continual]] - 首个XAI引导的SNN持续学习：前向Spike Activation Maps选最有信息量的24×24图像patch存入replay buffer（0.56字节成本），紧内存预算下CIFAR100 AvgAcc+3~6pp、AvgForg−14~18pp (arXiv: 2610.17998)
+  - SAM机制：因果核K(τ)=exp(−γτ)对脉冲历史加权→NCS(t)=ΣK(τ)S(t−τ)，H_t=Σ_c NCS·S(t)；mean时间聚合>last-only，取最深卷积层（layer 7，γ=0.7）；纯前向、无梯度、无surrogate——非可微模型的显著性信号
+  - 打包管线：SAM上采样到32×32→P=24滑窗argmax选patch→存(patch,坐标,label,heatmap)；replay时patch回填零画布、损失不变L=L_CE+λ_r·L_CE；准入规则=预测正确或top-3；EPR-SP>BASE-EPR(随机patch)证明显著性选择有真实增益
+  - 等成本核算坑：24²/32²=0.5625字节比→等MEMORY预算对比才见优势（MB≈10时最强）；等样本数下全图BASELINE反超（buffer饱和效应，MB≈30处交叉）——报告需两种口径都给
+  - 解释漂移诊断：20任务后回看早期任务SAM——显著区域保持一致且更集中于目标物体（CL可精炼而非仅保留表征）；局限：SAM类无关(不能做解释匹配正则)、固定P=24、仅CIFAR规模、冷启动依赖早期模型质量
+  - **Activation**: spiking neural network, continual learning, experience replay, spike activation map, saliency-guided packing, catastrophic forgetting, BNTT, low latency SNN, memory-efficient replay, explanation drift, neuromorphic edge
+
+### Simple model of neurogliovascular unit activity with noradrenaline leading force
+- [[neurogliovascular-unit-noradrenaline-model]] - NGVU五组分全耦合模型：HH级锥体+PV网络、星形胶质细胞双室钙/IP3三源(含NA驱动J_NA)、AA级联血管调制、半径/氧动力学，胞外K⁺为枢纽变量 (arXiv: 2610.15263)
+  - 架构：50锥体:10 PV:1星形:1血管（海马CA1参数化，Hippocampome+Aussel 2022）；V_revK=(RT/F)log([K]_ext/[K]_i)动态反转电位——胞外钾直接门控兴奋性；锥体AP同时释放K⁺与谷氨酸
+  - NA"主导力"路径：d[NA]/dt=J_NA+([NA]_amb−[NA])/τ_NA，J_NA=r_NA+r_NG([Glu]−[Glu]_amb)→NA进IP3生成块→钙动力学→AA/HETE级联→血管半径→PO₂(r²供给−CMRO₂消耗)→反馈兴奋性；Brian 2仿真
+  - 动力学签名：无NA块时周期振荡模式，钙/半径对每个Glu/K⁺峰呈加倍响应(ER双室滤波)；全系统(60神经元+NA)呈伪随机态，多时间尺度叠加(Glu快/NA慢)；适用于睡眠-觉醒转换与病理活动控制研究
+  - **Activation**: neurogliovascular unit, astrocyte calcium, noradrenaline neuromodulation, arachidonic acid cascade, neurovascular coupling, Brian 2, hippocampal CA1, vascular dynamics
 ### Beyond Successful Play: Diagnosing Opponent Modeling in Large Language Models
 - [[opponent-modeling-diagnosis-llm]] - LLMToM评估诊断框架：二元重复hide-and-seek中区分自适应博弈/动作预测/信念追踪三层能力，"更好博弈≠心智理论" (arXiv: 2610.17310)
   - 关键机制：二元博弈中0.5同侧的所有预测给出相同最优响应→payoff改善不能证明信念追踪；用tomsup算法对手(k-ToM/WSLS/Q-learning)的ground-truth信念做固定历史+信息干预评分
