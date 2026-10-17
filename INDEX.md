@@ -2,6 +2,18 @@
 
 ## 2026-10-18 - 信息学 (Informatics) + Quantum Mechanics (Cron Job)
 
+### Do Artificial Neural Networks Need Dendritic Nanotubes? Two Reasons for Shrinking Importance Estimates in Continual Learning
+- [[importance-shrinkage-continual]] - Random links in continual learning are James-Stein shrinkage of noisy importance in disguise; fixed shrinkage (β≈0.25) helps EWC via variance and MAS via bias (arXiv: 2610.14258)
+  - Biological mechanism (dendritic-nanotube-inspired transient links) only works when links are RANDOM — in expectation they implement linear shrinkage toward the layer mean (Prop 3.1); every activity-dependent rule did worse
+  - Two-mechanism diagnostic: vary importance samples n — EWC gain vanishes with n (variance, slope −10pts/decade), MAS gain persists at n=1000 (bias); heteroscedastic EB shrinks the largest Fisher estimates most (multiplicative noise, Prop 3.2) — log-scale power transform is the fix
+  - **Activation**: continual learning, EWC, SI, MAS, importance estimate, shrinkage, empirical Bayes, catastrophic forgetting
+
+### NeuroVolve: Evolving Visual Stimuli toward Programmable Neural Objectives
+- [[neurovolve-brain-objective-image-synthesis]] - Optimize a programmable neural objective in BLIP-2 Q-Former embedding space, render with frozen BLIP-Diffusion; predicted activations exceed top natural stimuli (arXiv: 2512.00557)
+  - Loss library over voxelwise fMRI encoder predictions: maximize/suppress single ROI, co-activate pairs, activate-one-suppress-other — reveals cooperative vs antagonistic tuning and subject-specific preferences (S1 FFA baby faces, S5 group scenes)
+  - Semantic trajectory unifies brain-guided editing (early steps) and preferred-stimulus synthesis (late steps); recovers low-level tuning (V1 edges, V4 color) that prior generative frameworks missed; beats NSD top-100 and BrainDiVE on CLIP semantic specificity
+  - **Activation**: brain-guided image synthesis, neural objective, fMRI encoding model, BLIP-2 Q-Former, preferred stimulus, co-activation, personalized stimuli, NSD
+
 ### On the Subadditivity of Mutual f-Information
 - [[subadditive-mutual-f-information]] - 通过 g(x)=x²f″ 的微分条件刻画次可加互信息，解决 Polyanskiy-Wu 开放问题 (arXiv: 2610.21231)
   - 定理1: g 严格凹 + 方差泛函凹性机制 ⇒ I~_f 次可加；χ²(仿射g)被排除且 MC 验证确实违反 (1513/3000)
