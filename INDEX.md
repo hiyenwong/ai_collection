@@ -1,5 +1,15 @@
 # AI Collection Index
 
+## 2026-10-18 - 信息学 (Informatics) + Quantum Mechanics (Cron Job)
+
+### On the Subadditivity of Mutual f-Information
+- [[subadditive-mutual-f-information]] - 通过 g(x)=x²f″ 的微分条件刻画次可加互信息，解决 Polyanskiy-Wu 开放问题 (arXiv: 2610.21231)
+  - 定理1: g 严格凹 + 方差泛函凹性机制 ⇒ I~_f 次可加；χ²(仿射g)被排除且 MC 验证确实违反 (1513/3000)
+  - 构造器 Corollary 1: 任意正凹 s → f(x)=αx·log x+∫₁ˣ(x−t)s(t)/t²dt 次可加；给出4个显式新族 + 正混合闭包
+  - 变分 (G,f): 比较不等式 G⁻¹(G(a)+G(b))≥a+b+γab 把充分条件从 {x, log(1+x), −log(1−x)} 扩展到一般凹/凸 G
+  - 数值验证: 论文族 0/3000 违规、χ² 负对照违规；D_f 约定 Σq·f(p/q) 实现错误会静默失败
+  - **Activation**: mutual f-information, f-divergence subadditivity, generalized mutual information, information measure design, variational (G,f)-information
+
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 17)
 
 ### The end-of-month option in futures contracts and the Gittins index of holding the underlying
