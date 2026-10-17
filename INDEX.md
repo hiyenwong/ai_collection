@@ -18,6 +18,13 @@
   - **Activation**: LVR, loss-versus-rebalancing, AMM, automated market maker, CFMM, transaction costs, bid-ask spread, no-arbitrage band, Uniswap, liquidity provision, impermanent loss, inventory schedule, no-trade boundary, Skorokhod reflection, DeFi pool design
 ## 2026-10-17 - Neuroscience Research (Cron Job)
 
+### FENAS: A Few-Shot Meta-Ensembling Framework for Efficient Neural Architecture Search with Synergized Zero-Cost Proxies
+- [[fewshot-zcp-copula-fusion-nas]] - 弱信号融合模式：CAST(经验copula/ECDF对齐+协同特征变换)把异构零成本代理(NASWOT/Fisher/SynFlow/#Params)映射到[0,1]百分位流形，浅层元学习器(RF/XGB/线性)以≤1%标签产出稳健架构排名 (arXiv: 2610.15307)
+  - 4维物理先验：表达性 z_E=log det(K+εI)、可训练性 z_T=Σ‖∇_w L‖²、连通性 z_C=SynFlow路径积分、容量 z_P=#Params；ECDF对齐后加2个协同特征 p_E=u_E/log(1+u_P)（表达/容量比）、p_S=u_T×u_C（可训练×连通）
+  - 结果：NAS-Bench-201 CIFAR-10 仅78标签(0.5%) τ=0.695 超越拓扑型few-shot预测器 DCL-ENAS(0.610)/CAP(0.600)；NB101上Fisher单独τ=−0.190被融合到0.658；全空间排名~1138s，DARTS域0.3 GPU天→97.25%
+  - 机制：代理间相关性低(Fisher×NASWOT≈0.018)证明互补性；SHAP显示元学习器跨数据集自适应换主特征(p_S主导CIFAR-100，NASWOT主导ImageNet16-120)；CAST对线性学习器是"救援机制"(τ 0.491→0.560)，树集成收益较小(0.718→0.731)
+  - 可迁移模式："ECDF对齐异构弱信号→设计交互特征→浅层元学习器"适用于任何多噪声指标排序场景(模型筛选/超参预排/研究想法分诊)；坑：ECDF排名随参考池变化、协同特征需按领域重推导、高标签预算下拓扑感知预测器仍占优
+  - **Activation**: zero-cost proxies, few-shot NAS, copula alignment, ECDF, rank fusion, NASWOT, SynFlow, Fisher trace, meta-ensembling, candidate ranking, weak signal fusion
 ### Beyond 11/16: dense Kuramoto networks that resist synchrony
 - [[kuramoto-sync-resistance-split-cluster]] - Kuramoto 同步阈值下界从 11/16 提升到 μ0=(4+2q*)/(7+q*)=0.6929077，q* 为 8 次多项式根；S7 分裂簇模板+区间算术认证 (arXiv: 2610.21271)
   - 模板框架：聚类级三元组 (x,φ,P) 三条件（相位锁定 F=0、抗分裂 c>0、簇模式 L(y)>0）对密度 P 线性 → 最稠密严格模板是凸问题/SDP，任何稳定不动点分组都给模板 → 搜索无损失
