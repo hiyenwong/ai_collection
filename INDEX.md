@@ -1,5 +1,47 @@
 # AI Collection Index
 
+## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 09)
+
+### Common Signals, Spurious Cross-Excitation, and Identification in Multivariate Hawkes Processes
+- [[hawkes-common-signal-spurious-excitation]] - Latent common signals generate apparent directional cross-excitation in Hawkes fits with zero structural interaction; third-order cumulants restore only generic local identification (arXiv: 2610.19428)
+  - Projected kernel phi~=phi+Psi-Psi*phi where Psi is the Kalman filter of the omitted common signal; pure-delay benchmark proves all 4 projected kernels nonnegative+stable -> exact second-order-equivalent Hawkes process exists with Phi=0 (rho(Phi~)~0.83)
+  - Fast-to-slow directional asymmetry index D=1-e^(-kappa*Delta) in weak-signal limit, increasing in both signal strength r=2*beta^2*v/(kappa*Lambda) and delay gap; univariate persistent signal drives fitted branching ratio n~=1-F_c^(-1/2)->1 (apparent criticality, Filimonov-Sornette reproduced: F_c=301, n~0.94)
+  - Theorem 3: normalized (Phi, beta, s3) generically locally identified from integrated (C,K) for d=2,3 (7 moments/7 params, 16/13) but median singular ratio ~3e-4 — identification != estimability; third-order window cumulants ~10% error at 6.8M events, s3 hits bounds
+  - Proxy conditioning reduces filter covariance in Loewner order (NOT entrywise); two exclusion failure modes; SOL illustration: radii 0.9588 vs 0.999 nearly identical within-hour criteria but hourly dispersions 1,593 vs 346,286 — validate fits against unfitted low-frequency moments
+  - **Activation**: Hawkes process, spurious excitation, common signal, identification, third-order cumulants, Whittle estimation, branching ratio, apparent criticality, financial econometrics, contagion, reflexivity, crypto microstructure
+
+### Agent-assisted experimental strategy transfer across quantum processors
+- [[agent-experimental-strategy-transfer-quantum]] - LLM agent develops 3-qubit Grover strategy on one NMR processor, deploys+refines across four others (marked population 0.910-0.959 vs ideal 0.945, <3.8% deviation) (arXiv: 2610.21047)
+  - T2T (target->task package) vs T2E (task->experiment) split; agent invokes deterministic tools (spectroscopy, GRAPE 11-ms/440-segment pulses, tomography), assesses evidence, selects actions; operators keep physical intervention + authorization
+  - Transfer whitelist: model class, procedures, quality criteria, stopping rules, tools; blacklist: device numbers/spectra/response matrices — Q1 fit REJECTED for inheriting Q0 settings, refit locally
+  - Evidence-gated adaptation: Q2 two-consecutive-pass readiness checks; Q4 overlapping spectral lines -> method adaptation (2 resolved quartets + outer lines), 0/9 pairs passed -> STOP acquisition, request operator; Q3 reuses adapted method (P0->P1->P2->P3 strategy refinement accumulates)
+  - Per-device pipeline: local Hamiltonian line-fitting (RMS 1.186 Hz) -> 8x8 response matrix + constrained-inversion correction -> GRAPE robustified over detuning(-40..40Hz) x RF-scale(0.95/1.05) -> tomography validation; historical FAIL verdicts kept immutable, auxiliary sessions instead
+  - **Activation**: strategy transfer, NMR quantum processor, Grover state preparation, agent experiment automation, GRAPE pulse optimization, calibration portability, device drift, readiness checks, T2E, autonomous lab
+
+
+## 2026-10-17 - Reinforcement Learning Research (Cron Job)
+
+### Baselines and Score Centering in Policy Gradient Estimation
+- [[policy-gradient-baselines-score-centering]] - 策略梯度协方差视角审计：regularized IS 下 group-mean baseline (RLOO/Dr.GRPO) 与 score centering 的精确分工——sequence-level IS 中心化冗余，token-level IS + 正则化 ratio 不加 score centering 则有偏 (arXiv: 2610.22263)
+  - RLOO = 样本均值协方差估计器；Dr.GRPO 与之只差 lr 吸收的 (G-1)/G 因子；score centering = 已知均值估计器，任意常量 baseline 下无偏、n=1 可用
+  - 最优 baseline b* = E[R‖D‖²]/E‖D‖² 高于均值奖励（因 μ₁₂=Cov(R,‖s‖²)≠0，长度与奖励相关）；known-mean 估计器方差优势仅在 baseline 靠近 b* 时成立
+  - token-level 估计量可写成单一协方差 σtok=Cov(R,D)，D=Σₜ(s̃ₜ−s̄(hₜ))，s̄(h) 是有限词表和、一次前向可算
+  - **Activation**: policy gradient, baseline, score centering, GRPO, RLOO, importance sampling, off-policy correction, variance reduction
+
+### EliteReplay: Preserving Diverse Solutions in RL Post-Training via Quality-Diversity Search
+- [[elitereplay-quality-diversity-replay-grpo]] - RLVR 行为锐化对策：MAP-Elites 构建每题精英档案 + GRPO 训练全程小权重 length-normalized replay (μ=0.05)，保留基座替代正确策略 (arXiv: 2610.22290)
+  - text-to-SQL: pass@128 74.8% BIRD / 93.2% Spider，U@128 独立策略 9.1 vs 最强基线 6.2 (+50%)；策略保留 62%/60% vs 基线 34-39%
+  - 关键消融：IID 档案不如 QD 档案 (7.4 vs 9.1)；SFT 预热后停止 replay 会塌回 GRPO 水平——replay 必须贯穿 RL 全程
+  - AmbiQT 歧义双解覆盖 27.0% vs 14.2%；MATH-500 OOD pass@1 35.5% 而基线全部跌破基座——replay 兼作 OOD 防遗忘 rehearsal
+  - **Activation**: quality diversity, MAP-Elites, strategy collapse, RLVR, GRPO, replay loss, pass@k, solution diversity, elite archive
+
+### CleanRM: Reward Modeling from Noisy Feedback with a Few Clean Feedback for RLHF
+- [[cleanrm-ot-noise-corrected-reward-modeling]] - 样本级偏好噪声的奖励建模：双头噪声率估计器 + 联合分布 Wasserstein OT 对齐少量干净反馈 + 2×2 无偏代理损失，证明对 clean risk 无偏 (arXiv: 2610.21138)
+  - 关键洞察：反馈噪声本质 sample-wise（指令违规→一致判断；权衡型→高噪声），经典去噪的均匀噪声率假设失效，naive 风险被高噪声样本的梯度主导
+  - 转移方程反演 r̂*=(r−ν̂)/(1−μ̂−ν̂) 恢复干净后验；联合 OT（语义代价=偏好损失+编码器距离）给出条件对齐的可证上界
+  - 三基准 RM R² 全面最优（+0.052/+0.013/+0.032 vs TrainRef）；下游 GRPO 安全对齐 FFT 分数 +79.5% vs naive；HarmBench 越狱提示下唯一持续拒绝的策略
+  - **Activation**: reward modeling, noisy preference, optimal transport, label noise, sample-wise noise, RLHF, clean feedback, unbiased surrogate loss
+
 ## 2026-10-17 - Quantum Mechanics Daily (Cron Job)
 
 ### Diffusion Language Models as Open Quantum Systems
@@ -7214,3 +7256,29 @@
   - Core point: 无验证披露的前提是报告自带可验证性(自包含reproducer一跑便知)；错误类型分开讲——假阳性极少但severity通胀与威胁模型误解真实存在
   - Core point: 可迁移模式：任何"AI产出>>人工审核产能"领域都可分层交付+自验证产物+邀请制；wolfSSL 74/72有效5个成CVE、curl"近年最严重漏洞之一"
   - **Activation**: OSS Scanner, model-generated vulnerability report, coordinated vulnerability disclosure, triage bottleneck, opt-in scanning, LLM false positive security
+
+## 2026-10-17 - Anthropic Research (Cron Job)
+
+### Claude reveals ECDSA curve origins
+- [[ecdsa-seed-origins-lrand48]] - NIST椭圆曲线种子来源逆向：25年悬案=1990年代lrand48以Unix时间戳初始化，非传闻哈希短语；技术链=顶部bit签名→2^17暴力→截断LCG的LLL格规约→逆向步进srand48形式；基点=FreeLIP zrandom小整数种子
+  - Key point: 种子=P-192/224/256/384/521用lrand48()>>23每候选20词、B曲线时间戳减半；10个种子步回全落1997-05~1998-04合理时间戳（已本机复现验证）
+  - Key point: "未解释常数"取证套路可迁移：统计签名扫描→识别vintage生成器→格规约恢复状态→合理时间戳佐证；结论增强"无后门"而非削弱
+  - **Activation**: ECDSA curve origins, NIST curve seeds, lrand48 srand48, truncated LCG lattice LLL, cryptographic constants provenance, FreeLIP zrandom base points
+
+### Designing more efficient quantum circuits with Claude
+- [[reversible-quantum-circuit-ai-design]] - AI闭环自主设计量子电路：纯文本规格+自动评估器53小时超越8个基元最优发表电路(部分12x)；可逆divsteps模逆=从数值对decode分支信息免存储(Lean证明)；Berlekamp-Massey替代扩展欧几里得+4.03亿次采样实测内存预算(665→19 qubits)
+  - Key point: 三层改进缺一不可=方法层(BM固定轮数适配固定门序列)+架构层(解码代替存储)+预算层(统计实测替代最坏情况预留)
+  - Key point: 适合AI的任务三条件=设计可写代码+正确性可机器验证+有客观分数；对策保守偏差=强制多方案并行+定期提示拓宽
+  - **Activation**: reversible divsteps modular inversion, branch information decoding, Berlekamp-Massey quantum decoder, DQI, qubit gate Pareto frontier, Lean verified circuit
+
+### How employment is changing at Anthropic
+- [[ai-native-employment-transformation]] - AI原生组织就业转型实证：初级技术岗27%→9%、agent工时6:1、工程师commit 5x；准实验归因(采用者vs未采用者同月对照+同员工同目录agent代码回滚率无差异)；"元工作"涌现——人类注意力成瓶颈
+  - Key point: 非技术员工编码会话2→90次/月；工程师:PM=17:1且管理者自己也commit；写作团队建context graph后整体转agent prompting与模型eval
+  - Key point: 招聘标准从技术专长转向自主性+判断力；clerk-light组织(行政无膨胀)；四层测量框架=劳动力构成/agent工时比/同员工产出轨迹/瓶颈迁移
+  - **Activation**: AI employment transformation, junior hiring decline, agent hours ratio 6:1, meta-work agent monitoring, adoption quasi-experiment, autonomy judgment hiring
+
+### The AI expectations gap (+ summary page: Working at the frontier shapes expectations)
+- [[ai-expectations-gap-survey-methodology]] - 专家vs公众AI预期差距调查：员工91% vs 公众39%预期2030年Nobel级发现；核心发现=分歧源是亲身体验而非不同经济模型——两组"自己工作暴露→失业预测"梯度完全一致(+10%暴露→+0.4pt失业)
+  - Key point: 方法模板=同题双组+代表性加权+当下判断一致性检验(分离信息差异vs模型差异)+问卷映射到经济模型参数+复测轮验证漂移
+  - Key point: 公众认为采用障碍是人与规则(客户偏好真人/隐私/法规)非技术；员工预期AI做75%自己工作但95%仍预期headcount增长(自动化≠裁员)
+  - **Activation**: expectations gap survey, expert public divergence, own-job exposure unemployment gradient, survey to economic model mapping, so-so technology time savings
