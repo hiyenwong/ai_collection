@@ -1,5 +1,92 @@
 # AI Collection Index
 
+## 2026-10-18 - High-Utility arXiv Papers (Cron Job)
+
+### Learning to Steer LLM Agents and Multi-Agent Systems
+- [[learning-to-steer-llm-agents-and]] - Large language model (LLM)-based agents and multi-agent systems increasingly tackle complex tasks through long-horizon tool use and inter-agent collaboration. However, these systems are prone to devia... (arXiv: 2610.22316v1)
+  - Category: multi-agent-rl
+
+### X-RIC: An Agentic RAN-Intelligent Controller Benchmark for Enhancing Reinforcement Learning
+- [[x-ric-an-agentic-ran-intelligent-controller-benchmark]] - The O-RAN ALLIANCE introduces architectural flexibility through disaggregation and AI-driven control. While the RAN Intelligent Controller (RIC) enables centralized optimization, current AI approaches... (arXiv: 2610.22269v1)
+  - Category: multi-agent-rl
+
+### PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents
+- [[probe-learning-to-audit-policy-compliance]] - Modern agentic systems extend language models with external tools, enabling them to complete complex tasks through multi-turn interactions. As these agents are deployed in consequential settings, they... (arXiv: 2610.22124v1)
+  - Category: multi-agent-rl
+
+### Dexterity from Supervised Play
+- [[dexterity-from-supervised-play]] - How can robots autonomously collect the contact-rich experience needed to learn dexterous manipulation? We present DSP: Dexterity from supervised play, a framework in which a robot learns a play polic... (arXiv: 2610.22340v1)
+  - Category: multi-agent-rl
+
+### DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction
+- [[dropkv-decoupling-residual-output-perturbation-for-near-optimal]] - Key-value (KV) cache management has become a critical bottleneck for scaling Large Language Models (LLMs) to long-context scenarios due to linear memory growth. While recent eviction methods have move... (arXiv: 2610.22130v1)
+  - Category: nlp-llm
+
+### When Reasoning Is Not Enough: Proactive Inquiry for Cross-Modal Safety in Multimodal Large Language Models
+- [[when-reasoning-is-not-enough-proactive]] - Multimodal large language models (MLLMs) can act unsafely when individually benign images and texts are interpreted jointly. Beyond implicit reasoning risk, where reasoning drifts toward harm, we iden... (arXiv: 2610.22068v1)
+  - Category: nlp-llm
+
+### Progress Reward Model for Reinforcement Learning via Large Language Models
+- [[progress-reward-model-for-reinforcement-learning]] - Traditional reinforcement learning (RL) algorithms face significant limitations in handling long-term tasks with sparse rewards. Recent advancements have leveraged large language models (LLMs) to enha... (arXiv: 2610.22056v1)
+  - Category: multi-agent-rl
+
+### TIPS: A Tiny Inference-time Policy for Scaling in Diffusion Language Models
+- [[tips-a-tiny-inference-time-policy-for]] - Masked diffusion language models expose an inference-time choice: which positions become visible after each denoising pass. Many existing decoding methods use hand-designed rules or require visibility... (arXiv: 2610.22099v1)
+  - Category: multi-agent-rl
+
+### 3DCodeVerse: Exploring 3D Worlds as Code
+- [[3dcodeverse-exploring-3d-worlds-as-code]] - We introduce 3DCodeVerse, a research ecosystem that enables coding agents to create editable and verifiable 3D content at scale. 3DCodeVerse comprises large-scale, high-quality datasets of executable ... (arXiv: 2610.22341v1)
+  - Category: multi-agent-rl
+
+### The importance of tensor handling and implementation of physics-informed DeepONets
+- [[the-importance-of-tensor-handling-and]] - Physics-informed neural networks (PINNs) reduce or eliminate the need for large labelled datasets by enforcing governing equations during training. Physics-informed Deep Operator Networks (PI-DeepONet... (arXiv: 2610.22157v1)
+  - Category: neuroscience
+
+### Learning from Unverified Peers via Shared Residual Distillation
+- [[learning-from-unverified-peers-via-shared]] - A language model can generate several solutions to the same problem, some leading to correct answers and others to incorrect ones. Many post-training methods turn these trajectories into learning sign... (arXiv: 2610.22080v1)
+  - Category: multi-agent-rl
+
+### AI Consilium: a Benchmark of LLM Clinical Multidisciplinary Second Opinions
+- [[ai-consilium-a-benchmark-of-llm]] - Large language models (LLMs) can generate differential diagnoses for complex cases, but a useful second opinion must also be factually grounded, clinically coherent, actionable, and safe. We developed... (arXiv: 2610.22298v1)
+  - Category: nlp-llm
+
+### CAT-alyzing Honesty: Continuous Adversarial Training for Transferable LLM Honesty
+- [[cat-alyzing-honesty-continuous-adversarial-training-for]] - Large language models (LLMs) are becoming prevalent in scenarios where honesty is critical. However, despite alignment training, these models still exhibit dishonest behaviour, such as outputting clai... (arXiv: 2610.22292v1)
+  - Category: multi-agent-rl
+
+### Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries
+- [[librarian-agents-training-llms-to-curate]] - Reasoning over long document contexts remains a challenge for large language models (LLMs). Standard retrieval methods are inherently reactive, bottlenecking agents with complex, cross-document reason... (arXiv: 2610.22273v1)
+  - Category: multi-agent-rl
+
+### Skill-Decoupled On-Policy Expert Distillation for Unified Vision-Language Models
+- [[skill-decoupled-on-policy-expert-distillation-for-unified]] - Reinforcement learning (RL) can elicit specialized visual capabilities in vision-language models (VLMs), yet jointly optimizing heterogeneous objectives often introduces cross-capability gradient conf... (arXiv: 2610.22217v1)
+  - Category: multi-agent-rl
+
+### LIBERO-PeRM: Benchmarking Personalized Robotic Manipulation
+- [[libero-perm-benchmarking-personalized-robotic-manipulation]] - Personalization is essential for general-purpose robots to transition into household environments and achieve true practicality. While general robotic manipulation has been extensively studied, person... (arXiv: 2610.22372v1)
+  - Category: multi-agent-rl
+
+### Shortcut Sensitivity in Agent-Safety Evaluations
+- [[shortcut-sensitivity-in-agent-safety-evaluations]] - AI agents take actions through tools. Some actions are sensitive, so guards that supervise them must themselves be evaluated reliably. Yet the data used to evaluate a guard can include cues that make ... (arXiv: 2610.22243v1)
+  - Category: multi-agent-rl
+
+### Multi-SFT: Permissively-Licensed Multilingual Instruction-Following
+- [[multi-sft-permissively-licensed-multilingual-instruction-following]] - Supervised fine-tuning datasets remain overwhelmingly English-centric and commercially restricted, as their content is frequently generated by proprietary models whose terms of service forbid training... (arXiv: 2610.22086v1)
+  - Category: nlp-llm
+
+### Designing Transformers for Continuous Diffusion Language Models
+- [[designing-transformers-for-continuous-diffusion-language]] - Continuous diffusion language models (CDLMs) offer an alternative approach to parallel language generation; however, most existing studies directly use transformer architectures from either causal lar... (arXiv: 2610.22330v1)
+  - Category: nlp-llm
+
+### A team of Gemini 4 Argon agents beats Minecraft
+- [[a-team-of-gemini-4-argon]] - We placed four Gemini 4 Argon agents in a sandboxed Minecraft survival world and gave them one goal: defeat the Ender Dragon. Each agent controlled a player via an open-source library called Mineflaye... (arXiv: 2610.22319v1)
+  - Category: multi-agent-rl
+
+### Causal Integrated Gradients: Scalable Feature Attribution Along Causal Paths
+- [[causal-integrated-gradients-scalable-feature-attribution]] - Existing feature attribution methods that account for feature dependencies do not scale to high dimensions. We propose causal integrated gradients (CIG) and causal expected gradients (CEG), which exte... (arXiv: 2610.22126v1)
+  - Category: nlp-llm
+
+
 ## 2026-10-18 - Neuroscience Research (Cron Job)
 
 ### Global synchronization in time-varying directed higher-order networks
