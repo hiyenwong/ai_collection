@@ -119,6 +119,20 @@
   - 可迁移: KL后验收敛是任何迭代检索agent的通用停止信号；停止策略必须与聚合器联合设计(投票计数/noisy-OR结论需重验证)
   - **Activation**: publication bias, evidence drift, retrieval stopping criterion, KL divergence convergence monitor, process reward model, noisy-OR, causal knowledge graph
 
+### Retrieved but Not Read: Understanding Why Search-Augmented LLMs Fail to Use Available Evidence
+- [[retrieved-not-read-evidence-use-failure]] - 搜索增强LLM的证据使用失败审计：snippet-only场景(不打开源页)集中了绝大多数过期答案(6.4% vs integrated 1.3%)与不忠实引用(6.4% vs 2.3%)；检索值被提升但旧参数值未被充分压制，最终层反超 (arXiv: 2610.21731)
+  - 双值时变事实基准(225条截止后事实，旧值+新值对照孪生评分)+冻结检索协议(同一10结果菜单，真值页种子位保证可达)+控制事实floor；跨模型失败共享OR 1.84-6.46证明现象模型通用
+  - 机制：logit lens/Jacobian lens显示失败案例中检索值早期上层排名更高(∆new>0, p≤0.04)但旧值最终层反超——失败=压制不足非提升缺失；81.8%过期答案的on-claim引用不忠实 vs 答案最新时0.9%
+  - 干预排序：直接在prompt提供源页面(14/50→0/50过期背书) > 每次开页后重述完整问题(恢复26.1%失败)；LLM marker只能给通过性结论、不利标签须人工确认的评分不对称设计
+  - **Activation**: search-augmented LLM, snippet reliance, stale answers, unfaithful citations, evidence use audit, frozen retrieval, temporal facts benchmark, logit lens, reading depth
+
+### Stability of Quantum LDPC States under Local Pauli Noise
+- [[qldpc-cmi-stability-pauli-noise]] - qLDPC码投影态的混合态相稳定性：局部Pauli噪声下CMI I(A:C|B)随缓冲区宽度指数衰减，弱噪声(误差簇界)与强噪声(信息渗流界)两机制夹住解码转变，Nishimori点pc≈0.109居中 (arXiv: 2610.22357)
+  - 弱噪声：A-C关联需误差簇跨越缓冲区(指数罕见)，α=e^(Dw)·max_g Σq_i(u)q_i(u+g)<0.2；强噪声：缓冲区几乎无信息，关联仅沿仍具信息量的qudit链存续——两界互补，toric code X-dephasing下 p<0.0286 或 p>0.1464
+  - 证明模式：数据处理约化(剥离A/C噪声)→综合征约化(混合态纠缠问题→经典误差位形关联问题，熵增=H(Σ̂_R))→簇/渗流概率界→小CMI⇒准局域Petz恢复(常数层, O(poly(log n)/ε))
+  - 数值验证：p_EC=(3−2√2)/6≈0.0286(条件6√(p(1−p))<1，pdftotext丢失根号会得错误0.211)、p_IP=(1−1/√2)/2≈0.1464、一般Thm1对toric仅p<5e-6；子系统三分有反例需空间均匀性；强噪声界要求缓冲区无逻辑算符
+  - **Activation**: qLDPC, conditional mutual information, mixed-state phases, Pauli noise, toric code, Nishimori point, Petz recovery, topological entropy, error-cluster bound, information percolation
+
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 17)
 
 ### The end-of-month option in futures contracts and the Gittins index of holding the underlying
