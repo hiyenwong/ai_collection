@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-10-18 - Quantum Mechanics Daily (Cron Job)
+
+### Practical Fidelity Estimation for Noisy Quantum Devices Using Direct and Survival-Probability-Based Protocols
+- [[dfe-survival-probability-fidelity]] - DFE重要性采样+存活概率L2优化展开双协议免层析保真度估计：读出衰减校正(1-2α)^w、F_Q=⟨ρ0|K†K|ρ0⟩代理与F_phys诚实区分 (arXiv: 2610.21606)
+  - DFE无偏估计器X=X_σ(k)/X_ρ(k)~p(k)=X_ρ(k)²：E[X]=Tr(ρσ)精确成立（MC验证err~1.6e-4@200k样本）；去极化闭式锚点F=1-p(1-1/d)机器精度吻合
+  - L2优化系数解线性系统G_{mn}a_n=b_m（G=(1-g^{m+n+1})/(m+n+1), b=(1-g^{m+3/2})/(m+3/2)）：M=3时RMS 3.9e-3 vs Taylor 0.55，高噪声区[g,0.3]赢2个数量级——正是论文声称的regime
+  - 诚实边界：F_Q≠F_phys除非误差映射E为PSD（去极化p=0.2时0.73 vs 0.85）；脉冲逆C≃e^{2Ω1}仅当交换子修正可忽略；仿真用exact moments未证SPAM鲁棒性
+  - **Activation**: direct fidelity estimation, importance sampling Pauli, survival probability, L2-optimized expansion, SPAM robustness, readout attenuation correction, adjoint-cycle proxy, quantum benchmarking
+
+### Awakening as a Trait-Level Transformation of Consciousness (backfill sync-fix)
+- [[awakening-trait-consciousness-edm]] - 觉醒=意识全局结构分布级特质重组而非短暂状态：稳定去具象化基线+动力灵活性双参数 (arXiv: 2610.20856)
+  - Sibling session已建skill但未提交INDEX——本次补录；分布变换视角区分适应性禅修变化与解离病理
+  - **Activation**: trait awakening, dereification, contemplative neuroscience, nondual awareness, consciousness distribution transformation
+
+### How Mobile Oscillators Reshape Dynamical Robustness in Complex Networks (backfill sync-fix)
+- [[mobile-oscillator-robustness-aging]] - 移动Stuart-Landau振子网络：度异质性降低老化转变鲁棒性，时间交互网络映射到有效均场耦合 (arXiv: 2610.16608)
+  - Sibling session已建skill但未提交INDEX——本次补录；N个移动agent随机行走仅在共位时耦合，随机行走将时序交互结构坍缩为均匀有效耦合
+  - **Activation**: mobile oscillators, aging transition, amplitude death, temporal networks, degree heterogeneity, swarm resilience
+
+
 ## 2026-10-18 - Neuroscience Research (Cron Job)
 
 ### How Shared Representations Become Specialized: Formation, Maintenance, and Latent Susceptibility
@@ -4208,6 +4228,38 @@
   - 在线tokenize/pack/mix是有状态n-to-m变换，破坏样本索引；离线物化对视频等模态不可行
   - 恢复成本不随训练进度增长；ablation差异可归因参数而非数据顺序噪声
   - **Activation**: deterministic data loading, foundation model training, data pipeline, checkpoint resume, GPU topology, sample packing, online tokenization, shuffle reproducibility
+
+## 2026-10-18 - OpenAI Research (Cron Job)
+
+### Our approach to EU text provenance rules (textGrain)
+- [[textgrain-entropy-calibrated-watermarking]] - 熵校准文本水印：水印=OT耦合(W,Ξ)，KL正则=被移除采样熵=互信息，β预算直接限定水印强度且检测器无需知道预算；keyed词表分块Sinkhorn降维，块内保留原始相对概率
+  - 核心数据：1%假阳性下200token~80%/400token~95%检出，数学类内容显著更低；同义词替换10%→92%→66%、25%→17%；Astra各基准水印前后无显著差异；内部对比胜SynthID-Text
+  - 部署模板：API全球opt-in默认关、EU区自动开、检测器仅限获批研究者（公开检测器=教攻击者规避阈值）；明示"水印不证明"清单（人类贡献/所有权/用户/准确性均不可证，未检出≠人类创作）
+  - 兼容speculative sampling（draft/target共享key，joint verification+residual correction免二次水印）
+  - **Activation**: LLM text watermarking, entropy budget watermark, optimal transport coupling, Gumbel cost KL regularization, provenance detection policy, EU AI Act text identification, SynthID-Text comparison
+
+### Disrupting AI-enabled false front operations
+- (Obsidian only, no skill - threat intel report) - 俄"Dark Clark"与伊朗"记者皮阵"两个隐蔽影响行动被封禁；俄方按IO Breakout Scale为Category 5（30案例中首个5级）
+  - 30案例矩阵结论：向真实媒体投放内容的行动全落Category 4-5，纯社媒分发的全在1-3——分发渠道决定影响力上限
+  - AI作用=传统pre-AI工作流的效率放大（内部报告起草为主），非新型攻击；假门面行动对"负责任披露"特别脆弱（曝光即失效）
+  - **Activation**: influence operations, false front entities, Breakout Scale, media laundering, threat intelligence disclosure
+
+### Bringing GPT-Rosalind to academic research labs
+- (Obsidian only, no skill - program announcement) - Rosalind Academic Plan：学术实验室30席位×12个月$0+trusted-access审批GPT-Rosalind；研究数据默认不训练；含高后果病原体请求的拒答边界示例（给框架拒绝操作细节）
+  - **Activation**: GPT-Rosalind, academic plan, life sciences model, trusted access
+
+### How Third Moment Research runs 10,000 agents for 36+ hours
+- (Obsidian only, no skill - customer story, engineering lessons) - 10k并发agent×36-48h自主研究会话、单日1T token的自我改进agent系统：弱点→合成场景→训练闭环
+  - 双层harness监督：外层GPT-6 Sol/6.1 Sol把Codex当subagent，未完成任务检查轨迹→retry/terminate/escalate人工——长时程agent监督通用架构
+  - 关键工程教训：agent轮询等待结果=token浪费+上下文污染，解药在基础设施层（Codex定位回测瓶颈，缓存+memory-packing，3h→3-5min，-97%）
+  - 模型世代能力阶梯：5.5前只能执行规定实验→5.5/5.6能据结果设计后续→GPT-6系能数百并行subagent追根因
+  - **Activation**: long-horizon agents, outer harness supervision, self-improving agent loop, agent polling waste, subagent orchestration
+
+### The EU's next chapter in AI is agentic
+- (Obsidian only, no skill - economic report) - EU agentic AI采用报告：Enterprise客户Codex+ChatGPT Work输出token占比>50%；SMB agentic周活5月以来8.1×；国别占比Slovenia 22%↔Lithuania 85%
+  - Frontier gap双层结构：EU frontier(top 10%)人均token=EU典型4×+，但global frontier再超EU frontier 2×+；EU仅占全球frontier企业10%
+  - 用token流量而非问卷测"agentic化"的方法论
+  - **Activation**: agentic AI adoption, EU AI usage, token-based measurement, frontier firm gap
 
 ## 2026-10-08 - OpenAI Research (Cron Job)
 
