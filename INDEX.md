@@ -133,6 +133,14 @@
   - 数值验证：p_EC=(3−2√2)/6≈0.0286(条件6√(p(1−p))<1，pdftotext丢失根号会得错误0.211)、p_IP=(1−1/√2)/2≈0.1464、一般Thm1对toric仅p<5e-6；子系统三分有反例需空间均匀性；强噪声界要求缓冲区无逻辑算符
   - **Activation**: qLDPC, conditional mutual information, mixed-state phases, Pauli noise, toric code, Nishimori point, Petz recovery, topological entropy, error-cluster bound, information percolation
 
+### The Information Bottleneck is NP-hard
+- [[information-bottleneck-np-hardness]] - IB最优值计算NP-hard：clique-inflation归约+熵Turán cost下界，不可近似1/(216|X|^1.5)；Blahut-Arimoto仅为驻点启发式 (arXiv: 2610.22272)
+  - 归约机器: 后验代价分解 g_W(P)=H(WP)−½H(P) 把 sup-over-encoders 化为后验混合分解；恒等式 D(P‖π⊗π)=2g_G(P) + 定向Motzkin–Straus ⟹ cost 下界 c_ω=−½log(1−1/ω)，等号iff最大团均匀分布
+  - Gap注入: 无k-clique时父边编码器T0最优(L=Λ0)；有k-clique时以p=1/(12m²)混入U_K后验——线性增益λΔc 压倒二次χ²扰动损失，δ=1/(32Nm⁴)≥1/(72|X|^1.5)，K4边界实例严格取等
+  - 推广: reveal-padding使 L_β(P̃_XZ)=κ_β·L_{1/2}(P_XY)（κ_β=2min{β,1−β}）；IB-Threshold用只依赖(N,k)的R*闭式夹率预算绕开循环依赖
+  - 数值验证32/32: T0==Λ0阳性对照双实例1e-13、1500合法随机编码器0违规、T1增益4.02×δ、R*公式双向0误差；调试教训=验证脚本I(Y;T)漏H(Y)项致上界检查空洞通过、dirichlet后验/信道混淆可伪造+3.44bits违规（先跑阳性对照）
+  - **Activation**: information bottleneck NP-hard, clique reduction, Motzkin-Straus, entropic Turan, additive inapproximability, Blahut-Arimoto stationary point, posterior cost decomposition
+
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 17)
 
 ### The end-of-month option in futures contracts and the Gittins index of holding the underlying
