@@ -9,6 +9,14 @@
   - 数值验证全通过：Θ_w四个尺度+w=2/tanh相对误差≤1e-4；k=25模式25000步GD完全冻结在初始误差而k=1收敛99.2%（F-principle直接复现）；GGᵀ/GᵀG同谱→全局最优处Hessian=极度平坦景观/有效维度
   - **Activation**: spectral bias, F-principle, orthogonal polynomial, Chebyshev coefficients, Bernstein ellipse, dynamics matrix, graded matrix, flat loss landscape, effective dimension
 
+### Decoding Naturalistic Speech from fMRI with Temporal Modeling and Multimodal Alignment
+- [[noema-fmri-naturalistic-speech-decoding]] - 时间卷积fMRI解码器对齐多模态语音嵌入，2000候选Top-10检索42.7%（chance 0.5%） (arXiv: 2610.22049)
+  - 7帧fMRI窗口（中心帧对齐血流动力学滞后+2.5s）→逐帧空间投影H=4096+dropout0.7→2个残差TCN块(k=3,d=1,2,感受野7帧)→中心帧线性读出D=8704；253.8M参数（算术验证精确匹配）
+  - 目标=三个冻结编码器拼接：Qwen3-Embedding文本4096d(10s)+LCO-Omni音频3584d(10s)+Parakeet ASR 1024d(Δ窗)，各自ℓ2归一化后拼接；CLIP对比损失τ=6.2e-3，会话级切分防时间泄漏
+  - 消融链：T→T+A→T+A+S 27.6→35.5→42.7%；1→7帧 28.7→42.7%（Context MLP 33.7%@7帧且参数更多623M）；帧序固定打乱重训 NOEMA −4.26 vs Context MLP +0.33 → 优势来自时间归纳偏置而非容量
+  - 扩展检索集5.1×（同播客50集8494干扰段，免重训）中位秩仅+66 vs +112/+191；积分梯度→外侧颞叶语言网络（Fedorenko/Pallier一致）
+  - **Activation**: fMRI decoding, naturalistic speech retrieval, temporal convolutional network, multimodal stimulus embeddings, hemodynamic lag, session-disjoint split, distractor generalization, CLIP contrastive alignment
+
 ## 2026-10-18 - High-Utility arXiv Papers (Cron Job)
 
 ### Learning to Steer LLM Agents and Multi-Agent Systems
