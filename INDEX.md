@@ -1,5 +1,29 @@
 # AI Collection Index
 
+## 2026-10-18 - Reinforcement Learning Research (Cron Job)
+
+### Wrong Votes, Right Gradients: Why Majority-Vote Rewards Track Verifiable RL
+- [[batch-level-self-label-rl]] - 自标签RL何时可替代验证奖励：batch级梯度视角，prompt自身梯度仅占其输出变化<1%，错误标签只有在跨prompt共享方向时才误导更新 (arXiv: 2610.20898)
+  - 分解 G_mv=(1−β)G_gold+E⊥：β=shrinkage无害（自适应优化器吸收），E⊥=misdirection才改方向；MV误差与random-reward null同样不相干(α≈1/2)，c∞=X/√(YZ)=1
+  - 随机翻转30% gold标签不改变更新方向，共享规则翻转同比例则摧毁之——误差结构(coherence)而非误差率决定安全性；learned reward model因在每题偏好同类响应而注入相干误差，属于高危源
+  - 局部等价：gold训练在held-out majority accuracy仍领先；MV主要锐化单样本答案。审计配方：probe集上估计α，≈1/2可放量自标签，→1回退验证
+  - **Activation**: majority-vote reward, TTRL, self-generated labels, label-free RL, error coherence, batch update cosine, shrinkage misdirection
+
+### Hindsight-Privileged RLVR: Single-Rollout Token Credit Without Group Sampling
+- [[hindsight-privileged-rlvr]] - G=1单rollout RLVR：冻结生成策略对比因果/事后全词表分布，JSD(p_j,q_j)/log2作token权重×历史中心化奖励(R_i−b_k)得有界信用|A_j|≤1 (arXiv: 2610.20497)
+  - 历史基线不变性引理：任意H_k-可测b_k∈[0,1]微分时固定→E[(R−b_k)g]=∇J无偏；失败轨迹天然负信用；b_k=先前轨迹均值（当前batch构造完优势后才入历史）
+  - ALFWorld上GRPO 43.2%(4B)/49.0%(8B)梯度记录为零 vs HP-RLVR无零梯度步；同预算快1.21×(数学)/1.46×(代码)/2.30×(ALFWorld省255.8 NPU-h)
+  - 数学Avg@12三尺寸全胜(+1.1~+2.7pts)；代码/ALFWorld GRPO仍胜——诚实结论：信号可用性+成本胜，非精度胜；单seed，作者自declared不构成统计优越性
+  - **Activation**: single rollout RLVR, GRPO all-same reward, hindsight conditioning, JSD token weight, historical reward centering, G=1 training
+
+### Failure Is the Mother of Success: Recovering Supervision with Grounding Hindsight (RSHD)
+- [[rshd-grounding-hindsight-distillation]] - GRPO全失败组零梯度(Pr=(1−p0)^n)→模型写诊断笔记+replay准入测试(r̂>p̂)+按per-token lift clip(l_t−l_s,0,c)加权蒸馏回无条件策略 (arXiv: 2610.21018)
+  - Repair basin理论：逃逸界ε的修复核m次重试成功率≤mε，保策略修复ε=0永不成功——换策略只能靠失败上下文重启；准入=富化非纯化 P(正确|准入)=p_s/(1−(1−p_s)^k)≥p_s
+  - Qwen3-4B MATH-500: 84.5 vs GRPO 76.9（OPSD 73.6/SEED 75.2均不如纯GRPO——未测试笔记有害，replay测试是承重结构）；Level-5 +10.8pts
+  - Gemma-4-E4B 0/8永不解决切分+8.5pts（66题6.4→15.0），sometimes-solved −0.4——增益全部在策略完全不会的问题上；每9条笔记1条泄露答案→leak屏必须前置
+  - **Activation**: all-fail GRPO group, zero advantage, failure-conditioned exploration, hindsight note, replay admission test, distill failure lessons
+
+
 ## 2026-10-18 - Quantum Mechanics Daily (Cron Job)
 
 ### Practical Fidelity Estimation for Noisy Quantum Devices Using Direct and Survival-Probability-Based Protocols
