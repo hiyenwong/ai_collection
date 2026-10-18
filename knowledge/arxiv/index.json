@@ -10890,7 +10890,8 @@
     "utility": 1.0,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08780-depthworld-3d-world-model-for-robot-manipulation",
-    "added_date": "2026-10-07T22:02:49.487706"
+    "added_date": "2026-10-07T22:02:49.487706",
+    "id": "2610.08780"
   },
   {
     "arxiv_id": "2610.08760",
@@ -10898,7 +10899,8 @@
     "utility": 1.0,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08760-worldsonus-bringing-sound-to-worlds",
-    "added_date": "2026-10-07T22:02:49.487714"
+    "added_date": "2026-10-07T22:02:49.487714",
+    "id": "2610.08760"
   },
   {
     "arxiv_id": "2610.08761",
@@ -10906,7 +10908,8 @@
     "utility": 0.99,
     "category": "other",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08761-verifine-scaling-verification-for-self-improvement-in-embodi",
-    "added_date": "2026-10-07T22:02:49.487716"
+    "added_date": "2026-10-07T22:02:49.487716",
+    "id": "2610.08761"
   },
   {
     "arxiv_id": "2610.08452",
@@ -10914,7 +10917,8 @@
     "utility": 0.97,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08452-agentic-autorag-rag-pipeline-optimization-through-reasoning",
-    "added_date": "2026-10-07T22:02:49.487717"
+    "added_date": "2026-10-07T22:02:49.487717",
+    "id": "2610.08452"
   },
   {
     "arxiv_id": "2610.08388",
@@ -10922,7 +10926,8 @@
     "utility": 0.97,
     "category": "other",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08388-foresight-over-graph-reasoning-beyond-local-horizons-for-kno",
-    "added_date": "2026-10-07T22:02:49.487719"
+    "added_date": "2026-10-07T22:02:49.487719",
+    "id": "2610.08388"
   },
   {
     "arxiv_id": "2610.08720",
@@ -10930,7 +10935,8 @@
     "utility": 0.96,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08720-worldsolver-can-llm-agents-simulate-the-physical-dynamics-vi",
-    "added_date": "2026-10-07T22:02:49.487720"
+    "added_date": "2026-10-07T22:02:49.487720",
+    "id": "2610.08720"
   },
   {
     "arxiv_id": "2610.08662",
@@ -10938,7 +10944,8 @@
     "utility": 0.96,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08662-paranoiaeval-benchmarking-unnecessary-defensive-work-in-agen",
-    "added_date": "2026-10-07T22:02:49.487721"
+    "added_date": "2026-10-07T22:02:49.487721",
+    "id": "2610.08662"
   },
   {
     "arxiv_id": "2610.08642",
@@ -10946,7 +10953,8 @@
     "utility": 0.96,
     "category": "ai-safety-eval",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/ai-safety-eval/arxiv-2610-08642-hygienerobobench-benchmarking-hygiene-aware-planning-for-hou",
-    "added_date": "2026-10-07T22:02:49.487723"
+    "added_date": "2026-10-07T22:02:49.487723",
+    "id": "2610.08642"
   },
   {
     "arxiv_id": "2610.08513",
@@ -10954,7 +10962,8 @@
     "utility": 0.95,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08513-wiki-talkie-multilingual-benchmarking-of-persona-based-agent",
-    "added_date": "2026-10-07T22:02:49.487724"
+    "added_date": "2026-10-07T22:02:49.487724",
+    "id": "2610.08513"
   },
   {
     "arxiv_id": "2610.08432",
@@ -10962,7 +10971,8 @@
     "utility": 0.95,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08432-emho-embodied-agent-harness-optimization-via-experience-trac",
-    "added_date": "2026-10-07T22:02:49.487725"
+    "added_date": "2026-10-07T22:02:49.487725",
+    "id": "2610.08432"
   },
   {
     "arxiv_id": "2610.08680",
@@ -10970,7 +10980,8 @@
     "utility": 0.94,
     "category": "nlp-llm",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/arxiv-2610-08680-a-systematic-study-of-small-language-models-on-abstract-reas",
-    "added_date": "2026-10-07T22:02:49.487726"
+    "added_date": "2026-10-07T22:02:49.487726",
+    "id": "2610.08680"
   },
   {
     "arxiv_id": "2610.08418",
@@ -10978,7 +10989,8 @@
     "utility": 0.92,
     "category": "neuroscience",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/arxiv-2610-08418-from-the-drosophila-visual-connectome-to-general-purpose-com",
-    "added_date": "2026-10-07T22:02:49.487728"
+    "added_date": "2026-10-07T22:02:49.487728",
+    "id": "2610.08418"
   },
   {
     "arxiv_id": "2610.08528",
@@ -10986,7 +10998,8 @@
     "utility": 0.9,
     "category": "vision-generative",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/vision-generative/arxiv-2610-08528-medcore-criteria-grounded-clinical-reasoning-for-interpretab",
-    "added_date": "2026-10-07T22:02:49.487729"
+    "added_date": "2026-10-07T22:02:49.487729",
+    "id": "2610.08528"
   },
   {
     "arxiv_id": "2610.08782",
@@ -10994,7 +11007,8 @@
     "utility": 0.89,
     "category": "other",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08782-4d-hof-hand-object-flow-matching-for-feed-forward-4d-interac",
-    "added_date": "2026-10-07T22:02:49.487730"
+    "added_date": "2026-10-07T22:02:49.487730",
+    "id": "2610.08782"
   },
   {
     "arxiv_id": "2610.08541",
@@ -11002,7 +11016,8 @@
     "utility": 0.89,
     "category": "neuroscience",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/arxiv-2610-08541-micro-neural-policies-for-safe-real-time-robotic-control",
-    "added_date": "2026-10-07T22:02:49.487731"
+    "added_date": "2026-10-07T22:02:49.487731",
+    "id": "2610.08541"
   },
   {
     "arxiv_id": "2610.08678",
@@ -11010,7 +11025,8 @@
     "utility": 0.87,
     "category": "nlp-llm",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/arxiv-2610-08678-secure-speculative-decoding-for-large-language-models",
-    "added_date": "2026-10-07T22:02:49.487732"
+    "added_date": "2026-10-07T22:02:49.487732",
+    "id": "2610.08678"
   },
   {
     "arxiv_id": "2610.08659",
@@ -11018,7 +11034,8 @@
     "utility": 0.87,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08659-selective-transfer-of-rl-updates-for-visual-reasoning",
-    "added_date": "2026-10-07T22:02:49.487734"
+    "added_date": "2026-10-07T22:02:49.487734",
+    "id": "2610.08659"
   },
   {
     "arxiv_id": "2610.08595",
@@ -11026,7 +11043,8 @@
     "utility": 0.87,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08595-one-for-all-all-for-one-coordinated-multi-agent-diffusion-st",
-    "added_date": "2026-10-07T22:02:49.487735"
+    "added_date": "2026-10-07T22:02:49.487735",
+    "id": "2610.08595"
   },
   {
     "arxiv_id": "2610.08510",
@@ -11034,7 +11052,8 @@
     "utility": 0.87,
     "category": "physics-math",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/physics-math/arxiv-2610-08510-cylindrical-geodesic-flow-matching-for-quasiperiodic-physiol",
-    "added_date": "2026-10-07T22:02:49.487736"
+    "added_date": "2026-10-07T22:02:49.487736",
+    "id": "2610.08510"
   },
   {
     "arxiv_id": "2610.08413",
@@ -11042,7 +11061,8 @@
     "utility": 0.86,
     "category": "other",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08413-knowing-when-not-to-answer-cross-domain-and-multi-turn-gener",
-    "added_date": "2026-10-07T22:02:49.487737"
+    "added_date": "2026-10-07T22:02:49.487737",
+    "id": "2610.08413"
   },
   {
     "arxiv_id": "2610.08647",
@@ -11050,7 +11070,8 @@
     "utility": 0.85,
     "category": "multi-agent-rl",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/arxiv-2610-08647-squidagent-parallelize-wisely-coordinate-efficiently",
-    "added_date": "2026-10-07T22:02:49.487738"
+    "added_date": "2026-10-07T22:02:49.487738",
+    "id": "2610.08647"
   },
   {
     "arxiv_id": "2610.08533",
@@ -11058,7 +11079,8 @@
     "utility": 0.85,
     "category": "other",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/other/arxiv-2610-08533-beyond-perturbation-magnitude-direction-dependent-responses",
-    "added_date": "2026-10-07T22:02:49.487739"
+    "added_date": "2026-10-07T22:02:49.487739",
+    "id": "2610.08533"
   },
   {
     "id": "2610.10536",
@@ -11979,5 +12001,297 @@
     "category": "multi-agent-rl",
     "utility": 0.85,
     "date_added": "2026-10-17"
+  },
+  {
+    "id": "2610.22316v1",
+    "title": "Learning to Steer LLM Agents and Multi-Agent Systems",
+    "authors": "Leyang Shen, Yaxin Gong, Yang Zhang, Chenxiao Fan, Jiakai Wang...",
+    "url": "https://arxiv.org/abs/2610.22316v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.MA"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/learning-to-steer-llm-agents-and",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22269v1",
+    "title": "X-RIC: An Agentic RAN-Intelligent Controller Benchmark for Enhancing Reinforcement Learning",
+    "authors": "Adhwaa Al-Chaab, Ayman Younis, Dario Pompili",
+    "url": "https://arxiv.org/abs/2610.22269v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI",
+      "cs.AR"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/x-ric-an-agentic-ran-intelligent-controller-benchmark",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22124v1",
+    "title": "PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents",
+    "authors": "Kshitij Mishra, Abhijith Sharma, Nils Lukas, Salem Lahlou",
+    "url": "https://arxiv.org/abs/2610.22124v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/probe-learning-to-audit-policy-compliance",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22340v1",
+    "title": "Dexterity from Supervised Play",
+    "authors": "Botao He, Yiming Dou, Yiannis Aloimonos, Jitendra Malik, Akash Sharma...",
+    "url": "https://arxiv.org/abs/2610.22340v1",
+    "utility": 0.94,
+    "categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/dexterity-from-supervised-play",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22130v1",
+    "title": "DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction",
+    "authors": "Aozhong Zhang, Selcuk Gurses, Yanxia Deng, Naigang Wang, Chi-Chun Liu...",
+    "url": "https://arxiv.org/abs/2610.22130v1",
+    "utility": 0.94,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/dropkv-decoupling-residual-output-perturbation-for-near-optimal",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.22068v1",
+    "title": "When Reasoning Is Not Enough: Proactive Inquiry for Cross-Modal Safety in Multimodal Large Language Models",
+    "authors": "Wei Cai, Jian Zhao, Yuchen Yuan, Xuelong Li",
+    "url": "https://arxiv.org/abs/2610.22068v1",
+    "utility": 0.94,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/when-reasoning-is-not-enough-proactive",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.22056v1",
+    "title": "Progress Reward Model for Reinforcement Learning via Large Language Models",
+    "authors": "Xiuhui Zhang, Ning Gao, Xingyu Jiang, Yihui Chen, Yuheng Pan...",
+    "url": "https://arxiv.org/abs/2610.22056v1",
+    "utility": 0.93,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/progress-reward-model-for-reinforcement-learning",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22099v1",
+    "title": "TIPS: A Tiny Inference-time Policy for Scaling in Diffusion Language Models",
+    "authors": "Ya-Shi Zhang, Jian Tang, Pierre-Andr\u00e9 No\u00ebl, Oleksiy Ostapenko",
+    "url": "https://arxiv.org/abs/2610.22099v1",
+    "utility": 0.92,
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/tips-a-tiny-inference-time-policy-for",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22341v1",
+    "title": "3DCodeVerse: Exploring 3D Worlds as Code",
+    "authors": "Yipeng Gao, Ziyao Zeng, Jinfa Huang, Yijiang Li, Haolin Xiong...",
+    "url": "https://arxiv.org/abs/2610.22341v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/3dcodeverse-exploring-3d-worlds-as-code",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22157v1",
+    "title": "The importance of tensor handling and implementation of physics-informed DeepONets",
+    "authors": "Nahum Banks, Gustavo A. M. de Almeida, Sergio Maldonado",
+    "url": "https://arxiv.org/abs/2610.22157v1",
+    "utility": 0.9,
+    "categories": [
+      "cs.LG",
+      "physics.comp-ph"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/the-importance-of-tensor-handling-and",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.22080v1",
+    "title": "Learning from Unverified Peers via Shared Residual Distillation",
+    "authors": "Feiyang Chen, Runze Ma, Zichen Wang, Jiong Lou, Zihan Wang...",
+    "url": "https://arxiv.org/abs/2610.22080v1",
+    "utility": 0.9,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/learning-from-unverified-peers-via-shared",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22298v1",
+    "title": "AI Consilium: a Benchmark of LLM Clinical Multidisciplinary Second Opinions",
+    "authors": "Alexey A. Bokov, Ivan I. Panin, Nikolay B. Nechaev, Mikhail Yu. Valkov, Valeria Yu. Chernina...",
+    "url": "https://arxiv.org/abs/2610.22298v1",
+    "utility": 0.89,
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/ai-consilium-a-benchmark-of-llm",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.22292v1",
+    "title": "CAT-alyzing Honesty: Continuous Adversarial Training for Transferable LLM Honesty",
+    "authors": "Yuan-Chen Chang, Niklas Herbster, Gauthier Gidel, Tommaso Tosato",
+    "url": "https://arxiv.org/abs/2610.22292v1",
+    "utility": 0.88,
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "cs.CY"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/cat-alyzing-honesty-continuous-adversarial-training-for",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22273v1",
+    "title": "Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries",
+    "authors": "Anikait Singh, Teresa Zhang, Yoonho Lee, Roshen Sanjay Nair, Aviral Kumar...",
+    "url": "https://arxiv.org/abs/2610.22273v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/librarian-agents-training-llms-to-curate",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22217v1",
+    "title": "Skill-Decoupled On-Policy Expert Distillation for Unified Vision-Language Models",
+    "authors": "Yuqi Xiong, Chunyi Peng, Zhipeng Xu, Qing Yang, Zhenghao Liu...",
+    "url": "https://arxiv.org/abs/2610.22217v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/skill-decoupled-on-policy-expert-distillation-for-unified",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22372v1",
+    "title": "LIBERO-PeRM: Benchmarking Personalized Robotic Manipulation",
+    "authors": "Zhixu Li, Keqian Tang, Litian Gong, Jingyu Yao, Wenqian Zhang...",
+    "url": "https://arxiv.org/abs/2610.22372v1",
+    "utility": 0.86,
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/libero-perm-benchmarking-personalized-robotic-manipulation",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22243v1",
+    "title": "Shortcut Sensitivity in Agent-Safety Evaluations",
+    "authors": "Hasan Demirkiran, Jens Ernstberger",
+    "url": "https://arxiv.org/abs/2610.22243v1",
+    "utility": 0.86,
+    "categories": [
+      "cs.AI",
+      "cs.CR",
+      "cs.LG"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/shortcut-sensitivity-in-agent-safety-evaluations",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22086v1",
+    "title": "Multi-SFT: Permissively-Licensed Multilingual Instruction-Following",
+    "authors": "Daniela Baiamonte, Kamyar Zeinalipour, Elena Fano, Stefano Simonazzi, Andrea Zugarini",
+    "url": "https://arxiv.org/abs/2610.22086v1",
+    "utility": 0.86,
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/multi-sft-permissively-licensed-multilingual-instruction-following",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.22330v1",
+    "title": "Designing Transformers for Continuous Diffusion Language Models",
+    "authors": "Weijian Luo, Yujian Chen, Hao Jiang, Guang Cheng, Tianyang Hu",
+    "url": "https://arxiv.org/abs/2610.22330v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/designing-transformers-for-continuous-diffusion-language",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.22319v1",
+    "title": "A team of Gemini 4 Argon agents beats Minecraft",
+    "authors": "Maxence Faldor, Satinder Singh, Roberta Raileanu",
+    "url": "https://arxiv.org/abs/2610.22319v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/a-team-of-gemini-4-argon",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.22126v1",
+    "title": "Causal Integrated Gradients: Scalable Feature Attribution Along Causal Paths",
+    "authors": "Joran Michiels, Anis Ismail, Maarten De Vos, Alejandro Sifrim",
+    "url": "https://arxiv.org/abs/2610.22126v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2026-10-15",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/causal-integrated-gradients-scalable-feature-attribution",
+    "skill_category": "nlp-llm"
   }
 ]
