@@ -18,6 +18,12 @@
 - [[mobile-oscillator-robustness-aging]] - 移动Stuart-Landau振子网络：度异质性降低老化转变鲁棒性，时间交互网络映射到有效均场耦合 (arXiv: 2610.16608)
   - Sibling session已建skill但未提交INDEX——本次补录；N个移动agent随机行走仅在共位时耦合，随机行走将时序交互结构坍缩为均匀有效耦合
   - **Activation**: mobile oscillators, aging transition, amplitude death, temporal networks, degree heterogeneity, swarm resilience
+### Classical Capacity of Single-Mode Bosonic Gaussian Channels
+- [[bosonic-gaussian-classical-capacity]] - Universal Gaussian-optimality and Holevo additivity proof for all single-mode bosonic Gaussian channels at every input energy (arXiv: 2610.22308)
+  - C(Phi,N) = chi_G(Phi,N) for every single-mode Gaussian channel (phase-sensitive AND insensitive) at every energy; non-Gaussian inputs and entangled/correlated channel uses give no advantage
+  - Exact rate-error tradeoff C_eps(Phi,N) = C(Phi, N/(1-eps)); strong converse only under hard photon-number cutoff (dilution kills it under mean energy)
+  - Recovered Nth = (xi^-1 - 1)/2 + y(xi^-1 - xi)/(4k) from first principles (pdftotext corrupted eq (11)); verified numerically to 1e-12
+  - **Activation**: bosonic Gaussian channel, Holevo additivity, classical capacity optical, water-filling allocation, strong converse, squeezed-state encoding
 
 
 ## 2026-10-18 - Neuroscience Research (Cron Job)
