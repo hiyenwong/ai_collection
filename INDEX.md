@@ -1,5 +1,142 @@
 # AI Collection Index
 
+## 2026-10-19 - Neuroscience Research (Cron Job)
+
+### Why Shallow Neural Networks Learn Sinusoidal Components First: An Orthogonal Polynomial Dynamics Framework
+- [[spectral-bias-orthogonal-polynomial-dynamics]] - 正交多项式GFS框架解释谱偏差：动力学矩阵H的分级特征值结构决定低频先学 (arXiv: 2610.21964)
+  - 损失诱导ρ(x)加权内积→正交多项式基，p_k恰有k个零点=k为无混叠"频率"；GD下GFS系数残差服从dr/dt=−αHr，H=[∂c_k/∂θ][∂c_k/∂θ]ᵀ
+  - 解析σ行衰减Θ(w)=B/w+√(1+(B/w)²)（Bernstein椭圆参数，sigmoid B=π）；C^(ν−1) σ代数衰减(k−ν̃)^(−ν̃−1)（ReLU: 函数k⁻²/w-梯度k⁻¹）；H=DBD分级矩阵→λ_k≤D_kk²λ_max(B)（Schur–Horn尾部和不等式）
+  - 数值验证全通过：Θ_w四个尺度+w=2/tanh相对误差≤1e-4；k=25模式25000步GD完全冻结在初始误差而k=1收敛99.2%（F-principle直接复现）；GGᵀ/GᵀG同谱→全局最优处Hessian=极度平坦景观/有效维度
+  - **Activation**: spectral bias, F-principle, orthogonal polynomial, Chebyshev coefficients, Bernstein ellipse, dynamics matrix, graded matrix, flat loss landscape, effective dimension
+
+### Decoding Naturalistic Speech from fMRI with Temporal Modeling and Multimodal Alignment
+- [[noema-fmri-naturalistic-speech-decoding]] - 时间卷积fMRI解码器对齐多模态语音嵌入，2000候选Top-10检索42.7%（chance 0.5%） (arXiv: 2610.22049)
+  - 7帧fMRI窗口（中心帧对齐血流动力学滞后+2.5s）→逐帧空间投影H=4096+dropout0.7→2个残差TCN块(k=3,d=1,2,感受野7帧)→中心帧线性读出D=8704；253.8M参数（算术验证精确匹配）
+  - 目标=三个冻结编码器拼接：Qwen3-Embedding文本4096d(10s)+LCO-Omni音频3584d(10s)+Parakeet ASR 1024d(Δ窗)，各自ℓ2归一化后拼接；CLIP对比损失τ=6.2e-3，会话级切分防时间泄漏
+  - 消融链：T→T+A→T+A+S 27.6→35.5→42.7%；1→7帧 28.7→42.7%（Context MLP 33.7%@7帧且参数更多623M）；帧序固定打乱重训 NOEMA −4.26 vs Context MLP +0.33 → 优势来自时间归纳偏置而非容量
+  - 扩展检索集5.1×（同播客50集8494干扰段，免重训）中位秩仅+66 vs +112/+191；积分梯度→外侧颞叶语言网络（Fedorenko/Pallier一致）
+  - **Activation**: fMRI decoding, naturalistic speech retrieval, temporal convolutional network, multimodal stimulus embeddings, hemodynamic lag, session-disjoint split, distractor generalization, CLIP contrastive alignment
+
+## 2026-10-18 - High-Utility arXiv Papers (Cron Job)
+
+### Learning to Steer LLM Agents and Multi-Agent Systems
+- [[learning-to-steer-llm-agents-and]] - Large language model (LLM)-based agents and multi-agent systems increasingly tackle complex tasks through long-horizon tool use and inter-agent collaboration. However, these systems are prone to devia... (arXiv: 2610.22316v1)
+  - Category: multi-agent-rl
+
+### X-RIC: An Agentic RAN-Intelligent Controller Benchmark for Enhancing Reinforcement Learning
+- [[x-ric-an-agentic-ran-intelligent-controller-benchmark]] - The O-RAN ALLIANCE introduces architectural flexibility through disaggregation and AI-driven control. While the RAN Intelligent Controller (RIC) enables centralized optimization, current AI approaches... (arXiv: 2610.22269v1)
+  - Category: multi-agent-rl
+
+### PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents
+- [[probe-learning-to-audit-policy-compliance]] - Modern agentic systems extend language models with external tools, enabling them to complete complex tasks through multi-turn interactions. As these agents are deployed in consequential settings, they... (arXiv: 2610.22124v1)
+  - Category: multi-agent-rl
+
+### Dexterity from Supervised Play
+- [[dexterity-from-supervised-play]] - How can robots autonomously collect the contact-rich experience needed to learn dexterous manipulation? We present DSP: Dexterity from supervised play, a framework in which a robot learns a play polic... (arXiv: 2610.22340v1)
+  - Category: multi-agent-rl
+
+### DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction
+- [[dropkv-decoupling-residual-output-perturbation-for-near-optimal]] - Key-value (KV) cache management has become a critical bottleneck for scaling Large Language Models (LLMs) to long-context scenarios due to linear memory growth. While recent eviction methods have move... (arXiv: 2610.22130v1)
+  - Category: nlp-llm
+
+### When Reasoning Is Not Enough: Proactive Inquiry for Cross-Modal Safety in Multimodal Large Language Models
+- [[when-reasoning-is-not-enough-proactive]] - Multimodal large language models (MLLMs) can act unsafely when individually benign images and texts are interpreted jointly. Beyond implicit reasoning risk, where reasoning drifts toward harm, we iden... (arXiv: 2610.22068v1)
+  - Category: nlp-llm
+
+### Progress Reward Model for Reinforcement Learning via Large Language Models
+- [[progress-reward-model-for-reinforcement-learning]] - Traditional reinforcement learning (RL) algorithms face significant limitations in handling long-term tasks with sparse rewards. Recent advancements have leveraged large language models (LLMs) to enha... (arXiv: 2610.22056v1)
+  - Category: multi-agent-rl
+
+### TIPS: A Tiny Inference-time Policy for Scaling in Diffusion Language Models
+- [[tips-a-tiny-inference-time-policy-for]] - Masked diffusion language models expose an inference-time choice: which positions become visible after each denoising pass. Many existing decoding methods use hand-designed rules or require visibility... (arXiv: 2610.22099v1)
+  - Category: multi-agent-rl
+
+### 3DCodeVerse: Exploring 3D Worlds as Code
+- [[3dcodeverse-exploring-3d-worlds-as-code]] - We introduce 3DCodeVerse, a research ecosystem that enables coding agents to create editable and verifiable 3D content at scale. 3DCodeVerse comprises large-scale, high-quality datasets of executable ... (arXiv: 2610.22341v1)
+  - Category: multi-agent-rl
+
+### The importance of tensor handling and implementation of physics-informed DeepONets
+- [[the-importance-of-tensor-handling-and]] - Physics-informed neural networks (PINNs) reduce or eliminate the need for large labelled datasets by enforcing governing equations during training. Physics-informed Deep Operator Networks (PI-DeepONet... (arXiv: 2610.22157v1)
+  - Category: neuroscience
+
+### Learning from Unverified Peers via Shared Residual Distillation
+- [[learning-from-unverified-peers-via-shared]] - A language model can generate several solutions to the same problem, some leading to correct answers and others to incorrect ones. Many post-training methods turn these trajectories into learning sign... (arXiv: 2610.22080v1)
+  - Category: multi-agent-rl
+
+### AI Consilium: a Benchmark of LLM Clinical Multidisciplinary Second Opinions
+- [[ai-consilium-a-benchmark-of-llm]] - Large language models (LLMs) can generate differential diagnoses for complex cases, but a useful second opinion must also be factually grounded, clinically coherent, actionable, and safe. We developed... (arXiv: 2610.22298v1)
+  - Category: nlp-llm
+
+### CAT-alyzing Honesty: Continuous Adversarial Training for Transferable LLM Honesty
+- [[cat-alyzing-honesty-continuous-adversarial-training-for]] - Large language models (LLMs) are becoming prevalent in scenarios where honesty is critical. However, despite alignment training, these models still exhibit dishonest behaviour, such as outputting clai... (arXiv: 2610.22292v1)
+  - Category: multi-agent-rl
+
+### Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries
+- [[librarian-agents-training-llms-to-curate]] - Reasoning over long document contexts remains a challenge for large language models (LLMs). Standard retrieval methods are inherently reactive, bottlenecking agents with complex, cross-document reason... (arXiv: 2610.22273v1)
+  - Category: multi-agent-rl
+
+### Skill-Decoupled On-Policy Expert Distillation for Unified Vision-Language Models
+- [[skill-decoupled-on-policy-expert-distillation-for-unified]] - Reinforcement learning (RL) can elicit specialized visual capabilities in vision-language models (VLMs), yet jointly optimizing heterogeneous objectives often introduces cross-capability gradient conf... (arXiv: 2610.22217v1)
+  - Category: multi-agent-rl
+
+### LIBERO-PeRM: Benchmarking Personalized Robotic Manipulation
+- [[libero-perm-benchmarking-personalized-robotic-manipulation]] - Personalization is essential for general-purpose robots to transition into household environments and achieve true practicality. While general robotic manipulation has been extensively studied, person... (arXiv: 2610.22372v1)
+  - Category: multi-agent-rl
+
+### Shortcut Sensitivity in Agent-Safety Evaluations
+- [[shortcut-sensitivity-in-agent-safety-evaluations]] - AI agents take actions through tools. Some actions are sensitive, so guards that supervise them must themselves be evaluated reliably. Yet the data used to evaluate a guard can include cues that make ... (arXiv: 2610.22243v1)
+  - Category: multi-agent-rl
+
+### Multi-SFT: Permissively-Licensed Multilingual Instruction-Following
+- [[multi-sft-permissively-licensed-multilingual-instruction-following]] - Supervised fine-tuning datasets remain overwhelmingly English-centric and commercially restricted, as their content is frequently generated by proprietary models whose terms of service forbid training... (arXiv: 2610.22086v1)
+  - Category: nlp-llm
+
+### Designing Transformers for Continuous Diffusion Language Models
+- [[designing-transformers-for-continuous-diffusion-language]] - Continuous diffusion language models (CDLMs) offer an alternative approach to parallel language generation; however, most existing studies directly use transformer architectures from either causal lar... (arXiv: 2610.22330v1)
+  - Category: nlp-llm
+
+### A team of Gemini 4 Argon agents beats Minecraft
+- [[a-team-of-gemini-4-argon]] - We placed four Gemini 4 Argon agents in a sandboxed Minecraft survival world and gave them one goal: defeat the Ender Dragon. Each agent controlled a player via an open-source library called Mineflaye... (arXiv: 2610.22319v1)
+  - Category: multi-agent-rl
+
+### Causal Integrated Gradients: Scalable Feature Attribution Along Causal Paths
+- [[causal-integrated-gradients-scalable-feature-attribution]] - Existing feature attribution methods that account for feature dependencies do not scale to high dimensions. We propose causal integrated gradients (CIG) and causal expected gradients (CEG), which exte... (arXiv: 2610.22126v1)
+  - Category: nlp-llm
+
+
+## 2026-10-18 - Neuroscience Research (Cron Job)
+
+### Global synchronization in time-varying directed higher-order networks
+- [[fast-switching-directed-higher-order-sync]] - 时变有向超网络的快速切换同步理论：平衡条件(k_out=d·k_in)下，双时间尺度MSF证明快切换使平均拉普拉斯谱决定稳定性，快速切换可恢复被方向性破坏的同步 (arXiv: 2610.17150)
+  - m-directed d-hyperedge分解head/tail；有向广义Laplacian离对角元非负→复谱可落入MSF不稳定区（方向性破坏同步的机制根源）
+  - Lemma 1+Theorem 1（平均理论）：切换系统稳定⟺平均系统稳定，ε<ε*时一致指数稳定；平衡保证同步流形在每个瞬时结构下不变
+  - Stuart-Landau超环基准(N=20/30, d=1/2)：两个各自不稳定的平衡有向构型以ζ=0.37/0.65交替，平均谱完全落入稳定区——时间平均同步误差在ε=0.2降至噪声级，ε=0.8持续失同步
+  - **Activation**: temporal network, directed hypergraph, higher-order interactions, fast switching, averaging theory, Master Stability Function, time-varying Laplacian, hyperring, switched systems
+
+## 2026-10-18 - Reinforcement Learning Research (Cron Job)
+
+### Wrong Votes, Right Gradients: Why Majority-Vote Rewards Track Verifiable RL
+- [[batch-level-self-label-rl]] - 自标签RL何时可替代验证奖励：batch级梯度视角，prompt自身梯度仅占其输出变化<1%，错误标签只有在跨prompt共享方向时才误导更新 (arXiv: 2610.20898)
+  - 分解 G_mv=(1−β)G_gold+E⊥：β=shrinkage无害（自适应优化器吸收），E⊥=misdirection才改方向；MV误差与random-reward null同样不相干(α≈1/2)，c∞=X/√(YZ)=1
+  - 随机翻转30% gold标签不改变更新方向，共享规则翻转同比例则摧毁之——误差结构(coherence)而非误差率决定安全性；learned reward model因在每题偏好同类响应而注入相干误差，属于高危源
+  - 局部等价：gold训练在held-out majority accuracy仍领先；MV主要锐化单样本答案。审计配方：probe集上估计α，≈1/2可放量自标签，→1回退验证
+  - **Activation**: majority-vote reward, TTRL, self-generated labels, label-free RL, error coherence, batch update cosine, shrinkage misdirection
+
+### Hindsight-Privileged RLVR: Single-Rollout Token Credit Without Group Sampling
+- [[hindsight-privileged-rlvr]] - G=1单rollout RLVR：冻结生成策略对比因果/事后全词表分布，JSD(p_j,q_j)/log2作token权重×历史中心化奖励(R_i−b_k)得有界信用|A_j|≤1 (arXiv: 2610.20497)
+  - 历史基线不变性引理：任意H_k-可测b_k∈[0,1]微分时固定→E[(R−b_k)g]=∇J无偏；失败轨迹天然负信用；b_k=先前轨迹均值（当前batch构造完优势后才入历史）
+  - ALFWorld上GRPO 43.2%(4B)/49.0%(8B)梯度记录为零 vs HP-RLVR无零梯度步；同预算快1.21×(数学)/1.46×(代码)/2.30×(ALFWorld省255.8 NPU-h)
+  - 数学Avg@12三尺寸全胜(+1.1~+2.7pts)；代码/ALFWorld GRPO仍胜——诚实结论：信号可用性+成本胜，非精度胜；单seed，作者自declared不构成统计优越性
+  - **Activation**: single rollout RLVR, GRPO all-same reward, hindsight conditioning, JSD token weight, historical reward centering, G=1 training
+
+### Failure Is the Mother of Success: Recovering Supervision with Grounding Hindsight (RSHD)
+- [[rshd-grounding-hindsight-distillation]] - GRPO全失败组零梯度(Pr=(1−p0)^n)→模型写诊断笔记+replay准入测试(r̂>p̂)+按per-token lift clip(l_t−l_s,0,c)加权蒸馏回无条件策略 (arXiv: 2610.21018)
+  - Repair basin理论：逃逸界ε的修复核m次重试成功率≤mε，保策略修复ε=0永不成功——换策略只能靠失败上下文重启；准入=富化非纯化 P(正确|准入)=p_s/(1−(1−p_s)^k)≥p_s
+  - Qwen3-4B MATH-500: 84.5 vs GRPO 76.9（OPSD 73.6/SEED 75.2均不如纯GRPO——未测试笔记有害，replay测试是承重结构）；Level-5 +10.8pts
+  - Gemma-4-E4B 0/8永不解决切分+8.5pts（66题6.4→15.0），sometimes-solved −0.4——增益全部在策略完全不会的问题上；每9条笔记1条泄露答案→leak屏必须前置
+  - **Activation**: all-fail GRPO group, zero advantage, failure-conditioned exploration, hindsight note, replay admission test, distill failure lessons
+
+
 ## 2026-10-18 - Quantum Mechanics Daily (Cron Job)
 
 ### Practical Fidelity Estimation for Noisy Quantum Devices Using Direct and Survival-Probability-Based Protocols
@@ -18,6 +155,12 @@
 - [[mobile-oscillator-robustness-aging]] - 移动Stuart-Landau振子网络：度异质性降低老化转变鲁棒性，时间交互网络映射到有效均场耦合 (arXiv: 2610.16608)
   - Sibling session已建skill但未提交INDEX——本次补录；N个移动agent随机行走仅在共位时耦合，随机行走将时序交互结构坍缩为均匀有效耦合
   - **Activation**: mobile oscillators, aging transition, amplitude death, temporal networks, degree heterogeneity, swarm resilience
+### Classical Capacity of Single-Mode Bosonic Gaussian Channels
+- [[bosonic-gaussian-classical-capacity]] - Universal Gaussian-optimality and Holevo additivity proof for all single-mode bosonic Gaussian channels at every input energy (arXiv: 2610.22308)
+  - C(Phi,N) = chi_G(Phi,N) for every single-mode Gaussian channel (phase-sensitive AND insensitive) at every energy; non-Gaussian inputs and entangled/correlated channel uses give no advantage
+  - Exact rate-error tradeoff C_eps(Phi,N) = C(Phi, N/(1-eps)); strong converse only under hard photon-number cutoff (dilution kills it under mean energy)
+  - Recovered Nth = (xi^-1 - 1)/2 + y(xi^-1 - xi)/(4k) from first principles (pdftotext corrupted eq (11)); verified numerically to 1e-12
+  - **Activation**: bosonic Gaussian channel, Holevo additivity, classical capacity optical, water-filling allocation, strong converse, squeezed-state encoding
 
 
 ## 2026-10-18 - Neuroscience Research (Cron Job)
@@ -79,6 +222,28 @@
   - 双层互补: KL监控防过早停(证据未饱和)，PRM峰值检测防过晚停(质量已过峰)；漂移15.7%→6.4%，null准确率+21pp，检索步省67%
   - 可迁移: KL后验收敛是任何迭代检索agent的通用停止信号；停止策略必须与聚合器联合设计(投票计数/noisy-OR结论需重验证)
   - **Activation**: publication bias, evidence drift, retrieval stopping criterion, KL divergence convergence monitor, process reward model, noisy-OR, causal knowledge graph
+
+### Retrieved but Not Read: Understanding Why Search-Augmented LLMs Fail to Use Available Evidence
+- [[retrieved-not-read-evidence-use-failure]] - 搜索增强LLM的证据使用失败审计：snippet-only场景(不打开源页)集中了绝大多数过期答案(6.4% vs integrated 1.3%)与不忠实引用(6.4% vs 2.3%)；检索值被提升但旧参数值未被充分压制，最终层反超 (arXiv: 2610.21731)
+  - 双值时变事实基准(225条截止后事实，旧值+新值对照孪生评分)+冻结检索协议(同一10结果菜单，真值页种子位保证可达)+控制事实floor；跨模型失败共享OR 1.84-6.46证明现象模型通用
+  - 机制：logit lens/Jacobian lens显示失败案例中检索值早期上层排名更高(∆new>0, p≤0.04)但旧值最终层反超——失败=压制不足非提升缺失；81.8%过期答案的on-claim引用不忠实 vs 答案最新时0.9%
+  - 干预排序：直接在prompt提供源页面(14/50→0/50过期背书) > 每次开页后重述完整问题(恢复26.1%失败)；LLM marker只能给通过性结论、不利标签须人工确认的评分不对称设计
+  - **Activation**: search-augmented LLM, snippet reliance, stale answers, unfaithful citations, evidence use audit, frozen retrieval, temporal facts benchmark, logit lens, reading depth
+
+### Stability of Quantum LDPC States under Local Pauli Noise
+- [[qldpc-cmi-stability-pauli-noise]] - qLDPC码投影态的混合态相稳定性：局部Pauli噪声下CMI I(A:C|B)随缓冲区宽度指数衰减，弱噪声(误差簇界)与强噪声(信息渗流界)两机制夹住解码转变，Nishimori点pc≈0.109居中 (arXiv: 2610.22357)
+  - 弱噪声：A-C关联需误差簇跨越缓冲区(指数罕见)，α=e^(Dw)·max_g Σq_i(u)q_i(u+g)<0.2；强噪声：缓冲区几乎无信息，关联仅沿仍具信息量的qudit链存续——两界互补，toric code X-dephasing下 p<0.0286 或 p>0.1464
+  - 证明模式：数据处理约化(剥离A/C噪声)→综合征约化(混合态纠缠问题→经典误差位形关联问题，熵增=H(Σ̂_R))→簇/渗流概率界→小CMI⇒准局域Petz恢复(常数层, O(poly(log n)/ε))
+  - 数值验证：p_EC=(3−2√2)/6≈0.0286(条件6√(p(1−p))<1，pdftotext丢失根号会得错误0.211)、p_IP=(1−1/√2)/2≈0.1464、一般Thm1对toric仅p<5e-6；子系统三分有反例需空间均匀性；强噪声界要求缓冲区无逻辑算符
+  - **Activation**: qLDPC, conditional mutual information, mixed-state phases, Pauli noise, toric code, Nishimori point, Petz recovery, topological entropy, error-cluster bound, information percolation
+
+### The Information Bottleneck is NP-hard
+- [[information-bottleneck-np-hardness]] - IB最优值计算NP-hard：clique-inflation归约+熵Turán cost下界，不可近似1/(216|X|^1.5)；Blahut-Arimoto仅为驻点启发式 (arXiv: 2610.22272)
+  - 归约机器: 后验代价分解 g_W(P)=H(WP)−½H(P) 把 sup-over-encoders 化为后验混合分解；恒等式 D(P‖π⊗π)=2g_G(P) + 定向Motzkin–Straus ⟹ cost 下界 c_ω=−½log(1−1/ω)，等号iff最大团均匀分布
+  - Gap注入: 无k-clique时父边编码器T0最优(L=Λ0)；有k-clique时以p=1/(12m²)混入U_K后验——线性增益λΔc 压倒二次χ²扰动损失，δ=1/(32Nm⁴)≥1/(72|X|^1.5)，K4边界实例严格取等
+  - 推广: reveal-padding使 L_β(P̃_XZ)=κ_β·L_{1/2}(P_XY)（κ_β=2min{β,1−β}）；IB-Threshold用只依赖(N,k)的R*闭式夹率预算绕开循环依赖
+  - 数值验证32/32: T0==Λ0阳性对照双实例1e-13、1500合法随机编码器0违规、T1增益4.02×δ、R*公式双向0误差；调试教训=验证脚本I(Y;T)漏H(Y)项致上界检查空洞通过、dirichlet后验/信道混淆可伪造+3.44bits违规（先跑阳性对照）
+  - **Activation**: information bottleneck NP-hard, clique reduction, Motzkin-Straus, entropic Turan, additive inapproximability, Blahut-Arimoto stationary point, posterior cost decomposition
 
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 17)
 
