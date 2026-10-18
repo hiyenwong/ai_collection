@@ -16,6 +16,27 @@
   - 数值验证: 论文族 0/3000 违规、χ² 负对照违规；D_f 约定 Σq·f(p/q) 实现错误会静默失败
   - **Activation**: mutual f-information, f-divergence subadditivity, generalized mutual information, information measure design, variational (G,f)-information
 
+### Discovering state-of-the-art quantum circuits with large language models
+- [[reversible-quantum-circuit-ai-design]] - AI闭环自主设计量子电路：纯文本规格+自动评估器53小时超越8个基元最优发表电路(部分12x)；可逆divsteps模逆=从数值对decode分支信息免存储(Lean证明) (arXiv: 2610.22367)
+  - 评估器闭环三要素: 高层Python接口提案+计算基矢态模拟器验证+TQ-cost(Toffoli×qubits)排序；ideation阶段强制并行多个algorithm family防局部最优，家族间周期性交叉授粉
+  - 三设计原则: 条件路由代替条件算术(受控swap路由数据过共享运算块)；解码代替存储(分支决策从当前寄存器状态逆推，省history stack)；失败预算(罕见输入的资源需求局部化后裁剪，采样实测替代最坏情况预留)
+  - 首个素域可逆divsteps模逆电路：decisions分可解码/歧义(excursion深度j解码器)，比Schrottenloher省38%qubits；DQI Reed-Solomon解码器BM替EEA降12x门数
+  - **Activation**: evaluator-guided LLM co-design, reversible divsteps, conditional routing, decode-not-store, failure budget, Berlekamp-Massey quantum decoder, TQ-cost ranking
+
+### Knowledge Graphs as Files: An Agent Harness Where Tool Creation and Tool Use Co-Evolve
+- [[dkgi-knowledge-graphs-as-files]] - Agent直接把KG当文件用Python读写：预定义图接口结构性截断证据，DKGI取消接口让工具创建与使用共演化，training-free超最强基线6.7+ Hit@1 (arXiv: 2610.18616)
+  - 接口即瓶颈: neighbors API只返回66研究者中20个，gold paper不可达；解法=完整nodes/edges文件+shell grep+Python编程能力
+  - 共演化机制: 执行反馈(报错/结果不足)驱动agent修订自己写的检索代码，演化中的工具决定下一步证据访问能力
+  - 批量算+精选读: 图操作在代码层跑不占上下文，只返回选中文本给模型——处理10万节点只让模型看50条候选
+  - **Activation**: text-rich KG search, DKGI, agent harness, tool creation co-evolution, STaRK, KGQA multi-hop, training-free agent
+
+### When More Evidence Hurts: Publication-Bias Drift and Principled Stopping for Biomedical Causal Search
+- [[evidence-drift-principled-stopping]] - 发表偏置下检索越深假阳性越高(null查询假阳性率随深度单调升至1)；DACG-agent双层停止=KL后验收敛(准确层)+Bradley-Terry PRM质量下降检测(效率层) (arXiv: 2609.24101)
+  - Evidence drift定理: 语料偏向阳性结果时多检索=偏置积累；140 Cochrane查询实证假阳性7.9%→15.7%(预算3→20步)，零样本LLM与RAG均放大偏置
+  - 双层互补: KL监控防过早停(证据未饱和)，PRM峰值检测防过晚停(质量已过峰)；漂移15.7%→6.4%，null准确率+21pp，检索步省67%
+  - 可迁移: KL后验收敛是任何迭代检索agent的通用停止信号；停止策略必须与聚合器联合设计(投票计数/noisy-OR结论需重验证)
+  - **Activation**: publication bias, evidence drift, retrieval stopping criterion, KL divergence convergence monitor, process reward model, noisy-OR, causal knowledge graph
+
 ## 2026-10-17 - Economics, Investment + Quantum Mechanics (Cron Job, Hour 17)
 
 ### The end-of-month option in futures contracts and the Gittins index of holding the underlying
