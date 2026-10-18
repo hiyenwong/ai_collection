@@ -1,6 +1,14 @@
 # AI Collection Index
 
-## 2026-10-18 - Systems Engineering Research (Cron Job)
+## 2026-10-18 - Neuroscience Research (Cron Job)
+
+### How Shared Representations Become Specialized: Formation, Maintenance, and Latent Susceptibility
+- [[representation-specialization-latent-susceptibility]] - 共享表征特化的形成/维持/潜在易感性三重解离：acquisition 精度与 update 权重竞争性选择特化方向，Adam 二阶矩 v 因果决定端点匹配学习器的短脉冲响应差异 (arXiv: 2610.15830)
+  - **形成 vs 支撑分离**：对称化已形成偏差的条件后 |s| 0.41→0.04 衰减；state-following 反馈（优先更新表征更好的目标）放大偶然差异至 |s| 0.868 vs 固定倾向 0.421，维持 8000-update 亚稳态 regime
+  - **潜在易感性**：五项端点测量等效匹配的两种形成路径，同一 10-update 反向脉冲下响应差异 0.195（越零率 67.5% vs 0%）；reset Adam 后差异降至 0.010（等效域内）；交换 Adam 二阶矩 v 使易感性反转（+0.197→−0.127），交换一阶矩 m 无效
+  - **时间结构**：继承 Adam 的差异出现在 update 10-20；fresh Adam/校准 SGD 的差异延迟至 update 50-100 才显现，500 updates 后端点收敛 — 优化器状态改变差异出现时机而非有无
+  - **Activation**: representational specialization, acquisition precision, update allocation, Adam second moment, latent susceptibility, gradient starvation, state-following feedback, equivalence testing
+
 
 ### Scaling Up Statistical Model Checking of Cyber-Physical Systems via Algorithm Ensemble and Parallel Simulations over HPC
 - [[smc-ensemble-parallel-cps-verification]] - Ensemble of Adaptive Stopping Algorithms + bias-free HPC parallel sampling for CPS statistical model checking (arXiv: 2610.21772)
