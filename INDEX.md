@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-10-18 - Neuroscience Research (Cron Job)
+
+### Global synchronization in time-varying directed higher-order networks
+- [[fast-switching-directed-higher-order-sync]] - 时变有向超网络的快速切换同步理论：平衡条件(k_out=d·k_in)下，双时间尺度MSF证明快切换使平均拉普拉斯谱决定稳定性，快速切换可恢复被方向性破坏的同步 (arXiv: 2610.17150)
+  - m-directed d-hyperedge分解head/tail；有向广义Laplacian离对角元非负→复谱可落入MSF不稳定区（方向性破坏同步的机制根源）
+  - Lemma 1+Theorem 1（平均理论）：切换系统稳定⟺平均系统稳定，ε<ε*时一致指数稳定；平衡保证同步流形在每个瞬时结构下不变
+  - Stuart-Landau超环基准(N=20/30, d=1/2)：两个各自不稳定的平衡有向构型以ζ=0.37/0.65交替，平均谱完全落入稳定区——时间平均同步误差在ε=0.2降至噪声级，ε=0.8持续失同步
+  - **Activation**: temporal network, directed hypergraph, higher-order interactions, fast switching, averaging theory, Master Stability Function, time-varying Laplacian, hyperring, switched systems
+
 ## 2026-10-18 - Reinforcement Learning Research (Cron Job)
 
 ### Wrong Votes, Right Gradients: Why Majority-Vote Rewards Track Verifiable RL
