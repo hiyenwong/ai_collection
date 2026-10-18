@@ -1,5 +1,20 @@
 # AI Collection Index
 
+## 2026-10-18 - Systems Engineering Research (Cron Job)
+
+### Scaling Up Statistical Model Checking of Cyber-Physical Systems via Algorithm Ensemble and Parallel Simulations over HPC
+- [[smc-ensemble-parallel-cps-verification]] - Ensemble of Adaptive Stopping Algorithms + bias-free HPC parallel sampling for CPS statistical model checking (arXiv: 2610.21772)
+  - Race multiple (ε,δ)-stopping algorithms (EBGStop, AA) on one iid sample stream; first to converge wins - sample cost = min, up to 78.73% / 31.3M fewer samples on industry CPS models
+  - Order-preserving producer-consumer parallelization (progressive sample ids, bounded id-map, strict in-order consumption) gives ~100% efficiency at 2048 nodes with zero statistical bias
+  - **Activation**: statistical model checking, CPS verification, adaptive stopping, Monte Carlo sample reduction, HPC parallel simulation
+
+### ANOVA Approximation for High-Dimensional Control Systems
+- [[anova-approximation-control-affine-systems]] - Coupled least squares ANOVA surrogate for control-affine systems x+=F(x)+G(x)u via index-set preprocessing (arXiv: 2610.19858)
+  - Encode control affinity into the dictionary (phi_mu, phi_mu*u_l) - no spurious control-control interactions by construction; works with arbitrary given state-control samples
+  - Marcinkiewicz-Zygmund inequality + explicit-constant L2 error bound; separate drift F / input G error control; Sobol indices identify PDE coupling structure (advection-diffusion, shallow water, Burgers)
+  - **Activation**: control-affine surrogate, ANOVA decomposition, data-driven system identification, high-dimensional control, Sobol sensitivity
+
+
 ## 2026-10-18 - 信息学 (Informatics) + Quantum Mechanics (Cron Job)
 
 ### NeuroVolve: Evolving Visual Stimuli toward Programmable Neural Objectives
