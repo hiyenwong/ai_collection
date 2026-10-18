@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-10-19 - Neuroscience Research (Cron Job)
+
+### Why Shallow Neural Networks Learn Sinusoidal Components First: An Orthogonal Polynomial Dynamics Framework
+- [[spectral-bias-orthogonal-polynomial-dynamics]] - 正交多项式GFS框架解释谱偏差：动力学矩阵H的分级特征值结构决定低频先学 (arXiv: 2610.21964)
+  - 损失诱导ρ(x)加权内积→正交多项式基，p_k恰有k个零点=k为无混叠"频率"；GD下GFS系数残差服从dr/dt=−αHr，H=[∂c_k/∂θ][∂c_k/∂θ]ᵀ
+  - 解析σ行衰减Θ(w)=B/w+√(1+(B/w)²)（Bernstein椭圆参数，sigmoid B=π）；C^(ν−1) σ代数衰减(k−ν̃)^(−ν̃−1)（ReLU: 函数k⁻²/w-梯度k⁻¹）；H=DBD分级矩阵→λ_k≤D_kk²λ_max(B)（Schur–Horn尾部和不等式）
+  - 数值验证全通过：Θ_w四个尺度+w=2/tanh相对误差≤1e-4；k=25模式25000步GD完全冻结在初始误差而k=1收敛99.2%（F-principle直接复现）；GGᵀ/GᵀG同谱→全局最优处Hessian=极度平坦景观/有效维度
+  - **Activation**: spectral bias, F-principle, orthogonal polynomial, Chebyshev coefficients, Bernstein ellipse, dynamics matrix, graded matrix, flat loss landscape, effective dimension
+
 ## 2026-10-18 - High-Utility arXiv Papers (Cron Job)
 
 ### Learning to Steer LLM Agents and Multi-Agent Systems
