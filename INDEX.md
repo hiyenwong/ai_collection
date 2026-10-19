@@ -17,6 +17,20 @@
   - 扩展检索集5.1×（同播客50集8494干扰段，免重训）中位秩仅+66 vs +112/+191；积分梯度→外侧颞叶语言网络（Fedorenko/Pallier一致）
   - **Activation**: fMRI decoding, naturalistic speech retrieval, temporal convolutional network, multimodal stimulus embeddings, hemodynamic lag, session-disjoint split, distractor generalization, CLIP contrastive alignment
 
+### Semantic Alignment of EEG and Text: A Contrastive Learning Framework for Decoding Imagined Speech
+- [[eeg-text-semantic-alignment-imagined-speech]] - 对比学习将想象语音EEG对齐到冻结语言嵌入空间，解码性能持平且获得检索/内在可靠性排序/语义结构 (arXiv: 2610.20766)
+  - 语义重加权InfoNCE：负样本权重ω_ij=max(δ,1−cos(t_i,t_j))使语义相近负样本惩罚更轻，保留文本空间拓扑；分类头绑定冻结文本原型（logits=与原型缩放点积，无独立线性头）；类平衡W=freq^−0.5，τ可学习clip[0.01,1.0]，标签平滑0.1
+  - MaxCosine=与预测类原型的余弦相似度——免置信度头的内在可靠性信号：验证集阈值在测试 folds 转移~1pp内，20%覆盖率下Top-1 8.3→17.2%（跨被试15.6-19.2%）、Top-5 29→49%（42.9-50.5%），正确/错误判别AUROC 0.60-0.64，可靠性信息集中在最高分位数
+  - 评估时语义轴（训练从未用作标签）均高于50%chance：实用-情感61.3%、目标-休闲60.0%、物理-认知59.2%；平衡2v2成对0.69-0.73与任务优化闭环分类器持平；文本编码器探针基准选型bge-small-zh（24M参数≈大模型可分性）
+  - **Activation**: imagined speech, EEG-text alignment, contrastive EEG, BCI reliability, MaxCosine, frozen text encoder, semantic axes, Chisco, selective decoding
+
+### Interoceptive Attention as Dynamic Homeostatic Prioritization in a Foraging Agent
+- [[interoceptive-attention-precision-budget-foraging]] - 固定内感受精度预算Σκ≤K由agent自身信念路由到最急需通道，觅食生存率翻倍且约一半收益来自EFE planner (arXiv: 2608.04232)
+  - κ即似然矩阵对角线（A_o,s=κ_m if o=s），同一成形似然同时进入信念更新与EFE planner；选择器只读后验信念argmax E[need_m]不看真值；AffectWorld四通道（饥饿/口渴/窒息+惰性控制通道锚定对比）
+  - 选择性0.414 vs 均匀0.199（2.08×，p≤10⁻⁴，聚类bootstrap）；反演控制0.144显著低于均匀→方向而非不均匀起作用；传播消融：planner看均匀似然在α0=0.1丢20pp、α0=10丢88pp坍缩至反演水平→planner路径携带约一半收益，刚性先验下几乎全部
+  - 被注意通道的似然模型收敛快2.4×，匹配观测数下仍+0.31精度（非数据量伪影）；鲁棒性跨先验刚性α0∈{10⁻³..10²}、预算K∈{1.5..4.0}（峰值K=2.60）、瓦片非平稳性0.02-0.10
+  - **Activation**: active inference, interoceptive precision, attention as precision, foraging agent, homeostatic prioritization, kappa budget, EFE planner, multi-need agent
+
 ## 2026-10-18 - High-Utility arXiv Papers (Cron Job)
 
 ### Learning to Steer LLM Agents and Multi-Agent Systems
