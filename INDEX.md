@@ -29,6 +29,20 @@
   - 微调阶梯 0.192 < 0.287（群体）< 0.377（个性化），仅个性化版恢复知觉被试间结构（rho=0.508）；体素精度 -9.2% vs 对齐 +190%；方法=冻结骨干特征重加权 + teacher-MSE(x10)+RSA(x2) 损失
   - **Activation**: perceptual alignment, personalized encoding model, DreamSim, NSD, representational similarity, individual differences, brain decoding
 
+### SpikeQ: Spike-Guided Post-Training Quantization for Spiking Neural Networks
+- [[spikeq-spike-guided-ptq-snn]] - SNN PTQ 的目标应是"翻转脉冲数"而非 MSE；阈值锚定让 pre-fire 膜电位舍入永不翻转脉冲 (arXiv: 2610.23046)
+  - 实证定律：等 MSE 误差造成的准确率损失天差地别，损失只跟随翻转脉冲比例（Spearman -0.99 vs MSE -0.77）→ 权重量化用双参考脉冲计数目标（全网络 FP + 量化输入上局部重算，ρ=0.5@W2/0.25@W4）+ margin（错脉冲的 |V̂−θ|）+ population 三项；离散搜索：4 邻近电平、最大电流输入优先、±1 电平扫描≤6 轮 + 25% held-out 冻结防过拟合
+  - 膜电位量化纠硬件错配：芯片按固定位宽存储并 pre-fire 比较 θ → 阈值锚定（θ 置于舍入边界，1[Qv(V)≥θ]=1[V≥θ] 恒成立；消融缺它 hard-reset 全崩 −8~−51 点）+ reset-aware 步长（hard: Δv=θ/(m+½)、0 为电平、θ 上仅 1 电平；soft: θ=m·Δv 使 V−θ 仍在网格）+ 网格按脉冲失配 Lv 校准而非膜 MSE（MSE 被远离 θ 的负电位主导，误选粗步长 → −40.22 点）
+  - W4V4 距全精度 ≤2.59 点、内存 7.8–7.9×、能耗 6.4–6.9×（能耗增益几乎全来自权重位宽，膜电位只进小份额 neuron 项）；V2 pre-fire 所有现有网格崩溃而 SpikeQ 保持（SDT-V2 VOC 69.71 vs FP 70.86）；陷阱：0 与 θ 间必须留电平，否则首层亚阈值膜电位舍入到 0 永不累积（per-channel 网格在 SEW 第一层丢 73% 脉冲）
+  - **Activation**: spikeq, SNN PTQ, flipped spikes, membrane quantization, pre-fire quantization, threshold anchoring, neuromorphic deployment, low-bit SNN
+
+### Inter- and Intra-Subject Variability in EEG: A Systematic Survey
+- [[eeg-variability-systematic-survey]] - 87 篇证据图谱：EEG 可靠性是"特征的属性"而非"EEG 的属性"；变异性应作为设计变量来管理并利用 (arXiv: 2602.01019)
+  - 四大发现：①稳定性按特征分化——闭眼后部 alpha 功率与个体 alpha 频率(IAF)可靠，高频功率与单边连接性估计不可靠，微状态地形图比其衍生时间参数更耐用；②大量"变异性"是方法学的（电极佩戴偏差、参考选择重塑拓扑与连接、管线与评估设计）而非脑变化；③范式×指标混淆——MI 报解码精度、静息态报 ICC 不可通约，64 个组合中 31 个无证据；④证据最薄处恰是鲁棒性主张最强处（跨数据集/多站点设计仅 2 篇）
+  - 四支来源分类（生物：解剖/遗传/发育——脑信号变异性随成熟上升而行为变异性下降；状态：注意/疲劳/学习/情绪；技术：硬件/佩戴/参考/环境；分析：管线/特征定义/模型与评估——不当分割严重高估跨被试精度）+ 量化工具箱（ICC、CV、SNR、概化理论、模式/学习式）各估什么
+  - 设计规则：重复测量设计分离 trait/state/噪声；LOSO+跨 session+跨数据集作为"通用模型"的主结果；记录电极佩戴元数据、管线做敏感度测试；IAF 个体化频段减伪被试方差；固定边缘栈部署消除可避免的工程变异性；变异性本身即信号（微状态/频谱指纹可复现、组内 ERP 变异性可作 ASD 等临床表型）；诚实局限性：未预注册、无双筛、无偏倚评估、叙述性综合
+  - **Activation**: EEG variability, test-retest, ICC, cross-session drift, BCI robustness, domain shift, biomarker reliability, individual alpha frequency, evidence map
+
 ## 2026-10-19 - Quantum Mechanics Daily (Cron Job)
 
 ### SynDebug: A Framework to Debug Logic Bugs in Fault-Tolerant Quantum Computing Programs
