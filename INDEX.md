@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-10-19 - Quantum Mechanics Daily (Cron Job)
+
+### SynDebug: A Framework to Debug Logic Bugs in Fault-Tolerant Quantum Computing Programs
+- [[syndebug-ftqc-assertion-debugging]] - FTQC 程序的系统级断言调试框架：binomial/χ² 逻辑观测断言，0 额外量子比特，平均 1.8% 深度开销（纠缠断言 0%） (arXiv: 2610.22275)
+  - 三个原语：assert_classical（单边 binomial 检验，零假设=匹配率 ≥ q_null=1−p_L）/ assert_superposition（同检验反转→检查点语义）/ assert_entanglement（2×2 列联表 χ² 独立性检验）；残差逻辑错误率折进零假设分位数
+  - 本征态规则（便宜的物理）：测量态为其本征态的可观测量不破坏状态 → |+…+⟩ 控制寄存器用 X 基 assert_classical 比 assert_superposition 更强且非破坏；架构 = CodePatch(offset 算术寻址) / PatchRegister(bump allocator, 状态串 {0,1,p,m}^L) / QecProgram(k=1 码 1:1 patch↔逻辑量子比特)
+  - 数值验证 17/17：错误 CNOT 方向（控制端=|0⟩→空操作，Schmidt 秩 1）χ²≈0 被捕获（0/200 假通过），正确 Bell χ²≈n；Shor 案例 = 算术前后 bookend + 逆 QFT 前控制-工作寄存器纠缠断言
+  - **验证坑**：单边 binomial 尾概率用 (1−q)^n 迭代在 n≳300 下溢为 0 → 临界值失效断言空洞通过；需 log-space lgamma PMF + 已知值阳性对照先行
+  - **Activation**: FTQC debugging, quantum assertions, logical error rate, assert_entanglement, stabilizer codes, chi-squared test, eigenstate measurement, zero spatial overhead
 ## 2026-10-19 - Neuroscience Research (Cron Job)
 
 ### Why Shallow Neural Networks Learn Sinusoidal Components First: An Orthogonal Polynomial Dynamics Framework
