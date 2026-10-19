@@ -46,6 +46,13 @@ tags: [active-inference, interoception, precision, attention, foraging, homeosta
 - Claim is 'one sufficient implementation', not uniquely identified vs alternative actuation sites; a matched preference-reweighting comparator (change planner target only, no likelihood sharpening) is the missing decisive test — note sibling paper's dissociation below
 - Minimal gridworld → biological readings (interoceptive gain-modulation by urgency) are hypothesis-generating only
 
+## Verified Information-Theoretic Structure (17/17 numeric checks passed)
+
+- **MI(κ) is convex in κ** (channel entropy is concave in a distribution that is linear in κ), so at fixed Σκ the TOTAL channel information is maximized at EXTREMES, not at uniform: selective (0.90 + 3×0.567) carries 3.659 bits vs uniform 4×0.65 = 3.353 bits (+0.306 bits, 6-level channels).
+- **Anti-aligned allocation has IDENTICAL total MI** to selective (same magnitudes, different target) — so the survival/learning gap between them (attentive beats anti-aligned by ~0.09 at matched observation count) is NOT channel information; it is need-targeted action. Convexity explains the paper's finding that any non-uniform allocation buys acceleration (anti-aligned +0.22 above uniform); direction adds the rest.
+- Monotone climb of total MI with κ_att at K=2.60 (3.353 → 4.020 bits as κ_att 0.65→0.99) mirrors the paper's monotone behavioral climb with asymmetry (+44pp @0.90, +46pp @0.99).
+- Verification anchors: κ_un=(2.60−0.90)/3=0.5667; A columns valid ∀κ (κ+5(1−κ)/5=1); MI(0.90)=1.884 > MI(0.65)=0.838 > MI(0.567)=0.592 bits; min 2nd difference of MI over κ∈[0.05,0.98] = 5.2e-3 > 0; 0.414/0.199=2.080×; cap binds only at K≥3.90 (at K=4: (4−0.9)/3=1.033→clipped, allocated 3.9).
+
 ## Related Skills
 - [[interoceptive-prioritisation-precision-preference]] — arXiv:2610.18617, the two-routes dissociation (κ-likelihood routing vs preference reweighting) in active inference; this skill supplies the foraging-agent mechanism study
 - [[belief-mop-active-inference-bellman]] — POMDP belief-MOP active inference machinery
