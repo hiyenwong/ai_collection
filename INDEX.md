@@ -7760,3 +7760,9 @@
   - 实战：Linux内核30M行→8指针泄露PoC+24 LPE；OpenBSD 23年UAF；dnsmasq独立命中6个CVE中4个；HTTP/2 Bomb影响88万站点；Firefox WASM漏洞Pwn2Own前2天修复致5/6退赛
   - Trail of Bits全员投入，19项目数百发现数十补丁；维护者掌控补丁部署与披露
   - **Activation**: CVE variant discovery, judge agent gates, fuzzing lab automation, differential testing, human review gate, maintainer support
+
+### Keeping your data safe when an AI agent clicks a link
+- [[url-verification-agent-exfiltration-defense]] - URL数据渗出防御：prompt injection诱导agent请求内嵌用户数据的URL(?data=<email>)，后台加载即写入攻击者服务器日志；域名单纯白名单不够(可信域重定向绕过+误报疲劳)
+  - 方案=独立公开网页索引验证「精确URL是否公开存在且与用户会话无关」：命中→自动加载；未命中→警告/换源；安全性质从「域名信誉」转为「与用户数据无关」
+  - 明示不保证项：页面内容可信/防社工/防页面内恶意指令——纵深防御一层(模型缓解+工具限制+动作检查+监控+红队)；技术论文公开
+  - **Activation**: URL exfiltration, prompt injection data leak, independent web index verification, exact URL trust, agent link safety
