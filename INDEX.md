@@ -7748,3 +7748,15 @@
 ### Introducing the Child Safety Blueprint
 - (Obsidian only, no skill - policy blueprint) - 三优先：现代化法律(AI生成/篡改CSAM)+provider报告协调+safety-by-design；核心观点：分层防御(检测+拒绝+人工监督+持续适应)，静态方案不足，上游预防架构是最高杠杆
   - **Activation**: child safety, layered defense, safety by design
+
+### Daybreak: Tools for securing every organization in the world
+- (Obsidian only, no skill - security program, methodology in [[historical-cve-variant-discovery-pipeline]]) - 核心论点：AI把安全瓶颈从「发现漏洞」转移到「修复漏洞」——报告本身不保护任何人，价值在验证→影响分析→补丁开发测试→协调披露→部署
+  - GPT‑5.5‑Cyber完整版(限可信防御者)：CyberGym 85.6%单模型SOTA(vs 5.5的81.8%)、ExploitGym 39.5% vs 25.95%、SEC-bench Pro 69.8%；能力与许可度配对+更强验证监控
+  - Codex Security规模：30K仓库/30M+commits已扫描、500K+发现自动确认修复、70K+人工标记修复；定位=每个开发者身边一个安全工程师(理解威胁模型→定位可达漏洞→取证→补丁→验证)
+  - **Activation**: GPT-5.5-Cyber, CyberGym, patch automation bottleneck, Codex Security, trusted access
+
+### Patch the Planet: a Daybreak initiative to support open source maintainers
+- [[historical-cve-variant-discovery-pipeline]] - 历史CVE驱动的变体发现流水线(模式提取→代码库搜索→judge agent去重/双级假阳性门→报告门→专家确认)+一天建成的fuzzing实验室(/goal反复运行+覆盖反馈自动扩展)+差分测试(Codex生成shim胶水代码)+规范驱动property测试(基于RFC)；不可省的人工复核门：每条发现专家复现/查重/严重度校正后才交维护者
+  - 实战：Linux内核30M行→8指针泄露PoC+24 LPE；OpenBSD 23年UAF；dnsmasq独立命中6个CVE中4个；HTTP/2 Bomb影响88万站点；Firefox WASM漏洞Pwn2Own前2天修复致5/6退赛
+  - Trail of Bits全员投入，19项目数百发现数十补丁；维护者掌控补丁部署与披露
+  - **Activation**: CVE variant discovery, judge agent gates, fuzzing lab automation, differential testing, human review gate, maintainer support
