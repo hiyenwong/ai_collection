@@ -26,6 +26,13 @@
 
 ## 2026-10-19 - Neuroscience Research (Cron Job)
 
+### EEG Lempel-Ziv Complexity vis-à-vis Autocorrelation Function
+- [[eeg-lzc-autocorrelation-redundancy]] - EEG 归一化 LZC 与 lag-1 自相关稳健逆相关：复杂度指标大半在测 ACF 已量化的时间冗余，解释 LZC 前必须先审计 AC1 (arXiv: 2610.23231)
+  - 理论链：Markov 链 q=(1−AC1)/2 → 熵率 h=H₂((1−AC1)/2)，Ziv 定理 LZC→h（有限长度系统性偏高+慢收敛）；Markov/随机 Cantor 集/decimation 三层合成验证全单调
+  - EEG：ERP 51 被试 n=1632 trial 被试内 ~线性关系（pre-stimulus 与诱发段均成立）；静息态睁眼=低AC1/高LZC、闭眼=高AC1/低LZC 两点团分离且 75s 滑窗动态保持
+  - 临界性语境：临界点附近 AC1 普升（critical slowing，鸟群/磁自旋/SNN 通用）→ AC1/LZC 追踪到临界点距离；AC1 免符号化、机制解释直接，LZC 增量价值须实证（残差审计）
+  - **Activation**: Lempel-Ziv complexity, autocorrelation, EEG complexity, temporal redundancy, consciousness measures, critical slowing down, eyes open closed, entropy rate, symbolization bias, complexity audit
+
 ### Distributional Signatures of Computation: Inferring Mechanisms from Computation Time Distributions
 - [[distributional-signature-computation-mechanism]] - 计算时间分布=随机计算动力学的可观测签名，逆因果链推断机制；benchmarking 只约束效率、分布形状才区分机制 (arXiv: 2610.23607)
   - 机制→分布识别表：确定性→δ峰、顺序遍历→均匀、干涉动力学→周期峰、累积过程→指数/gamma/ex-Gaussian（累积度越高越宽、正偏越强）
