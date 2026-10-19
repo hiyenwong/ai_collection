@@ -14,6 +14,23 @@
   - 6 SRA-Bench × 5 LLM：vs LLM 选择 21胜/4平/5负；ToolQA 43-61% vs 17-39%；金技能直注在 13/30 设置反而更差——不暴露有正值；消融 Meta-Skill+BM25 保留大部分收益（访问策略 > 检索器）
   - **Activation**: selective skill exposure, meta-skill, skill retrieval, context pollution, capability-oriented query, SRA-Bench, on-demand loading
 
+### Noise-shaped Sampling and Annealing for Scalable On-the-edge Training of Binary and Ternary AI Models
+- [[sigma-delta-sampler-discrete-training]] - ΣΔ 噪声成形退火：把二/三值网络训练视为分层高阶 Ising 模型，用一阶 ΣΔ 环把量化噪声推出低频适应带 (arXiv: 2610.22621)
+  - 损失的 Walsh–Fourier 展开=分层高阶 Ising 哈密顿量；量化/阻挫/mini-batch 噪声同呈白谱，信号噪声按频率分离 → NTF(z)=1−z⁻¹ 一阶高通重塑谱；积分器累积梯度−已实现更新，AGC 阈值（log 域 EMA+ρ 爬升 0.2→0.7）分区确定性/随机翻转
+  - planted QUBO 复现验证：ΣΔ 3/8 种子精确恢复最优解（全部 ≥0.96），单翻转 SA 0.49/并行 SA 0.31/PF-20 0.33 全败；符号约定经实证裁决（反向"稳定"变体失败 0.14）；CIFAR-10 三值 92.20% vs FP 92.88%，ImageNet 三值 ResNet-18 61.65%，MMFree LLM 2.7B 稳定且续训胜 STE；6 vs 16 bytes/参数，更新流量降 4 个数量级
+  - **Activation**: binary neural network, ternary weights, noise shaping, sigma-delta, QUBO Ising solver, on-device training, straight-through estimator replacement, edge AI
+
+### Patchwork: automated lattice surgery and space-time partitioning for real-time decoding
+- [[patchwork-lattice-surgery-parallel-decoding]] - NVIDIA 格手术编译器+波前时空分区算法：任意多比特 Pauli 测量的自动构造与 commit/buffer/cleanup 并行实时解码 (arXiv: 2610.22112)
+  - 窄走廊布局（d+3/d+1 走廊+检查点线）+多商品 Steiner 路由（边/顶点单位容量）+扭转缺陷 Y 测量外凸瓣（d≤11 穷举保全有效码距）；波前算法：种子 commit→(d+1)/2 扩展→深度 d 缓冲→cleanup 分隔线→走廊 child commit，构造 ~O(d³)
+  - DEM 分区：commit 响应的检测器+逻辑效应模 2 异或进全局症状，cleanup 解残差（{a,c}△{a,b}={b,c}，概率不变）；ExpD 3 串行 PPM×10 逻辑比特（含 Y 因子）：staged TFR ≈ 单块解码，差异仅 >(d−1)/2 尺度失败；cleanup 分组仅按修正效应重叠（非 DEM 共享）
+  - **Activation**: lattice surgery, multi-qubit Pauli measurement, real-time decoding, wavefront partitioning, commit buffer cleanup, twist defect, logical Y measurement, DEM partitioning
+
+### Concrete Functions in Private Simultaneous Quantum Messages: Quantum Advantages and Structural Limitations
+- [[psqm-concrete-function-bounds]] - PSQM 具体函数通信复杂度：等值/多数享有纠缠优势，唯一原像函数（AND）遭遇 rank 三明治障碍，qudit 维度破局 (arXiv: 2610.23090)
+  - EQ 三方等值：多色和自由族嵌入+四坐标安全求和 → 纠缠辅助 1.633n qubits vs 无纠缠 ≥3n；MAJ3：1 GHZ+Pauli 编码 3 qubits vs 经典 6 bits；EQ3：3 qubits vs 3log₂3 bits
+  - 唯一原像不可能性：正确性经引理 2.4（零重叠→Hermite 对合）强制 ϱ_0 含 2^k−1 正交分量（rank≥2^k−1）vs 隐私限制 rank≤3，k≥3 不相容——任意共享态+U(2) 编码均无完美协议；逃逸：零和自由+有限域随机化 qudit 协议，ANDk ≤ k·log₂k qubits（Bertrand 素数）
+  - **Activation**: private simultaneous quantum messages, PSQM, communication complexity, GHZ protocol, unique preimage impossibility, qudit, rank argument, secure multiparty computation
 
 ## 2026-10-20 - Neuroscience Research (Cron Job)
 
