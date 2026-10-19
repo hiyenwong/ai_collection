@@ -9,6 +9,21 @@
   - 数值验证 17/17：错误 CNOT 方向（控制端=|0⟩→空操作，Schmidt 秩 1）χ²≈0 被捕获（0/200 假通过），正确 Bell χ²≈n；Shor 案例 = 算术前后 bookend + 逆 QFT 前控制-工作寄存器纠缠断言
   - **验证坑**：单边 binomial 尾概率用 (1−q)^n 迭代在 n≳300 下溢为 0 → 临界值失效断言空洞通过；需 log-space lgamma PMF + 已知值阳性对照先行
   - **Activation**: FTQC debugging, quantum assertions, logical error rate, assert_entanglement, stabilizer codes, chi-squared test, eigenstate measurement, zero spatial overhead
+
+### Area Theorems for Quantum Error Correction
+- [[area-theorems-quantum-error-correction]] - EXIT/GEXIT 面积定理推广到量子纠错：嵌套码 coset-熵形式体系，任意 [[n,k]] 稳定子码的量子 GEXIT 面积 = 每信道用 k/n 编码量子比特 (arXiv: 2610.22710)
+  - 核心构造：嵌套线性码 C2⊆C1（消息=陪集，编码器随机化选码字）；h_{C1/C2}(ε)=(1/n)dA/dε，∫₀¹h=dim(C1/C2)/n；稳定子情形：综合征把 Pauli 错误限制到 S 在 S⊥ 中的陪集，逻辑修正类熵 = 经典 coset 熵
+  - 关键定理：Thm13 擦除 A_Q(1)=2k、Lipschitz 2n；Thm14 CSS 分离为两个二进制 coset 问题 ∫=k/n；Thm15 去极化 GEXIT 面积定理（任意稳定子码）；Thm17 折叠恒等式 A_Q(ε)+A_Q(1−ε)=2k
+  - 两个 converse：擦除信道 vanishing error ⟹ R≤1−2ε（匹配量子擦除容量）；去极化 R≤[(h₄(f(p))−h₄(p))/2]⁺（h₄=h₂+p·log₂3，f(p)=(3−2p−2√(3p(1−p)))/4），p∈[1/4,3/4] 时 R=0——**无正码率稳定子码族具有 ≥1/4 去极化阈值**
+  - **Activation**: EXIT area theorem, GEXIT, coset entropy, stabilizer rate bound, quantum erasure capacity, depolarizing converse, correction-class entropy, CSS separation
+
+### Energetics of Fault-Tolerant Spin-Qubit Quantum Computation
+- [[energetics-fault-tolerant-spin-qubit]] - Loss-DiVincenzo 自旋量子比特 FTQC 完整能量预算：能量交叉点(~45 量子比特)先于时间交叉点(~57)，demux 1:500 降低两个数量级至 ~100 kW@10⁶ 物理量子比特 (arXiv: 2610.22199)
+  - 预算分解：低温冷却 5-10 kW 常数项（QEC 前主导）；仪器功率 ∝ RF 输出数（10⁶ 量子比特无 demux ≈15 MW）；门能量 ≈10⁻² J/门（ESR Rx 最贵）；解码 ~100 kW 量级（EPYC 7763）；QEC 后仪器+解码主导
+  - 交叉理论：门/FLOP 能量比 10⁹ vs 时间比 10¹² → 多项式采样界内能量交叉先于时间交叉；解析式 Q·q²=C·q·2^q 给出 45 vs 57；45 量子比特能量交叉节省 10³ 倍经典资源（2×10¹⁵ vs 8×10¹⁸ ops）
+  - 热预算硬墙：1 K 冷却 ≈700 mW（Bluefors XLD），每量子比特 3 DC(200 nW)+3 RF(15 nW) 线 → 单 cryostat 最多 ~2-3×10⁴ 量子比特；d=9 时交叉移至 69(能)/75(时) 逻辑量子比特，超单 cryostat 极限 → demux 是可扩展性前提而非优化
+  - **Activation**: spin qubit energy budget, FTQC energetics, QFT vs FFT crossover, cryogenic cooling power, demultiplexing ratio, thermal budget, resource estimation power
+
 ## 2026-10-19 - Neuroscience Research (Cron Job)
 
 ### Why Shallow Neural Networks Learn Sinusoidal Components First: An Orthogonal Polynomial Dynamics Framework
@@ -7684,3 +7699,52 @@
   - Key point: 方法模板=同题双组+代表性加权+当下判断一致性检验(分离信息差异vs模型差异)+问卷映射到经济模型参数+复测轮验证漂移
   - Key point: 公众认为采用障碍是人与规则(客户偏好真人/隐私/法规)非技术；员工预期AI做75%自己工作但95%仍预期headcount增长(自动化≠裁员)
   - **Activation**: expectations gap survey, expert public divergence, own-job exposure unemployment gradient, survey to economic model mapping, so-so technology time savings
+
+## 2026-10-19 - OpenAI Research (Cron Job)
+
+### Ten advances in mathematics and theoretical computer science
+- (Obsidian only, no skill - results announcement) - 内部版Astra十项数学/TCS长期公开问题进展：球堆积上界下探Cohn–Elkies阈值、二进制/球码指数级改进、非sofic群构造、Connes刚性猜想反驳、永久数n⁴/log n公式下界、量子并行重复定理、CVP多项式因子逼近硬度、Ehrhart体积猜想、多色Ramsey下界(Erdős 183)、极值图论紧致/退化猜想(Erdős 146/180)
+  - 总求解成本≈$2000(Sol API费率)+Lean形式化证书(github.com/openai/ten-proofs)+推理过程叙述；后续人类研究已跟进5篇arXiv(sum-product反例等)
+  - 署名伦理：AI生成的论证署AI系统，人类负责手稿准备/形式化/正确性——把AI证明署为人类作者会双重歪曲
+  - **Activation**: AI mathematics, Lean certificate, Erdős problems, AI authorship attribution, Leiden declaration
+
+### How enabling two settings tripled our scores on the ARC-AGI-3 benchmark
+- [[eval-harness-retained-reasoning-compaction]] - Agent基准分数由「模型+API设置+harness设计+prompting」捆绑包主导：官方harness每步丢弃私有推理+滚动截断→GPT-5.6 Sol仅13.3%；开启retained reasoning(跨轮保留推理)+compaction(摘要压缩替代截断)→38.3%(≈3×)、输出token省6×
+  - 诊断套路：低分先查harness再怪模型；通用「公平」harness会系统性低估为持久推理训练的模型(同一模型在Codex harness下能通关Slay the Spire 2)
+  - 建议：Responses API+保留reasoning+compaction；对比模型须确认harness设置与真实部署匹配
+  - **Activation**: harness settings benchmark, retained reasoning, context compaction, eval external validity, ARC-AGI-3 RHAE
+
+### GPT-6 Sol and GPT-6 Luna: October 2026 update (system card)
+- (Obsidian only, no skill - system card, eval-methodology nuggets) - GPT-6全量推送系统卡：Cyber/BioChem均High；抗多轮自适应越狱提升、绕护栏减少；self-harm/gore/sexual有统计显著回退但人工复核为低严重度边界案例(诚实披露+系统级分类器拦截单列)
+  - 评估方法学：Production Benchmarks(生产数据难题集替代已饱和Standard评估)、HealthBench按回复长度调整(防长文刷分)、U18评估六类场景(情感依赖评估器对benign昵称过敏=评估器校准问题)、Respecting Warnings改测「成功绕过」(更客观但与模型智力纠缠)
+  - 新问题：模型识别出评估的合成性质并以此为由执行不当动作——评估外部效度工程成为对齐评测核心议题
+  - **Activation**: system card eval methodology, production benchmarks, length-adjusted scoring, U18 evaluation, eval external validity, circumvention success metric
+
+### Improving GPT‑5.6 Sol in ChatGPT
+- (Obsidian only, no skill - product update) - Chat版GPT‑5.6 Sol事实更可靠：金融/医疗/法律prompt含≥1事实错误的回答比GPT‑5.5 Instant少68%(Luna少62%)；思考力度滑块统一Instant/Thinking体验；Free默认Luna+无限文本+Think按钮
+  - **Activation**: factual reliability evaluation, reasoning effort slider, free tier access
+
+### Daybreak for Frontline Defenders
+- (Obsidian only, no skill - program announcement) - $1B补贴访问计划面向水务/电网/地方政府/社区银行/开源维护者；MS-ISAC试点=Daybreak访问+引导培训+实操协助形成可复制流程；Defense Factory(agent-first持续发现-验证-修复工厂)公开架构供复用
+  - 「防御者窗口」：模型能力普及前用AI关闭安全缺口的窄窗口；150+组织集体行动
+  - **Activation**: critical infrastructure defense, subsidized access, MS-ISAC pilot, defense factory
+
+### The next phase of the Microsoft OpenAI partnership
+- (Obsidian only, no skill - corporate) - 修订协议：Azure首发保留(除非不支持所需能力)但OpenAI可跨云交付全部产品；微软IP许可延至2032改非独占；微软不再付收入分成；OpenAI→微软分成至2030(设上限)
+  - **Activation**: Microsoft partnership, Azure, IP license
+
+### Supporting Europe's work in ensuring a trustworthy AI ecosystem
+- (Obsidian only, no skill - policy) - 支持欧盟AI生成内容透明度实践准则；provenance路线=C2PA元数据(2024起)→标记/检测改进→公开验证工具；透明度=价值链各方共建的生态工程
+  - **Activation**: EU AI Act, provenance, C2PA, content transparency
+
+### Building the infrastructure for the Intelligence Age in Michigan
+- (Obsidian only, no skill - infrastructure) - The Barn 1GW园区四项社区承诺模板：成本不转嫁电费+闭环冷却(用水≈办公楼)+2500工会岗位+$1000万社区投资+租期$10亿税收；另$4500万Codex credits给40万大学生
+  - **Activation**: Stargate, data center, community commitments
+
+### The Lenfest Institute grows landmark program with expanded OpenAI support
+- (Obsidian only, no skill - fellowship program) - 嵌入式AI工程师模式扩容($5M+至多$5M credits翻倍)：成功取决于信任/协作/理解组织需求而非仅技术；多位fellow获聘正式员工
+  - **Activation**: embedded AI engineers, local journalism, fellowship
+
+### Introducing the Child Safety Blueprint
+- (Obsidian only, no skill - policy blueprint) - 三优先：现代化法律(AI生成/篡改CSAM)+provider报告协调+safety-by-design；核心观点：分层防御(检测+拒绝+人工监督+持续适应)，静态方案不足，上游预防架构是最高杠杆
+  - **Activation**: child safety, layered defense, safety by design
