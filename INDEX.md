@@ -26,6 +26,13 @@
 
 ## 2026-10-19 - Neuroscience Research (Cron Job)
 
+### Distributional Signatures of Computation: Inferring Mechanisms from Computation Time Distributions
+- [[distributional-signature-computation-mechanism]] - 计算时间分布=随机计算动力学的可观测签名，逆因果链推断机制；benchmarking 只约束效率、分布形状才区分机制 (arXiv: 2610.23607)
+  - 机制→分布识别表：确定性→δ峰、顺序遍历→均匀、干涉动力学→周期峰、累积过程→指数/gamma/ex-Gaussian（累积度越高越宽、正偏越强）
+  - 特征分布=逐 RT÷输入规模（divisive normalization，~线性 scaling 下跨规模聚合提统计力）；模型比较双统计：逐被试拉伸因子最小 KS 距离 + Gamma 族 LOO 边际对数似然（经验贝叶斯 log-s 先验+Gauss-Hermite+被试 bootstrap）
+  - 人类视觉搜索（400→320k 像素，94 被试）三模型均值全~线性不可区分，但 KS/mLLH 排序一致 rDDM<gDDM<MNM：驻留式局部累积脉冲网络（无空间记忆）最贴人类短 RT 高密度+重尾分布 → 人类搜索≠全局后验引导
+  - **Activation**: computation time distribution, reaction time, evidence accumulation, visual search, mechanism inference, benchmarking ambiguity, KS distance, marginal log-likelihood, physical computation, cross-substrate comparison
+
 ### Why Shallow Neural Networks Learn Sinusoidal Components First: An Orthogonal Polynomial Dynamics Framework
 - [[spectral-bias-orthogonal-polynomial-dynamics]] - 正交多项式GFS框架解释谱偏差：动力学矩阵H的分级特征值结构决定低频先学 (arXiv: 2610.21964)
   - 损失诱导ρ(x)加权内积→正交多项式基，p_k恰有k个零点=k为无混叠"频率"；GD下GFS系数残差服从dr/dt=−αHr，H=[∂c_k/∂θ][∂c_k/∂θ]ᵀ
