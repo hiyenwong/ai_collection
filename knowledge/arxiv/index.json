@@ -1,5 +1,69 @@
 [
   {
+    "id": "2610.22484",
+    "title": "Upper bounds on the number of causal pieces in spiking neural networks",
+    "skill_name": "upper-bounds-on-the-number-of-causal-pieces-in-spi",
+    "category": "spiking-neuromorphic",
+    "utility": 0.8999999999999999,
+    "date_added": "2026-10-19"
+  },
+  {
+    "id": "2610.23826",
+    "title": "Self-Building Labs",
+    "skill_name": "self-building-labs",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-19"
+  },
+  {
+    "id": "2610.23673",
+    "title": "On the possibilities and limitations of LLM-based multi-agent systems for multi-criteria decision-making in healthcare operations management",
+    "skill_name": "on-the-possibilities-and-limitations-of-llm-based",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-19"
+  },
+  {
+    "id": "2610.23284",
+    "title": "Annotrace: A Workbench for Step-Level Annotation of Agent Traces",
+    "skill_name": "annotrace-a-workbench-for-step-level-annotation-of",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-19"
+  },
+  {
+    "id": "2610.23078",
+    "title": "Cryptographically Secure Agent-to-Agent Communication in Multi-Agent Systems",
+    "skill_name": "cryptographically-secure-agent-to-agent-communicat",
+    "category": "security-privacy",
+    "utility": 0.85,
+    "date_added": "2026-10-19"
+  },
+  {
+    "id": "2610.23056",
+    "title": "Thought Blocks: Non-Autoregressive Latent Communication for Multi-Agent Systems via Trajectory-to-State Compilation",
+    "skill_name": "thought-blocks-non-autoregressive-latent-communica",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-19"
+  },
+  {
+    "id": "2610.22980",
+    "title": "KiranaBench: Can a Language Model Run a Neighbourhood Shop?",
+    "skill_name": "kiranabench-can-a-language-model-run-a-neighbourho",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-19"
+  },
+  {
+    "id": "2610.22882",
+    "title": "Cooperation Without Adaptation: LLM Agents in a Collective-Risk Dilemma",
+    "skill_name": "cooperation-without-adaptation-llm-agents-in-a-col",
+    "category": "multi-agent-rl",
+    "utility": 0.85,
+    "date_added": "2026-10-19"
+  },
+  {
     "id": "2610.20780",
     "title": "ARIA: Runtime Inspection and Amendment for Multi-Agent Systems",
     "skill_name": "aria-runtime-inspection-amendment-multi-agent",

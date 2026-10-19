@@ -1,3 +1,43 @@
+## 2026-10-19 - arXiv Paper Skills (Cron Job)
+
+### multi-agent-rl
+
+- **self-building-labs** (Utility: 0.85)
+  - Self-Building Labs
+  - arXiv: 2610.23826
+
+- **on-the-possibilities-and-limitations-of-llm-based-multi-agent-systems-for-multi** (Utility: 0.85)
+  - On the possibilities and limitations of LLM-based multi-agent systems for multi-criteria decision-making in healthcare operations management
+  - arXiv: 2610.23673
+
+- **annotrace-a-workbench-for-step-level-annotation-of-agent-traces** (Utility: 0.85)
+  - Annotrace: A Workbench for Step-Level Annotation of Agent Traces
+  - arXiv: 2610.23284
+
+- **thought-blocks-non-autoregressive-latent-communication-for-multi-agent-systems-v** (Utility: 0.85)
+  - Thought Blocks: Non-Autoregressive Latent Communication for Multi-Agent Systems via Trajectory-to-State Compilation
+  - arXiv: 2610.23056
+
+- **kiranabench-can-a-language-model-run-a-neighbourhood-shop** (Utility: 0.85)
+  - KiranaBench: Can a Language Model Run a Neighbourhood Shop?
+  - arXiv: 2610.22980
+
+- **cooperation-without-adaptation-llm-agents-in-a-collective-risk-dilemma** (Utility: 0.85)
+  - Cooperation Without Adaptation: LLM Agents in a Collective-Risk Dilemma
+  - arXiv: 2610.22882
+
+### security-privacy
+
+- **cryptographically-secure-agent-to-agent-communication-in-multi-agent-systems** (Utility: 0.85)
+  - Cryptographically Secure Agent-to-Agent Communication in Multi-Agent Systems
+  - arXiv: 2610.23078
+
+### spiking-neuromorphic
+
+- **upper-bounds-on-the-number-of-causal-pieces-in-spiking-neural-networks** (Utility: 0.90)
+  - Upper bounds on the number of causal pieces in spiking neural networks
+  - arXiv: 2610.22484
+
 ## 2026-10-17 - arXiv Paper Skills (Cron Job)
 
 
