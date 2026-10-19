@@ -8,6 +8,7 @@ metadata:
   revised: "2026-09-29 (v2)"
   authors: "Dominik Dold, Philipp Christian Petersen (University of Vienna)"
   source: "arXiv cs.NE, q-bio.NC"
+  upper_bounds_arxiv: "2610.22484 (Dold, Elbrächter, Petersen 2026)"
 ---
 
 # Causal Pieces: Analysing and Improving SNNs Piece by Piece
@@ -58,6 +59,16 @@ SNN 表达力分析的 "linear pieces"（ReLU ANN）类比：**causal pieces** �
 4. 若初始 piece 数低（如 <100 for 3-class toy）：直接换种子/分布，别指望训练救回
 5. 需要泛化界时考虑正权重 SNN+和>阈正则（全局 Lipschitz→covering number）
 6. 深度增加 piece 数比宽度有效但会饱和——前几层增益最大
+
+## Piece 数上界（arXiv:2610.22484, Dold–Elbrächter–Petersen 2026）
+
+后续论文为上文下界补齐上界（前馈单脉冲 SNN、任意权重符号）：
+
+- **嵌套现象→lonesum 矩阵**：固定输入下，层内按有限脉冲时间排序的神经元产生递增 causal set 序列（A 先于 B 发放 ⇒ C_A ⊆ C_B）；该时间约束等价于每层活跃连接矩阵为 **lonesum matrix**。用 lonesum 精确计数（poly-Bernoulli 数乘积，Thm 4.6）得通用上界，量级 e^{2(L−1)N log N+O(N)}（L=深度、N=最大层宽），适用广泛神经元模型类，显著紧于朴素组合界（Prop 4.2）
+- **超平面排列界**：对特定模型类（nLIF+指数突触、ReLU 型 SRM、nLIF+Dirac-δ、LIF+Dirac-δ；无突触延迟），脉冲时间重参数化把 causal pieces 变成多面体区域（SNN 在其上实现仿射函数）→ 计超平面排列区域数（类比 ReLU ANN 区域计数）；界追踪各中间层像的维度 d_ℓ=min_{r≤ℓ}(N_r−1)，含低维 bottleneck 层时更紧（Thm 5.7）。量级：nLIF+exp / ReLU 型 O(N^{(4L−3)(N₀−1)})；LIF+δ O(N^{L(N₀−1)})
+- **最惊人**：nLIF+Dirac-δ 的上界 R(N₀)=Σ_{q∈[N₀]} q!·N₀^q **只依赖输入维度 N₀，与深度/宽度无关**——突触核+泄漏的选择从根本上改变表达力天花板
+- **实践含义**：(1) piece 数天花板随深度×宽度指数增长，但随机初始化实际实现的 piece 数远低——与上文 Thm 2 下界之间的 gap 即训练可挖掘空间；(2) 需要大 piece 数的任务别选 nLIF+δ（被 N₀ 卡死）；(3) 天花板高 ≠ 训练能达到——初始化仍由上文非零均值法则主导
+- 并发工作（Singh et al.）仅对共享正权重限制类给界；本文对任意权重成立
 
 ## 局限
 
