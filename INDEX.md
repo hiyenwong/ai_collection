@@ -1,5 +1,20 @@
 # AI Collection Index
 
+## 2026-10-20 - Computer Science Research (Cron Job)
+
+### Leveraging Verifiable Structure in Quantum Circuits to Find More Efficient Compilations with Agentic AI
+- [[agentic-verifiable-quantum-compilation]] - kickmix 可验证结构 + Fiat-Shamir 模糊认证 + agentic 闭环优化的量子编译范式 (arXiv: 2610.23832)
+  - Google Quantum AI 把 ecdsa.fail 验证范式泛化：瓶颈子例程约束到经典可验证结构（可逆经典+对角相位+测量式反计算）→ 线性成本经典仿真（单核 6e10 指令/s，86M 门 <5s）→ fuzz 测试 ε̂=k/N 认证保真度 ≥ (1−2ε)²、迹距离 ≤ 2√ε（已数值验证）
+  - Fiat-Shamir 非交互验证：SHA-256(电路字节)+盐 → PRNG 挑战输入，防硬编码防 seed-grinding；Clopper-Pearson ε+ ≈ 88.7/N @ 2⁻¹²⁸；三 benchmark（1/√x Coulomb 聚变 / Reed-Solomon DQI / QROM+Majorana 化学）播种 $150k Kaggle 竞赛；ecdsa.fail 先例 100+ 参赛者 AI agent Toffoli 减半
+  - **Activation**: kickmix, Fiat-Shamir verification, fuzz testing quantum circuits, agentic compilation, Toffoli optimization, Clopper-Pearson certification, classically verifiable subroutine
+
+### SkillBrowser: Selective Skill Exposure for Scalable Skill-Using Agents
+- [[skillbrowser-selective-skill-exposure]] - 26k 技能库的选择性暴露：固定元技能管理按需访问，能力导向查询+混合检索 (arXiv: 2610.23554)
+  - SSE 形式化：渐进披露元数据污染随 N 不可扩展；静态检索错过推理中涌现的能力需求且无条件注入干扰可解任务；SkillBrowser = agent 识别能力缺口 → 结构化查询（能力+上下文+正负信号）→ SkillGrep 混合检索 → 按需加载，无独立"检索与否"决策阶段
+  - 6 SRA-Bench × 5 LLM：vs LLM 选择 21胜/4平/5负；ToolQA 43-61% vs 17-39%；金技能直注在 13/30 设置反而更差——不暴露有正值；消融 Meta-Skill+BM25 保留大部分收益（访问策略 > 检索器）
+  - **Activation**: selective skill exposure, meta-skill, skill retrieval, context pollution, capability-oriented query, SRA-Bench, on-demand loading
+
+
 ## 2026-10-20 - Neuroscience Research (Cron Job)
 
 ### Deep LLM layers expose passage-level context in EEG during silent reading
