@@ -7766,3 +7766,9 @@
   - 方案=独立公开网页索引验证「精确URL是否公开存在且与用户会话无关」：命中→自动加载；未命中→警告/换源；安全性质从「域名信誉」转为「与用户数据无关」
   - 明示不保证项：页面内容可信/防社工/防页面内恶意指令——纵深防御一层(模型缓解+工具限制+动作检查+监控+红队)；技术论文公开
   - **Activation**: URL exfiltration, prompt injection data leak, independent web index verification, exact URL trust, agent link safety
+
+### How we build safety, security, and privacy into dots
+- [[always-on-agent-safety-architecture]] - 常驻agent生产安全架构六层：模型层(意图理解/范围遵守/澄清问题+人机红队)→每dot独立沙箱云工作区(代码执行与安全系统物理分离)→凭据隔离(登录时模型暂停，凭据经加密服务直进浏览器、永入不了模型上下文)→独立Auto-review动作门(部署在agent可修改环境之外，拦截返回原因，用户批准不能凌驾核心安全)→主动研究只读+代码级强制(不得发消息/改内容/控浏览器)→监控暂停可疑工作
+  - 控制面：统一权限管理/上下文可重置/Activity View跟进纠偏停止；委托子任务只留任务所需信息
+  - 诚实边界：dots仍会犯错，重要工作必须复核；监控误报会拖慢正当长任务——持续校准+申诉路径
+  - **Activation**: always-on agent safety, auto-review action gating, credential isolation, sandbox workspace, prompt injection containment
