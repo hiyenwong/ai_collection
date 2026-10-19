@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-10-20 - Neuroscience Research (Cron Job)
+
+### Deep LLM layers expose passage-level context in EEG during silent reading
+- [[llm-target-layer-eeg-decoding]] - LLM 目标层是 EEG 语言解码器"词 vs 篇章"的设计拨盘，附 context-tracking 对照组 battery (arXiv: 2610.23638)
+  - Llama-3.1-8B 全 33 层逐层训练解码器（330 fits，单被试 51h 静默阅读，19 导 EEG）：词身份在 L1-2 峰值后单调衰减（Spearman -0.97），篇章追踪分量随深度上升（占 overall gain 10%->42%），稀有词偏好中深度目标（rare/frequent 比 0.32->0.80）
+  - target-geometry control（sigma 校准合成词解码器）证明单 0.5s 窗口的 context-tracking 约 9/10 超出目标几何；跨 session 叙事邻居保留同 session 3/4 -> 上下文跟随文本而非记录签名；封闭集 50 词精度不加"保留上下文移除词"控制时混淆词与篇章
+  - **Activation**: EEG language decoding, LLM target layer, context tracking, silent reading, layer sweep, CLIP retrieval
+
+### Alignment of visual brain encoding models with individual perceptual similarity judgments
+- [[personalized-perceptual-alignment-brain-encoders]] - 脑准确不等于知觉对齐；100 图行为判断两级自举（个性化 DreamSim -> RSA 微调）让编码器反映个体知觉及其被试间结构 (arXiv: 2610.22569)
+  - 关键解离：基线 NRF 编码器对知觉对齐优于实测 fMRI（0.198 vs 0.146，SNR 增益）且保留 fMRI 被试间结构（rho=0.819），但不反映知觉判断的被试间结构（rho=-0.03）——fMRI 优化继承脑响应几何而非知觉几何
+  - 微调阶梯 0.192 < 0.287（群体）< 0.377（个性化），仅个性化版恢复知觉被试间结构（rho=0.508）；体素精度 -9.2% vs 对齐 +190%；方法=冻结骨干特征重加权 + teacher-MSE(x10)+RSA(x2) 损失
+  - **Activation**: perceptual alignment, personalized encoding model, DreamSim, NSD, representational similarity, individual differences, brain decoding
+
 ## 2026-10-19 - Quantum Mechanics Daily (Cron Job)
 
 ### SynDebug: A Framework to Debug Logic Bugs in Fault-Tolerant Quantum Computing Programs
