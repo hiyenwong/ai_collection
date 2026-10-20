@@ -12357,5 +12357,504 @@
     "published": "2026-10-15",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/causal-integrated-gradients-scalable-feature-attribution",
     "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.26860v1",
+    "title": "OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory",
+    "authors": "Yu Zhou, Cheng-Fu Yang, Rui Sun, Di Wu, Sibo Peng...",
+    "url": "https://arxiv.org/abs/2610.26860v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CV",
+      "cs.LG",
+      "cs.MM"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/openvlharness-real-world-visual-agentic-tool-use",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26845v1",
+    "title": "Train An Imaginative Agent",
+    "authors": "Jiaxin Ge, Junyi Zhang, Tianning Chai, Hanjun Yoo, Chenyang Wang...",
+    "url": "https://arxiv.org/abs/2610.26845v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/train-an-imaginative-agent",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26836v1",
+    "title": "Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy",
+    "authors": "Ke Zhang, Sahchit Chundur, Jerry Peprah Owusu, Mohammad Javad Abdolhosseini Qomi, Maziar Raissi",
+    "url": "https://arxiv.org/abs/2610.26836v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/same-simulation-different-evidence-where-retrieved",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26828v1",
+    "title": "Agent World Model in the Wild: Computer-Use Agent Environment Synthesis",
+    "authors": "Zhaoyang Wang, Qianhui Wu, Haorui Wang, Simon Yu, Baolin Peng...",
+    "url": "https://arxiv.org/abs/2610.26828v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/agent-world-model-in-the-wild",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26826v1",
+    "title": "RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development",
+    "authors": "Yuchi Wang, Rongyao Fang, Weihao Yu, Xilin Wei, Tiancheng Gu...",
+    "url": "https://arxiv.org/abs/2610.26826v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/refcraft-benchmarking-visual-reference-conditioned-agentic-generation-through",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26664v1",
+    "title": "Honeypots for AI Agent Insider Threats",
+    "authors": "Jan Wehner, Jam Kraprayoon",
+    "url": "https://arxiv.org/abs/2610.26664v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/honeypots-for-ai-agent-insider-threats",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26662v1",
+    "title": "AllPath: Layered Verification for a Deployed, Self-Revising LLM Trading Agent under Human-Gated and Autonomous Regimes",
+    "authors": "Tian Zhang, Meng Li",
+    "url": "https://arxiv.org/abs/2610.26662v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/allpath-layered-verification-for-a-deployed",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26554v1",
+    "title": "BetaMem: Learning to Remember a Changing World for Embodied Agents",
+    "authors": "Mai Liu, He Sun, Siru Zhong, Kerun Chen, Hao Yan...",
+    "url": "https://arxiv.org/abs/2610.26554v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/betamem-learning-to-remember-a-changing",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26548v1",
+    "title": "Agentic Orchestration of EDC Data Space Retrieval and Natural Language Driven Data Processing",
+    "authors": "Marla Grunewald, Fin Gentzen, Iulisloi Zacarias, Admela Jukan",
+    "url": "https://arxiv.org/abs/2610.26548v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/agentic-orchestration-of-edc-data-space",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26789v1",
+    "title": "Cooperative Multi-Agent Reinforcement Learning for Market Making on Prediction-Market Order Books",
+    "authors": "Skander Lejmi",
+    "url": "https://arxiv.org/abs/2610.26789v1",
+    "utility": 1.0,
+    "categories": [
+      "stat.ML",
+      "cs.LG",
+      "cs.MA",
+      "q-fin.TR"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/cooperative-multi-agent-reinforcement-learning-for-market",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26777v1",
+    "title": "Topological Sheaves of Irreducibility: A Theoretical Framework for Multi-Agent Task Obstructions",
+    "authors": "Steven Motta, Davide Mambelli, Alessandro Rozza",
+    "url": "https://arxiv.org/abs/2610.26777v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.LG",
+      "cs.MA"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/topological-sheaves-of-irreducibility-a-theoretical",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26369v1",
+    "title": "Autonomous intelligence for mining productivity: a multi-agent AI approach to operational value creation",
+    "authors": "N Guerin, A Dehoux, M Nakhla",
+    "url": "https://arxiv.org/abs/2610.26369v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI",
+      "cs.MA"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/autonomous-intelligence-for-mining-productivity-a",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26359v1",
+    "title": "Discovery-Probability Graph Planning for Embodied Agents in Tasks with Hidden Cooperation Requirements",
+    "authors": "Zihuang Cai, Changjian Chen, Zhuo Tang, Chang Tang, Kenli Li",
+    "url": "https://arxiv.org/abs/2610.26359v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.MA"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/discovery-probability-graph-planning-for-embodied-agents",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26324v1",
+    "title": "The Control Layer Behind Rule-Following Agents Trading Across Market Conditions",
+    "authors": "Saad Naja, Nasser Odtallah, Jake Van-Praag, Sarah May",
+    "url": "https://arxiv.org/abs/2610.26324v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI",
+      "cs.LG",
+      "cs.MA",
+      "q-fin.RM",
+      "q-fin.TR"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/the-control-layer-behind-rule-following-agents",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26272v1",
+    "title": "Bidirectionality is Necessary in Cellular Machines for Exact-Arrival Multi-Agent Path Finding",
+    "authors": "Masashi Aono",
+    "url": "https://arxiv.org/abs/2610.26272v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.ET",
+      "cs.CC",
+      "cs.DC",
+      "cs.MA"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/bidirectionality-is-necessary-in-cellular-machines",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.25851v1",
+    "title": "Learning Who Talks to Whom: Role-Aware Communication Topology Scheduling for Efficient LLM Multi-Agent Collaboration",
+    "authors": "Haibin Li, Wenya Yu, Xuefeng Jiang, Jia Li, Xiao Han...",
+    "url": "https://arxiv.org/abs/2610.25851v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.MA"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/learning-who-talks-to-whom-role-aware",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.25748v1",
+    "title": "MAPS: A Multi-Agent Personalized Script-Driven Video Advertising System Enhanced by Reinforcement Learning",
+    "authors": "Zhongyu Wang, Chen Zuo, Qingxuan Sun, Jiayang Qiao, Qiuhao Qian...",
+    "url": "https://arxiv.org/abs/2610.25748v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.IR",
+      "cs.CV",
+      "cs.MA"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/maps-a-multi-agent-personalized-script-driven-video",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.25111v1",
+    "title": "Explore or Confirm? LLM Agents Misallocate Measurements Under Noise",
+    "authors": "Abdul Karim, Matt Keon",
+    "url": "https://arxiv.org/abs/2610.25111v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI",
+      "cs.MA"
+    ],
+    "published": "2026-10-18",
+    "skill_dir": "collection/skills/multi-agent-rl/explore-or-confirm-llm-agents-misallocate",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.24873v1",
+    "title": "The One-Pixel of Reasoning: One Truthful Relation Is Enough to Mislead LLM Agents",
+    "authors": "Jinwei Hu, Youcheng Sun, Yi Dong, Xiaowei Huang",
+    "url": "https://arxiv.org/abs/2610.24873v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CR",
+      "cs.MA"
+    ],
+    "published": "2026-10-17",
+    "skill_dir": "collection/skills/neuroscience/the-one-pixel-of-reasoning-one-truthful",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.24845v1",
+    "title": "AgentSoV: Virtual Sensing for LLM Multi-Agent Systems via Stream of Variation",
+    "authors": "Congjing Zhang, Siyuan Xu, Yunfei Bai, Ke Ren, Xiaoning Qian...",
+    "url": "https://arxiv.org/abs/2610.24845v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.MA",
+      "eess.SY"
+    ],
+    "published": "2026-10-17",
+    "skill_dir": "collection/skills/multi-agent-rl/agentsov-virtual-sensing-for-llm-multi-agent",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.24718v1",
+    "title": "Neuro-Inspired Inhibitory Message Passing for Accurate and Token-Efficient Multi-Agent Reasoning",
+    "authors": "Nima H. Siboni, Magdalena Springer, Vahid Rostami",
+    "url": "https://arxiv.org/abs/2610.24718v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.MA"
+    ],
+    "published": "2026-10-17",
+    "skill_dir": "collection/skills/neuroscience/neuro-inspired-inhibitory-message-passing-for-accurate",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.24549v1",
+    "title": "CARVS: A Congestion-Aware Algorithm for Online Multi-Agent Pickup-and-Delivery in Human-Collaborative Warehouses",
+    "authors": "Chaoran Li, Zeyuan Zhao, Shao Zhang",
+    "url": "https://arxiv.org/abs/2610.24549v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.MA",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "published": "2026-10-17",
+    "skill_dir": "collection/skills/multi-agent-rl/carvs-a-congestion-aware-algorithm-for-online",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.24383v1",
+    "title": "IF-MAP: Influence-Function-Inspired Agent Prioritization in Multi-Agent Systems",
+    "authors": "Jie Mao, Pingchen Lu, Zikun Qu, Jiahang Sun, Xiangyi Wang...",
+    "url": "https://arxiv.org/abs/2610.24383v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.AI",
+      "cs.MA"
+    ],
+    "published": "2026-10-17",
+    "skill_dir": "collection/skills/multi-agent-rl/if-map-influence-function-inspired-agent-prioritization-in-multi-agent",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.24282v1",
+    "title": "ROAR: Benchmarking LMM Agents under Real-Time Constraints in Multiplayer Action-Shooter Games",
+    "authors": "Dawei Wang, Di Zhao, Jianran Yu, Chengming Zhou, Marci Chi Ma...",
+    "url": "https://arxiv.org/abs/2610.24282v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.MA"
+    ],
+    "published": "2026-10-16",
+    "skill_dir": "collection/skills/multi-agent-rl/roar-benchmarking-lmm-agents-under-real-time",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.23820v1",
+    "title": "CocoRNA: Collective RNA Design with Cooperative Multi-agent Reinforcement Learning",
+    "authors": "Tianmeng Hu, Biao Luo, Ke Li",
+    "url": "https://arxiv.org/abs/2610.23820v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.LG",
+      "cs.MA"
+    ],
+    "published": "2026-10-16",
+    "skill_dir": "collection/skills/multi-agent-rl/cocorna-collective-rna-design-with-cooperative",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26770v1",
+    "title": "HarnessPro: Recursive Harness Self-Improvement with Pareto Optimization for Performance-Cost Trade-offs",
+    "authors": "Zhuoshi Pan, ZhiYuan Feng, Yukuo Cen, Honglin Lin, Junru Lu...",
+    "url": "https://arxiv.org/abs/2610.26770v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/harnesspro-recursive-harness-self-improvement-with-pareto",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26757v1",
+    "title": "Simulation Priors for Rapid Adaptation in Model-Based RL for Autonomous Racing",
+    "authors": "Adrian Remonda, Jiajun Xi, Nicklas Hansen, Marcus Greiff, Thomas Lew...",
+    "url": "https://arxiv.org/abs/2610.26757v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.LG",
+      "cs.RO",
+      "eess.SY"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/simulation-priors-for-rapid-adaptation-in",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26676v1",
+    "title": "Which Model for Which Role? Cost-Efficient Pareto Recommendation for LLM Agentic Workflows",
+    "authors": "Qian Xie, Wenyue Hua, Yueli He, Sripad Karne, Armaan Agrawal...",
+    "url": "https://arxiv.org/abs/2610.26676v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "stat.ML"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/which-model-for-which-role-cost-efficient",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26671v1",
+    "title": "PACT: Plan-Augmented Coordination via Trace-Graphs for Dynamic Multi-Agent Combinatorial Optimization",
+    "authors": "Xiao Zhou, Alex Schutz, Victor-Alexandru Darvariu, Nick Hawes",
+    "url": "https://arxiv.org/abs/2610.26671v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/neuroscience/pact-plan-augmented-coordination-via-trace-graphs-for",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.26659v1",
+    "title": "SpatialScout: Can VLM Agents Actively Explore and Map 3D Scenes?",
+    "authors": "Zhaoxi Zhang, Hao Liang, Linxuan Wu, Yiming Wu, Yifu Yuan...",
+    "url": "https://arxiv.org/abs/2610.26659v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.CV",
+      "cs.CL"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/spatialscout-can-vlm-agents-actively-explore",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26433v1",
+    "title": "The Geometry of Agent Memory: Forecasting Retrieval-Bound Memory Failures, and Characterizing Its Limits",
+    "authors": "Iliya Zhechev, Radoslav Ralev, Chris Coleman, Srijith Rajamohan, Jen Agarwal...",
+    "url": "https://arxiv.org/abs/2610.26433v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.CL",
+      "cs.IR"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/the-geometry-of-agent-memory-forecasting",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26632v1",
+    "title": "When the harness decides success: state that cannot be re-observed",
+    "authors": "Raimondas Lencevicius",
+    "url": "https://arxiv.org/abs/2610.26632v1",
+    "utility": 0.93,
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/when-the-harness-decides-success-state",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26503v1",
+    "title": "ScopeMem: Latent Memory That Learns Where to Revise Frozen GUI Agents",
+    "authors": "Zhicheng Zheng, Cheng Zhang, Shengping Yu, Tianxiang Zhao",
+    "url": "https://arxiv.org/abs/2610.26503v1",
+    "utility": 0.9,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/scopemem-latent-memory-that-learns-where",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.24833v1",
+    "title": "Measuring Consensus in AI Agent Networks",
+    "authors": "Jin Gao",
+    "url": "https://arxiv.org/abs/2610.24833v1",
+    "utility": 0.9,
+    "categories": [
+      "cs.MA"
+    ],
+    "published": "2026-10-17",
+    "skill_dir": "collection/skills/multi-agent-rl/measuring-consensus-in-ai-agent-networks",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.26847v1",
+    "title": "WeAct: Dynamic Weight Switching as Agent Actions",
+    "authors": "Rui Shi, Xunjian Yin, Jiacheng Sang, Zichuan Liu, Shuyan Zhou",
+    "url": "https://arxiv.org/abs/2610.26847v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "published": "2026-10-19",
+    "skill_dir": "collection/skills/multi-agent-rl/weact-dynamic-weight-switching-as-agent",
+    "skill_category": "multi-agent-rl"
   }
 ]

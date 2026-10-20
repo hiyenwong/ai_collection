@@ -1,3 +1,147 @@
+
+
+## 2026-10-20 - High-Utility arXiv Papers (Cron Job)
+
+### OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory
+- [[openvlharness-real-world-visual-agentic-tool-use]] - Multimodal large language models (MLLMs) have made rapid progress on visual reasoning, yet many tasks require evidence that is difficult to obtain through internal reasoning alone: our controlled stud... (arXiv: 2610.26860v1)
+  - Category: multi-agent-rl
+
+### Train An Imaginative Agent
+- [[train-an-imaginative-agent]] - A seemingly reasonable push in Sokoban can make the puzzle unsolvable. To avoid such mistakes, an agent has to anticipate the consequences of its actions before execution, especially when feedback fro... (arXiv: 2610.26845v1)
+  - Category: multi-agent-rl
+
+### Same Simulation, Different Evidence: Where Retrieved Tool Output Costs LLM Agents Accuracy
+- [[same-simulation-different-evidence-where-retrieved]] - LLM agents that compute the right answer can still answer wrongly. Agent harnesses increasingly keep long tool outputs out of the context window, saving them to files that the agent searches or reads ... (arXiv: 2610.26836v1)
+  - Category: multi-agent-rl
+
+### Agent World Model in the Wild: Computer-Use Agent Environment Synthesis
+- [[agent-world-model-in-the-wild]] - Agent learning is shifting from learning from human data toward learning through interaction with the world. However, scaling such learning directly in real-world computer systems is challenging and c... (arXiv: 2610.26828v1)
+  - Category: multi-agent-rl
+
+### RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development
+- [[refcraft-benchmarking-visual-reference-conditioned-agentic-generation-through]] - Beyond basic tool use and coding skills, effectively incorporating visual references into agentic generation is equally essential for applying AI agents to real-world productivity tasks. We study this... (arXiv: 2610.26826v1)
+  - Category: multi-agent-rl
+
+### Honeypots for AI Agent Insider Threats
+- [[honeypots-for-ai-agent-insider-threats]] - AI agents deployed inside organizations can pose an insider threat if they make mistakes, are compromised by an attacker, or pursue misaligned objectives. We propose honeypots as an AI control method ... (arXiv: 2610.26664v1)
+  - Category: multi-agent-rl
+
+### AllPath: Layered Verification for a Deployed, Self-Revising LLM Trading Agent under Human-Gated and Autonomous Regimes
+- [[allpath-layered-verification-for-a-deployed]] - LLM trading agents are evaluated almost exclusively in backtests and autonomous benchmark harnesses. Deployment, where actions are irreversible, raises a different question: who verifies the agent's a... (arXiv: 2610.26662v1)
+  - Category: multi-agent-rl
+
+### BetaMem: Learning to Remember a Changing World for Embodied Agents
+- [[betamem-learning-to-remember-a-changing]] - Long-horizon embodied agents face temporal confusion and incomplete or distorted records, recurring errors from fixed memory rules, and growing storage and retrieval costs. We present BetaMem, a frame... (arXiv: 2610.26554v1)
+  - Category: multi-agent-rl
+
+### Agentic Orchestration of EDC Data Space Retrieval and Natural Language Driven Data Processing
+- [[agentic-orchestration-of-edc-data-space]] - Participating in a data space still requires the Dataspace Protocol (DSP) negotiation flow to be hand-coded against each provider's access policy. We present a multi-agent architecture that automates ... (arXiv: 2610.26548v1)
+  - Category: multi-agent-rl
+
+### Cooperative Multi-Agent Reinforcement Learning for Market Making on Prediction-Market Order Books
+- [[cooperative-multi-agent-reinforcement-learning-for-market]] - A market maker provides liquidity by quoting prices to buy and sell an asset, earning the spread while managing inventory risk. We study market makers trained with multi-agent reinforcement learning o... (arXiv: 2610.26789v1)
+  - Category: multi-agent-rl
+
+### Topological Sheaves of Irreducibility: A Theoretical Framework for Multi-Agent Task Obstructions
+- [[topological-sheaves-of-irreducibility-a-theoretical]] - Multi-agent systems can differ under identical agents and communication budgets when they support different forms of joint interaction. We introduce Topological Sheaves of Irreducibility (TSI), a shea... (arXiv: 2610.26777v1)
+  - Category: multi-agent-rl
+
+### Autonomous intelligence for mining productivity: a multi-agent AI approach to operational value creation
+- [[autonomous-intelligence-for-mining-productivity-a]] - Integrated Remote Operation Centres (IROCs) are emerging as the architectural frontier of Industry 4.0 for capital-intensive sectors such as mining, oil and gas, and energy. Yet two intertwined gaps c... (arXiv: 2610.26369v1)
+  - Category: multi-agent-rl
+
+### Discovery-Probability Graph Planning for Embodied Agents in Tasks with Hidden Cooperation Requirements
+- [[discovery-probability-graph-planning-for-embodied-agents]] - Embodied agents are increasingly capable of perceiving, planning, and acting autonomously in dynamic environments, demonstrating strong performance on complex cooperative tasks. Recent advances typica... (arXiv: 2610.26359v1)
+  - Category: multi-agent-rl
+
+### The Control Layer Behind Rule-Following Agents Trading Across Market Conditions
+- [[the-control-layer-behind-rule-following-agents]] - Trading discipline often fails people. Our study tested whether four AI trading agents followed their strategies and risk rules. Offering traders the evidence and an agent evaluation toolkit to separa... (arXiv: 2610.26324v1)
+  - Category: multi-agent-rl
+
+### Bidirectionality is Necessary in Cellular Machines for Exact-Arrival Multi-Agent Path Finding
+- [[bidirectionality-is-necessary-in-cellular-machines]] - On ranked directed acyclic graphs coupled by vertex conflicts we study exact-arrival multi-agent path finding (departure and arrival pinned in place and time) posed as a distributed output task: every... (arXiv: 2610.26272v1)
+  - Category: multi-agent-rl
+
+### Learning Who Talks to Whom: Role-Aware Communication Topology Scheduling for Efficient LLM Multi-Agent Collaboration
+- [[learning-who-talks-to-whom-role-aware]] - Multi-agent systems driven by large language models (LLMs) rely on structured communication topologies to facilitate information exchange and collaborative reasoning. However, effectively scheduling t... (arXiv: 2610.25851v1)
+  - Category: multi-agent-rl
+
+### MAPS: A Multi-Agent Personalized Script-Driven Video Advertising System Enhanced by Reinforcement Learning
+- [[maps-a-multi-agent-personalized-script-driven-video]] - With the rapid growth of online video consumption, video advertising has become a dominant component of digital advertising. Most personalized video advertising systems follow a retrieval-based paradi... (arXiv: 2610.25748v1)
+  - Category: multi-agent-rl
+
+### Explore or Confirm? LLM Agents Misallocate Measurements Under Noise
+- [[explore-or-confirm-llm-agents-misallocate]] - As model reasoning gets cheaper, the physical experiment becomes the slow and costly step in discovery. Each experiment returns a noisy reading: a high value can mean a good candidate or a lucky draw.... (arXiv: 2610.25111v1)
+  - Category: multi-agent-rl
+
+### The One-Pixel of Reasoning: One Truthful Relation Is Enough to Mislead LLM Agents
+- [[the-one-pixel-of-reasoning-one-truthful]] - Can one sentence manipulate an agent's belief by targeting a single implicit warrant linking evidence to a conclusion? In this paper, we introduce the one-relation attack (ORA), a novel cognitive atta... (arXiv: 2610.24873v1)
+  - Category: neuroscience
+
+### AgentSoV: Virtual Sensing for LLM Multi-Agent Systems via Stream of Variation
+- [[agentsov-virtual-sensing-for-llm-multi-agent]] - Large language model (LLM) multi-agent systems (MASs) solve complex tasks through interacting agents, yet their reliability is difficult to analyze because failures depend on both individual agents an... (arXiv: 2610.24845v1)
+  - Category: multi-agent-rl
+
+### Neuro-Inspired Inhibitory Message Passing for Accurate and Token-Efficient Multi-Agent Reasoning
+- [[neuro-inspired-inhibitory-message-passing-for-accurate]] - Multi-agent systems promise to solve problems by bringing together information beyond the reach of any individual agent. Retrieval and tool use can distribute this information across agents, making co... (arXiv: 2610.24718v1)
+  - Category: neuroscience
+
+### CARVS: A Congestion-Aware Algorithm for Online Multi-Agent Pickup-and-Delivery in Human-Collaborative Warehouses
+- [[carvs-a-congestion-aware-algorithm-for-online]] - Intelligent warehouse systems have transformed logistics by integrating robots with minimal infrastructure changes, boosting efficiency and optimizing workflows compared to traditional human-only oper... (arXiv: 2610.24549v1)
+  - Category: multi-agent-rl
+
+### IF-MAP: Influence-Function-Inspired Agent Prioritization in Multi-Agent Systems
+- [[if-map-influence-function-inspired-agent-prioritization-in-multi-agent]] - Improving every agent in an LLM-based multi-agent system can be prohibitively costly, making it important to identify which agent should be prioritized to achieve the greatest system-level gain with l... (arXiv: 2610.24383v1)
+  - Category: multi-agent-rl
+
+### ROAR: Benchmarking LMM Agents under Real-Time Constraints in Multiplayer Action-Shooter Games
+- [[roar-benchmarking-lmm-agents-under-real-time]] - Large multimodal models (LMMs) are increasingly deployed as agents that perceive, reason, and act in interactive multi-agent environments. Yet most existing benchmarks for LMM-based agents in multi-ag... (arXiv: 2610.24282v1)
+  - Category: multi-agent-rl
+
+### CocoRNA: Collective RNA Design with Cooperative Multi-agent Reinforcement Learning
+- [[cocorna-collective-rna-design-with-cooperative]] - Designing RNA sequences that reliably fold into specific secondary structures is essential for understanding their biological functions but remains a challenging computational problem. We propose Coco... (arXiv: 2610.23820v1)
+  - Category: multi-agent-rl
+
+### HarnessPro: Recursive Harness Self-Improvement with Pareto Optimization for Performance-Cost Trade-offs
+- [[harnesspro-recursive-harness-self-improvement-with-pareto]] - Harness development plays a crucial role in building capable AI agents. Recent approaches improve harnesses through recursive self-improvement (RSI), but their performance gains often come with higher... (arXiv: 2610.26770v1)
+  - Category: multi-agent-rl
+
+### Simulation Priors for Rapid Adaptation in Model-Based RL for Autonomous Racing
+- [[simulation-priors-for-rapid-adaptation-in]] - Reinforcement learning enables learning high-performance control policies, but its reliance on extensive interaction limits deployment on physical systems where data collection is costly, and failures... (arXiv: 2610.26757v1)
+  - Category: multi-agent-rl
+
+### Which Model for Which Role? Cost-Efficient Pareto Recommendation for LLM Agentic Workflows
+- [[which-model-for-which-role-cost-efficient]] - LLM agentic workflows increasingly employ different models for specialized roles. Users may prefer different trade-offs between task quality and deployment cost, sometimes also considering latency. Fi... (arXiv: 2610.26676v1)
+  - Category: multi-agent-rl
+
+### PACT: Plan-Augmented Coordination via Trace-Graphs for Dynamic Multi-Agent Combinatorial Optimization
+- [[pact-plan-augmented-coordination-via-trace-graphs-for]] - Multi-agent approaches have been investigated recently as a means of improving the scalability of reinforcement learning for neural combinatorial optimization. Existing methods assume that all problem... (arXiv: 2610.26671v1)
+  - Category: neuroscience
+
+### SpatialScout: Can VLM Agents Actively Explore and Map 3D Scenes?
+- [[spatialscout-can-vlm-agents-actively-explore]] - Spatial intelligence requires agents to actively acquire visual evidence and integrate observations into a coherent representation of the three-dimensional world. Yet spatial question answering offers... (arXiv: 2610.26659v1)
+  - Category: multi-agent-rl
+
+### The Geometry of Agent Memory: Forecasting Retrieval-Bound Memory Failures, and Characterizing Its Limits
+- [[the-geometry-of-agent-memory-forecasting]] - We study whether geometric relationships between conversation turns, memory texts, and queries can predict answer correctness before generation. We evaluate four memory implementations with dense or h... (arXiv: 2610.26433v1)
+  - Category: multi-agent-rl
+
+### When the harness decides success: state that cannot be re-observed
+- [[when-the-harness-decides-success-state]] - Agent harnesses decide what a language model sees across turns: they drop old turns, summarize them, or replay the model's own earlier reasoning. We ask when these choices change whether an agent succ... (arXiv: 2610.26632v1)
+  - Category: multi-agent-rl
+
+### ScopeMem: Latent Memory That Learns Where to Revise Frozen GUI Agents
+- [[scopemem-latent-memory-that-learns-where]] - Latent memory is gaining ground as a lightweight history supplement for GUI agents. It supplies history to a frozen vision-language model via prefix vectors trained with step-wise cross-entropy (CE). ... (arXiv: 2610.26503v1)
+  - Category: multi-agent-rl
+
+### Measuring Consensus in AI Agent Networks
+- [[measuring-consensus-in-ai-agent-networks]] - As AI agents become increasingly connected through networks and take on tasks that require negotiation and joint decision-making, a systematic approach is needed to assess how their views converge and... (arXiv: 2610.24833v1)
+  - Category: multi-agent-rl
+
+### WeAct: Dynamic Weight Switching as Agent Actions
+- [[weact-dynamic-weight-switching-as-agent]] - Long-horizon agents must learn heterogeneous capabilities from interleaved trajectories. Updating shared parameters to learn new capabilities can degrade previously acquired ones, resulting in catastr... (arXiv: 2610.26847v1)
+  - Category: multi-agent-rl
+
 ## 2026-10-19 - arXiv Paper Skills (Cron Job)
 
 ### multi-agent-rl
