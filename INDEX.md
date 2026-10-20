@@ -18,6 +18,19 @@
 
 ## 2026-10-21 - Neuroscience Research (Cron Job)
 
+### Longitudinal fMRI reveals multi-network reconfiguration and a recurrent frontoparietal shift across rest and task states during adult aging
+- [[longitudinal-fmri-network-reconfiguration-aging]] - 852人x5.5年x4状态纵向fMRI：老化=归一化依赖的整体变化+状态依赖的网络重组，额顶叶相对其余9网络在全部状态正移位 (arXiv: 2610.24433)
+  - 原生网络内协方差每5年降7-11%（4状态全显著），但信号对幅值同步降9.4%而噪声幅值平稳：信号归一化后公共轨迹归零（Holm p=.332）、候选总幅值归一化下却降4-7%/5y——整体"衰退"部分是BOLD振幅伪迹，归一化选择决定结论
+  - 方法核心：log协方差拆分公共水平G+中心化对数比网络谱R_k（Helmert ILR正交基联合拟合）；FP-相对对比4状态+5-8%/5y（Wald p=1.7e-7），双归一化/每site/单扫描仪/皮层厚度调整/偏协方差下方向均稳健
+  - 谱收缩（跨网络SD比0.926/5y）；FP-相对量与流体智力无被试内耦合（p=.228）——轨迹成立但补偿功能不成立；基线年龄与随访时长分离建模+pedigree聚类三明治推断+4999 multiplier bootstrap
+  - **Activation**: longitudinal fMRI, functional connectivity, aging, BOLD amplitude, frontoparietal network, compositional data analysis, centered log-ratio
+
+### Disentanglement with Biological Constraints: A Theory of Functional Cell Types
+- [[biological-constraints-disentanglement-cell-types]] - 非负性+能量效率在数学上强制解纠缠——功能细胞类型（网格/物体向量细胞）为何形成的理论；v3含Theorem 2勘误 (arXiv: 2210.01768v3)
+  - Thm1: z=Me+b_z在非负+等总体方差约束下，最小活动能量解=解纠缠解（混合因子需更大偏置保非负、能量惩罚混合；非负性对应基线放电率）；Thm2: 纠缠观测x=De下生成式精确预测x=Wz+b_x+固定读出范数，最低能量=解纠缠且rank(M)=k
+  - v3勘误（引用前必查）：(1) z对e的线性不可去——存在同读出范数、一半活动能量的非负纠缠非线性反例；(2) 读出范数须固定非仅有限——否则(M,b,W)->(eM,eb,W/e)按e^2缩放能量、无最小元；(3) z>=0非z>0，v2证明在n>k时非法丢弃W零空间分量
+  - 神经科学兑现：因子化任务->GC/OVC双模块涌现（ReLU+能量罚+路径积分结构约束z(x)=f(W_a z(x-a))），纠缠任务->网格场向物体/奖励相位锁定扭曲（统一解释Boccara奖励扭曲 vs Butler无扭曲矛盾）；MIR指标修复MIG对分布式因子编码的误罚
+  - **Activation**: disentanglement, cell types, grid cells, object-vector cells, nonnegativity, energy efficiency, mixed selectivity, factorised task, MIR metric
 ### Length-Independent Stability and L2-Gain Certificates for Chains of Delayed Neural Modules
 - [[length-independent-certificates-delayed-neural-chains]] - 类型周期LKF变量+Fejér–Riesz胞元归约：一个96阶LMI同时认证所有长度的延迟神经模块链/环的稳定性与L₂增益（率无关延迟） (arXiv: 2610.25147)
   - 核心：率无关LKF（固定积分限→无τ̇项）+模块类型平铺变量→任意链的证书矩阵块三对角T_K(Ξ₀,Ξ₁)且胞元块相同；单胞LMI M=[[Y,−Ξ₁],[−Ξ₁ᵀ,−Ξ₀−I−Y]]⪰εI（稳定性96阶/增益104阶，1298标量变量与N无关）；Lemma 4算子Fejér–Riesz定理：胞元归约除ε边距外零保守（等价谱形式H₀+zH₁+z̄H₁ᵀ⪰0, ∀|z|=1，即平铺变量认证一切长度）
