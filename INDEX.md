@@ -2,6 +2,24 @@
 
 ## 2026-10-21 - Medicine Research (Cron Job)
 
+### LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents
+- [[leakbench-clinical-agent-leakage-audit]] - 可执行指南衍生审计套件：无约束临床建模 agent 100% 选择预测时泄漏特征（AUROC 排行榜掩盖时序无效增益），provenance 感知 verifier-in-loop（VILA）清除泄漏至 0/10 (arXiv: 2610.26088)
+  - 五条方法学有效性轴：预测时泄漏（致命，可用性标签 A_j=1[t≤t_pred]，provenance 感知而非名称过滤、派生特征未声明来源即 fail-closed）、校准（斜率≈1、类加权畸变罕见结局概率尺度）、医院级评估（pooled AUROC vs hospital-equal macro + leave-one-hospital-out）、支持感知（OOV 层 credited 弃权/转诊而非静默发风险）、决策曲线净获益（须同时胜 treat-none 与 treat-all，错校准模型在最低阈值失败）
+  - 审计协议核心：四路病人不相交划分（训练/agent验证/审计开发/封存测试，agent 冻结后只评一次）；六原子检查两命名判决 fatal_gate_pass 与 all_axes_pass 不可塌缩成一个"通过"；pass-rate 永不作为优化目标
+  - 实证表：A 无约束 deepseek/gpt-4o 各 10/10 泄漏；B 显式约束 9/10 与 4/10；C 加警告 5/10 与 0/10；D VILA 0/10 与 0/10——prompt-only 护栏不可靠，这是奖励的性质而非模型性质；ΔAUROC 仅 ~0.06 而 ΔAUPRC 巨大（0.242→0.444），换指标/改名/伪装都绕不过 provenance 检测
+  - VILA 修复：具体反馈（点名违规特征+修复要求）清除致命泄漏，pass rate 0.50→1.00，可部署 AUPRC 0.269 vs 人工专家 0.261（未做等效性检验）；原则性反馈只清除决策级缺陷——VILA 是纵深防御
+  - **Activation**: prediction-time leakage, clinical modeling agent audit, reward hacking descriptive, POA present-on-admission, verifier-in-loop VILA, methodological validity axes, decision curve net benefit, hospital-level evaluation, support awareness, fail-closed provenance, AUROC leaderboard concealment, MIMIC-IV audit
+
+### Label-Space Mismatch Distorts Cross-Cohort Evaluation in Breast Cancer Molecular Subtyping
+- [[label-space-mismatch-cross-cohort-eval]] - 跨队列评估三操作分解：标签空间限制（评估规则改变而非再训练增益）是主导修正（TCGA 73.76→79.74%），EM 先验修正是可选校准步骤（macro F1 下降），目标标签空间无法从无标签预测中恢复 (arXiv: 2610.24962)
+  - 核心案例：METABRIC 六类（含 claudin-low）→ TCGA-BRCA/GSE21653 五类 PAM50；六类模型把 7.6% 样本（basal-like 的 22.1%、Normal-like 的 44.4%）送进目标标准下不可能正确的 claudin-low 列
+  - mask_only+重归一化是"无歧义有益"修正（macro F1 0.585→0.757）；em_pam50 精度再升但 macro F1 0.757→0.737（质量移向主导类，部署可合理拒绝的权衡）；EM 在缺失类上保留先验 0.0751、校准检测器失败——合规必须来自队列文档
+  - 负结果：多模态融合增益不可迁移（外部无任何配置胜过 mRNA-only，McNemar p=0.13–1.00）；内部验证高估跨队列价值（713 维旗舰内部最优恰因 59 个 METABRIC 专有临床维度而不可迁移）；基因面板对 pCR 预测仅 +0.0045 AUC
+  - 协议：报告队列允许标签集→先 mask 重归一化再打分→先验修正单独报告并展示 macro F1 代价→绝不允许把跨标签空间边界的精度差归因为模型技能；亚型精度是比生存判别（外部 C-index 0.577–0.584）更弱的便携终点
+  - **Activation**: cross-cohort evaluation, label-space restriction, annotation standard mismatch, METABRIC PAM50, claudin-low, EM prior correction, mask_only, cohort documentation compliance, internal validation overstatement, multimodal fusion transfer failure, McNemar paired test
+
+## 2026-10-21 - Medicine Research (Cron Job)
+
 ### Measurement-efficient energy estimator for quantum chemistry of photodynamic materials
 - [[mixed-estimator-compute-uncompute-readout]] - 混合估计量读出E_ME=E_Φ+r_Φ·h/s：把mHa级能量读出压缩到~400 shots（较单行列式经典阴影省100×、较分组Pauli平均省~1700×）；Quantinuum×强生(Johnson & Johnson)在PDT/RDT抗癌MOF材料上演示 (arXiv: 2610.26689)
   - 核心分解：稀疏多组态参考|Φ⟩（SHCI/CASCI截断或QSCI/SQD采样子空间直接可用）→经典侧已知E_Φ=⟨Φ|H|Φ⟩、残差范数r_Φ=‖Q_ΦH|Φ⟩‖、归一化残差态|Λ⟩=Q_ΦH|Φ⟩/r_Φ；量子侧只测h=⟨Ψ|Λ⟩、s=⟨Ψ|Φ⟩两重叠（相对相位自动相消）；基态变分原理固定h/s≤0→幅值-only计算-反计算（真空测试p_Ω=|⟨Ψ|Ω⟩|²无ancilla无受控）E_ME=E_Φ−r_Φ√(p_Λ/p_Φ)
