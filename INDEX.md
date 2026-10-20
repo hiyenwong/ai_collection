@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-10-20 - Quantum Research (Cron Job)
+
+### Logical-Space Theory of Ordered-Statistics Decoding for Quantum LDPC Codes
+- [[logical-signature-osd-coverage]] - OSD候选列表的逻辑空间理论：M_log签名映射把解码成功化为签名匹配，P_L=P_miss+P_sel精确分解，覆盖感知列表压缩 (arXiv: 2610.24503)
+  - M_log = L_Z·G_F（秩k，一次离线高斯消元即可构造）把"逻辑成功"化为 M_log f = M_log e_F 的签名匹配；固定排序+iid噪声下 Fourier 公式精确给出 OSD-0 逻辑误差率（小p时 ≈ 危险列数·p）和任意候选列表的覆盖概率，免 Monte Carlo
+  - 覆盖-选择精确分解 P_L = P_miss + P_sel：gross码 [[144,12,12]] 上 B/C 两列表逻辑覆盖完全相同（635签名、P_miss均1.86%）P_L 却差3倍（11.30% vs 3.78%）——类内代表元选择是候选数量刻画不了的独立资源；672个覆盖感知候选胜过899个combination-sweep候选（配对McNemar p=0.013），Λ_2=41列子集即可完成λ*₂=78的全对覆盖
+  - **Activation**: OSD candidate list, logical coverage, logical signature, qLDPC decoding, P_miss P_sel, combination sweep, list compression
+
+### Efficient Quantum Algorithm for Mixed-State Quantum Geometry
+- [[gauss-laguerre-sld-mixed-geometry]] - Gauss-Laguerre求积把SLD Lyapunov反演化为指数收敛的滤波导数和：首个混合态全QGT/QFIM统一块编码 (arXiv: 2610.24686)
+  - PSD谱结构使 Lyapunov 积分 L_j=∫e^{-tρ}(∂_jρ)e^{-tρ}dt 匹配 Gauss-Laguerre 求积，K点误差 (1-Δ/2)^{2K} 指数收敛；LCU补偿系数和 β_K=Θ(K) 仅线性增长，指数收敛不被相干组装抵消——索引寄存器仅 O(log log 1/ε) 量子比特
+  - 两个条件承诺：有界谱隙（Δ≥1/poly）给近Heisenberg对角QFI估计 Q_ρ=Õ(α_j‖∂_jρ‖_F/(εΔ^{7/2}))，QPE免振幅估计只加1个辅助比特；有界响应 M=‖ρ⁺∂_jρ‖_F² 经Tikhonov正则化覆盖指数小谱隙（偏置|F^(θ)-F|≤8Mθ，Q_ρ=Õ(α_jM^{7/2}/ε⁴)）；多路复用SLD块编码组装全QGT块编码（F=2(T+T^⊤)），可直接做逆QFIM的CRB、高信息方向谱处理、Im(T)奇异值阈值证多参数不相容
+  - **Activation**: mixed-state QFI, quantum geometric tensor, SLD Lyapunov, Gauss-Laguerre quadrature, block encoding, Uhlmann curvature, multiparameter incompatibility
+
 ## 2026-10-20 - Reinforcement Learning Research (Cron Job)
 
 ### Sample-Efficient Reinforcement Learning with General Utilities via Neural Dual Critics
