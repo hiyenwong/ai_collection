@@ -36,6 +36,20 @@
 
 ## 2026-10-21 - Neuroscience Research (Cron Job)
 
+### Small-scale neural simulation of Caenorhabditis elegans on Loihi-2 using NeuroML2Loihi
+- [[neuroml2loihi-celegans-loihi2]] - NeuroML→Lava→Loihi 2翻译管线：首个单芯片全302神经元C. elegans部署；514-1211×延迟加速、能耗仅为NEURON参考的0.046-0.105%（延迟主导而非功率主导） (arXiv: 2610.25424)
+  - 管线：NMLParser(.nml→NetworkX图)+LEMSParser(LEMS→Config)+映射层(iafCell→LIF、expTwoSynapse→Dense，register_mapping()可扩展)+双后端(Loihi 2硬件NxCore / LoihiSim CPU仿真器，无需硬件即可开发)；全部N神经元向量化进单一LIF process+单一递归Dense突触(邻接矩阵W)，vth=131071取Loihi最大亚阈值粒度
+  - 保真度协议：Victor-Purpura(q=1,50 s⁻¹)+van Rossum(τ=20ms)脉冲距离+速率匹配(63Hz)Poisson基线校准（比值0.2862/0.4563/0.7252均<1，即优于随机基线）+电压仿射映射(以静息/阈值对锚定)后算Pearson/MAE/RMSE；电压保真度(r=0.4334)弱于脉冲保真度——LIF/Dense对IAF/expTwoSynapse的近似只保持放电级行为，PLM-only模型r=-0.1441源于振荡相位偏移
+  - 基准方法论：RTF=T_wall/T_bio延迟归一化；能耗=功率轨梯形积分（Loihi计总功耗含静态、NEURON@Jetson AGX Orin只计动态空闲基线差——刻意对Loihi保守，报告优势是下界）；Active→Full神经元仅×16.8但SRAM×121→突触连接密度而非神经元数才是规模化约束；能耗优势=功率1.8-1.9×与延迟514-1211×的复合效应
+  - **Activation**: NeuroML, Lava, Loihi 2, neuromorphic, C. elegans, connectome simulation, NEURON benchmark, spike-train distance, Victor-Purpura, van Rossum, energy benchmarking, c302, OpenWorm
+### Increased-Order Generalized Synchronization in Memristive Neurons: Analytical and Data-Driven Approaches
+- [[increased-order-gs-memristive-neurons]] - 4D→5D忆阻Hindmarsh-Rose神经元的增阶广义同步：φ₄=u保留忆阻切换项的解析Lyapunov路线 + NG-RC自监督学习仿射同步映射(动力学一致性)降低约8×控制量且精度更优 (arXiv: 2610.25164)
+  - 解析路线：非线性映射φ(式5)+自适应律(式15)精确抵消V̇中全部参数误差交叉项；忆阻切换贡献Ψ=[−e₄+m(G(uᵣ)−G(u))]e₄按9案例C1-C9划分(u,uᵣ)平面——C1/C9恒严格耗散(Ψ=−e₄²)、C5=(2m−1)e₄²(m=0.5时为零)；Thm4.1：轨迹全程∈D_μ⇒V̇≤−α‖e‖²经Barbalat渐近IOGS+参数误差有界；Thm4.3切换无关界：|G(uᵣ)−G(u)|≤4+Young不等式→V̇≤−α‖e‖²+8m²/ε，在半径δ=√(8m²/(εα))外递减（论文诚实声明：仅为递减条件，非最终有界性证明）
+  - 数值诚实范例：m=0.5时单调性+2-Lipschitz⇒Θ(t)∈[−1,0]恒非正，但轨迹反复进入C5（e₄≠0处Θ=0）违反一致严格耗散假设，误差仍衰减至6.19e-7——论文明确写"超越充分条件的数值证据"而非定理在其假设下被佐证；参数恢复被观测到(多数<3e-9, ŝ最慢-1.53e-4)但无辨识定理(需PE激励条件)
+  - 数据路线：无记忆NG-RC预测器（特征=[1;X̃;2..q阶单体]，岭回归拟合标准化增量率，q=3经贝叶斯优化，Δt=0.02）+仿射映射φ_θ=X̄ᵣ+Dᵣ(AX̃_d+b)共25参数；自监督动力学一致性损失L_dyn=‖先推进再映射−先映射再推进‖²/Δt²（无需配对驱动-响应数据）+VICReg改编抗坍缩惩罚（方差铰链保持单位尺度+协方差匹配观测响应结构而非清零，第5分量豁免）；A=0,b=0零先验初始化经L-BFGS-B学到近对角映射(对角∈[0.98,1.01])
+  - 采样控制v(t)=[φ_θ(X̂_d(t+Δt))−X̂_r^free(t+Δt)+ζe_θ]/Δt(ζ=e^(−κΔt))三项分解=目标率预测+漂移补偿+比例反馈((1−ζ)/Δt→κ)；8对初始条件下学习映射中位跟踪误差1.4e-3/控制量2.1e-2 vs 参考映射4.8e-3/1.7e-1→约8×控制量降低且精度更优；RK4预言机替换预测器降至2.3e-4→预测误差主导残差；假设：全状态采样+全分量加性驱动，无稳定性证明
+  - **Activation**: generalized synchronization, increased-order, memristive neuron, Hindmarsh-Rose, unequal dimension, adaptive control, Lyapunov, switching dissipativity, NG-RC, next generation reservoir computing, self-supervised, VICReg, sampled-data control, synchronization map
+
 ### Longitudinal fMRI reveals multi-network reconfiguration and a recurrent frontoparietal shift across rest and task states during adult aging
 - [[longitudinal-fmri-network-reconfiguration-aging]] - 852人x5.5年x4状态纵向fMRI：老化=归一化依赖的整体变化+状态依赖的网络重组，额顶叶相对其余9网络在全部状态正移位 (arXiv: 2610.24433)
   - 原生网络内协方差每5年降7-11%（4状态全显著），但信号对幅值同步降9.4%而噪声幅值平稳：信号归一化后公共轨迹归零（Holm p=.332）、候选总幅值归一化下却降4-7%/5y——整体"衰退"部分是BOLD振幅伪迹，归一化选择决定结论
