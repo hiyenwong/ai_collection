@@ -1,5 +1,13 @@
 # AI Collection Index
 
+## 2026-10-21 - Medicine Research (Cron Job)
+
+### Efficient Block Encodings for Ensembles of Molecular Hamiltonians
+- [[svd-thc-molecular-ensemble-block-encoding]] - SVD-THC把M个几何的分子哈密顿量压缩进单个复用块编码：快照Gram SVD→K个几何无关模式哈密顿量，Toffoli较逐几何切片减少35–200× (arXiv: 2610.25968)
+  - PsiQuantum×勃林格殷格翰(Boehringer Ingelheim)合作：H_SVD(θ)=E_θ+Σσ_ℓV_ℓ(θ)H_ℓ且K≪M（BCE-73用K=14、甘氨酸二肽2664几何用K=90、丙氨酸二肽5184几何用K=150）；联合基Gram G=cos²w·AAᵀ/tr(AAᵀ)+sin²w·BBᵀ/tr(BBᵀ)（M×M快照法，两体通道只存8重对称唯一元）；逐模式BLISS-THC按各自R_ℓ分解——QROAM成本O(ΣR_ℓ²)决定必须逐模式rank（右偏分布：均值31/146/153 vs 中位数20/104/130）
+  - λ=max_θ Σσ_ℓ|V_ℓ(θ)|通用归一化+|K⟩ padding闭合法化：网格加密576×后Toffoli复杂度仅变≤12%、λ仅变≤24%（分辨率只付一次→亚线性于M）；ε∞≤0.6 mHa全网格CCSD验证+HF能量偏移E′_θ=E_θ+E^HF[H(θ)]−E^HF[H_SVD(θ)]精确恢复；能量阈值电路（mux_θ QPE+相位寄存器比较器）+O(√M)最低能几何量子搜索；药物发现落点：构象能量排序/生物活性构象稳定性/玻尔兹曼加权分子性质
+  - **Activation**: SVD-THC, tensor hypercontraction, molecular Hamiltonian ensemble, multiplexed block encoding, conformational landscape, quantum drug discovery, energy thresholding, BLISS-THC
+
 ## 2026-10-21 - Neuroscience Research (Cron Job)
 
 ### Affective Valence as the Interoceptive Rate of Change of Jacobian Scale
