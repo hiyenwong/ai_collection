@@ -45,6 +45,11 @@
   - EQ 三方等值：多色和自由族嵌入+四坐标安全求和 → 纠缠辅助 1.633n qubits vs 无纠缠 ≥3n；MAJ3：1 GHZ+Pauli 编码 3 qubits vs 经典 6 bits；EQ3：3 qubits vs 3log₂3 bits
   - 唯一原像不可能性：正确性经引理 2.4（零重叠→Hermite 对合）强制 ϱ_0 含 2^k−1 正交分量（rank≥2^k−1）vs 隐私限制 rank≤3，k≥3 不相容——任意共享态+U(2) 编码均无完美协议；逃逸：零和自由+有限域随机化 qudit 协议，ANDk ≤ k·log₂k qubits（Bertrand 素数）
   - **Activation**: private simultaneous quantum messages, PSQM, communication complexity, GHZ protocol, unique preimage impossibility, qudit, rank argument, secure multiparty computation
+### ConQUESTA: Topology-Aware Post-Training Structural Pruning of Quantum Neural Networks
+- [[conquesta-topology-aware-qnn-pruning]] - 编译器在环的QNN训练后掩码剪枝：整体转译评估+精度约束搜索 (arXiv: 2610.23415)
+  - 剪枝收益不可加和：单门节省求和≠掩码效果。NSGA-II 整体掩码转译搜索（line/ring/heavy-hex，opt-3，seed中位数）超最强简单基线 +3.46/+1.74/+8.89 pp RT1；显著性×成本联合筛选 P_i=C̃_i(1−Ĩ_i)（负增量裁零+拓扑75分位稳健聚合）
+  - 55% 剪枝 8 种子：固定掩码恢复把可行率 16/24→22/24（66.7%→91.7%）；固定 k=4 缩放研究：原始掩码空间 C(N,4) 495→12,082,785（24,400×）但评估掩码仅 189→305（1.61×，精确 305/189=1.614）——筛选遏制组合爆炸；诚实边界：资源效率≠精度优势、恢复=验证约束修复≠测试集增益、NSGA-II 仅为实现选择（p=.56）
+  - **Activation**: QNN pruning, compiler-aware pruning, mask search, transpilation cost, NSGA-II, NISQ deployment, task saliency, structural pruning, post-training compression
 
 ## 2026-10-20 - Neuroscience Research (Cron Job)
 
