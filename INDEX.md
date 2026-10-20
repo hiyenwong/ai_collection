@@ -1,5 +1,26 @@
 # AI Collection Index
 
+## 2026-10-20 - Reinforcement Learning Research (Cron Job)
+
+### Sample-Efficient Reinforcement Learning with General Utilities via Neural Dual Critics
+- [[neural-dual-critics-general-utility-rl]] - 通用效用RL：Fenchel对偶伪奖励直接用神经critic学习，免占用度估计 (arXiv: 2610.24880)
+  - 变分策略梯度恒等式 ∇θJ=(1−γ)∇ϑV(rθ)|ϑ=θ 下伪奖励 rθ=−f′(pθ)−c；可分离效用四实例（熵/平滑熵/KL模仿/二次匹配）；神经critic用冻结NTK切向特征+投影随机更新，线性化误差 O(m^(−1/2)) 显式入近似下限
+  - 函数值MLMC（Geom(1/2) dyadic视界组合）以对数期望代价继承最长critic视界的偏差；Õ(ε⁻²)全局收敛——首个覆盖无限状态-动作空间的RLGU保证（对比线性/参数化占用度估计路线 Õ(ε⁻⁴)）
+  - **Activation**: general utility RL, RLGU, concave occupancy utility, Fenchel dual, neural dual critic, pseudo-reward, MLMC bias control, visitation entropy, imitation occupancy matching
+
+### Q(γ_H): Entropy-Guided Horizon Mixing in Multi-Discount Q-Learning
+- [[entropy-guided-horizon-mixing-q-learning]] - K个折扣头各自标准Q-learning，熵置信信号在控制时做状态相关视界混合，Bellman目标不动 (arXiv: 2610.21764)
+  - 参考向量 q_ref=η·maxₖQ⁽ᵏ⁾+(1−η)·minₖQ⁽ᵏ⁾(η=0.5) → Boltzmann归一化熵H_n → 置信 c(s)=1−H_n；softmax权重 wₖ∝exp(−β|uₖ−c(s)|)：低置信落短视界、高置信随训练滑向长视界；开销线性于K
+  - 延迟信用任务最强：MountainCar −6.0%/Acrobot −2.1%（对比拿到oracle-γ的次优基线）；深度多头DDQN三环境全最佳AUC，Acrobot比DDQN +8.5%、比Scheduled-γ +48.0%(p<0.0001)，N=10种子
+  - **Activation**: discount factor selection, multi-horizon Q-learning, adaptive discount, delayed credit assignment, entropy confidence mixing, multi-discount heads
+
+### Router Drift Control: Mitigating Off-Policy Degradation in Mixture-of-Experts Reinforcement Learning
+- [[router-drift-control-moe-rl]] - MoE LLM RL的路由漂移信号：响应级TV距离评分+长度桶内top-q过滤，保留响应走原生训练路由 (arXiv: 2610.21682)
+  - 漂移评分 D_route=(1/L)Σ½‖u_l^µ−u_l^π‖₁（每层专家使用直方图TV）；R3重放有梯度偏差（漏掉"训练路由器新选、rollout没选"的专家贡献）；RDC用q=0.08序列过滤、每mini-batch用当前策略重算掩码，与TIS概率空间互补（GRPO+TIS+RDC最佳）
+  - Qwen3-30B-A3B + DAPO-Math-17K（GRPO+DAPO Clip-Higher）：收益随策略陈旧度增大；异步训练RDC+TIS比TIS +5.5分、比R3 +4.5分（AIME24/25平均峰值），训练动态稳定
+  - **Activation**: MoE RL, router drift, routing mismatch, off-policy staleness, asynchronous RL, response-level filtering, GRPO MoE, TIS
+
+
 ## 2026-10-20 - Systems Engineering Research (Cron Job)
 
 ### ArchAgent: Agentic AI for Heterogeneous System Design Across Chip, Scale-Up, and Scale-Out Domains
