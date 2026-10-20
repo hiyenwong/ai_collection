@@ -2,6 +2,14 @@
 
 ## 2026-10-21 - Medicine Research (Cron Job)
 
+### Measurement-efficient energy estimator for quantum chemistry of photodynamic materials
+- [[mixed-estimator-compute-uncompute-readout]] - 混合估计量读出E_ME=E_Φ+r_Φ·h/s：把mHa级能量读出压缩到~400 shots（较单行列式经典阴影省100×、较分组Pauli平均省~1700×）；Quantinuum×强生(Johnson & Johnson)在PDT/RDT抗癌MOF材料上演示 (arXiv: 2610.26689)
+  - 核心分解：稀疏多组态参考|Φ⟩（SHCI/CASCI截断或QSCI/SQD采样子空间直接可用）→经典侧已知E_Φ=⟨Φ|H|Φ⟩、残差范数r_Φ=‖Q_ΦH|Φ⟩‖、归一化残差态|Λ⟩=Q_ΦH|Φ⟩/r_Φ；量子侧只测h=⟨Ψ|Λ⟩、s=⟨Ψ|Φ⟩两重叠（相对相位自动相消）；基态变分原理固定h/s≤0→幅值-only计算-反计算（真空测试p_Ω=|⟨Ψ|Ω⟩|²无ancilla无受控）E_ME=E_Φ−r_Φ√(p_Λ/p_Φ)
+  - shots阶梯（目标ε）：N_CU≈(1/4)(r_Φ/ε)²；RHT/RIST符号重叠4×、经典阴影12×、swap测试额外1/h²惩罚；FCU单flag联合电路同shots测p_Φ/p_Λ（协方差计入≤最优分离CU），早停交叉τ_Φ+τ_flag<τ_Λ；参考质量×协议效率复合（m=1→8：40k→400 shots）；残差截断保守界r_Φ‖Λ_k−Λ‖/|s|<ε；(m,k,l)联合优化+AI截断资源度量2G(Ψ_l)+G(Λ_1,k)省12% ZZPhase
+  - Helios-(10,10) 50-qubit验证：单能量σ=1.66–1.73 mHa@10k shots（PA基线需2.5–3.8M shots/几何）；两类条件性相消（p_Φ/p_Λ比值、E_Rx/E_R0差值）+三元泄漏检测后选择保~78–86%；校验位CPC/MBPC不改善ΔE——纠错须为比值而非单电路设计；H₂DBB–Ru的ΔE_Rx−R0≈−6.3 mHa(6,6)/(8,8)→+0.1 mHa(10,10)（DFA单线氧产率预测差>5个数量级、MLCT/MC排序翻转）；ME容忍近似目标态——(10,10)化学精度27/23行列式(224/159两比特门) vs 直接读出>96行列式(>1600门)
+  - 数值验证7/7 PASS（本会话玩具模型）：E_ME机器精度复现本征值；MC验证σ_CU=r_Φ/(2√N)偏差≤2.8%、RHT σ比2.01=√4、CS σ比≈√12；截断界保守成立；r_Φ与|h|/s对m双单调下降
+  - **Activation**: mixed estimator, compute-uncompute, vacuum test, sparse multiconfiguration reference, magnitude-only overlap, FCU, classical shadows, shot budget, measurement-efficient, correlation energy readout, photodynamic therapy, radiodynamic therapy, NISQ measurement cost
+
 ### Efficient Block Encodings for Ensembles of Molecular Hamiltonians
 - [[svd-thc-molecular-ensemble-block-encoding]] - SVD-THC把M个几何的分子哈密顿量压缩进单个复用块编码：快照Gram SVD→K个几何无关模式哈密顿量，Toffoli较逐几何切片减少35–200× (arXiv: 2610.25968)
   - PsiQuantum×勃林格殷格翰(Boehringer Ingelheim)合作：H_SVD(θ)=E_θ+Σσ_ℓV_ℓ(θ)H_ℓ且K≪M（BCE-73用K=14、甘氨酸二肽2664几何用K=90、丙氨酸二肽5184几何用K=150）；联合基Gram G=cos²w·AAᵀ/tr(AAᵀ)+sin²w·BBᵀ/tr(BBᵀ)（M×M快照法，两体通道只存8重对称唯一元）；逐模式BLISS-THC按各自R_ℓ分解——QROAM成本O(ΣR_ℓ²)决定必须逐模式rank（右偏分布：均值31/146/153 vs 中位数20/104/130）
