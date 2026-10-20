@@ -7922,3 +7922,33 @@
   - MultiLangBench（github.com/openai/MultiLangBench，开源）：20语言从零实现SQLite——GPT-6 Astra平均87.4%（GPT-5.6 Sol 26.8%），COBOL 10.9%→72.1%仍最难，19/20语言>83%；Luna低成本档40.3%@$0.77/样本（≈78%更便宜）
   - COBOL迁移评测：GPT-6.1 Sol低推理档86.6%（vs GPT-5.6 Sol 5.4%）@61%成本，高推理档97.9%近饱和；报告能力-成本曲线（推理档×每样本成本）而非单点分数
   - **Activation**: low-resource programming languages, MultiLangBench, shared artifact interface evaluation, COBOL migration benchmark, cross-language code evaluation
+
+## 2026-10-21 - Deep Learning Research (Cron Job)
+
+### Kronecker Delta Rule for Long Context Linear Attention
+- [[kronlstm-kronecker-delta-rule]] - 线性注意力矩阵记忆新更新规则：修正标量关联 v^T S k 朝目标 c、修正方向只由输入对 v k^T 决定，干扰= value重叠×key重叠双重门控（DeltaNet 仅 key），容量 d_k·d_v 个标量关联 (arXiv: 2610.26834)
+  - 向量化后 = Kronecker 特征 a=k⊗v 上的 Widrow–Hoff 规则；转移 (I−β a a^T) 与 c 无关的 Householder → DeltaNet chunkwise/WY 并行训练直接迁移
+  - Markov 链收敛到最小二乘记忆、E‖S‖_F² ≤ 4E[c²]/λ_min(Ā) 一致有界——ℓ2 归一化 k,v + sigmoid β 自动非扩张，免 mLSTM normalizer/stabilizer
+  - 1.5B/100B：Avg-6 59.72 与 LAMBADA ppl 11.72 均最佳；RULER 16k 外推 GDN 崩溃而 KronLSTM 稳健；三门解耦 forget/erase/write，Mamba 式 log-power 遗忘门
+  - **Activation**: linear attention, associative memory update, delta rule, KronLSTM, memory interference, chunkwise parallel, xLSTM, bounded memory norm
+
+### Heartbeat Thinking: Speculative Reasoning and Tool Execution While Listening
+- [[heartbeat-thinking-voice-agents]] - 实时语音 agent 听期间投机准备：周期 Thinker（500ms/K=2 并发）新输入由新调用处理、进行中调用与已派发工具绝不中断，共享记录传递跨调用状态，VAD handoff 取消未完成任务+快照复用 (arXiv: 2610.26233)
+  - 对比：SHANKS chunk 边界截断未完成的 tool-call 参数、SIA interrupt-on-update 掐断生成——两者都把计算时间耦合到语音更新
+  - FDBench v3 工具覆盖率 +16pp（34.67→50.67%）、最终响应延迟 −36.4%（6.90→4.39s）；跨 3 个 Responder 覆盖优势保持
+  - 诚实负结果：SpeechFCEval/AudioCRAG 最终质量略降——覆盖更多≠用得更好，投机结果的校验/复用是独立挑战
+  - **Activation**: voice agent, speculative execution, tool calling during speech, realtime latency, VAD handoff, overlapping invocations, shared reasoning record
+
+### A Fisher-Geometric View of Multi-Teacher On-Policy Distillation
+- [[fisher-geometric-multi-teacher-opd]] - 同源 specialist 整合理论+方法：MOPD 目标二阶展开恰为 Fisher-merging 目标（最优解=Fisher merge 闭式），合并是蒸馏的二阶闭式阶段——merge before you distill；RGBM 两阶段零标注整合 (arXiv: 2610.26525)
+  - 一阶同态：合并模型 log-ratio ≈ α^T r（r=隐式奖励 log-ratio），投影 Fisher≈Cov(r) 仅前向可估；Err_lin=1−R²(ℓ_α~α^T r) 为 label-free 线性盆地测试兼写回上限
+  - RGBM：Phase1 无标签提示 minimax QP 解任务向量系数（消掉未知域权重）+能量归一化域残差谱；Phase2 谱 gap 门控——passivated 域不写回、active 域训隔离分支、γ* 由 linearity test 封顶
+  - Open-MOPD 零训练 merge 32.52 > 600-step 蒸馏学生 30.93（144 GPU·h）；RGBM 33.03 零联合步；所有 un-gated 写回（TIES/DARE/继续蒸馏）全部低于 merge；G-OPD 54.14 超 ExOPD
+  - **Activation**: model merging, multi-teacher distillation, MOPD, Fisher merging, specialist consolidation, residual spectrum, gated write-back, task vectors, implicit reward
+
+### Scaling Parameter-Efficient Fine-Tuning for Brain Encoding
+- [[brainlora-peft-brain-encoding]] - PEFT 范式做大模型脑编码：LoRA rank-16（8.91M）适配 4.7B–104B 多模态 backbone（史上最大），单遍因果提取替代滑窗 ~350×↓，Algonauts 2025 新 SoTA (arXiv: 2610.26802)
+  - 三个 scaling 方向：up（104B backbone）/ down（LoRA+轻 readout，仅 MIRAGE 1.1B readout 的 ~5% 参数即超其 ensemble）/ out（fused batched multi-LoRA kernel 训 261 个 adapter，ensemble 0.343/0.248 leaderboard 第一）
+  - 9 个 backbone LoRA 一致 +0.032–0.066；全量微调 330× 参数无优势；SGD 后闭式重拟合 readout（Gram+parcel-wise ridge）是稳定增益来源
+  - Ensemble 定律：质量与多样性单独 R²=0.23/0.05、联合 R²=0.97；有用多样性来自 readout/backbone 架构变化，seed/rank/层/数据子集几乎无效；模态归因恢复经典感觉拓扑，适应增强音频+跨模态混合
+  - **Activation**: brain encoding, fMRI prediction, PEFT, LoRA, single-pass causal extraction, Algonauts, multi-LoRA kernel, ensemble diversity, modality attribution
