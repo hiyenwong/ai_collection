@@ -1,5 +1,34 @@
 # AI Collection Index
 
+## 2026-10-21 - Neuroscience Research (Cron Job)
+
+### Affective Valence as the Interoceptive Rate of Change of Jacobian Scale
+- [[affective-valence-jacobian-scale]] - valence=内感受移动Jacobian对数尺度的速率；链式法则精确分解位置/成因，六项身体模型复现临床疼痛分离+wireheading (arXiv: 2610.26350)
+  - 核心公式 v=∂uλ·du/dt（λ=log‖J_S‖，终末集Z=‖J_S‖=0在λ=−∞=死亡）；Eq(1)位置分解残差场δ_i=v_i−w_i·v归零定位感受（饥饿弥散/疼痛局部化，份额w_i=ℓ_i²/‖J_S‖²）；Eq(2)grounded(本质变量)/ungrounded(幻肢驱动/虚假线索/药物)成因分解
+  - 六项分解（储备信号felt弥散/直接q项not felt/局部增益a·Σw_i·ṙ_i felt唯一定位项/全局增益(b+cη)Σṙ_j felt弥散/组织not felt/内容not felt）数值验证误差2.3e-9；log尺度→负性偏置(0.154>0.105)+Weber-Fechner+alliesthesia 19.4×；储备衰减dlogm/dt=−κE₀/(E+E₀)收敛验证
+  - 实验复现：阻断储备信号→耗竭无感觉；驱动信号→未耗尽也饿；无受体=先天性痛觉不敏感；无增益=疼痛失认症；驱动ξ=幻肢痛；delta-rule学预测→valence移到线索(Schultz多巴胺)；增益学习(去掉增益后的log scale)→伤痛∝修复成本；饥饿学得c>0抑制受体疼痛(Alhadeff 2018)；最大化含增益尺度=wirehead(Goodhart)
+  - **Activation**: valence, interoception, Jacobian scale, homeostasis, allostasis, pain, wireheading, homeostatic RL, essential variables, negativity bias, phantom pain, affective computing
+
+### Toward a Physics of Deep Learning and Brains
+- [[physics-of-deep-learning-and-brains]] - 深度网络深度雪崩服从crackling noise统计；可训练性跟随Widom线(最大易感性)而非混沌边缘；Gaussian网=Barkhausen类、ResNet=MF directed percolation类 (arXiv: 2509.22649)
+  - 均场递归q_{ℓ+1}=σ_w²·E[tanh²(√q_ℓ ξ)]+σ_b²；临界点(σ_w²,σ_b²)=(1,0)吸收态转变（数值验证：0.9/0.99指数衰减、1.0代数边缘衰减）；β=1、χ~(σ_w²−1)^{−1/2}(MF DP指数，渐近拟合1.02/−0.47)；偏置=外场圆滑转变q*∝√σ_b²(验证0.71-0.78恒定)
+  - 深度雪崩(阈值=√q₀，D=超阈层数，S=累计超额信号)：τ(N)=τ+cN^{−w}外推(τs,τd)→(1.34,1.53)=Barkhausen类；γ_fit=1.5303/坍缩γ*=1.58/关系γ=(τd−1)/(τs−1)=1.559互相印证；EoC与Widom线仅精确临界点相交，训练起始与易感性峰Pearson 98%(MNIST)/99%(CIFAR-10)
+  - ResNet指数聚集、γ≈2=MF DP线((2−1)/(1.5−1)=2.00)；BatchNorm仿射尺度γ≈1转变=成功训练起始；输入幅度√q₀移易感性峰不动指数→标准化数据使精确临界不可达→准临界"尽可能临界"；实操：指数关系失配+坍缩质量=距临界度仪表盘，dropout/谱约束/BN/注入噪声=临界性旋钮
+  - **Activation**: crackling noise, neuronal avalanches, quasi-criticality, edge of chaos, Widom line, susceptibility, universality class, Barkhausen, directed percolation, finite-size scaling, initialization, trainability
+
+### Spontaneous brain-wide rotational dynamics constrain cue-evoked behavior
+- [[rotational-component-analysis-brain-dynamics]] - RCA以镜像对称破缺为目标函数检出低方差旋转模态(0.6%方差vs PCA 87%)，静息旋转相位逐trial预测线索诱发行为 (arXiv: 2610.25061)
+  - 角电流j=(x₁−c₁)ẋ₂−(x₂−c₂)ẋ₁+APR估计器σ̂b=(2J̄τ)²/(τΔJτ)=高斯电流对称化KL(Jeffreys，数值验证)；正APR需同时空间对称破缺+时间不可逆；无监督梯度优化(w₁,w₂)，单trial可用不需对齐
+  - 小鼠44区GCaMP静息RCA平面0.6%方差6.3s周期；线索到达时旋转相位预测拉杆(20%→70%+)；响应梯度g=0.151 vs PCA 0.050/jPCA 0.078；线索状态AUC 0.611胜瞳孔唤醒0.535；RNN训练自发涌现旋转+同构状态→响应几何；学习15天增强f_rsp而f_pre不动
+  - DRCA双旋转(位置加权电流j*检出半转对称破缺)分离准备/响应态(线索前2.7s预测AUC 0.612，与RCA合并0.677)；HCP-EP早期精神病旋转不可逆性降低P=5.22e-07而PCA主轴P=0.124无差异；macaque单trial SNR 0.89 vs jPCA 0.05；通用隐匿非互易动力学检测工具
+  - **Activation**: rotational dynamics, RCA, rotational component analysis, jPCA alternative, probability flux, mirror symmetry breaking, nonreciprocal dynamics, dynamical readiness, psychosis biomarker
+
+### A Time-Variant Spiking Neuron from a Unified State-Dynamics Perspective
+- [[time-variant-multi-compartment-neuron]] - 统一(A,B,C)状态动力学框架暴露所有脉冲神经元的共同局限——时不变规则；TV-MCN让输入整合/状态演化/读出随当前输入时变 (arXiv: 2610.23981)
+  - 任意脉冲神经元=ḣ=A·h+B·x / u=C·h / 发放+复位；LIF/ad-LIF/TC-LIF/DGN/DH-LIF/HetSyn/D-RF/PMSN全是时不变(A,B,C)参数化；生物对照：电导→时间常数、NMDA→整合、抑制→读出
+  - 三杠杆：输入依赖内部时间dτ/dt=Δt=softplus(bΔ+WΔq_t)（Δt小→信息保留久）；多尺度复数房室A=diag(−e^a_i+jω_i)（负衰减率by construction）；动态B_t=W_B·x_t、C_tᵀ=W_C·x_t；ZOH离散化Ā_t=exp(ΔtA)、B̄_t=A⁻¹(exp(ΔtA)−I)B_t（恒等式数值验证）
+  - Selective Copying 93.46% vs 次优D-RF 19.24%(4.9×)；MAD Noisy ICR 99.99 vs 40.15；Induction 97.71 vs 21.04；GSC 90.56/SSC 70.98/DVS128 93.75全最佳；STORE指令窗口主动压低Δt=机制证据；+2048干扰输入仅降0.88pp(静态B/C降9.33pp)
+  - **Activation**: spiking neuron design, time-variant dynamics, TV-MCN, internal time, multi-compartment, selective retention, STORE-RECALL, SNN temporal processing, resonant compartments
 ## 2026-10-20 - Quantum Research (Cron Job)
 
 ### Logical-Space Theory of Ordered-Statistics Decoding for Quantum LDPC Codes
