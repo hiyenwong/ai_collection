@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-10-20 - Systems Engineering Research (Cron Job)
+
+### ArchAgent: Agentic AI for Heterogeneous System Design Across Chip, Scale-Up, and Scale-Out Domains
+- [[archagent-heterogeneous-system-design]] - 分层LLM智能体+确定性评估器闭环的异构系统设计DSE范式 (arXiv: 2610.23724)
+  - 规划器分解 chip/scale-up/scale-out 子问题，专用子智能体各管一层；LLM 绝不生成性能数字——全部由 roofline+α-β 解析评估器产出并回传瓶颈归因（计算/带宽/时延/二分带宽），可审计防幻觉
+  - 1MW iso-power 混合 AI+HPC 负载下 1.93× 加权几何平均加速（训练1.72×/serving 1.67×/HPCG 4.76×），18次评估即超 hill-climb 100次的1.65；涌现"大GPU分区+2-10%功率角色特化分区"的按角色采购模式
+  - **Activation**: heterogeneous system, system design DSE, agentic design, iso-power, workload roles, roofline
+
+### Anytime-Valid Certification of Robustness Margins for Safe Control via E-Values
+- [[evalue-anytime-valid-margin-certification]] - e值序贯检验在线认证CBF鲁棒性边界，anytime-valid无需离线校准集 (arXiv: 2610.23746)
+  - 对候选边界网格并行运行 test supermartingale E_t=E_{t-1}·[1+λ(α−Z)]，Ville不等式给 anytime-valid 阈值 1/δ，每步可查不膨胀误差；单调性（c'≥c ⇒ E(c')≥E(c)）使 M 个候选共享同一误差预算 δ，免 union bound
+  - 证书转移靠风险漂移界 d_t≤α0−α（Lipschitz 状态/输入项+分布漂移Δ）；每K步并行重启测试用 δ_r=δ/(κ(r+1)ln²(r+1)) 分配共享预算；200轨迹实测 q_dep=0%（对比 ACI 99.5%、QT 65.5%——二者只控时间平均超频）
+  - **Activation**: robustness margin, CBF safety filter, e-value, anytime-valid, Ville inequality, conformal alternative
+
 ## 2026-10-20 - Computer Science Research (Cron Job)
 
 ### Leveraging Verifiable Structure in Quantum Circuits to Find More Efficient Compilations with Agentic AI
@@ -33,6 +47,20 @@
   - **Activation**: private simultaneous quantum messages, PSQM, communication complexity, GHZ protocol, unique preimage impossibility, qudit, rank argument, secure multiparty computation
 
 ## 2026-10-20 - Neuroscience Research (Cron Job)
+
+### What Shapes Brain Alignment of Large Language Models during Dialogue? Insights from Language Production and Comprehension
+- [[llm-dialogue-brain-alignment]] - 对话中 LLM 脑对齐按"产出 vs 理解"双模式分解：中间层峰值共享但区域剖面分裂，ID 与 LEACE 特征阶梯揭示模式依赖的信息载体 (arXiv: 2610.22961)
+  - 非对称潜变量设计：产出 h^P=π[上下文, 自己话语]，理解 h^I=π[上下文, 自己话语, 对方话语]；1-TR 段落 + 上下文窗口 {1,4,16,32}（对齐随上下文单调升），三家日语对话后训练 LLM（Swallow 系 8-21B）；7 被试对话 fMRI（TR=1s），逐体素 ridge（himalaya）+ 20-TR 块置换零分布 + FDR
+  - 模式分化：产出恒定预测 SM/AG（+顶叶），理解恒定 A1/STG（+额叶）且 A1 在输出层附近二次上升；ID(GRIDE)-对齐相关（context>=4 TR）在 A1 理解更强、SM 产出更强、语言区（AG/MFG/IFG）两模式相当——"表征丰富度"假设从被动理解推广到对话
+  - LEACE 累积擦除阶梯（低→高：句节计数 BC/词表 L/POS/对话行为 DA）：词表 L 各层贡献最大（L1 移除降 79-86%，产出尤甚）；唯一贡献分层映射皮层层级——BC→SM(产出)/A1+STG(理解)、L→颞顶额+AG、POS/DA→高阶区（DA 集中额叶=ToM/多重需求网络）；产出靠具体词汇信息，理解额外招募抽象语境信息
+  - **Activation**: dialogue fMRI, brain alignment, production vs comprehension, LEACE concept scrubbing, intrinsic dimension GRIDE, dialogue acts, layerwise alignment
+
+### Brain-Aligned Multimodal LLMs for Social and Emotional Understanding of Cartoon Movies
+- [[mllm-tom-valence-brain-alignment]] - 开放权重 MLLM 逐帧 ToM/valence 标注的完整验证栈：行为一致 + 分布偏移 + 语境消融 + fMRI 编码；valence 对齐强于 ToM，模型间一致高于人机一致 (arXiv: 2610.22706)
+  - 标注管线：0.8/1.0s 帧采样，[-10,+10] 与人类操纵杆同尺度，高斯平滑 sigma=2s；AR（Qwen3-VL-8B/Gemma3-12B）vs 扩散（LLaDA-V-8B，首个扩散 MLLM 脑对齐测试）；人类参照 = LOO 评定者筛查去最低 20% 后平均（34→28 ToM、42→34 valence）；滞后纪律：未移位 r0 为主结果，lag 优化 r* 仅作探索性报告（中位增益 0.025）
+  - 核心发现：人机一致 valence(r=0.434) > ToM(0.265)（对话丰富的 DM 最差——模型看不到音频对话）；模型间一致 > 人机一致；分布偏移系统化（LLaDA-V/Qwen3-VL 打分偏高，Gemma3 最接近人类）；前导场景描述帮助 AR 模型（8-12s 回溯最优）但不帮扩散 LLaDA-V，且可诱发对模糊场景的过度解读使对齐下降
+  - fMRI 编码（114 ROI：100 Schaefer + 14 AAL，多输出 ridge 共享 lambda，16s 连续段嵌套时序 CV 段落完整分配，sign-flip 5000 + BH FDR）：MLLM 评分显著预测视觉/背侧注意/默认模式（valence 尤广）/ salience 网络；TP 中 MLLM 评分显著 ROI 数多于人类评分——但方法学警告：各源分别对零检验，计数多寡不等于谁预测更好；人机重叠集中于后扣带/楔前叶
+  - **Activation**: MLLM annotation, Theory of Mind rating, affective valence, movie fMRI encoding, LLaDA-V diffusion, rater screening, lag-optimized correlation, scalable annotation
 
 ### Deep LLM layers expose passage-level context in EEG during silent reading
 - [[llm-target-layer-eeg-decoding]] - LLM 目标层是 EEG 语言解码器"词 vs 篇章"的设计拨盘，附 context-tracking 对照组 battery (arXiv: 2610.23638)
