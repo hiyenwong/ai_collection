@@ -2,6 +2,20 @@
 
 ## 2026-10-21 - Medicine Research (Cron Job)
 
+### Simulation-free approximate Bayesian computation for stochastic reaction networks
+- [[sfabc-simulation-free-abc]] - 凸CME松弛可行性检验取代Gillespie仿真：Dirichlet重采样数据分布落入有限CME方程解集的ϵ-邻域即接受参数；松弛包含真解、可随方程数M系统收紧、ϵ→0收敛精确后验；telegraph基准精度持平ABC且N=500省78%墙钟（LP代价~不随N增长） (arXiv: 2610.26361)
+  - 核心算法：S1先验采k → S2 Dirichlet重采样 p′~Dir(观测计数+1, 未观测聚合+1) 捕捉有限样本变异 → S3 LP可行性检验（有限态子集稳态代数约束 Σk_rQ_rp=0 + 归一化 + 观测态1-范数距离≤ϵ，接受⟺可行）→ S4 按1/V_ϵ^M(k)逆接受体积加权；瞬态数据经测试函数积分（生成元恒等式 d/dt E[φ]=E[Aφ]）得观测时点约束；SMC变体+模型选择
+  - 实证（Imperial Barahona/Thomas组）：KS与MCMC精确后验持平标准ABC；鲁棒性100参数组无偏；k_syn后验CV远小于k_on/k_off（均值由k_syn定）；小鼠成纤维scRNA-seq 224 vs 8916细胞——TATA-box启动子高burst size (BS=k_syn/k_off, P~1e-10) 且低gene activity (GA=k_on/(k_on+k_off))、burst frequency不变：TATA经由启动子开关而非频率塑造爆裂
+  - 本会话mini-telegraph LP数值验证全过：稳态均值4.0000(理论4)方差4.36(过散布)；真参数接受0.12–1.00、10×错误参数0/180全拒；M_eq 2→25真参数接受1.0→0.13（松弛收紧）；N=800后验仅存真值格点E[k_on]=8.00；坑：ϵ须按Dirichlet噪声定标（L1≈0.42/0.28/0.10 @N=50/200/800——观态数随N增长故衰减慢于1/√N）、LP需逐观测态slacks、截断边界合成流出须入方程
+  - **Activation**: simulation-free ABC, CME relaxation, LP feasibility test, Dirichlet resampling, stochastic reaction network, telegraph model, burst kinetics, single-cell inference, gene expression bursting
+
+### What Language Adds, and at What Cost: Four Controlled Probes of Pathology Vision-Language Models
+- [[pathology-vlm-controlled-probes]] - 受控探针审计病理VLM（冻结表征+固定预测器/切分+单输入变化，patient与site-disjoint五折）：报告文本带来+0.019/+0.016 C-index(PFI/OS, n=1633 TCGA)且stage删改不消；prompt相对监督线性探针零增益；slide级VQA几乎不读片；复述翻转8–23%答案——语言增益真实但窄 (arXiv: 2610.26805)
+  - 四探针：P1生存6臂（A视觉/B全文/B′stage删改/C结构化stage+grade/T_full/T_red纯文本；对比B′−A干净增量、B−B′ staging泄漏、T_full−T_red通道泄漏——两泄漏对比全null，C最弱臂）；P2亚型within-encoder（CONCH v1特征+pooling固定下zero-shot vs线性探针Δ=−0.020/−0.019 CI含0；top-k优势在共享pooling下消失=实例选择效应非prompt效应）；P3 grounding扰动（去slide/置零/错配slide/选项循环移位/NOTA替换正确项）
+  - 关键数字：SlideChat带slide 74.82% vs 无slide 74.41%（gap≈0）；其语言骨干Qwen2.5-7B盲答43.52%≈字母基线40.7%→SlideChat盲答高出~31分=指令微调规律性而非读片；NOTA把SlideChat压到字母基线下（正确内容移除后不能排除剩余选项）；复述精度不变但答案翻转8–23%（+改写框架25%，一致性0.57）——"同一病例必须同一诊断，临床不可接受"
+  - 最低控制清单：slide条件VQA必报text-only/错配/选项移位/NOTA四臂+多数答案基线；答案翻转率+一致性；生存文本主张须有stage-redacted与text-only臂；prompt主张须within-encoder；每次头条对比给CI+种子；六字段算力（GPU型号数/GPU时/训练推理峰值显存/WSI视觉token/参考slide端到端时延）
+  - **Activation**: pathology VLM audit, controlled probes, NOTA control, text-only arm, paraphrase answer flip, stage redaction survival, within-encoder prompt isolation, slide grounding perturbation, TCGA contamination, minimum evaluation controls, evidence tiers
+
 ### LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents
 - [[leakbench-clinical-agent-leakage-audit]] - 可执行指南衍生审计套件：无约束临床建模 agent 100% 选择预测时泄漏特征（AUROC 排行榜掩盖时序无效增益），provenance 感知 verifier-in-loop（VILA）清除泄漏至 0/10 (arXiv: 2610.26088)
   - 五条方法学有效性轴：预测时泄漏（致命，可用性标签 A_j=1[t≤t_pred]，provenance 感知而非名称过滤、派生特征未声明来源即 fail-closed）、校准（斜率≈1、类加权畸变罕见结局概率尺度）、医院级评估（pooled AUROC vs hospital-equal macro + leave-one-hospital-out）、支持感知（OOV 层 credited 弃权/转诊而非静默发风险）、决策曲线净获益（须同时胜 treat-none 与 treat-all，错校准模型在最低阈值失败）
@@ -18,8 +32,6 @@
   - 协议：报告队列允许标签集→先 mask 重归一化再打分→先验修正单独报告并展示 macro F1 代价→绝不允许把跨标签空间边界的精度差归因为模型技能；亚型精度是比生存判别（外部 C-index 0.577–0.584）更弱的便携终点
   - **Activation**: cross-cohort evaluation, label-space restriction, annotation standard mismatch, METABRIC PAM50, claudin-low, EM prior correction, mask_only, cohort documentation compliance, internal validation overstatement, multimodal fusion transfer failure, McNemar paired test
 
-## 2026-10-21 - Medicine Research (Cron Job)
-
 ### Measurement-efficient energy estimator for quantum chemistry of photodynamic materials
 - [[mixed-estimator-compute-uncompute-readout]] - 混合估计量读出E_ME=E_Φ+r_Φ·h/s：把mHa级能量读出压缩到~400 shots（较单行列式经典阴影省100×、较分组Pauli平均省~1700×）；Quantinuum×强生(Johnson & Johnson)在PDT/RDT抗癌MOF材料上演示 (arXiv: 2610.26689)
   - 核心分解：稀疏多组态参考|Φ⟩（SHCI/CASCI截断或QSCI/SQD采样子空间直接可用）→经典侧已知E_Φ=⟨Φ|H|Φ⟩、残差范数r_Φ=‖Q_ΦH|Φ⟩‖、归一化残差态|Λ⟩=Q_ΦH|Φ⟩/r_Φ；量子侧只测h=⟨Ψ|Λ⟩、s=⟨Ψ|Φ⟩两重叠（相对相位自动相消）；基态变分原理固定h/s≤0→幅值-only计算-反计算（真空测试p_Ω=|⟨Ψ|Ω⟩|²无ancilla无受控）E_ME=E_Φ−r_Φ√(p_Λ/p_Φ)
@@ -33,7 +45,6 @@
   - PsiQuantum×勃林格殷格翰(Boehringer Ingelheim)合作：H_SVD(θ)=E_θ+Σσ_ℓV_ℓ(θ)H_ℓ且K≪M（BCE-73用K=14、甘氨酸二肽2664几何用K=90、丙氨酸二肽5184几何用K=150）；联合基Gram G=cos²w·AAᵀ/tr(AAᵀ)+sin²w·BBᵀ/tr(BBᵀ)（M×M快照法，两体通道只存8重对称唯一元）；逐模式BLISS-THC按各自R_ℓ分解——QROAM成本O(ΣR_ℓ²)决定必须逐模式rank（右偏分布：均值31/146/153 vs 中位数20/104/130）
   - λ=max_θ Σσ_ℓ|V_ℓ(θ)|通用归一化+|K⟩ padding闭合法化：网格加密576×后Toffoli复杂度仅变≤12%、λ仅变≤24%（分辨率只付一次→亚线性于M）；ε∞≤0.6 mHa全网格CCSD验证+HF能量偏移E′_θ=E_θ+E^HF[H(θ)]−E^HF[H_SVD(θ)]精确恢复；能量阈值电路（mux_θ QPE+相位寄存器比较器）+O(√M)最低能几何量子搜索；药物发现落点：构象能量排序/生物活性构象稳定性/玻尔兹曼加权分子性质
   - **Activation**: SVD-THC, tensor hypercontraction, molecular Hamiltonian ensemble, multiplexed block encoding, conformational landscape, quantum drug discovery, energy thresholding, BLISS-THC
-
 ## 2026-10-21 - Neuroscience Research (Cron Job)
 
 ### Small-scale neural simulation of Caenorhabditis elegans on Loihi-2 using NeuroML2Loihi
