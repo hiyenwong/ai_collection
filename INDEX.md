@@ -7874,3 +7874,11 @@
   - 控制面：统一权限管理/上下文可重置/Activity View跟进纠偏停止；委托子任务只留任务所需信息
   - 诚实边界：dots仍会犯错，重要工作必须复核；监控误报会拖慢正当长任务——持续校准+申诉路径
   - **Activation**: always-on agent safety, auto-review action gating, credential isolation, sandbox workspace, prompt injection containment
+
+## 2026-10-20 - OpenAI Research (Cron Job)
+
+### Advancing coding in low-resource programming languages
+- [[multilangbench-shared-artifact-evals]] - 跨语言编码评测设计：以语言无关共享制品（数据库文件状态）为接口，同一测试套件+参考实现oracle适用任意实现语言，行为等价校验替代逐语言测试套件
+  - MultiLangBench（github.com/openai/MultiLangBench，开源）：20语言从零实现SQLite——GPT-6 Astra平均87.4%（GPT-5.6 Sol 26.8%），COBOL 10.9%→72.1%仍最难，19/20语言>83%；Luna低成本档40.3%@$0.77/样本（≈78%更便宜）
+  - COBOL迁移评测：GPT-6.1 Sol低推理档86.6%（vs GPT-5.6 Sol 5.4%）@61%成本，高推理档97.9%近饱和；报告能力-成本曲线（推理档×每样本成本）而非单点分数
+  - **Activation**: low-resource programming languages, MultiLangBench, shared artifact interface evaluation, COBOL migration benchmark, cross-language code evaluation
