@@ -10,6 +10,19 @@
 
 ## 2026-10-21 - Neuroscience Research (Cron Job)
 
+### Length-Independent Stability and L2-Gain Certificates for Chains of Delayed Neural Modules
+- [[length-independent-certificates-delayed-neural-chains]] - 类型周期LKF变量+Fejér–Riesz胞元归约：一个96阶LMI同时认证所有长度的延迟神经模块链/环的稳定性与L₂增益（率无关延迟） (arXiv: 2610.25147)
+  - 核心：率无关LKF（固定积分限→无τ̇项）+模块类型平铺变量→任意链的证书矩阵块三对角T_K(Ξ₀,Ξ₁)且胞元块相同；单胞LMI M=[[Y,−Ξ₁],[−Ξ₁ᵀ,−Ξ₀−I−Y]]⪰εI（稳定性96阶/增益104阶，1298标量变量与N无关）；Lemma 4算子Fejér–Riesz定理：胞元归约除ε边距外零保守（等价谱形式H₀+zH₁+z̄H₁ᵀ⪰0, ∀|z|=1，即平铺变量认证一切长度）
+  - 凸性认证区间：Ξ(κ)对κ仿射，(1−θ)Ξ(κ⁻)+θΞ(κ⁺)−Ξ(κ_θ)=θ(1−θ)(κ⁺−κ⁻)²A_cᵀR̃A_c⪰0→两端点认证覆盖整段[κ⁻,κ⁺]；证书全部经精确有理算术复核（LDLᵀ无主元消去，正主元=正定，与求解器容差无关）；SiLU扇区[−1/10,11/10]数值复核sup f′=1.09984（根r=2.3994<12/5，f′(r)=1/2+r/4精确）
+  - 评估协议：不稳定线性成员经DFT胞元解耦Δ_θ(λ)+伪谱配置给外界κ_out；认证耦合达外界92%(短延迟)/79%(标称)；M矩阵时无关检验仅κ<0.328(约1/11)；原点线性化κ=7.33严重误判(>2×κ_out)；差异扇区项T_ab移除→认证增益差3.1-6.0×、耦合15/4→103/64；均匀性代价s*_N/s*在N=8-16仅1.02-1.07
+  - **Activation**: length-independent certificate, size-uniform LMI, delayed neural modules, Lyapunov-Krasovskii, rate-free delays, cell reduction, Fejer-Riesz, certified coupling region, L2-gain, spatially interconnected
+
+### A Spiking Ring-Attractor Architecture for Representation and Control of Revolute Robot Joints
+- [[spiking-ring-attractor-revolute-joint-control]] - 全脉冲环吸引子闭环控制旋转关节：对手增益调制=SO(2)李代数输运bump相位，Hammel稳态比较器闭合环路，解析Fourier相位解码+张量积FK读出；NEST+Tiago七关节实测 (arXiv: 2610.26027)
+  - 输运机制：增益群接受相移副本±δθ+对手驱动B±，一阶展开的定向项∝g′(u_r)[g′(x⁺)−g′(x⁻)]∂_θu_r→输运方程∂_tu+c(u)∂_θu=F_r(u)（c=W_gr W_rg δθ/τ_r·[g′(x⁺)−g′(x⁻)]）；平衡驱动B⁺=B⁻⇒定向项归零（旋转对称保持，零输运）；相位化简φ̇=c_eff——增益编码环上速度而非角度，积分即状态转运=脉冲积分器
+  - Fourier解码（数值复核）：质心估计器=居中斜坡投影=纯正弦级数x−L/2=−(L/π)Σsin(2πmx/L)/m→线性解码θ̂=L/2−(L/πM₀)ΣS_m/m；对称bump恒等式S_m=A_m·sin(2πmθ/L)复核至2e-13（A_m=形状余弦系数）；形状修正w_m=−L/(πmA_m)，K=110解码误差0.078-0.100恰在Dirichlet截断界0.094-0.101内；符号特征用push-pull亚群相减实现
+  - 组合读出：局部特征φ_i=[1,C̄_i,S̄_i]→张量积Φ=⊗φ_i（3环27项）→坐标轴旋转链vec(R_ee)=T·Φ精确线性FK读出（旋转不可交换，乘法顺序=运动学约定）；SO(3)恢复θ̂=−arcsin(r31)、λ̂=atan2(r32,r33)、ψ̂=atan2(r21,r11)；实测：NEST 200神经元环bump定向转运（残差target相关）；Tiago s_t=R_t−L_t→滤波→速度命令，七关节全部有向运动（比PID慢但命令更平滑），FK解码器lift/pitch/yaw紧贴解析目标
+  - **Activation**: ring attractor, spiking neural control, revolute joint, SO(2) bump transport, opponent gain modulation, Fourier phase decoder, homeostatic comparator, push-pull decoding, forward kinematics readout, NEST, Tiago, neuromorphic robotics
 ### Affective Valence as the Interoceptive Rate of Change of Jacobian Scale
 - [[affective-valence-jacobian-scale]] - valence=内感受移动Jacobian对数尺度的速率；链式法则精确分解位置/成因，六项身体模型复现临床疼痛分离+wireheading (arXiv: 2610.26350)
   - 核心公式 v=∂uλ·du/dt（λ=log‖J_S‖，终末集Z=‖J_S‖=0在λ=−∞=死亡）；Eq(1)位置分解残差场δ_i=v_i−w_i·v归零定位感受（饥饿弥散/疼痛局部化，份额w_i=ℓ_i²/‖J_S‖²）；Eq(2)grounded(本质变量)/ungrounded(幻肢驱动/虚假线索/药物)成因分解
