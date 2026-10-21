@@ -8119,3 +8119,9 @@
   - 扩展到旋转不变；泛化到未见数量的干扰物；增益要求锚点决策相关（任意锚点无收益）
   - **Activation**: object-centric RL, relative coordinates, anchor, shift invariance, distractor generalization, transformer RL
 
+### Model- and Layer-Level Closed-Loop Forecasting with SSM-Based Spiking Neural Networks
+- [[closed-loop-forecasting-ssm-snn]] - 自回归 SSM/SNN 做预测的自反馈策略：模型级与层级闭环（把网络自身生成值当观测回喂）替代 S4 zero-masking (arXiv: 2610.28495)
+  - ETT-small 上两种闭环与 S4 zero-masking 持平或更优、多数情况追平 SpaceTime；脉冲与连续激活分别评估
+  - 突出连续 vs 低比特量化激活的权衡——闭环反馈让单比特脉冲激活在多步预测中真正可用
+  - **Activation**: SNN forecasting, closed-loop, autoregressive SSM, S4 zero-masking, ETT, spike activations
+
