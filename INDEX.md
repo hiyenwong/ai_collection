@@ -18,6 +18,20 @@
 
 ## 2026-10-22 - Neuroscience Research (Cron Job)
 
+### Does a Flux-Defined Markov Blanket Screen Self-Replicating Gray-Scott Spots?
+- [[flux-markov-blanket-gray-scott-fep-test]] - Direct falsification test of the FEP blanket condition in Gray-Scott self-replicating spots; flux blankets fail (arXiv: 2610.27235)
+  - Criterion C fails: flux conditioning removes only ~40% of linear interior-exterior dependence (partial r -0.19 vs marginal -0.25, N=566,967) and NONLINEARLY INCREASES dependence ~80% (CMI 0.137 vs 0.075 nats, 23.5 SDs) - flux is a collider (joint function of both sides), not a mediating state
+  - Collider diagnosis pattern: conditioning on a genuine single-side state (boundary concentration) moves the OPPOSITE direction (+19.6% screened) - opposite-direction effects confirm collider structure; never accept a blanket variable computed from both sides of its own boundary
+  - A field band ~1 organism radius thick does screen (<0.01 nats) but placebo disks in empty field screen at 16px too - thick-band screening is generic short-range physics, not organismhood/inference; free-energy life-cycle signature (r=0.934 over 695 divisions) is flux statistics, not surprise ("a fit counts only if it could have failed")
+  - **Activation**: free energy principle, Markov blanket test, conditional independence, Gray-Scott, active inference falsification, collider conditioning, CMI
+
+### NeuroAct: Advancing EEG Analysis and Decoding via Dual-Loop Autonomous Research
+- [[neuroact-dual-loop-eeg-autoresearch]] - Dual-loop (inner evidence-guided research + outer conditional-experience revision) autonomous EEG agent; +17.75 macro over BrainAgent (arXiv: 2610.25211)
+  - Evidence taxonomy drives intervention choice: signal structure / representations / predictor behavior / training dynamics (incl. cross-model error overlap for combination decisions) - what fixed pipelines and reward-driven search omit; investigation-as-experiment requires outcomes that discriminate competing explanations
+  - Outer loop stores experience as conditional testable recommendations k=(c, a, e+, e-, b) - conditions/action/supporting/counterevidence/reassess-trigger; PhysioMI->BCIC-IV-2a reuse raises BA 34.66->50.81 while cutting tokens 64%
+  - Ablation ordering: EEG diagnostics -21.14 BA (ADFTD) > code editing -11.51 > runtime skills ~ -14 > auxiliary metrics -6.60 (BCIC) > personas -1.65; feeding macro-F1/AUROC/loss/gradients (not just headline score) is itself a mechanism
+  - Settings: A general analysis 80.88 macro; B one shared encoder 47.50->54.84 BA, HBN r 0.6894->0.7362; C ADFTD +16.33 (EEGNet->ShallowFBCSPNet architecture switch); D workload combination 79.69->85.02
+  - **Activation**: autonomous EEG research, dual-loop agent, experience reuse, conditional recommendations, EEG foundation model adaptation, model combination, BrainBench
 ### Logit Averaging During Training Sets a New State of the Art for Non-Invasive Speech BCI
 - [[multitrial-logit-averaging-bci]] - First systematic multi-trial aggregation comparison; train-time logit averaging wins 6/7 settings (arXiv: 2610.26347)
   - New SOTA on the 2025 PNPL phoneme benchmark: +17.4 balanced-accuracy points over the winning Conformer (0.641 vs 0.467); on MegNIST imagined speech the ranking inverts (post-hoc wins)
