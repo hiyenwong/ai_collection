@@ -8107,3 +8107,9 @@
   - 协议复用：最小对 + 共享码读出 + mixing null + activation patching，审计 looped/recurrent 模型"潜在推理"声明
   - **Activation**: latent reasoning, probing, minimal pairs, mixing null, activation patching, looped models, interpretability audit
 
+### Turning TS2Vec into a Foundation Model for Time Series Classification
+- [[ts2vec-fm-compact-time-series-foundation]] - 紧凑 SSL 编码器转基础模型三步配方：合成语料预训练 + 幅度/形状双视图 stem + 每视图专家蒸馏回单一编码器 (arXiv: 2610.28602)
+  - 1.6M 参数膨胀卷积网络冻结后线性探测：UCR-128 83.3% / UEA-27 75.3%，距 SOTA MantisV2 仅 0.3pp，且超过逐数据集训练的 TS2Vec
+  - 无 attention、无 patch tokenizer、无中间层抽取——"老派"卷积编码器 + 两层 MLP stem 即近持平 SOTA
+  - **Activation**: time series foundation model, TS2Vec, linear probing, synthetic corpus, dual view stems, specialist distillation
+
