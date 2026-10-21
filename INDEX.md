@@ -8087,3 +8087,9 @@
   - 3 环境×2 教师×4 学生全 12 格胜 3 个 SOTA agentic-OPD 方法（课程/教师引导/前缀重放），平均 +12.8 成功点；修复与训练全程无需任务奖励
   - **Activation**: agentic OPD, rollout-scorer gap, myopic scorer, teacher repair, reward-free, takeover, distillation
 
+### On-Policy Transition Distillation
+- [[optd-depthwise-transition-distillation]] - OPD 新监督信号：对齐教师-学生逐层 log-prob 增量（depthwise prediction transitions）；诊断显示中间层 transition KL 越低答案越正确 (arXiv: 2610.28048)
+  - 最终层分布匹配 + 层间增量对齐，纯辅助监督项不改采样与架构；3 backbone×8 benchmark（数学/代码/指令跟随）双域三域均最佳或并列
+  - 三域蒸馏恢复 ~90% 教师-学生能力差距（OPD 仅 ~75%）
+  - **Activation**: on-policy distillation, layer transitions, transition KL, depthwise supervision, intermediate layers
+
