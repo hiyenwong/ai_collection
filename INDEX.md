@@ -8138,3 +8138,9 @@
   - 通用范式：稀疏噪声传感器 + 粗物理先验 → 稠密概率场（天气/环境/水文/传感网）
   - **Activation**: data assimilation, sparse observations, neural process, CRPS, downscaling, probabilistic field reconstruction
 
+### Matrix-Game 4.0: Harnessing Video Models for Real-Time Playable Game Worlds
+- [[matrix-game-engine-renderer-decoupling]] - 可玩世界 = 轻量引擎（持久状态+可执行规则）与自回归视频渲染器（低多边形代理→精细画面）解耦；视频模型只渲染、不做世界状态 (arXiv: 2610.27999)
+  - 多模态 coding agent 把玩家想法翻译成游戏代码+动态场景字幕；渲染器在低模/高保真配对数据上训练并蒸馏为 4 帧 chunk、1-2 步去噪因果生成器
+  - 单卡 RTX5090 达 480p/60FPS、按键到显示延迟 112ms；单步生成稳态 83FPS、峰值显存 18.2GiB；引擎强制执行游戏机制
+  - **Activation**: playable world, engine-renderer decoupling, video world model, real-time generation, low latency, proxy conditioning
+
