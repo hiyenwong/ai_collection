@@ -8078,3 +8078,6 @@
   - 9 个 backbone LoRA 一致 +0.032–0.066；全量微调 330× 参数无优势；SGD 后闭式重拟合 readout（Gram+parcel-wise ridge）是稳定增益来源
   - Ensemble 定律：质量与多样性单独 R²=0.23/0.05、联合 R²=0.97；有用多样性来自 readout/backbone 架构变化，seed/rank/层/数据子集几乎无效；模态归因恢复经典感觉拓扑，适应增强音频+跨模态混合
   - **Activation**: brain encoding, fMRI prediction, PEFT, LoRA, single-pass causal extraction, Algonauts, multi-LoRA kernel, ensemble diversity, modality attribution
+
+## 2026-10-22 - Deep Learning Research (Cron Job)
+
