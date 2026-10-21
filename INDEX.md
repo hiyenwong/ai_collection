@@ -8144,3 +8144,9 @@
   - 单卡 RTX5090 达 480p/60FPS、按键到显示延迟 112ms；单步生成稳态 83FPS、峰值显存 18.2GiB；引擎强制执行游戏机制
   - **Activation**: playable world, engine-renderer decoupling, video world model, real-time generation, low latency, proxy conditioning
 
+### Ask to Learn: Query-Based Collaborative Reinforcement Learning
+- [[ask-to-learn-query-collaborative-rl]] - 不直接交互环境突破 offline RL 覆盖限制：学习者自选 state-time 对查询，合作者按固定（可次优）策略出动作、模拟器返回转移——只控查询不控动作 (arXiv: 2610.27606)
+  - 有限时域表格问题：识别 ε-最优策略所需额外查询数的实例依赖信息论下界 + 局部二次近似刻画逐实例难度
+  - 自适应查询分配算法在合适条件下几乎匹配局部基准；合成/半合成环境验证效率
+  - **Activation**: offline RL coverage, active queries, collaborative RL, fixed-policy collaborator, information-theoretic lower bound, adaptive allocation
+
