@@ -8093,3 +8093,10 @@
   - 三域蒸馏恢复 ~90% 教师-学生能力差距（OPD 仅 ~75%）
   - **Activation**: on-policy distillation, layer transitions, transition KL, depthwise supervision, intermediate layers
 
+### Learning Computational Structure for Sample-Efficient Prediction
+- [[learned-wiring-lewi-sample-efficiency]] - LeWi 联合学习布线与权重：每个神经元带低维嵌入、仅近邻连接、嵌入+权重共训，利用隐藏组合稀疏性让样本复杂度取决于局部元数而非环境维数 (arXiv: 2610.28555)
+  - CSFRench 诊断基准：训练时隐藏目标组合计算——dense 网络与稀疏基线都实现不了组合结构收益，必须能学布线
+  - 32 个独立采样计算图目标：不给目标图的最样本高效方法，学习曲线面积均值 -27% vs dense；17 个世界模型预测任务 16/17 胜 dense（99/119 对比胜）
+  - 诚实负结果：单一高元数函数上 dense 更优——组合结构不存在时 LeWi 无收益；嵌入簇 ≈ 可解释模块
+  - **Activation**: sample efficiency, compositional sparsity, learned wiring, neuron embedding, world model prediction
+
