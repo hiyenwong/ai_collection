@@ -8125,3 +8125,9 @@
   - 突出连续 vs 低比特量化激活的权衡——闭环反馈让单比特脉冲激活在多步预测中真正可用
   - **Activation**: SNN forecasting, closed-loop, autoregressive SSM, S4 zero-masking, ETT, spike activations
 
+### Efficient Edge-aware Attention Network for Graph Generation
+- [[edge-aware-flex-attention-graph-generation]] - 图生成 Transformer 接入硬件感知注意力：边/图级特征经 head-wise score modulation 进成对分数、轻量残差机制更新边表征免二次方显存，PyTorch FlexAttention 实现 (arXiv: 2610.28618)
+  - 结构信息走 score_mod/bias 通道、QKV 路径保持标准、图 mask 走 kernel 块接口——不 fork 注意力实现
+  - 生成质量持平基线，峰值 GPU 显存 -65%，训练/采样吞吐显著提升——迈向可扩展图基础模型
+  - **Activation**: graph generation, FlexAttention, edge-aware attention, hardware-aware kernel, memory reduction, score modulation
+
