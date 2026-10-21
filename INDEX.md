@@ -8100,3 +8100,10 @@
   - 诚实负结果：单一高元数函数上 dense 更优——组合结构不存在时 LeWi 无收益；嵌入簇 ≈ 可解释模块
   - **Activation**: sample efficiency, compositional sparsity, learned wiring, neuron embedding, world model prediction
 
+### Present but Hard to Read: Probing Latent Reasoning with Minimal Pairs
+- [[minimal-pair-latent-reasoning-probing]] - 潜在推理探测协议：probe 失败≠值缺失。最小对跨 prompt 共享码读出 ~0.9 vs 单 prompt 探测 0.36/0.19（Ouro/Qwen）；区分 present/readable/used 三层声明 (arXiv: 2610.28498)
+  - 合成 mixing null：两步问题中 a+b 的符号跟随信号大部分可由输入混合单独产生——无 null 的探测结论不可信；变化 token 都留痕迹故探测成功也有歧义
+  - 因果检验：把中间值 patch 成另一问题的值输出不跟随（readable but NOT used），patch 答案本身则跟随
+  - 协议复用：最小对 + 共享码读出 + mixing null + activation patching，审计 looped/recurrent 模型"潜在推理"声明
+  - **Activation**: latent reasoning, probing, minimal pairs, mixing null, activation patching, looped models, interpretability audit
+
