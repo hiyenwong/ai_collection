@@ -18,6 +18,20 @@
 
 ## 2026-10-22 - Neuroscience Research (Cron Job)
 
+### What I Disbelieve: Quantifying Belief With Negative Ranking Functions
+- [[spohn-negative-ranking-belief]] - First empirical test of Spohn ranking theory: human belief is bipolar + negation-respecting, but disjuncts are averaged not minimized (arXiv: 2610.28357)
+  - Disbelief ranks kappa in {0..inf} are reliable (6 experiments, N=168/63/200/201/209/290); Law of Negation holds everywhere except lotteries (people disbelieve both winning AND losing); Law of Disjunction fails - LME shows intermediate/averaging ranks, min-rank predicts only in the temperature scenario
+  - Two-sided rank tau(A)=kappa(not-A)-kappa(A) separates belief/disbelief/suspension - a triple probability cannot express (Bayesian 0.5 prior is strong uniformity conviction, not ignorance)
+  - Ranks align better with objective probabilities than subjective probability reports (hide-and-seek learning task); Ellsberg ambiguity aversion drops from ~50% (betting) to 6.4-8.6% (ranks) with no rank-bet correlation (r=0.07) - ambiguity aversion is a betting-context artifact, not an epistemic estimate
+  - **Activation**: negative ranking theory, Spohn ranks, disbelief elicitation, Law of Negation, Ellsberg paradox, belief measurement, two-sided rank, belief revision
+
+### Ontic State Recovery Through Prediction
+- [[ontic-state-recovery-prediction]] - State = complete query-response profile; prediction error bounds state recovery through target ambiguity, with sharp m^(-1/(2d)) target budgets (arXiv: 2610.27139)
+  - Fiber lemma: optimal prediction error = half the max target difference among states the encoder merges - exact prediction on narrow targets leaves most of the state unresolved; recovery R* <= omega_P(2L*) via query ambiguity
+  - Low-dim bound: covering number N_F(eps) <= C eps^-d gives R* <= L* + (1/alpha)(1/2 + alpha C^2/2)(2m)^(-1/(2d)); rate is SHARP for one target set shared across all encoders, but a single encoder-tailored target achieves R* <= 2L*
+  - HC3 hippocampal recordings: greedy covers beat time-shift nulls by 15.2% (cross-unit structure is real); reference-state recovery gains R^2 = 0.0239 +/- 0.0118, positive in every animal and leave-one-animal-out
+  - **Activation**: ontic state, query universe, prediction vs recovery, query ambiguity, covering number, neural foundation model evaluation, target query budget, recovery guarantee
+
 ### Does a Flux-Defined Markov Blanket Screen Self-Replicating Gray-Scott Spots?
 - [[flux-markov-blanket-gray-scott-fep-test]] - Direct falsification test of the FEP blanket condition in Gray-Scott self-replicating spots; flux blankets fail (arXiv: 2610.27235)
   - Criterion C fails: flux conditioning removes only ~40% of linear interior-exterior dependence (partial r -0.19 vs marginal -0.25, N=566,967) and NONLINEARLY INCREASES dependence ~80% (CMI 0.137 vs 0.075 nats, 23.5 SDs) - flux is a collider (joint function of both sides), not a mediating state
