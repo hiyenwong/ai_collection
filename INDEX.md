@@ -8131,3 +8131,10 @@
   - 生成质量持平基线，峰值 GPU 显存 -65%，训练/采样吞吐显著提升——迈向可扩展图基础模型
   - **Activation**: graph generation, FlexAttention, edge-aware attention, hardware-aware kernel, memory reduction, score modulation
 
+### Observation Assimilation Transformer: Probabilistic Weather Analysis from Sparse Station Observations
+- [[observation-assimilation-transformer-sparse-fields]] - 稀疏站点观测 + 粗先验场 → 高分辨率概率后验场：几何感知神经过程（集合条件 transformer），相对位置稀疏注意力 + CRPS 损失 + 站点随机化训练 (arXiv: 2610.28327)
+  - 只依赖相对位置从不依赖绝对坐标；支持部分缺失观测、任意连续位置查询免网格投影；输出参数化分布
+  - 区域（百级站）与大陆（千级站）尺度超基线且校准良好；ERA5(31km)→COSMO(1km) 降尺度，温度/降水 MAE 与 CRPS 均低于 COSMO
+  - 通用范式：稀疏噪声传感器 + 粗物理先验 → 稠密概率场（天气/环境/水文/传感网）
+  - **Activation**: data assimilation, sparse observations, neural process, CRPS, downscaling, probabilistic field reconstruction
+
