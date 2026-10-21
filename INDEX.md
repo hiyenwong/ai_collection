@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-22 - Systems Engineering Research (Cron Job)
+
+### Quantum Broker: QoS-Aware Distribution of Quantum Computations
+- [[quantum-broker-qos-shot-dispatch]] - MILP QoS shot dispatch across heterogeneous quantum QPUs (arXiv: 2610.28342)
+  - Shot statistical independence -> single circuit's shot budget split across heterogeneous cloud QPUs as a constrained dispatch MILP (x_b integer shots, y_b binary use, big-M coupling, max-aggregate auxiliary variable)
+  - Linearization gap reproduced: pre-filter R_syn at FULL budget S passes (0.9592 >= tau) but true shot-dependent reliability at allocated x=300 fails (0.9507 < tau) -> post-solve validation rejects solver-feasible-but-not-QoS-feasible dispatches
+  - Verified: MILP optimum 515.63 beats 100k random samples + coarse-grid exhaustive; split dominates all 5 single-backend baselines (820-1373); Bhattacharyya concavity means merged fidelity >= worst component
+  - **Activation**: quantum cloud, QoS, shot allocation, MILP dispatch, heterogeneous QPUs, QQSpec, dual annealing, quantum software engineering
+
+### Conformal Koopman Certificates for Nonlinear Multi-Agent Consensus on Time-Evolving Graphs
+- [[conformal-koopman-deadline-certificates]] - Conformal Koopman consensus-deadline certificates (arXiv: 2610.28285)
+  - Shape x Constant split: annealed Koopman operator (averaging over Markov switching) is LINEAR for any agent nonlinearity -> subdominant eigenvalue gives geometric decay shape; split conformal prediction calibrates the single constant from 200 short runs
+  - Deadline T_b(eps) = ceil(log(eps/q_{1-delta})/log(rho-hat)) — ONE calibration serves EVERY tolerance (vs direct CP at 80x cost per tolerance); estimation error in rho-hat is absorbed by the conformal quantile
+  - Verified: Table I deadlines reproduced (104 exact at eps=1e-2); full N=20 fleet sim + EDMD (lift 63) gave rho-hat=0.9528 vs paper 0.9520; nonlinear halving 10.2 > linearised 6.3 rounds (tanh saturation confirmed); one calibration covered 100% of test runs at 3 tolerances
+  - **Activation**: consensus deadline, Koopman operator, conformal prediction, multi-agent systems, switched systems, certification, EDMD, annealed operator
+
 ## 2026-10-22 - Neuroscience Research (Cron Job)
 
 ### Logit Averaging During Training Sets a New State of the Art for Non-Invasive Speech BCI
