@@ -8113,3 +8113,9 @@
   - 无 attention、无 patch tokenizer、无中间层抽取——"老派"卷积编码器 + 两层 MLP stem 即近持平 SOTA
   - **Activation**: time series foundation model, TS2Vec, linear probing, synthetic corpus, dual view stems, specialist distillation
 
+### Reframing Object-Centric Reinforcement Learning: From Absolute to Relative Representations
+- [[orca-anchor-relative-object-centric-rl]] - ORCA 锚点相对坐标：实体坐标挂到决策相关锚点上而非全局原点——平移不变性按构造获得，MLP 和 transformer 都受益，场景平移不再崩溃 (arXiv: 2610.28197)
+  - ORBiT：处理锚点相对输入的 transformer；13 个 Atari 上聚合 HNS IQM > 1.0 超 pixel PPO；Foosball 从零学会并全胜
+  - 扩展到旋转不变；泛化到未见数量的干扰物；增益要求锚点决策相关（任意锚点无收益）
+  - **Activation**: object-centric RL, relative coordinates, anchor, shift invariance, distractor generalization, transformer RL
+
