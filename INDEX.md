@@ -8081,3 +8081,9 @@
 
 ## 2026-10-22 - Deep Learning Research (Cron Job)
 
+### Capable Teacher, Myopic Scorer: Reward-Free Teacher Repair for Agentic On-Policy Distillation
+- [[r2s-rollout-scorer-gap-repair]] - Agentic OPD 失效根因 = rollout-scorer gap：教师自己 takeover 能完成任务，但其 myopic 逐 token 评分放过"安全拖延动作"（outcome RL 会给零奖励）；R2S 先修复教师再冻结为唯一 scorer (arXiv: 2610.28586)
+  - 修复流程：从未训学生挖高分歧状态 → 教师 takeover → reward-free 通过检查（consensus/LLM judge）→ 从分歧轮起用 takeover-informed 分数微调教师（上下文不含 takeover）
+  - 3 环境×2 教师×4 学生全 12 格胜 3 个 SOTA agentic-OPD 方法（课程/教师引导/前缀重放），平均 +12.8 成功点；修复与训练全程无需任务奖励
+  - **Activation**: agentic OPD, rollout-scorer gap, myopic scorer, teacher repair, reward-free, takeover, distillation
+
