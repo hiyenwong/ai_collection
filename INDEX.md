@@ -8150,3 +8150,9 @@
   - 自适应查询分配算法在合适条件下几乎匹配局部基准；合成/半合成环境验证效率
   - **Activation**: offline RL coverage, active queries, collaborative RL, fixed-policy collaborator, information-theoretic lower bound, adaptive allocation
 
+### GazeLens for Efficient Egocentric Video Question Answering with Simple Gaze-Driven Adaptive Token Reduction
+- [[gazelens-gaze-driven-token-reduction]] - 智能眼镜视频 QA 省算力：HOG 转换+清晰度先选帧（免编码器前向），再高斯池化出注视焦点/周边互补双摘要，问题条件门控融合——每帧仅 2 token (arXiv: 2610.28502)
+  - 注视信号用于"分裂而非选择"：焦点 token 与互补 token 并存按问题门控——二值裁剪会丢问题相关的场景上下文
+  - StreamGaze 上 macro/micro 准确率超全网格与 token 缩减基线，前向 FLOPs 低于共享骨干 token 缩减基线
+  - **Activation**: egocentric video, gaze, token reduction, frame selection, Gaussian pooling, streaming VLM
+
