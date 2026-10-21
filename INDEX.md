@@ -1,5 +1,20 @@
 # AI Collection Index
 
+## 2026-10-22 - Neuroscience Research (Cron Job)
+
+### Logit Averaging During Training Sets a New State of the Art for Non-Invasive Speech BCI
+- [[multitrial-logit-averaging-bci]] - First systematic multi-trial aggregation comparison; train-time logit averaging wins 6/7 settings (arXiv: 2610.26347)
+  - New SOTA on the 2025 PNPL phoneme benchmark: +17.4 balanced-accuracy points over the winning Conformer (0.641 vs 0.467); on MegNIST imagined speech the ranking inverts (post-hoc wins)
+  - Mechanisms (verified): CE gradient saturates as 1-p_true; logit-space advantages accumulate so softmax sharpens with group size; post-hoc prob averaging structurally collapses on minority classes (macro recall 0.000 on low-frequency tertiles)
+  - Verified Heskes/Krogh-Vedelsby DIV decomposition is EXACT for softmax(mean logits) (err 6.7e-16) and fails for mean probs (0.44) - challenges the "learner collusion" account of joint-ensemble failure
+  - **Activation**: BCI, multi-trial aggregation, logit averaging, MEG decoding, speech BCI, joint ensembling
+
+### Multilingual Brain Decoding Reveals Shared Cortical Semantic Geometry
+- [[multilingual-shared-semantic-geometry]] - 227-subject CN/EN/FR fMRI; semantic geometry shared across languages and individuals, aligned with the cortical hierarchy (arXiv: 2610.26927)
+  - Cross-language geometry consistency rises from sensorimotor to association cortex; shared-geometry gradient matches principal functional gradient G1 (rho=0.80, spin P<0.001; G2/G3 null), reliability-adjusted rho=0.63
+  - SemDecoder stack: subject-specific affine pathway into a shared space, masked-neural-modelling-pretrained trunk, symmetric InfoNCE + cosine alignment to BLOOM layer-20, LM-proposes/neural-selects beam search (k=12, M=96)
+  - Zero-shot cross-language decoding above chance (P<0.0001); high-consistency regions drive transfer; concreteness/socialness/arousal directions parallel across languages
+  - **Activation**: multilingual brain decoding, semantic geometry, RSA, functional gradient, cross-subject alignment, fMRI decoding
 ## 2026-10-21 - Medicine Research (Cron Job)
 
 ### Simulation-free approximate Bayesian computation for stochastic reaction networks
