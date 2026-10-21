@@ -2,6 +2,21 @@
 
 ## 2026-10-22 - Systems Engineering Research (Cron Job)
 
+### NeST: ultra-high-rate qLDPC codes with sub-50µs stabiliser cycles via spin shuttling
+- [[nest-qldpc-spin-shuttling]] - qLDPC codes co-designed with silicon spin-qubit shuttling tracks (arXiv: 2610.28538)
+  - Design principle inversion: ask which groups a shuttling-track lattice routes for free, build the code from those - group family G(n,sigma) = product of p cyclic groups with sigma_ij = ±1 commutation/inversion relations; nested conveyor loops make every group multiplication a rigid globally-controlled belt motion; non-abelian inversion r->r^-1 = train entry direction (n2=2 gives dihedral groups natively)
+  - Rate-20% mitten codes up to [[1400,280,<=28]]; circuit-level thresholds >1e-3 with shuttling dephasing up to psh=p/20; sub-50µs stabiliser cycles (2-3 orders of magnitude faster than neutral atoms); extrapolated 1e-14 logical error/round at 9 physical/logical (incl. 4 ancilla check-blocks) vs 1457 for surface code
+  - Verified: group law (i,j)(k,l)=(i+(-1)^j k, j+l), s r s^-1 = r^-1, left/right action closed forms Eq(11)/(12) for (5,4)/(8,6)/(7,10); shuttling budget Eq(16) L = n w l_qq/(3*2^(p-1)) arithmetic EXACT (pdftotext had displaced the fraction)
+  - **Activation**: qLDPC, spin qubits, electron shuttling, lifted product, mitten codes, code-hardware co-design, semidirect product, fault tolerance, stabiliser cycle, code surgery
+
+### Data-Driven Minimum Energy Control for Stochastic Linear Systems with Finite Sample Guarantees
+- [[smec-stochastic-minimum-energy-control]] - Open-loop min-energy control with stochastic terminal-error constraints + data-driven finite-sample bounds (arXiv: 2610.27599)
+  - All constraint variants (chance via non-central chi-square quantile lambda*, second moment, Mahalanobis, conservative absolute) reduce to one convex QCQP; closed form via KKT: S(mu)=Sigma_e+mu*C_T Q_T^-1 C_T^T, u*(mu)=mu*Q_T^-1 C_T^T S(mu)^-1 x_f, scalar monotone g(mu)=x_f^T S^-1 Sigma_e S^-1 x_f = gamma; stochastic Gramian W_s=mu^2 S^-1 C_T Q_T^-1 C_T^T S^-1; spectral g = sum_i xtilde_i^2/(1+mu*lambda_i)^2
+  - Fundamental T->infty limit: unstable directions become free, cost set by stable-block Gramians W_cs/W_ws with gamma_inf=(x_s^f)^T W_ws^-1 x_s^f - horizon extension cannot beat this bound
+  - Data-driven: structure-enforced ML estimate C_hat = Xbar U^dagger cuts variance by factor mT/N_e vs direct sampling; Sigma_hat_e is Wishart(N_eN_r-mT), biased low; conformal calibration (est/cal split, quantile q_{1-delta}, constraint ||C_hat u - x_f|| <= eps - q) gives distribution-free coverage; finite-sample bounds via Davidson-Szarek + noise-to-signal ratio rho
+  - Verified: closed-form u* matches direct SLSQP convex solve to 6.75e-09 (29 checks PASS); J* dual identities exact to 1e-14; gamma_T lemma = min Mahalanobis residual; deterministic MEC recovered both via gamma->gamma_T and Sigma_e->0
+  - **Activation**: minimum energy control, stochastic systems, chance constraint, QCQP, stochastic Gramian, conformal prediction, finite-sample guarantees, data-driven control, controllability
+
 ### Quantum Broker: QoS-Aware Distribution of Quantum Computations
 - [[quantum-broker-qos-shot-dispatch]] - MILP QoS shot dispatch across heterogeneous quantum QPUs (arXiv: 2610.28342)
   - Shot statistical independence -> single circuit's shot budget split across heterogeneous cloud QPUs as a constrained dispatch MILP (x_b integer shots, y_b binary use, big-M coupling, max-aggregate auxiliary variable)
