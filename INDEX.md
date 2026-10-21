@@ -46,6 +46,18 @@
   - λ=max_θ Σσ_ℓ|V_ℓ(θ)|通用归一化+|K⟩ padding闭合法化：网格加密576×后Toffoli复杂度仅变≤12%、λ仅变≤24%（分辨率只付一次→亚线性于M）；ε∞≤0.6 mHa全网格CCSD验证+HF能量偏移E′_θ=E_θ+E^HF[H(θ)]−E^HF[H_SVD(θ)]精确恢复；能量阈值电路（mux_θ QPE+相位寄存器比较器）+O(√M)最低能几何量子搜索；药物发现落点：构象能量排序/生物活性构象稳定性/玻尔兹曼加权分子性质
   - **Activation**: SVD-THC, tensor hypercontraction, molecular Hamiltonian ensemble, multiplexed block encoding, conformational landscape, quantum drug discovery, energy thresholding, BLISS-THC
 ## 2026-10-21 - Neuroscience Research (Cron Job)
+### Simulating Infant Senses with Age-Tuned Networks
+- [[age-tuned-infant-sensory-frontends]] - 把感官不成熟写成按月龄索引的固定滤镜+后端学习网络：构造性复现触→听→视成熟顺序，网络揭示视觉"学到<<输入允许"的双重限制，关键期/知觉窄化/感官竞争在连续训练中无开关涌现 (arXiv: 2610.25377)
+  - 前端方程全验证(16/16 PASS)：σ(a)=√(ln10/2)/(πc)使MTF在视敏度截止处=0.1；最小细节=D·tan(1/(2c))角度单位是度(2月龄@30cm→1.31mm、@2.5m→10.9mm)；κ=clip(½log₁₀CS,0.15,1)；听觉MS恒等式(Lout−Rout)=ρ(L−R)；阈值拟合36.1·e^(−a/2.10)+12.6dB命中35/21/15dB锚点
+  - 方法论纪律：信息ceiling排序τ=0.00不恢复婴儿顺序——"成熟"必须声明任务定义(大玩具粗定位在新生儿滤镜下ceiling≈1.0，本会话迷你实验R²=0.996复现)；关键期开头3月模糊窗→持久损失0.81、后置窗口恢复；容量救不了新生儿视觉(1.7k参数:−2.67 ≈ 97k:−2.09)——年幼由输入造成；每感官先独立训练再融合=最佳编码器(0.84/0.84)——先来感官挤占后来者
+  - **Activation**: infant sensory development, age-tuned frontend, visual acuity simulation, perceptual narrowing, critical period emergence, sensory heterochrony, developmental curriculum, Baby Senses Lab
+
+### HP-GSBS: Accelerating greedy state boundary search with reusable interval statistics
+- [[hpgsbs-neural-state-boundary-search]] - GSBS神经态分割加速：区间分数表Q[a,b]把候选评估降为O(1)查找、2D前缀四角查询把t-distance降为O(K)，154–1730×加速且168次优化执行边界逐位复现(max |ΔTD|=1.88e-11) (arXiv: 2610.25898)
+  - 主文Eq(1)前因子√(T/(TP−1))为pdftotext上标丢失损坏——真实形式F(a,b)=ΔBᵀΔA/(T·√(P−1)·‖ΔA‖₂)（J(S)=全局平均空间相关），本会话200随机区间验证至1.1e-16；mini-GSBS完整复现论文Fig2合成例(K*=4@边界[20,40,60]，TD曲线K=4峰值339)；2D前缀TD vs 直接扫描1.5e-11
+  - 可迁移加速模式：可加目标预计算区间分数表(贪心分裂/变点检测通用)、流式候选削减消O(L²)数组、窗口局部refinement按T/L_b恢复归一、特征矩低内存路线(5000×8: 峰值RSS 1598→190.6MiB, 9.75→0.11s；至50000×64)、FP64+禁TF32+sentinel/首最大规则对齐保科学输出不变
+  - **Activation**: neural state segmentation, GSBS acceleration, t-distance, prefix sums, streaming candidate reduction, EEG segmentation, fMRI state detection, low-memory pairwise statistics
+
 
 ### Small-scale neural simulation of Caenorhabditis elegans on Loihi-2 using NeuroML2Loihi
 - [[neuroml2loihi-celegans-loihi2]] - NeuroML→Lava→Loihi 2翻译管线：首个单芯片全302神经元C. elegans部署；514-1211×延迟加速、能耗仅为NEURON参考的0.046-0.105%（延迟主导而非功率主导） (arXiv: 2610.25424)
