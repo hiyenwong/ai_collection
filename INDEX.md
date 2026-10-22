@@ -1,5 +1,30 @@
 # AI Collection Index
 
+## 2026-10-23 - Mathematics + Quantum Research (Cron Job)
+
+### Claude improves lower bound for Riemann zeta zeros on the critical line (Anthropic)
+- [[weil-quadratic-form-rank-zeta-zero-density]] - Weil非对角二次型整体正负定+矩信息秩不等式：临界线零点密度下界 41.6%→67.2% (Anthropic Research)
+  - Weil显式公式在测试函数空间诱导二次型 Q：零点在线上→正定子空间，线外→负定子空间；目标比例=正惯性指数下界
+  - 关键突破：整体处理正负定（允许非对角型），此前 Montgomery 系工作只论证正定/对角部分——非对角不定型惯性计数是超越 41.6% 的杠杆
+  - 二阶矩经素数侧对偶图景/Hilbert 变换控制；组合 Aryan + Baluyot–Goldston–Suriajaya–Turnage-Butterbaugh（Montgomery 去 RH 依赖）+ Bombieri (2000)
+  - 发现流程：31M tokens、60 subagents（2核心/13贡献/30探索/13验证/2写作）、650 个失败想法后突破；专家核验（Alpöge/Furman）+ Lean comparator 双重验证
+  - **Activation**: Riemann zeta, critical line, zero density, Weil explicit formula, quadratic form inertia, rank inequality, moment method, L-function zeros
+
+### Yau's number-theoretic conjecture and sharp spectral bounds for quantum harmonic oscillators
+- [[yau-simplex-lattice-oscillator-spectral-bounds]] - 单形格点计数→量子谐振子谱锐界：Yau 猜想 n≥3 维证明 + Riesz 均界 (arXiv: 2610.17704)
+  - Yau 猜想：正实截距直角单形正整点计数锐多项式界，等号 ⟺ 全截距相等；Yau–Zhang 切片法证明
+  - 谱应用：n≥3 维任意正频率本征值计数/谱余项显式界；有理频率比加格坐标+插值→一阶 Riesz 均（能量和）界
+  - 各向同性情形计数界在能级处精确取等——界不可改进；3D 精确公式含 Fefferman–Seco 共振周期项
+  - 可复用模式：可积系统能级=加权格点 → 谱计数问题先化为格点计数；有理结构→插值把不等式升级为恒等式；推论含 smooth numbers/格点偏差界
+  - **Activation**: lattice point counting, simplex, quantum harmonic oscillator, eigenvalue counting, Riesz means, Weyl law, smooth numbers, slicing method
+
+### Cyclotomic Structure and Exact Recurrences in Floquet Many-Body Quantum Dynamics
+- [[cyclotomic-floquet-exact-recurrence-magic]] - Floquet 幺正精确复现（U^m=I）的必要充分数域判据 + magic 周期复活 (arXiv: 2610.17137)
+  - 数域判据：复现是全局性质（对所有初态同时成立），判定只需哈密顿参数生成的数域（本征值比是否为分圆域 Q(ζ_N) 单位根）→ 读出存在性+最小周期，无需模拟
+  - kicked Ising 链在 Clifford 与非 Clifford 区域都有精确复现；非 Clifford 复现区 magic 中间时刻生成、被整幺正复现强制周期性复活
+  - 可复用模式：周期系统全局动力学性质由参数数域算术结构（分圆域/单位根/Galois）判定；瞬时资源（magic/纠缠）可从周期结构中间时刻收割；精确复现=无经典参考的确定性基准测试里程碑
+  - **Activation**: Floquet unitary, exact recurrence, revival, cyclotomic field, number field criterion, kicked Ising chain, magic generation, hardware benchmarking
+
 ## 2026-10-23 - Neuroscience Research (Cron Job)
 
 ### Reconstruction Differences Rival Individual Differences in the Fly Compass Connectome and Break Trained Circuit Models
