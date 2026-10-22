@@ -74,6 +74,21 @@
   - 消融：去振荡辅助损失掉分最大（0.645→0.574）> 随机码本初始化 0.592 > MLP 位置编码 0.613 > 随机掩码 0.623；主干预训练贡献 > 分词器（随机主干 0.270、随机量化器 0.121）；grounding：影响衰减长度 λ=0.73 全场最短，唯一全 SNR 下节律识别偏好高于噪声色辨识的模型
   - **Activation**: lightweight EEG foundation model, RVQ tokenizer, discrete neural codes, mixed-axis RoPE, oscillation injection, wearable EEG, sparse montage, Muse, ear-EEG, HBN
 
+### Robust Representation Learning for Spiking Neural Networks based on Conditional Information Bottleneck
+- [[conditional-information-bottleneck-snn]] - SCIB：压缩 I(X;S|Y) 而非 I(X;S) + 类条件可学习先验，SNN 鲁棒性正则 (arXiv: 2610.28110)
+  - 信息平面诊断：标准 CE 训练的 SNN 无压缩相——I(S;Y) 饱和后 I(X;S) 仍持续增长，表征保留输入特异（扰动敏感）信息
+  - 理论：Markov 链 Y↔X↔S 下链式分解 I(X;S)=I(S;Y)+I(X;S|Y)；直接压缩 I(X;S) 不区分判别信息与冗余 → 鲁棒-精度张力。SCIB 目标 max I(S;Y)−β·I(X;S|Y)，变分上界 KL(p_θ(s|x)‖r_φ(s|y))（先验越准上界越紧）
+  - 可学习类条件先验 r_φ(s|y=k)=N(μ_k,diag(σ_k²))（边缘化=GMM）替代 VIB 单一 N(0,I)：类内紧凑+类间可分；对角高斯 KL 闭式解，无需 MC 采样；训练用标签选先验、推理时丢弃（β=0.4，硬件噪声场景 0.2）
+  - 结果：干净精度仅 −0.52pp；膜电位噪声 +3.3pp(CIFAR-10)、突触噪声 +0.91pp；无对抗训练下 PGD/BIM(ε=4/255) 对 Vanilla SNN +46.80/+47.06pp；SynOps 推理能耗 −24.9%（压缩表征→降发放率→省能）
+  - **Activation**: spiking neural network robustness, adversarial attack SNN, neuromorphic hardware noise, conditional mutual information, I(X;S|Y), class-conditional prior, Gaussian mixture prior, minimal sufficient representation, information plane, SynOps energy, variational information bottleneck
+
+### SICAF: Time-Varying Focus Bottleneck for Self-Supervised Event-Based Optical Flow with Spiking Neural Network
+- [[sicaf-time-varying-focus-bottleneck]] - 脉冲发放率自注意力调制的时间变化 IB：紧压缩+时变聚焦，自监督事件流光流 SOTA (arXiv: 2610.29158)
+  - 问题：事件流时间非均匀 + contrast maximization 只用空间对齐（忽略时间戳）+ SeLHIB 均匀 IB 过压缩时间显著段；约束优化 min E[−log q(y|z)] s.t. I(X;Z)≤I_c（紧压缩）且 H_T^α(Z)≥H_c（熵下限防过压缩）
+  - 方法：潜表征脉冲率矩阵 T_Z∈R^{T×C} 投影为 query/key → 时间注意力 TA∈Δ^T；Rényi α-熵核估计 H_α=(1/(1−α))log₂(tr(Φ^α)/N)（归一化 Gram 特征值），H_T^α=Σ TA_j·H_α(Z_j) 逐时间步调制压缩强度
+  - 结果：MVSEC AEE FSFN+SICAF 0.79（超 FSFN 0.86 达 8.14%）、EV-FlowNet+SICAF 0.90；消融：均匀压缩 1.04 vs 时变 0.91（两约束缺一不可）；白盒攻击鲁棒 +13.49%（1.09 vs 1.26）；时延 29.764→27.164 ms/batch
+  - **Activation**: event-based optical flow, event camera, contrast maximization, temporal attention spike rates, Rényi alpha entropy, information bottleneck SNN, time-varying compression, SeLHIB, EV-FlowNet, FSFN, MVSEC, entropy floor
+
 ## 2026-10-22 - Systems Engineering Research (Cron Job)
 
 ### NeST: ultra-high-rate qLDPC codes with sub-50µs stabiliser cycles via spin shuttling
