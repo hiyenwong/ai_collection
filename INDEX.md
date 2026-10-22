@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-23 - Neuroscience Research (Cron Job)
+
+### Reconstruction Differences Rival Individual Differences in the Fly Compass Connectome and Break Trained Circuit Models
+- [[connectome-reconstruction-robustness-audit]] - 连接组重建方差≈个体差异；训练模型为 knife-edge 环吸引子且零跨连接组迁移 (arXiv: 2610.29205)
+  - 9 版本果蝇罗盘电路（4 蝇 + 5 同蝇变体）：同蝇内换突触检测器的连线差异达最小蝇间差异的 78–83%；过滤级噪声地板仅 0.022–0.038
+  - 训练模型 ±1% 权重扰动即失效（0.3°→10–28°）；跨连接组移植全部近乎随机（含同蝇其他重建版本）；重拟合 ~30 个细胞类型增益只修复过滤级差异，剩余误差随连线距离增长（ρ=+0.67）
+  - 真实蝇罗盘（DANDI 000289 钙成像）平滑漂移不崩溃；鲁棒性须由噪声训练引入（精度换鲁棒）
+  - **Activation**: connectome reconstruction variance, knife-edge ring attractor, transplant test, cell-type gain refit, wiring-map distance
+
+### Bio-Inspired Auditory Processing: Coupling Parallel Resonate-and-Fire Dynamics with Ternary Recurrent Networks for Speech Recognition
+- [[spiking-ternary-gru-resonate-fire-asr]] - stGRU：三元 MLGRU + 并行共振-放电神经元的免矩阵 MAC 语音识别 SNN (arXiv: 2610.29720)
+  - 复衰减 γ̃=−1/τ+iθ 把 LIF 硬重置折叠进旋转衰减 → 膜电位积分与脉冲解耦，FFT 全序列并行 O(T log T)，训练比 LIF 变体快 3.1–3.4×
+  - 训练时双重离散化：三元权重管存储、RF 脉冲（实部 Heaviside）管通信；首个无 ANN 解码器的免矩阵 MAC SNN 达个位数 WER（LibriSpeech test-clean 6.44±0.17%，1.95–3.42 mJ/s）
+  - 深层涌现词性流形、lognormal 放电率梯度；L11 自发 ACC 样错误监控 → L14 PFC 样决策承诺（去门控消融使深层结果选择性坍塌 95.5%）
+  - **Activation**: spiking ASR, resonate-and-fire, ternary MLGRU, matrix-MAC-free, surrogate gradient, FFT parallel scan
+
 ## 2026-10-22 - Systems Engineering Research (Cron Job)
 
 ### NeST: ultra-high-rate qLDPC codes with sub-50µs stabiliser cycles via spin shuttling
