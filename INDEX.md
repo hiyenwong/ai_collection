@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-23 - Mathematics + Quantum Research Run2 (Cron Job)
+
+### The strengthened quantum Hamming bound of Yu, Lai, and Oh
+- [[quantum-hamming-polynomial-bound]] - 任意(非纯)量子码强化Hamming界全参数成立：Krawtchouk多项式+二项期望方法 (arXiv: 2610.30088)
+  - 证明 Yu–Lai–Oh 猜想：舍入插值界族（e: Hamming→Singleton）对任意 exact 量子子空间（可退化/非加性）全参数 p≥2, t≥1, 0≤e≤t, σ∈{0,1} 成立
+  - 核心配方：K·f(0) ≤ p^n·E[f(Bin(n,1−p^{−2}))]——格点非负测试多项式把码维数界化为离散正交多项式矩问题；系数判据一行证明靠 E_ν[f]>0 约去
+  - 纯度无关化：枚举子恒等式对任意子空间成立，非纯码障碍只在对偶系数符号——用「固定 f(0) 极小化二项期望」替代「纯度下 f 可任选」
+  - 证明架构分 regime：根区域内用极小多项式零点结构（终端块+相邻整对），界外切换枚举子不变窗口秩界，p=3,4 用精确有限证书封口
+  - **Activation**: quantum Hamming bound, polynomial method, Krawtchouk, weight enumerator, impure code, LP bound, Singleton, qudit codes
+
+### Painlevé representations for joint moments of characteristic polynomials from the orthogonal and unitary symplectic groups
+- [[painleve-characteristic-polynomial-moments]] - USp/SO 特征多项式×二阶导联合矩全容许参数域：σ-Painlevé III′ + Bessel 逆幂和 + Jacobi 桥 (arXiv: 2610.29947)
+  - Theorem 1.3 全参数域：F_N^{USp}/N^{s(s+1)/2+2h} → 2^{s²/2}·√(G·Γ 前因子)·E[(1+e(s+½)/2)^h]；SO 用 e(s−½)、指数 s(s−1)/2；导数每阶在 N-指数加 2
+  - 五步流水线：群矩→JUE 逆幂和 X=1+(1/2N²)Σ1/x_j（USp=(s+½,½), SO=(s−½,−½)）→Pollaczek–Jacobi Hankel 行列式→有限N σ-Painlevé V→精化 Riemann–Hilbert 小 x 渐近→Bessel 点过程分布收敛做概率识别
+  - σ-PIII′: (tσ'')²+4(σ'+1)²(tσ'−σ)−(aσ'+(a+1)/2)²=0；整数 h 用 τ-函数导数 E[(1+e(a)/2)^h]=(−1)^h d^h/dz^h exp[∫σ/t dt]|_{z=0}，复 h 用 Mellin-导数公式
+  - 可复用模式：矩问题极限常数=可积点过程幂和泛函期望；两层 Painlevé 塔；容许域从系综权重非负性直接读出；对称类指纹 a=s±½
+  - **Activation**: characteristic polynomial moments, Painleve III, Bessel point process, Jacobi ensemble, Riemann-Hilbert, L-function moments, Keating-Snaith, random matrix theory
+
 ## 2026-10-23 - Mathematics + Quantum Research (Cron Job)
 
 ### Claude improves lower bound for Riemann zeta zeros on the critical line (Anthropic)
