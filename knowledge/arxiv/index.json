@@ -12856,5 +12856,126 @@
     "published": "2026-10-19",
     "skill_dir": "collection/skills/multi-agent-rl/weact-dynamic-weight-switching-as-agent",
     "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.29934",
+    "title": "ToM2Vec: Continuous Theory-of-Mind Tokens for Multi-Agent Coordination",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.MA"
+    ],
+    "utility_score": 1.0,
+    "summary": "Forming an accurate theory-of-mind (ToM) is key to successful multi-agent collaboration and requires reasoning under uncertainty to capture multiple possible partner states. This is hard to do in the text representation space native to large language model (LLM) agents, which more easily describe a "
+  },
+  {
+    "id": "2610.30017",
+    "title": "GuideEvolve: Self-Evolving Agent Framework with Expert Guidance and 3Ts Mechanisms",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.AI"
+    ],
+    "utility_score": 0.97,
+    "summary": "This study introduces GuideEvolve, a self-evolving agent framework incorporating expert guidance and three autonomous regulatory mechanisms, collectively termed the 3Ts: Think Fast and Slow, Throwback, and Termination by choice. The framework addresses critical limitations in extant self-evolving ag"
+  },
+  {
+    "id": "2610.29999",
+    "title": "EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.LG"
+    ],
+    "utility_score": 0.89,
+    "summary": "Reinforcement learning (RL) based on PPO-style clipping has become an effective approach to improving the reasoning capabilities of large language models (LLMs). However, standard token-level clipping measures policy change only through the conditional probability of the current token, while the pre"
+  },
+  {
+    "id": "2610.29895",
+    "title": "Automated Materials Data and Knowledge Extraction using Machine Learning and Large Language Models",
+    "date": "2026-10-21",
+    "categories": [
+      "cond-mat.mtrl-sci",
+      "cs.AI"
+    ],
+    "utility_score": 0.86,
+    "summary": "Over the past decade, substantial efforts have been devoted to developing machine learning (ML) methods for extracting materials data and, where possible, materials knowledge directly from the scientific literature. This review traces the evolution of these methods from heuristic, rule-based pipelin"
+  },
+  {
+    "id": "2610.30116",
+    "title": "Environment Duels: A Microcosm of LLM Co-Evolution",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "utility_score": 0.83,
+    "summary": "Through a tangle of real-world interactions, from synthetic training pipelines to data shared on the open web, frontier LLMs absorb what their predecessors and competitors create. How well does each model play its role in this ecosystem, as a creator and as a solver? We introduce Environment Duels, "
+  },
+  {
+    "id": "2610.30132",
+    "title": "LongZero: Enhancing Long-Context Reasoning in LLMs from Zero Data",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "utility_score": 0.82,
+    "summary": "Reinforcement learning (RL) is an effective way to strengthen the long-context reasoning of large language models (LLMs), but it needs training data that are long, diverse, challenging, and verifiable. Human annotation of such data is expensive, naturally occurring data are too scarce to sustain RL,"
+  },
+  {
+    "id": "2610.30072",
+    "title": "Charts as Epistemic Actions for Experience-Driven Agentic Data Analysis",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.AI"
+    ],
+    "utility_score": 0.8,
+    "summary": "Data agents built on ReAct-style loops now execute complex analytical workflows over structured data, yet their intermediate reasoning still runs almost entirely through text. Human analysts instead move between numbers, tables, and charts, reading visual evidence to expose trends and anomalies that"
+  },
+  {
+    "id": "2610.29823",
+    "title": "MemoryTax: The Bitter Lesson of Agent Memory",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "utility_score": 0.8,
+    "summary": "Agent memory systems such as Mem0 and Zep decide what to keep before any question arrives; coding agents keep the raw history and let the model search it with its own tools. We ask whether designed memory still helps once the model is strong enough to search for itself. On one LoCoMo conversation (4"
+  },
+  {
+    "id": "2610.29722",
+    "title": "Retrieval Augmented Generation Compositionality",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "utility_score": 0.8,
+    "summary": "Retrieval Augmented Generation (RAG) grounds large language models in external knowledge. Modern pipelines combine embedding, chunking, retrieval, reranking, query augmentation, context compression, and agentic verification, yet these techniques are typically evaluated one at a time. It remains uncl"
+  },
+  {
+    "id": "2610.29720",
+    "title": "Bio-Inspired Auditory Processing: Coupling Parallel Resonate-and-Fire Dynamics with Ternary Recurrent Networks for Speech Recognition",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.SD",
+      "cs.AI",
+      "cs.NE",
+      "eess.AS",
+      "q-bio.NC"
+    ],
+    "utility_score": 0.79,
+    "summary": "Spiking Neural Networks (SNNs) promise energy-efficient inference through sparse, event-driven computation, yet remain constrained on continuous, context-dependent tasks such as automatic speech recognition (ASR). A key bottleneck is the Leaky Integrate-and-Fire (LIF) neuron, whose membrane decay er"
+  },
+  {
+    "id": "2610.29965",
+    "title": "CORD: Conflict-Aware Optimization for Joint RL and Distillation in Agents",
+    "date": "2026-10-21",
+    "categories": [
+      "cs.LG"
+    ],
+    "utility_score": 0.78,
+    "summary": "Joint reinforcement learning and self-distillation combines task rewards with dense teacher guidance for agent training, but their gradients can partly cancel. A mixing coefficient controls relative scale without selectively removing opposing components. We present CORD, a general framework for conf"
   }
 ]

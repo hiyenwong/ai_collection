@@ -1,5 +1,47 @@
 
 
+## 2026-10-22 - High-Utility arXiv Papers (Cron Job)
+
+### ToM2Vec: Continuous Theory-of-Mind Tokens for Multi-Agent Coordination
+- [[tom2vec-multi-agent-coordination]] - Learns continuous ToM embeddings for multi-agent LLM coordination, enabling reasoning over multiple possible partner states under uncertainty. (arXiv: 2610.29934v1)
+  - Category: multi-agent-rl
+
+### GuideEvolve: Self-Evolving Agent Framework with Expert Guidance and 3Ts Mechanisms
+- [[guideevolve-self-evolving-agent]] - Self-evolving agent framework with expert guidance and 3Ts mechanisms (Think Fast/Slow, Throwback, Termination by choice). (arXiv: 2610.30017v1)
+  - Category: openclaw-imports
+
+### EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping
+- [[epic-exact-kl-prefix-clipping]] - Fixes PPO trust region mismatch in RLHF/GRPO for LLMs by computing importance ratios over entire prefix sequences. (arXiv: 2610.29999v1)
+  - Category: general-ml
+
+### MemoryTax: The Bitter Lesson of Agent Memory
+- [[memorytax-agent-memory]] - Tests whether designed memory systems (Mem0, Zep) still help when LLMs are strong enough to search raw history themselves. (arXiv: 2610.29823v1)
+  - Category: multi-agent-rl
+
+### LongZero: Enhancing Long-Context Reasoning in LLMs from Zero Data
+- [[longzero-long-context-rl]] - RL-based method that synthesizes long, diverse, challenging, verifiable training data without external corpora. (arXiv: 2610.30132v1)
+  - Category: nlp-llm
+
+### Environment Duels: A Microcosm of LLM Co-Evolution
+- [[environment-duels-llm-coevolution]] - Dynamic agentic benchmark evaluating LLMs as both creators and solvers of interactive environments. (arXiv: 2610.30116v1)
+  - Category: multi-agent-rl
+
+### Charts as Epistemic Actions for Experience-Driven Agentic Data Analysis
+- [[charts-epistemic-actions-agentic]] - Tests whether charts can serve as internal epistemic actions inside data agents built on ReAct-style loops. (arXiv: 2610.30072v1)
+  - Category: multi-agent-rl
+
+### Retrieval Augmented Generation Compositionality
+- [[rag-compositionality]] - Tests whether isolated gains from RAG techniques survive composition in production pipelines. (arXiv: 2610.29722v1)
+  - Category: nlp-llm
+
+### Bio-Inspired Auditory Processing: Coupling Parallel Resonate-and-Fire Dynamics with Ternary Recurrent Networks
+- [[bio-inspired-auditory-snn]] - SNN architecture for ASR that maintains state across pauses using resonate-and-fire dynamics. (arXiv: 2610.29720v1)
+  - Category: spiking-neuromorphic
+
+### CORD: Conflict-Aware Optimization for Joint RL and Distillation in Agents
+- [[cord-conflict-aware-rl-distillation]] - Addresses gradient conflicts when combining RL and distillation objectives in agent training. (arXiv: 2610.29965v1)
+  - Category: multi-agent-rl
+
 ## 2026-10-20 - High-Utility arXiv Papers (Cron Job)
 
 ### OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory
