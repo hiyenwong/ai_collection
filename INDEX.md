@@ -41,6 +41,21 @@
   - 深层涌现词性流形、lognormal 放电率梯度；L11 自发 ACC 样错误监控 → L14 PFC 样决策承诺（去门控消融使深层结果选择性坍塌 95.5%）
   - **Activation**: spiking ASR, resonate-and-fire, ternary MLGRU, matrix-MAC-free, surrogate gradient, FFT parallel scan
 
+### Probing Spatial and Spectral Grounding in EEG Foundation Models
+- [[eeg-fm-grounding-probes]] - EEG 基础模型扰动探针框架：解离"架构可访问/表征编码/下游依赖"三层问题，证明编码≠依赖 (arXiv: 2610.29367)
+  - 空间探针 SPA1-3：导联标签错排测相对位移 Sid、白噪声 10dB 扰动测跨通道影响矩阵 dij 与电极距离的 Spearman ρ（逐层分析）、测试时仅置换位置编码+冻结线性读出测决策依赖
+  - 频谱探针 SPE1-3：IAAFT 代理体（保幅值分布+功率谱、随机相位）vs log-PSD 基线、δ/θ/α/β 窄带注入四分类（-20~+5dB 带内相对功率）、癫痫样形态（10→3Hz chirp + 3Hz 棘慢波）vs 功率匹配粉噪对照算特异性
+  - 关键解离：LaBraM 位置码置换位移 80.5% 但 MI 准确率仅降 1.2 点；BIOT slot token 身份编码最强但决策零依赖；REVE 3D 连续坐标决策依赖最强（ΔBAC +0.115）且唯一超过频谱基线的临床形态特异性（+0.158）；CSBrain 区域依赖但无地形局域性；幅度谱通路模型表征被功率主导
+  - **Activation**: EEG foundation model, grounding probe, perturbation, electrode identity, IAAFT surrogate, clinical morphology, spatial grounding, spectral grounding, LaBraM, REVE, BIOT
+
+### BrainCodes: A Lightweight EEG Foundation Model over Discrete Neural Codes
+- [[braincodes-lightweight-eeg-fm]] - 1.9M 参数轻量 EEG 基础模型：冻结 BioCodec RVQ 分词器 + 离散码预测 + 振荡注入辅助，14 基准均值超 69M REVE (arXiv: 2610.29320)
+  - 核心洞察：平方误差掩码重建被 1/f 非周期功率主导→模型可只拟合背景丢失节律；掩码通道可被邻居插值解出而不需真实空间动力学。改用离散码索引交叉熵预测（损失权重与功率解耦）+ 瓶颈处振荡注入辅助头（Hann 窗窄带注入种子电极近邻区域，回归频率/时长 + BCE 位置）
+  - 混合轴 3D RoPE 电极编码：可学习 3D 频率向量 omega，注意力只依赖相对位移 Delta_theta = omega^T(pj - pi)，坐标均值中心化+高斯抖动→任意蒙太奇迁移；HBN 820h/1131 人/128ch 随机长度(2-30s)+随机通道子集预训练；因子化 U-Net（2 时序层+1 通道层×3 块，时间 ×4 池化+skip dropout）
+  - 结果：微调均值 nBAC 0.609 vs REVE 0.581（少 97% 参数）；首个消费级硬件 EEG-FM 评测：耳内 EESM23 0.5254 vs 0.4176、Muse-Motor 0.5889 vs 0.5083；最远点采样 4 电极保留 91% 全蒙太奇性能；bc 时间均值读出宜持续状态、b̄c 展平读出宜瞬态事件
+  - 消融：去振荡辅助损失掉分最大（0.645→0.574）> 随机码本初始化 0.592 > MLP 位置编码 0.613 > 随机掩码 0.623；主干预训练贡献 > 分词器（随机主干 0.270、随机量化器 0.121）；grounding：影响衰减长度 λ=0.73 全场最短，唯一全 SNR 下节律识别偏好高于噪声色辨识的模型
+  - **Activation**: lightweight EEG foundation model, RVQ tokenizer, discrete neural codes, mixed-axis RoPE, oscillation injection, wearable EEG, sparse montage, Muse, ear-EEG, HBN
+
 ## 2026-10-22 - Systems Engineering Research (Cron Job)
 
 ### NeST: ultra-high-rate qLDPC codes with sub-50µs stabiliser cycles via spin shuttling
