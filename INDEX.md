@@ -1,5 +1,16 @@
 # AI Collection Index
 
+## 2026-10-24 - Neuroscience Research (Cron Job) Run3
+
+### Beyond density snapshots: Dynamical memory in Chern-Simons reservoirs
+- [[chern-simons-reservoir-dynamical-memory]] - Gauge-field memory in a CS-coupled density reservoir, isolated by a four-model control ladder that separates mechanism from performance score (arXiv: 2609.13315v2)
+  - Density couples to an evolving Chern-Simons connection through a conserved current (min-L2 longitudinal completion); the exact component b - a history integral of the nonlinear advective current - is missed by instantaneous transverse reconstruction (Ea = 0.155; best local closure recovers only 0.033%)
+  - Constraint-preserving reset of b at fixed density and Gauss-law curl changes future density response by 1.77 +/- 0.17% (vanishes at alpha = 0; survives 24^2 grid and halved dt) - the connection carries causally relevant history
+  - Honest ledger: NO scalar-memory advantage (C = 0.27 vs 0.28 instantaneous); pulse-order decoding beats the instantaneous-transverse control by 6.5 +/- 1.9 pp but does NOT beat local feedback (-1.2 +/- 1.9 pp); first-cycle lag advantage reverses on cycles 2-3 (preparation-dependent); no topological protection established
+  - Transferable: "dynamical memory is not readout accessibility" - channel-resolved decoding features, matched-history path tests, and lesion-style resets generalize to engram and physical-reservoir questions
+  - **Activation**: gauge field memory, Chern-Simons reservoir, constraint-preserving reset, pulse-order decoding, matched-history path dependence, physical reservoir mechanism controls
+
+
 ## 2026-10-24 - Economics & Investment + Quantum (Cron Job) Run2
 
 > Sat econ+quant sweep of the Fri batch (q-fin/econ.GN/quant-ph listings): 5 papers imported to KG, 2 deep-dived to skills. No overlap with the 02:54 econ run (30557/30539/30686).
