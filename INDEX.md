@@ -1,5 +1,26 @@
 # AI Collection Index
 
+## 2026-10-24 - Economics & Investment + Quantum (Cron Job)
+
+### Governed Self-Evolution for Autonomous Investing: A Multi-Agent LLM System with an Invariant Core
+- [[governed-llm-investing-invariant-core]] - Type-system boundary lets an LLM agent rewrite its own prompts while making safeguard erosion structurally impossible (arXiv: 2610.30557)
+  - R1-R5 governance requirements kill the 4 silent failure modes of self-improving agents: self-grading, discipline erosion, unauditable change, undetected inertness
+  - 102 live trading days: 24.6% sector drawdown contained to -0.3%; prompt injection followed 0/30; replay verification ($16/experiment) exposes inert learnings
+  - **Activation**: self-evolving LLM agent, autonomous investing, prompt self-edit governance, guardrail erosion, replay verification
+
+### Dynamics of the Liquidity Profile in Concentrated Liquidity Provision: An SPIDE Approach
+- [[spide-liquidity-profile-clmm]] - Stochastic PIDE over tick-rank space with degenerate Sturm-Liouville + Hilbert-Schmidt operators; Gegenbauer spectral reduction to coupled linear SDEs (arXiv: 2610.30539)
+  - lambda_n = a*n(n+2*alpha), alpha = b/(2a)-1/2; level mode lambda_0=0 is a unit root absent relocation
+  - 3 Uniswap pools: active-band forecast error 0.84-0.99x martingale on stationary-compatible pools; ETH30 honestly diagnosed nonstationary; Frobenius penalty fixes overparameterization (1.150 -> 0.807)
+  - **Activation**: Uniswap V3 liquidity dynamics, concentrated liquidity AMM, stochastic PIDE, Gegenbauer modes, LVR, liquidity profile forecasting
+
+### Time-Reversal-Based Quantum Metrology in a Central-Spin Architecture: from SATIN to Butterfly Echo
+- [[central-spin-time-reversal-metrology]] - SATIN and butterfly echo protocols on one central-spin XX Hamiltonian; physical time reversal via pi-pulse conjugation closes the echo exactly at all perturbation orders (arXiv: 2610.30686)
+  - SATIN known-axis ceiling N^2/e (HL-4.34dB, t_opt = Omega/(2*S_cen*sqrt(N))); butterfly axis-agnostic N^2/4 (HL-6dB) with K=8 N-independent random-axis scrambling steps
+  - S_cen is a speed knob (2-3x faster) not a gain knob; Dicke subspace reduction (2S_cen+1)(N+1) enables exact N=1000 diagonalization; butterfly robust beyond dispersive regime
+  - **Activation**: time-reversal echo metrology, central spin squeezing, SATIN, butterfly echo, axis-agnostic sensing, cavity QED, NMR
+
+
 ## 2026-10-24 - Neuroscience Research (Cron Job)
 
 ### Dynamics of random recurrent neural networks: colored noise and sublinear activations
