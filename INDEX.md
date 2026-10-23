@@ -1,5 +1,30 @@
 # AI Collection Index
 
+## 2026-10-24 - Neuroscience Research (Cron Job) Run2 — Backlog Deep-Dive
+
+> No new arXiv announcements since the 02:00 batch (next batch Monday evening ET). This run processed the carried backlog: 2 papers deep-dived to skills, 4 imported to KG.
+
+### PyGPLA: A Python Package for Generalized Phase Locking Analysis
+- [[pygpla-spike-field-coupling]] - Multivariate spike-LFP coupling: complex coupling matrix + SVD modes (gPLV, LFP/spike vectors) + Marchenko-Pastur significance test; dimensionality helps detection instead of costing multiple comparisons (arXiv: 2610.26304)
+  - Coupling matrix C(f) sums analytic LFP at spike times over all channel-unit pairs; leading singular value = gPLV (is coupled?), u1/v1 vectors = which channels/units participate and how phases are organized (synchronous common angle / sequential arc / clustered subgroups)
+  - Analytical RMT test: with sqrt(N)-normalization + reduced-rank whitening, squared singular values follow Marchenko-Pastur; coupling crosses the MP upper edge while false positives stay <=5% — larger matrices give coherent low-rank signal more room to separate from the noise bulk
+  - Spike vector rescaling, phase convention (mean LFP phase=0), unwhitening for channel-space interpretation, jitter surrogates for same-electrode spike-LFP bias; NumPy-only, plain-array API
+  - **Activation**: spike-field coupling, spike-LFP, PLV, GPLA, gPLV, high-density electrophysiology, Neuropixels, Marchenko-Pastur, population-level coupling, low-rank coupling modes
+
+### Dynamic gain neuromodulation attenuates stability gaps during continual joint training
+- [[dynamic-gain-neuromodulation-stability-gap]] - Noradrenergic gain dynamics (NGM-SGD): entropy-driven transient gain boosts attenuate the stability gap in continual learning via forward-pass reparameterization, not step-size scaling (arXiv: 2507.14056v4)
+  - Stability gap (transient old-task drop at task boundaries) persists even under ideal joint training -> optimization-dynamics artifact; gain g <- gamma*g + (1-gamma)*g0 + eta*H(readout entropy) on W_eff = g*w
+  - Theory: alpha_eff = alpha*g^2 (bigger step) while lambda_eff = lambda_w/g^2 (effective-coordinate flattening); gradient direction unchanged (vs momentum/Adam inertia overshoot); emergent fast-slow weights W_eff = g0*w + (g-g0)*w
+  - Split MNIST gap 0.017 vs MSGD 0.267 / Adam 0.283 / SGD 0.034; CIFAR-10 0.134 vs 0.425/0.310/0.241; final accuracy competitive; ResNet: gain on classification head only
+  - Key ablation: Entropy-LR (same effective displacement via learning rate) gives the LARGEST gap — the stabilizer is the reparameterization itself; gain asymptote doubles as a task-complexity proxy
+  - **Activation**: stability gap, stability-plasticity dilemma, continual learning, noradrenaline, locus coeruleus, gain modulation, fast-slow weights, reparameterization, curvature amplification, NGM-SGD
+
+### Spaceflight-associated Motion Sickness in Commercial Crew Astronauts (KG only)
+- Polaris Dawn + Fram2 commercial crews (N=8): SMS incidence 87.5% (62.5% vomiting, 25% >=3 days on orbit), TRMS 50% and significantly milder — first systematic baseline for commercial flyers (arXiv: 2610.24216)
+
+### Beyond density snapshots: Dynamical memory in Chern-Simons reservoirs (KG only, remains in backlog)
+- Density on internal manifold coupled to an evolving Chern-Simons connection retains history in geometric DOF that density snapshots miss; coupled CS improves pulse-order decoding by 6.5+/-1.9pp over instantaneous-transverse control (arXiv: 2609.13315) — left for a physics-domain deep-dive
+
 ## 2026-10-24 - Economics & Investment + Quantum (Cron Job)
 
 ### Governed Self-Evolution for Autonomous Investing: A Multi-Agent LLM System with an Invariant Core
