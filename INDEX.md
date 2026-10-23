@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-23 - Systems Engineering Research (Cron Job)
+
+### Brittle by Design? Multi-Scenario Reinforcement Learning for Robust Mission Coordination in Systems of Systems
+- [[sos-mission-rl-robust-coordination]] - DE数字任务仿真+PPO多场景并发训练：修复SoS任务协调器单场景脆弱性，训练分布本身是设计决策 (arXiv: 2610.28818)
+  - 首个Mission Engineering研究用高保真数字任务模型(DLR空投灭火)+RL做运行期战术协调：数字模型→ABS→MDP(状态=全局火几何+扇区严重度/紧迫度, 动作=17战术三元组, 奖励=ΔMoE)→PPO(150k集, 128worker)→共享种子配对评估+regret
+  - 脆弱性不对称：宽松场景训练的协调器在苛刻场景退化到随机战术水平(0.972→−0.113)、未见场景低于两个基线；苛刻场景训练向易场景保留优势；固定点火训练在变点火下−0.069(过拟合)
+  - 多场景并发训练同预算零regret：各场景匹配专家(0.973/0.018)、合并显著最优(0.495)、未见Salamis最佳(0.824)；并发>顺序课程(0.4954 vs 0.4673)——顺序训练会遗忘
+  - **Activation**: mission engineering, system of systems, multi-scenario RL, brittleness, PPO coordination, digital engineering, regret analysis, training distribution design
+
+### Execution-Time Validation of Context-Carrying Action Intents in Industrial Cyber-Physical Systems
+- [[execution-gap-intent-validation-cps]] - execution gap形式化+AIS意图契约+版本条件命令：最后检查必须跑在状态所属的序列化域 (arXiv: 2610.27971)
+  - 命令经推理/确认/传输到达控制器时前提已失效(execution gap)；问题本质是架构性的——检查能保证什么取决于在哪运行+比什么版本，与速度无关(最快守卫全失败、最慢守卫零失败)
+  - AIS契约 I=(td,w,d,P,S,α,r,p)：新鲜窗/截止期/前置谓词随payload走；谓词=Path Op Literal合取→read-set可从语法推导；三种版本域(global/read-set/predicate-truth)，FPR≈λΔg=版本域允许更新率×门延迟
+  - 实测定理：副本上的检查永远留未保护区间(暂停提交后6-16ms逃逸、至100% stale)；控制器scan内interlock或version-conditional命令清零stale effect(0/1100)；只有版本化检查拦住A-B-A撤销改变(谓词-only 250/250放行)；global版本100Hz下64%误撤销、连续信号下read-set 37%误撤销、predicate-truth 0%；边缘单核148-168 intents/s
+  - **Activation**: execution gap, TOCTOU, action intent schema, version-conditional command, serialization domain, PLC scan check, A-B-A history violation, stale release, XAIR, industrial CPS, LLM agent command validation
+
 ## 2026-10-23 - Mathematics + Quantum Research Run2 (Cron Job)
 
 ### The strengthened quantum Hamming bound of Yu, Lai, and Oh
@@ -8318,4 +8334,28 @@
   - 注视信号用于"分裂而非选择"：焦点 token 与互补 token 并存按问题门控——二值裁剪会丢问题相关的场景上下文
   - StreamGaze 上 macro/micro 准确率超全网格与 token 缩减基线，前向 FLOPs 低于共享骨干 token 缩减基线
   - **Activation**: egocentric video, gaze, token reduction, frame selection, Gaussian pooling, streaming VLM
+
+## 2026-10-23 - OpenAI Research (Cron Job)
+
+### Using thousands of AI agents to uncover new leads in biological data
+- [[distributed-biological-reasoning]] - 数千并行"窄 agent"分析大型扰动图谱：每 agent 只负责一个基因扰动（有界上下文），分析细胞响应→检索文献→提出机制假设→结构化报告，全部报告合并为可查询 reasoning atlas（GPT-Rosalind × 全脑 CRISPR 图谱，32 分钟完成 vs 人类数月-一年）(https://openai.com/index/scaling-ai-research-for-complex-biological-data/)
+  - 关键对照（同模型同资源）：负载增大时单 agent 文献检索萎缩（最大负载仅引用 11 篇），分布式 agent 引用 700+ 篇；盲评专家 75% 偏好分布式报告——上下文过载会系统性压缩检索深度
+  - 产出=可测试线索+下一步实验清单而非最终答案：Tsc1/Tsc2 小脑分化（对应人类 TSC2 突变表型）、DCTN1→胆固醇分布→神经退行假说（盲评专家判为新颖值得跟进）
+  - **Activation**: distributed biological reasoning, parallel perturbation agents, CRISPR atlas interpretation, reasoning atlas, multi-agent literature synthesis, AI lead generation drug discovery
+
+### Patch the Planet: php2shell 全球协同披露 (Obsidian only, no skill - 安全运营案例)
+- Calif 用 GPT-5.6 Sol 发现 PHP 核心漏洞（php2shell：未认证 RCE+敏感内存读取，CVSS 9.2，近十年版本全受影响），Wiz 独立发现；PHP 维护者主导修复，OpenAI/Wiz/Cloudflare 联盟披露前备防
+  - 五阶段协同披露框架：上游修复+对抗测试→受影响组织预警（分发商/托管商/WAF）→政府协调（白宫SIF/ONCD/CISA）→跨产品更新→发布指南；值得借鉴：披露前用前沿模型做 patch 绕过与变体对抗测试，并发布可执行版本检查工具（Codex skill）而非仅公告
+
+### Democratic governance of frontier AI, part II: Empowering cyber defenders (Obsidian only, no skill - 政策蓝图)
+- Defender's window 主张 + 三领域建议：强化前沿模型/agent 安全责任与关停控制、智能时代网络安全现代化（工具/培训/替换过时系统）、韧性公共机构（独立评估/一致事件报告/协同响应）
+
+### Broad access through consistent standards (Obsidian only, no skill - 政策更新)
+- 跨服务一致安全保障（直连/托管/经销均须达标并协同执法）；Usage Policies 2026-11-20 生效：model router/AI gateway 须先审核；SafetyIDs——客户不暴露终端用户真实身份即可配合滥用调查
+
+### Decisions API GA (Obsidian only, no skill - 产品)
+- GPT-6 Luna 构建的有界答案近实时决策接口（分类/路由/动作选择），比经 Responses API 快达 10 倍；新增 GPT-Live 集成、prompt caching、美/欧推理驻留、单请求 400 问题、图像输入
+
+### 同期客户/公司动态 (Obsidian only, no skill)
+- AT&T 法务知识层（自然语言受理+判例/先例关联）；Uber ChatGPT Work 全员部署（3 万员工，GPT-6.1 Sol 默认）；OpenAI 收购 Orchestra Bio（Rosalind 药物研发协调）；What FDE means at OpenAI；ChatGPT Ads 扩至 89 国（10 万广告主，8 个月 $10 亿年化 run rate）
 
