@@ -1,5 +1,30 @@
 # AI Collection Index
 
+## 2026-10-24 - Economics & Investment + Quantum (Cron Job) Run2
+
+> Sat econ+quant sweep of the Fri batch (q-fin/econ.GN/quant-ph listings): 5 papers imported to KG, 2 deep-dived to skills. No overlap with the 02:54 econ run (30557/30539/30686).
+
+### Optimal Trading Filters and the Value of Predictive Signals
+- [[wiener-hopf-trading-filters-signal-value]] - Wiener-Hopf factorization solves stationary quadratic trading under transient impact; signal net value = ½·mean-square of the friction-weighted conditional forecast, decomposed into spectral placement vs coherence (arXiv: 2610.24558)
+  - Optimal policy = conditional forecast of friction-adjusted signal ∘ causal filter: π\* = F+⁻¹PF−⁻¹α with friction symbol f̂(ω)=λ+(β²+ω²)ĝ(ω); recovers Gârleanu-Pedersen EMA and two-EMA policies, derives fractional-derivative trading u\*∝∂^(1−νm)α under power-law impact (no finite-dim LQR realization exists)
+  - Signal-value theory: at fixed variance all signals have equal frictionless Markowitz value; with costs, value is bounded by s²α/(2·inf f̂) and attained only by coherent oscillations at argmin f̂ — perfectly predictable signals at costly frequencies are worthless; power-law impact + exposure bleeding gives an intermediate optimal OU mean-reversion rate θs\* = β√((1−νm)/νm) (same expression as the cheapest-oscillation frequency ω\*)
+  - **Activation**: transient price impact, Wiener-Hopf factorization, optimal trading filter, Garleanu-Pedersen, two-EMA policy, fractional trading filter, power-law impact decay, Ornstein-Uhlenbeck predictor, Matern predictor, signal value after costs, spectral placement, coherence, exposure bleeding, actionability of forecasts
+
+### Quantum Fokker-Planck solvers as trainable generative models
+- [[quantum-fokker-planck-generative]] - Parameterize the Langevin potential (not circuit angles); prepare √pss as a ground state via QSVT cosine filters — convex exponential-family training with parameter count independent of grid dimension (arXiv: 2610.31330)
+  - Hermitianize FP via p=e^{−V/σ²}ψ (H=A†A, A=σ/√2·∂+V′/√2σ); imaginary-time filter e^{−tB²} = Hubbard–Stratonovich + Gauss–Hermite symmetry → linear combination of COSINES, native to QSVT; trainable θ enter as QSVT phase angles (parameter re-upload)
+  - Kills barren plateaus by construction: K≤C(d+r,r)−1 dictionary coefficients decoupled from dn=d·log₂N qubits; MMD²/KL training is convex in natural params η=−2θ/σ², recovers 2D/3D correlated/multimodal targets in 10–150 iterations; pitfall: finite imaginary time/quadrature order DISPLACES the loss minimum; σ not identifiable from pss alone; fault-tolerant (not NISQ) gate budget
+  - **Activation**: quantum generative model, Fokker-Planck, Langevin potential, QSVT, block encoding, imaginary time evolution, Hubbard-Stratonovich, linear combination of cosines, Gauss-Hermite quadrature, exponential family, quantum model discovery, Born rule sampling, barren plateaus avoidance
+
+### Amortized Neural Filtering for Calibrated Posteriors in Statistical Arbitrage (KG only)
+- Keep the posterior, not the point estimate: NFE returns latent-spread posteriors in one forward pass; posterior gains no accuracy over point estimates — its value is a correct account of its own uncertainty, cutting the realized-vs-forecast gap by 2–8x on Korean equities (arXiv: 2610.25802)
+
+### LOB-Impact Benchmark: Emergent Market Impact in Generative LOB Models (KG only)
+- Market impact emerges in next-token LOB generators (exponents 0.63–1.21, above square-root's 0.5); 3-phase benchmark (free generation / metaorder injection / relaxation) with blind-injection control separates learned response from book mechanics — a world-model validity gate for trading agents (arXiv: 2610.27100)
+
+### Equilibria and Learning in Competitive Market Making (KG only)
+- N≥2 strategic makers vs one representative trader: PSNE always exists despite non-convex discontinuous payoffs in continuous quote space; equilibrium spread widens strictly with volatility; no-regret play approaches the Nash price envelope as tick size vanishes (arXiv: 2610.30891)
+
 ## 2026-10-24 - Neuroscience Research (Cron Job) Run2 — Backlog Deep-Dive
 
 > No new arXiv announcements since the 02:00 batch (next batch Monday evening ET). This run processed the carried backlog: 2 papers deep-dived to skills, 4 imported to KG.
