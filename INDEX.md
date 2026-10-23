@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-24 - Neuroscience Research (Cron Job)
+
+### Dynamics of random recurrent neural networks: colored noise and sublinear activations
+- [[colored-noise-rnn-chaos-soliton]] - 随机RNN动力学推广到任意彩色噪声+亚线性激活：双阈值分离、普适截止指数、孤子-Pöschl–Teller映射 (arXiv: 2610.31575)
+  - 把 Sompolinsky–Crisanti–Sommers DMFT 推广到 OU 彩色噪声（相关时间 τn）+ Padé 亚线性激活族（p=0 饱和→p=1 线性，p=1/2=type-I 兴奋性）；路径积分得自洽方程 (−τ²∂t²+1)Cφ−λ²Cf=Gξ，白噪声/淬火噪声为两端极限，短/长时间匹配解无需实测输入即可复现仿真
+  - 局部线性失稳 λc,1（λ²⟨f′²⟩q=1）与混沌 onset λc,2（最大 Lyapunov>0）是两个不同阈值：混沌=有效 Schrödinger 问题 [−τ²∂t²+1−λ²Cf′(t)]Ψ=EΨ 的负能量束缚态；中间区域"局部不稳定但同噪声历史下渐近稳定"；激活指数 p 与噪声相关时间 τn 共同控制间隙（p→1 或 τn→∞ 时重合）
+  - 普适结果：任意有限相关时间的内噪声都以 τcorr,max∝D0^(−1/2)（νξ=1/2，与噪声颜色无关）切断边缘混沌处关联时间发散——因为临界点附近 τcorr≫τn，网络只看到积分噪声强度 D0；淬火噪声则不切断（不可交换极限）
+  - 混沌-孤子映射：临界邻域 φ⁴ 理论，噪声less混沌态=sech 孤子，涨落谱=Pöschl–Teller，ΛL≈(3/2)τ/τ²corr；四点函数/replica 给出 DPR(0)/N=(τ/τcorr)⁴——参与维数被关联时间奴役，混沌阈值=记忆极大=参与维数极小
+  - **Activation**: random recurrent neural network dynamics, colored noise, Ornstein-Uhlenbeck input, sublinear activation, edge of chaos, Lyapunov exponent, Schrödinger method, Pöschl-Teller, soliton, participation dimension, DMFT, type I excitability, Mehler expansion, Price theorem
+
+### Music Between Two Minds: Individual Signatures, Shared States, and the Emergence of Creative Interaction
+- [[field-intelligence-jazz-improvisation]] - 986段职业爵士即兴的信息动力学：音高波动=个体身份签名、节奏波动=共享演出态，交接处逐轮互补 (arXiv: 2610.31131)
+  - 首个 note 级双人创造性交互量化：HBSL 模型（Jazzomat 456 solo 训练，冻结标准尺）逐音输出 surprise/uncertainty，作用于 6 组专业 duo 的 Autumn Leaves trading 段（54 takes, 530 solos, 11433 音符）
+  - 双重解离：音高=身份（take 内 90% 显著差异、单 solo 解码 AUC 0.87、间隔 22 轮不收敛；方差分解 74.3% 归 performer）；节奏=共享态（take 内不可区分 39%、解码 AUC 0.52、R² take 0.27–0.85 全 6/6 duo）——伪 duo 对照证明共享态属于"当下共同演奏"而非"两人固有相似"（真实交接比伪 duo 近 2×，相邻 take 对照排除慢漂移）
+  - 共享节奏态在演出内集体漂移（离自己过去=离伴侣同速率，lag-distance ρ=+0.17 全 6/6），且每次 solo 交接都被重新谈判：一方超过自身平均 surprise→伴侣下一 solo 低于其自身（push-pull 互补：节奏 r=−0.230、音高 r=−0.151，两个 null 模型均消除）
+  - 方法论可迁移：伪 duo 零模型（同两人不同场次重组）、严格交替的奇偶 lag 分层（距离他人 vs 距离自己过去不混合）、shuffle/循环移位 null 防止交替结构+水平差导致伪负相关；预测对话/LLM 交互中同样存在"身份维度拒收敛+共享维度随场漂移+交接处 surprise 补偿"
+  - **Activation**: interpersonal creativity, joint improvisation, jazz duos, turn-taking, predictive processing, surprise uncertainty fluctuations, statistical learning, field intelligence, collective creativity, complementary surprise, pseudo-duet null, Jensen-Shannon divergence, hyperscanning alternative
+
 ## 2026-10-23 - Systems Engineering Research (Cron Job)
 
 ### Brittle by Design? Multi-Scenario Reinforcement Learning for Robust Mission Coordination in Systems of Systems
