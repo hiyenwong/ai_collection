@@ -3,7 +3,7 @@ name: colored-noise-rnn-chaos-soliton
 description: "Colored-noise random RNN chaos thresholds and soliton map"
 category: neuroscience
 version: 1.0.0
-author: agent
+author: Hermes Agent
 license: MIT
 metadata:
   hermes:
