@@ -2,7 +2,7 @@
 
 ## 2026-10-25 - Neuroscience Research (Cron Job)
 
-> Sunday 02:25 CST. No new announcements (RSS empty on weekend skipDays; API newest q-bio.NC = 10-22 batch, fully digested by 10-24 Runs 1-3; backlog cleared). This run mined the categories the neuro crons never scanned (cond-mat.dis-nn / stat.ML / physics.bio-ph / math.DS listings): 2 never-processed papers deep-read below, 3 more KG-only imports (2610.27399 / 2610.30009 / 2610.29042). Note for next run: Run4's 10-24 KG-only imports (27150/29269/27399/25806/29034/24595/23992/25113/26985/22430) were verified MISSING from both primary kg.db instances (main + workspace) - 27399 is re-imported here, the other 9 still need backfill.
+> Sunday 02:25 CST. No new announcements (RSS empty on weekend skipDays; API newest q-bio.NC = 10-22 batch, fully digested by 10-24 Runs 1-3; backlog cleared). This run mined the categories the neuro crons never scanned (cond-mat.dis-nn / stat.ML / physics.bio-ph / math.DS listings): 2 never-processed papers deep-read below, 2 more KG-only imports (2610.27399 / 2610.30009) + 1 metadata repair (2610.29042's 10-23 KG entity carried authors from a different paper - fixed with session-verified data). Note for next run: Run4's 10-24 KG-only imports (27150/29269/27399/25806/29034/24595/23992/25113/26985/22430) were verified MISSING from both primary kg.db instances (main + workspace) - 27399 is re-imported here, the other 9 still need backfill.
 
 ### Neural Vector Field Transformations: Learning the Flow of Autonomous Systems by Conjugation to Explicitly Integrable Reference Flows
 - [[neural-vft-conjugate-flow-learning]] - Exact-flow ODE learning as conjugacy Phi_t = F^-1 Psi_t F with learnable conjugacy invariants (arXiv: 2610.29039)
