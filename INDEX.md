@@ -1,5 +1,38 @@
 # AI Collection Index
 
+## 2026-10-25 - Informatics + Quantum (Cron Job)
+
+> Sunday theme 信息学 × daily quantum. 6 papers into KG (3 deep-read skills + 3 KG-only); FVQKD is the theme intersection: machine-checked QKD security. KG: +79 entities (3173→3252), +79 vectors, +101 relations; FVQKD auto-clustered into the QKD community (QuHE, single-photon sources); SPLICE into the RL cluster.
+
+### FVQKD: A Formal Verification of Quantum Key Distribution Security in Rocq
+- [[fvqkd-rocq-qkd-formal-verification]] - First end-to-end machine-checked composable finite-key BB84 security proof: smooth-entropy chain (EUR → Serfling → QLHL) rebuilt from first principles in Rocq, admit-free (arXiv: 2610.30645)
+  - Key-length bound mechanized: ℓ ≤ n[q − h(Q_tol+μ)] − leak_EC − log₂(2/(ε_s²ε_c)); only finite-size loss μ ~ 1/√k (Serfling), h clamped at 1/2 so more errors never yield more key
+  - Missing proof branch caught: after conditioning on PE pass, ε′ = ε/√p_pass can exceed the smooth-entropy domain bound (ε′ < 1) when an adversary forces p_pass ≤ 10⁻¹² — published proof invoked EUR outside its hypotheses; fixed by explicit domain predicate + two-branch case split
+  - Convention reconciliation across 6 source papers: purified-distance vs trace-distance smoothing balls (the exact min/max duality requires purified balls), normalized vs sub-normalized SDP witnesses — one fixed definition + coercion lemmas at theorem boundaries
+  - Two-factor assurance: information-theoretic security from physics + machine-checked proofs against reasoning errors; protocol-agnostic core (Uhlmann fidelity, purified distance, SDP strong duality from first principles) reusable for decoy-state/MDI variants
+  - **Activation**: QKD formal verification, BB84 security, composable security, finite-key, smooth min-entropy, entropic uncertainty relation, quantum leftover hash lemma, Serfling, Rocq, missing proof branch, convention reconciliation
+
+### Agentic Knowledge-Model Co-Evolution via Consistency Regularization (SPLICE)
+- [[splice-consistency-knowledge-coevolution]] - Select agent-extracted skills/memories by utility CONSISTENCY across perturbed analysis views, not single-view plausibility; common gain Ĉ = (1/N²)Σ min(Δ_ij, Δ_iℓ) + gated contrastive self-distillation with noisy knowledge K⁻ (arXiv: 2610.30790)
+  - Core problem: same experience analyzed differently yields knowledge with substantially different utility — plausible knowledge can underperform no knowledge; analogy to consistency regularization: gains that persist across evolution views are not view-specific
+  - Proposition 1: population common gain C = E[min(∆,∆′)] > 0 ⇒ Pr(∆>0) ≥ C/µ = 1 − E|∆−∆′|/(2µ); pairwise-minimum discounts lucky runs
+  - Model internalization: GRPO + self-distillation weighted by per-task benefit w_i, with consistently-DEGRADING guidance (−Δ) extracted as noisy knowledge K⁻ used as token-level-gated contrastive reference
+  - Results: +3.0–4.6 pts over strongest baselines (Qwen3.5-4B/9B), −44% output tokens per correct solution, transfers across model sizes/families; lightweight adoption path for skill-library curation without training
+  - **Activation**: agent skill extraction validation, evolution views, common gain, task replay, noisy knowledge, contrastive self-distillation, skill library curation, knowledge-model co-evolution
+
+### One-shot entanglement generation and distillation via Petz recovery and binary hypothesis testing
+- [[oneshot-entanglement-petz-hypothesis-testing]] - One-shot achievable entanglement from a single binary test: Cheng's trace inequality bounds Petz-decoder infidelity by testing cost e(ρ_AB, B_{d,m}); apply BEFORE random-coding average so only one Haar second moment survives (arXiv: 2610.31501)
+  - Explicit alternative B_{d,m} = (dm−1)/(d²−1)(dI_A⊗ρ_B − ρ_AB); (m,ε) protocol exists whenever e_{d,m}(1 − e_{d,m}/(dm)) ≤ ε — coding guarantee reduces to distinguishing ρ_AB from ONE specified operator
+  - Method template transferable to other one-shot coding tasks: explicit decoder family → binary testing bound → bound-then-average → closed-form random-subspace moment → hypothesis-testing entropy + log slack + exact integer rounding
+  - Error-preserving code conversion (generation → transmission): target dimension drops only constant factor at fixed error ⇒ both tasks share coherent-information rate + second-order Gaussian correction for arbitrary pure reference inputs
+  - Can & Wilde (Cornell); commuting testing hypotheses improve log remainder to constant; rank-deficient states treated explicitly
+  - **Activation**: one-shot entanglement bound, Petz recovery, binary hypothesis testing cost, Cheng trace inequality, hypothesis-testing coherent information, finite blocklength, second-order asymptotics, random subspace moment
+
+### KG-only imports (3)
+- A simple proof of unitary parallelization via port-based teleportation (arXiv: 2610.30761) — elementary polylog(N,d)-depth PBT circuit; simple proof all n-qubit unitaries parallelize to poly(n) depth (Nehoran–Slote–Yuen/OpenAI recovered)
+- Lychee: Certified Screening of Inverted Lists for High-Recall Vector Search (arXiv: 2610.30697) — GPU tensor-core screening with certified-exclusion lower bounds; exact distances only for survivors; recall 0.999+ at near-probe cost
+- Constraint Reasoning and LLMs Join Forces: Contrastive Explanations for MIP-based Decision Support (arXiv: 2610.31119) — constraint-reasoning distils "graph of reasons" from MIP, LLM renders contrastive explanations; formal structure first, LLM second
+
 ## 2026-10-24 - Neuroscience Research (Cron Job) Run4
 
 > No new announcements since the Fri batch (digested by Runs 1-3). This run swept the full q-bio.NC/cs.NE/nlin.AO /recent listings against the KG and INDEX: ~24 earlier papers already skill'd pre-KG-convention; 2 never-processed high-value papers deep-dived below; 10 more KG-only imports (27150/29269/27399/25806/29034/24595/23992/25113/26985/22430).
