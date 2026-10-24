@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-25 - Neuroscience Research (Cron Job)
+
+> Sunday 02:25 CST. No new announcements (RSS empty on weekend skipDays; API newest q-bio.NC = 10-22 batch, fully digested by 10-24 Runs 1-3; backlog cleared). This run mined the categories the neuro crons never scanned (cond-mat.dis-nn / stat.ML / physics.bio-ph / math.DS listings): 2 never-processed papers deep-read below, 3 more KG-only imports (2610.27399 / 2610.30009 / 2610.29042). Note for next run: Run4's 10-24 KG-only imports (27150/29269/27399/25806/29034/24595/23992/25113/26985/22430) were verified MISSING from both primary kg.db instances (main + workspace) - 27399 is re-imported here, the other 9 still need backfill.
+
+### Neural Vector Field Transformations: Learning the Flow of Autonomous Systems by Conjugation to Explicitly Integrable Reference Flows
+- [[neural-vft-conjugate-flow-learning]] - Exact-flow ODE learning as conjugacy Phi_t = F^-1 Psi_t F with learnable conjugacy invariants (arXiv: 2610.29039)
+  - C^1 conjugacy preserves equilibrium spectra, periods, Floquet multipliers and frequency-amplitude relations, so the reference must expose them as learnable parameters; an orientation-preserving F cannot flip rotation sense - read the sign from Df(x*) or data before training (orientation barrier)
+  - Training recipe R1/R2/R3: relative push-forward residual |f_theta - f|^2 / (|f|^2 + eps) with log-uniform radius sampling around the equilibrium + anchors F(0)=0, DF(0)=I; symplectic F with gradient-form frequency w = w0 + grad K; invariants initialized from field/data and kept frozen (oracle run shows trained ones drift 13-25% off)
+  - Diagnostics separating conjugacy from interpolant: relative residual flat across decades of |x|, ||DF - I|| growing linearly in |x|, latent trajectories must be reference orbits; negative results stated with equal prominence (time-input network 8x better on a dispersive field; Van der Pol data-only open with Floquet 17% off - obstacle is F expressivity, not identifiability)
+  - **Activation**: exact flow learning, conjugacy ODE, action-angle recovery, Floquet spectrum learning, symplectic flow, neural population dynamics fitting
+
+### Entropy-production cost limits hierarchical decision-making in homing pigeon flocks
+- [[entropy-production-limits-flock-hierarchy]] - A fixed per-bird entropy production budget explains why hierarchy weakens as flocks grow (arXiv: 2610.31126)
+  - ABP homing model: velocity autocorrelation plateau sin^2(phi_m)/phi_m^2 extracts navigational error tolerance phi_m (decreases with N) while path stochasticity lambda stays constant - egalitarian Many-Wrongs hypothesis fails quantitatively at every N
+  - Rank-dependent influence P_i = e^{-eta(i-1)} calibrated per flock size: hierarchy index eta decreases monotonically with N; validated microscopically by directional delay times tau_i = A - B e^{eta(i-1)} bounded at +/-0.25 s with A, B N-independent, and an independent N=9 dataset fits with eta = 0.05
+  - Schnakenberg EPR per pair (F_i->j - F_j->i) ln(F_i->j / F_j->i) = KL rate of time-reversal breaking; closed-form per-bird s_dot ~ R_0 eta^2 N^3 near equilibrium (Onsager); holding s_dot = 0.004 k_B constant reproduces the eta(N) trend - non-reciprocal communication costs entropy and the budget per bird is fixed
+  - **Activation**: leader-follower hierarchy inference, collective decision-making, non-reciprocal interactions, stochastic thermodynamics of communication, flock size scaling, pigeon homing GPS analysis
+
 ## 2026-10-25 - Informatics + Quantum (Cron Job)
 
 > Sunday theme 信息学 × daily quantum. 6 papers into KG (3 deep-read skills + 3 KG-only); FVQKD is the theme intersection: machine-checked QKD security. KG: +79 entities (3173→3252), +79 vectors, +101 relations; FVQKD auto-clustered into the QKD community (QuHE, single-photon sources); SPLICE into the RL cluster.
