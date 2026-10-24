@@ -1,5 +1,27 @@
 # AI Collection Index
 
+## 2026-10-24 - Neuroscience Research (Cron Job) Run4
+
+> No new announcements since the Fri batch (digested by Runs 1-3). This run swept the full q-bio.NC/cs.NE/nlin.AO /recent listings against the KG and INDEX: ~24 earlier papers already skill'd pre-KG-convention; 2 never-processed high-value papers deep-dived below; 10 more KG-only imports (27150/29269/27399/25806/29034/24595/23992/25113/26985/22430).
+
+### Low-Dimensional Reduction of Mean-Field Coupled Dynamical Systems: 28 GKO Normal Forms
+- [[mean-field-lie-scheffers-oscillator-reduction]] - Exact macroscopic reduction of mean-field coupled populations of two-variable units, classified into 28 GKO normal forms; group-route reduction (r dims) vs fundamental solutions (2m\* dims); extends reducible limit-cycle populations far beyond Stuart-Landau (arXiv: 2610.28715)
+  - Reduction criterion (Martens-Dharmavaram): frozen-input single-unit ODE must be a Lie system over a finite-dim VGL algebra; pin the class with the MINIMAL VGL algebra since VGL algebras are non-unique
+  - New group route: x(t) = Psi(g(t), x0), r-dim ODE on the matrix Lie group, can be strictly cheaper than 2m\*; Watanabe-Strogatz is the r=3 Moebius/P2 case (2m\*=4 vs r=3 + N-3 constants); group coordinates can BE the macroscopic variables
+  - Stable-limit-cycle reducible classes: I7, I10, I11, I20(L); I20(L) in physical amplitude rho = 1/r^p covers Poincare (p=1), Stuart-Landau (p=2), higher-order saturation (p>=3); origin smoothness forces p=2,k=2,L=2 (2nd-harmonic clustering SL); NEW first-harmonic reducible class (p=2,k=1,L=4)
+  - Neural relevance: tells which phase-amplitude oscillator populations (and Pazó-Cestnik complex-Riccati spiking neurons) admit exact finite-N collective descriptions - no N-to-infinity self-consistency needed
+  - **Activation**: mean-field reduction, Lie-Scheffers structure, GKO normal forms, Watanabe-Strogatz, Stuart-Landau populations, neural mass reduction, exact firing-rate equations
+
+### Representing short-term movement to reveal animal identity and learning progress (TRAIL)
+- [[trail-short-term-movement-fingerprint]] - Self-supervised representations from 1-3 s keypoint trajectories where temporal proximity is the only supervision; identity 84.0% and learning readouts from brief movements, no predefined behavioral states or kinematic features (arXiv: 2610.27140)
+  - Pipeline: Wayformer-style final-frame anchor + NeRF multi-frequency encoding + Q-Former (8 queries -> 16-dim latent h); balanced InfoNCE (positives = same-session nearby segments within 10% window) + reconstruction loss (identity 81.1 -> 84.0 with it)
+  - Reference-frame dissociation: egocentric Local Pose -> identity (77.1), allocentric Global Trajectory -> learning readouts (Day 1.47); combined best (84.0/1.26/.016) - posture and spatial navigation carry complementary information
+  - Signals concentrate at decision junctions (identity 88.7 vs 81.7 on arms), sharpen with experience (Days 4-5), and peak in the Turning motif (identity 98.0, proficiency .008); 1 s clips already competitive
+  - Widening the positive window toward recording-wide hurts learning readouts in ALL 6 animals - the learning-related behavioral signal is LOCAL in time; beats supervised-all-targets (78.4), TCN/VAME (65.4/62.5), fine-tuned Chronos-2/TimesFM-3 (46.8/44.4)
+  - Conditional diffusion with fixed DDIM latent u0 makes representation axes visible: pace/turning rhythm morphs (cross-day) or body-ratio extension (cross-individual) while broad motion structure is preserved
+  - **Activation**: behavioral fingerprint, movement representation, temporal-proximity contrastive, animal identity, learning progress, pose trajectory, MABe22, conditional generation
+
+
 ## 2026-10-24 - Neuroscience Research (Cron Job) Run3
 
 ### Beyond density snapshots: Dynamical memory in Chern-Simons reservoirs
