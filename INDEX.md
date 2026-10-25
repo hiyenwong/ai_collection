@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-26 - Neuroscience Research (Cron Job)
+
+> Monday 02:10 CST run — pre-announcement window (new arXiv batch lands ~08:00 CST; RSS still empty, API newest q-bio.NC = 10-22 batch already digested by the 10-24/10-25 runs). Mined the categories the neuro crons never scanned (cs.ET via API): deep-read picks are 2610.17154 (SNN RGC dynamic visual decoding — cs.ET primary, missed by all previous q-bio.NC/cs.NE scans) and 2610.04647 (astrocyte breathing clusters, nlin.CD). 13 never-processed candidates found, 2 deep-read below.
+
+### Neuromorphic Decoding and Dynamical Image Reconstruction from Populations of Spiking Retinal Ganglion Cells
+- [[snn-rgc-dynamic-visual-decoding]] - First end-to-end SNN decoding dynamic moving scenes from real RGC spikes — joint reconstruction + tracking, ~70x less compute energy than ANN-equivalent (arXiv: 2610.17154)
+  - Gaussian-splatting rasterization of spikes at RF centers (sigma=0.5px, unit mass, ON/OFF/ON-OFF polarity channels -> [Tx3x32x32]) -> shared SEW-ResNet spiking U-Net (LIF/IF, surrogate gradients) -> non-firing high-threshold (Vth=5000) membrane readout with learned temporal-fusion over per-timestep membranes + spike-count centroid with zero-init bounded regression offset for tracking (1.33 px vs calibrated COM 2.91 px, chance 9.10 px)
+  - Dynamic reconstruction sharpens as membranes integrate evidence over the clip (SSIM ~0 -> 0.80 across the 1.6 s motion phase — temporal accumulation, not one informative frame); flashed 0.81/0.88 masked-SSIM (1836 cells, 512 px); fidelity saturates across 18 architectures (0.80-0.82 band over 5.9M-1.7B params) => data-limited regime; 5.4M params matches QKFormer/Meta-SpikeFormer at 5.5-11x smaller
+  - Energy = SynOps x per-op cost: ~70x = 13.6x spike sparsity (14.2% mean firing) x 5.1x AC-vs-MAC (0.9/4.6 pJ, 45nm); lambda=0.1 firing penalty -21% SynOps (->88x) at SSIM 0.80->0.73 — spike COUNT is the knob, not mean rate; SFA neurons no improvement; ON cells dominate, polarity separation > raw cell count
+  - **Activation**: spiking neural network, retinal ganglion cells, neural decoding, visual prosthesis, dynamic image reconstruction, spike-native, object tracking, SynOps, surrogate gradient, neuromorphic energy, Gaussian splatting
+
+### Influence of Astrocyte Feedback and Noise on Breathing Neural Clusters
+- [[astrocyte-breathing-cluster-robustness]] - Breathing cluster synchronization (intermittent sync-desync of structurally symmetric neuron subsets) survives thermosensitivity, ephaptic fields, noise, and astrocytic delay (arXiv: 2610.04647)
+  - Thermosensitive neuron (b*e^{1/T} recovery) + intrinsic E-field (dy <- rE, dE = ky + noise) + global astrocyte feedback d(eps)/dt = -alpha*eps + beta*R(t-tau) + gamma on synaptic strength; symmetric subset Vc required so feedback acts uniformly; slow push-pull loop: sync -> R up -> eps up -> destabilize -> desync -> R down -> eps decay -> re-sync
+  - Role separation: beta decides IF it breathes (too strong saturates eps -> rigid sync, too weak none); alpha decides HOW FAST/DEEP (period + amplitude); non-monotonic (alpha,gamma) corridor at intermediate values — astrocytes are nonlinear regulators, not linear amplifiers; high noise D=1 contracts the breathing region to a narrow 2D island
+  - Delay-robust for 0<=tau<=1500 (architecture not timing: R integrates the whole network, tau only phase-shifts eps); temperature sets the noise threshold (T<=1 robust for all D, physiological T=5 breaks at D>0.4, T=10 worse); P metric alone cannot separate rigid sync from low-P breathing — always inspect delta_x_clu(t) traces
+  - **Activation**: astrocyte feedback, breathing cluster, cluster synchronization, neuron-glia, ephaptic coupling, thermosensitive neuron, gliotransmission delay, Kuramoto order parameter, noise robustness, UP/DOWN states
+
 ### New Papers (auto-added)
 - **[0.98]** [AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack](https://arxiv.org/abs/2610.31404v1) — 2026-10-22 (security-privacy)
 - **[0.97]** [Questioning Instrumental Convergence in RLVR: Checkpoint Evidence from OLMo-3](https://arxiv.org/abs/2610.31624v1) — 2026-10-22 (multi-agent-rl)
@@ -21,7 +39,6 @@
 ### Muffin - A Shared Memory Buffer for Asynchronous AI Agents
 - [[muffin-shared-memory-buffer]] - The rise of Agentic AI systems has changed the landscape of artificial intelligence by enabling strong reasoning capabilities through specialized multi-agent interaction with structured self-reflectio... (arXiv: 2610.31355v1)
   - Category: multi-agent-rl
-
 
 ## 2026-10-22 - Systems Engineering Research (Cron Job)
 
