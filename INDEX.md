@@ -1,5 +1,16 @@
 # AI Collection Index
 
+## 2026-10-25 - Quantum Research (Cron Job)
+
+> Sunday daily-quantum run (09:16 CST). Weekend path: /list/quant-ph/recent -> 50 new papers (2610.302xx-2610.316xx). 4-paper shortlist after dedup against today's info-cron deliveries (fvqkd 2610.30645, oneshot-entanglement 2610.31501 already taken); deep-read pick 2610.31571 - the entropy-methods/log-Sobolev slot was empty in the library and it is the first size-free MLSI for non-commuting KMS samplers. KG: +1 paper, +6 concepts, +1 skill entity, +9 relations (workspace kg.db).
+
+### Size-independent Logarithmic Sobolev Inequalities for Quantum Gibbs Samplers
+- [[size-independent-mlsi-quantum-gibbs]] - First system-size-free MLSI/L2-LSI for KMS-symmetric Gibbs samplers of non-commuting Hamiltonians: transport the infinite-temperature L2-LSI along a unitary temperature path, then tensor-power + quantum-AEP upgrade of Renyi-2 decay to relative-entropy decay (arXiv: 2610.31571)
+  - Transport pattern: base L2-LSI at s=0 (product depolarizing limit, C0 = 2*sqrt(2)*e^{1/4}*q/4q) -> unitary path U_s|Omega_sigma0> = |Omega_sigmas> built from a centered Poisson eq d_s|Omega> = -L_sigma|T_s> + Sylvester symmetrized multiplication (quantum Moser; commutator-form generator, quasi-local by LOCAL rapid mixing t_mix[R](1/4) <= C(1+R)^a, a<1 - regional polynomial mixing suffices)
+  - Gronwall transport (Prop 4.1): entropy/energy derivative bounds reduce to a local action-energy inequality (Cond 6.3, checkable via Cond 6.4 exponent test min{p0,b} > d+a); C_beta = (C0 + beta*C_S)e^{beta*C_E} is size-free by construction => kappa = 2/C_beta: 1D any finite beta (kappa(beta,q)), d-dim beta*J <= beta0 (kappa(d,R0,q)) - kills prior Omega(1/log n) and Omega(1/log^4 n) losses
+  - Upgrade step (Thm 3.3): divergence chain D <= e^{D2} <= Dmax + quantum-AEP approximants nu_m ~ rho^{x m} + Renyi-2 contraction uniform over ALL tensor powers incl. correlated inputs => D(Phi*rho||sigma) <= a*D(rho||sigma); Cor 7.1 requires the Hamiltonian class closed under independent copies with tensor-sum generators; alpha1 >= kappa/2, mixing time O(log n + log 1/eps)
+  - **Activation**: quantum Gibbs sampler, MLSI, log-Sobolev inequality, mixing time, Renyi-2 divergence, KMS detailed balance, rapid mixing, entropy decay, quantum AEP, tensor-power argument, temperature interpolation
+
 ## 2026-10-25 - Systems Engineering Research (Cron Job)
 
 > Sunday 08:06 CST run. Scanned /list/{eess.SY,cs.DC,cs.MA,cs.SE,math.OC}/recent (Friday 10-23 batch): 249 new papers, 8 shortlisted, 2 deep-read (both eess.SY, both formulas independently re-verified: fork threshold 43/60, DeltaJ closed forms vs Table II, Example-1 replanning-loop Monte Carlo, gamma identity, D_k h = k0(h - hbar) quadrature). Sibling dedup: 2610.27971 already covered by [[execution-gap-intent-validation-cps]] - excluded. Note: both skill dirs were absorbed by the 10:00 sibling sweep commit c680afa2 (byte-identical, verified); this commit adds the INDEX entries. kg.db: +2 papers, +2 paper entities, +10 concepts, +14 relations (source=syseng-cron-2026-10-25).
@@ -44,6 +55,21 @@
   - Beats common-radius reference in all 8 Lorenz/Rossler cases (11.6-47.4% mean NRMSE cut); lowest mean in 5/8 vs nonlinear ESN/LI-ESN; selected half-life profiles shift with prediction target and horizon (task-dependent dynamics made visible)
   - Honest limits: PSD design worst for horizon-0 reconstruction (+26-28% over best design); normal recurrence only (no transient amplification); selected profiles vary across seeds (mixing Q vs search-budget contributions not separated)
   - **Activation**: reservoir computing, echo state network, eigenvalue design, decay timescale allocation, hyperparameter search cost, state reuse, associative scan, linear reservoir
+
+### Mitigating Model Collapse through Dreaming Learning
+- [[dreaming-learning-model-collapse]] - Spectral diagnosis of self-consuming retraining + high-temperature self-sampling regularizer (arXiv: 2610.30009)
+  - Collapse mechanism: sampling at T_s<1 is row-wise sharpening S_T(M)_ij = M_ij^(1/T) / Sum_k M_ik^(1/T) - repeated application concentrates rows toward determinism, cycles contribute L-th roots of unity, subdominant eigenvalues drift to the unit circle and the spectral gap narrows; data accumulation does NOT arrest this drift (unlike the Ts=1 tail-truncation route)
+  - Dreaming Learning regularizer: L = L_reg + alpha*L_dream, cross-entropy on the model's own recursively sampled sequences at raised temperature T_d>1; flattened distributions keep learned-operator entries >= c so the Dobrushin coefficient <= 1-nc bounds every non-Perron eigenvalue away from 1
+  - Validated at 3 scales: Markov chain KL improves >2 orders of magnitude over 5000 generations (T_d=1.5, alpha=0.8, large alpha best); 4-layer LSTM flat validation loss at both Ts (T_d=3, and lower loss from generation 0); GPT-2 124M recursive WikiText-2 loop perplexity ~980 vs ~1960 vanilla at generation 15 (T_d=1.1, alpha=0.5, ~2x ratio from gen 5)
+  - Honest limits: dreaming spectrum settles BELOW the true one (stable != correct, learned chain mixes too fast); at GPT-2 scale dreaming slows but does not arrest drift; ~2x per-step generation cost; T_d in [1,3], alpha in [0.3,1] tuned by two-line sweep (~36 GPU-h vs 88 full-grid runs)
+  - **Activation**: model collapse, self-consuming training loop, synthetic data retraining, transition operator spectrum, sampling temperature, dreaming regularizer, diversity preservation
+
+### Digital Twins of Networked Dynamical Systems: Machine Learning Prediction of Synchronization Transitions in Coupled Chaotic Oscillators
+- [[coupled-reservoir-digital-twin]] - Factorized 3-module reservoir twin reproducing sync transitions with training data independent of network size (arXiv: 2610.30632)
+  - Architecture: one single RC per node learns nodal dynamics F(x_i;p_i); a coupling module of N parallel single-layer NNs learns H(x_i,x_j) via residual targets (actual next state minus single-RC prediction) on ONE coupled pair at fixed epsilon_0=0.35; coupling matrix C prescribed (reconstruction-replaceable); signals row-filtered by C, scaled by epsilon - modules reassemble across networks with NO retraining
+  - Minimal-data recipe: single RC trained on ONE isolated oscillator's time series; parameter-aware variant appends p to the RC input so one RC serves non-identical units - yet predicts collective dynamics of N=100-279 oscillator networks including the C. elegans connectome (N=279)
+  - Reaches digital-twin fidelity levels 3-4 (parameter-dependent bifurcations + regulation/response) where prior ML for large coupled systems stopped at level 1: complete synchronization (identical Lorenz, global error delta-x vs epsilon), phase synchronization (non-identical Rossler, order parameter R), and chimera states (ring P=28, coherent/incoherent domain extents) all match direct RK4 simulation
+  - **Activation**: digital twin, synchronization transition, coupled oscillator network, reservoir computing, chimera state, connectome dynamics, network-level prediction, neural mass model, model-free twin
 
 ## 2026-10-25 - Informatics + Quantum (Cron Job)
 
