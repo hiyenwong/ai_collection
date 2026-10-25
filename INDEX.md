@@ -14,6 +14,23 @@
 
 
 ## 2026-10-26 - Neuroscience Research (Cron Job)
+> Monday 05:02 CST run (Run2) — pre-announcement window continues; swept /new listings of categories the 10-25 runs never covered (cs.LG/cs.AI/cs.CV/eess.SP/q-bio.*): 29 unseen neuro-relevant candidates, deep-read picks 2610.31108 (DRAFT fMRI room layouts, cs.CV) and 2610.31670 (S² sensorimotor alignment, cs.CV); 6 more imported KG-only.
+
+### DRAFT: Decoding and Reconstructing 3D Room Layouts from fMRI and Camera Trajectories
+- [[draft-fmri-room-layout]] - 22-number layout code decoded from early visual cortex + camera motion, fused with a trajectory free-space prior; training-free low-frequency swap lifts ALL 7 fMRI decoders to ~0.49 layout r (arXiv: 2610.31108)
+  - Layout code y∈R²² (12 horizon wall bins + 4 floor bands + 4 far-quadrant shares + median/IQR log depth) read by a ridge ensemble with per-entry posterior mean+spread; trajectory head converts visited-position free-space distances into a 3×3 layout — camera path alone already r=0.446
+  - Fusion stacking gives 0.480 layout r on 10 held-out scenes (20 participants, leave-one-scene-out, ray-cast GT); as a plug-in the DRAFT layout lifts 7 decoders 0.171–0.429 → 0.487–0.493 without retraining; brain-input controls (replaced-EVC, 37 s-shifted BOLD) drop it in 10/10 scenes
+  - Honest negatives: unmodified MindEye/Brain-Diffuser keep slightly better 3D surface F-scores; wrong-scene depth passes F@25cm (surface metric insensitive to scene identity); ridge shrinkage requires range calibration a=2
+  - **Activation**: fMRI decoding, room layout, layout code, free-space prior, camera trajectory, early visual cortex, low-frequency replacement, flow matching, BOLD lag
+
+### Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success
+- [[s2-sensorimotor-alignment]] - Training-free offline metric — kNN overlap between model sensory embeddings and DTW end-effector trajectories — predicts robot task success (r=+0.72 VLAs, +0.83 real robots) where VQA/pixel-quality metrics fail (arXiv: 2610.31670)
+  - mNN = (1/Nk)Σ|N_sensory ∩ N_motor| (centered CKNNA, k=10); cosine distance for embeddings, DTW over SO(3) rotation + position + gripper for trajectories; reference datasets DROID / BridgeDataV2
+  - Screens raw VLM backbones BEFORE VLA fine-tuning (r=+0.681 vs VQA −0.154); WAMs r=+0.718 while FID runs backwards; embodiment-mismatch negative control collapses r 0.999→0.246 (validates the metric)
+  - Diagnostics: vision-only S² tracks success (r=+0.694) but text-only does not (0.237) — explains instruction-ignoring; S² flat across denoising steps — explains why skipping video denoising is cheap; peaks at mid-depth Block 14
+  - **Activation**: platonic representation hypothesis, sensorimotor alignment, embodied AI, VLA, model selection, offline proxy, CKNNA, DTW, world action model
+
+
 
 > Monday 02:10 CST run — pre-announcement window (new arXiv batch lands ~08:00 CST; RSS still empty, API newest q-bio.NC = 10-22 batch already digested by the 10-24/10-25 runs). Mined the categories the neuro crons never scanned (cs.ET via API): deep-read picks are 2610.17154 (SNN RGC dynamic visual decoding — cs.ET primary, missed by all previous q-bio.NC/cs.NE scans) and 2610.04647 (astrocyte breathing clusters, nlin.CD). 13 never-processed candidates found, 2 deep-read below.
 
