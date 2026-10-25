@@ -1,5 +1,18 @@
 # AI Collection Index
 
+## 2026-10-26 - Quantum Research (Cron Job)
+
+> Monday 02:03 CST run - pre-announcement window (RSS empty over weekend; API newest quant-ph = 10-22 batch). Deep-read pick from the un-shortlisted 10-22 quant-ph tail: 2610.31115 (magic-state distillation limits, Gaggioli & Marecek). Same run backfilled 14 neuro + 3 nlin papers whose skills existed but KG entities were missing, and imported 10 fresh KG-only quant/nlin papers.
+
+### The limits of magic-state distillation
+- [[magic-distillation-code-limits]] - Any stabilizer distillation protocol (adaptive/postselected/multistage) collapses to a single stabilizer-code projection; for rational targets (CCZ/CS) a fault pattern is harmful exactly when its complement is; exhaustive exact-arithmetic code search gives exact minimal input counts (arXiv: 2610.31115)
+  - Theorem 1 (collapse): tolerating fault-pattern set H iff some stabilizer code C projects every tolerated input onto the encoded target line or rejects it (Gram conditions G00*Gee=|G0e|^2, checkable in exact arithmetic); Theorem 2 (complement symmetry): sigma: sqrt(2)->-sqrt(2) commutes with stabilizer ops, fixes dyadic targets, maps rho_T(p)->rho_T(1-p) so harmlessness is symmetric about |e|=n/2 - only d<=|e|<=n-d patterns need checking
+  - Exact results: quadratic T distillation needs exactly 9 inputs (new 9-input factory, acceptance 1/128, prior best 10); the 8-input CCZ factory is optimal over ALL stabilizer protocols; cubic CCZ exactly 10 (36-input factory, leading coeff 120 vs prior 236); quartic CCZ 48 inputs coeff 864 vs 2816
+  - General floors surviving arbitrary postselection (first beyond max(d,nu)): one T state needs n>=2d, rational non-stabilizer targets n>=2d+1; use as hard input-count floors in FTQC resource estimation (counts are per accepted run - check acceptance probability too)
+  - **Activation**: magic-state distillation, stabilizer code, fault tolerance, postselection, lower bound, resource estimation, CCZ, T gate, magic state factory, complement symmetry
+
+
+
 ## 2026-10-26 - Neuroscience Research (Cron Job)
 
 > Monday 02:10 CST run — pre-announcement window (new arXiv batch lands ~08:00 CST; RSS still empty, API newest q-bio.NC = 10-22 batch already digested by the 10-24/10-25 runs). Mined the categories the neuro crons never scanned (cs.ET via API): deep-read picks are 2610.17154 (SNN RGC dynamic visual decoding — cs.ET primary, missed by all previous q-bio.NC/cs.NE scans) and 2610.04647 (astrocyte breathing clusters, nlin.CD). 13 never-processed candidates found, 2 deep-read below.
@@ -17,6 +30,13 @@
   - Role separation: beta decides IF it breathes (too strong saturates eps -> rigid sync, too weak none); alpha decides HOW FAST/DEEP (period + amplitude); non-monotonic (alpha,gamma) corridor at intermediate values — astrocytes are nonlinear regulators, not linear amplifiers; high noise D=1 contracts the breathing region to a narrow 2D island
   - Delay-robust for 0<=tau<=1500 (architecture not timing: R integrates the whole network, tau only phase-shifts eps); temperature sets the noise threshold (T<=1 robust for all D, physiological T=5 breaks at D>0.4, T=10 worse); P metric alone cannot separate rigid sync from low-P breathing — always inspect delta_x_clu(t) traces
   - **Activation**: astrocyte feedback, breathing cluster, cluster synchronization, neuron-glia, ephaptic coupling, thermosensitive neuron, gliotransmission delay, Kuramoto order parameter, noise robustness, UP/DOWN states
+
+### Gate-Based Feature Importance in Simulation-Based Inference for EEG: A Cautionary Tale
+- [[gate-feature-importance-ablation-audit]] - Learned feature gates (sigmoid/softmax) trained with NPE on a Jansen-Rit EEG model are plausible but not faithful: gate rankings negatively correlate with gold-standard retrain ablation (rho -0.61/-0.56, sign-flip p=0.0039) at negligible accuracy cost (arXiv: 2610.30364)
+  - Audit protocol: retrain-based leave-one-feature-out ablation as causal benchmark (delta-R2 vs same-seed full model); compare rankings per seed via Spearman; exact sign-flip permutation test over 2^9=512 assignments (floor p = 0.0039 = all seeds agreed, report honestly)
+  - Ablation says total signal power dominates (delta-R2 0.210, 5x next) yet gates rank it 7/7; mismatch survives raw-weight variant (-0.298), single-feature exclusions, and both activations; gated model healthy (R2 0.792, calibrated coverage) - readout failure on a healthy model is the dangerous case
+  - Action rule: learned gates/attention/masks are hypothesis generators; validate selections (not continuous weights) against retrain ablation before reporting as importance
+  - **Activation**: feature importance, feature gate, retrain ablation, simulation-based inference, neural posterior estimation, EEG, Jansen-Rit, interpretability audit, attention not explanation, sign-flip test
 
 ### New Papers (auto-added)
 - **[0.98]** [AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack](https://arxiv.org/abs/2610.31404v1) — 2026-10-22 (security-privacy)
