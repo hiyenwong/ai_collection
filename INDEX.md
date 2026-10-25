@@ -2,7 +2,7 @@
 
 ## 2026-10-25 - Neuroscience Research (Cron Job)
 
-> Sunday 02:25 CST. No new announcements (RSS empty on weekend skipDays; API newest q-bio.NC = 10-22 batch, fully digested by 10-24 Runs 1-3; backlog cleared). This run mined the categories the neuro crons never scanned (cond-mat.dis-nn / stat.ML / physics.bio-ph / math.DS listings): 2 never-processed papers deep-read below, 2 more KG-only imports (2610.27399 / 2610.30009) + 1 metadata repair (2610.29042's 10-23 KG entity carried authors from a different paper - fixed with session-verified data). Note for next run: Run4's 10-24 KG-only imports (27150/29269/27399/25806/29034/24595/23992/25113/26985/22430) were verified MISSING from both primary kg.db instances (main + workspace) - 27399 is re-imported here, the other 9 still need backfill.
+> Sunday 02:25 CST. No new announcements (RSS empty on weekend skipDays; API newest q-bio.NC = 10-22 batch, fully digested by 10-24 Runs 1-3; backlog cleared). This run mined the categories the neuro crons never scanned (cond-mat.dis-nn / stat.ML / physics.bio-ph / math.DS listings): 2 never-processed papers deep-read below, 2 more KG-only imports (2610.27399 / 2610.30009) + 1 metadata repair (2610.29042's 10-23 KG entity carried authors from a different paper - fixed with session-verified data). Note for next run: Run4's 10-24 KG-only imports (27150/29269/27399/25806/29034/24595/23992/25113/26985/22430) were verified MISSING from both primary kg.db instances (main + workspace) - 27399 is re-imported here, the other 9 were backfilled by the 10-25 Run2 (07:09 CST) after abs-page metadata re-verification via arXiv API; Run2 also deep-read 2610.25806 into [[sector-ring-linear-reservoir]].
 
 ### Neural Vector Field Transformations: Learning the Flow of Autonomous Systems by Conjugation to Explicitly Integrable Reference Flows
 - [[neural-vft-conjugate-flow-learning]] - Exact-flow ODE learning as conjugacy Phi_t = F^-1 Psi_t F with learnable conjugacy invariants (arXiv: 2610.29039)
@@ -17,6 +17,15 @@
   - Rank-dependent influence P_i = e^{-eta(i-1)} calibrated per flock size: hierarchy index eta decreases monotonically with N; validated microscopically by directional delay times tau_i = A - B e^{eta(i-1)} bounded at +/-0.25 s with A, B N-independent, and an independent N=9 dataset fits with eta = 0.05
   - Schnakenberg EPR per pair (F_i->j - F_j->i) ln(F_i->j / F_j->i) = KL rate of time-reversal breaking; closed-form per-bird s_dot ~ R_0 eta^2 N^3 near equilibrium (Onsager); holding s_dot = 0.004 k_B constant reproduces the eta(N) trend - non-reciprocal communication costs entropy and the budget per bird is fixed
   - **Activation**: leader-follower hierarchy inference, collective decision-making, non-reciprocal interactions, stochastic thermodynamics of communication, flock size scaling, pigeon homing GPS analysis
+
+### Sector-Ring Linear Reservoirs: Sector-Wise Decay-Timescale Allocation With State Reuse Across Candidate Settings
+- [[sector-ring-linear-reservoir]] - Eigenvalue distribution as an explicit reservoir design variable + 99.8% search-cost cut via state bank (arXiv: 2610.25806)
+  - Rotation-decay 2x2 blocks with fixed midpoint angles theta_j=(j-1/2)pi/M; K sectors each hold one half-life eta_k, radius r_j = 2^(-1/eta); K=1 collapses to linear SCR (common-radius reference); the half-life profile IS the design variable
+  - PSD-scaled input weights equalize per-mode state scale under colored input (median P90/P10=1.00 vs 9.86-34.0 for white-noise normalizations); fixed Haar-orthogonal Q + element-wise tanh supply mixing/nonlinearity outside the linear recurrence; ridge readout closed-form
+  - State bank: per-discrete-half-life states computed once by associative scan (affine composition (a2,b2)o(a1,b1)=(a2*a1, a2*b1+b2), O(log T) stages) and reused across candidates (C*M -> L*M trajectories, L<=6); wall time 3.29h vs ESN 10.93h for 245,760 evaluations
+  - Beats common-radius reference in all 8 Lorenz/Rossler cases (11.6-47.4% mean NRMSE cut); lowest mean in 5/8 vs nonlinear ESN/LI-ESN; selected half-life profiles shift with prediction target and horizon (task-dependent dynamics made visible)
+  - Honest limits: PSD design worst for horizon-0 reconstruction (+26-28% over best design); normal recurrence only (no transient amplification); selected profiles vary across seeds (mixing Q vs search-budget contributions not separated)
+  - **Activation**: reservoir computing, echo state network, eigenvalue design, decay timescale allocation, hyperparameter search cost, state reuse, associative scan, linear reservoir
 
 ## 2026-10-25 - Informatics + Quantum (Cron Job)
 
