@@ -2,7 +2,7 @@
 
 ## 2026-10-25 - Quantum Research (Cron Job)
 
-> Sunday daily-quantum run (09:16 CST). Weekend path: /list/quant-ph/recent -> 50 new papers (2610.302xx-2610.316xx). 4-paper shortlist after dedup against today's info-cron deliveries (fvqkd 2610.30645, oneshot-entanglement 2610.31501 already taken); deep-read pick 2610.31571 - the entropy-methods/log-Sobolev slot was empty in the library and it is the first size-free MLSI for non-commuting KMS samplers. KG: +1 paper, +6 concepts, +1 skill entity, +9 relations (workspace kg.db).
+> Sunday daily-quantum run (09:16 CST). Weekend path: /list/quant-ph/recent -> 50 new papers (2610.302xx-2610.316xx). 4-paper shortlist after dedup against today's info-cron deliveries (fvqkd 2610.30645, oneshot-entanglement 2610.31501 already taken); deep-read pick 2610.31571 - the entropy-methods/log-Sobolev slot was empty in the library and it is the first size-free MLSI for non-commuting KMS samplers. KG: +1 paper, +4 new concepts (2 reused), +1 skill entity, +6 net-new relations (workspace kg.db; sibling backfill had already created the paper entity + 6 introduces edges this morning).
 
 ### Size-independent Logarithmic Sobolev Inequalities for Quantum Gibbs Samplers
 - [[size-independent-mlsi-quantum-gibbs]] - First system-size-free MLSI/L2-LSI for KMS-symmetric Gibbs samplers of non-commuting Hamiltonians: transport the infinite-temperature L2-LSI along a unitary temperature path, then tensor-power + quantum-AEP upgrade of Renyi-2 decay to relative-entropy decay (arXiv: 2610.31571)
