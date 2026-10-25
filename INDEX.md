@@ -31,6 +31,15 @@
 
 > Sunday theme 信息学 × daily quantum. 6 papers into KG (3 deep-read skills + 3 KG-only); FVQKD is the theme intersection: machine-checked QKD security. KG: +79 entities (3173→3252), +79 vectors, +101 relations; FVQKD auto-clustered into the QKD community (QuHE, single-photon sources); SPLICE into the RL cluster.
 
+### Quantum f-divergences from retrodictive tests: a unifying classical variational principle
+- [[retrodictive-quantum-f-divergences]] - One variational minimum unifies all quantum f-divergence extensions; the reference state gamma (Petz-transpose retrodiction prior) selects standard/maximal/geodesic (arXiv: 2610.29696)
+  - Run-2 (06:08 CST) addition: cs.IT/math.IT/cs.IR/cs.DB listing scan (182 new) -> 12 curated KG imports; Run4's 9-paper backfill completed concurrently by live neuro-cron sibling (API re-verified, zero dupes) + 52 curated cross-edges from this run
+  - Theorem (simultaneous spectral optimality): spectral POVMs of A=g^-1/2 rho g^-1/2, B=g^-1/2 sigma g^-1/2 minimize D_f(R||F) at once for EVERY operator-convex f; V_f = sum_kl alpha_k f(beta_l/alpha_k) Tr[sqrt(g) P_k sqrt(g) Q_l] = Petz quasi-entropy; optimizer depends on (rho,sigma,gamma) but not f
+  - Reference menu: gamma=I/d -> Nussbaum-Szkola record laws / Umegaki; gamma in {rho,sigma} -> Matsumoto reverse test / Belavkin-Staszewski entropy; gamma_t = sigma^t/Tr[sigma^t] -> geodesic family; KL closed form V = Tr[gB log B] - Tr[sigma log A]
+  - Sharpest edge: rho = sigma does NOT give V=0 unless [rho,gamma]=0 (verified 1.34>0 for non-commuting gamma) - the prescribed pair does not determine the minimum; channel extension (Petz transpose in reverse) recovers average entropy production for faithful-Choi channels
+  - 24/24 numeric checks at 1e-13 incl. geodesic superoperator-vs-closed-form at t=0.25/0.5 and the log-mixture bound V(mix) <= -log sum p_k exp(-V_k) <= linear
+  - **Activation**: quantum f-divergence, Petz transpose, retrodiction, Belavkin-Staszewski, Nussbaum-Szkola, Matsumoto reverse test, quantum entropy production, reference state selection
+
 ### FVQKD: A Formal Verification of Quantum Key Distribution Security in Rocq
 - [[fvqkd-rocq-qkd-formal-verification]] - First end-to-end machine-checked composable finite-key BB84 security proof: smooth-entropy chain (EUR → Serfling → QLHL) rebuilt from first principles in Rocq, admit-free (arXiv: 2610.30645)
   - Key-length bound mechanized: ℓ ≤ n[q − h(Q_tol+μ)] − leak_EC − log₂(2/(ε_s²ε_c)); only finite-size loss μ ~ 1/√k (Serfling), h clamped at 1/2 so more errors never yield more key
