@@ -7857,7 +7857,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,
@@ -10878,7 +10878,7 @@
   {
     "id": "2610.06726v1",
     "title": "Decoupling Time and Space: A Temporally Conditioned Refinement for EEG Source Imaging",
-    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert M\u00fcller, Shinichi Nakajima",
+    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert Müller, Shinichi Nakajima",
     "url": "https://arxiv.org/abs/2610.06726v1",
     "utility": 0.87,
     "categories": [
@@ -12164,7 +12164,7 @@
   {
     "id": "2610.22099v1",
     "title": "TIPS: A Tiny Inference-time Policy for Scaling in Diffusion Language Models",
-    "authors": "Ya-Shi Zhang, Jian Tang, Pierre-Andr\u00e9 No\u00ebl, Oleksiy Ostapenko",
+    "authors": "Ya-Shi Zhang, Jian Tang, Pierre-André Noël, Oleksiy Ostapenko",
     "url": "https://arxiv.org/abs/2610.22099v1",
     "utility": 0.92,
     "categories": [
@@ -12977,5 +12977,186 @@
     ],
     "utility_score": 0.78,
     "summary": "Joint reinforcement learning and self-distillation combines task rewards with dense teacher guidance for agent training, but their gradients can partly cancel. A mixing coefficient controls relative scale without selectively removing opposing components. We present CORD, a general framework for conf"
+  },
+  {
+    "id": "2610.31355v1",
+    "title": "Muffin - A Shared Memory Buffer for Asynchronous AI Agents",
+    "authors": "Ping-Lin Kuo, Suman Navaratnarajah, Christian Frey, Gresa Shala, Josif Grabocka",
+    "url": "https://arxiv.org/abs/2610.31355v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.AI",
+      "cs.MA"
+    ],
+    "published": "2026-10-22",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/muffin-shared-memory-buffer",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.31404v1",
+    "title": "AgentPhishing: A Benchmark of LLM Email Agents Under Adaptive Attack",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ],
+    "utility_score": 0.98,
+    "summary": "Computer-use agents increasingly handle private information and act on users' behalf across desktop and web applications, including email. Phishing therefore poses privacy and security risks that depend not only on whether agents recognize malicious messages, but also on how they respond. Existing p",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/security-privacy/agentphishing-benchmark-llm-email",
+    "skill_category": "security-privacy"
+  },
+  {
+    "id": "2610.31624v1",
+    "title": "Questioning Instrumental Convergence in RLVR: Checkpoint Evidence from OLMo-3",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "utility_score": 0.97,
+    "summary": "Instrumental convergence is often invoked as a general reason to expect capable agents to acquire or express power-seeking subgoals: self-preservation, resource acquisition, deception, or resistance to oversight which poses an important threat to the society. For LLMs, reinforcement learning is the ",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/questioning-instrumental-convergence-rlvr",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.31376v1",
+    "title": "Certified Execution Harness for Agentic AI: Safe and Least-Intrusive Petri-Net Supervisory Control Between Reasoning and Action",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.AI",
+      "eess.SY"
+    ],
+    "utility_score": 0.95,
+    "summary": "This paper studies the problem of safe tool execution for large language model (LLM) agents under prompt injection. Using Petri nets, we formalize the execution harness between the LLM and its tools as a supervisory control problem, in which marks represent capabilities, approvals and budgets. Since",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/certified-execution-harness-agentic",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.31511v1",
+    "title": "DuoCook: An Overcooked-Inspired Benchmark for Visual Planning and Coordination",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.AI"
+    ],
+    "utility_score": 0.94,
+    "summary": "Coordinating two players in a cooking task requires a vision-language agent to track changing scene states, sequence recipe steps, and allocate shared resources under a time budget. We introduce an Overcooked-inspired benchmark for evaluating these capabilities in Unreal Engine environments construc",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/duocook-overcooked-inspired-benchmark",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.31572v1",
+    "title": "On the Token Collapse Phenomenon in Textual Graph Soft Prompting",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.LG"
+    ],
+    "utility_score": 0.91,
+    "summary": "Recent methods for injecting graph structure into LLM prompts include graph soft prompting, in which a graph neural network (GNN) learns graph-specific tokens that capture relational information among entities in textual prompts. G-Retriever combines graph soft prompts with a verbalized description ",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/token-collapse-phenomenon-textual",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.31438v1",
+    "title": "DIAL: Steerable Language Models with Distilled Instruction-Adherence Levels",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.AI",
+      "cs.LG"
+    ],
+    "utility_score": 0.91,
+    "summary": "When a user says \"Keep it short\", how short should the LLM's response be? More generally, users and applications require different levels of instruction adherence, but prompting does not reliably provide fine-grained control over them. We therefore study \"steerable language models\" that provide fine",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/dial-steerable-language-models",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.31495v1",
+    "title": "SABLE: Scalable Affine Bayesian Latent-space Exploration",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ],
+    "utility_score": 0.89,
+    "summary": "Complex objects such as engineering designs and proteins are often difficult to optimise because their design spaces exhibit high-dimensional structure and objective evaluations are expensive. Generative models provide continuous latent representations, but their latent spaces can have thousands to ",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/ai-safety-eval/sable-scalable-affine-bayesian",
+    "skill_category": "ai-safety-eval"
+  },
+  {
+    "id": "2610.31314v1",
+    "title": "When LLMs Forget What They Believe: Characterizing State Integrity Collapse in Long-Horizon Dialogues",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "utility_score": 0.89,
+    "summary": "Large language models can repeat an instruction while failing to keep obeying it. We study this recall-compliance dissociation in long-horizon dialogue and define State Integrity Collapse: a model preserves a stated constraint in memory but stops applying it to later turns. We introduce StateTrack-B",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/when-llms-forget-what",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.31576v1",
+    "title": "What Makes a Good Unmasking Policy? A Controlled Study of Learned Unmasking in Diffusion Language Models",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.AI"
+    ],
+    "utility_score": 0.87,
+    "summary": "Masked diffusion language models generate tokens in parallel, but their efficiency depends on which predictions are committed. Learned unmasking policies improve the speed--accuracy trade-off, yet differ in supervision, inputs, and capacity, obscuring which choices matter. We view supervised policie",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/what-makes-good-unmasking",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.31544v1",
+    "title": "Same Luck, Different Choice: Twin-World Credit Assignment for Agentic Reinforcement Learning",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.LG"
+    ],
+    "utility_score": 0.87,
+    "summary": "Agentic reinforcement learning rewards a complete episode, yet the policy needs credit for every decision inside it. Counterfactual branching estimates this credit by re-running the episode after an alternative decision, but the branch draws its sampling noise independently of the factual episode, s",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/same-luck-different-choice",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.31429v1",
+    "title": "PhysTrace: Interpretable Temporal Evaluation of Physical Consistency in Video Generative Models",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.AI",
+      "cs.RO"
+    ],
+    "utility_score": 0.87,
+    "summary": "World action models increasingly rely on pretrained video models assumed to capture physical dynamics for prediction, planning, and action generation. Existing evaluations assess plausibility, probe representations, or measure predictive surprise, but rarely identify which history-conditioned physic",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/phystrace-interpretable-temporal-evaluation",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.31656v1",
+    "title": "METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning",
+    "date": "2026-10-22",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "utility_score": 0.85,
+    "summary": "Meta-reinforcement learning aims to train agents that adapt quickly to unseen tasks from limited interaction, but this requires representing task evidence over long interaction histories. Classical recurrent agents compress experience into hidden states, while transformer-based agents retrieve from ",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/metta-memory-enhanced-test",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.31350v1",
+    "title": "Graph-Recurrent Learning of Emergent Collective Dynamics",
+    "date": "2026-10-22",
+    "categories": [
+      "cond-mat.str-el",
+      "cond-mat.stat-mech",
+      "cs.LG"
+    ],
+    "utility_score": 0.85,
+    "summary": "Collective ordering in correlated electron systems emerges from microscopic dynamics, yet the evolution of observable textures need not admit a closed, memoryless description. We introduce a graph-recurrent neural network (GRNN) framework that learns such emergent dynamics directly from trajectories",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/physics-math/graph-recurrent-learning-emergent",
+    "skill_category": "physics-math"
   }
 ]
