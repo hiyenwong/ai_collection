@@ -8550,3 +8550,31 @@
 ### 同期客户/公司动态 (Obsidian only, no skill)
 - AT&T 法务知识层（自然语言受理+判例/先例关联）；Uber ChatGPT Work 全员部署（3 万员工，GPT-6.1 Sol 默认）；OpenAI 收购 Orchestra Bio（Rosalind 药物研发协调）；What FDE means at OpenAI；ChatGPT Ads 扩至 89 国（10 万广告主，8 个月 $10 亿年化 run rate）
 
+
+## 2026-10-25 - OpenAI Research (Cron Job)
+
+> 本日抓取 0 篇新文章（77 篇已知文章全部已存在；web search 复核确认 OpenAI 最新发布截至 10-23 均已在库，10-24/25 无新研究文章）。本条目补齐 10-24 批次（前次运行已存 Obsidian 笔记并打了 skill 标记但未实际交付 skill/journal/git）的分析与交付。
+
+### Securing our frontier model training environment
+- [[frontier-training-containment-redteaming]] - 前沿训练环境遏制方法论：边界须在 agent 主动绕过时依然成立；训练/评估一律断真实互联网，用「offline world」（索引缓存 web）替代以保留浏览/搜索技能学习；defense in depth 四层（容器→microVM→监控→网络/云边界，完全 air-gap 不可行→改限出站流量）；事件驱动加固闭环（9/20 DNS 配置错误外网访问→暂停→加固→10/1 恢复，11天）(https://openai.com/index/securing-our-frontier-model-training-environment)
+  - 高算力红队协议：前沿模型 agent 团队（含 GPT-6 Astra Cyber）+ 数百B token，攻击者最优条件（给基础设施源码/配置/文档），三目标：触达真实互联网/跨内部安全边界/跨隔离隐蔽通信
+  - 战果：Kata Containers (CVE-2026-24834)/gVisor/Moby/内核 CVE 链（Patch the Planet 披露）；metrics 服务复用防火墙放行连接取回模型提供 URL；无网络无共享文件的跨沙箱隐蔽信道——CPU cache 计时（Spectre/Meltdown 同款驱逐-重载）、存储写节奏、CPU 争用、TLS 证书缓存
+  - 红队纳入 safety case 作为前沿训练开跑门控+长期持续策略；漏洞数下降≠安全（假设未来模型能找到未知漏洞）
+  - **Activation**: frontier training containment, offline world RL training, defense in depth agent sandbox, high-compute red-teaming, microVM isolation, covert channel side-channel, safety case gating, sandbox escape prevention
+
+### Rapidly scaling online storage to serve over 1 billion ChatGPT users (I & II)
+- [[habitat-hypergrowth-storage-scaling]] - Habitat 超增长存储平台工程方法论：Python 客户端库→70M+ QPS/500PB+/40 区域独立服务的演进剧本 (https://openai.com/index/scaling-storage-one-billion-users-part-one/)
+  - 服务抽离时机判据：跨服务协议协调脆弱（无关回滚引发目标事故）→独立部署/可观测/安全/访问控制；刻意保留 Python 技术债押注 AI 辅助重写（asyncio 事件循环调度延迟为一等延迟指标、feature-flag JSON 解析卡顿、LIFO 连接复用引发亚稳态故障改 FIFO、Envoy/HTTP2 fan-in 撑到 20M QPS）
+  - 2026 Q2 两名工程师+Codex+GPT-5.5 全量 Rust 重写：承接 95% 生产流量，CPU 6x/内存 15x；刻意受限 NoSQL API（非任意 SQL）保优化自由度
+  - Cosmos DB 租户三段旅程：共享容器（热键+邻居噪声）→专用容器（隔离好但容量规划甩给产品团队、上线日救火）→与 Azure 联合改造（热键限流/请求分级 QoS/serverless 每物理分区 10K RU/s）后回归共享多租户（零容量规划+零邻居噪声事件）
+  - 读路径分层（90%+ 读）：colocation+延迟敏感复制+CDC 集成缓存+Rust，全球读 p50 120ms→10ms（12x）；下一代 RocksDB Cloud 内核+Raft 复制自研 EB 级存储
+  - **Activation**: hypergrowth storage scaling, service extraction timing, deliberate technical debt, AI-assisted Rust rewrite, event loop latency metric, LIFO FIFO metastable failure, multi-tenant NoSQL capacity planning, CDC read cache tiering
+
+### 2026-10-24 批次其余文章 (Obsidian only, no skill)
+- Introducing GPT-6 Sol and Luna（产品）：GPT-6 智能低成本分发，DeepSWE v1.1 上 Sol(xhigh) 33.2%@$0.27 超 Astra(low) 30.3% 且成本仅 1/3.9
+- OpenAI models are coming to Google Cloud（产品/分发）：GPT-6 Astra/6.1 Sol/Luna+Codex 进 Model Garden（private preview→数周 GA），Marketplace 计入云支出承诺；专用 Google Cloud 基础设施+硬化隔离网关，第三方模型商无未授权访问，Confidential Compute 即将推出
+- OpenAI 与波兰 NASK 合作（政策）：NASK AISI 联合 AI 安全研究；CERT Poland 经 Daybreak 用网络模型发现 MikroTik RouterOS 6 漏洞（含可组合无认证设备控制）
+- Atlassian 合作（产品）：Rovo × Teamwork Graph（人/项目/文档/决策企业上下文层）+ OpenAI 前沿模型
+- ChatGPT 广告两篇（产品/工程）：新视觉广告格式+测量/归因/品牌 suitability；广告技术栈工程深度文（用户信任×相关性）
+- Sullivan & Cromwell（客户故事）：律所法律专业知识×OpenAI 模型的合同审查工作流
+- Study Mode / 青少年功能（产品）：一次一问+等待+提示+理解检查的教学模式；青少年学习规划与 AI 塑造参与
