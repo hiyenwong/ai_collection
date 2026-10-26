@@ -1,5 +1,21 @@
 # AI Collection Index
 
+## 2026-10-27 - Neuroscience Research (Cron Job)
+
+### From Heterogeneity to Function: Enhanced Modular Dynamic Range in Hierarchical Brain Networks
+- [[modular-dynamic-range-brain-networks]] - Sparse hierarchical-modular networks self-organize into extended Griffiths-like criticality + a hierarchy of intrinsic timescales; new "modular dynamic range" metric shows local stimulus can BEAT global (peak at intermediate level l'=h/2) — functional specialization without fine-tuning (arXiv: 2610.32328)
+  - HMN law p_d = a*phi^(d+1) at smallest-common-container depth d; analytic E[k] reproduces paper Table 2 (1.9/7.7/198); SIS automaton, lambda = rho(pA); modular coordinates give per-module time series at every level
+  - Key results: firing-rate heterogeneity (CV 0.67 vs 0.068) with coexisting subcritical/self-sustained modules; INT grows with hierarchical level; Delta_GRLS > Delta_GRGS for heterogeneous nets (reversed for homogeneous); unstimulated modules also gain Delta (distributed benefit)
+  - Replay at N=486 verified construction law + CV ordering + Delta protocol (19.6->53.7 dB as lambda crosses extended regime); the local>global flip needs paper-scale N=13122 (honest finite-size caveat)
+  - **Activation**: dynamic range, hierarchical-modular networks, Griffiths phase, intrinsic timescales, critical brain, SIS model, heterogeneity, functional specialization, brain stimulation extent
+
+### ZENO: Nonlinear filtering with Zakai Equation Neural Operators
+- [[zakai-neural-operator-filtering]] - Physics-informed DeepONet learns the solution OPERATOR of the Zakai SPDE (Fokker-Planck propagation + multiplicative likelihood jumps): causal GRU context -> mesh-free unnormalized posterior, EM fit of drift/diffusion/Stiefel readout; reaches the Bayes-optimal filter ceiling and recovers C. elegans locomotion limit cycles (arXiv: 2610.32926)
+  - E step: FP-residual loss + Zakai jump cross-entropy + IC loss on defensive-mixture collocation points; self-normalized IS for the unnormalized density; posterior means via MALA. M step order: Procrustes readout -> drift on increments -> diffusion -> noise. Subspace-ID init.
+  - Results: double-well/VDP at exact-filter ceiling (Lorenz -0.005 NRMSE); drift learning parity with gpSLDS/SDE-matching; C. elegans whole-brain calcium recapitulates forward/backward limit cycles, no posterior-collapse (no KL-to-prior)
+  - Replay: grid Zakai solver vs 20k-particle filter RMSE=0.0035, bimodal posterior modes at +/-1 under weak obs, log-evidence -69.4; FP grid stepping needs dt<=dz^2/g^2 (donor-cell fluxes, no wrap-around)
+  - **Activation**: Zakai equation, nonlinear filtering, neural operator, PINO, DeepONet, latent SDE, state inference, EM, Fokker-Planck, calcium imaging, neural dynamics
+
 ## 2026-10-26 - OpenAI Research (Cron Job)
 
 > Daily OpenAI-research sync. Fetcher's static list (77 articles) was stale: live sitemap diff surfaced 32 research articles missing from Obsidian (backfilled as notes, e.g. browsecomp, gdpval, frontierscience, model-spec posts, Sora 2, Aardvark). Deep-read 4 methodology-rich posts and extracted skills. Cloudflare blocks openai.com content fetch; sitemap.xml/research/ + news/rss.xml supply metadata.
