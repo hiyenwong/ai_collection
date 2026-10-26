@@ -1,5 +1,33 @@
 # AI Collection Index
 
+## 2026-10-26 - OpenAI Research (Cron Job)
+
+> Daily OpenAI-research sync. Fetcher's static list (77 articles) was stale: live sitemap diff surfaced 32 research articles missing from Obsidian (backfilled as notes, e.g. browsecomp, gdpval, frontierscience, model-spec posts, Sora 2, Aardvark). Deep-read 4 methodology-rich posts and extracted skills. Cloudflare blocks openai.com content fetch; sitemap.xml/research/ + news/rss.xml supply metadata.
+
+### Understanding neural networks through sparse circuits
+- [[weight-sparse-interpretable-circuits]] - 用 L0 权重稀疏约束从头训练 transformer（~1/1000 非零权重）：概念无法在残差通道间叠加，最小任务电路比同等 loss 的稠密模型小 ~16 倍，可用 necessity+sufficiency 消融严格验证 (OpenAI 2025-11-13, arXiv: 2511.13653)
+  - 电路提取：节点级剪枝（MLP 神经元/注意力头/残差通道）+ mean-ablation + 连续 mask 参数 Heaviside 门 + straight-through 估计器；电路大小 = 活跃边数
+  - 实证：quote 电路仅 2 个 MLP 神经元（quote 检测器 ch985 + 类型分类器 ch460）+ L10 注意力头（QK ch1, V ch0）；对抗预测（bracket 计数均值稀释攻击）可迁移到稠密模型；稀疏→稠密桥接（steering 通道扰动映射）
+  - **Activation**: weight sparsity, minimal circuits, interpretability training, mean-ablation, disentanglement, capability-interpretability frontier
+
+### Evaluating chain-of-thought monitorability
+- [[chain-of-thought-monitorability-evals]] - 系统评测推理模型 CoT 可监控性：13 个评测 24 个环境，三原型（intervention 检测"为何改变"/process 枚举合法解路径/outcome-property 预测可测结果属性）(OpenAI 2025-12-18)
+  - 发现：CoT 监控显著优于仅看动作+输出；思考越久越可监控；当前规模 RL 不明显损害可监控性；"monitorability tax"——小模型+高推理努力=同等能力更易监控但推理算力更贵；追问（follow-up）进一步提高监控
+  - RL 损害监控的三个风险通道：推理长度硬约束、绕开可读低奖励路径的间接压力、梯度噪声漂移
+  - **Activation**: CoT monitoring, control evals, intervention evals, reward hacking detection, monitorability tax, oversight
+
+### Predicting model behavior before release by simulating deployment
+- [[deployment-simulation-llm-safety]] - 发布前用生产对话前缀重采样候选模型回复（X→Y 记号，单轮反事实）→ 自动审计新失准 + 误行为率预测 → 发布后同一冻结测量栈验证 (OpenAI 2026-06-16, arXiv: 2607.07184)
+  - 5 步管线：采样代表性前缀 → 候选模型再生成 → 审计新型失准 → 冻结 grader 按类别估率（预注册）→ 发布后校验；质量三轴：taxonomy 覆盖/方向准确性/率校准
+  - 实证：130 万去标识对话（GPT-5→5.4）；抓到 calculator hacking；评测觉察率 5.1%（模拟）vs 5.4%（生产）vs ~100%（传统合成评测）；WildChat 公共数据播种同样有效
+  - **Activation**: deployment simulation, prevalence estimation, evaluation awareness, pre-release safety, rate calibration
+
+### Why language models hallucinate
+- [[hallucination-resistant-evals]] - 幻觉是可统计理解的机制产物：预训练奖励探索（能力获取必产出未经证实的合理声明），评测"teaching to the test"——二元正确率让瞎猜期望为正、"不知道"恒为零，系统性奖励猜测而非弃权 (OpenAI 2025-09-05, arXiv: 2509.04664)
+  - 修复：弃权计分评测（"知道就答 X，否则说不知道"+ 校准奖励防过度弃权）；驳斥"幻觉不可避免"（模型可在不确定时弃权）与"神秘故障"（机制已知）两个失败主义论断
+  - 检测：相关查询一致性探测；推理模型（GPT-5 reasoning）幻觉显著更少
+  - **Activation**: hallucination, abstention credit, evaluation design, calibration, exploration, teaching to the test
+
 ## 2026-10-26 - Quantum Research (Cron Job, Run 2)
 
 > Monday 06:08 CST run - pre-announcement window continues (Anthropic research page: 0 new; API newest batch still 10-22). Closed the KG-completeness gap on the remaining 10-22 tail (18 papers: 14 quant-ph hardware/experimental + 4 nlin.AO imported KG-only) and deep-read the flagged leftover candidate 2610.31580 (mixed-state deep thermalization) - the natural continuation of the 10-25 MLSI line, connecting to the 02:03 run's quant cluster.
