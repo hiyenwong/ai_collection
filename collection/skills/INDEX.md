@@ -1,3 +1,10 @@
+## 2026-10-26 - Dream/Sleep Research (Cron Job)
+
+### Online Preplay and Offline Replay Optimize Action Selection in a Closed-Loop Navigation Model
+- [[closed-loop-replay-action-selection]] - 单一CA3脉冲网络以共同机制(噪声+E-I平衡)生成preplay/离线重放/扩散三模式,各自优化动作选择 (arXiv: 2610.26424)
+  - 核心要点 1: 在线preplay发现捷径(2D流形嵌入1D线吸引子,环吸引子bump移向未来动作向量平均);离线重放巩固最优位置-动作序列,收益非单调
+  - 核心要点 2: 扩散重放呈布朗运动(MSD∝t)并泛化动作映射到新起点(或解释REM头方向扩散);机制=BT分岔临界雪崩(τ=1.55,α=1.7,γ=1.23)+对称纯增强STDP+乘性突触归一化
+  - **Activation**: hippocampal replay, preplay, memory consolidation, CA3 criticality, Bogdanov-Takens, sharp-wave ripple, navigation policy generalization
 
 
 ## 2026-10-22 - High-Utility arXiv Papers (Cron Job)
