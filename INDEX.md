@@ -1,5 +1,18 @@
 # AI Collection Index
 
+## 2026-10-26 - Quantum Research (Cron Job, Run 2)
+
+> Monday 06:08 CST run - pre-announcement window continues (Anthropic research page: 0 new; API newest batch still 10-22). Closed the KG-completeness gap on the remaining 10-22 tail (18 papers: 14 quant-ph hardware/experimental + 4 nlin.AO imported KG-only) and deep-read the flagged leftover candidate 2610.31580 (mixed-state deep thermalization) - the natural continuation of the 10-25 MLSI line, connecting to the 02:03 run's quant cluster.
+
+### Mixed State Deep Thermalization under Generic Quantum Errors
+- [[deep-thermalization-choi-ensemble]] - Dilute local errors do not destroy deep thermalization - they select it: the mixed-state projected ensemble universally converges to the channel-induced ensemble (CIE), a Born-weighted correlated Wishart rho(X)=XMX^dagger built from a Ginibre X and the normalized Choi state M of the error process; the limit depends only on the Choi spectrum (arXiv: 2610.31580)
+  - Anchors: unitary error -> M rank-1 -> pure-state Haar ensemble; complete depolarization -> M=I/d^2 -> induced/Hilbert-Schmidt ensemble (purity (K+N)/(KN+1)); partial depolarization interpolates via Choi spectrum; equal spectra share the limit but transients retain input-output structure
+  - Established analytically in dual-unitary circuits (exponential-in-time convergence, moment-dependent prefactors = design time vs asymptotic rate), global Haar dynamics (Stinespring embeds Choi state; Lipschitz bound ||rho^(k)-rho'^(k)||_1 <= (2k-1)||rho-rho'||_1; concentration of measure), large-d local Haar circuits; numerics (kicked Ising, qubit circuits) show D_B^-1/2 ~ 2^(-N_B/2) decay
+  - Protocols: P1 NISQ emergent-randomness benchmarking with CIE instead of Haar reference; P2 Choi-spectrum noise spectroscopy from conditional-state distributions (error times/locations unknown; joint Choi spectrum for several well-separated errors; ground-truth via engineered mid-circuit partial resets); P3 correlated random mixed-state generator rho=V Lambda V^dagger + Ginibre
+  - Pitfalls: dilute errors only (finite density open); complete measurement of B with all outcomes retained; replica-continuation assumption (r=k+q copies, continue q->1-k); spectrum-universality holds only for the limit, not transients
+  - **Activation**: deep thermalization, projected ensemble, Choi state, mixed state, noise spectroscopy, Wishart ensemble, scrambling, measurement-conditioned states, NISQ benchmarking
+  - Tests 4/4 passed (60k-sample MC): unitary->Haar 2nd-moment formula to 0.0018; depolarized purity 0.4286 = exact (K+N)/(KN+1) (Sommers-Zyczkowski, also verified analytically at (2,2) via eigenvalue density); spectrum invariance to 0.0005; interpolation E[rho]=I/D_A with monotone purity for all p
+
 ## 2026-10-26 - Quantum Research (Cron Job)
 
 > Monday 02:03 CST run - pre-announcement window (RSS empty over weekend; API newest quant-ph = 10-22 batch). Deep-read pick from the un-shortlisted 10-22 quant-ph tail: 2610.31115 (magic-state distillation limits, Gaggioli & Marecek). Same run backfilled 14 neuro + 3 nlin papers whose skills existed but KG entities were missing, and imported 10 fresh KG-only quant/nlin papers.
