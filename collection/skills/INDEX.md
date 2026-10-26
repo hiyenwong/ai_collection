@@ -6,6 +6,59 @@
   - 核心要点 2: 扩散重放呈布朗运动(MSD∝t)并泛化动作映射到新起点(或解释REM头方向扩散);机制=BT分岔临界雪崩(τ=1.55,α=1.7,γ=1.23)+对称纯增强STDP+乘性突触归一化
   - **Activation**: hippocampal replay, preplay, memory consolidation, CA3 criticality, Bogdanov-Takens, sharp-wave ripple, navigation policy generalization
 
+## 2026-10-26 - High-Utility arXiv Papers (Cron Job)
+
+
+### RobustRLlib: A Unified Library and Benchmark for Robust Reinforcement Learning Algorithms
+- [[robustrllib-a-unified-library-and-benchmark-for-robust-reinf]] - Robust reinforcement learning (RL) is critical for reliable real-world deployment, where policies may fail under diverse shifts and disruptions. Existing robust RL algorithms offer a rich set of mecha... (arXiv: 2610.32971v1)
+  - Category: multi-agent-rl
+
+
+### A Tutorial on Physics Constrained Machine Learning for Hybrid Modeling, Optimization, and Control
+- [[a-tutorial-on-physics-constrained-machine-learning-for-hybri]] - Physics-constrained machine learning (PCML) integrates domain knowledge, first-principles, and physical constraints into AI/ML models. In this work, we present a step-by-step tutorial of a modular PCM... (arXiv: 2610.32914v1)
+  - Category: neuroscience
+
+
+### Green Code or Costly Code? Evaluating the Energy Costs of Iterative LLM-Based Code Optimizations
+- [[green-code-or-costly-code-evaluating-the-energy-costs-of-ite]] - Large Language Models (LLMs) are increasingly used to optimize code for performance. This practice often assumes that improvements in execution speed naturally translate into overall lower energy cons... (arXiv: 2610.32891v1)
+  - Category: nlp-llm
+
+
+### U-NeXt: General-purpose event detection for neonatal EEG
+- [[u-next-general-purpose-event-detection-for-neonatal-eeg]] - We developed U-NeXt, a general framework for neonatal electroencephalography (EEG) event detection based on semantic segmentation. Its convolutional encoder-decoder directly segments individual channe... (arXiv: 2610.32811v1)
+  - Category: neuroscience
+
+
+### ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents
+- [[actionrag-evidence-refining-graph-diffusion-for-long-term-me]] - LLM agents need long-term memory that can recover precise and mutually consistent evidence from growing interaction histories, particularly when answers depend on relations among facts rather than iso... (arXiv: 2610.32752v1)
+  - Category: multi-agent-rl
+
+
+### SP-Guide: Enhancing Aerial Vision-Language Navigation with Spatial Priors
+- [[sp-guide-enhancing-aerial-vision-language-navigation-with-sp]] - Aerial vision-language navigation (AVLN) requires a UAV to reach a language-described target from partial egocentric observations while reasoning over large outdoor scenes. Existing approaches typical... (arXiv: 2610.32697v1)
+  - Category: nlp-llm
+
+
+### DT-JEPA: Learning to Predict Future Representations for Decision-Making
+- [[dt-jepa-learning-to-predict-future-representations-for-decis]] - Decision Transformer (DT) has demonstrated strong performance in various offline reinforcement learning (RL) tasks by conditioning action generation on expected future returns and historical trajector... (arXiv: 2610.32657v1)
+  - Category: multi-agent-rl
+
+
+### InferSlice: A Reference Architecture for SLO-driven LLM Inference over a Telco Wide-Area Network
+- [[inferslice-a-reference-architecture-for-slo-driven-llm-infer]] - LLM inference is increasingly deployed as a core service for enterprise and interactive applications, but sovereignty, compliance, latency and resource-locality requirements can limit the suitability ... (arXiv: 2610.32638v1)
+  - Category: multi-agent-rl
+
+
+### LGMT: A Tool for Testing the Logical Reasoning Reliability of LLMs
+- [[lgmt-a-tool-for-testing-the-logical-reasoning-reliability-of]] - Large Language Models (LLMs) increasingly serve as reasoning components in modern software systems, yet a model that answers a logical query correctly can contradict itself when the same problem is re... (arXiv: 2610.32627v1)
+  - Category: multi-agent-rl
+
+
+### Tool-Calling LLM Agents Under Realistic MCP Faults: Scale Does Not Purchase Fault Tolerance
+- [[tool-calling-llm-agents-under-realistic-mcp-faults-scale-doe]] - LLM agents increasingly rely on external tools exposed via the Model Context Protocol (MCP), yet current benchmarks assume tools respond correctly and on time, leaving agent resilience to realistic to... (arXiv: 2610.32555v1)
+  - Category: multi-agent-rl
+
+
 
 ## 2026-10-22 - High-Utility arXiv Papers (Cron Job)
 

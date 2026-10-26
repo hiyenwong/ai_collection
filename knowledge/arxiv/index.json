@@ -7857,7 +7857,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,
@@ -10878,7 +10878,7 @@
   {
     "id": "2610.06726v1",
     "title": "Decoupling Time and Space: A Temporally Conditioned Refinement for EEG Source Imaging",
-    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert Müller, Shinichi Nakajima",
+    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert M\u00fcller, Shinichi Nakajima",
     "url": "https://arxiv.org/abs/2610.06726v1",
     "utility": 0.87,
     "categories": [
@@ -12164,7 +12164,7 @@
   {
     "id": "2610.22099v1",
     "title": "TIPS: A Tiny Inference-time Policy for Scaling in Diffusion Language Models",
-    "authors": "Ya-Shi Zhang, Jian Tang, Pierre-André Noël, Oleksiy Ostapenko",
+    "authors": "Ya-Shi Zhang, Jian Tang, Pierre-Andr\u00e9 No\u00ebl, Oleksiy Ostapenko",
     "url": "https://arxiv.org/abs/2610.22099v1",
     "utility": 0.92,
     "categories": [
@@ -13158,5 +13158,125 @@
     "summary": "Collective ordering in correlated electron systems emerges from microscopic dynamics, yet the evolution of observable textures need not admit a closed, memoryless description. We introduce a graph-recurrent neural network (GRNN) framework that learns such emergent dynamics directly from trajectories",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/physics-math/graph-recurrent-learning-emergent",
     "skill_category": "physics-math"
+  },
+  {
+    "id": "2610.32971v1",
+    "title": "RobustRLlib: A Unified Library and Benchmark for Robust Reinforcement Learning Algorithms",
+    "url": "http://arxiv.org/abs/2610.32971v1",
+    "published": "2026-10-23T17:57:22Z",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "utility": 0.8500000000000003,
+    "skill_path": "multi-agent-rl/robustrllib-a-unified-library-and-benchmark-for-robust-reinf"
+  },
+  {
+    "id": "2610.32914v1",
+    "title": "A Tutorial on Physics Constrained Machine Learning for Hybrid Modeling, Optimization, and Control",
+    "url": "http://arxiv.org/abs/2610.32914v1",
+    "published": "2026-10-23T17:17:11Z",
+    "categories": [
+      "cs.LG",
+      "cs.ET"
+    ],
+    "utility": 0.8500000000000003,
+    "skill_path": "neuroscience/a-tutorial-on-physics-constrained-machine-learning-for-hybri"
+  },
+  {
+    "id": "2610.32891v1",
+    "title": "Green Code or Costly Code? Evaluating the Energy Costs of Iterative LLM-Based Code Optimizations",
+    "url": "http://arxiv.org/abs/2610.32891v1",
+    "published": "2026-10-23T16:58:01Z",
+    "categories": [
+      "cs.SE",
+      "cs.AI"
+    ],
+    "utility": 0.8500000000000003,
+    "skill_path": "nlp-llm/green-code-or-costly-code-evaluating-the-energy-costs-of-ite"
+  },
+  {
+    "id": "2610.32811v1",
+    "title": "U-NeXt: General-purpose event detection for neonatal EEG",
+    "url": "http://arxiv.org/abs/2610.32811v1",
+    "published": "2026-10-23T15:47:15Z",
+    "categories": [
+      "cs.LG",
+      "eess.SP",
+      "physics.med-ph"
+    ],
+    "utility": 0.8500000000000003,
+    "skill_path": "neuroscience/u-next-general-purpose-event-detection-for-neonatal-eeg"
+  },
+  {
+    "id": "2610.32752v1",
+    "title": "ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents",
+    "url": "http://arxiv.org/abs/2610.32752v1",
+    "published": "2026-10-23T14:59:37Z",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "utility": 0.8500000000000003,
+    "skill_path": "multi-agent-rl/actionrag-evidence-refining-graph-diffusion-for-long-term-me"
+  },
+  {
+    "id": "2610.32697v1",
+    "title": "SP-Guide: Enhancing Aerial Vision-Language Navigation with Spatial Priors",
+    "url": "http://arxiv.org/abs/2610.32697v1",
+    "published": "2026-10-23T14:21:58Z",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "utility": 0.8500000000000003,
+    "skill_path": "nlp-llm/sp-guide-enhancing-aerial-vision-language-navigation-with-sp"
+  },
+  {
+    "id": "2610.32657v1",
+    "title": "DT-JEPA: Learning to Predict Future Representations for Decision-Making",
+    "url": "http://arxiv.org/abs/2610.32657v1",
+    "published": "2026-10-23T14:04:18Z",
+    "categories": [
+      "cs.LG"
+    ],
+    "utility": 0.8500000000000003,
+    "skill_path": "multi-agent-rl/dt-jepa-learning-to-predict-future-representations-for-decis"
+  },
+  {
+    "id": "2610.32638v1",
+    "title": "InferSlice: A Reference Architecture for SLO-driven LLM Inference over a Telco Wide-Area Network",
+    "url": "http://arxiv.org/abs/2610.32638v1",
+    "published": "2026-10-23T13:51:02Z",
+    "categories": [
+      "cs.DC",
+      "cs.AI"
+    ],
+    "utility": 0.8500000000000003,
+    "skill_path": "multi-agent-rl/inferslice-a-reference-architecture-for-slo-driven-llm-infer"
+  },
+  {
+    "id": "2610.32627v1",
+    "title": "LGMT: A Tool for Testing the Logical Reasoning Reliability of LLMs",
+    "url": "http://arxiv.org/abs/2610.32627v1",
+    "published": "2026-10-23T13:41:43Z",
+    "categories": [
+      "cs.AI"
+    ],
+    "utility": 0.9000000000000004,
+    "skill_path": "multi-agent-rl/lgmt-a-tool-for-testing-the-logical-reasoning-reliability-of"
+  },
+  {
+    "id": "2610.32555v1",
+    "title": "Tool-Calling LLM Agents Under Realistic MCP Faults: Scale Does Not Purchase Fault Tolerance",
+    "url": "http://arxiv.org/abs/2610.32555v1",
+    "published": "2026-10-23T12:35:51Z",
+    "categories": [
+      "cs.SE",
+      "cs.AI"
+    ],
+    "utility": 0.8500000000000003,
+    "skill_path": "multi-agent-rl/tool-calling-llm-agents-under-realistic-mcp-faults-scale-doe"
   }
 ]
