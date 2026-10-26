@@ -1,5 +1,23 @@
 # AI Collection Index
 
+## 2026-10-27 - CS + Quantum Research (Cron Job)
+
+### QuantumMatterExplorer: An Autonomous Agent for the Discovery of Quantum Many-Body Phases of Matter
+- [[agentic-phase-diagram-mapping]] - Single LLM deep-agent with persistent written plan, small expert-skills library, and a validation-gated 4-stage protocol (survey/refine/identify/scale) maps quantum phase diagrams from DMRG cross-checked against ED; reproduces known transitions and identifies Néel/Haldane/dimerized phases of an undocumented spin-1 chain within an 8h budget (arXiv: 2610.32001)
+  - Architecture: single deep agent over multi-agent state machine (info loss between agents, advantages vanish at matched token budgets); subagents serve as context offloading only - general-purpose bounded subtasks, data-analyst keeps bulk data out of main context, physics-critic reviews plan + conclusions from an isolated context
+  - Protocol: Stage 0 validation gate (reproduce known limit + ED cross-check before trusting any result) -> coarse survey at small L -> dense boundary refinement -> phase identification from order params/correlators/entanglement -> finite-size extrapolation with revisit-if-boundary-shifts rule
+  - Pitfalls verified in test: finite-N symmetric cat state requires <M^2>-type probes; w1-w0 in the ordered phase is the doublet splitting, not the excitation gap (gap-minimum locator biased); correct finite-size criticality locator is the scaled-observable crossing m2*L^(2*beta/nu)
+  - Test: full protocol replicated on TFIM via ED -> h_c = 0.9777 vs exact 1.0 (2.2% err, cross-pair drift 0.008); backend calibration: Qwen3.6-27B strongest, gpt-oss-120b failed DMRG even with the skill
+  - **Activation**: autonomous phase diagram, LLM agent numerical simulation, DMRG agent, persistent written plan, physics critic, finite-size scaling, survey-refine-identify-scale, long-horizon research agent
+
+### Enabling independent research on how people use Claude (Anthropic)
+- [[privacy-preserving-external-research-pilot]] - External researchers (Stanford SALT, Oxford HIP, METR) run independent studies on ~250K aggregate Claude conversations via Anthropic Insights: aggregate-only access, 4-domain review contract, proxy question calibration + shift caveat, what-not-how disclosure, third-party privacy audit (Anthropic, Aug 2026)
+  - Six rules: aggregate-only access; independence contract restricted to privacy/enablement/confidentiality/accuracy (publication free even if inconvenient); WildChat proxy calibration with explicit proxy-to-production distribution-shift warning; transparency-without-enablement (publish WHAT users attempted, never HOW they circumvented; <5% categories affected, every removal disclosed); Imperial College audit + explicit threat model; internal-external question overlap treated as independent replication
+  - Findings: >50% of conversations delegate consequential tasks (esp. legal/financial); ~3/4 human directs and adapts output; collaboration friction is often productive; newer models deliver larger real speedups and model time-estimates correlate with actual developer completion times
+  - Test: disclosure filter (what shared / how blocked / small-cell n<10 suppressed, all removals notified with reasons) and out-of-scope contract-request detector both PASS
+  - **Activation**: external research access, privacy-preserving usage data, aggregate statistics release, question wording calibration, proxy dataset shift, transparency without enablement, third-party privacy audit
+
+
 ## 2026-10-27 - Neuroscience Research (Cron Job)
 
 ### From Heterogeneity to Function: Enhanced Modular Dynamic Range in Hierarchical Brain Networks
