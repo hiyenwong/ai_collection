@@ -140,6 +140,21 @@
 
 ## 2026-10-27 - Neuroscience Research (Cron Job)
 
+### Sensorimotor behaviour from an untrained brain-and-nerve-cord connectome
+- [[untrained-connectome-sensorimotor-banc]] - BANC果蝇全连接组(172,433神经元)零参数拟合→LIF脉冲网络→NeuroMechFly体内95%导航成功率；重接线null 18%/开环重放2%三级因果对照；2%输入份额传导律；多巴胺门控KC→MBON抑制翻转趋避，联想性=KC活动的气味依赖性 (arXiv: 2610.33881)
+  - 构建原则fit-nothing：LIF参数全沿用Shiu et al.(τm=20ms,τs=5ms,阈值-45mV,不应期2.2ms,延迟1.8ms)，权重Δg=s·n·0.275mV(transmitter符号×突触数，谷氨酸按抑制)；自连接15.6万条靠不应期自然失效不删数据；两条固定规则接驳身体：气味不对称→ORN驱动率，6腿池脉冲(EMA平滑)→步态振幅，MBON效价平衡(趋近−回避)→转向缩放
+  - 预注册15条通路测试+度符号保持重接线孪生(只随机化伙伴身份)：供≥2%输入突触者传导、≤0.03%全不传导；巨纤维→TTMN缺间隙连接需手工加1条电突触等价；纯抑制动作(DNa01/DNa02转向靠压低本侧)需2-10Hz背景活动才现正确符号；蘑菇体损伤abolish趋近保留行走→缺陷定位MB输出，效价钉1.44完全挽救、同规模随机损伤(4,608神经元)则趋近保留
+  - 学习：6次配对KC→MBON权重0.513→0.138mV，趋近MBON 103→37 spikes/step、回避MBON不动，效价1.41→−0.33全部训练蝇避源(Cliff's δ=+1.00)；as-read网络KC无气味也67%活跃(触角叶PN↔胆碱能LN自持环路双稳态)→强化单独给同样贬值(非联想)；matched变体(g=0.15缩放105个胆碱能LN输出)KC只随气味放电→配对翻转效价(−0.53)而单独强化无效(1.38)——联想性取决于气码依赖性而非稀疏性；读出必须MBON平衡而非全和(非KC驱动MBON托底0.24永不翻转)
+  - **Activation**: connectome simulation, BANC, untrained spiking network, NeuroMechFly, rewiring null, input share rule, mushroom body valence, dopamine-gated depression, sensorimotor loop, Drosophila
+
+### Phase response approach to networked neural activity models with delays
+- [[delay-phase-reduction-neural-mass]] - 延迟耦合Wilson-Cowan网络的同步/反相带全由孤立节点相位相互作用函数H′的零点+相位滞后Ωρ决定，带以振荡周期T重复；同步稳定H′(−Ωρ)>0与拓扑无关；猕猴连接组亚稳峰恰在带缘稳定性边际消失处 (arXiv: 2610.35638)
+  - 双延迟分离定理：τ(节点内)进入节点动力学定ω与iPRC形状，ρ(节点间)约化后只作相位滞后——一切稳定性边界=H′零点平移Ωρ，带以周期T重复；参考节点(β=60,P=0.65,c1=c3=−1,c2=−0.4,T=1.6816)H′恰两零点χ*=−0.12/2.66，两个数字画出整张(ρ,状态)图；iPRC由延迟伴随方程dZ/dt=Z(t)−DF2ᵀ(t+τ)Z(t+τ)解，谐波平衡M=64(陡sigmoid需≥64模，谱收敛3e-7)
+  - 稳定性三定律：同步H′(−Ωρ)>0与拓扑无关(行归一化W=D⁻¹A保证存在，Λ₂只定收敛速率)；反相双簇存在⟺二分网络(Λn=2)稳定⟺H′(π−Ωρ)>0——猕猴Λn=1.42非二分永不反相，直接解释其"≈完全图"相似性；环twisted态(ψ=2πq/n)稳定⟺S_q=H′(ψ−Ωρ)+H′(−ψ−Ωρ)>0，6环q=1/q=2稳定带宽与同步同宽但随机初相1000次仅3-5%落入(小吸引盆，以往纯模拟漏检的原因)
+  - 全DDE验证：两节点窄窗±φ*镜像态(pitchfork出生)全ρ吻合，集体频率误差O(ε²)(拟合斜率1.94-1.98)至ε=0.2内<2%；6环ε≤0.1时93-96%网格点一致；猕猴(CoCoMac n=47)相位模型复现⟨R⟩与⟨S_R⟩，亚稳峰=H′(−Ωρ)→0带缘；"稀疏网络中度同步"=慢收敛+多稳态非独立机制
+  - 有效域：ε≪|μ₁|≈0.21(最慢非trivial Floquet指数)是实际失效耦合——远离边界分歧<7%(ε≤0.2)超过|μ₁|跳到40-50%；μ₁到Hopf包络(ε≈0.35-0.37线性化DDE最右根)间为相位簇/弱混沌区，需保留单慢实Floquet方向的相位-振幅约化(节点谱隔10倍以上，也应吸收O(ε²)频移)；协议dde23 reltol≤1e-6+protophase(u_j极值线性插值)+R/R_bip/R_q序参量
+  - **Activation**: phase reduction, delay-coupled neural mass, Wilson-Cowan, phase interaction function, harmonic balance, iPRC, synchrony bands, twisted states, metastability, graph Laplacian, macaque connectome
+
 ### From Heterogeneity to Function: Enhanced Modular Dynamic Range in Hierarchical Brain Networks
 - [[modular-dynamic-range-brain-networks]] - Sparse hierarchical-modular networks self-organize into extended Griffiths-like criticality + a hierarchy of intrinsic timescales; new "modular dynamic range" metric shows local stimulus can BEAT global (peak at intermediate level l'=h/2) — functional specialization without fine-tuning (arXiv: 2610.32328)
   - HMN law p_d = a*phi^(d+1) at smallest-common-container depth d; analytic E[k] reproduces paper Table 2 (1.9/7.7/198); SIS automaton, lambda = rho(pA); modular coordinates give per-module time series at every level
