@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-v1.0+-brightgreen.svg)](https://docs.openclaw.ai)
 [![Agents](https://img.shields.io/badge/Agents-27-blue.svg)](./collection/agents/)
-[![Skills](https://img.shields.io/badge/Skills-14388-purple.svg)](./collection/skills/)
+[![Skills](https://img.shields.io/badge/Skills-14412-purple.svg)](./collection/skills/)
 [![Contributors](https://img.shields.io/github/contributors/hiyenwong/ai_collection.svg)](https://github.com/hiyenwong/ai_collection/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -228,7 +228,7 @@ ai_collection/
 │
 ├── collection/            # Collected agents and skills
 │   ├── agents/            # Agent packages (27 agents)
-│   └── skills/            # Skill packages (38 category subdirectories)
+│   └── skills/            # Skill packages (32 category subdirectories)
 │       ├── neuroscience/          # Brain, EEG, cognitive science
 │       ├── quantum/               # Quantum computing, quantum ML
 │       ├── spiking-neuromorphic/  # SNNs, neuromorphic computing
@@ -256,7 +256,7 @@ ai_collection/
 
 ### Skill Category System
 
-Skills are organized into **38 category subdirectories**. New skills MUST be placed in `collection/skills/<category>/<skill-name>/`, never in the root skills directory. See [CONTRIBUTING.md](./CONTRIBUTING.md#skill-categories) for the full category list and selection rules.
+Skills are organized into **32 category subdirectories**. New skills MUST be placed in `collection/skills/<category>/<skill-name>/`, never in the root skills directory. See [CONTRIBUTING.md](./CONTRIBUTING.md#skill-categories) for the full category list and selection rules.
 
 **Enforcement policy:** All PRs containing new skills are reviewed before merge. Any skill found in the root `collection/skills/` directory (not in a category subdirectory) will block the merge. The reviewer will run `python scripts/classify_skills.py` to auto-classify, verify 0 flat skills remain, then merge.
 
