@@ -147,6 +147,22 @@
   - 最佳变体：5任务数据集用v2 MinMax、10任务用v3 Pro；高故障率(fR=5e-4)下精度仍距无故障基线−0.5%以内；开销≤2.3%延迟/<1%内存/~6.35%能耗；统计库每次NCL训练后更新以跟踪权重分布漂移
   - **Activation**: neuromorphic continual learning, TESS local rule, sub-network freezing, catastrophic forgetting, DRAM transient faults, detect-and-cure, bit-flip, edge AI, TIL
 
+### The limits of higher-order interactions in shaping chimera states
+- [[chimera-higher-order-neuronal-hypergraphs]] - FHN神经元超图(d=2/3/4阶交互)吸引化学+排斥电耦合的chimera相图：团投影可保留/压制/甚至反向新生chimera (arXiv: 2610.31997)
+  - 电耦合奇多项式 P^(d)（d奇=∏x_jℓ，d偶=x_j1²·∏x_jℓ，度p_d=d或d+1）满足P(x,…,x)=x^{p_d}使完全同步时耦合消失；化学耦合=乘积sigmoid ∏S(x_jℓ)·(x_s−xᵢ)，λ=10、θ_s=−0.25、x_s=2.0
+  - N=504 FHN（ε=0.05, a=0.5），RK4 dt=0.05，T=1500丢弃97%瞬态；SI(Gopal)分区Heaviside分类：(σe,σc)扫描中d增大收缩相干区、d=4非相干主导
+  - 反向现象：d=3在(−0.066,0.408)、d=4在(−0.025,0.18)处原超图完全非相干而团投影生成清晰chimera——推翻"团投影必压制chimera"，chimera由耦合函数形式+吸引/排斥平衡决定
+  - 生物映射：超边乘积化学耦合≈NMDA重合检测/树突超线性积分 vs 团投影线性求和≈AMPA线性整合；癫痫/unihemispheric睡眠临床动机
+  - **Activation**: chimera states, neuronal hypergraph, higher-order interactions, FitzHugh-Nagumo, clique projection, attractive-repulsive coupling, strength of incoherence, epilepsy
+
+### CFBrainAug: Modularity-Induced Counterfactual Brain Network Augmentation for Interpretable fMRI-based Autism Diagnosis
+- [[counterfactual-brain-network-augmentation]] - 标签翻转反事实脑网络增强统一数据增强与解释：对侧标签检索+三约束精修（模块数Ky Fan迹最小化k=8）+无分类器损失，SVM管线ABIDE I三站点超图深度模型且|∆A|自解释 (arXiv: 2610.32184)
+  - 三约束精修 L_ref=L_mod+λ1·L_topo+λ2·L_sem：模块数约束=min Tr(FᵀL_cfF)（Ky Fan=k最小Laplacian特征值和）、个体拓扑保持（归一化Laplacian特征值距离）、反事实语义一致性（‖Xcf−Xε‖F+BCE）；无分类器项——标签翻转来自对侧初始化（LFR仅66.9%软约束）
+  - 机制：标签翻转增强覆盖决策边界稀疏区→SelectKBest(K=100)+RBF-SVM(C=0.5)轻量管线胜过BrainGNN/STGCN/GoFormer/Miniformer及保标签增强与最小编辑反事实基线（后者仅66-68%）
+  - 消融(NYU ACC)：完整74.1/去模块约束66.8/去精修67.4/去反事实66.3——模块先验是最大单一贡献者；UM 75.5%、LEUVEN 72.4%；k=8与λ=1峰值
+  - 生物标志物：insula/SMA/precentral；连接层落感觉运动、默认模式、皮层下-小脑回路（与ASD文献一致）；质量指标TS 87.1%、MPR 60.0%
+  - **Activation**: counterfactual brain network, fMRI augmentation, ASD diagnosis, module-number constraint, Laplacian spectral similarity, label-altered augmentation, ABIDE, self-explainable diagnosis
+
 ## 2026-10-26 - Systems Engineering Research (Cron Job)
 
 ### LLM2Cert: LLM Synthesis of Certificates with SMT/Lean Verification
