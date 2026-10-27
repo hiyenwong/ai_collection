@@ -34,6 +34,22 @@
   - Replay: grid Zakai solver vs 20k-particle filter RMSE=0.0035, bimodal posterior modes at +/-1 under weak obs, log-evidence -69.4; FP grid stepping needs dt<=dz^2/g^2 (donor-cell fluxes, no wrap-around)
   - **Activation**: Zakai equation, nonlinear filtering, neural operator, PINO, DeepONet, latent SDE, state inference, EM, Fokker-Planck, calcium imaging, neural dynamics
 
+### Phase-based Edge Coupling: Modeling Overlapping Functional Architectures and High-Order Edge-to-Edge Interactions in EEG Networks
+- [[phase-edge-centric-coupling-eeg]] - EEG首个边中心连接方法PEC：边时间序列取相位差复指数、NIP量化边-边耦合、Leiden+BRIM揭示重叠模块与跨脑模块 (arXiv: 2610.32286)
+  - 边时间序列 ε_ij(t)=exp(i(φ_i(t)−φ_j(t)))——把PLV被积函数提升为基本动力学单元；边对耦合=复余弦相似度NIP，无向边取同向/交叉两取向的max（数值验证两取向实质不同：0.704 vs 0.386）
+  - von Mises相位噪声ground truth λ=I₁(κ)/I₀(κ)（本会话数值验证~1e-3）；关键约束：数据长度≥16周期（α带≥1600ms）才胜过节点中心PLV，短窗口反而显著更差
+  - 差分可辨识性：Idiff 14.97 vs 13.68 (PNC, d=0.65)；PCA去噪峰值在#PC=#被试（21.60 vs 14.63）；个体1-NN 83.3% vs 78.4%；认知态（执行vs观察）Idiff 0.23 vs 0.15、1-NN 85.3% vs 78.5%
+  - 重叠模块对齐Yeo系统（SMN+FPCN整合/内侧-前额叶边缘/SMN+VN背流/双侧FPCN）并暴露连接枢纽；双脑BRIM分解出对称跨脑模块（IoU 0.70，共享视觉/运动表象）与不对称角色模块（IoU<0.09）
+  - **Activation**: edge-centric, EEG phase coupling, edge-to-edge interaction, overlapping communities, link communities, differential identifiability, hyperscanning, higher-order brain network
+
+### ENCL + RobustNCL: Efficient and Fault-Tolerant Neuromorphic Continual Learning for SNNs
+- [[encl-robustncl-neuromorphic-continual-learning]] - TESS局部学习规则+子网络冻结实现免回放NCL（内存−88%/能耗−65%），配套RobustNCL用检测-修复策略抗DRAM瞬态位翻转 (arXiv: 2610.31927, 2610.31954)
+  - ENCL三支柱：①TESS局部规则 Δw=m[t]·e[t]（内存L·n vs BPTT的T·L·n）②子网冻结（1/K容量掩码+重叠阈值Pthr=5%/1%+梯度掩码保护旧任务参数）③高效训练策略（小epoch+调大学习率+按数据复杂度调timestep T=5/9）
+  - vs BPTT+ER：精度持平（MNIST +0.5%、CIFAR-100 +3%）而内存−67~88%、训练时间−7~51%、功率−17~40%、能耗−23~65%；参照：回放法本身需2.32~4.45×内存、~4×延迟、~6×能耗
+  - RobustNCL为首个NCL可靠性研究：基线在fR≥1e-7(Subnet)/≥5e-5(MR)即掉>10%精度并塌向随机水平；D&C按层(子网级)min/max范围检测越界权重+三变体修复（v1置零/v2MinMax裁剪/v3众数），修复值存抗辐照存储
+  - 最佳变体：5任务数据集用v2 MinMax、10任务用v3 Pro；高故障率(fR=5e-4)下精度仍距无故障基线−0.5%以内；开销≤2.3%延迟/<1%内存/~6.35%能耗；统计库每次NCL训练后更新以跟踪权重分布漂移
+  - **Activation**: neuromorphic continual learning, TESS local rule, sub-network freezing, catastrophic forgetting, DRAM transient faults, detect-and-cure, bit-flip, edge AI, TIL
+
 ## 2026-10-26 - OpenAI Research (Cron Job)
 
 > Daily OpenAI-research sync. Fetcher's static list (77 articles) was stale: live sitemap diff surfaced 32 research articles missing from Obsidian (backfilled as notes, e.g. browsecomp, gdpval, frontierscience, model-spec posts, Sora 2, Aardvark). Deep-read 4 methodology-rich posts and extracted skills. Cloudflare blocks openai.com content fetch; sitemap.xml/research/ + news/rss.xml supply metadata.
