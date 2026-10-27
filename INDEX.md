@@ -201,6 +201,22 @@
   - 生物标志物：insula/SMA/precentral；连接层落感觉运动、默认模式、皮层下-小脑回路（与ASD文献一致）；质量指标TS 87.1%、MPR 60.0%
   - **Activation**: counterfactual brain network, fMRI augmentation, ASD diagnosis, module-number constraint, Laplacian spectral similarity, label-altered augmentation, ABIDE, self-explainable diagnosis
 
+### A theory of noisy linear recurrent neural network learning dynamics
+- [[noisy-linear-rnn-learning-dynamics]] - 内禀噪声决定RNN表征学习理论：打破解空间规范简并、权重对齐低噪声方向、噪声诱导双相变 (arXiv: 2610.35785)
+  - 噪声作为"规范固定者"：无噪声目标对 v→Tᵀv, u→T⁻¹u, W→T⁻¹WT 规范变换不变（解空间高度简并），噪声项 J_noise 破坏该不变性产生表征压力；最优读出 v*=S⁻¹u/(uᵀS⁻¹u)（储备池计算极限，投影梯度下降验证|cos|=1.0）
+  - 富机制对齐阶段：S本征基下每分量独立2×2线性系统，增长率 λ+ᵢ=−(κ+sᵢ/4γ)+√(sᵢ²/16γ²+1/(c*+γ)²) 随噪声水平 sᵢ 递减→u,v,W指数级对齐到最低噪声本征矢（解对初始化依赖大减）；噪声破坏 u=v 平衡：d/dτ[u²−v²]=σ²v²/c>0，κ=0时 u→∞, v→0 而 uv→1
+  - 两类噪声诱导相变：(a) u,v可训练+正则κ时 σ²_crit(κ)=(1−q²)²/q，q=(2/√3)·sinh(⅓·arsinh(3√3κc*))，小κ时 σ²_crit≈1/2c*κ，之上最优幅度塌缩 N_opt=0；(b) 冻结尺度只训W时 σ²_crit=3，c_opt=√(1+σ²)·c*/(2−√(1+σ²)) 在其上发散→无穷快滤波器逃逸
+  - 全部公式数值验证通过（特征值err≤2e-16；c_opt五点<0.1%；相边界bracket-max=0至1e-11）；PDF提取损坏Eq22-23/26-27分式（分式位移类损坏），已从一阶条件重新推导并用论文自身小κ极限+数值边界检查消歧
+  - **Activation**: intrinsic noise, RNN learning dynamics, solution degeneracy, gauge fixing, alignment phase, noise-induced phase transition, rich regime, noise-inverse readout
+
+### Intrinsic Goals for Autonomous Agents: Hierarchical Exploration Captures Future Volitional Action in Drosophila
+- [[intrinsic-goals-drosophila-autonomy]] - 20种内在动机算法在果蝇数字孪生上对照全脑记录：分层DIAYN唯一同时复现前瞻神经编码+神经:行为比率+群体转向偏差多样性 (arXiv: 2610.34638)
+  - 目标驱动建模扩展到内在动机：NeuroMechFly v2数字孪生+7个行为运动基元（forward/left/hard-left/right/hard-right/stop/groom，CPG用真实步行果蝇步态轨迹+梳理运动学回放），策略每100ms选基元；Recurrent PPO 2048并行环境、5000万决策，无外部奖励；20种内在动机法（好奇/熵/能力三族）+随机初始化+外部奖励对照
+  - 评估协议复刻Brezovec 2023束缚球实验：500ms Savitzky-Golay平滑、转向=|角速度|>200°/s峰、−15~−8s窗口elastic-net逻辑回归解码未来转向方向；DIAYN神经前瞻编码82.1±0.9% vs 果蝇IPS 66.5±1.4%，且唯一匹配果蝇的神经:行为比率线（MAX行为解码92%但比率错——行为可预测≠类蝇）
+  - DIAYN目标 I(S;Z)+H(A|S,Z)=H(Z)−H(Z|S)+H(A|S,Z)（技能诱导可区分状态+技能内高熵动作），内在奖励 rₜ=log q_θ(z|φₜ)−log π(aₜ|φₜ,z)；在行为基元层级操作，每30分钟rollout固定一个技能=一只果蝇的持续探索策略
+  - DIAYN技能库span出与9只果蝇相同的转向偏差分布（同调度对照CSF/Random-DIAYN分布窄→来自学习目标而非采样方案）→群体级状态空间覆盖假说：进化优化技能库，个体"利手"是库中一次采样；actor-LSTM PCA成分对复现IPS和差规则（差↔角速度 r=0.153 vs 蝇0.191；和↔前进速度 r=0.413 vs 蝇0.429），随机对照无此结构；9/20方法不转向或单向转向（行为病态即出局）
+  - **Activation**: intrinsic motivation, DIAYN, hierarchical exploration, motor primitives, digital twin, whole-brain recordings, prospective coding, population-level coverage, NeuroMechFly
+
 ## 2026-10-26 - Systems Engineering Research (Cron Job)
 
 ### LLM2Cert: LLM Synthesis of Certificates with SMT/Lean Verification
