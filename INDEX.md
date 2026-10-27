@@ -8444,3 +8444,17 @@
   - StreamGaze 上 macro/micro 准确率超全网格与 token 缩减基线，前向 FLOPs 低于共享骨干 token 缩减基线
   - **Activation**: egocentric video, gaze, token reduction, frame selection, Gaussian pooling, streaming VLM
 
+## 2026-10-27 - OpenAI Research (Cron Job)
+
+### Working with academic communities to build scientific understanding
+- [[shepherded-release-ai-discoveries]] - AI 科学发现的牧羊人式发布框架：AI 输出定位为 raw research data，外部专家 shepherd 组织工作组把原始输出转化为社区拥有的科学理解；自然语言证明 + Lean 形式化双工件先行；三种发布策略按结果逐个选；四治理原则 Transparency / No Academic Credit / Recognition / Independence
+  - 三策略光谱（同一组织同日三种）：S1 原始发布让社区自组织解释（数学结果）；S2 外部协作组 + 全部原始数据公开（ETH 反驳，Impagliazzo/Paturi/R. Williams 工作组 + 资助专门会议）；S3 完全让渡发布权（QFT 结果，Gross/Jaffe/Douglas/Klebanov/Nekrasov 自行撰写、暂不放出 AI 产物）
+  - 三个示范结果的分量：局部平滑猜想（Sogge 1991）全维度成立→蕴含 Kakeya 猜想与 Stein 限制猜想全维度解决（新颖辅助 PDE）；指数时间假设 ETH 为假（数百篇条件硬度结论重开）；四维含规范场+费米子相互作用 QFT（含 QCD 与标准模型 GUT 完备化）严格存在性证明，纯 Yang–Mills 存在性为子问题（Clay 千禧年问题组成）
+  - 权衡显式化：初始 shepherd 选择塑造参与顺序、造成信息不对称；S3 延迟原始产物可得性；$5M Simons Foundation 资助独立检验/workshop
+  - **Activation**: shepherded release, AI discovery governance, raw research data, Lean formalization, ETH refutation, Kakeya conjecture, Yang-Mills existence, QCD, release strategy spectrum, external expert collaboration
+
+### ChatGPT's expanding world of work
+- （Obsidian 笔记已建；无独立 skill——其 O*NET IWA 映射与聚合统计+噪声的隐私发布方法学已由 privacy-preserving-external-research-pilot 覆盖）
+  - OpenAI Signals 新数据：近 100 国 ChatGPT 工作相关消息映射 165 个 O*NET Intermediate Work Activities，季度频率 2025Q1–2026Q3，可与其他经济指标链接
+  - 关键发现：74 个全程可观察国家前 10 大活动份额 56.0%（2025Q1）→ 51.1%（2026Q3）——用途去集中化、各国不同方向专业化；美国对照中 ~43% 就业加权任务落入未单列的 Other IWAs
+
