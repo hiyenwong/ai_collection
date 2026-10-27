@@ -1,3 +1,37 @@
+## 2026-10-27 - High-Utility arXiv Papers (Cron Job)
+
+### Organon: From Evolutionary Search to Recursive Self-Improving Agents for Scientific Discovery
+- [[organon-recursive-self-improving-agents]] - 递归自我改进框架,不仅进化解决方案还进化搜索方法本身,LLM引导的进化搜索动态适应研究问题 (arXiv: 2610.33046)
+  - Category: multi-agent-rl
+
+### Sensorimotor Behaviour from an Untrained Brain-and-Nerve-Cord Connectome
+- [[sensorimotor-untrained-connectome]] - 果蝇完整连接组(172,433神经元)无需训练即可产生感觉运动行为,证明大量行为直接源于神经布线 (arXiv: 2610.33881)
+  - Category: neuroscience
+
+### TRON: Transferring Naturally Evolved Network Architectures into Neuroevolution
+- [[tron-natural-network-neuroevolution]] - 将生物网络组织原理迁移到神经进化中,改善神经架构搜索的变异和重组操作 (arXiv: 2610.35647)
+  - Category: neuroscience
+
+### Estimation of Propagated Risk in LLM-based Multi-Agent Systems
+- [[propagated-risk-llm-multiagent]] - 显式建模LLM多智能体系统中发送者-接收者交互如何影响错误传播,量化级联风险 (arXiv: 2610.33282)
+  - Category: multi-agent-rl
+
+### CoEvolve: Counterfactual-Guided Co-Evolution of Memory and Collaboration in Multi-Agent Systems
+- [[coevolve-memory-collaboration]] - 反事实引导的记忆与协作架构共同进化,解决多智能体系统静态设计限制 (arXiv: 2610.33539)
+  - Category: multi-agent-rl
+
+### SMART-Med: Selective Multi-Agent Medical Reasoning via Uncertainty-Aware Routing
+- [[smart-med-selective-collaboration]] - 挑战始终协作和云端大模型假设,通过不确定性路由实现选择性协作,保护隐私并提高效率 (arXiv: 2610.33544)
+  - Category: multi-agent-rl
+
+### MORE: Mode-Optimized Reasoning with Self-Adaptive Effort for Self-Evolving Agents
+- [[more-self-adaptive-reasoning]] - 自适应选择推理形式和计算努力,避免统一高成本思考,每个任务优化资源分配 (arXiv: 2610.33684)
+  - Category: multi-agent-rl
+
+### Power-of-Two Leaky Integrate-and-Fire Neurons for Event-Driven Vision-Language-Action Inference
+- [[power-of-two-lif-vla]] - 受生物神经元稀疏事件驱动信号启发,为机器人VLA模型引入脉冲计算,实现节能部署 (arXiv: 2610.33658)
+  - Category: spiking-neuromorphic
+
 ## 2026-10-26 - Dream/Sleep Research (Cron Job)
 
 ### Online Preplay and Offline Replay Optimize Action Selection in a Closed-Loop Navigation Model
