@@ -91,6 +91,13 @@
 
 ## 2026-10-27 - CS + Quantum Research (Cron Job)
 
+### A Mathematical Theory of the Jacobian Lens
+- [[jacobian-lens-coherent-lyapunov-modes]] - Anthropic J-lens 的精确刻画：平均 Jacobian lens 选择的是幅度×滞后连贯×上下文连贯三因子乘积最大化的连贯 Lyapunov 模态（伸缩恒等式 σ_i=a·ρ_τ·ρ_c 机器精度成立）；方差解释量与选择强度无关（推论 1.1）；ω-J-lens 族按每-token 旋转速度做频率选择；环形 HMM Bayes 滤波器给出全闭式测试床含交叉点预测 λ*₀ (arXiv: 2610.31955)
+  - 三因子操作性定义+任务旋钮独立调制：λ→幅度 a（0.82/1.23/1.50）、v→滞后连贯 ρ_τ（1/0.35/0.24）、ψ→上下文连贯 ρ_c=ψ；σ(j)=|α|r/|1−re^{iθ}| 级数消去闭式；θ=π 边缘 ρ_τ=(1−r)/(1+r)；Eq. 46 交叉点 λ*₀ 网格验证 0.5574 vs 0.5578
+  - 5/5 数值验证：T1 伸缩恒等式精确到 1e-15 + 无探针超 σ₁；T2 Bayes 闭式+论文扫描数字全复现；T4 ω-lens 峰落在 ω=θ（±π 混叠）；T5 perturb-and-propagate 恢复 a(j)=1.2246 vs 1.2248——陷阱：Eq. 35 的 a 是滞后求和（1/H 不改排序），估计均值版须乘 H
+  - 审计管线：平均 Jacobian 谱不可平均（均值离流形外）→ 只经连贯分解解读；transformer 压缩 ρ_c 值域=上下文无关信息偏好；Global Workspace 解读保持不可知
+  - **Activation**: jacobian lens, J-lens, averaged Jacobian, coherent features, Lyapunov modes, lag coherence, context coherence, omega-J-lens, interpretability probe design, ring HMM Bayes filter, belief state probing, variance explained fallacy
+
 ### Low-frustration block encodings by patch routing
 - [[patch-routing-block-encodings]] - Route the selected patch to a fixed location and apply ONE expensive local block encoding per query: routing cost O(8*Ns) grows linearly while the spectral-quality local circuit (Halmos dilation / CG-basis / QET) is paid once, independent of lattice size; 15-17x leading-T reduction for 120x120 J1-J2 Heisenberg qubitized QPE vs product-wise Pauli LCU (arXiv: 2610.32946)
   - Patch spectral bounds delta_p=(u_p+l_p)/2, lambda_p=(u_p-l_p)/2 sum to global Delta/Lambda; bigger patches absorb more frustration locally -> tighter Lambda (bond < triangle < 3x3 patch; verified by independent 9-spin ED reproducing Table IV to 1e-6)
