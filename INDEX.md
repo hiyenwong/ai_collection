@@ -58,6 +58,24 @@
   - 最佳变体：5任务数据集用v2 MinMax、10任务用v3 Pro；高故障率(fR=5e-4)下精度仍距无故障基线−0.5%以内；开销≤2.3%延迟/<1%内存/~6.35%能耗；统计库每次NCL训练后更新以跟踪权重分布漂移
   - **Activation**: neuromorphic continual learning, TESS local rule, sub-network freezing, catastrophic forgetting, DRAM transient faults, detect-and-cure, bit-flip, edge AI, TIL
 
+## 2026-10-26 - Systems Engineering Research (Cron Job)
+
+### LLM2Cert: LLM Synthesis of Certificates with SMT/Lean Verification
+- [[llm2cert-certificate-synthesis-smt-lean]] - LLM proposes Lyapunov/barrier certificates; per-obligation routing to SMT (unsat/counterexample/delta-sat) and Lean proof repair gives a kernel-checked end-to-end soundness chain with unrelaxed obligations; 81/105 verified on DYNACERTBENCH, +17.1pp over no-feedback one-shot (arXiv: 2610.30524)
+  - Two-layer soundness: condition-to-theorem implications proven once in Lean (kernel-checked) + every obligation discharged by SMT unsat or kernel-checked Lean proof; candidate and obligations stay FIXED during proof search (delta-sat is never accepted as verification)
+  - Backend complementarity is the headline: SMT-only 57/105, Lean-only 60/105, routed full 81/105; on fixed certificates routed verifies 81/81 vs All-SMT 59 and All-Lean 64; Lean's exclusive wins are non-polynomial systems (34/40 vs 18/40) while SMT is ~500x faster on its fragment
+  - Structured repair feedback (classified failure + location + remaining goal + Mathlib lemma matches) repairs 21/26 failed proofs vs 17/26 raw diagnostics vs 1/26 generic retry - feedback quality dominates proof repair
+  - Reusable pattern: propose-then-discharge with immutable obligations, cheap sampled falsification screen before expensive solvers, per-obligation capability routing, soundness audit (reject sorry/nonstandard axioms), benchmarks not tailored to solver limits
+  - **Activation**: certificate synthesis, Lyapunov, barrier certificate, SMT, Lean, proof repair, formal verification, counterexample-guided, safety verification, DYNACERTBENCH
+
+### Toward a decentralized design framework for discrete-time distributed algorithms via their emergent dynamics
+- [[blended-dynamics-decentralized-algorithm-design]] - Each agent picks only local parameters (a_i,b_i,c_i) so the network's emergent collective behavior exactly realizes a target continuous-time blended dynamics; necessary & sufficient realization conditions, decentralized parameter computation, Tikhonov-type uniform bounds (arXiv: 2610.29656)
+  - Update blends node + coupling terms every iteration x_i[n+1]=(a_i/k)f_i(x_i)+(1-delta_i d~_i)x_i+delta_i*sum alpha_ij x_j - unlike prior multi-step K-triggered schemes it is robust to asynchronous perturbation; as k->inf agents converge to scaled synchronized state p_i*s(t) with eps=1/k singular perturbation
+  - Stability is required ONLY on the blended dynamics (contraction, Assumption 4) - individual heterogeneous dynamics may be unstable; rho(W)=1 exactly is the non-triviality boundary (rho<1 collapses to 0, rho>1 diverges)
+  - Design pattern: encode a global quantity as the EQUILIBRIUM of a designed blended dynamics - network size N via dot s = -s/N + 1 (rounding recovers N exactly), self-bootstrapped 1/zeta_i estimation, distributed WLS from gradient flow, PageRank; accuracy vs iteration-count trade-off is non-monotone in k (Thm 3)
+  - Global-information overhead is one v_i exchange + one distributed eigenvector estimate; tau_s cancels from the final local update
+  - **Activation**: blended dynamics, distributed algorithms, decentralized design, multi-agent systems, emergent dynamics, singular perturbation, distributed estimation, consensus, PageRank, network size estimation
+
 ## 2026-10-26 - OpenAI Research (Cron Job)
 
 > Daily OpenAI-research sync. Fetcher's static list (77 articles) was stale: live sitemap diff surfaced 32 research articles missing from Obsidian (backfilled as notes, e.g. browsecomp, gdpval, frontierscience, model-spec posts, Sora 2, Aardvark). Deep-read 4 methodology-rich posts and extracted skills. Cloudflare blocks openai.com content fetch; sitemap.xml/research/ + news/rss.xml supply metadata.
