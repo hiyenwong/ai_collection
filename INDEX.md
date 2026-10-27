@@ -91,6 +91,22 @@
 
 ## 2026-10-27 - CS + Quantum Research (Cron Job)
 
+### Low-frustration block encodings by patch routing
+- [[patch-routing-block-encodings]] - Route the selected patch to a fixed location and apply ONE expensive local block encoding per query: routing cost O(8*Ns) grows linearly while the spectral-quality local circuit (Halmos dilation / CG-basis / QET) is paid once, independent of lattice size; 15-17x leading-T reduction for 120x120 J1-J2 Heisenberg qubitized QPE vs product-wise Pauli LCU (arXiv: 2610.32946)
+  - Patch spectral bounds delta_p=(u_p+l_p)/2, lambda_p=(u_p-l_p)/2 sum to global Delta/Lambda; bigger patches absorb more frustration locally -> tighter Lambda (bond < triangle < 3x3 patch; verified by independent 9-spin ED reproducing Table IV to 1e-6)
+  - Local spectral encoding via Halmos dilation B(A)=[[A, sqrt(I-A^2)],[sqrt(I-A^2), -A]] = Z(x)A + X(x)sqrt(I-A^2): Hermitian unitary REFLECTION with signal block A; one controlled Ry(2*arccos a_j) per distinct eigenvalue; isotropic bond shifted/normalized IS the SWAP gate (free); triangle sectors via coupled-spin F^2/L^2 identities
+  - Reflection property SEL^2=I -> qubitized walk costs ONE call per step; controlled walk <= T_BE + 92 T (<0.1%); QET normalization amplification rho=beta/lambda with headroom 0 < s < 1 - rho^-1
+  - Routing: 1D parity-split CSWAP trees (even->pos 0, odd->pos 1, pair arrives (s,1-s)); 2D columns-then-rows with reflection-invariant patches skipping order correction; fermions use parity-class JW ordering + controlled-fswap (phase (-1)^(ni*nj+(ni XOR nj)*Pi_ij)); T_R = 8Ns + 16*ceil((log2 Ns)/2) + O(1) (fitz-verified exact ceiling forms)
+  - **Activation**: block encoding, patch routing, lattice Hamiltonian, qubitization QPE, LCU normalization, spectral block encoding, QET, frustrated Heisenberg, Fermi-Hubbard, Halmos dilation
+
+### Two-Layer Verification for Fault-Tolerant Magic-State Preparation in High-Rate Quantum Codes
+- [[two-layer-verification-magic-states]] - Product-type logical verification in k>1 codes detects only ODD numbers of eigenvalue flips (Pi_V = (-1)^E): even-parity flips are invisible and leave a leading first-order error term; verify subblocks independently FIRST, then embed + product-check + syndrome-detect -> residual becomes second order (arXiv: 2610.32267)
+  - [[21,3,5]] self-dual CSS: 9x21 H with H*H^T=0, rank 9 -> k=3, distance 5 verified by exhaustive 4096-coset enumeration; transversal products HL1HL2HL3=H^21 and SL1SL2SL3=S-dagger^21 enable the layer-2 collective check
+  - Encoder decomposition: 3 Steane-code magic-state subblocks + SWAP network + residual entangler (CNOT-exchange rule for reordering; zero-state encoder 63 -> 44 CNOTs by overlap method); embedding circuit alone is NOT fault tolerant — safe only sandwiched between the two verification layers
+  - Circuit-level noise (CNOT -> 1-of-15 two-qubit Paulis at p/15): p_L scaling exponents 2.93(2) T-ideal / 3.04(2) S-ideal / 3.16(1) S-EDT ~ cubic = distance-5 FT behavior (Stim Clifford-proxy at 1.12e9 shots; Qulacs 3.36e7 shots for T)
+  - At p_circ ~ 0.1% the S-state prep needs fewer physical qubits than one FT logical CNOT; EDT zero states may skip dedicated Z-error detection because EDT catches it downstream
+  - **Activation**: magic state preparation, high-rate quantum codes, product-type verification, even-parity ambiguity, zero-level distillation, magic state cultivation, error-detecting teleportation, Steane magic state, [[21,3,5]]
+
 ### Trident: Efficient Load Verification for Yoked Surface Codes using a Three-Level Memory Hierarchy
 - [[trident-yoked-surface-code-memory-hierarchy]] - FTQC 3-tier quantum memory: small 1D-YSC L1 (0-cycle verify) hides 178-cycle 2D-YSC load verification via compiler-managed Belady cache or prefetch; 2.8x/4.2x at +4.9% qubits (arXiv: 2610.32152)
   - Load = 8-cycle retrieval + 178-cycle yoke-measurement verification (all 62 yokes of [[256,194,4]]); baseline stalls 64% of cycles; V.L. = (25*d_in*sqrt(BlockSize)+4*d_in)/d_eff, numerically verified vs all 5 paper block sizes
