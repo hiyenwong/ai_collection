@@ -25,6 +25,8 @@ metadata:
 - Reviewing papers that analyze perturbation growth across depth and token
   position (Lyapunov-style transformer analysis).
 
+## Overview
+
 Theory + validation methodology for interpreting what averaged-Jacobian
 ("J-lens", Gurnee et al. 2026) interpretability tools select in transformers:
 **the lens preferentially identifies coherent features — directions that act
