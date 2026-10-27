@@ -2,6 +2,14 @@
 
 ## 2026-10-27 - CS + Quantum Research (Cron Job)
 
+### Trident: Efficient Load Verification for Yoked Surface Codes using a Three-Level Memory Hierarchy
+- [[trident-yoked-surface-code-memory-hierarchy]] - FTQC 3-tier quantum memory: small 1D-YSC L1 (0-cycle verify) hides 178-cycle 2D-YSC load verification via compiler-managed Belady cache or prefetch; 2.8x/4.2x at +4.9% qubits (arXiv: 2610.32152)
+  - Load = 8-cycle retrieval + 178-cycle yoke-measurement verification (all 62 yokes of [[256,194,4]]); baseline stalls 64% of cycles; V.L. = (25*d_in*sqrt(BlockSize)+4*d_in)/d_eff, numerically verified vs all 5 paper block sizes
+  - No-cloning makes the hierarchy exclusive: every load pairs a store and LRU degenerates to FIFO; deterministic quantum access streams make compile-time Belady OPT implementable (78.7% hit vs 66.7%)
+  - Trident-P prefetch: insert prefetch directly after the victim's store instruction (earliest legal point), FIFO victim maximizes (t_load - t_prefetch) verify-overlap window; never evict inflight prefetches; 91.0% latency fully hidden, mean 178 -> 14.3 cycles
+  - Fidelity tracks performance (92.9% -> 98.1%): yoke-cycle error grows r^2 (1D) / r^4 (2D) in delayed-yoke-measurement rounds — access-rate-dependent error accumulation
+  - **Activation**: FTQC memory hierarchy, yoked surface codes, YSC, load verification, quantum cache, Belady OPT, quantum prefetch, surface code architecture, teraquop
+
 ### QuantumMatterExplorer: An Autonomous Agent for the Discovery of Quantum Many-Body Phases of Matter
 - [[agentic-phase-diagram-mapping]] - Single LLM deep-agent with persistent written plan, small expert-skills library, and a validation-gated 4-stage protocol (survey/refine/identify/scale) maps quantum phase diagrams from DMRG cross-checked against ED; reproduces known transitions and identifies Néel/Haldane/dimerized phases of an undocumented spin-1 chain within an 8h budget (arXiv: 2610.32001)
   - Architecture: single deep agent over multi-agent state machine (info loss between agents, advantages vanish at matched token budgets); subagents serve as context offloading only - general-purpose bounded subtasks, data-analyst keeps bulk data out of main context, physics-critic reviews plan + conclusions from an isolated context
