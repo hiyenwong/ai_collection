@@ -1,5 +1,32 @@
 # AI Collection Index
 
+## 2026-10-27 - Reinforcement Learning Research (Cron Job)
+
+### A Sign Law for Entropy Drift under Sampler Mismatch in RLVR
+- [[entropy-drift-sign-law-sampler-mismatch-rlvr]] - RLVR熵漂移符号定律：sampler mismatch下常数优势平移以固定符号推熵，净优势N_g预测漂移方向 (arXiv: 2610.34044)
+  - 一阶定律 ΔH=−ηAΦ(a)+O(η²)，Φ(a)=u_a−E_π[u]；锐度间隙 δ(μ)=E_μ[u]−E_π[u]——更锐采样器（top-k/top-p/min-p/T<1，似然比随token概率单调增）δ>0，正平移降熵，更平采样器反向（Theorem 1；截断 δ=π(S^c)(E[u|S]−E[u|S^c])>0，μ的线性性）
+  - 分解 ΔH_tot=D_net+D_cov+D_on：D_net=−ηΣW_g N_g δ̄_g/ΣW_g 唯一受基线控制（组均值基线下 N_g=Cov(r,L)/L̄；MASK超长过滤使N>0熵降、FAIL判失败使N<0熵升——解释符号不对称）；D_cov=优势×间隙协方差（失败响应访问低置信前缀→推高熵；策略偏离采样器→间隙自增长→自加速回路）；9B真实批次D_net占失配漂移66–78%
+  - 修正分级（Prop 2）：NZ长度加权基线只除D_net（100步仅延迟熵爆炸）；GAPW间隙加权基线 b_g=ΣωᵢLᵢδ̄ᵢrᵢ/ΣωᵢLᵢδ̄ᵢ 两项相消；支撑重归一化=分数中心化（Marek & Ryabinin）整个失配漂移消失；token级重要性比值只缩放（留98%）不是修复；learner应用采样温度缩至2–4%
+  - 9B推理模型10步截断采样：未修正损失held-out准确率，N置零+8.2分、learner重归一+8.8分（精确采样无差异）；2B熵斜率对N平移线性、T=1.2处反号、六采样器验证；OLMo-3-7B复现
+  - **Activation**: entropy drift, sampler mismatch, sharpness gap, top-k top-p truncation, overlength mask vs fail, token-weighted net advantage, score centering, RLVR熵漂移, 采样器失配
+
+### PAPO: Priority-Preserving Advantage Aggregation for Multi-Reward Policy Optimization
+- [[papo-priority-preserving-advantage-aggregation]] - 多奖励RL优势优先级反转的结构性修复：tanh门控非对称融合保主目标符号 (arXiv: 2610.34862)
+  - 命名advantage priority inversion：加性 A_sum=A_pri+αA_aux 在冲突（A_pri·A_aux<0）且α|A_aux|>|A_pri|时翻号——调α只降频不根除；硬门控（GDPO式 R_aux·1{R_pri≥τ}）抹掉主目标失败响应间的辅助区分度；响应级融合无法处理PPO/GAE的token级局部冲突
+  - Eq.3：同号保留αA_aux、异号 A_agg=A_pri(1−tanh(α|A_aux|/(|A_pri|+ε)))——系数∈(0,1]只衰减永不翻号；Prop 1：sign保持+主一致排序在中心化归一后不变（A_u,pri>0>A_v,pri⟹Â_u>Â_v，中心化是严格递增仿射）
+  - GRPO版：组内各目标独立归一(A−μ_k)/σ_k→Eq.3融合→组内中心化；PPO版：双头critic V_pri/V_aux各自GAE（保目标专属时间信用）→逐token融合→mini-batch中心化；critic用未融合目标 R_t,k=Â_t,k+V⁰_k 训练（融合多对一塌缩信息），PAPO只在actor侧
+  - Qwen3-8B数学（主=正确性、辅=长度合规≤8K）：GRPO 51.0→59.9（GDPO 50.9）、PPO 43.6→56.6且长度合规同时最佳（81.2→87.6）；AIME24 46.7→70.0；工具调用（When2Tool）87.7→89.9且调用数不变0.33；R1-Distill-1.5B 45.8→48.1、Qwen3-1.7B、多模态安全对齐（安全主/有用辅，Qwen2-VL-7B/LLaVA-1.6-7B）均泛化
+  - 消融：仅调α救不回加性融合（优化器跟更容易目标走）；多头critic单独54.5→55.7、MHC+PAPO→61.1
+  - **Activation**: advantage priority inversion, multi-reward aggregation, primary auxiliary objective, GDPO gating, dual-head critic, lexicographic reward, 多奖励聚合, 优势优先级反转
+
+### RoAR: Rollout-Agreement Reward for Group-Based Policy Optimization
+- [[roar-rollout-agreement-reward]] - GRPO零成本过程奖励：全组一致性得分只发给已验证正确rollout，抑制正确答案下的伪推理 (arXiv: 2610.34951)
+  - 盲配对分析（126对最高/最低一致性已验证正确轨迹，GRPO训练1.5B）：低一致伪推理35% vs 22%、有效31% vs 47%；最大误差差：内部不一致+21.4pp、错误运算/公式+9.5、错误证据/条件+7.1
+  - 方法：s(i,j)=α·轨迹嵌入余弦+(1−α)·token F1（α=0.5），a_i^all对整个on-policy组平均（含错误轨迹，正确稀疏时仍良定义）；r_ROAR=1_correct·a_i^all只发已验证正确rollout（错误但相似=0）；r_i=w_fmt·r_fmt+w_acc·r_acc+1.0·r_ROAR后标准GRPO更新；无额外采样/PRM/人工标注
+  - 1.5B（Open-RS 7K）五基准均值55.5 vs GRPO 49.5(+6.0)/CARE 50.1(+5.5)/LLM judge 51.8/DRA 54.0/base 47.1；pass@4 68.3(+2.1)而多样性方法掉共识（CARE−1.1/DRA−2.5）；盲审计伪推理18% vs GRPO 32%/CARE 27%/DRA 37%；3种子×{1.5B,4B}：+1.7/+1.4（4B AIME26 61.1→66.7）
+  - 消融：全组参照+正确门控缺一不可（仅正确参照52.2、全rollout发奖51.9）；墙钟≈outcome-only GRPO（11h16m vs LLM judge 21h58m+$42.97）
+  - **Activation**: rollout agreement, spurious reasoning, verified-correct traces, process reward without PRM, consensus reward, GRPO reward design, 伪推理, rollout一致性
+
 ## 2026-10-27 - Systems Engineering Research (Cron Job)
 
 ### Quantum Cadence: Post-Quantum Consensus with Multiple Concurrent Proposers
