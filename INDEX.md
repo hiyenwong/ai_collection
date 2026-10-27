@@ -91,6 +91,24 @@
 
 ## 2026-10-27 - CS + Quantum Research (Cron Job)
 
+### Wave Is All You Need: A Quantum Language Model Based on Fully Connected Quantum Boltzmann Machine
+- [[fc-qbm-quantum-attention-lm]] - 量子自注意力=一次幺正演化：幅度编码拼接token流→FC-QBM对角Ising哈密顿量相位调制→逐qubit RY读出；偏置相位=位置编码、耦合相位差cos(Δφ)=注意力分数、测量概率Born归一化免softmax；与经典自注意力数学等价 (arXiv: 2610.34492)
+  - 机制链：H=Σb_iσZ_i+Σw_ij σZ_iσZ_j 对角→e^{-iHt}给每基态相位φ(r)=ω(r)t（ω(r)=Σb_i(−1)^{r_i}+Σw_ij(−1)^{r_i+r_j}）；Eq.28闭式 p_l=Σβ²a²+2Σ_{r<r'}ββ'aa'cos(φ(r')−φ(r))——cos(Δφ)即q·k的几何点积；RY(2θ_i)组合做逐基向量的自适应加权编码
+  - 8-qubit唐诗模型：n=10×d_model=25=250维→N=⌈log2 250⌉=8（补零6维）；量子层仅44参数（8偏置+28耦合+8读出角）完成全部位置编码+自注意力管线；语料V=2481；RY终端收敛优于RX终端；8级噪声强度下保持>99%无噪收敛性能
+  - 5/5复现：T1幅度管线（shift→L1→sqrt→pad）✓；T2 H对角且16特征值=ω(r)✓；T3闭式Eq.28向量化p=diag(BDBᵀ) vs 态矢量模拟 diff=1.4e-16✓；T4 Σp=1免softmax✓；T5 3-qubit toy LM训练0.4976→0.0190（96%降）+闭式梯度=精确梯度✓
+  - 陷阱：s_i=(−1)^{r_i}=1−2·bit（写反因cos偶函数自检不报错，须对真H谱检查）；RY作用于非平凡态须双分量混合；随机target的MSE地板=方差（须用真实递推任务）
+  - **Activation**: quantum self-attention, FC-QBM, quantum Boltzmann machine language model, amplitude encoding, Ising Hamiltonian phase modulation, positional encoding via phases, Born rule normalization, quantum language model, QCBM, backprop through quantum layer
+
+### Quantum-JEPA: Quantum Born Priors for Latent-Action JEPA World Models
+- [[quantum-jepa-born-prior-world-models]] - JEPA世界模型的"未观测动作"分布=条件QCBM：电路测量采样二进制潜动作z→共享预测器映射为多个未来表征→仅通过预测质量+多样性的采样能量目标训练先验（免2^n分类头、免态矢量微分，有限样本参数位移+读出噪声下可训，真QPU推理验证） (arXiv: 2610.27921)
+  - 条件Born先验(Eq.3-4)：conditioner SiLU MLP(零初始化输出)→h到逐层RY角，α=g(h)+ϑ+π/2·1[ℓ=1]（首层π/2≈Hadamard→均匀初始支撑）；采样能量损失(Eq.7) L=(1/K)Σρ(bt_k,t)−(1/(2K(K−1)))Σ_{k≠l}ρ(bt_k,bt_l)=Gneiting-Raftery能量分数（拟合−½多样性），自配对排除才无偏
+  - 量子先验更新(Eq.14)：∂L/∂a_j=½[E_{+π/2}C−E_{−π/2}C]，C(u;t,Q)=ρ(u,t)−E_{V~Q}ρ(u,V)；Q参考=独立未位移预测（位移期间固定）——Qref随位移移动则ps≠解析梯度（实测）；角度导数只回传经典conditioner
+  - HEP18四智能体协调：纠缠QCBM覆盖99.73%/有效93.38%（0.5%读出翻转+有限位移训练）vs 乘积QCBM仅38.77%——纠缠是协调载体；re-pairing后联合有效93.38%→12.71%而个体96.61%仍有效=协调在先验相关性非边际；D3IL 4792先验参数vs Softmax分类15,792（−69.7%），routes 18.01≈Softmax；诚实负结果：共享非线性预测器+递归重编码可从乘积码造出相关路线（D3IL无稳定纠缠优势）
+  - 5/5复现：T1条件先验Born归一化+零初始化π/2偏移→精确均匀初始支撑(dev 0.0000)✓；T2 Eq.7无偏(bias −0.00097±0.0031)而naive 1/K²除数上偏ey/(2K)=+0.044✓；T3参数位移=有限差分梯度（固定Q参考）精确✓；T4目标{00,11}纠缠TV=0.009 vs 乘积TV=0.490✓；T5 re-pairing联合0.990→0.503逐bit边际精确保持✓
+  - **Activation**: JEPA, latent-action world models, quantum Born prior, QCBM, energy score, parameter-shift training, multimodal future prediction, multi-agent coordination, entanglement as correlation carrier, re-pairing audit, proper scoring rule, VISReg anti-collapse
+
+
+
 ### A Mathematical Theory of the Jacobian Lens
 - [[jacobian-lens-coherent-lyapunov-modes]] - Anthropic J-lens 的精确刻画：平均 Jacobian lens 选择的是幅度×滞后连贯×上下文连贯三因子乘积最大化的连贯 Lyapunov 模态（伸缩恒等式 σ_i=a·ρ_τ·ρ_c 机器精度成立）；方差解释量与选择强度无关（推论 1.1）；ω-J-lens 族按每-token 旋转速度做频率选择；环形 HMM Bayes 滤波器给出全闭式测试床含交叉点预测 λ*₀ (arXiv: 2610.31955)
   - 三因子操作性定义+任务旋钮独立调制：λ→幅度 a（0.82/1.23/1.50）、v→滞后连贯 ρ_τ（1/0.35/0.24）、ψ→上下文连贯 ρ_c=ψ；σ(j)=|α|r/|1−re^{iθ}| 级数消去闭式；θ=π 边缘 ρ_τ=(1−r)/(1+r)；Eq. 46 交叉点 λ*₀ 网格验证 0.5574 vs 0.5578
