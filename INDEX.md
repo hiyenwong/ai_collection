@@ -1,5 +1,25 @@
 # AI Collection Index
 
+## 2026-10-27 - Systems Engineering Research (Cron Job)
+
+### Quantum Cadence: Post-Quantum Consensus with Multiple Concurrent Proposers
+- [[quantum-cadence-postquantum-consensus]] - Post-quantum BFT consensus via local quorum counting: quorum certificates eliminated, safety/liveness without signatures (arXiv: 2610.32803)
+  - Core pattern: every validator counts 2f+1 quorums among messages it received ITSELF - no validator ever proves a quorum to another; signatures only buy accountability (<=2 per validator per slot, ONE signature per whole vote vector, independent of proposer count)
+  - Quantum Chorus keeps Chorus's optimal 3-round fast path (dissemination + 2 vote rounds, speculative finality at 2 rounds); erasure-coded chunks (f+1 of n) + Merkle roots + decode/re-encode verification give data availability without certificates
+  - Coda fallback = signature-free Byzantine agreement on Forget-IT: leaderless first view decides in 2 delays when correct validators agree (late-proposer case), per-proposer strong unanimity + obligation, O(ck) persistent memory independent of view count, information-theoretic security
+  - 200 validators / 1 Gbps / 20 proposers: ~200 ms finalize (~50 ms earlier speculatively), comparable to BLS-aggregated Chorus while scaling BETTER with proposer count; halting gadget relays Finalized (f+1 finalize, 2f+1 halt) without abandoning broadcasts
+  - **Activation**: post-quantum consensus, certificate-free BFT, quorum certificate, Chorus, Cadence, multiple concurrent proposers, signature-free Byzantine agreement, Forget-IT, accountability, censorship resistance
+
+### Model-Free Generative Stealthy Attacks on Safety-Critical Vehicle Cyber-Physical Systems
+- [[model-free-stealthy-attack-cps]] - Attack policy learned from nominal data only (no plant/estimator/detector model) with certified stealth budget + residual-impact lower bound; recurrent context-conditioned cWGAN-GP (arXiv: 2610.31864)
+  - R1 anchor: autoencoder trained on nominal data is a stealth-consistent manifold anchor (score-matching limit: reconstruction residual ~ dist to measurement manifold); certified isotropic budget ||d|| <= sqrt(eta*lambda_min(S)) via Rayleigh quotient; observable surrogate tau = (1-eps) percentile of nominal anchor residuals; bottleneck dim = observability rank (Hermann-Krener), estimated model-free via ML intrinsic-dimension
+  - R2 certificate: L-Lipschitz h + Chebyshev gives ||r||>=alpha => ||dx||>=(alpha-sigma*sqrt(kappa))/L w.p. >= 1-p/kappa^2 - maximizing observable residual impact E||y~a-ya||^2 provably maximizes a certified lower bound on true estimation error
+  - R3 recurrence necessity: integrated-bias recursion eps_{k+1}=A*eps_k-A*K*dr_k accumulates impact on marginal modes |lambda|=1 while detector mean shift stays the constant ||dbar||^2_{S^-1} (E[g]=p+||dr||^2) - impact-per-detectability unbounded at fixed false-alarm rate; memoryless laws cannot hold dr_k=dbar (needs a_k=dbar-C*eps_k, a history functional) => generator must be recurrent
+  - R4 context necessity: cross-channel residual coupling M!=0 (jointly informative channels share state) => attack must condition on uncompromised context xi to preserve joint covariance; impact leaks into context residual one step later
+  - Loss: min L_adv(Wasserstein critic on joint distribution) + lambda_s*L_stealth(hinge on |r_att|-tau) - L_impact; results: 2.51 m lane departure evading 5 SOTA IDSs (CANet/INDRA/NeuroCAN/DL-LSTM-GNB/CNN-LSTM-GNB) at 1% FPR; HiL dSPACE/J1939 truck ~8 km/h deviation below threshold
+  - **Activation**: model-free stealthy attack, false data injection, CPS security, CAN J1939, detector evasion, Wasserstein GAN attack, stealth budget, innovation statistic, hardware-in-the-loop security
+
+
 ## 2026-10-27 - CS + Quantum Research (Cron Job)
 
 ### Trident: Efficient Load Verification for Yoked Surface Codes using a Three-Level Memory Hierarchy
