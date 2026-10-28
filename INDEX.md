@@ -1,5 +1,42 @@
 # AI Collection Index
 
+## 2026-10-28 - Medicine + Quantum Research (Cron Job)
+
+### Quantum neuroplastic learning for time-series processing
+- [[quantum-neuroplastic-learning]] - Two-level quantum reservoir learning: eligibility-trace-guided discrete structural edits (couplers/fields/clock) admitted via paired-stream Student-t LCB minus complexity cost (arXiv: 2610.34055)
+  - Bio analogy: synaptic tagging/three-factor rules - accumulating eligibility traces over edit types pick candidates; admission margin acts as global consolidation signal
+  - IBM ibm_fez validated: 6x seven-qubit reservoirs on 42 qubits, sim-learned frozen configs cut channel-equalization symbol error 9.7% to 2.2%, beating matched-budget tuned baseline
+  - Continual adaptation across 16 task switches (0.87 vs 0.69 fixed capacity); complexity cost alpha=0.002 per ADDED coupler only (removal free) - minimal sufficient connectivity emerges
+  - **Activation**: quantum reservoir computing, neuroplasticity, eligibility traces, structural plasticity, quantum machine learning, channel equalization
+
+## 2026-10-28 - Neuroscience Research (Cron Job)
+
+### Characterizing Privacy Leakage in Spiking Neural Networks
+- [[snn-privacy-temporal-dynamics]] - SNN隐私非尖峰固有属性：四因子受控分离证明泄露源于尖峰时间排列(非噪声)、AdEx内在爆发动力学降泄露且保精度、学习算法设定基线泄露 (arXiv: 2610.36243)
+  - 外部burst编码降低MIA AUC(F-MNIST 0.534→0.502, Breast Cancer→0.500)但损精度(CIFAR-10相对-15.28%)；抖动/输入噪声/尖峰噪声均无法复现隐私增益→机制是时间排列而非随机性；异质动力学(90R/10DB)仅-0.34%精度即降泄露且非单调
+  - AdEx内在自适应动力学(Burst态 V_T=0.45,τ_w=30,a=0.005,b=0.08)使五数据集泄露全降且精度保持/提升——隐私首次不以性能为代价；进化训练(EONS/TENNLab)基线AUC≈0.5使时间动力学干预失去空间(仅损效用)
+  - DPSGD(Opacus, ε=0.5-2.0)同预算下各动力学效用分化：Delayed-Burst随ε放松恢复至Rate，Poisson-Burst因内在随机性(随机爆发 occurrence+size)持续~7pp落后——噪声效果取决于进入阶段(表征vs优化)
+  - **Activation**: snn privacy, membership inference, adex neurons, burst firing, neuromorphic security, temporal encoding privacy
+
+### Local learning is all you need: brain-aligned predictive coding networks
+- [[predictive-brain-networks-local-learning]] - PBN解决PC悖论：层级递归自编码器+逐层CPC损失+层间stop-gradient严格局部学习，NSD脑对齐匹配/超越ResNet-50与ConvNeXt-tiny (arXiv: 2610.37327)
+  - 六条PC合规要求全满足(层级重复块/生成模型/误差驱动/独立群体/空间局部/贝叶斯)；重加权噪声上限RSA下局部梯度变体7/14区域比较显著胜DNN且零负项，五个训练变体35/35胜PredNet；未训练基线≈PredNet→优势来自学习规则非架构
+  - 解码器独特方差 R²(brain|enc∪dec)−R²(brain|enc) 证明自上而下预测携带前馈模型缺失的脑对齐信息，且随学习局部性增强；经典先验减法(Rao-Ballard式)反而损害高阶视觉区表征(21/28被DNN反超)且UCF-101崩溃(0.338)
+  - 复现猕猴面孔预测违规实验(Schwiedrzik-Freiwald 2017)：view违规误差早→晚期衰减、identity违规持续(L1 t=4.841 p<1e-6, L2 t=13.9 p<1e-37)；MC dropout预测方差随马尔可夫转移熵线性增长(满足概率性要求)
+  - **Activation**: predictive coding, local learning, brain alignment, cpc hierarchy, rsa ventral stream, pc-compliant dnn
+
+### Hierarchical connectivity sets the upper critical dimension of neural avalanches
+- [[p-adic-avalanches-upper-critical-dimension]] - p-adic Buice-Cowan场论：层级连接衰减指数sigma设定雪崩上临界维度Nc=2*sigma，解除N>=4约束 (arXiv: 2610.36404)
+  - 自相似层级核 w(|x|_p) 正比 |x|_p^-(N+sigma) 精确选出 Taibleson-Vladimirov 算子（ultrametric空间无Laplacian约化），幂计数给出 Nc=2*sigma，任意 sigma>0 定义新普适类
+  - Ginzburg 判据含 log-periodic 修正（离散尺度不变性），振幅随 sigma*ln p 指数衰减；树仿真确认 tau_S=3/2 当 sigma<=N/2，sigma 增大时连续降至 1D DP 值 1.11
+  - **Activation**: p-adic neuroscience, ultrametric neural network, neural avalanche 3/2, upper critical dimension, Taibleson-Vladimirov, hierarchical criticality
+
+### Every route counts, but some count more: a max-plus view of the C. elegans brain
+- [[max-plus-connectome-feedback-loops]] - max-plus(热带)代数谱分析C. elegans五层连接组：关键环=主导反馈回路，脑状态生活在格而非欧氏空间 (arXiv: 2610.37587)
+  - 功能连接组=门控层级复合 A_ij(t)=max_l[alpha_l(t)+A_ij^l]（电间隙/化学突触/单胺/神经肽/激素），临界环只依赖相对门控；激活层只合并不分裂递归组
+  - 各层最大均值环：Gap lambda=401 {ALA,CANL,CANR}；化学突触 lambda=37 {RIAR,SMDVL} 感觉运动回路+lambda=15 M4自环；单胺 lambda=2.5 {NSM,RIM}；神经肽 lambda=14 PQR自分泌自环；功能层 lambda=0.9216 {RIH,SIBVR}
+  - **Activation**: max-plus algebra, tropical spectral analysis, critical cycles, connectome routing, C. elegans multilayer, maximum cycle mean
+
 ## 2026-10-27 - Anthropic Research (Cron Job)
 
 ### An alignment assessment of the UK AISI cybertesting incident
