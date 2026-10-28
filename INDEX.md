@@ -1,5 +1,19 @@
 # AI Collection Index
 
+## 2026-10-28 - Neuroscience Research (Cron Job)
+
+### Hierarchical connectivity sets the upper critical dimension of neural avalanches
+- [[p-adic-avalanches-upper-critical-dimension]] - p-adic Buice-Cowan场论：层级连接衰减指数sigma设定雪崩上临界维度Nc=2*sigma，解除N>=4约束 (arXiv: 2610.36404)
+  - 自相似层级核 w(|x|_p) 正比 |x|_p^-(N+sigma) 精确选出 Taibleson-Vladimirov 算子（ultrametric空间无Laplacian约化），幂计数给出 Nc=2*sigma，任意 sigma>0 定义新普适类
+  - Ginzburg 判据含 log-periodic 修正（离散尺度不变性），振幅随 sigma*ln p 指数衰减；树仿真确认 tau_S=3/2 当 sigma<=N/2，sigma 增大时连续降至 1D DP 值 1.11
+  - **Activation**: p-adic neuroscience, ultrametric neural network, neural avalanche 3/2, upper critical dimension, Taibleson-Vladimirov, hierarchical criticality
+
+### Every route counts, but some count more: a max-plus view of the C. elegans brain
+- [[max-plus-connectome-feedback-loops]] - max-plus(热带)代数谱分析C. elegans五层连接组：关键环=主导反馈回路，脑状态生活在格而非欧氏空间 (arXiv: 2610.37587)
+  - 功能连接组=门控层级复合 A_ij(t)=max_l[alpha_l(t)+A_ij^l]（电间隙/化学突触/单胺/神经肽/激素），临界环只依赖相对门控；激活层只合并不分裂递归组
+  - 各层最大均值环：Gap lambda=401 {ALA,CANL,CANR}；化学突触 lambda=37 {RIAR,SMDVL} 感觉运动回路+lambda=15 M4自环；单胺 lambda=2.5 {NSM,RIM}；神经肽 lambda=14 PQR自分泌自环；功能层 lambda=0.9216 {RIH,SIBVR}
+  - **Activation**: max-plus algebra, tropical spectral analysis, critical cycles, connectome routing, C. elegans multilayer, maximum cycle mean
+
 ## 2026-10-27 - Anthropic Research (Cron Job)
 
 ### An alignment assessment of the UK AISI cybertesting incident
