@@ -1,5 +1,14 @@
 # AI Collection Index
 
+## 2026-10-28 - Medicine + Quantum Research (Cron Job)
+
+### Quantum neuroplastic learning for time-series processing
+- [[quantum-neuroplastic-learning]] - Two-level quantum reservoir learning: eligibility-trace-guided discrete structural edits (couplers/fields/clock) admitted via paired-stream Student-t LCB minus complexity cost (arXiv: 2610.34055)
+  - Bio analogy: synaptic tagging/three-factor rules - accumulating eligibility traces over edit types pick candidates; admission margin acts as global consolidation signal
+  - IBM ibm_fez validated: 6x seven-qubit reservoirs on 42 qubits, sim-learned frozen configs cut channel-equalization symbol error 9.7% to 2.2%, beating matched-budget tuned baseline
+  - Continual adaptation across 16 task switches (0.87 vs 0.69 fixed capacity); complexity cost alpha=0.002 per ADDED coupler only (removal free) - minimal sufficient connectivity emerges
+  - **Activation**: quantum reservoir computing, neuroplasticity, eligibility traces, structural plasticity, quantum machine learning, channel equalization
+
 ## 2026-10-28 - Neuroscience Research (Cron Job)
 
 ### Hierarchical connectivity sets the upper critical dimension of neural avalanches
