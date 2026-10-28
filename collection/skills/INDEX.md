@@ -1,4 +1,32 @@
 ## 2026-10-27 - High-Utility arXiv Papers (Cron Job)
+## 2026-10-28 - arXiv Paper Skills (Cron Job)
+
+### multi-agent-rl
+
+- **arxiv-2610-37510v1-a-note-on-data-efficient-finetuning-of-vision-foun** - A note on data-efficient finetuning of vision foundation models (Utility: 0.92)
+- **arxiv-2610-37281v1-rpsd-retrieval-privileged-on-policy-self-distillat** - RPSD: Retrieval-Privileged On-Policy Self-Distillation with Optimal Transport (Utility: 0.91)
+- **arxiv-2610-37613v1-videolvr-latent-visual-reasoning-over-grounded-vid** - VideoLVR: Latent Visual Reasoning over Grounded Video Evidence (Utility: 0.90)
+- **arxiv-2610-37657v1-heads-of-security-learned-attention-gates-improve** - Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness (Utility: 0.87)
+- **arxiv-2610-37471v1-perceptrl-making-visual-perception-rewardable-in-m** - PerceptRL: Making Visual Perception Rewardable in MLLMs from Answers to Interactions (Utility: 0.87)
+- **arxiv-2610-37266v1-watermark-basins-black-box-detection-of-distilled** - Watermark Basins: Black-Box Detection of Distilled LLMs (Utility: 0.87)
+- **arxiv-2610-37571v1-teamgym-a-gym-for-team-decision-making-by-ai-agent** - TeamGym: A Gym for Team Decision-Making by AI Agents with Distributed Information (Utility: 0.86)
+- **arxiv-2610-37441v1-multi-agent-reinforcement-learning-of-co-adaptive** - Multi-Agent Reinforcement Learning of Co-Adaptive Hip Exoskeleton Control (MARL-Exo) for Metabolic Energy Reduction (Utility: 0.85)
+
+### neuroscience
+
+- **arxiv-2610-37451v1-interpretable-meta-policies-for-neural-decision-ma** - Interpretable Meta-Policies for Neural Decision Making (Utility: 0.92)
+- **arxiv-2610-37655v1-kppax-preprocess-differentiable-kinetic-ode-for-ma** - KPPax: preprocess differentiable kinetic ODE for machine learning in atmospheric chemistry (Utility: 0.88)
+- **arxiv-2610-37504v1-strategyproof-deep-reinforcement-learning-for-onli** - Strategyproof Deep Reinforcement Learning for Online Resource Allocation (Utility: 0.86)
+- **arxiv-2610-37370v1-the-geometry-of-manifold-learning-singular-foliati** - The Geometry of Manifold Learning: Singular foliations via Deep Learning models (Utility: 0.85)
+
+### nlp-llm
+
+- **arxiv-2610-37316v1-reforest-interpretability-meets-reasoning-in-isola** - ReForest: Interpretability Meets Reasoning in Isolation Forest (Utility: 0.91)
+
+### spiking-neuromorphic
+
+- **arxiv-2610-37553v1-collective-dynamics-of-self-reinforcement-how-cros** - Collective Dynamics of Self-Reinforcement: How Cross-Task Coupling Drives Policy Collapse in Unsupervised RLVR (Utility: 0.86)
+
 
 ### Organon: From Evolutionary Search to Recursive Self-Improving Agents for Scientific Discovery
 - [[organon-recursive-self-improving-agents]] - 递归自我改进框架,不仅进化解决方案还进化搜索方法本身,LLM引导的进化搜索动态适应研究问题 (arXiv: 2610.33046)

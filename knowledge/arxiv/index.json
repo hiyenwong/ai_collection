@@ -13278,5 +13278,212 @@
     ],
     "utility": 0.8500000000000003,
     "skill_path": "multi-agent-rl/tool-calling-llm-agents-under-realistic-mcp-faults-scale-doe"
+  },
+  {
+    "id": "2610.37510v1",
+    "title": "A note on data-efficient finetuning of vision foundation models",
+    "authors": "Niclas Hergenr\u00f6ther, Antonio Orvieto",
+    "url": "https://arxiv.org/abs/2610.37510v1",
+    "utility": 0.9200000000000004,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "skill_name": "arxiv-2610-37510v1-a-note-on-data-efficient-finetuning-of-vision-foun",
+    "skill_category": "multi-agent-rl",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37451v1",
+    "title": "Interpretable Meta-Policies for Neural Decision Making",
+    "authors": "Raban Emunds, Jannis Bl\u00fcml, Quentin Delfosse, Kristian Kersting",
+    "url": "https://arxiv.org/abs/2610.37451v1",
+    "utility": 0.9200000000000004,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG"
+    ],
+    "skill_name": "arxiv-2610-37451v1-interpretable-meta-policies-for-neural-decision-ma",
+    "skill_category": "neuroscience",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37316v1",
+    "title": "ReForest: Interpretability Meets Reasoning in Isolation Forest",
+    "authors": "Juyoung Seo, Geonwoo Bang, Dongho Kim, Moohong Min",
+    "url": "https://arxiv.org/abs/2610.37316v1",
+    "utility": 0.9100000000000004,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.AI"
+    ],
+    "skill_name": "arxiv-2610-37316v1-reforest-interpretability-meets-reasoning-in-isola",
+    "skill_category": "nlp-llm",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37281v1",
+    "title": "RPSD: Retrieval-Privileged On-Policy Self-Distillation with Optimal Transport",
+    "authors": "Dongyue Li, Zebang Cheng, Zhongyi Deng,  Hongboxu, Yi Bin...",
+    "url": "https://arxiv.org/abs/2610.37281v1",
+    "utility": 0.9100000000000004,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.AI"
+    ],
+    "skill_name": "arxiv-2610-37281v1-rpsd-retrieval-privileged-on-policy-self-distillat",
+    "skill_category": "multi-agent-rl",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37613v1",
+    "title": "VideoLVR: Latent Visual Reasoning over Grounded Video Evidence",
+    "authors": "Shilong Li, Xingyuan Bu, Hao Shi, Yun Xing, Weixin Feng...",
+    "url": "https://arxiv.org/abs/2610.37613v1",
+    "utility": 0.9000000000000004,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "skill_name": "arxiv-2610-37613v1-videolvr-latent-visual-reasoning-over-grounded-vid",
+    "skill_category": "multi-agent-rl",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37655v1",
+    "title": "KPPax: preprocess differentiable kinetic ODE for machine learning in atmospheric chemistry",
+    "authors": "Wenqing Peng, Michael Boy, Zhi-Song Liu",
+    "url": "https://arxiv.org/abs/2610.37655v1",
+    "utility": 0.8800000000000003,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.AI"
+    ],
+    "skill_name": "arxiv-2610-37655v1-kppax-preprocess-differentiable-kinetic-ode-for-ma",
+    "skill_category": "neuroscience",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37657v1",
+    "title": "Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness",
+    "authors": "Igor Shilov, Xiaoxue Yang, Alexander Panfilov, Evgenii Kortukov, Matthieu Meeus...",
+    "url": "https://arxiv.org/abs/2610.37657v1",
+    "utility": 0.8700000000000003,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "cs.CR"
+    ],
+    "skill_name": "arxiv-2610-37657v1-heads-of-security-learned-attention-gates-improve",
+    "skill_category": "multi-agent-rl",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37471v1",
+    "title": "PerceptRL: Making Visual Perception Rewardable in MLLMs from Answers to Interactions",
+    "authors": "Tongkun Guan, Zhibo Yang, Mingkun Yang, Haocheng Wang, Wei Shen...",
+    "url": "https://arxiv.org/abs/2610.37471v1",
+    "utility": 0.8700000000000003,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "skill_name": "arxiv-2610-37471v1-perceptrl-making-visual-perception-rewardable-in-m",
+    "skill_category": "multi-agent-rl",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37266v1",
+    "title": "Watermark Basins: Black-Box Detection of Distilled LLMs",
+    "authors": "Hongyan Chang, Hady Elsahar, Tom Sander, Pierre Fernandez, Saeed Mahloujifar...",
+    "url": "https://arxiv.org/abs/2610.37266v1",
+    "utility": 0.8700000000000003,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.CR",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "skill_name": "arxiv-2610-37266v1-watermark-basins-black-box-detection-of-distilled",
+    "skill_category": "multi-agent-rl",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37571v1",
+    "title": "TeamGym: A Gym for Team Decision-Making by AI Agents with Distributed Information",
+    "authors": "Chanwoo Park, Jaywoong Jeong, Zachary Wojtowicz, Yubin Kim, Taekyun Lee...",
+    "url": "https://arxiv.org/abs/2610.37571v1",
+    "utility": 0.8600000000000003,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.AI"
+    ],
+    "skill_name": "arxiv-2610-37571v1-teamgym-a-gym-for-team-decision-making-by-ai-agent",
+    "skill_category": "multi-agent-rl",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37553v1",
+    "title": "Collective Dynamics of Self-Reinforcement: How Cross-Task Coupling Drives Policy Collapse in Unsupervised RLVR",
+    "authors": "Peize Ding",
+    "url": "https://arxiv.org/abs/2610.37553v1",
+    "utility": 0.8600000000000003,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG"
+    ],
+    "skill_name": "arxiv-2610-37553v1-collective-dynamics-of-self-reinforcement-how-cros",
+    "skill_category": "spiking-neuromorphic",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37504v1",
+    "title": "Strategyproof Deep Reinforcement Learning for Online Resource Allocation",
+    "authors": "Fariba Dehghan, Sebastian Stein, Vahid Yazdanpanah, Stephanie Gauthier",
+    "url": "https://arxiv.org/abs/2610.37504v1",
+    "utility": 0.8600000000000003,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.MA",
+      "cs.AI",
+      "cs.GT"
+    ],
+    "skill_name": "arxiv-2610-37504v1-strategyproof-deep-reinforcement-learning-for-onli",
+    "skill_category": "neuroscience",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37441v1",
+    "title": "Multi-Agent Reinforcement Learning of Co-Adaptive Hip Exoskeleton Control (MARL-Exo) for Metabolic Energy Reduction",
+    "authors": "Yifei Yuan, Jakob Wolf, Ghaith Androwis, Xianlian Zhou",
+    "url": "https://arxiv.org/abs/2610.37441v1",
+    "utility": 0.8500000000000003,
+    "published": "2026-10-27",
+    "categories": [
+      "cs.RO",
+      "cs.LG"
+    ],
+    "skill_name": "arxiv-2610-37441v1-multi-agent-reinforcement-learning-of-co-adaptive",
+    "skill_category": "multi-agent-rl",
+    "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37370v1",
+    "title": "The Geometry of Manifold Learning: Singular foliations via Deep Learning models",
+    "authors": "Gabriele Novelli, Eliot Tron, Emanuele Latini, Rita Fioresi",
+    "url": "https://arxiv.org/abs/2610.37370v1",
+    "utility": 0.8500000000000003,
+    "published": "2026-10-27",
+    "categories": [
+      "math.DG",
+      "cs.LG"
+    ],
+    "skill_name": "arxiv-2610-37370v1-the-geometry-of-manifold-learning-singular-foliati",
+    "skill_category": "neuroscience",
+    "added_date": "2026-10-28"
   }
 ]
