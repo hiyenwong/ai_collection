@@ -3,6 +3,19 @@
 ## 2026-10-28 - Medicine + Quantum Research (Cron Job)
 
 ### Quantum neuroplastic learning for time-series processing
+- **[0.93]** [Uncovering Why LLMs Fail: From Internal Mechanisms to Adversarial Reas](https://arxiv.org/abs/2610.37369v1) — `ai-safety-eval/uncovering-why-llms-fail-from-internal`
+- **[0.92]** [SLICE-CiM: Selective Layer-wise Inference Control Engine with Confiden](https://arxiv.org/abs/2610.37601v1) — `nlp-llm/slice-cim-selective-layer-wise-inference`
+- **[0.92]** [Gym-Anything-RT: Scaling Real-Time Environments for Vision-Language Ag](https://arxiv.org/abs/2610.37567v1) — `nlp-llm/gym-anything-rt-scaling-real-time`
+- **[0.9]** [Follow the Gradient: Tracing Safety Degradation Back to Training Data](https://arxiv.org/abs/2610.37481v1) — `ai-safety-eval/follow-the-gradient-tracing-safety-degradation`
+- **[0.89]** [Scaling Laws for Tool-Use Agents via Controllable Environment Synthesi](https://arxiv.org/abs/2610.37648v1) — `multi-agent-rl/scaling-laws-for-tool-use-agents`
+- **[0.89]** [GAS-PFN: Graph-Aware Spatiotemporal Prior-Data Fitted Networks for Zer](https://arxiv.org/abs/2610.37598v1) — `vision-generative/gas-pfn-graph-aware-spatiotemporal-prior`
+- **[0.88]** [Autonomous fixed-wing interception using reinforcement learning](https://arxiv.org/abs/2610.37470v1) — `neuroscience/autonomous-fixed-wing-interception-using-reinforcement`
+- **[0.87]** [GTFormer: A Syntax-Free Graph Network Alternative to Transformers for ](https://arxiv.org/abs/2610.37524v1) — `neuroscience/gtformer-a-syntax-free-graph-network`
+- **[0.87]** [When Visual Evidence Is Insufficient: How Instructions, Post-Training,](https://arxiv.org/abs/2610.37430v1) — `ai-safety-eval/when-visual-evidence-is-insufficient-how`
+- **[0.86]** [The Structure Gap: When More Data Cannot Replace Structured Reasoning](https://arxiv.org/abs/2610.37523v1) — `neuroscience/the-structure-gap-when-more-data`
+- **[0.86]** [Normative Deviation Modeling for EEG-based Depression Detection](https://arxiv.org/abs/2610.37338v1) — `neuroscience/normative-deviation-modeling-for-eeg-based`
+- **[0.85]** [ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning](https://arxiv.org/abs/2610.37666v1) — `multi-agent-rl/thinkworld-world-imagination-reinforces-chain-of`
+- **[0.85]** [GroundControl: Satellite-Conditioned Multi-View Diffusion for Reconstr](https://arxiv.org/abs/2610.37545v1) — `vision-generative/groundcontrol-satellite-conditioned-multi-view-diffusion`
 - [[quantum-neuroplastic-learning]] - Two-level quantum reservoir learning: eligibility-trace-guided discrete structural edits (couplers/fields/clock) admitted via paired-stream Student-t LCB minus complexity cost (arXiv: 2610.34055)
   - Bio analogy: synaptic tagging/three-factor rules - accumulating eligibility traces over edit types pick candidates; admission margin acts as global consolidation signal
   - IBM ibm_fez validated: 6x seven-qubit reservoirs on 42 qubits, sim-learned frozen configs cut channel-equalization symbol error 9.7% to 2.2%, beating matched-budget tuned baseline

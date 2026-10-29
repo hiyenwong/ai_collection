@@ -7857,7 +7857,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,
@@ -10878,7 +10878,7 @@
   {
     "id": "2610.06726v1",
     "title": "Decoupling Time and Space: A Temporally Conditioned Refinement for EEG Source Imaging",
-    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert M\u00fcller, Shinichi Nakajima",
+    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert Müller, Shinichi Nakajima",
     "url": "https://arxiv.org/abs/2610.06726v1",
     "utility": 0.87,
     "categories": [
@@ -12164,7 +12164,7 @@
   {
     "id": "2610.22099v1",
     "title": "TIPS: A Tiny Inference-time Policy for Scaling in Diffusion Language Models",
-    "authors": "Ya-Shi Zhang, Jian Tang, Pierre-Andr\u00e9 No\u00ebl, Oleksiy Ostapenko",
+    "authors": "Ya-Shi Zhang, Jian Tang, Pierre-André Noël, Oleksiy Ostapenko",
     "url": "https://arxiv.org/abs/2610.22099v1",
     "utility": 0.92,
     "categories": [
@@ -13282,7 +13282,7 @@
   {
     "id": "2610.37510v1",
     "title": "A note on data-efficient finetuning of vision foundation models",
-    "authors": "Niclas Hergenr\u00f6ther, Antonio Orvieto",
+    "authors": "Niclas Hergenröther, Antonio Orvieto",
     "url": "https://arxiv.org/abs/2610.37510v1",
     "utility": 0.9200000000000004,
     "published": "2026-10-27",
@@ -13297,7 +13297,7 @@
   {
     "id": "2610.37451v1",
     "title": "Interpretable Meta-Policies for Neural Decision Making",
-    "authors": "Raban Emunds, Jannis Bl\u00fcml, Quentin Delfosse, Kristian Kersting",
+    "authors": "Raban Emunds, Jannis Blüml, Quentin Delfosse, Kristian Kersting",
     "url": "https://arxiv.org/abs/2610.37451v1",
     "utility": 0.9200000000000004,
     "published": "2026-10-27",
@@ -13485,5 +13485,189 @@
     "skill_name": "arxiv-2610-37370v1-the-geometry-of-manifold-learning-singular-foliati",
     "skill_category": "neuroscience",
     "added_date": "2026-10-28"
+  },
+  {
+    "id": "2610.37369v1",
+    "title": "Uncovering Why LLMs Fail: From Internal Mechanisms to Adversarial Reasoning Trajectories",
+    "utility": 0.93,
+    "category": "ai-safety-eval",
+    "slug": "uncovering-why-llms-fail-from-internal",
+    "url": "https://arxiv.org/abs/2610.37369v1",
+    "authors": "Zirui Ding, Xinxin Fan, Hao Yuan, Shaoye Luo, Men Niu...",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "id": "2610.37601v1",
+    "title": "SLICE-CiM: Selective Layer-wise Inference Control Engine with Confidence-Based Early Exit for SRAM based Digital Compute-in-Memory",
+    "utility": 0.92,
+    "category": "nlp-llm",
+    "slug": "slice-cim-selective-layer-wise-inference",
+    "url": "https://arxiv.org/abs/2610.37601v1",
+    "authors": "Pratham Sharma, Mohd Faisal Khan, Santosh Kumar Vishvakarma",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.AR",
+      "cs.NE"
+    ]
+  },
+  {
+    "id": "2610.37567v1",
+    "title": "Gym-Anything-RT: Scaling Real-Time Environments for Vision-Language Agents",
+    "utility": 0.92,
+    "category": "nlp-llm",
+    "slug": "gym-anything-rt-scaling-real-time",
+    "url": "https://arxiv.org/abs/2610.37567v1",
+    "authors": "Pranjal Aggarwal, Sean Welleck",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "id": "2610.37481v1",
+    "title": "Follow the Gradient: Tracing Safety Degradation Back to Training Data",
+    "utility": 0.9,
+    "category": "ai-safety-eval",
+    "slug": "follow-the-gradient-tracing-safety-degradation",
+    "url": "https://arxiv.org/abs/2610.37481v1",
+    "authors": "Saket Reddy, Amro Abbas, Anshuman Suri, Ari Morcos, David Schwab...",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ]
+  },
+  {
+    "id": "2610.37648v1",
+    "title": "Scaling Laws for Tool-Use Agents via Controllable Environment Synthesis",
+    "utility": 0.89,
+    "category": "multi-agent-rl",
+    "slug": "scaling-laws-for-tool-use-agents",
+    "url": "https://arxiv.org/abs/2610.37648v1",
+    "authors": "Andrew Szot, Samira Abnar, Omar Attia, Abbas Kazerouni, Michael Kirchhof...",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG"
+    ]
+  },
+  {
+    "id": "2610.37598v1",
+    "title": "GAS-PFN: Graph-Aware Spatiotemporal Prior-Data Fitted Networks for Zero-Shot Traffic Forecasting",
+    "utility": 0.89,
+    "category": "vision-generative",
+    "slug": "gas-pfn-graph-aware-spatiotemporal-prior",
+    "url": "https://arxiv.org/abs/2610.37598v1",
+    "authors": "Joseph Natter, Long Vu, Yifan Zhang, Bobin Deng, Kun Suo...",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.NE"
+    ]
+  },
+  {
+    "id": "2610.37470v1",
+    "title": "Autonomous fixed-wing interception using reinforcement learning",
+    "utility": 0.88,
+    "category": "neuroscience",
+    "slug": "autonomous-fixed-wing-interception-using-reinforcement",
+    "url": "https://arxiv.org/abs/2610.37470v1",
+    "authors": "Daan van Hamersveld, Ewoud Smeur, Iurii Kriachko",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.NE",
+      "eess.SY"
+    ]
+  },
+  {
+    "id": "2610.37524v1",
+    "title": "GTFormer: A Syntax-Free Graph Network Alternative to Transformers for 8192$\\times$ Length Extrapolation in Linear Time",
+    "utility": 0.87,
+    "category": "neuroscience",
+    "slug": "gtformer-a-syntax-free-graph-network",
+    "url": "https://arxiv.org/abs/2610.37524v1",
+    "authors": "Elisabeth Fink",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG"
+    ]
+  },
+  {
+    "id": "2610.37430v1",
+    "title": "When Visual Evidence Is Insufficient: How Instructions, Post-Training, and Internal Activations Shape Refusal in Multimodal Language Models",
+    "utility": 0.87,
+    "category": "ai-safety-eval",
+    "slug": "when-visual-evidence-is-insufficient-how",
+    "url": "https://arxiv.org/abs/2610.37430v1",
+    "authors": "Ananth K Suresh, Aveen Dayal, Gouthaman KV, Aditya Pola, Vineeth N Balasubramanian",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ]
+  },
+  {
+    "id": "2610.37523v1",
+    "title": "The Structure Gap: When More Data Cannot Replace Structured Reasoning",
+    "utility": 0.86,
+    "category": "neuroscience",
+    "slug": "the-structure-gap-when-more-data",
+    "url": "https://arxiv.org/abs/2610.37523v1",
+    "authors": "Kheer Sagar Patel, Mojtaba Soltanalian",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "id": "2610.37338v1",
+    "title": "Normative Deviation Modeling for EEG-based Depression Detection",
+    "utility": 0.86,
+    "category": "neuroscience",
+    "slug": "normative-deviation-modeling-for-eeg-based",
+    "url": "https://arxiv.org/abs/2610.37338v1",
+    "authors": "Wan Jiang, Jingqi Cheng, Hui Zhang, Xu Zhao, Xiaojing Chen...",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.LG"
+    ]
+  },
+  {
+    "id": "2610.37666v1",
+    "title": "ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning",
+    "utility": 0.85,
+    "category": "multi-agent-rl",
+    "slug": "thinkworld-world-imagination-reinforces-chain-of",
+    "url": "https://arxiv.org/abs/2610.37666v1",
+    "authors": "Chaehyun Kim, Chi-Pin Huang, Jisoo Kim, Min-Hung Chen, Yu-Chiang Frank Wang...",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ]
+  },
+  {
+    "id": "2610.37545v1",
+    "title": "GroundControl: Satellite-Conditioned Multi-View Diffusion for Reconstruction-Free Novel View Synthesis",
+    "utility": 0.85,
+    "category": "vision-generative",
+    "slug": "groundcontrol-satellite-conditioned-multi-view-diffusion",
+    "url": "https://arxiv.org/abs/2610.37545v1",
+    "authors": "Akshay Krishnan, Matias Turkulainen, Jamie Wynn, Zawar Qureshi, Mohamed Sayed...",
+    "published": "2026-10-27",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ]
   }
 ]
