@@ -7857,7 +7857,7 @@
   },
   {
     "id": "2609.27741v1",
-    "title": "Limiting-Kernel Q($λ$): Bridging Short and Long Horizons",
+    "title": "Limiting-Kernel Q($\u03bb$): Bridging Short and Long Horizons",
     "file": "collection/skills/other/arxiv-2609-27741v1-limiting-kernel-q-bridging-short-and-long-horizons/SKILL.md",
     "keywords": [],
     "utility": 1.0,
@@ -10878,7 +10878,7 @@
   {
     "id": "2610.06726v1",
     "title": "Decoupling Time and Space: A Temporally Conditioned Refinement for EEG Source Imaging",
-    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert Müller, Shinichi Nakajima",
+    "authors": "Marco Morik, Jesse Palarus, Carmen Vidaurre, Klaus-Robert M\u00fcller, Shinichi Nakajima",
     "url": "https://arxiv.org/abs/2610.06726v1",
     "utility": 0.87,
     "categories": [
@@ -12164,7 +12164,7 @@
   {
     "id": "2610.22099v1",
     "title": "TIPS: A Tiny Inference-time Policy for Scaling in Diffusion Language Models",
-    "authors": "Ya-Shi Zhang, Jian Tang, Pierre-André Noël, Oleksiy Ostapenko",
+    "authors": "Ya-Shi Zhang, Jian Tang, Pierre-Andr\u00e9 No\u00ebl, Oleksiy Ostapenko",
     "url": "https://arxiv.org/abs/2610.22099v1",
     "utility": 0.92,
     "categories": [
@@ -13282,7 +13282,7 @@
   {
     "id": "2610.37510v1",
     "title": "A note on data-efficient finetuning of vision foundation models",
-    "authors": "Niclas Hergenröther, Antonio Orvieto",
+    "authors": "Niclas Hergenr\u00f6ther, Antonio Orvieto",
     "url": "https://arxiv.org/abs/2610.37510v1",
     "utility": 0.9200000000000004,
     "published": "2026-10-27",
@@ -13297,7 +13297,7 @@
   {
     "id": "2610.37451v1",
     "title": "Interpretable Meta-Policies for Neural Decision Making",
-    "authors": "Raban Emunds, Jannis Blüml, Quentin Delfosse, Kristian Kersting",
+    "authors": "Raban Emunds, Jannis Bl\u00fcml, Quentin Delfosse, Kristian Kersting",
     "url": "https://arxiv.org/abs/2610.37451v1",
     "utility": 0.9200000000000004,
     "published": "2026-10-27",
@@ -13669,5 +13669,125 @@
       "cs.AI",
       "cs.LG"
     ]
+  },
+  {
+    "id": "2610.40276v1",
+    "title": "TaskFrame: Connecting Task-Level Planning with Frame-Level Control for Game Agents",
+    "url": "https://arxiv.org/abs/2610.40276v1",
+    "utility": 1.0,
+    "category": "multi-agent-rl",
+    "skill_path": "multi-agent-rl/taskframe-connecting-task-level-planning-with-frame-level-co"
+  },
+  {
+    "id": "2610.40186v1",
+    "title": "Locating and Closing Information Gaps in Multi-Agent Systems",
+    "url": "https://arxiv.org/abs/2610.40186v1",
+    "utility": 0.97,
+    "category": "multi-agent-rl",
+    "skill_path": "multi-agent-rl/locating-and-closing-information-gaps-in-multi-agent-systems"
+  },
+  {
+    "id": "2610.40192v1",
+    "title": "Bridging Semantics and Structure: A Theoretically Grounded Framework for Link Prediction on TAGs",
+    "url": "https://arxiv.org/abs/2610.40192v1",
+    "utility": 0.95,
+    "category": "knowledge-graph",
+    "skill_path": "knowledge-graph/bridging-semantics-and-structure-a-theoretically-grounded-fr"
+  },
+  {
+    "id": "2610.40449v1",
+    "title": "Reinforcement learning for control of partial differential equations",
+    "url": "https://arxiv.org/abs/2610.40449v1",
+    "utility": 0.94,
+    "category": "signal-control-systems",
+    "skill_path": "signal-control-systems/reinforcement-learning-for-control-of-partial-differential-e"
+  },
+  {
+    "id": "2610.40293v1",
+    "title": "MAServeBench: Benchmarking Multi-Agent LLM Serving Systems with Hierarchical Collaboration Workloads",
+    "url": "https://arxiv.org/abs/2610.40293v1",
+    "utility": 0.94,
+    "category": "multi-agent-rl",
+    "skill_path": "multi-agent-rl/maservebench-benchmarking-multi-agent-llm-serving-systems-wi"
+  },
+  {
+    "id": "2610.40370v1",
+    "title": "The Athlete as a Scientist of One: Agentic Bayesian Experimental Design for Individualized Physiology from Consumer Wearables",
+    "url": "https://arxiv.org/abs/2610.40370v1",
+    "utility": 0.92,
+    "category": "multi-agent-rl",
+    "skill_path": "multi-agent-rl/the-athlete-as-a-scientist-of-one-agentic-bayesian-experimen"
+  },
+  {
+    "id": "2610.40250v1",
+    "title": "Distributional Reward Calibration and Budget-Neutral Credit Assignment for Multimodal RLVR",
+    "url": "https://arxiv.org/abs/2610.40250v1",
+    "utility": 0.92,
+    "category": "multi-agent-rl",
+    "skill_path": "multi-agent-rl/distributional-reward-calibration-and-budget-neutral-credit-"
+  },
+  {
+    "id": "2610.40578v1",
+    "title": "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents",
+    "url": "https://arxiv.org/abs/2610.40578v1",
+    "utility": 0.91,
+    "category": "ai-safety-eval",
+    "skill_path": "ai-safety-eval/vericua-verification-as-agentic-exploration-for-computer-usi"
+  },
+  {
+    "id": "2610.40532v1",
+    "title": "BURGER: Benchmarking and Understanding Robotic Generalization via Embodied Drawing",
+    "url": "https://arxiv.org/abs/2610.40532v1",
+    "utility": 0.91,
+    "category": "vision-generative",
+    "skill_path": "vision-generative/burger-benchmarking-and-understanding-robotic-generalization"
+  },
+  {
+    "id": "2610.40394v1",
+    "title": "Scaling Mathematical Proof Supervision from Structured Textbooks",
+    "url": "https://arxiv.org/abs/2610.40394v1",
+    "utility": 0.91,
+    "category": "nlp-llm",
+    "skill_path": "nlp-llm/scaling-mathematical-proof-supervision-from-structured-textb"
+  },
+  {
+    "id": "2610.40565v1",
+    "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+    "url": "https://arxiv.org/abs/2610.40565v1",
+    "utility": 0.89,
+    "category": "vision-generative",
+    "skill_path": "vision-generative/gym-anything-for-robotics-scaling-physical-simulations-with-"
+  },
+  {
+    "id": "2610.40305v1",
+    "title": "Rimuru: Unified Memory Management for Modern LLM Serving via Elastic Expert Offloading",
+    "url": "https://arxiv.org/abs/2610.40305v1",
+    "utility": 0.87,
+    "category": "deployment-optimization",
+    "skill_path": "deployment-optimization/rimuru-unified-memory-management-for-modern-llm-serving-via-"
+  },
+  {
+    "id": "2610.40528v1",
+    "title": "NEOPIC: A Neural Operator Framework for Particle-based Kinetic Plasma Simulations",
+    "url": "https://arxiv.org/abs/2610.40528v1",
+    "utility": 0.86,
+    "category": "physics-math",
+    "skill_path": "physics-math/neopic-a-neural-operator-framework-for-particle-based-kineti"
+  },
+  {
+    "id": "2610.40476v1",
+    "title": "Training language models in simulation for psychiatric intake",
+    "url": "https://arxiv.org/abs/2610.40476v1",
+    "utility": 0.85,
+    "category": "healthcare-bio",
+    "skill_path": "healthcare-bio/training-language-models-in-simulation-for-psychiatric-intak"
+  },
+  {
+    "id": "2610.40443v1",
+    "title": "Framework-Conditional Open Materials Generation",
+    "url": "https://arxiv.org/abs/2610.40443v1",
+    "utility": 0.85,
+    "category": "physics-math",
+    "skill_path": "physics-math/framework-conditional-open-materials-generation"
   }
 ]

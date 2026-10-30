@@ -1,5 +1,22 @@
 # AI Collection Index
 
+## 2026-10-30 - arXiv Paper Skills (Cron Job)
+
+- **[1.0]** [TaskFrame: Connecting Task-Level Planning with Frame-Level Control for...](https://arxiv.org/abs/2610.40276v1) — `multi-agent-rl/taskframe-connecting-task-level-planning-with-frame-level-co`
+- **[0.97]** [Locating and Closing Information Gaps in Multi-Agent Systems](https://arxiv.org/abs/2610.40186v1) — `multi-agent-rl/locating-and-closing-information-gaps-in-multi-agent-systems`
+- **[0.95]** [Bridging Semantics and Structure: A Theoretically Grounded Framework f...](https://arxiv.org/abs/2610.40192v1) — `knowledge-graph/bridging-semantics-and-structure-a-theoretically-grounded-fr`
+- **[0.94]** [Reinforcement learning for control of partial differential equations](https://arxiv.org/abs/2610.40449v1) — `signal-control-systems/reinforcement-learning-for-control-of-partial-differential-e`
+- **[0.94]** [MAServeBench: Benchmarking Multi-Agent LLM Serving Systems with Hierar...](https://arxiv.org/abs/2610.40293v1) — `multi-agent-rl/maservebench-benchmarking-multi-agent-llm-serving-systems-wi`
+- **[0.92]** [The Athlete as a Scientist of One: Agentic Bayesian Experimental Desig...](https://arxiv.org/abs/2610.40370v1) — `multi-agent-rl/the-athlete-as-a-scientist-of-one-agentic-bayesian-experimen`
+- **[0.92]** [Distributional Reward Calibration and Budget-Neutral Credit Assignment...](https://arxiv.org/abs/2610.40250v1) — `multi-agent-rl/distributional-reward-calibration-and-budget-neutral-credit-`
+- **[0.91]** [VeriCUA: Verification as Agentic Exploration for Computer-Using Agents](https://arxiv.org/abs/2610.40578v1) — `ai-safety-eval/vericua-verification-as-agentic-exploration-for-computer-usi`
+- **[0.91]** [BURGER: Benchmarking and Understanding Robotic Generalization via Embo...](https://arxiv.org/abs/2610.40532v1) — `vision-generative/burger-benchmarking-and-understanding-robotic-generalization`
+- **[0.91]** [Scaling Mathematical Proof Supervision from Structured Textbooks](https://arxiv.org/abs/2610.40394v1) — `nlp-llm/scaling-mathematical-proof-supervision-from-structured-textb`
+- **[0.89]** [Gym-Anything for Robotics: Scaling physical simulations with digital a...](https://arxiv.org/abs/2610.40565v1) — `vision-generative/gym-anything-for-robotics-scaling-physical-simulations-with-`
+- **[0.87]** [Rimuru: Unified Memory Management for Modern LLM Serving via Elastic E...](https://arxiv.org/abs/2610.40305v1) — `deployment-optimization/rimuru-unified-memory-management-for-modern-llm-serving-via-`
+- **[0.86]** [NEOPIC: A Neural Operator Framework for Particle-based Kinetic Plasma ...](https://arxiv.org/abs/2610.40528v1) — `physics-math/neopic-a-neural-operator-framework-for-particle-based-kineti`
+- **[0.85]** [Training language models in simulation for psychiatric intake](https://arxiv.org/abs/2610.40476v1) — `healthcare-bio/training-language-models-in-simulation-for-psychiatric-intak`
+- **[0.85]** [Framework-Conditional Open Materials Generation](https://arxiv.org/abs/2610.40443v1) — `physics-math/framework-conditional-open-materials-generation`
 ## 2026-10-28 - Medicine + Quantum Research (Cron Job)
 
 ### Quantum neuroplastic learning for time-series processing
