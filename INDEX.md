@@ -1,5 +1,152 @@
 # AI Collection Index
 
+## 2026-10-31 - High-Utility arXiv Papers (Cron Job)
+
+### Uncertainty-aware Feedback Loop Diagnosis: integrating reinforcement learning and conformal prediction for reliable wafer defect classification
+- [[uncertainty-aware-feedback-loop-diagnosis-integrating-reinforcement]] - Utility: 1.0 - Semiconductor manufacturing is a complex, multi-step process that requires both high precision and low operating costs. Therefore, detecting defects in a high-volume setting is an important component ... (arXiv: 2610.40421v1)
+  - Category: neuroscience
+
+### EpiAgent: Epistemic Self-Play for LLM Agents
+- [[epiagent-epistemic-self-play-for-llm-agents]] - Utility: 0.99 - Epistemic game theory explains an agent's strategic behavior via the beliefs it holds about others and how these beliefs are updated as the interactions unfold. Modern LLM-based agents, however, often... (arXiv: 2610.40227v1)
+  - Category: multi-agent-rl
+
+### On the Fundamental Limits of Prefill-Based Decoding Length Prediction
+- [[on-the-fundamental-limits-of-prefill-based]] - Utility: 0.97 - Predicting how many tokens a large language model (LLM) will decode, using only prefill-phase hidden states, is a key primitive for inference scheduling. We show that current benchmarks conflate predi... (arXiv: 2610.40541v1)
+  - Category: nlp-llm
+
+### Multistep and Multivariate Time Series Explainability with GradientSHAP: A Wind Power Case Study
+- [[multistep-and-multivariate-time-series-explainability]] - Utility: 0.97 - As the effects of climate change become increasingly apparent, the demand for renewable energy sources such as wind power continues to grow. However, renewables' variable and intermittent nature prese... (arXiv: 2610.40330v1)
+  - Category: multi-agent-rl
+
+### Ramanujan Challenge Results: AI-Assisted Evaluation Pipeline for Multi-Format Proofs
+- [[ramanujan-challenge-results-ai-assisted-evaluation-pipeline]] - Utility: 0.94 - As AI's mathematical capabilities rapidly improve, meaningful benchmarks are shifting from university-level problems and math olympiads to research-level mathematics. The Ramanujan Challenge is a benc... (arXiv: 2610.40551v1)
+  - Category: multi-agent-rl
+
+### Algebraic World Model: From Exploration to Proofs
+- [[algebraic-world-model-from-exploration-to]] - Utility: 0.94 - AI has made remarkable progress in mathematics, solving challenging problems with machine-checkable proofs in Lean, yet typically relying on predefined mathematical definitions and formal specificatio... (arXiv: 2610.40503v1)
+  - Category: multi-agent-rl
+
+### Agentic University: Collaborative Agents for Personalized Learning
+- [[agentic-university-collaborative-agents-for-personalized]] - Utility: 0.94 - Large language models support personalized tutoring, content generation, and adaptive learning paths. However, capability development requires these resources and interactions to form a coherent learn... (arXiv: 2610.40492v1)
+  - Category: neuroscience
+
+### A Unified Hessian-Guided Framework for Post-Training Quantization
+- [[a-unified-hessian-guided-framework-for-post-training]] - Utility: 0.94 - Low-bit quantization enables efficient deployment of large language models by reducing memory footprint and computational cost. Achieving high accuracy at low precision requires selecting quantization... (arXiv: 2610.40345v1)
+  - Category: nlp-llm
+
+### Fast and accurate neural triage decoding of ultra-high-rate quantum LDPC codes
+- [[fast-and-accurate-neural-triage-decoding]] - Utility: 0.93 - Quantum error correction is essential for fault-tolerant quantum computing. High-rate quantum low-density parity-check (qLDPC) codes have emerged as a promising approach to reducing the substantial ph... (arXiv: 2610.40490v1)
+  - Category: neuroscience
+
+### Continuous-Action World Models: Learning Cross-Embodiment Spatiotemporal Dynamics Priors
+- [[continuous-action-world-models-learning-cross-embodiment-spatiotemporal]] - Utility: 0.93 - We introduce Continuous-Action World Models (CoAWM), a framework for learning cross-embodiment spatiotemporal dynamics priors that support robot action generation across embodiments and execution freq... (arXiv: 2610.40401v1)
+  - Category: multi-agent-rl
+
+### EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation
+- [[envos-auditing-computer-use-agents-when-the]] - Utility: 0.92 - Computer-use agents built on large language models (LLMs) work in software that can change while they act: an appointment moves, a policy is revised, a record is updated. Testing agents under such cha... (arXiv: 2610.40246v1)
+  - Category: multi-agent-rl
+
+### Propose-Filter-Release: Scaling Noise to Typical Sensitivity via Private Filtering
+- [[propose-filter-release-scaling-noise-to-typical-sensitivity]] - Utility: 0.91 - An estimator can be accurate and stable on typical data, yet sensitive to a few possible records. Differentially private mechanisms commonly scale their noise to the worst-case influence of a single r... (arXiv: 2610.40654v1)
+  - Category: nlp-llm
+
+### Multistatic ISAC with Deep Learning-Based Clutter Suppression for 5G and Beyond
+- [[multistatic-isac-with-deep-learning-based-clutter]] - Utility: 0.91 - Integrated sensing and communications (ISAC) systems using 5G and beyond signals of opportunity enable joint wireless sensing and communication using shared infrastructure and spectrum resources. Whil... (arXiv: 2610.40586v1)
+  - Category: neuroscience
+
+### Advancing Clinical Genomic Analysis with a Skill-Centred Agent
+- [[advancing-clinical-genomic-analysis-with-a]] - Utility: 0.91 - Clinical genomic analysis requires experts to integrate evolving guidelines, databases, and computational evidence. As sequencing has become increasingly accessible, this complex and labor-intensive p... (arXiv: 2610.40556v1)
+  - Category: multi-agent-rl
+
+### Efficient Scalable Oversight via Rewinding
+- [[efficient-scalable-oversight-via-rewinding]] - Utility: 0.91 - Scalable oversight asks how a weak verifier can check the outputs of computations performed by more powerful AI systems. One proposed approach uses relativizing interactive proofs, in which a weak ver... (arXiv: 2610.40535v1)
+  - Category: signal-control-systems
+
+### Radiology Guideline-derived Decision Graph for Efficient Clinical Decision Support
+- [[radiology-guideline-derived-decision-graph-for-efficient]] - Utility: 0.91 - Radiological risk stratification and management planning are essential downstream tasks in medical imaging. Automating these tasks is challenging because clinical guideline criteria are distributed ac... (arXiv: 2610.40327v1)
+  - Category: multi-agent-rl
+
+### From MS/MS evidence to adaptive spectroscopic characterization: Reinforcement learning guided by candidate molecular structures
+- [[from-msms-evidence-to-adaptive-spectroscopic]] - Utility: 0.91 - Small-molecule identification from tandem mass spectrometry (MS/MS) may require complementary measurements. Herein, we propose a structure-informed deep Q-network (SI-DQN) that uses existing MS/MS evi... (arXiv: 2610.40264v1)
+  - Category: multi-agent-rl
+
+### DYNAS: A Dynamic Network Penetration Testing Framework Using Deep Hierarchical Reinforcement Learning
+- [[dynas-a-dynamic-network-penetration-testing]] - Utility: 0.91 - As network scale and uncertainty complicate automated penetration testing, reinforcement learning (RL) environments must support controlled evaluation under defensive and non-stationary conditions. We... (arXiv: 2610.40214v1)
+  - Category: multi-agent-rl
+
+### Understanding axial attention in TSFMs through single location regression
+- [[understanding-axial-attention-in-tsfms-through]] - Utility: 0.91 - Recent advances in Time Series Foundation Models (TSFMs) increasingly rely on axial attention mechanisms, but despite their empirical success, the theoretical properties of axial attention remain larg... (arXiv: 2610.40188v1)
+  - Category: general-ml
+
+### Soil Moisture Estimation in Precision Agriculture: A Knowledge Distillation Approach
+- [[soil-moisture-estimation-in-precision-agriculture]] - Utility: 0.89 - Accurate soil moisture estimation is critical for precision agriculture, influencing irrigation, fertilization, and harvesting strategies. Traditional methods primarily rely on meteorological and soil... (arXiv: 2610.40432v1)
+  - Category: nlp-llm
+
+### Difficulty Calibration Across Time for Membership Inference in Diffusion Models
+- [[difficulty-calibration-across-time-for-membership]] - Utility: 0.88 - Modern diffusion models are trained on massive datasets that often include copyrighted or private images. Membership inference attacks (MIAs) address this by testing whether a given image was in a mod... (arXiv: 2610.40616v1)
+  - Category: nlp-llm
+
+### Dynamic Powergrid Optimization with FPGA-based Neuromorphic Higher-order Ising Machines
+- [[dynamic-powergrid-optimization-with-fpga-based-neuromorphic]] - Utility: 0.88 - The advent of large, high-density FPGAs such as the AMD Versal enables efficient hardware implementation of neuromorphic Ising machines, unlocking unprecedented performance for complex combinatorial o... (arXiv: 2610.40522v1)
+  - Category: neuroscience
+
+### Beyond Selected Breakthroughs: Evaluating Language Models on Randomly Sampled Mathematical Conjectures
+- [[beyond-selected-breakthroughs-evaluating-language-models]] - Utility: 0.88 - The last year has seen a shift in AI-assisted mathematics, with frontier language models producing proofs of and counterexamples to long-standing open conjectures. However, studying only the current s... (arXiv: 2610.40382v1)
+  - Category: nlp-llm
+
+### Learned Terminal Costs for Short-Horizon Model Predictive Control of Autonomous Trucks in Interactive Highway Traffic
+- [[learned-terminal-costs-for-short-horizon-model]] - Utility: 0.88 - Autonomous highway driving for heavy-duty trucks is a challenging control problem. The greater mass, dimensions and intricate dynamics increase the requirements for cooperation from surrounding traffi... (arXiv: 2610.40257v1)
+  - Category: multi-agent-rl
+
+### Confidence-Aware Speed-over-Ground Estimation from Doppler Spectra via Reconstruction-Based Representation Learning
+- [[confidence-aware-speed-over-ground-estimation-from-doppler-spectra]] - Utility: 0.88 - Reliable speed-over-ground estimation from ground-facing Doppler spectra is essential for mobile platforms such as railway systems. Classical signal-processing approaches can provide accurate estimate... (arXiv: 2610.40253v1)
+  - Category: nlp-llm
+
+### Collaborative AI agents for autonomous experimental research with solid-state quantum spins
+- [[collaborative-ai-agents-for-autonomous-experimental]] - Utility: 0.87 - An autonomous research laboratory could conduct an entire study, from formulating questions to preparing manuscripts. Artificial intelligence (AI) offers one route towards this goal. Recent AI systems... (arXiv: 2610.40589v1)
+  - Category: quantum
+
+### Training Foundation Models with a Single Algorithm
+- [[training-foundation-models-with-a-single]] - Utility: 0.87 - Foundation models are typically trained in stages: pretraining, midtraining, supervised fine-tuning (SFT), and reinforcement learning (RL), with changes in both data and learning algorithms. We show t... (arXiv: 2610.40564v1)
+  - Category: multi-agent-rl
+
+### How I Aligned Your Model: Scaling Up Multilingual Safety Training with Templates
+- [[how-i-aligned-your-model-scaling]] - Utility: 0.87 - Safety alignment for Large Language Models is heavily focused on English with limited multilingual representation, particularly damaging low-resource language performance. Related open training datase... (arXiv: 2610.40516v1)
+  - Category: nlp-llm
+
+### A Low-Rank Space Captures Linear Alignment Between LLM and Human Neural Activity During Naturalistic Language Listening
+- [[a-low-rank-space-captures-linear-alignment]] - Utility: 0.87 - Large language models (LLMs) are increasingly used as computational models of human language processing, yet it remains unclear which components of their representations drive alignment with neural ac... (arXiv: 2610.40511v1)
+  - Category: neuroscience
+
+### Preserving Utility in Continual LLM Unlearning via Orthogonal Projections
+- [[preserving-utility-in-continual-llm-unlearning]] - Utility: 0.87 - Unlearning concerns the task of removing the influence of a sensitive portion of the training data, such as protected, copyrighted or private text, from a model without retraining it from scratch. Whi... (arXiv: 2610.40483v1)
+  - Category: nlp-llm
+
+### SCARL: Sequence Confidence-Aligned Reinforcement Learning
+- [[scarl-sequence-confidence-aligned-reinforcement-learning]] - Utility: 0.87 - Reinforcement learning with verifiable rewards (RLVR) improves language-model reasoning by scoring sampled responses with a rule-based verifier and reinforcing those that pass. Where a classifier's tr... (arXiv: 2610.40407v1)
+  - Category: multi-agent-rl
+
+### Rethinking Neural Thickets Without Weight Perturbations
+- [[rethinking-neural-thickets-without-weight-perturbations]] - Utility: 0.85 - The Neural Thickets hypothesis posits that pretrained language models lie in dense neighborhoods of task-specific experts in weight space, which random Gaussian perturbations can uncover. We reproduce... (arXiv: 2610.40649v1)
+  - Category: neuroscience
+
+### MetaRefine: Score Refinement with Multi-Level Features for Image Assessment
+- [[metarefine-score-refinement-with-multi-level-features]] - Utility: 0.85 - An image's original dimensions, aspect ratio, and composition provide important cues that can affect its technical and aesthetic quality. Image assessment methods use resizing, cropping, padding, or p... (arXiv: 2610.40487v1)
+  - Category: nlp-llm
+
+### Prefix Executability: Evaluating Tool-Using Agents Beyond Final Success
+- [[prefix-executability-evaluating-tool-using-agents-beyond]] - Utility: 0.85 - Tool-use benchmarks often score agents by final task success, but terminal outcomes can obscure whether the intermediate tool-call trajectory was executable. We propose prefix executability as a traje... (arXiv: 2610.40444v1)
+  - Category: multi-agent-rl
+
+### IMPACT: Inverter-Informed Multimodal Learning for Photovoltaic Generation Forecasting
+- [[impact-inverter-informed-multimodal-learning-for-photovoltaic]] - Utility: 0.85 - This work develops a physics-informed multimodal deep learning framework for 10- to 110-minute-ahead probabilistic photovoltaic power forecasting. The forecasting model is built on a four-branch archi... (arXiv: 2610.40418v1)
+  - Category: nlp-llm
+
+### Latent Prediction Yields Cross-Subject Alignable Representations in Sensory-Evoked fMRI
+- [[latent-prediction-yields-cross-subject-alignable-representations]] - Utility: 0.85 - Decoding sensory-evoked functional magnetic resonance imaging (fMRI) data is a central analytical tool in cognitive neuroscience. Here we ask whether self-supervised learning (SSL), which has been sca... (arXiv: 2610.40280v1)
+  - Category: neuroscience
+
+
 ## 2026-10-30 - arXiv Paper Skills (Cron Job)
 
 - **[1.0]** [TaskFrame: Connecting Task-Level Planning with Frame-Level Control for...](https://arxiv.org/abs/2610.40276v1) — `multi-agent-rl/taskframe-connecting-task-level-planning-with-frame-level-co`

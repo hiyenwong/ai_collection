@@ -13789,5 +13789,524 @@
     "utility": 0.85,
     "category": "physics-math",
     "skill_path": "physics-math/framework-conditional-open-materials-generation"
+  },
+  {
+    "id": "2610.40421v1",
+    "title": "Uncertainty-aware Feedback Loop Diagnosis: integrating reinforcement learning and conformal prediction for reliable wafer defect classification",
+    "authors": "Aleksandr Dekhovich, Carlas Smith, Oleg Soloviev",
+    "url": "https://arxiv.org/abs/2610.40421v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/uncertainty-aware-feedback-loop-diagnosis-integrating-reinforcement",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.40227v1",
+    "title": "EpiAgent: Epistemic Self-Play for LLM Agents",
+    "authors": "Xuanfa Jin, Xinyu Cui, Zhijian Ma, Xue Yan, Jian Zhao...",
+    "url": "https://arxiv.org/abs/2610.40227v1",
+    "utility": 0.99,
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.MA"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/epiagent-epistemic-self-play-for-llm-agents",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40541v1",
+    "title": "On the Fundamental Limits of Prefill-Based Decoding Length Prediction",
+    "authors": "Haowen Shi, Xuzhe Yan, Fahao Chen, Peng Li",
+    "url": "https://arxiv.org/abs/2610.40541v1",
+    "utility": 0.97,
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.IT"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/on-the-fundamental-limits-of-prefill-based",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40330v1",
+    "title": "Multistep and Multivariate Time Series Explainability with GradientSHAP: A Wind Power Case Study",
+    "authors": "Robbie Southam, Zhong Fan, Ke Li",
+    "url": "https://arxiv.org/abs/2610.40330v1",
+    "utility": 0.97,
+    "categories": [
+      "cs.AI",
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/multistep-and-multivariate-time-series-explainability",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40551v1",
+    "title": "Ramanujan Challenge Results: AI-Assisted Evaluation Pipeline for Multi-Format Proofs",
+    "authors": "Alan Sorani, Ashvni Narayanan, Michael Shalyt, Tali Monderer, Rotem Kalisch...",
+    "url": "https://arxiv.org/abs/2610.40551v1",
+    "utility": 0.94,
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.SC",
+      "math.NT"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/ramanujan-challenge-results-ai-assisted-evaluation-pipeline",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40503v1",
+    "title": "Algebraic World Model: From Exploration to Proofs",
+    "authors": "Guancheng Pan, Qixin Tan, Yang Yuan, Andrew Chi-Chih Yao",
+    "url": "https://arxiv.org/abs/2610.40503v1",
+    "utility": 0.94,
+    "categories": [
+      "cs.AI",
+      "cs.LO"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/algebraic-world-model-from-exploration-to",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40492v1",
+    "title": "Agentic University: Collaborative Agents for Personalized Learning",
+    "authors": "Jingru Fan, Tianle Zhou, Yunjie Zhou, Zihao He, Yixuan Zhou...",
+    "url": "https://arxiv.org/abs/2610.40492v1",
+    "utility": 0.94,
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/agentic-university-collaborative-agents-for-personalized",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.40345v1",
+    "title": "A Unified Hessian-Guided Framework for Post-Training Quantization",
+    "authors": "Mads Toftrup, Marco Federici, Boris van Breugel, Paul Whatmough, Markus Nagel",
+    "url": "https://arxiv.org/abs/2610.40345v1",
+    "utility": 0.94,
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/a-unified-hessian-guided-framework-for-post-training",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40490v1",
+    "title": "Fast and accurate neural triage decoding of ultra-high-rate quantum LDPC codes",
+    "authors": "Hong-Ye Hu, Zhenlai Wang, Binzhao Luo, Tao Xiang, Chen Zhao",
+    "url": "https://arxiv.org/abs/2610.40490v1",
+    "utility": 0.93,
+    "categories": [
+      "quant-ph",
+      "cs.AI",
+      "cs.IT",
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/fast-and-accurate-neural-triage-decoding",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.40401v1",
+    "title": "Continuous-Action World Models: Learning Cross-Embodiment Spatiotemporal Dynamics Priors",
+    "authors": "Liangyu Li, Qingwen Liu",
+    "url": "https://arxiv.org/abs/2610.40401v1",
+    "utility": 0.93,
+    "categories": [
+      "cs.RO",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/continuous-action-world-models-learning-cross-embodiment-spatiotemporal",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40246v1",
+    "title": "EnvOS: Auditing Computer-Use Agents When the World Moves On : Phenomenon-Based Task Construction, Certification, and Evidence-Based Evaluation",
+    "authors": "Ankush Kadu, Athira Gopal, Niharika Singh, Arpit Jain, Aswanth Krishnan",
+    "url": "https://arxiv.org/abs/2610.40246v1",
+    "utility": 0.92,
+    "categories": [
+      "cs.AI",
+      "cs.HC"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/envos-auditing-computer-use-agents-when-the",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40654v1",
+    "title": "Propose-Filter-Release: Scaling Noise to Typical Sensitivity via Private Filtering",
+    "authors": "Moshe Shenfeld, Eliad Tsfadia, Katrina Ligett",
+    "url": "https://arxiv.org/abs/2610.40654v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/propose-filter-release-scaling-noise-to-typical-sensitivity",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40586v1",
+    "title": "Multistatic ISAC with Deep Learning-Based Clutter Suppression for 5G and Beyond",
+    "authors": "Yalin E. Sagduyu, Tugba Erpek, Sastry Kompella",
+    "url": "https://arxiv.org/abs/2610.40586v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.NI",
+      "cs.AI",
+      "cs.LG",
+      "eess.SP"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/multistatic-isac-with-deep-learning-based-clutter",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.40556v1",
+    "title": "Advancing Clinical Genomic Analysis with a Skill-Centred Agent",
+    "authors": "Qiaoyu Zheng, Weike Zhao, Yanjie Fan, Ye Cao, Mengqi Jiang...",
+    "url": "https://arxiv.org/abs/2610.40556v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.AI",
+      "q-bio.GN"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/advancing-clinical-genomic-analysis-with-a",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40535v1",
+    "title": "Efficient Scalable Oversight via Rewinding",
+    "authors": "Ziyi Guan, Yael Tauman Kalai, Ron Rothblum, Zoe Xi",
+    "url": "https://arxiv.org/abs/2610.40535v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.AI",
+      "cs.CC",
+      "cs.CR"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/signal-control-systems/efficient-scalable-oversight-via-rewinding",
+    "skill_category": "signal-control-systems"
+  },
+  {
+    "id": "2610.40327v1",
+    "title": "Radiology Guideline-derived Decision Graph for Efficient Clinical Decision Support",
+    "authors": "Xuewen Zhou, Zhen Chen",
+    "url": "https://arxiv.org/abs/2610.40327v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/radiology-guideline-derived-decision-graph-for-efficient",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40264v1",
+    "title": "From MS/MS evidence to adaptive spectroscopic characterization: Reinforcement learning guided by candidate molecular structures",
+    "authors": "Bowen Gao, Lei Zhu, Yiying Wang, Wenjie Yu",
+    "url": "https://arxiv.org/abs/2610.40264v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/from-msms-evidence-to-adaptive-spectroscopic",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40214v1",
+    "title": "DYNAS: A Dynamic Network Penetration Testing Framework Using Deep Hierarchical Reinforcement Learning",
+    "authors": "Md. Rakibul Hassan, Majedul Islam, Md. Ashraful Alam, Muhammad Iqbal Hossain, Swakkhar Shatabda",
+    "url": "https://arxiv.org/abs/2610.40214v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.CR",
+      "cs.LG",
+      "cs.NI"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/dynas-a-dynamic-network-penetration-testing",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40188v1",
+    "title": "Understanding axial attention in TSFMs through single location regression",
+    "authors": "Andrei-Tiberiu Pantea, Aymeric Dieuleveut",
+    "url": "https://arxiv.org/abs/2610.40188v1",
+    "utility": 0.91,
+    "categories": [
+      "stat.ML",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/general-ml/understanding-axial-attention-in-tsfms-through",
+    "skill_category": "general-ml"
+  },
+  {
+    "id": "2610.40432v1",
+    "title": "Soil Moisture Estimation in Precision Agriculture: A Knowledge Distillation Approach",
+    "authors": "Mohammed Rakib, Vrinda Nagula, Arunkumar Bagavathi",
+    "url": "https://arxiv.org/abs/2610.40432v1",
+    "utility": 0.89,
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/soil-moisture-estimation-in-precision-agriculture",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40616v1",
+    "title": "Difficulty Calibration Across Time for Membership Inference in Diffusion Models",
+    "authors": "Michael Joseph, Yedid Hoshen",
+    "url": "https://arxiv.org/abs/2610.40616v1",
+    "utility": 0.88,
+    "categories": [
+      "cs.CV",
+      "cs.CR",
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/difficulty-calibration-across-time-for-membership",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40522v1",
+    "title": "Dynamic Powergrid Optimization with FPGA-based Neuromorphic Higher-order Ising Machines",
+    "authors": "Saptarshi Maiti, Shantanu Chakrabartty, Chetan Singh Thakur",
+    "url": "https://arxiv.org/abs/2610.40522v1",
+    "utility": 0.88,
+    "categories": [
+      "cs.NE"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/dynamic-powergrid-optimization-with-fpga-based-neuromorphic",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.40382v1",
+    "title": "Beyond Selected Breakthroughs: Evaluating Language Models on Randomly Sampled Mathematical Conjectures",
+    "authors": "Helen Jenne, Davis Brown, Jesse He, Henry Kvinge",
+    "url": "https://arxiv.org/abs/2610.40382v1",
+    "utility": 0.88,
+    "categories": [
+      "cs.AI",
+      "math.HO"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/beyond-selected-breakthroughs-evaluating-language-models",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40257v1",
+    "title": "Learned Terminal Costs for Short-Horizon Model Predictive Control of Autonomous Trucks in Interactive Highway Traffic",
+    "authors": "Hooman Hamze, Benjamin Houshmand, Deepthi Pathare, Erik B\u00f6rve, Morteza Haghir Chehreghani...",
+    "url": "https://arxiv.org/abs/2610.40257v1",
+    "utility": 0.88,
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.RO",
+      "eess.SY"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/learned-terminal-costs-for-short-horizon-model",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40253v1",
+    "title": "Confidence-Aware Speed-over-Ground Estimation from Doppler Spectra via Reconstruction-Based Representation Learning",
+    "authors": "Malte Stelzer, Marvin Sach, Timo Bartels, Dinu Mihailescu-Stoica, S\u00f6ren Kohnert...",
+    "url": "https://arxiv.org/abs/2610.40253v1",
+    "utility": 0.88,
+    "categories": [
+      "eess.SP",
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/confidence-aware-speed-over-ground-estimation-from-doppler-spectra",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40589v1",
+    "title": "Collaborative AI agents for autonomous experimental research with solid-state quantum spins",
+    "authors": "El Mustapha Mansouri, Eikichi Kimura, Masato Koga, Keigo Arai",
+    "url": "https://arxiv.org/abs/2610.40589v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.AI",
+      "cs.MA",
+      "quant-ph"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/quantum/collaborative-ai-agents-for-autonomous-experimental",
+    "skill_category": "quantum"
+  },
+  {
+    "id": "2610.40564v1",
+    "title": "Training Foundation Models with a Single Algorithm",
+    "authors": "Yuda Song, Alvin Zhang, Fahim Tajwar, Daman Arora, Jeff Schneider...",
+    "url": "https://arxiv.org/abs/2610.40564v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/training-foundation-models-with-a-single",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40516v1",
+    "title": "How I Aligned Your Model: Scaling Up Multilingual Safety Training with Templates",
+    "authors": "Max Neuwinger, Hanna Yukhymenko, Imanol Schlag",
+    "url": "https://arxiv.org/abs/2610.40516v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/how-i-aligned-your-model-scaling",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40511v1",
+    "title": "A Low-Rank Space Captures Linear Alignment Between LLM and Human Neural Activity During Naturalistic Language Listening",
+    "authors": "Zach Paris, Emily Finn",
+    "url": "https://arxiv.org/abs/2610.40511v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.CL",
+      "q-bio.NC"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/a-low-rank-space-captures-linear-alignment",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.40483v1",
+    "title": "Preserving Utility in Continual LLM Unlearning via Orthogonal Projections",
+    "authors": "Juan Belieni, Ana Carolina Erthal, Eliezer de Souza da Silva, Diego Mesquita",
+    "url": "https://arxiv.org/abs/2610.40483v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/preserving-utility-in-continual-llm-unlearning",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40407v1",
+    "title": "SCARL: Sequence Confidence-Aligned Reinforcement Learning",
+    "authors": "Zhenghong Ke, Jingbo Zhou, Hua Wu",
+    "url": "https://arxiv.org/abs/2610.40407v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/scarl-sequence-confidence-aligned-reinforcement-learning",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40649v1",
+    "title": "Rethinking Neural Thickets Without Weight Perturbations",
+    "authors": "Nicolas Dufour, Elouan Gard\u00e8s, Amil Dravid, Patrick P\u00e9rez, Loic Landrieu",
+    "url": "https://arxiv.org/abs/2610.40649v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/rethinking-neural-thickets-without-weight-perturbations",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.40487v1",
+    "title": "MetaRefine: Score Refinement with Multi-Level Features for Image Assessment",
+    "authors": "Chuanzhi Xu, Chengkun Yue, Haolan Guo, Xuanhua Yin, Boyu Wei...",
+    "url": "https://arxiv.org/abs/2610.40487v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/metarefine-score-refinement-with-multi-level-features",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40444v1",
+    "title": "Prefix Executability: Evaluating Tool-Using Agents Beyond Final Success",
+    "authors": "Amir H. Rezaeian, Weiyi Sun, Yassine Benajiba, Dan Roth",
+    "url": "https://arxiv.org/abs/2610.40444v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/prefix-executability-evaluating-tool-using-agents-beyond",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.40418v1",
+    "title": "IMPACT: Inverter-Informed Multimodal Learning for Photovoltaic Generation Forecasting",
+    "authors": "Anushka Katiyar, Cong Feng, Jing Wang, Tristan Liu, Simon Julien...",
+    "url": "https://arxiv.org/abs/2610.40418v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/impact-inverter-informed-multimodal-learning-for-photovoltaic",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.40280v1",
+    "title": "Latent Prediction Yields Cross-Subject Alignable Representations in Sensory-Evoked fMRI",
+    "authors": "Serwan Jassim, Victoria Bosch, Daniel Anthes, Elia Bruni, Tim Kietzmann",
+    "url": "https://arxiv.org/abs/2610.40280v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "q-bio.NC"
+    ],
+    "published": "2026-10-29",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/latent-prediction-yields-cross-subject-alignable-representations",
+    "skill_category": "neuroscience"
   }
 ]
