@@ -1,5 +1,108 @@
 # AI Collection Index
 
+## 2026-11-02 - High-Utility arXiv Papers (Cron Job)
+
+### Latent Reasoning in Continuous Space for Unified Multimodal Models
+- [[latent-reasoning-in-continuous-space-for]] - Unified Multimodal Models (UMMs) achieve remarkable success on diverse multimodal understanding and generation tasks, yet they still struggle to effectively leverage language-based chain-of-thought re... (arXiv: 2610.42149v1)
+  - Category: multi-agent-rl
+
+### CausalXRL: Explainable Reinforcement Learning through Causal Graph Reasoning
+- [[causalxrl-explainable-reinforcement-learning-through-causal]] - Reinforcement learning is a powerful paradigm for training autonomous agents and has achieved impressive performance in complex environments. However, this success often comes at the cost of interpret... (arXiv: 2610.42028v1)
+  - Category: multi-agent-rl
+
+### When Does Test-Time Search Help World Action Models? An Empirical Audit of Candidate Selection and Simulator Integrity
+- [[when-does-test-time-search-help-world]] - World-action models increasingly apply test-time scaling, spending extra inference computation on candidate selection and adaptive allocation to improve control. Such gains are credible only when cand... (arXiv: 2610.41970v1)
+  - Category: nlp-llm
+
+### Empirical Evaluation of Quantum Kernel Methods for Classification: A Comparative Study with Classical Kernels
+- [[empirical-evaluation-of-quantum-kernel-methods]] - Quantum kernel methods are the most concrete near-term proposal for quantum machine learning on classical data, yet published benchmarks disagree on whether they outperform tuned classical kernels, an... (arXiv: 2610.42029v1)
+  - Category: quantum
+
+### Backpropagation-free Deep Learning for Time-Series Classification
+- [[backpropagation-free-deep-learning-for-time-series-classification]] - Deep neural networks for time series classification (TSC) are trained almost exclusively by error backpropagation, which imposes update locking and the weight-transport problem. Backpropagation-free l... (arXiv: 2610.41805v1)
+  - Category: neuroscience
+
+### Clinical-Protocol-Aware Cyber Resilience for Connected Clinical Technologies Under AI-Enabled Adversarial Conditions
+- [[clinical-protocol-aware-cyber-resilience-for-connected-clinical]] - Healthcare increasingly relies on connected medical devices, clinical information systems, cloud services, and distributed-care technologies, creating cybersecurity risks across clinical workflows. AI... (arXiv: 2610.41784v1)
+  - Category: multi-agent-rl
+
+### Trainable Vector Quantization for Large Language Models
+- [[trainable-vector-quantization-for-large-language]] - Vector Quantization (VQ) is a rapidly evolving technique for compressing Large Language Model (LLM) weights, reducing memory usage, and speeding up inference. However, extreme compression deteriorates... (arXiv: 2610.41822v1)
+  - Category: nlp-llm
+
+### Aligning MLLMs with the Latent Structure of Human Cognition via Behavior-Derived Semantic Dimensions
+- [[aligning-mllms-with-the-latent-structure]] - Multimodal Large Language Models (MLLMs) have achieved impressive performance across a wide range of reasoning tasks, yet it remains unclear whether their internal representations and decision criteri... (arXiv: 2610.41951v1)
+  - Category: neuroscience
+
+### Subquadratic Attention with a Hierarchical Tree-Structured Indexer
+- [[subquadratic-attention-with-a-hierarchical-tree-structured]] - The quadratic scaling of attention is a fundamental bottleneck limiting the long-context capabilities of large language models (LLMs). A variety of approaches have attempted to circumvent this, but th... (arXiv: 2610.42112v1)
+  - Category: multi-agent-rl
+
+### Statistical Foundations of Reinforcement Learning: A Non-Asymptotic Perspective
+- [[statistical-foundations-of-reinforcement-learning-a]] - Reinforcement learning (RL) embodies a foundational paradigm for sequential decision-making in the face of uncertainty. The rapid growth of model complexity in emerging applications has significantly ... (arXiv: 2610.41903v1)
+  - Category: multi-agent-rl
+
+### Hierarchical World Models with Implicit Dynamics
+- [[hierarchical-world-models-with-implicit-dynamics]] - Planning with world models enables test-time adaptation for embodied agents, offering superior generalization over direct policy learning. However, long-horizon tasks remain hindered by cumulative err... (arXiv: 2610.42146v1)
+  - Category: multi-agent-rl
+
+### RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory
+- [[roboarchitect-automating-the-design-of-robotic]] - Recent work shows that a frozen robot policy performs far better inside an agent harness, where control code decides when to query the policy, consult vision tools, or command the arm directly. Yet to... (arXiv: 2610.42141v1)
+  - Category: multi-agent-rl
+
+### Observable-Specific Validity Tests for Scientific AI: Controlled Approximations and Intervention Response
+- [[observable-specific-validity-tests-for-scientific-ai]] - An approximation can reproduce an energy while missing its response, or satisfy an error tolerance without being certified by a given bound. We formulate observable-specific validity records for scien... (arXiv: 2610.41939v1)
+  - Category: neuroscience
+
+### Overcoming the Representational Limitations of Amplitude Encoding for Quantum Neural Networks
+- [[overcoming-the-representational-limitations-of-amplitude]] - Quantum Neural Networks (QNNs) offer a framework for learning functions from classical data, but their expressive power depends critically on how inputs are encoded into quantum states. Angle encoding... (arXiv: 2610.41824v1)
+  - Category: neuroscience
+
+### DIFFNAS: Predictor-Free Neural Architecture Search via Diffusion Model and Zero-Cost Evaluation
+- [[diffnas-predictor-free-neural-architecture-search-via]] - Neural Architecture Search (NAS) has advanced the automated design of deep networks, but remains computationally expensive due to reliance on model training or performance predictors. We introduce DIF... (arXiv: 2610.41818v1)
+  - Category: neuroscience
+
+### Peeling the Matryoshka: Extracting Ontological Structure from Retrieval Embeddings
+- [[peeling-the-matryoshka-extracting-ontological-structure]] - Taxonomy construction is essential for knowledge-intensive NLP yet remains costly: clustering-based methods (i) need careful per-corpus tuning and yield unstable hierarchies, while LLM-based pipelines... (arXiv: 2610.41785v1)
+  - Category: nlp-llm
+
+### Multimodal In-Context Learning with Explicit Rule Induction
+- [[multimodal-in-context-learning-with-explicit-rule]] - A central challenge in multimodal in-context learning (MICL) arises from tasks that are ill-defined without context and require uncovering the underlying rules from demonstrations. Existing methods pr... (arXiv: 2610.41754v1)
+  - Category: multi-agent-rl
+
+### The Knowledge Layer Model (KLM): Evidence-Visible AI Output, Routing Diagnostics, and Negative Results
+- [[the-knowledge-layer-model-klm-evidence-visible]] - AI answers require more than apparent correctness: reviewers need to inspect their recorded basis. We introduce the Knowledge Layer Model (KLM), an open, implementation-neutral specification for infer... (arXiv: 2610.42066v1)
+  - Category: multi-agent-rl
+
+### RECAST: REconstruction of Chain-of-Thought via Auditable Structured Traces
+- [[recast-reconstruction-of-chain-of-thought-via-auditable]] - Large closed-source reasoning models expose only their final answers. The intermediate reasoning that produces those answers is hidden behind API surfaces, tool-call policies, and safety filters. Exis... (arXiv: 2610.41813v1)
+  - Category: multi-agent-rl
+
+### SecPO: Principled Adversarial Training for Prompt Injection Security
+- [[secpo-principled-adversarial-training-for-prompt]] - Recognized as a top threat to AI agents, prompt injection allows instructions from untrusted data (email, documents, websites) to manipulate the agent's operation. The existing best-defended LLM, Meta... (arXiv: 2610.41998v1)
+  - Category: multi-agent-rl
+
+### What Standard Evaluations Hide About Detectors of Hijacked LLM Agents: Rare Attacks, Unseen Tools and Benchmark Transfer
+- [[what-standard-evaluations-hide-about-detectors]] - Detectors can flag hijacked large language model (LLM) agents from the traces of the tools they call. In the eleven evaluations we audited, attacks or anomalies make up 16% to 86% of the test samples,... (arXiv: 2610.41803v1)
+  - Category: multi-agent-rl
+
+### RAMA: Retrieval-Augmented Multi-Agent Routing with Episodic Memory for LEO Satellite Networks
+- [[rama-retrieval-augmented-multi-agent-routing-with-episodic]] - Low-Earth orbit (LEO) satellite networks present a challenging routing environment due to rapidly changing topology, traffic, and link conditions. Existing deep reinforcement learning (DRL) routing me... (arXiv: 2610.42068v1)
+  - Category: multi-agent-rl
+
+### CRoS: Causality Reward on Scrambled CoTs Improves Accuracy and Reasoning Faithfulness
+- [[cros-causality-reward-on-scrambled-cots]] - Reinforcement learning with verifiable rewards (RLVR) has become the standard method for training language models to reason. However, RLVR typically relies solely on outcome correctness, which does no... (arXiv: 2610.42054v1)
+  - Category: multi-agent-rl
+
+### GhostPrefix: Synchronization-Free Universal Prefix Attacks for ASR Manipulation
+- [[ghostprefix-synchronization-free-universal-prefix-attacks-for]] - We present GhostPrefix, the first synchronization-free universal adversarial prefix attack against automatic speech recognition (ASR) systems. Unlike prior audio attacks, which are typically crafted p... (arXiv: 2610.42026v1)
+  - Category: multi-agent-rl
+
+### When Is a Game a Markov Decision Process? Correspondences Between Game Theory and Reinforcement Learning
+- [[when-is-a-game-a-markov]] - Reinforcement learning and game theory describe the same object from two sides. Game theory says what a rational outcome of a strategic interaction is; reinforcement learning says how an agent could r... (arXiv: 2610.41962v1)
+  - Category: multi-agent-rl
+
+
 ## 2026-10-31 - High-Utility arXiv Papers (Cron Job)
 
 ### Uncertainty-aware Feedback Loop Diagnosis: integrating reinforcement learning and conformal prediction for reliable wafer defect classification

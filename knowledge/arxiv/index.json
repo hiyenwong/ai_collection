@@ -14308,5 +14308,358 @@
     "published": "2026-10-29",
     "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/latent-prediction-yields-cross-subject-alignable-representations",
     "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.42149v1",
+    "title": "Latent Reasoning in Continuous Space for Unified Multimodal Models",
+    "authors": "Byungwoo Jeon, Yoonwoo Jeong, Hyunseok Lee, Minsu Cho, Jinwoo Shin",
+    "url": "https://arxiv.org/abs/2610.42149v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.CV",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/latent-reasoning-in-continuous-space-for",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.42028v1",
+    "title": "CausalXRL: Explainable Reinforcement Learning through Causal Graph Reasoning",
+    "authors": "Yanming Zhang, Eric Papenhausen, Klaus Mueller",
+    "url": "https://arxiv.org/abs/2610.42028v1",
+    "utility": 1.0,
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/causalxrl-explainable-reinforcement-learning-through-causal",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.41970v1",
+    "title": "When Does Test-Time Search Help World Action Models? An Empirical Audit of Candidate Selection and Simulator Integrity",
+    "authors": "Jun Liu, Dajie Sun, Zhenglun Kong, Zhenjiang Fan, Peiyan Dong...",
+    "url": "https://arxiv.org/abs/2610.41970v1",
+    "utility": 0.99,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/when-does-test-time-search-help-world",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.42029v1",
+    "title": "Empirical Evaluation of Quantum Kernel Methods for Classification: A Comparative Study with Classical Kernels",
+    "authors": "Ronak Bhalgami",
+    "url": "https://arxiv.org/abs/2610.42029v1",
+    "utility": 0.98,
+    "categories": [
+      "quant-ph",
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/quantum/empirical-evaluation-of-quantum-kernel-methods",
+    "skill_category": "quantum"
+  },
+  {
+    "id": "2610.41805v1",
+    "title": "Backpropagation-free Deep Learning for Time-Series Classification",
+    "authors": "Miha Kap\u0161, Bla\u017e Bertalani\u010d, Carolina Fortuna",
+    "url": "https://arxiv.org/abs/2610.41805v1",
+    "utility": 0.97,
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/backpropagation-free-deep-learning-for-time-series-classification",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.41784v1",
+    "title": "Clinical-Protocol-Aware Cyber Resilience for Connected Clinical Technologies Under AI-Enabled Adversarial Conditions",
+    "authors": "Pranav Patel, Siva Kannathasan, Prerak Patel, Jigar Patel, Vansh Patel...",
+    "url": "https://arxiv.org/abs/2610.41784v1",
+    "utility": 0.96,
+    "categories": [
+      "cs.AI",
+      "cs.CE",
+      "cs.ET",
+      "cs.NI",
+      "eess.SY"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/clinical-protocol-aware-cyber-resilience-for-connected-clinical",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.41822v1",
+    "title": "Trainable Vector Quantization for Large Language Models",
+    "authors": "Anastasiia Prutianova, Alina Bogdanova, Mikhail Shutov, Dmitrii Poimanov, Anatoly Gorkov...",
+    "url": "https://arxiv.org/abs/2610.41822v1",
+    "utility": 0.95,
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/trainable-vector-quantization-for-large-language",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.41951v1",
+    "title": "Aligning MLLMs with the Latent Structure of Human Cognition via Behavior-Derived Semantic Dimensions",
+    "authors": "Ning E, Changde Du, Yizhuo Lu, Huiguang He",
+    "url": "https://arxiv.org/abs/2610.41951v1",
+    "utility": 0.94,
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/aligning-mllms-with-the-latent-structure",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.42112v1",
+    "title": "Subquadratic Attention with a Hierarchical Tree-Structured Indexer",
+    "authors": "Leon Lufkin, Cutter Dawes, Alexander Speicher, Kamesh Krishnamurthy, Tom\u00e1s Figliolia...",
+    "url": "https://arxiv.org/abs/2610.42112v1",
+    "utility": 0.92,
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/subquadratic-attention-with-a-hierarchical-tree-structured",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.41903v1",
+    "title": "Statistical Foundations of Reinforcement Learning: A Non-Asymptotic Perspective",
+    "authors": "Yuxin Chen, Yuejie Chi, Jianqing Fan, Gen Li, Yuting Wei...",
+    "url": "https://arxiv.org/abs/2610.41903v1",
+    "utility": 0.92,
+    "categories": [
+      "stat.ML",
+      "cs.IT",
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/statistical-foundations-of-reinforcement-learning-a",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.42146v1",
+    "title": "Hierarchical World Models with Implicit Dynamics",
+    "authors": "Gaoyue Zhou, Yvonne Wu, Zichen Jeff Cui, Nicolas Ballas, Mido Assran...",
+    "url": "https://arxiv.org/abs/2610.42146v1",
+    "utility": 0.91,
+    "categories": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/hierarchical-world-models-with-implicit-dynamics",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.42141v1",
+    "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
+    "authors": "Shengguang Wu, Suning Huang, Cherie Ho, Ria Doshi, Hao Zhu...",
+    "url": "https://arxiv.org/abs/2610.42141v1",
+    "utility": 0.9,
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/roboarchitect-automating-the-design-of-robotic",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.41939v1",
+    "title": "Observable-Specific Validity Tests for Scientific AI: Controlled Approximations and Intervention Response",
+    "authors": "Xiaoshn Nee, Haobo Zhong, Xiaomin Ni",
+    "url": "https://arxiv.org/abs/2610.41939v1",
+    "utility": 0.9,
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.DL"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/observable-specific-validity-tests-for-scientific-ai",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.41824v1",
+    "title": "Overcoming the Representational Limitations of Amplitude Encoding for Quantum Neural Networks",
+    "authors": "Vincent Gurgul, David Prinz",
+    "url": "https://arxiv.org/abs/2610.41824v1",
+    "utility": 0.89,
+    "categories": [
+      "quant-ph",
+      "cs.ET",
+      "cs.LG",
+      "math.OC"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/overcoming-the-representational-limitations-of-amplitude",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.41818v1",
+    "title": "DIFFNAS: Predictor-Free Neural Architecture Search via Diffusion Model and Zero-Cost Evaluation",
+    "authors": "Yize Sun, Hanzhang Ma, Zixin Wu, Xuechun Li, Volker Tresp...",
+    "url": "https://arxiv.org/abs/2610.41818v1",
+    "utility": 0.89,
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/neuroscience/diffnas-predictor-free-neural-architecture-search-via",
+    "skill_category": "neuroscience"
+  },
+  {
+    "id": "2610.41785v1",
+    "title": "Peeling the Matryoshka: Extracting Ontological Structure from Retrieval Embeddings",
+    "authors": "Eunchan Kim, Inwhee Joe",
+    "url": "https://arxiv.org/abs/2610.41785v1",
+    "utility": 0.89,
+    "categories": [
+      "cs.CL",
+      "cs.IR",
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/nlp-llm/peeling-the-matryoshka-extracting-ontological-structure",
+    "skill_category": "nlp-llm"
+  },
+  {
+    "id": "2610.41754v1",
+    "title": "Multimodal In-Context Learning with Explicit Rule Induction",
+    "authors": "Yuquan Li, Xinyang Jiang, Yuhao Xue, Cairong Zhao",
+    "url": "https://arxiv.org/abs/2610.41754v1",
+    "utility": 0.89,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/multimodal-in-context-learning-with-explicit-rule",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.42066v1",
+    "title": "The Knowledge Layer Model (KLM): Evidence-Visible AI Output, Routing Diagnostics, and Negative Results",
+    "authors": "Omer Asim Ozturk, Cihan Aydiner",
+    "url": "https://arxiv.org/abs/2610.42066v1",
+    "utility": 0.88,
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/the-knowledge-layer-model-klm-evidence-visible",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.41813v1",
+    "title": "RECAST: REconstruction of Chain-of-Thought via Auditable Structured Traces",
+    "authors": "Qi Wang, Kang Xu, Chengcheng Wan, Jiangtao Wang",
+    "url": "https://arxiv.org/abs/2610.41813v1",
+    "utility": 0.88,
+    "categories": [
+      "cs.AI"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/recast-reconstruction-of-chain-of-thought-via-auditable",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.41998v1",
+    "title": "SecPO: Principled Adversarial Training for Prompt Injection Security",
+    "authors": "Sizhe Chen, Yibo Peng, Jaewon Chang, Chawin Sitawarin, David Wagner",
+    "url": "https://arxiv.org/abs/2610.41998v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/secpo-principled-adversarial-training-for-prompt",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.41803v1",
+    "title": "What Standard Evaluations Hide About Detectors of Hijacked LLM Agents: Rare Attacks, Unseen Tools and Benchmark Transfer",
+    "authors": "Mahmoud Abbasi, Juan M. N\u00fa\u00f1ez V., Amin Shahraki",
+    "url": "https://arxiv.org/abs/2610.41803v1",
+    "utility": 0.87,
+    "categories": [
+      "cs.CR",
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/what-standard-evaluations-hide-about-detectors",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.42068v1",
+    "title": "RAMA: Retrieval-Augmented Multi-Agent Routing with Episodic Memory for LEO Satellite Networks",
+    "authors": "Xin Ming Li, Peng Hu",
+    "url": "https://arxiv.org/abs/2610.42068v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.NI",
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/rama-retrieval-augmented-multi-agent-routing-with-episodic",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.42054v1",
+    "title": "CRoS: Causality Reward on Scrambled CoTs Improves Accuracy and Reasoning Faithfulness",
+    "authors": "Xiao Yu, Justin Chih-Yao Chen, Zaid Khan, Hyunji Lee, Mohit Bansal",
+    "url": "https://arxiv.org/abs/2610.42054v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/cros-causality-reward-on-scrambled-cots",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.42026v1",
+    "title": "GhostPrefix: Synchronization-Free Universal Prefix Attacks for ASR Manipulation",
+    "authors": "Shengding Liu, Ashwin Innuganti, Qiben Yan",
+    "url": "https://arxiv.org/abs/2610.42026v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/ghostprefix-synchronization-free-universal-prefix-attacks-for",
+    "skill_category": "multi-agent-rl"
+  },
+  {
+    "id": "2610.41962v1",
+    "title": "When Is a Game a Markov Decision Process? Correspondences Between Game Theory and Reinforcement Learning",
+    "authors": "Eduardo C. Garrido-Merch\u00e1n",
+    "url": "https://arxiv.org/abs/2610.41962v1",
+    "utility": 0.85,
+    "categories": [
+      "cs.GT",
+      "cs.LG"
+    ],
+    "published": "2026-10-30",
+    "skill_dir": "/Users/hiyenwong/projects/ai_projects/ai_collection/collection/skills/multi-agent-rl/when-is-a-game-a-markov",
+    "skill_category": "multi-agent-rl"
   }
 ]
